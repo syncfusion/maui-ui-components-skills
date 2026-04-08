@@ -30,13 +30,6 @@ The MapTileLayer displays map tiles from web map tile service providers. It need
 
 The URL of the tile providers must be set in the MapTileLayer.UrlTemplate property. The UrlTemplate property accepts the URL in WMTS (Web Map Tile Service) format i.e. {z} — zoom level, {x} and {y} — tile coordinates. This URL might vary slightly depending on the providers.
 
-**URL Format Examples:**
-```
-https://example_provider/{z}/{x}/{y}.png
-https://example_provider/z={z}/x={x}/y={y}.png
-https://example_provider/{z}/{x}/{y}.png?key=subscription_key
-```
-
 **Placeholders:**
 - `{z}`: Zoom level (typically 0-20)
 - `{x}`: Tile X coordinate
@@ -63,7 +56,7 @@ The OpenStreetMap is one of the tile/image providers which can be used free of c
 ```xml
 <maps:SfMaps>
     <maps:SfMaps.Layer>
-        <maps:MapTileLayer UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <maps:MapTileLayer UrlTemplate="url" />
     </maps:SfMaps.Layer>
 </maps:SfMaps>
 ```
@@ -74,7 +67,7 @@ using Syncfusion.Maui.Maps;
 
 SfMaps map = new SfMaps();
 MapTileLayer tileLayer = new MapTileLayer();
-tileLayer.UrlTemplate = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
+tileLayer.UrlTemplate = "url"; // For e.g  "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
 map.Layer = tileLayer;
 this.Content = map;
 ```
@@ -86,13 +79,11 @@ this.Content = map;
 - **Fair use policy:** Respect tile usage policies
 - **Heavy usage:** Consider running your own tile server or use commercial alternatives
 
-Read full terms: https://operations.osmfoundation.org/policies/tiles/
-
 ## Adding Bing Maps
 
 An additional step is required for the Bing maps. The format of the required URL varies from the other tile services. Hence, we have added a top-level GetBingUrl method which returns the URL in the required format. 
 
-The subscription key is needed for bing maps. You can create an API key by following the steps mentioned in this [link](https://learn.microsoft.com/en-us/bingmaps/getting-started/bing-maps-dev-center-help/getting-a-bing-maps-key) and append this key to the bing map URL before passing it to the GetBingUrl method. You can use the URL returned from this method to pass it to the UrlTemplate property.
+The subscription key is needed for bing maps. You can create an API key by bing map official page and append this key to the bing map URL before passing it to the GetBingUrl method. You can use the URL returned from this method to pass it to the UrlTemplate property.
 
 Some of the providers provide different map types. For example, Bing Maps provide map types like Road, Aerial, AerialWithLabels etc. These types too can be passed in the UrlTemplate itself, as shown in the following example. You can check the official websites of the tile providers to know about the available types and the code for them.
 
@@ -160,7 +151,7 @@ For other map providers like TomTom, MapBox, etc., you can check the respective 
 
 ### TomTom Maps
 
-Below is the example of adding TomTom map. You can get the TomTom API key from this [link](https://developer.tomtom.com/map-display-api/documentation/product-information/introduction).
+Below is the example of adding TomTom map. You can get the TomTom API key from tomtom official page.
 
 **Key APIs Used:**
 - MapTileLayer - Tile layer implementation
@@ -180,8 +171,6 @@ this.Content = map;
 ### Other Providers
 
 **MapBox:**
-- Get API Key: https://www.mapbox.com/
-- URL Format: `https://api.mapbox.com/styles/v1/mapbox/{style_id}/tiles/{z}/{x}/{y}?access_token=YOUR_TOKEN`
 - Available styles: streets-v11, satellite-v9, outdoors-v11, dark-v10, light-v10
 
 **Google Maps:**
@@ -205,7 +194,7 @@ The center position by setting the MapTileLayer.Center property. It represents t
 ```xml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapTileLayer UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png">
+        <map:MapTileLayer UrlTemplate="url">
             <map:MapTileLayer.Center>
                 <map:MapLatLng Latitude="27.175014"
                                Longitude="78.042152">
@@ -220,12 +209,12 @@ The center position by setting the MapTileLayer.Center property. It represents t
 ```csharp
 using Syncfusion.Maui.Maps;
 
-SfMaps map = new SfMaps();
-MapTileLayer tileLayer = new MapTileLayer();
-tileLayer.UrlTemplate = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
-tileLayer.Center = new MapLatLng(27.175014, 78.042152);
-map.Layer = tileLayer;
-this.Content = map;
+    SfMaps map = new SfMaps();
+    MapTileLayer tileLayer = new MapTileLayer();
+    tileLayer.UrlTemplate = "url";// For e.g  "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+    tileLayer.Center = new MapLatLng(27.175014, 78.042152);
+    map.Layer = tileLayer;
+    this.Content = map;
 ```
 
 ### MapLatLng Properties
@@ -257,11 +246,7 @@ tileLayer.Center = new MapLatLng(-33.8688, 151.2093);
 
 The CanCacheTiles property is used to decide whether the tile images should be cached in application memory or not. The default value of the CanCacheTiles is `false`.
 
-While enabling the CanCacheTiles, we need to set the tile server name to maintain the folder to store cache tiles in the MapTileLayer.UrlTemplate property. The default tile server name to store the tile cache is OSM. If you want to change the server name, you can use the following URL format:
-
-```
-https://example_provider/{z}/{x}/{y}.png?name=serverName
-```
+While enabling the CanCacheTiles, we need to set the tile server name to maintain the folder to store cache tiles in the MapTileLayer.UrlTemplate property. The default tile server name to store the tile cache is OSM. 
 
 Here, you can replace the serverName as per your wish.
 
@@ -303,7 +288,7 @@ The DeleteTilesFromCache method is used to clear the cached tile images from the
 <maps:SfMaps>
     <maps:SfMaps.Layer>
         <maps:MapTileLayer x:Name="tileLayer" 
-                          UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                          UrlTemplate="url" />
     </maps:SfMaps.Layer>
 </maps:SfMaps>
 ```
@@ -329,10 +314,10 @@ The CenterChanged event is triggered while zooming and panning the maps.
 
 **XAML:**
 ```xml
-<maps:SfMaps>
+    <maps:SfMaps>
     <maps:SfMaps.Layer>
         <maps:MapTileLayer CenterChanged="MapTileLayer_CenterChanged" 
-                          UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                          UrlTemplate="url" />
     </maps:SfMaps.Layer>
 </maps:SfMaps>
 ```
@@ -426,7 +411,7 @@ public async Task<MapTileLayer> CreateTileLayerAsync()
     catch (Exception ex)
     {
         // Fallback to OpenStreetMap
-        tileLayer.UrlTemplate = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
+        tileLayer.UrlTemplate = "url"; // For e.g  "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
         await Application.Current.MainPage.DisplayAlert("Warning", 
             "Could not load Bing Maps, using OpenStreetMap", "OK");
     }
@@ -452,7 +437,7 @@ Display proper attribution for map data as required by most tile providers:
 <Grid>
     <map:SfMaps>
         <map:SfMaps.Layer>
-            <map:MapTileLayer UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <map:MapTileLayer UrlTemplate="url" />
         </map:SfMaps.Layer>
     </map:SfMaps>
     

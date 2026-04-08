@@ -8,7 +8,7 @@ metadata:
 
 # Implementing Syncfusion .NET MAUI MarkdownViewer
 
-This skill guides you through implementing the [SfMarkdownViewer](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.MarkdownViewer.SfMarkdownViewer.html) control, a lightweight and efficient UI component for rendering Markdown content with full formatting support in .NET MAUI applications across mobile and desktop platforms.
+This skill guides you through implementing the SfMarkdownViewer control, a lightweight and efficient UI component for rendering Markdown content with full formatting support in .NET MAUI applications across mobile and desktop platforms.
 
 ## When to Use This Skill
 

@@ -99,7 +99,7 @@ ImageURL = "avatar1.png"
 - **Location options:**
   - **Assembly resource:** `"Image1.png"` (stored in `Resources/Images/`)
   - **Local file:** `"C:/Path/To/Image.png"`
-  - **URL:** `"https://example.com/image.png"` (requires internet)
+  - **URL:** `"YOUR_ONLINE_IMAGE"` (requires internet)
 
 **Example with assembly resource:**
 ```csharp
@@ -491,7 +491,7 @@ ImageURL = "C:/Users/John/Pictures/avatar.png"
 ### URL Images (Requires Internet)
 
 ```csharp
-ImageURL = "https://example.com/avatars/john.png"
+ImageURL = "YOUR_ONLINE_Image"
 ```
 
 ### Circular Image Example

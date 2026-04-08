@@ -318,10 +318,7 @@ public partial class MainPage : ContentPage
         markdownViewer.Source = @"
 # Welcome
 
-This is **bold** and this is *italic*.
-
-[Visit our site](https://example.com)
-";
+This is **bold** and this is *italic*.";
         Content = markdownViewer;
     }
     
@@ -504,8 +501,6 @@ This is a **sample** document with *formatting*.
 |----------|----------|
 | Data 1   | Data 2   |
 | Data 3   | Data 4   |
-
-[Visit Syncfusion](https://www.syncfusion.com)
 ";
         
         var exportMarkdownButton = new Button { Text = "Export as Markdown" };
@@ -724,9 +719,3 @@ public Dictionary<string, int> AnalyzeContent()
     };
 }
 ```
-
-## Next Steps
-
-- **Customize appearance** → See [appearance-customization.md](appearance-customization.md)
-- **Apply custom CSS** → See [custom-css-styling.md](custom-css-styling.md)
-- **Troubleshoot issues** → See [troubleshooting.md](troubleshooting.md)

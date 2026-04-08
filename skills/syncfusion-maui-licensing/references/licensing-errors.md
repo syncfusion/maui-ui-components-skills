@@ -41,7 +41,11 @@ using Syncfusion.Licensing;
 public App()
 {
     // Register before InitializeComponent
-    SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+   string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+   if (!string.IsNullOrEmpty(licenseKey))
+   {   
+      Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+   }
     InitializeComponent();
     MainPage = new AppShell();
 }
@@ -54,7 +58,11 @@ using Syncfusion.Licensing;
 public static MauiApp CreateMauiApp()
 {
     // Register before ConfigureSyncfusionCore
-    SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+   string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+   if (!string.IsNullOrEmpty(licenseKey))
+   {   
+      SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+   }
     
     var builder = MauiApp.CreateBuilder();
     builder.UseMauiApp<App>().ConfigureSyncfusionCore();

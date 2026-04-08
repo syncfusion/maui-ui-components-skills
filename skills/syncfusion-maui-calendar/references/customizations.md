@@ -344,7 +344,7 @@ private async Task LoadSpecialDatesFromAPIAsync(CalendarDateRange range)
 {
     var httpClient = new HttpClient();
     var requestData = new { StartDate = range.StartDate, EndDate = range.EndDate };
-    var response = await httpClient.PostAsJsonAsync("https://api.example.com/special-dates", requestData);
+    var response = await httpClient.PostAsJsonAsync("url", requestData);
     
     if (response.IsSuccessStatusCode)
     {

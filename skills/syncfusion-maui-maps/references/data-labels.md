@@ -66,7 +66,7 @@ You can show data labels on the map using the `ShowDataLabels` and `DataLabelPat
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/australia.json"
+        <map:MapShapeLayer ShapesSource="url"
                            DataSource="{Binding Data}"        
                            PrimaryValuePath="State" 
                            ShapeDataField="STATE_NAME" 
@@ -97,7 +97,7 @@ public partial class MainPage : ContentPage
         this.BindingContext = viewModel;
         
         MapShapeLayer layer = new MapShapeLayer();
-        layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/australia.json"));
+        layer.ShapesSource = MapSource.FromUri("url"); // For e.g "https://cdn.syncfusion.com/maps/australia.json"
         layer.DataSource = viewModel.Data;
         layer.PrimaryValuePath = "State";
         layer.ShapeDataField = "STATE_NAME";
@@ -157,7 +157,7 @@ By default, the data labels will render even if they overflow from the shape.
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/australia.json"
+        <map:MapShapeLayer ShapesSource="url"
                            DataSource="{Binding Data}"        
                            PrimaryValuePath="State" 
                            ShapeDataField="STATE_NAME" 
@@ -189,7 +189,7 @@ public partial class MainPage : ContentPage
         this.BindingContext = viewModel;
         
         MapShapeLayer layer = new MapShapeLayer();
-        layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/australia.json"));
+        layer.ShapesSource = MapSource.FromUri("url"); // For e.g "https://cdn.syncfusion.com/maps/map-data/australia.json"
         layer.DataSource = viewModel.Data;
         layer.PrimaryValuePath = "State";
         layer.ShapeDataField = "STATE_NAME";
@@ -246,7 +246,7 @@ You can customize the data labels using the `DataLabelStyle` property of `MapDat
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/australia.json"
+        <map:MapShapeLayer ShapesSource="url"
                            DataSource="{Binding Data}" 
                            PrimaryValuePath="State" 
                            ShapeDataField="STATE_NAME" 
@@ -285,7 +285,7 @@ public partial class MainPage : ContentPage
         this.BindingContext = viewModel;
         
         MapShapeLayer layer = new MapShapeLayer();
-        layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/australia.json"));
+        layer.ShapesSource = MapSource.FromUri("url"); // For e.g "https://cdn.syncfusion.com/maps/map-data/australia.json"
         layer.DataSource = viewModel.Data;
         layer.PrimaryValuePath = "State";
         layer.ShapeDataField = "STATE_NAME";
@@ -532,7 +532,7 @@ public class StateData
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/usa.json"
+        <map:MapShapeLayer ShapesSource="url"
                            DataSource="{Binding States}"
                            PrimaryValuePath="Name"
                            ShapeDataField="name"
@@ -594,7 +594,7 @@ public class RegionData
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/australia.json"
+        <map:MapShapeLayer ShapesSource="url"
                            DataSource="{Binding Regions}"
                            PrimaryValuePath="Region"
                            ShapeDataField="STATE_NAME"
@@ -634,7 +634,7 @@ public partial class MainPage : ContentPage
         this.BindingContext = viewModel;
         
         MapShapeLayer layer = new MapShapeLayer();
-        layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+        layer.ShapesSource = MapSource.FromUri("url"); // For e.g "https://cdn.syncfusion.com/maps/map-data/world-map.json"
         layer.DataSource = viewModel.Countries;
         layer.PrimaryValuePath = "Name";
         layer.ShapeDataField = "name";
@@ -727,3 +727,4 @@ using Syncfusion.Maui.Maps;
 - **Tooltips** - Add interactive tooltips for detailed information
 - **Legends** - Display legends for data visualization
 - **Color Mapping** - Apply color schemes based on data values
+

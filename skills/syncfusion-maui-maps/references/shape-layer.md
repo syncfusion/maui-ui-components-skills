@@ -46,7 +46,7 @@ You can customize the appearance of shapes using fill color, stroke color, and s
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+        <map:MapShapeLayer ShapesSource="url"
                            ShapeFill="#b5dcff"
                            ShapeStroke="#1585ed"
                            ShapeStrokeThickness="2">
@@ -66,7 +66,7 @@ public partial class MainPage : ContentPage
         InitializeComponent();
         
         MapShapeLayer layer = new MapShapeLayer();
-        layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+        layer.ShapesSource = MapSource.FromUri("url");
         layer.ShapeFill = Color.FromRgb(181, 220, 255);
         layer.ShapeStroke = Color.FromRgb(21, 133, 237);
         layer.ShapeStrokeThickness = 2;
@@ -101,7 +101,7 @@ Apply interactive hover effects to shapes using hover-specific styling propertie
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+        <map:MapShapeLayer ShapesSource="url"
                            ShapeHoverFill="LightBlue"
                            ShapeHoverStroke="Blue"
                            ShapeHoverStrokeThickness="2">
@@ -122,7 +122,7 @@ public partial class MainPage : ContentPage
         InitializeComponent();
         
         MapShapeLayer layer = new MapShapeLayer();
-        layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+        layer.ShapesSource = MapSource.FromUri("url");// For e.g  "https://cdn.syncfusion.com/maps/map-data/world-map.json"
         layer.ShapeHoverFill = Brush.LightBlue;
         layer.ShapeHoverStroke = Brush.Blue;
         layer.ShapeHoverStrokeThickness = 2;
@@ -209,7 +209,7 @@ namespace MauiMapsApp
     
     <map:SfMaps>
         <map:SfMaps.Layer>
-            <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/australia.json"
+            <map:MapShapeLayer ShapesSource="url"
                                DataSource="{Binding Data}"
                                PrimaryValuePath="State"
                                ShapeDataField="STATE_NAME"
@@ -240,7 +240,7 @@ namespace MauiMapsApp
             this.BindingContext = viewModel;
             
             MapShapeLayer layer = new MapShapeLayer();
-            layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/australia.json"));
+            layer.ShapesSource = MapSource.FromUri("url"); // For e.g  "https://cdn.syncfusion.com/maps/map-data/australia.json"
             layer.DataSource = viewModel.Data;
             layer.PrimaryValuePath = "State";
             layer.ShapeDataField = "STATE_NAME";
@@ -274,7 +274,7 @@ The `ShapeColorValuePath` property allows you to provide colors directly from yo
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/australia.json"
+        <map:MapShapeLayer ShapesSource="url"
                            DataSource="{Binding Data}"
                            PrimaryValuePath="State"
                            ShapeDataField="STATE_NAME"
@@ -302,7 +302,7 @@ namespace MauiMapsApp
             this.BindingContext = viewModel;
             
             MapShapeLayer layer = new MapShapeLayer();
-            layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/australia.json"));
+            layer.ShapesSource = MapSource.FromUri("url"); // For e.g  "https://cdn.syncfusion.com/maps/map-data/australia.json"
             layer.DataSource = viewModel.Data;
             layer.PrimaryValuePath = "State";
             layer.ShapeDataField = "STATE_NAME";
@@ -414,7 +414,7 @@ namespace MauiMapsApp
     
     <map:SfMaps>
         <map:SfMaps.Layer>
-            <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+            <map:MapShapeLayer ShapesSource="url"
                                DataSource="{Binding Data}"
                                PrimaryValuePath="Country"
                                ShapeDataField="name"
@@ -450,7 +450,7 @@ namespace MauiMapsApp
             this.BindingContext = viewModel;
             
             MapShapeLayer layer = new MapShapeLayer();
-            layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+            layer.ShapesSource = MapSource.FromUri("url");
             layer.DataSource = viewModel.Data;
             layer.PrimaryValuePath = "Country";
             layer.ShapeDataField = "name";
@@ -571,7 +571,7 @@ namespace MauiMapsApp
     
     <map:SfMaps>
         <map:SfMaps.Layer>
-            <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+            <map:MapShapeLayer ShapesSource="url"
                                DataSource="{Binding Data}"
                                PrimaryValuePath="Country"
                                ShapeDataField="name"
@@ -607,7 +607,7 @@ namespace MauiMapsApp
             this.BindingContext = viewModel;
             
             MapShapeLayer layer = new MapShapeLayer();
-            layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+            layer.ShapesSource = MapSource.FromUri("url"); // For e.g  "https://cdn.syncfusion.com/maps/map-data/world-map.json"
             layer.DataSource = viewModel.Data;
             layer.PrimaryValuePath = "Country";
             layer.ShapeDataField = "name";
@@ -724,12 +724,12 @@ Provides static methods to create map data sources.
 |--------|-------------|-------------|
 | `FromUri(Uri uri)` | MapSource | Creates MapSource from a URI |
 | `FromFile(string path)` | MapSource | Creates MapSource from a file path |
-| `FromResource(string resourceId)` | MapSource | Creates MapSource from embedded resource |
+| `FromUri(string resourceId)` | MapSource | Creates MapSource from embedded resource |
 | `FromStream(Stream stream)` | MapSource | Creates MapSource from a stream |
 
 **Example:**
 ```csharp
-var source = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+var source = MapSource.FromUri("url");
 ```
 
 ### Color Mapping Classes
@@ -832,16 +832,13 @@ Abstract base class for color mappings.
 **Solutions:**
 1. ✅ Verify `ShapesSource` URL is correct and accessible
 2. ✅ Test the GeoJSON URL directly in a web browser
-3. ✅ Validate GeoJSON format at https://geojsonlint.com/
-4. ✅ Check network connectivity for remote URLs
-5. ✅ Ensure the GeoJSON structure is valid
-6. ✅ Check debug console for error messages
+3. ✅ Check network connectivity for remote URLs
+4. ✅ Ensure the GeoJSON structure is valid
+5. ✅ Check debug console for error messages
 
 **Example of correct ShapesSource:**
 ```csharp
-layer.ShapesSource = MapSource.FromUri(
-    new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json")
-);
+layer.ShapesSource = MapSource.FromUri("url"); // For e.g  "https://cdn.syncfusion.com/maps/map-data/world-map.json"
 ```
 
 ### Issue: Data Not Binding to Shapes
@@ -936,3 +933,4 @@ layer.ShapeHoverStrokeThickness = 2;
 - Cover all data values in color mappings to avoid unmapped shapes
 - Validate GeoJSON format at geojsonlint.com before use
 - Use descriptive color schemes appropriate to data type (sequential, categorical, diverging)
+

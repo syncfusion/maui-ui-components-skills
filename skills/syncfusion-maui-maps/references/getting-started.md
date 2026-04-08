@@ -4,7 +4,7 @@
 - [Installation](#installation)
 - [Handler Registration](#handler-registration)
 - [Creating Your First Shape Layer Map](#creating-your-first-shape-layer-map)
-- [Loading Shape Data from Various Sources](#loading-shape-data-from-various-sources)
+- [Loading Shape Data from local](#loading-shape-data-from-various-sources)
 - [Creating Your First Tile Layer Map](#creating-your-first-tile-layer-map)
 - [Basic Configuration](#basic-configuration)
 - [Troubleshooting Initial Setup](#troubleshooting-initial-setup)
@@ -84,7 +84,10 @@ public static class MauiProgram
 **API Reference:**
 - `ConfigureSyncfusionCore()` - Extension method from `Syncfusion.Maui.Core.Hosting` namespace
 
-## Creating Your First Shape Layer Map
+
+### Creating Your First Shape Layer Map (Local / Trusted Data – Recommended)
+
+Use local or embedded map data to avoid consuming untrusted third‑party content.
 
 ### Step 1: Add Namespace
 
@@ -114,7 +117,7 @@ using Syncfusion.Maui.Maps;
     
     <map:SfMaps>
         <map:SfMaps.Layer>
-            <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+            <map:MapShapeLayer ShapesSource="url"
                                ShapeStroke="DarkGray"
                                ShapeFill="LightGray" />
         </map:SfMaps.Layer>
@@ -135,10 +138,10 @@ namespace YourApp
         {
             SfMaps maps = new SfMaps();
             MapShapeLayer layer = new MapShapeLayer
-            {
-                ShapesSource = MapSource.FromUri(
-                    new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json")
-                ),
+            {           
+                ShapesSource = MapSource.FromResource(
+                "url"
+                ), // For e.g "https://cdn.syncfusion.com/maps/map-data/world-map.json"
                 ShapeStroke = Colors.DarkGray,
                 ShapeFill = Colors.LightGray
             };
@@ -156,7 +159,6 @@ namespace YourApp
 - `SfMaps` - Main maps control
 - `MapShapeLayer` - Layer for rendering GeoJSON/shapefile shapes
 - `ShapesSource` - Property to set the map data source
-- `MapSource.FromUri()` - Loads map data from URL
 - `ShapeStroke` - Border color of shapes
 - `ShapeFill` - Fill color of shapes
 
@@ -211,7 +213,7 @@ Bind to the map:
 
     <map:SfMaps>
         <map:SfMaps.Layer>
-            <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+            <map:MapShapeLayer      ShapesSource="url"
                                DataSource="{Binding Countries}"
                                PrimaryValuePath="Name"
                                ShapeDataField="name"
@@ -233,42 +235,23 @@ Bind to the map:
 - `ShapeDataField`: Property in GeoJSON data ("name") - must match GeoJSON property exactly
 - `ShapeColorValuePath`: Property used for color mapping ("Population")
 - `ShowDataLabels`: Enables data labels on shapes
-- Maps matches `PrimaryValuePath` with `ShapeDataField` to bind data to shapes
+- Maps matches `PrimaryValuePath` with  `ShapeDataField` - to bind data to shapes
 
 **Key Data Binding APIs:**
 - `DataSource` - Collection of data objects
 - `PrimaryValuePath` - Model property for matching
-- `ShapeDataField` - GeoJSON property for matching
+- `ShapeDataField` - Shape property for matching
 - `ShapeColorValuePath` - Property for color value mapping
 - `ShowDataLabels` - Boolean to show/hide labels
 - `DataLabelSettings` - Configuration for label appearance
 - `DataLabelPath` - Property to display in labels
 
-## Loading Shape Data from Various Sources
+## Loading Shape Data from local
 
-The Maps control supports loading GeoJSON or shapefile data from multiple sources:
+The Maps control supports loading  shapefile data from local:
 
-### 1. From URI (Remote URL)
 
-**Best for:** Loading maps from CDN or web services
-
-```csharp
-layer.ShapesSource = MapSource.FromUri(
-    new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json")
-);
-```
-
-**XAML shorthand:**
-```xaml
-<map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json" />
-```
-
-**API:** `MapSource.FromUri(Uri uri)`
-- Returns: `MapSource` object
-- Downloads and caches data automatically
-- Requires internet connectivity
-
-### 2. From Local File
+### 1. From Local File
 
 **Best for:** Offline maps or pre-downloaded data
 
@@ -285,7 +268,7 @@ layer.ShapesSource = MapSource.FromFile("Assets/usa-states.json");
 - Supports both absolute and relative paths
 - Works with .json, .geojson, and .shp files
 
-### 3. From Embedded Resource
+### 2. From Embedded Resource
 
 **Best for:** Maps bundled with your app (no internet required)
 
@@ -298,7 +281,7 @@ layer.ShapesSource = MapSource.FromFile("Assets/usa-states.json");
 **Step 2:** Load the resource:
 ```csharp
 // Resource ID format: {AssemblyName}.{FolderPath}.{FileName}
-layer.ShapesSource = MapSource.FromResource("YourApp.Assets.world-map.json");
+layer.ShapesSource = MapSource.FromResource("url");
 ```
 
 **API:** `MapSource.FromResource(string resourceId)`
@@ -317,50 +300,16 @@ foreach (var resource in resources)
     System.Diagnostics.Debug.WriteLine(resource);
 }
 ```
-
-### 4. From Stream
-
-**Best for:** Dynamic data, database storage, or custom processing
-
-```csharp
-using System.Reflection;
-
-var assembly = Assembly.GetExecutingAssembly();
-var stream = assembly.GetManifestResourceStream("YourApp.Assets.world-map.json");
-
-layer.ShapesSource = MapSource.FromStream(stream);
-```
-
-**API:** `MapSource.FromStream(Stream stream)`
-- Returns: `MapSource` object
-- Accepts any `Stream` (FileStream, MemoryStream, NetworkStream, etc.)
-- Stream must contain valid GeoJSON or shapefile data
-- Do not dispose stream before map loads
-
-**Example with MemoryStream:**
-```csharp
-string geoJsonData = GetGeoJsonFromDatabase();
-byte[] bytes = Encoding.UTF8.GetBytes(geoJsonData);
-var memoryStream = new MemoryStream(bytes);
-
-layer.ShapesSource = MapSource.FromStream(memoryStream);
-```
-
 ### Supported Formats
 
 - **GeoJSON** (`.json`, `.geojson`) - Recommended
 - **Shapefile** (`.shp`) - Requires associated `.dbf` and `.shx` files
 
-**Free GeoJSON sources:**
-- [Natural Earth Data](https://www.naturalearthdata.com/)
-- [GeoJSON.io](https://geojson.io/)
-- [Syncfusion Map Data](https://cdn.syncfusion.com/maps/map-data/)
-
 ## Creating Your First Tile Layer Map
 
-Tile layers render raster map tiles from web services like OpenStreetMap, Azure Maps, Bing Maps, or Google Maps.
+Tile layers render raster map tiles.
 
-### OpenStreetMap Example
+### Example
 
 **XAML:**
 ```xaml
@@ -371,7 +320,7 @@ Tile layers render raster map tiles from web services like OpenStreetMap, Azure 
     
     <map:SfMaps>
         <map:SfMaps.Layer>
-            <map:MapTileLayer UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png">
+            <map:MapTileLayer UrlTemplate="url">
                 <map:MapTileLayer.Center>
                     <map:MapLatLng Latitude="37.7749" Longitude="-122.4194" />
                 </map:MapTileLayer.Center>
@@ -397,7 +346,7 @@ namespace YourApp
             SfMaps maps = new SfMaps();
             MapTileLayer tileLayer = new MapTileLayer
             {
-                UrlTemplate = "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                 UrlTemplate = "url" // For e.g "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
                 Center = new MapLatLng(37.7749, -122.4194), // San Francisco
                 ZoomPanBehavior = new MapZoomPanBehavior
                 {
@@ -421,7 +370,6 @@ The control automatically replaces these placeholders based on viewport.
 
 **Key Tile Layer APIs:**
 - `MapTileLayer` - Layer for rendering map tiles
-- `UrlTemplate` - URL pattern for tile provider
 - `Center` - Initial center point (MapLatLng)
 - `ZoomLevel` - Initial zoom level (1-20)
 - `MapLatLng` - Latitude/Longitude coordinate class
@@ -432,7 +380,7 @@ The control automatically replaces these placeholders based on viewport.
 
 **XAML:**
 ```xaml
-<map:MapTileLayer UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png">
+<map:MapTileLayer UrlTemplate="url">
     <map:MapTileLayer.Center>
         <map:MapLatLng Latitude="37.7749" Longitude="-122.4194" />
     </map:MapTileLayer.Center>
@@ -463,7 +411,7 @@ The control automatically replaces these placeholders based on viewport.
 ```csharp
 MapTileLayer tileLayer = new MapTileLayer
 {
-    UrlTemplate = "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    UrlTemplate = "url", // For e.g "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
     Center = new MapLatLng(37.7749, -122.4194),
     ZoomPanBehavior = new MapZoomPanBehavior
     {
@@ -535,7 +483,7 @@ SfMaps maps = new SfMaps
 ### Styling Shapes
 
 ```xaml
-<map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+<map:MapShapeLayer ShapesSource="url" 
                    ShapeFill="#E0F7FA"
                    ShapeStroke="#00838F"
                    ShapeStrokeThickness="1"
@@ -548,9 +496,7 @@ SfMaps maps = new SfMaps
 ```csharp
 MapShapeLayer layer = new MapShapeLayer
 {
-    ShapesSource = MapSource.FromUri(
-        new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json")
-    ),
+    ShapesSource = MapSource.FromFile("url"), 
     ShapeFill = Color.FromArgb("#E0F7FA"),
     ShapeStroke = Color.FromArgb("#00838F"),
     ShapeStrokeThickness = 1,
@@ -574,7 +520,7 @@ MapShapeLayer layer = new MapShapeLayer
 <map:SfMaps BackgroundColor="White"
             Padding="10,20,10,20">
     <map:SfMaps.Layer>
-        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json" />
+        <map:MapShapeLayer ShapesSource="url" />
     </map:SfMaps.Layer>
 </map:SfMaps>
 ```
@@ -612,9 +558,8 @@ SfMaps maps = new SfMaps
 **Solutions:**
 1. ✅ Verify GeoJSON/shapefile URL or path is correct
 2. ✅ Check network connectivity for remote URLs
-3. ✅ Validate GeoJSON format at [geojsonlint.com](https://geojsonlint.com/)
-4. ✅ For embedded resources, verify Build Action is set to **EmbeddedResource**
-5. ✅ Check resource ID format matches: `{AssemblyName}.{Path}.{FileName}`
+3. ✅ For embedded resources, verify Build Action is set to **EmbeddedResource**
+4. ✅ Check resource ID format matches: `{AssemblyName}.{Path}.{FileName}`
 
 ### Issue: Data Not Binding to Shapes
 
@@ -736,10 +681,8 @@ ShapeDataField = "name"            // ✓ Matches GeoJSON
 
 | API | Type | Description |
 |-----|------|-------------|
-| `MapSource.FromUri()` | Static Method | Load from URL |
 | `MapSource.FromFile()` | Static Method | Load from file path |
 | `MapSource.FromResource()` | Static Method | Load from embedded resource |
-| `MapSource.FromStream()` | Static Method | Load from stream |
 
 ### Marker APIs
 

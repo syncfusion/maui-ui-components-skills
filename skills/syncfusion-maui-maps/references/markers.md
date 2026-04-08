@@ -100,8 +100,8 @@ You can show markers at any position on the map by providing latitude and longit
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
-                           ShapeStroke="DarkGrey">
+        <map:MapShapeLayer ShapesSource="url"
+                   ShapeStroke="DarkGrey">
             <map:MapShapeLayer.Markers>
                 <map:MapMarkerCollection>
                     <map:MapMarker Latitude="-14.235004"
@@ -157,7 +157,7 @@ public partial class MapMarkerPage : ContentPage
         InitializeComponent();
         
         MapShapeLayer layer = new MapShapeLayer();
-        layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+        layer.ShapesSource = MapSource.FromUri("url"); // For e.g "https://cdn.syncfusion.com/maps/map-data/world-map.json"
         layer.ShapeStroke = Colors.DarkGrey;
 
         MapMarker mapMarker1 = new MapMarker
@@ -245,7 +245,7 @@ You can show markers at any position on the tile layer by providing latitude and
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapTileLayer UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png">
+        <map:MapTileLayer UrlTemplate="url">
             <map:MapTileLayer.Markers>
                 <map:MapMarkerCollection>
                     <map:MapMarker Latitude="-14.235004"
@@ -301,7 +301,7 @@ public partial class TileMapMarkerPage : ContentPage
         InitializeComponent();
         
         MapTileLayer tileLayer = new MapTileLayer();
-        tileLayer.UrlTemplate = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
+        tileLayer.UrlTemplate = "url"; // For e.g  "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
 
         MapMarker mapMarker1 = new MapMarker
         {
@@ -496,7 +496,7 @@ You can customize the built-in markers appearance using the `IconType`, `IconFil
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+        <map:MapShapeLayer ShapesSource="url"
                            ShapeStroke="DarkGrey">
             <map:MapShapeLayer.Markers>
                 <map:MapMarkerCollection>
@@ -563,7 +563,7 @@ public partial class CustomMarkerPage : ContentPage
         InitializeComponent();
         
         MapShapeLayer layer = new MapShapeLayer();
-        layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+        layer.ShapesSource = MapSource.FromUri("url"); // For e.g  "https://cdn.syncfusion.com/maps/map-data/world-map.json"
         layer.ShapeStroke = Colors.DarkGrey;
 
         MapMarker mapMarker1 = new MapMarker
@@ -865,7 +865,7 @@ You can show custom markers using the `MarkerTemplate` property of the `MapShape
 
     <map:SfMaps>
         <map:SfMaps.Layer>
-            <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+            <map:MapShapeLayer ShapesSource="url"
                                ShapeStroke="DarkGrey"
                                MarkerTemplate="{StaticResource MarkerTemplate}">
                 <map:MapShapeLayer.Markers>
@@ -913,7 +913,7 @@ public partial class CustomMarkerPage : ContentPage
         InitializeComponent();
         
         MapShapeLayer layer = new MapShapeLayer();
-        layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+        layer.ShapesSource = MapSource.FromUri("url"); // For e.g  "https://cdn.syncfusion.com/maps/map-data/world-map.json"
         layer.ShapeStroke = Colors.DarkGrey;
 
         MapMarker mapMarker1 = new MapMarker
@@ -1040,7 +1040,7 @@ public class CustomMarker : MapMarker
 
     <map:SfMaps>
         <map:SfMaps.Layer>
-            <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+            <map:MapShapeLayer ShapesSource="url"
                                ShapeStroke="DarkGrey"
                                ShapeHoverFill="Transparent"
                                ShapeHoverStroke="Transparent"
@@ -1125,7 +1125,7 @@ public partial class MarkerTooltipPage : ContentPage
         InitializeComponent();
         
         MapShapeLayer layer = new MapShapeLayer();
-        layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+        layer.ShapesSource = MapSource.FromUri("url"); // For e.g  "https://cdn.syncfusion.com/maps/map-data/world-map.json"
         layer.ShapeStroke = Colors.DarkGrey;
         layer.ShapeHoverFill = Colors.Transparent;
         layer.ShapeHoverStroke = Colors.Transparent;
@@ -1357,7 +1357,7 @@ public class MarkerTemplateSelector : DataTemplateSelector
 
     <map:SfMaps>
         <map:SfMaps.Layer>
-            <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+            <map:MapShapeLayer ShapesSource="url"
                                ShapeStroke="DarkGrey"
                                MarkerTemplate="{StaticResource MarkerTemplateSelector}">
                                
@@ -1404,7 +1404,7 @@ public partial class MarkerSelectorPage : ContentPage
         InitializeComponent();
         
         MapShapeLayer layer = new MapShapeLayer();
-        layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+        layer.ShapesSource = MapSource.FromUri("url");
         layer.ShapeStroke = Colors.DarkGrey;
         
         var markers = new MapMarkerCollection

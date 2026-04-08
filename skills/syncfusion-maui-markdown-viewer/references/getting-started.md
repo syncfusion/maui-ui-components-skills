@@ -226,10 +226,6 @@ The **MarkdownViewer** is a UI control for .NET MAUI that renders Markdown conte
 | Tables | With headers and data |
 | Links | External and internal |
 
-### Links
-
-[Visit Syncfusion](https://www.syncfusion.com)
-
 ### Code Blocks
 
 ```csharp
@@ -280,8 +276,6 @@ The **MarkdownViewer** is a UI control for .NET MAUI that renders Markdown conte
 |----------|----------|----------|
 | Data 1   | Data 2   | Data 3   |
 | Data 4   | Data 5   | Data 6   |
-
-[Learn more about Syncfusion](https://www.syncfusion.com)
 ";
 
         public MainPage()
@@ -382,8 +376,3 @@ Now that you have a working MarkdownViewer:
 - **Customize appearance** → See [appearance-customization.md](appearance-customization.md)
 - **Apply custom CSS styling** → See [custom-css-styling.md](custom-css-styling.md)
 - **Retrieve content programmatically** → See [content-retrieval.md](content-retrieval.md)
-
-## Sample Project
-
-You can find a complete getting started sample at:
-[GitHub: .NET MAUI MarkdownViewer Getting Started](https://github.com/SyncfusionExamples/.NET_MAUI_Markdown_Viewer_GettingStarted)

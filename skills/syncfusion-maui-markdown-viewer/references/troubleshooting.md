@@ -62,12 +62,7 @@ dotnet nuget list source
 ```
 Ensure `nuget.org` is in the list.
 
-**Option 3: Manual Installation**
-1. Visit [nuget.org](https://www.nuget.org/packages/Syncfusion.Maui.MarkdownViewer)
-2. Download the `.nupkg` file
-3. Add as local package source
-
-**Option 4: Check Internet Connection**
+**Option 3: Check Internet Connection**
 - Verify you can access nuget.org
 - Check firewall/proxy settings
 - Try from a different network
@@ -218,51 +213,6 @@ More content
 **3. Escape Special Characters**
 ```markdown
 Use backslash to escape: \* \_ \# \[ \]
-```
-
----
-
-### Images Not Loading
-
-**Symptom:** Image markdown displays but image doesn't show
-
-**Solutions:**
-
-**1. Embedded Resources**
-```csharp
-// Place image in Resources/Images/logo.png
-// Set Build Action: MauiImage
-
-// Use in Markdown
-string markdown = @"
-![Logo](logo.png)
-";
-```
-
-**2. Absolute URLs**
-```markdown
-![Image](https://example.com/image.png)
-```
-
-**3. Base64 Embedded Images**
-```markdown
-![Image](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA...)
-```
-
-**4. Local File Paths (Platform-Specific)**
-```csharp
-#if WINDOWS
-string imagePath = @"C:\Images\logo.png";
-#elif ANDROID
-string imagePath = "/storage/emulated/0/Pictures/logo.png";
-#elif IOS
-string imagePath = Path.Combine(
-    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-    "logo.png"
-);
-#endif
-
-string markdown = $"![Logo]({imagePath})";
 ```
 
 ---
@@ -476,16 +426,6 @@ public async Task LoadFromUrlWithRetryAsync(string url, int maxRetries = 3)
 }
 ```
 
-**3. Verify URL Format**
-```csharp
-// ✅ Correct URL formats for raw content
-"https://raw.githubusercontent.com/user/repo/branch/file.md"
-"https://gitlab.com/user/repo/-/raw/branch/file.md"
-
-// ❌ Wrong - HTML page, not raw markdown
-"https://github.com/user/repo/blob/branch/file.md"
-```
-
 ---
 
 ### Special Characters Display Incorrectly
@@ -659,32 +599,6 @@ dotnet build
 **3. Clear bin/obj Folders**
 - Manually delete `bin` and `obj` folders
 - Rebuild project
-
----
-
-## Getting Further Help
-
-If you continue to experience issues:
-
-1. **Check Official Documentation:**
-   - [Syncfusion MarkdownViewer Docs](https://help.syncfusion.com/maui/markdownviewer/overview)
-
-2. **GitHub Sample:**
-   - [Getting Started Sample](https://github.com/SyncfusionExamples/.NET_MAUI_Markdown_Viewer_GettingStarted)
-
-3. **Community Support:**
-   - [Syncfusion Community Forum](https://www.syncfusion.com/forums/maui)
-   - Stack Overflow with tag `syncfusion-maui`
-
-4. **Direct Support:**
-   - [Syncfusion Support Portal](https://support.syncfusion.com/)
-   - Include:
-     - Platform (Android/iOS/Windows/macOS)
-     - .NET version (e.g., .NET 9.0)
-     - Visual Studio version (e.g., VS 2026 v18.0.0)
-     - Syncfusion package version
-     - Code sample
-     - Error messages
 
 ---
 

@@ -15,8 +15,8 @@ A comprehensive skill for implementing Syncfusion's .NET MAUI Maps control. The 
 Use this skill when you need to:
 
 - **Install and configure** Syncfusion .NET MAUI Maps (SfMaps) control
-- **Display geographic data** using shape layers with GeoJSON or shapefile data
-- **Integrate tile-based maps** from providers like OpenStreetMap, Azure Maps, Google Maps, Bing Maps, or TomTom
+- **Display geographic data** using shape layers with shapefile data
+- **Integrate tile-based maps** from providers.
 - **Add markers** to denote locations with built-in symbols or custom content
 - **Visualize data** with bubbles, color mapping, and choropleth maps
 - **Display legends** for shapes or bubbles with customizable appearance
@@ -57,7 +57,7 @@ When to read: First-time setup, installation, basic map creation
 - NuGet package installation (`Syncfusion.Maui.Maps`)
 - Handler registration in `MauiProgram.cs`
 - Creating your first map with shape layer
-- Loading GeoJSON and shapefile data from various sources
+- Loading shapefile data from local.
 - Creating your first map with tile layer
 - Basic configuration and map display
 
@@ -67,11 +67,11 @@ When to read: First-time setup, installation, basic map creation
 
 📄 **Read:** [references/shape-layer.md](references/shape-layer.md)
 
-When to read: Working with vector maps, GeoJSON/shapefile data, choropleth maps, data binding
+When to read: Working with vector maps, shapefile data, choropleth maps, data binding
 
 **Topics covered:**
 - `MapShapeLayer` overview and configuration
-- Loading shape data (FromFile, FromUri, FromResource, FromStream)
+- Loading shape data 
 - Data source binding with `DataSource`, `PrimaryValuePath`, and `ShapeDataField`
 - Color mapping strategies (EqualColorMapping, RangeColorMapping)
 - Shape styling (fill, stroke, hover states)
@@ -87,9 +87,6 @@ When to read: Integrating OpenStreetMap, Bing Maps, or other tile providers
 **Topics covered:**
 - `MapTileLayer` overview
 - URL template format and WMTS specification
-- OpenStreetMap (OSM) integration
-- Bing Maps integration with `GetBingUrl` method
-- TomTom, MapBox, Azure and other providers
 - Subscription key configuration
 - Map center and zoom settings
 - Map type variations (Road, Aerial, etc.)

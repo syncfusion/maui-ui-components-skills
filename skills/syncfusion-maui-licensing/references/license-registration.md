@@ -7,7 +7,11 @@ Complete guide for registering Syncfusion .NET MAUI license keys in your applica
 All license key registration uses the same method:
 
 ```csharp
-Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+if (!string.IsNullOrEmpty(licenseKey))
+{   
+    Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+}
 ```
 
 **Requirements:**
@@ -36,7 +40,11 @@ namespace YourAppNamespace
         public App()
         {
             // Register Syncfusion license
-            SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+            string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+            if (!string.IsNullOrEmpty(licenseKey))
+            {   
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+            }
             
             InitializeComponent();
             
@@ -61,7 +69,11 @@ namespace YourAppNamespace
         public App()
         {
             // Register Syncfusion license
-            SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+            string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+            if (!string.IsNullOrEmpty(licenseKey))
+            {   
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+            }
             
             InitializeComponent();
             
@@ -92,7 +104,11 @@ namespace YourAppNamespace
         public static MauiApp CreateMauiApp()
         {
             // Register the Syncfusion license key
-            SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+            string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+            if (!string.IsNullOrEmpty(licenseKey))
+            {   
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+            }
      
             var builder = MauiApp.CreateBuilder();
             builder
@@ -130,7 +146,11 @@ namespace YourAppNamespace
         public static MauiApp CreateMauiApp()
         {
             // Register license BEFORE ConfigureSyncfusionCore
-            SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+            string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+            if (!string.IsNullOrEmpty(licenseKey))
+            {   
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+            }
      
             var builder = MauiApp.CreateBuilder();
             builder
@@ -196,12 +216,20 @@ using Syncfusion.Licensing;
 
 This allows you to use the shorter syntax:
 ```csharp
-SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+if (!string.IsNullOrEmpty(licenseKey))
+{   
+    SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+}
 ```
 
 Without the using statement, use the fully qualified name:
 ```csharp
-Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+if (!string.IsNullOrEmpty(licenseKey))
+{   
+    Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+}
 ```
 
 ## Complete Examples
@@ -219,7 +247,11 @@ namespace SimpleMAUIApp
         public App()
         {
             // Register Syncfusion license
-            SyncfusionLicenseProvider.RegisterLicense("Mgo+DSMBaFt+QHJqVk1hXk5Hd0BLVGpAblJ3T2ZQdVt5ZDU7a15RRnVfR11gSH5Qd0FiWH5dcXE=");
+            string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+            if (!string.IsNullOrEmpty(licenseKey))
+            {   
+                SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+            }
             
             InitializeComponent();
             
@@ -257,7 +289,11 @@ namespace ModernMAUIApp
         public static MauiApp CreateMauiApp()
         {
             // Register license before configuring Syncfusion
-            SyncfusionLicenseProvider.RegisterLicense("Mgo+DSMBaFt+QHJqVk1hXk5Hd0BLVGpAblJ3T2ZQdVt5ZDU7a15RRnVfR11gSH5Qd0FiWH5dcXE=");
+            string licenseKey = Environment.GetEnvironmentVariable("Mgo+DSMBaFt+QHJqVk1hXk5Hd0BLVGpAblJ3T2ZQdVt5ZDU7a15RRnVfR11gSH5Qd0FiWH5dcXE=");
+            if (!string.IsNullOrEmpty(licenseKey))
+            {   
+                SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+            }
      
             var builder = MauiApp.CreateBuilder();
             builder
@@ -310,7 +346,10 @@ namespace MyCompany.Shared
         
         public static void RegisterLicense()
         {
-            SyncfusionLicenseProvider.RegisterLicense(LicenseKey);
+            if (!string.IsNullOrEmpty(licenseKey))
+            {   
+                SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+            }
         }
     }
 }

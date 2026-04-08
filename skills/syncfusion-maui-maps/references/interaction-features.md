@@ -33,7 +33,7 @@ Enable zooming with the `EnableZooming` property on `MapZoomPanBehavior`. Defaul
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json">
+        <map:MapShapeLayer ShapesSource="url">
             <map:MapShapeLayer.ZoomPanBehavior>
                 <map:MapZoomPanBehavior ZoomLevel="1" />
             </map:MapShapeLayer.ZoomPanBehavior>
@@ -45,7 +45,7 @@ Enable zooming with the `EnableZooming` property on `MapZoomPanBehavior`. Defaul
 ```csharp
 SfMaps maps = new SfMaps();
 MapShapeLayer layer = new MapShapeLayer();
-layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+layer.ShapesSource = MapSource.FromUri("url"); // For e.g "https://cdn.syncfusion.com/maps/map-data/world-map.json"
 
 MapZoomPanBehavior zoomPanBehavior = new MapZoomPanBehavior
 {
@@ -62,7 +62,7 @@ this.Content = maps;
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapTileLayer UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png">
+        <map:MapTileLayer UrlTemplate="url">
             <map:MapTileLayer.ZoomPanBehavior>
                 <map:MapZoomPanBehavior ZoomLevel="1" />
             </map:MapTileLayer.ZoomPanBehavior>
@@ -74,7 +74,7 @@ this.Content = maps;
 ```csharp
 SfMaps map = new SfMaps();
 MapTileLayer tileLayer = new MapTileLayer();
-tileLayer.UrlTemplate = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
+tileLayer.UrlTemplate = "url"; // For e.g "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
 
 MapZoomPanBehavior zoomPanBehavior = new MapZoomPanBehavior
 {
@@ -99,7 +99,7 @@ Enable panning with the `EnablePanning` property. Default is `true`. Panning all
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapTileLayer UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png">
+        <map:MapTileLayer UrlTemplate="url">
             <map:MapTileLayer.ZoomPanBehavior>
                 <map:MapZoomPanBehavior ZoomLevel="2" EnablePanning="True"/>
             </map:MapTileLayer.ZoomPanBehavior>
@@ -128,7 +128,7 @@ tileLayer.ZoomPanBehavior = zoomPanBehavior;
 Set the initial zoom level with the `ZoomLevel` property. Default is `1` (shows full viewport for tile layer).
 
 ```xaml
-<map:MapTileLayer UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png">
+<map:MapTileLayer UrlTemplate="url">
     <map:MapTileLayer.Center>
         <map:MapLatLng Latitude="27.1751" Longitude="78.0421"/>
     </map:MapTileLayer.Center>
@@ -140,7 +140,7 @@ Set the initial zoom level with the `ZoomLevel` property. Default is `1` (shows 
 
 ```csharp
 MapTileLayer tileLayer = new MapTileLayer();
-tileLayer.UrlTemplate = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
+tileLayer.UrlTemplate = "url"; // For e.g "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
 tileLayer.Center = new MapLatLng(27.1751, 78.0421);
 
 MapZoomPanBehavior zoomPanBehavior = new MapZoomPanBehavior
@@ -157,7 +157,7 @@ Restrict zoom range with `MinZoomLevel` and `MaxZoomLevel`. Defaults: min=1, max
 **Note:** For `MapTileLayer`, maximum zoom level depends on the tile provider (check provider documentation).
 
 ```xaml
-<map:MapTileLayer UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png">
+<map:MapTileLayer UrlTemplate="url">
     <map:MapTileLayer.Center>
         <map:MapLatLng Latitude="27.1751" Longitude="78.0421"/>
     </map:MapTileLayer.Center>
@@ -207,7 +207,7 @@ Calculate zoom level automatically based on radius and distance type.
         <map:MapTileLayer Radius="5"
                           DistanceType="Kilometer"
                           MarkerTemplate="{StaticResource MapMarkerTemplate}"
-                          UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png">
+                          UrlTemplate="url">
             
             <map:MapTileLayer.Center>
                 <map:MapLatLng Latitude="38.909804" Longitude="-77.043442"/>
@@ -230,7 +230,7 @@ Calculate zoom level automatically based on radius and distance type.
 ```csharp
 MapTileLayer tileLayer = new MapTileLayer
 {
-    UrlTemplate = "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    UrlTemplate = "url", // For e.g "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
     Radius = 5,
     DistanceType = MapDistanceType.Kilometer,  // Kilometer, Mile, Meter
     Center = new MapLatLng(38.909804, -77.043442)
@@ -261,7 +261,7 @@ Calculate zoom level automatically to fit geographic boundaries.
 <map:SfMaps>
     <map:SfMaps.Layer>
         <map:MapTileLayer MarkerTemplate="{StaticResource MapMarkerTemplate}"
-                          UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png">
+                          UrlTemplate="url">
             
             <map:MapTileLayer.ZoomPanBehavior>
                 <map:MapZoomPanBehavior MaxZoomLevel="19" />
@@ -317,7 +317,7 @@ tileLayer.LatLngBounds = bounds;
 Enable zooming by double-tapping. Default is `false`.
 
 ```xaml
-<map:MapTileLayer UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png">
+<map:MapTileLayer UrlTemplate="url">
     <map:MapTileLayer.ZoomPanBehavior>
         <map:MapZoomPanBehavior ZoomLevel="2" EnableDoubleTapZooming="True"/>
     </map:MapTileLayer.ZoomPanBehavior>
@@ -339,7 +339,7 @@ MapZoomPanBehavior zoomPanBehavior = new MapZoomPanBehavior
 Enable smooth animation during zoom level changes. Default is `true`.
 
 ```xaml
-<map:MapTileLayer UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+<map:MapTileLayer UrlTemplate="url"
                   EnableZoomingAnimation="True" />
 ```
 
@@ -354,7 +354,7 @@ tileLayer.EnableZoomingAnimation = true;
 Enable smooth animation when center position changes. Default is `true`.
 
 ```xaml
-<map:MapTileLayer UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+<map:MapTileLayer UrlTemplate="url"
                   EnableCenterAnimation="True" />
 ```
 
@@ -369,7 +369,7 @@ tileLayer.EnableCenterAnimation = true;
 Respond to zoom level changes or cancel zooming.
 
 ```xaml
-<map:MapTileLayer UrlTemplate="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+<map:MapTileLayer UrlTemplate="url"
                   ZoomLevelChanging="MapTileLayer_ZoomLevelChanging" />
 ```
 
@@ -400,7 +400,7 @@ Highlight shapes by tapping. Useful for user interaction and data exploration.
 
 ```xaml
 <map:MapShapeLayer x:Name="layer"
-                   ShapesSource="https://cdn.syncfusion.com/maps/map-data/australia.json"
+                   ShapesSource="url"
                    SelectedShapeFill="#6189ff"
                    ShapeSelected="layer_ShapeSelected" 
                    ShapeStrokeThickness="0"
@@ -411,7 +411,7 @@ Highlight shapes by tapping. Useful for user interaction and data exploration.
 public MainPage()
 {
     InitializeComponent();
-    layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/australia.json"));
+    layer.ShapesSource = MapSource.FromUri("url"); // For e.g "https://cdn.syncfusion.com/maps/map-data/australia.json"
     layer.EnableSelection = true;
     layer.SelectedShapeFill = Color.FromArgb("#6189ff");
 }
@@ -432,7 +432,7 @@ Customize selected shape appearance:
 ```csharp
 MapShapeLayer layer = new MapShapeLayer
 {
-    ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/australia.json")),
+    ShapesSource = MapSource.FromUri("url"), // For e.g "https://cdn.syncfusion.com/maps/map-data/australia.json"
     DataSource = viewModel.Data,
     PrimaryValuePath = "Country",
     ShapeDataField = "STATE_NAME",
@@ -458,7 +458,7 @@ Show information when users tap or hover over shapes, bubbles, or markers.
 ### Shape Tooltip
 
 ```xaml
-<map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+<map:MapShapeLayer ShapesSource="url"
                    DataSource="{Binding Data}"
                    PrimaryValuePath="State" 
                    ShapeDataField="name" 
@@ -468,7 +468,7 @@ Show information when users tap or hover over shapes, bubbles, or markers.
 ```csharp
 MapShapeLayer layer = new MapShapeLayer
 {
-    ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json")),
+    ShapesSource = MapSource.FromUri("url"), // For e.g "https://cdn.syncfusion.com/maps/map-data/world-map.json"
     DataSource = viewModel.Data,
     PrimaryValuePath = "State",
     ShapeDataField = "name",
@@ -479,7 +479,7 @@ MapShapeLayer layer = new MapShapeLayer
 ### Bubble Tooltip
 
 ```xaml
-<map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+<map:MapShapeLayer ShapesSource="url"
                    DataSource="{Binding Data}"
                    PrimaryValuePath="State" 
                    ShapeDataField="name" 
@@ -501,7 +501,7 @@ MapShapeLayer layer = new MapShapeLayer
 ### Marker Tooltip
 
 ```xaml
-<map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+<map:MapShapeLayer ShapesSource="url"
                    ShapeStroke="DarkGrey"
                    ShapeHoverFill="Transparent" 
                    ShapeHoverStroke="Transparent" 
@@ -826,3 +826,4 @@ tileLayer.ZoomPanBehavior = new MapZoomPanBehavior
 
 - **Add markers for interaction** → [markers.md](markers.md)
 - **Implement shape data binding** → [shape-layer.md](shape-layer.md)
+

@@ -315,46 +315,7 @@ public class CustomAsyncFilter : IAutocompleteFilterBehavior
 - `await Task.Run()` performs work on background thread
 - Return filtered items from the task
 
-### Example: API Call with Async Filter
-
-```csharp
-public class ApiFilterBehavior : IAutocompleteFilterBehavior
-{
-    private readonly HttpClient httpClient = new HttpClient();
-    private CancellationTokenSource cts;
-
-    public async Task<object> GetMatchingItemsAsync(SfAutocomplete source, AutocompleteFilterInfo filterInfo)
-    {
-        cts?.Cancel();
-        cts = new CancellationTokenSource();
-
-        try
-        {
-            var response = await httpClient.GetAsync(
-                $"https://api.example.com/search?query={filterInfo.Text}", 
-                cts.Token);
-            
-            if (response.IsSuccessStatusCode)
-            {
-                var json = await response.Content.ReadAsStringAsync();
-                var items = JsonSerializer.Deserialize<List<Item>>(json);
-                return items;
-            }
-        }
-        catch (OperationCanceledException)
-        {
-            // Request was cancelled - user typed another character
-        }
-        catch (Exception ex)
-        {
-            // Handle error
-            Debug.WriteLine($"API Error: {ex.Message}");
-        }
-
-        return new List<Item>();
-    }
-}
-```
+For detailed guidance for the Async Filter, please refer to our [documentation](https://help.syncfusion.com/maui/autocomplete/searching-filtering)
 
 ## Show Suggestions on Focus
 
@@ -396,6 +357,13 @@ autocomplete.ShowSuggestionsOnFocus = true;
    - Default to index 0 if no special logic applies
    - Ensure returned index is within bounds of FilteredItems
    - Use for prioritizing results (e.g., exact matches first)
+
+5. **Third-Party Content Safety**
+    - Treat responses from remote APIs or LLMs as untrusted data; validate and sanitize before use.
+    - Prefer server-side API/LLM calls that enforce authentication, rate-limiting, moderation, and schema validation.
+    - Require strict, machine-parseable response formats (JSON with a known schema) and whitelist only expected properties.
+    - Limit payload sizes and number of returned items; never bind arbitrary large responses directly to `ItemsSource`.
+    - Escape UI-visible strings and apply content-moderation checks for offensive or unsafe suggestions.
 
 ## Next Steps
 

@@ -36,7 +36,7 @@ You can enable bubbles using the `ShowBubbles` property. You can customize bubbl
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+        <map:MapShapeLayer ShapesSource="url"
                            DataSource="{Binding Data}"
                            PrimaryValuePath="State" 
                            ShapeDataField="name" 
@@ -73,7 +73,7 @@ public partial class MainPage : ContentPage
         
         SfMaps maps = new SfMaps();
         MapShapeLayer layer = new MapShapeLayer();
-        layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+        layer.ShapesSource = MapSource.FromUri("url"); // For e.g "https://cdn.syncfusion.com/maps/map-data/world-map.json"
         layer.DataSource = viewModel.Data;
         layer.PrimaryValuePath = "State";
         layer.ShapeDataField = "name";
@@ -144,7 +144,7 @@ You can enable tooltip for the bubbles using the `ShowBubbleTooltip` property. I
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+        <map:MapShapeLayer ShapesSource="url"
                            DataSource="{Binding Data}"
                            PrimaryValuePath="State" 
                            ShapeDataField="name" 
@@ -184,7 +184,7 @@ public partial class MainPage : ContentPage
         
         SfMaps maps = new SfMaps();
         MapShapeLayer layer = new MapShapeLayer();
-        layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+        layer.ShapesSource = MapSource.FromUri("url"); // For e.g "https://cdn.syncfusion.com/maps/map-data/world-map.json"
         layer.DataSource = viewModel.Data;
         layer.PrimaryValuePath = "State";
         layer.ShapeDataField = "name";
@@ -256,7 +256,7 @@ The value from the `ColorValuePath` will be used for comparison in the `EqualCol
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+        <map:MapShapeLayer ShapesSource="url"
                            ShowDataLabels="True"
                            DataSource="{Binding Data}" 
                            PrimaryValuePath="State" 
@@ -312,7 +312,7 @@ public partial class MainPage : ContentPage
 
         SfMaps maps = new SfMaps();
         MapShapeLayer layer = new MapShapeLayer();
-        layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+        layer.ShapesSource = MapSource.FromUri("url"); // For e.g "https://cdn.syncfusion.com/maps/map-data/world-map.json"
         layer.DataSource = viewModel.Data;
         layer.PrimaryValuePath = "State";
         layer.ShapeDataField = "name";
@@ -441,7 +441,7 @@ You can customize the appearance of bubbles using various properties available i
 ```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
-        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+        <map:MapShapeLayer ShapesSource="url"
                            DataSource="{Binding Data}"
                            PrimaryValuePath="State" 
                            ShapeDataField="name"
@@ -486,7 +486,7 @@ public partial class MainPage : ContentPage
         
         SfMaps maps = new SfMaps();
         MapShapeLayer layer = new MapShapeLayer();
-        layer.ShapesSource = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+        layer.ShapesSource = MapSource.FromUri("url"); // For e.g "https://cdn.syncfusion.com/maps/map-data/world-map.json"
         layer.DataSource = viewModel.Data;
         layer.PrimaryValuePath = "State";
         layer.ShapeDataField = "name";

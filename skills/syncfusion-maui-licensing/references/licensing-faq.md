@@ -34,7 +34,7 @@ Syncfusion provides a utility for validating license keys in CI environments.
 
 #### Step 1: Download Utility
 
-Download and extract: [LicenseKeyValidator.zip](https://s3.amazonaws.com/files2.syncfusion.com/Installs/LicenseKeyValidation/LicenseKeyValidator.zip)
+Download and extract: `LicenseKeyValidator.zip` // download link - https://s3.amazonaws.com/files2.syncfusion.com/Installs/LicenseKeyValidation/LicenseKeyValidator.zip
 
 **Contents:**
 ```
@@ -215,7 +215,8 @@ steps:
   
   - name: Download License Validator
     run: |
-      Invoke-WebRequest -Uri "https://s3.amazonaws.com/files2.syncfusion.com/Installs/LicenseKeyValidation/LicenseKeyValidator.zip" -OutFile "LicenseKeyValidator.zip"
+      Invoke-WebRequest -Uri
+       -OutFile "LicenseKeyValidator.zip"
       Expand-Archive -Path "LicenseKeyValidator.zip" -DestinationPath "."
     shell: pwsh
   
@@ -308,7 +309,11 @@ bool ValidateLicense(Platform platform, out string validationMessage)
 using Syncfusion.Licensing;
 
 // Register license key first
-SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+if (!string.IsNullOrEmpty(licenseKey))
+{   
+  Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+}
 
 // Validate the registered license key
 bool isValid = SyncfusionLicenseProvider.ValidateLicense(Platform.MAUI);
@@ -329,7 +334,11 @@ else
 using Syncfusion.Licensing;
 
 // Register license key
-SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+if (!string.IsNullOrEmpty(licenseKey))
+{   
+  SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+}
 
 // Validate and get detailed message
 bool isValid = SyncfusionLicenseProvider.ValidateLicense(Platform.MAUI, out string validationMessage);
@@ -395,7 +404,11 @@ namespace YourApp.LicenseTests
             var platform = Platform.MAUI;
             
             // Register the Syncfusion license key
-            SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+            string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+            if (!string.IsNullOrEmpty(licenseKey))
+            {   
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+            }
 
             // Validate license
             bool isValidLicense = SyncfusionLicenseProvider.ValidateLicense(
@@ -434,7 +447,11 @@ namespace YourApp.LicenseTests
             var platform = Platform.MAUI;
             
             // Register license
-            SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+            string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+            if (!string.IsNullOrEmpty(licenseKey))
+            {   
+                SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+            }
 
             // Validate
             bool isValidLicense = SyncfusionLicenseProvider.ValidateLicense(
@@ -691,7 +708,11 @@ using Syncfusion.Licensing;
 
 public App()
 {
-    SyncfusionLicenseProvider.RegisterLicense("YOUR GENERATED KEY");
+    string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+    if (!string.IsNullOrEmpty(licenseKey))
+    {   
+       Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+    }
     InitializeComponent();
 }
 ```

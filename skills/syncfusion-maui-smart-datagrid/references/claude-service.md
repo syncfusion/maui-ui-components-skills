@@ -47,7 +47,7 @@ public class ClaudeAIService
 {
     private readonly string _apiKey = "YOUR_CLAUDE_API_KEY";
     private readonly string _modelName = "claude-3-5-sonnet-20241022";
-    private readonly string _endpoint = "https://api.anthropic.com/v1/messages";
+    private readonly string _endpoint = "YOUR_END_POINT_KEY";  // For e.g -"https://api.anthropic.com/v1/messages"
     private static readonly HttpClient HttpClient = new();
 
     public ClaudeAIService()

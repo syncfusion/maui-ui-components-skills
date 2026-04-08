@@ -406,7 +406,7 @@ public class ApiMenuViewModel : INotifyPropertyChanged
     {
         try
         {
-            var response = await httpClient.GetAsync($"https://api.example.com/items/{parentId}/children");
+            var response = await httpClient.GetAsync("url");
             response.EnsureSuccessStatusCode();
             
             var json = await response.Content.ReadAsStringAsync();

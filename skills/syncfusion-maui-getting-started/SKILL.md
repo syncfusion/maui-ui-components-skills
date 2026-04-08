@@ -122,7 +122,11 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp()
     {
         // Register Syncfusion license
-        Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR_LICENSE_KEY");
+        string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+        if (!string.IsNullOrEmpty(licenseKey))
+        {   
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+        }
         
         var builder = MauiApp.CreateBuilder();
         // ... rest of configuration

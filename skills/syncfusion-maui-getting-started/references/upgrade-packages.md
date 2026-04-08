@@ -170,7 +170,12 @@ dotnet nuget locals all --clear
 Update license key in **MauiProgram.cs:**
 
 ```csharp
-Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR_NEW_LICENSE_KEY");
+// Read from environment variable - SECURITY BEST PRACTICE
+string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+if (!string.IsNullOrEmpty(licenseKey))
+{
+    Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+}
 ```
 
 See: license-registration.md

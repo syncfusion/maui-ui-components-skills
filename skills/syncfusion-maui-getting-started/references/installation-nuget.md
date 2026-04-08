@@ -563,7 +563,12 @@ dotnet build
 **Solution:**
 Register license key in MauiProgram.cs before CreateMauiApp():
 ```csharp
-Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR_LICENSE_KEY");
+// Read from environment variable - SECURITY BEST PRACTICE
+string licenseKey = Environment.GetEnvironmentVariable("SYNCFUSION_LICENSE_KEY");
+if (!string.IsNullOrEmpty(licenseKey))
+{
+    Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(licenseKey);
+}
 ```
 
 See licensing-overview.md and licensing-register-key.md for details.

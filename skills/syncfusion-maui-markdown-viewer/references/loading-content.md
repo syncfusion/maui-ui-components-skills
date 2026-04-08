@@ -378,12 +378,12 @@ Load Markdown content from a remote web server or repository. Content is fetched
 ```xml
 <!-- Direct URL in XAML -->
 <markdown:SfMarkdownViewer 
-    Source="https://raw.githubusercontent.com/myorg/myrepo/main/README.md" />
+    Source="https://raw.githubusercontent.com/SyncfusionExamples/GettingStarted_DockLayout_MAUI/refs/heads/master/README.md" />
 ```
 
 ```csharp
 // Direct URL in C#
-markdownViewer.Source = "https://raw.githubusercontent.com/myorg/myrepo/main/README.md";
+markdownViewer.Source = "https://raw.githubusercontent.com/SyncfusionExamples/GettingStarted_DockLayout_MAUI/refs/heads/master/README.md";
 ```
 
 ### Advanced URL Loading with Error Handling
@@ -474,16 +474,8 @@ public async Task LoadWithCacheAsync(string url)
 
 ```csharp
 // GitHub raw content
-string githubUrl = "https://raw.githubusercontent.com/user/repo/branch/file.md";
+string githubUrl = "https://raw.githubusercontent.com/dotnet/docs-maui/refs/heads/main/docs/what-is-maui.md";
 
-// GitLab raw content
-string gitlabUrl = "https://gitlab.com/user/repo/-/raw/branch/file.md";
-
-// Direct web server
-string webUrl = "https://example.com/docs/document.md";
-
-// Content API
-string apiUrl = "https://api.example.com/content/markdown?id=123";
 ```
 
 ### Use Cases
