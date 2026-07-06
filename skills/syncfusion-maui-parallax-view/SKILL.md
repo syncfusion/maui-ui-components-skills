@@ -3,7 +3,7 @@ name: syncfusion-maui-parallax-view
 description: Implements Syncfusion .NET MAUI Parallax View (SfParallaxView) to create parallax scrolling effects where background elements move slower than foreground content. Use when working with parallax effects, parallax scrolling, background scroll effects, or depth scrolling. Covers both simple image parallax and complex custom control implementations for ScrollView and ListView.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Syncfusion .NET MAUI Parallax View

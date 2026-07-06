@@ -3,7 +3,7 @@ name: syncfusion-maui-cards
 description: Implements Syncfusion .NET MAUI Cards (SfCards) - dismissible card views and swipeable card stacks. Use when working with cards, card views, card layouts, swipeable cards, dismissible cards, or card stacks in .NET MAUI. Covers card customization, card events, card data binding, and interactive card components with swipe functionality.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Cards (SfCards)

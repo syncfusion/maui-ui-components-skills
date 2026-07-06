@@ -3,7 +3,7 @@ name: syncfusion-maui-linear-gauge
 description: Implements Syncfusion .NET MAUI Linear Gauge (SfLinearGauge) for data visualization with scales, pointers, and ranges. Use when creating linear gauges, displaying measurements on linear scales, showing progress indicators, or building thermometer-style visualizations. Covers gauge pointer configuration, bar pointers or shape markers, draggable gauge pointers, and animated gauge transitions.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Linear Gauges in .NET MAUI

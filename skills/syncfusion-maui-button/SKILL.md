@@ -3,7 +3,7 @@ name: syncfusion-maui-button
 description: Implements and customize Syncfusion .NET MAUI Button (SfButton) control. Use when working with MAUI buttons, SfButton implementation, button customization, or visual states. Covers button icons, background images, RTL support, Liquid Glass effects, custom button views, button styling, events, and checkable buttons.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Button

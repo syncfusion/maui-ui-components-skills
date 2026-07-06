@@ -3,7 +3,7 @@ name: syncfusion-maui-ai-assistview
 description: Implements Syncfusion .NET MAUI AI AssistView (SfAIAssistView) for AI-powered interactive chat interfaces. Use when working with AI chat interfaces, AI AssistView, SfAIAssistView, conversational UI, or chat with AI responses. Covers integrating AI services, creating chat UIs, implementing conversation flows, managing AI requests/responses, and displaying AI suggestions.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing AI AssistView in .NET MAUI

@@ -3,7 +3,7 @@ name: syncfusion-maui-date-time-picker
 description: Implements Syncfusion .NET MAUI DateTimePicker (SfDateTimePicker) control. Use when implementing date and time selection, datetime pickers, or date-time input interfaces in .NET MAUI applications. Covers DateTimePicker setup, formatting dates/times, picker modes (dialog/relative), customization, date restrictions, intervals, events, localization, and accessibility.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Date Time Pickers

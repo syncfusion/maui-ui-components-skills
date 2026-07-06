@@ -3,7 +3,7 @@ name: syncfusion-maui-signature-pad
 description: Implements Syncfusion .NET MAUI SignaturePad (SfSignaturePad) for capturing digital signatures with realistic handwritten appearance. Use when working with signature capture, digital signatures, electronic signatures, or signing documents in .NET MAUI applications. Covers stroke customization, saving signatures as images, signature point data retrieval, and signature validation.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI SignaturePad

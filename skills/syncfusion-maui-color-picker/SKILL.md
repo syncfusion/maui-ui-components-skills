@@ -3,7 +3,7 @@ name: syncfusion-maui-color-picker
 description: Implements Syncfusion .NET MAUI Color Picker (SfColorPicker). Use when implementing color picker functionality, color selection UI, palette mode, spectrum mode, or alpha slider configuration in .NET MAUI applications. Covers inline rendering, popup customization, color changed events, localization, and liquid glass effect.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # .NET MAUI Color Picker Implementation

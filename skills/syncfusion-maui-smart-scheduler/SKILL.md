@@ -3,7 +3,7 @@ name: syncfusion-maui-smart-scheduler
 description: Implements Syncfusion .NET MAUI AI-Powered Scheduler (SfSmartScheduler). Use when implementing natural language appointment scheduling, AI-powered scheduling, resource-aware booking, or conflict detection in MAUI apps. Covers AI scheduling, natural language CRUD operations, resource booking, and appointment summarization.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # .NET MAUI AI-Powered Scheduler (SfSmartScheduler)

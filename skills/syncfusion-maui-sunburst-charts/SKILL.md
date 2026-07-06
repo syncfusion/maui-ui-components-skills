@@ -3,7 +3,7 @@ name: syncfusion-maui-sunburst-charts
 description: Implements Syncfusion .NET MAUI Sunburst Chart (SfSunburstChart) for hierarchical data visualization using a radial, multi-level circular layout. Use this for sunburst charts, radial hierarchical charts, multi-level pie charts, or hierarchical data visualization with drill-down capabilities. Ideal for visualizing organizational structures, file systems, or nested categorical data.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Sunburst Charts

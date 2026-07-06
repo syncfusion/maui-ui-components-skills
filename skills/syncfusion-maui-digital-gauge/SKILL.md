@@ -3,7 +3,7 @@ name: syncfusion-maui-digital-gauge
 description: Implements Syncfusion .NET MAUI DigitalGauge (SfDigitalGauge) control to display alphanumeric characters in LED-style digital format. Use when working with digital gauges, LED displays, seven-segment displays, digital clocks, or digital counters. Ideal for displaying numbers, letters, or special characters in a digital/electronic display format.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Digital Gauges in .NET MAUI

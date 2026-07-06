@@ -3,7 +3,7 @@ name: syncfusion-maui-autocomplete
 description: Implements and configure Syncfusion .NET MAUI Autocomplete (SfAutocomplete) control for intelligent text input with suggestions. Use when implementing autocomplete, autosuggest, type-ahead search, smart search, or filtered dropdowns in .NET MAUI applications. Covers data binding, filtering modes, custom search logic, AI-powered search, multi-selection with tokens, and UI customization.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Autocomplete

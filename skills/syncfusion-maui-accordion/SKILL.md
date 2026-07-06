@@ -3,7 +3,7 @@ name: syncfusion-maui-accordion
 description: Implements Syncfusion .NET MAUI Accordion (SfAccordion) - a vertically collapsible panel with stacked headers for expanding/collapsing content. Use when working with accordions, collapsible panels, expandable lists, employee lists with details, or FAQ sections in .NET MAUI applications. Covers AccordionItem configuration, expand modes, and grouped content display.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Syncfusion .NET MAUI Accordion

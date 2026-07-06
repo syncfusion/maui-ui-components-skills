@@ -3,7 +3,7 @@ name: syncfusion-maui-masked-entry
 description: Implements Syncfusion .NET MAUI Masked Entry (SfMaskedEntry) control for restricted, formatted text input with mask patterns. Use when working with masked input, text masks, formatted entry, phone number input, date input with format, or validation with masks. Covers Simple masks, RegEx masks, prompt characters, and automatic formatting with validation.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Masked Entry

@@ -3,7 +3,7 @@ name: syncfusion-maui-datagrid
 description: Implements and customize Syncfusion .NET MAUI DataGrid (SfDataGrid) for displaying tabular data. Use when working with MAUI data grids, SfDataGrid, tabular data display, data binding to grids, or column configuration. Covers editing cells, sorting, filtering, grouping, paging, exporting to Excel/PDF, row operations, selection, and summaries.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI DataGrid

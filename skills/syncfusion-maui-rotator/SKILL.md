@@ -3,7 +3,7 @@ name: syncfusion-maui-rotator
 description: Implements Syncfusion .NET MAUI Rotator (SfRotator) control for displaying image carousels, slideshows, or rotating content. Use this for image galleries, product showcases, testimonial sliders, banner rotators, or scenarios requiring automatic or manual navigation through visual content.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Rotator

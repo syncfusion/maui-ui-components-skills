@@ -3,7 +3,7 @@ name: syncfusion-maui-getting-started
 description: Sets up and configures Syncfusion .NET MAUI components. Use when setting up, configuring, installing, or licensing Syncfusion .NET MAUI applications. Covers installation (NuGet, installers), licensing (generation, registration, errors), themes (Material, Cupertino, customization), AI service integration (Azure OpenAI, Claude, Gemini, DeepSeek, Groq), and package upgrades.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Getting Started with Syncfusion .NET MAUI

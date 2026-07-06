@@ -3,7 +3,7 @@ name: syncfusion-maui-combobox
 description: Implements Syncfusion .NET MAUI ComboBox (SfComboBox) control. Use when working with ComboBox, dropdown selection, editable dropdown, searchable dropdown, or filterable dropdown in .NET MAUI. Covers basic ComboBox setup, editable/non-editable modes, single/multiple selection, filtering and searching, custom UI styling, and AI-powered smart search.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI ComboBox

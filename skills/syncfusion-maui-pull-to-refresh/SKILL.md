@@ -3,7 +3,7 @@ name: syncfusion-maui-pull-to-refresh
 description: Implements the Syncfusion .NET MAUI PullToRefresh (SfPullToRefresh) control for interactive content refreshing. Use when working with pull-to-refresh, refresh controls, swipe to refresh, or updating content on pull gestures. Covers scenarios for refreshing ListView, DataGrid, or any scrollable content, customizing refresh indicators, MVVM refresh patterns, and pull-to-refresh events.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI PullToRefresh (SfPullToRefresh)

@@ -3,7 +3,7 @@ name: syncfusion-maui-barcode-generator
 description: Implements Syncfusion .NET MAUI Barcode Generator (SfBarcodeGenerator) for generating machine-readable barcodes. Use when working with barcodes, barcode generation, QR codes, data matrix, EAN codes, UPC codes, Code128, or Code39. This skill covers both one-dimensional (linear) and two-dimensional (matrix) barcode symbologies with extensive customization options.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Barcode Generator

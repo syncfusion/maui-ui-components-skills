@@ -3,7 +3,7 @@ name: syncfusion-maui-markdown-viewer
 description: Implements Syncfusion .NET MAUI MarkdownViewer (SfMarkdownViewer) for rendering Markdown content with full formatting support. Use when displaying markdown files, documentation, release notes, or help content in MAUI apps. Covers markdown rendering, appearance customization, CSS styling, and content sources (string/file/URL/resource).
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Syncfusion .NET MAUI MarkdownViewer

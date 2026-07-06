@@ -3,7 +3,7 @@ name: syncfusion-maui-badge-view
 description: Implements Syncfusion .NET MAUI Badge View (SfBadgeView) control. Use when adding badge notifications, status indicators, unread counts, or notification overlays to MAUI applications. Covers SfBadgeView setup, badge text customization, position adjustments, animations, predefined symbols, and accessibility features.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Badge Views in .NET MAUI

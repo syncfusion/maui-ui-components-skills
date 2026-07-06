@@ -3,7 +3,7 @@ name: syncfusion-maui-smart-datagrid
 description: Implements Syncfusion .NET MAUI Smart DataGrid (SfSmartDataGrid) with AI-powered features. Use when working with SfSmartDataGrid, AI-powered grid operations, natural language data commands, AI sorting, AI filtering, or conversational grid interaction. Covers Azure OpenAI grid integration and natural language commands for grids.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Syncfusion MAUI Smart DataGrid

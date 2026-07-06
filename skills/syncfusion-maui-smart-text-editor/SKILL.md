@@ -3,7 +3,7 @@ name: syncfusion-maui-smart-text-editor
 description: Implements and configure the Syncfusion .NET MAUI AI-Powered Smart Text Editor (SfSmartTextEditor). Use when working with SfSmartTextEditor, AI-powered text input, predictive text suggestions, inline or popup suggestions, or UserRole/UserPhrases configurations. Covers suggestion display modes, custom AI services (Claude, DeepSeek, Gemini, Groq), Azure OpenAI integration, and customization options.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Syncfusion .NET MAUI Smart Text Editor

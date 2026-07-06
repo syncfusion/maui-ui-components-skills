@@ -3,7 +3,7 @@ name: syncfusion-maui-chips
 description: Implements Syncfusion .NET MAUI Chips (SfChip or SfChipGroup). Use when working with chips, tags, tag controls, selection chips, input chips, or filter chips in .NET MAUI applications. Covers chip types, chip customization, chip events, chip selection, chip groups, remove chips, close button chips, and chip data binding.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Chips

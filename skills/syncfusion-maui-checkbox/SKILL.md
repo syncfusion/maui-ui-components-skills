@@ -3,7 +3,7 @@ name: syncfusion-maui-checkbox
 description: Implements Syncfusion .NET MAUI CheckBox (SfCheckBox) controls in MAUI applications. Use when implementing checkboxes, selection controls, or toggle buttons in .NET MAUI. Covers three-state checkboxes, indeterminate state, checkbox customization, checkbox events, visual states, and checkbox groups.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Checkboxes in .NET MAUI

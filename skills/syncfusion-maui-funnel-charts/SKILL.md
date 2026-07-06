@@ -3,7 +3,7 @@ name: syncfusion-maui-funnel-charts
 description: Implements and customize Syncfusion .NET MAUI Funnel Charts (SfFunnelChart). Use when implementing funnel charts, sales funnel visualization, conversion funnel analysis, process stage visualization, or marketing funnel tracking. Covers funnel chart implementation, customization, data labels, legends, tooltips, segment spacing, and orientation.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Funnel Charts in .NET MAUI

@@ -3,7 +3,7 @@ name: syncfusion-maui-time-picker
 description: Implements Syncfusion .NET MAUI TimePicker (SfTimePicker) control. Use when implementing time selection, time picker controls, or time input UI in .NET MAUI. This skill covers installation, configuration, time formats (14 predefined formats), picker modes (Dialog/RelativeDialog), intervals, time restrictions, looping, events, and customization.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Syncfusion .NET MAUI TimePicker

@@ -3,7 +3,7 @@ name: syncfusion-maui-picker
 description: Implements Syncfusion .NET MAUI Picker (SfPicker) control. Use when working with picker controls, item pickers, selection pickers, multi-column pickers, or dialog pickers in .NET MAUI applications. This skill covers installation, configuration, modes (Default, Dialog, RelativeDialog), header/footer customization, column handling, data binding, events, and accessibility.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Picker (SfPicker)

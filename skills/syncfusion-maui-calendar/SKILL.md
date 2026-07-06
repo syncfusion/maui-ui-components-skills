@@ -3,7 +3,7 @@ name: syncfusion-maui-calendar
 description: Implements and customize Syncfusion .NET MAUI Calendar (SfCalendar) control. Use when implementing calendar functionality, date selection (single, multiple, range), or calendar views (month, year, decade, century). Covers date restrictions (min/max dates, EnablePastDates, SelectableDayPredicate), calendar customization, events (ViewChanged, SelectionChanged, Tapped), and header/footer customization.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Calendar (SfCalendar)

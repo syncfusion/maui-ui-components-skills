@@ -3,7 +3,7 @@ name: syncfusion-maui-date-time-range-slider
 description: Implements Syncfusion .NET MAUI DateTime Range Slider (SfDateTimeRangeSlider) control. Use when implementing range sliders, date range pickers, time range selectors, dual-thumb sliders, or interactive range selection controls in .NET MAUI applications. This skill covers installation, configuration, track styling, labels, ticks, dividers, tooltips, thumb customization, and the Liquid Glass Effect.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Date Time Range Slider

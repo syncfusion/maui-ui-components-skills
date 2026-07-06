@@ -3,7 +3,7 @@ name: syncfusion-maui-numeric-entry
 description: Implements Syncfusion .NET MAUI Numeric Entry control. Use when working with numeric input with validation, formatting (currency, percentage, decimal), value increment/decrement buttons, or range restrictions. Ideal for price inputs, quantity selectors, percentage calculators, or numeric data entry with custom formats.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Numeric Entry

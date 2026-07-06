@@ -3,7 +3,7 @@ name: syncfusion-maui-slider
 description: Implements Syncfusion .NET MAUI Slider (SfSlider) control. Use when working with sliders, numeric value selection, or interactive value controls. This skill covers installation, track configuration, labels with formatting, ticks and dividers, tooltips, thumb customization, discrete selection with StepSize, deferred updates, and LiquidGlass effect.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Slider

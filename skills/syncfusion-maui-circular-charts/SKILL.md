@@ -3,7 +3,7 @@ name: syncfusion-maui-circular-charts
 description: Implements Syncfusion .NET MAUI Circular Charts (SfCircularChart) including pie, doughnut, and radial bar chart types. Use when implementing circular data visualization, pie charts, doughnut charts, or radial bar charts. Ideal for percentage breakdowns, category comparisons, part-to-whole relationships, or displaying proportional data in circular format.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Circular Charts

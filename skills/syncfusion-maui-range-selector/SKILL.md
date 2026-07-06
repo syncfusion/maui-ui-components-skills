@@ -3,7 +3,7 @@ name: syncfusion-maui-range-selector
 description: Implements the Syncfusion .NET MAUI Range Selector (SfRangeSelector) component. Use when working with range selection with embedded charts, numeric range input, RangeStart/RangeEnd, track customization, or thumb styling in .NET MAUI. Covers tooltip configuration, label formatting, ticks/dividers, selection modes, events, and embedding SfCartesianChart inside a range control.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Range Selector

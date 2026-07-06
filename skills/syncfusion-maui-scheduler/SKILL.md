@@ -3,7 +3,7 @@ name: syncfusion-maui-scheduler
 description: Implements Syncfusion .NET MAUI Scheduler (SfScheduler). Use when creating scheduling applications, calendar views, appointment management, event planning, or resource scheduling in .NET MAUI. Covers scheduler views, appointment management, recurring events, and timeline views.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Scheduler

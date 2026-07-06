@@ -3,7 +3,7 @@ name: syncfusion-maui-maps
 description: Implements Syncfusion .NET MAUI Maps (SfMaps) control. Use when implementing maps, visualizing geographic data, or displaying shape layers and tile layers (OpenStreetMap, Azure maps, Google Maps, Bing Maps). Covers markers, bubbles, legends, data labels, tooltips, sublayers, zoom and pan features, or spatial data visualization in .NET MAUI applications.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Maps (SfMaps)

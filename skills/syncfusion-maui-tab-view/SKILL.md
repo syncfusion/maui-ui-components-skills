@@ -3,7 +3,7 @@ name: syncfusion-maui-tab-view
 description: Implements Syncfusion .NET MAUI Tab View (SfTabView) controls for tab navigation interfaces and tabbed content layouts. Use when working with tab controls, tab navigation, nested tabs, or swipeable content in .NET MAUI applications. This skill covers tab bar customization, tab item configuration, swipe gestures, events, and visual customization including indicators and Liquid Glass effects.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Syncfusion .NET MAUI Tab View

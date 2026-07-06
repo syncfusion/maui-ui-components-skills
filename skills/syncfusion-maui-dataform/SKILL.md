@@ -3,7 +3,7 @@ name: syncfusion-maui-dataform
 description: Implements Syncfusion .NET MAUI DataForm (SfDataForm). Use when creating data entry forms, edit forms, login forms, registration forms, or contact forms in MAUI. Covers form creation, data validation, editor customization, layout management, data binding, grouping, localization, built-in editors, custom editors, and validation modes.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI DataForm (SfDataForm)

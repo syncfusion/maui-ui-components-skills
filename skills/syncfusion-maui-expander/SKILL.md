@@ -3,7 +3,7 @@ name: syncfusion-maui-expander
 description: Implements the Syncfusion .NET MAUI Expander (SfExpander) control for collapsible and expandable content sections. Use when working with expanders, collapsible sections, accordions, expandable panels, or expand/collapse functionality in .NET MAUI applications. Covers space-efficient layouts, header customization, expand/collapse animations, and liquid glass effects.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Expander (SfExpander)

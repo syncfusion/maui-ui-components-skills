@@ -3,7 +3,7 @@ name: syncfusion-maui-treeview
 description: Implements and customize Syncfusion .NET MAUI TreeView (SfTreeView) for displaying hierarchical data structures. Use when working with TreeView, hierarchical data display, tree structures, organizational charts, nested data, expand/collapse nodes, file explorer UI, folder structures, parent-child relationships, or multi-level data visualization in .NET MAUI applications.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Syncfusion .NET MAUI TreeView

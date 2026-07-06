@@ -3,7 +3,7 @@ name: syncfusion-maui-docklayout
 description: Implements Syncfusion .NET MAUI DockLayout (SfDockLayout) for arranging and docking child elements in defined areas. Use this for creating docking layouts, positioning UI elements at edges (top/bottom/left/right), building dashboard layouts, or arranging multi-region interfaces. Covers dock positioning, edge positioning, and spacing between docked elements.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI DockLayout

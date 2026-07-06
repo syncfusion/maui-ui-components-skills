@@ -3,7 +3,7 @@ name: syncfusion-maui-radial-menu
 description: Implements Syncfusion .NET MAUI Radial Menu (SfRadialMenu) - a hierarchical circular menu optimized for touch. Use when working with radial menus, circular menus, context menus, touch-optimized menus, or hierarchical circular navigation. Covers floating menus, drag-enabled menus, nested circular menus, and custom segmented layouts in .NET MAUI applications.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Radial Menus in .NET MAUI

@@ -3,7 +3,7 @@ name: syncfusion-maui-switch
 description: Implements and customize Syncfusion .NET MAUI Switch (SfSwitch) controls. Use when working with switches, toggle switches, on/off controls, or binary state controls in .NET MAUI applications. Covers switch customization (colors, sizes, icons), state changes, indeterminate states, and visual state managers.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Syncfusion .NET MAUI Switch (SfSwitch)

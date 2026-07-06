@@ -3,7 +3,7 @@ name: syncfusion-maui-rich-text-editor
 description: Implements Syncfusion .NET MAUI Rich Text Editor (SfRichTextEditor) for WYSIWYG text editing with formatting, images, tables, and hyperlinks. Use when building rich text editors, document editors, email composers, blog post editors, or messaging apps with formatting. Covers text styling, toolbar formatting, images, tables, hyperlinks, and HTML output.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Syncfusion .NET MAUI Rich Text Editors

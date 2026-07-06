@@ -3,7 +3,7 @@ name: syncfusion-maui-treemap
 description: Implements Syncfusion .NET MAUI TreeMap (SfTreeMap) for visualizing hierarchical data with rectangles sized and colored by values. Use when implementing hierarchical data visualization, heat maps, squarified layouts, multi-level data grouping, or brush settings for hierarchical displays. This skill covers installation, data binding, layout types, hierarchical levels with GroupPath, legend configuration, tooltips, and TreeMap customization.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Syncfusion .NET MAUI TreeMap

@@ -3,7 +3,7 @@ name: syncfusion-maui-rating
 description: Implements Syncfusion .NET MAUI Rating (SfRating) control. Use when implementing star ratings, review systems, feedback mechanisms, or product ratings in MAUI apps. Covers rating control configuration, star rating, half-star rating, custom rating shapes, rating precision, and rating events.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Rating

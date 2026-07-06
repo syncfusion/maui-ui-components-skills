@@ -3,7 +3,7 @@ name: syncfusion-maui-circular-progressbar
 description: Implements and customize Syncfusion .NET MAUI Circular ProgressBar (SfCircularProgressBar) components. Use when working with circular progress bars, circular progress indicators, radial progress, progress circles, or arc progress in .NET MAUI applications. Covers determinate/indeterminate progress states, animated progress indicators, segmented circular progress, and custom angles.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Circular ProgressBars in .NET MAUI

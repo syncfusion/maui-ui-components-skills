@@ -3,7 +3,7 @@ name: syncfusion-maui-pyramid-charts
 description: Implements Syncfusion .NET MAUI Pyramid Chart (SfPyramidChart) for visually representing hierarchical, proportional, and parts-to-whole data using pyramid-shaped segments. Use this for pyramid charts, hierarchical data visualization, proportional data display, or segment-based charts. This skill covers installation, data binding, legends, tooltips, data labels, appearance customization, and gradients.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Pyramid Charts

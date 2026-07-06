@@ -3,7 +3,7 @@ name: syncfusion-maui-licensing
 description: Sets up and validates Syncfusion .NET MAUI licensing, including license key registration, generation, and error resolution. Use when encountering trial license warnings ("This application was built using a trial version"), licensing errors, license key registration, unlock key vs license key confusion, build server or CI/CD licensing, NuGet package licensing requirements, platform mismatch errors, or version mismatch errors.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Licensing for Syncfusion .NET MAUI

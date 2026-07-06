@@ -3,7 +3,7 @@ name: syncfusion-maui-carousel
 description: Implements Syncfusion .NET MAUI Carousel (SfCarousel) for navigating through image data or content collections. Use when implementing carousel controls, populating carousel items, or configuring view modes (linear/default). Covers animations, load more functionality, UI virtualization, transformations, and swipe events.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Carousel

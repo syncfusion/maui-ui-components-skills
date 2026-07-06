@@ -3,7 +3,7 @@ name: syncfusion-maui-range-slider
 description: Implements Syncfusion .NET MAUI Range Slider (SfRangeSlider) for selecting numeric range values with dual thumbs. Use this for range selection controls, dual-value sliders, price range selectors, date range filters, or scenarios requiring minimum-maximum value selection with interactive thumbs.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Range Slider

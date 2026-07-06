@@ -3,7 +3,7 @@ name: syncfusion-maui-polar-charts
 description: Implements Syncfusion .NET MAUI Polar Charts (SfPolarChart) for visualizing data in polar coordinates. Use when working with polar charts, radar charts, spider charts, web charts, or circular data visualization. Ideal for displaying data in terms of values and angles, creating line or area series in polar layouts, or comparing multiple data series radially.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Syncfusion .NET MAUI Polar Charts

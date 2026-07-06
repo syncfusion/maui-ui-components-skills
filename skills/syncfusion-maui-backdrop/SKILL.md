@@ -3,7 +3,7 @@ name: syncfusion-maui-backdrop
 description: Implements Syncfusion .NET MAUI Backdrop Page (SfBackdropPage) with back layer and front layer surfaces. Use when working with backdrop pages, SfBackdropPage, back layer, front layer, or reveal/conceal animations. Covers backdrop navigation patterns, header icons, corner shapes, reveal height, layer state events, and liquid glass effect.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Backdrop Pages (.NET MAUI)

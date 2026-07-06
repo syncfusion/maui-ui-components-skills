@@ -3,7 +3,7 @@ name: syncfusion-maui-text-input-layout
 description: Implements Syncfusion .NET MAUI Text Input Layout (SfTextInputLayout). Use when adding decorative elements like floating labels, icons, assistive labels, or containers to Entry, Editor, Autocomplete, or ComboBox controls. Covers text input layout setup, hint labels, helper text, error messages, character counter, and password visibility toggle.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Text Input Layout

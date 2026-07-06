@@ -3,7 +3,7 @@ name: syncfusion-maui-popup
 description: Implements Syncfusion .NET MAUI Popup (SfPopup) control for displaying alert messages, custom views, and modal dialogs. Use when working with popups, overlays, dialogs, modal windows, alert boxes, or confirmation dialogs in .NET MAUI applications. Covers positioning (center, absolute, relative to view), layout customization (header, footer, content templates), animations, and modal behavior.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Popups

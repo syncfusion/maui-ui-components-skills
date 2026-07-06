@@ -3,7 +3,7 @@ name: syncfusion-maui-toolbar
 description: Implements Syncfusion .NET MAUI Toolbar (SfToolbar) for navigation bars and command bars. Use when working with toolbars, toolbar items, navigation bars, toolbar buttons, or action toolbars in .NET MAUI applications. This skill covers toolbar item configuration, icons, text, overflow behavior, orientation, selection modes, and toolbar customization.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Toolbar in .NET MAUI

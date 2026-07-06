@@ -3,7 +3,7 @@ name: syncfusion-maui-shimmer
 description: Implements Syncfusion .NET MAUI Shimmer (SfShimmer) loading placeholder effects. Use when implementing shimmer or skeleton loading animations, loading placeholders, or content loading indicators in .NET MAUI apps. Covers shimmer types (CirclePersona, Article, Feed, Shopping), custom shimmer views, wave animation, and customization.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Shimmer (SfShimmer)

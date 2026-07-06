@@ -3,7 +3,7 @@ name: syncfusion-maui-migration
 description: Migrates Syncfusion components from Xamarin.Forms to .NET MAUI. Use when migrating Xamarin.Forms applications to .NET MAUI, addressing namespace changes, API renames, property migrations, or breaking changes. Covers SfChart to SfCartesianChart migration, handler registration, NuGet package updates, and enum updates.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Syncfusion Xamarin.Forms to .NET MAUI Migration

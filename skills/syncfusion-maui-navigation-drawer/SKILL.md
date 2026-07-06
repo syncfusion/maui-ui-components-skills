@@ -3,7 +3,7 @@ name: syncfusion-maui-navigation-drawer
 description: Implements Syncfusion .NET MAUI Navigation Drawer (SfNavigationDrawer) component. Use when working with navigation drawers, sliding drawers, side menus, hamburger menus, or drawer panels in .NET MAUI apps. Covers drawer positioning (left/right/top/bottom), animations (SlideOnTop/Push/Reveal), content management, swipe gestures, and events.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Navigation Drawers

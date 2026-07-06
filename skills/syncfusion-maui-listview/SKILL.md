@@ -4,7 +4,7 @@ description: Implements Syncfusion .NET MAUI ListView (SfListView). Use when dis
 
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI ListView

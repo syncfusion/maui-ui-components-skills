@@ -3,7 +3,7 @@ name: syncfusion-maui-segmented-control
 description: Implements Syncfusion .NET MAUI Segmented Control (SfSegmentedControl). Use when working with segmented controls, segment buttons, tab-like selection, button groups, or filter buttons in MAUI applications. This skill covers installation, item population, selection indicators, appearance customization, layout configuration, disabled segments, and events.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Segmented Controls in .NET MAUI

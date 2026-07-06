@@ -3,7 +3,7 @@ name: syncfusion-maui-date-picker
 description: Implements Syncfusion .NET MAUI DatePicker (SfDatePicker) control for date selection. Use when implementing date pickers, adding date selection UI, or working with SfDatePicker control. Covers date picker appearance customization (headers, footers, columns), date formatting (20+ predefined formats), date restrictions (min/max dates, blackout dates), and picker modes (Dialog, RelativeDialog).
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Syncfusion .NET MAUI DatePicker (SfDatePicker)

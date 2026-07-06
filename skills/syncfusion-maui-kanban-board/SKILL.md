@@ -3,7 +3,7 @@ name: syncfusion-maui-kanban-board
 description: Implements Syncfusion .NET MAUI Kanban Board (SfKanban) control. Use when implementing kanban boards, task management visualizations, workflow tracking, or agile boards in .NET MAUI applications. Covers installation, data binding with default and custom models, card customization, column configuration, workflow transitions, and drag-and-drop events.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Kanban Boards in .NET MAUI

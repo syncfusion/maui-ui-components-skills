@@ -3,7 +3,7 @@ name: syncfusion-maui-radio-button
 description: Implements Syncfusion .NET MAUI Radio Button (SfRadioButton) for mutually exclusive selection controls. Use when implementing radio buttons, selection controls with mutually exclusive options, or grouped radio buttons in .NET MAUI applications. Covers radio button state management, grouping mechanisms (GroupKey or SfRadioGroup), events, and visual customization.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Radio Buttons

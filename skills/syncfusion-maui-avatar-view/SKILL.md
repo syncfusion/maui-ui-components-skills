@@ -3,7 +3,7 @@ name: syncfusion-maui-avatar-view
 description: Implements Syncfusion .NET MAUI Avatar View (SfAvatarView) for displaying user profile pictures, initials, or group avatars. Use when working with avatar views, profile pictures, user images, initials display, profile icons, or contact images. Ideal for implementing user profile displays, contact lists, chat interfaces, or social feeds.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Avatar Views

@@ -3,7 +3,7 @@ name: syncfusion-maui-theming
 description: Themes and styles Syncfusion .NET MAUI components. Use when working with SyncfusionThemeResourceDictionary, MaterialLight, MaterialDark, CupertinoLight, CupertinoDark, visual themes, or theme switching. This skill covers theme customization, color overrides, theme keys, dark mode, light mode, and branding.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Theming in Syncfusion .NET MAUI

@@ -3,7 +3,7 @@ name: syncfusion-maui-linear-progressbar
 description: Implements Syncfusion .NET MAUI Linear ProgressBar (SfLinearProgressBar) control. Use when working with progress bars, progress indicators, loading indicators, determinate/indeterminate progress, or buffer progress visualization. Covers progress tracking, multi-segment progress, animated progress, and gradient progress bars.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Linear ProgressBars

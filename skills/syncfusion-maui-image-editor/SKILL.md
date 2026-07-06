@@ -3,7 +3,7 @@ name: syncfusion-maui-image-editor
 description: Implements and customize Syncfusion .NET MAUI ImageEditor (SfImageEditor) for editing, annotating, and transforming images. Use when working with MAUI image editing, photo editing, image cropping, or image transformations. Covers shape/text overlays, freehand drawing, image filters, toolbar customization, and saving edited images.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Image Editor

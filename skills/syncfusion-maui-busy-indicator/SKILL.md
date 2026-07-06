@@ -3,7 +3,7 @@ name: syncfusion-maui-busy-indicator
 description: Implements Syncfusion .NET MAUI Busy Indicator (SfBusyIndicator) for showing loading states, data processing, and app activity indicators. Use when displaying loading indicators, busy animations, activity spinners, or processing feedback in .NET MAUI apps. Covers busy indicator setup, animations, and visual feedback during long-running operations.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing Busy Indicators

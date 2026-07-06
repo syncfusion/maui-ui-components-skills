@@ -3,7 +3,7 @@ name: syncfusion-maui-date-time-range-selector
 description: Implements Syncfusion .NET MAUI DateTime Range Selector (SfDateTimeRangeSelector) for interactive date/time range selection with chart integration. Use when working with range selectors, date range pickers, time range selection, chart range filtering, or interactive range controls. Covers range selection UI, filtering chart data by date range, and selecting time periods.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Implementing .NET MAUI Date Time Range Selector

@@ -3,7 +3,7 @@ name: syncfusion-maui-chat
 description: Implements Syncfusion .NET MAUI Chat (SfChat) control in .NET MAUI applications. Use when working with chat interfaces, messaging UI, conversational interfaces, chat bubbles, or message threads. Covers message types (text, image, calendar, card), data binding, events, suggestions, typing indicators, time breaks, and swiping actions.
 metadata:
   author: "Syncfusion Inc"
-  version: "33.1.44"
+  version: "34.1.29"
 ---
 
 # Syncfusion .NET MAUI Chat (SfChat)
