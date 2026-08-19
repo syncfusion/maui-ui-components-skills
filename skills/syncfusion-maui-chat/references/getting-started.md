@@ -26,7 +26,7 @@ dotnet add package Syncfusion.Maui.Chat
 3. Search for [Syncfusion.Maui.Chat](https://www.nuget.org/packages/Syncfusion.Maui.Chat) and install the latest version
 4. Ensure all dependencies are restored
 
-> [Syncfusion.Maui.Core](https://www.nuget.org/packages/Syncfusion.Maui.Core) is a required transitive dependency — it is installed automatically.
+> [Syncfusion.Maui.Core](https://www.nuget.org/packages/Syncfusion.Maui.Core) is a required transitive dependency â€” it is installed automatically.
 
 ---
 
@@ -108,8 +108,8 @@ public partial class MainPage : ContentPage
 ## Step 4: Define the ViewModel
 
 `SfChat` is data-bound. You need to provide:
-- `Messages` — an `ObservableCollection<object>` containing message objects
-- `CurrentUser` — an `Author` representing the local user (determines outgoing vs. incoming)
+- `Messages` â€” an `ObservableCollection<object>` containing message objects
+- `CurrentUser` â€” an `Author` representing the local user (determines outgoing vs. incoming)
 
 ```csharp
 // ChatViewModel.cs
@@ -178,10 +178,10 @@ public class ChatViewModel : INotifyPropertyChanged
 - All other messages ? displayed as **incoming** (left side)
 
 ```csharp
-// Outgoing — Author is CurrentUser
+// Outgoing â€” Author is CurrentUser
 new TextMessage { Author = currentUser, Text = "Hello!" }
 
-// Incoming — Author is someone else
+// Incoming â€” Author is someone else
 new TextMessage { Author = new Author { Name = "Bot" }, Text = "Hi there!" }
 ```
 
