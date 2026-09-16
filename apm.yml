@@ -1,0 +1,17 @@
+name: maui-ui-components-skills
+version: 1.0.0
+description: AI-ready skill collection for Syncfusion MAUI UI components. Use this package when an
+  agent needs authoritative guidance on any Syncfusion MAUI UI components.
+author: Syncfusion Inc
+keywords:
+  - maui
+  - syncfusion
+  - ui-components
+  - skills
+  - agent-skills
+  - datagrid
+  - scheduler
+  - charts
+  - rich-text-editor
+  - gantt
+license: Syncfusion Inc
