@@ -63,17 +63,17 @@ You can also reference a skill explicitly by mentioning the component or control
 ```text
 How do I bind data to the Syncfusion DataGrid in .NET MAUI?
 ```
-=> The AI assistant loads the DataGrid skill and uses its get-started and data-binding reference docs.
+→ The AI assistant loads the DataGrid skill and uses its get-started and data-binding reference docs.
 
 ```text
 I need to add a date range picker to my app.
 ```
-=> The AI assistant loads the Date Time Range Selector skill.
+→ The AI assistant loads the Date Time Range Selector skill.
 
 ```text
 Help me migrate my Xamarin.Forms app to .NET MAUI.
 ```
-=> The AI assistant loads the Migration skill.
+→ The AI assistant loads the Migration skill.
 
 ### Using Reference Files
 
@@ -82,7 +82,7 @@ Each `references/` subfolder contains deeper implementation guides. When the AI 
 ```text
 Show me how to export the DataGrid to Excel.
 ```
-=> The AI assistant uses `references/advanced-features.md` from the DataGrid skill for the detailed answer.
+→ The AI assistant uses `references/advanced-features.md` from the DataGrid skill for the detailed answer.
 
 ## Skill File Structure
 
@@ -91,17 +91,17 @@ Every skill folder follows this layout:
 ```text
 skills/
 └── syncfusion-maui-<control>/
-    ├── SKILL.md                  [Loaded by AI assistant; contains When to Use, Component Overview, and navigation links]
+    ├── SKILL.md                  ← Loaded by AI assistant; contains When to Use, Component Overview, and navigation links
     └── references/
-        ├── getting-started.md    [Installation, setup, NuGet packages, MauiProgram.cs]
-        ├── advanced-features.md  [In-depth feature guides and code samples]
-        └── ...                   [Additional reference files per control]
+        ├── getting-started.md    ← Installation, setup, NuGet packages, MauiProgram.cs
+        ├── advanced-features.md  ← In-depth feature guides and code samples
+        └── ...                   ← Additional reference files per control
 ```
 
 `SKILL.md` sections:
-- **When to Use This Skill** -- trigger phrases and scenarios that activate this skill
-- **Component Overview** -- NuGet package, namespace, key capabilities at a glance
-- **Documentation and Navigation Guide** -- links to all reference files in the skill
+- **When to Use This Skill** — trigger phrases and scenarios that activate this skill
+- **Component Overview** — NuGet package, namespace, key capabilities at a glance
+- **Documentation and Navigation Guide** — links to all reference files in the skill
 
 ## Repository Structure
 
@@ -123,9 +123,9 @@ skills/
 
 ### Foundation
 
-- [Getting Started](skills/syncfusion-maui-getting-started/SKILL.md) -- installation, licensing, themes, AI service integration
-- [Migration](skills/syncfusion-maui-migration/SKILL.md) -- Xamarin.Forms to .NET MAUI migration guide
-- [Theming](skills/syncfusion-maui-theming/SKILL.md) -- Material/Cupertino themes, dark mode, custom styling
+- [Getting Started](skills/syncfusion-maui-getting-started/SKILL.md) — installation, licensing, themes, AI service integration
+- [Migration](skills/syncfusion-maui-migration/SKILL.md) — Xamarin.Forms to .NET MAUI migration guide
+- [Theming](skills/syncfusion-maui-theming/SKILL.md) — Material/Cupertino themes, dark mode, custom styling
 
 ### Data Visualization
 
