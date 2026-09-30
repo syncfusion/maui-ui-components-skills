@@ -39,7 +39,7 @@ Matched text is automatically highlighted in cells.
 
 The text and background colors for searched and highlighted search results can be customized using SearchTextColor, SearchTextBackground, SearchHighlightTextColor, and SearchHighlightTextBackground in SfDataGrid.DefaultStyle.
 
-```xml
+```xaml
 <syncfusion:SfDataGrid ItemsSource="{Binding OrderInfoCollection}">
         <syncfusion:SfDataGrid.DefaultStyle>
             <syncfusion:DataGridStyle SearchTextColor="Black" 
@@ -48,6 +48,65 @@ The text and background colors for searched and highlighted search results can b
                                     SearchHighlightTextBackground="LightGreen" />
         </syncfusion:SfDataGrid.DefaultStyle>
     </syncfusion:SfDataGrid>
+```
+
+### Change Background Color for Search Match Cells
+
+Highlight entire cells containing search matches with a background color:
+
+```xaml
+<syncfusion:SfDataGrid AllowSearching="True"
+                       ItemsSource="{Binding Orders}">
+    <syncfusion:SfDataGrid.DefaultStyle>
+        <syncfusion:DataGridStyle SearchCellBackground="#FFFACD" />
+    </syncfusion:SfDataGrid.DefaultStyle>
+</syncfusion:SfDataGrid>
+```
+
+```csharp
+dataGrid.AllowSearching = true;
+dataGrid.DefaultStyle.SearchCellBackground = Color.FromArgb("#FFFACD"); // Light yellow
+```
+
+**Features:**
+- Cell background changes when search text is found
+- Helps visually identify matching rows
+- Customizable match cell background color
+
+## Built-in Search UI
+
+Enable the built-in search toolbar UI for user-friendly searching:
+
+```xaml
+<syncfusion:SfDataGrid AllowSearching="True"
+                       ItemsSource="{Binding Orders}" />
+```
+
+```csharp
+dataGrid.AllowSearching = true;
+```
+
+**Features:**
+- Search bar appears above the grid
+- Navigation buttons for next/previous matches
+- Settings icon for search options
+- Clear button to reset search
+- Case sensitivity toggle
+- Pattern matching options
+
+### Customize Built-in Search UI
+
+```xaml
+<ContentPage.Resources>
+    <Style TargetType="datagrid:DataGridSearchToolbarView">
+        <Setter Property="ShowMoreOptions" Value="True"/>
+        <Setter Property="ShowNavigationButtons" Value="True"/>
+        <Setter Property="ShowClearButton" Value="True"/>
+    </Style>
+</ContentPage.Resources>
+
+<syncfusion:SfDataGrid AllowSearching="True"
+                       ItemsSource="{Binding Orders}" />
 ```
 
 ## Search Navigation

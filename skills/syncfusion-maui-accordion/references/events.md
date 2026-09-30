@@ -33,7 +33,7 @@ public event EventHandler<ExpandingAndCollapsingEventArgs> Expanding;
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfAccordion x:Name="accordion" Expanding="Accordion_Expanding">
     <syncfusion:SfAccordion.Items>
         <syncfusion:AccordionItem>
@@ -135,7 +135,7 @@ public event EventHandler<ExpandedAndCollapsedEventArgs> Expanded;
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfAccordion Expanded="Accordion_Expanded">
     <!-- Items -->
 </syncfusion:SfAccordion>
@@ -207,7 +207,7 @@ public event EventHandler<ExpandingAndCollapsingEventArgs> Collapsing;
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfAccordion Collapsing="Accordion_Collapsing">
     <!-- Items -->
 </syncfusion:SfAccordion>
@@ -297,7 +297,7 @@ public event EventHandler<ExpandedAndCollapsedEventArgs> Collapsed;
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfAccordion Collapsed="Accordion_Collapsed">
     <!-- Items -->
 </syncfusion:SfAccordion>
@@ -350,7 +350,7 @@ private void Accordion_Collapsed(object sender, ExpandedAndCollapsedEventArgs e)
 Here's a comprehensive example using all four events:
 
 **MainPage.xaml:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

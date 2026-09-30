@@ -130,7 +130,7 @@ public class DataFormViewModel
 
 Add the `dataForm` namespace to your ContentPage:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:dataForm="clr-namespace:Syncfusion.Maui.DataForm;assembly=Syncfusion.Maui.DataForm"
@@ -140,7 +140,7 @@ Add the `dataForm` namespace to your ContentPage:
 
 #### Step 2: Set the BindingContext
 
-```xml
+```xaml
 <ContentPage.BindingContext>
     <local:DataFormViewModel/>
 </ContentPage.BindingContext>
@@ -148,14 +148,14 @@ Add the `dataForm` namespace to your ContentPage:
 
 #### Step 3: Add the DataForm Control
 
-```xml
+```xaml
 <dataForm:SfDataForm x:Name="dataForm" 
                      DataObject="{Binding ContactInfo}"/>
 ```
 
 #### Complete XAML Example
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:dataForm="clr-namespace:Syncfusion.Maui.DataForm;assembly=Syncfusion.Maui.DataForm"
@@ -230,7 +230,7 @@ When placing DataForm inside a `StackLayout`, you must set minimum size constrai
 
 Set `MinimumHeightRequest` (default: 300):
 
-```xml
+```xaml
 <VerticalStackLayout>
     <Label Text="Contact Form" FontSize="24"/>
     
@@ -255,7 +255,7 @@ SfDataForm dataForm = new SfDataForm()
 
 Set `MinimumWidthRequest` (default: 300):
 
-```xml
+```xaml
 <HorizontalStackLayout>
     <dataForm:SfDataForm x:Name="dataForm" 
                          MinimumWidthRequest="450"
@@ -281,7 +281,7 @@ SfDataForm dataForm = new SfDataForm()
 
 For better responsiveness, consider using `ScrollView` or `Grid` instead of `StackLayout`:
 
-```xml
+```xaml
 <ScrollView>
     <dataForm:SfDataForm x:Name="dataForm" 
                          DataObject="{Binding ContactInfo}"/>
@@ -476,7 +476,7 @@ public class ContactInfo
 
 **Solution:** Set explicit height or use VerticalOptions:
 
-```xml
+```xaml
 <ScrollView>
     <dataForm:SfDataForm x:Name="dataForm" 
                          DataObject="{Binding ContactInfo}"

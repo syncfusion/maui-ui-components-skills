@@ -42,7 +42,7 @@ public TimeSpan MinimumTime { get; set; }
 ### Basic MinimumTime Example
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      MinimumTime="07:00:00"
                      Format="hh_mm_tt">
@@ -67,7 +67,7 @@ this.Content = timePicker;
 
 ### Example: Business Hours Start Time
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="workStartPicker"
                      MinimumTime="09:00:00"
                      MaximumTime="17:00:00"
@@ -114,7 +114,7 @@ public TimeSpan MaximumTime { get; set; }
 ### Basic MaximumTime Example
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      MaximumTime="20:00:00"
                      Format="hh_mm_tt">
@@ -139,7 +139,7 @@ this.Content = timePicker;
 
 ### Example: Delivery Time Window
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="deliveryPicker"
                      MinimumTime="08:00:00"
                      MaximumTime="20:00:00"
@@ -177,7 +177,7 @@ Combine both properties to define a specific time range.
 ### Example: Office Hours (9 AM - 5 PM)
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="officeHoursPicker"
                      MinimumTime="09:00:00"
                      MaximumTime="17:00:00"
@@ -239,7 +239,7 @@ public IList<TimeSpan> BlackoutTimes { get; set; }
 ### Basic BlackoutTimes Example
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      Format="hh_mm_tt">
     <picker:SfTimePicker.BlackoutTimes>
@@ -272,7 +272,7 @@ this.Content = timePicker;
 
 ### Example: Lunch Break Blocking
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="appointmentPicker"
                      MinimumTime="09:00:00"
                      MaximumTime="17:00:00"
@@ -371,7 +371,7 @@ timePicker.BlackoutTimes.Remove(new TimeSpan(12, 0, 0));
 
 ### Use Case 1: Doctor's Appointment Scheduler
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="doctorAppointment"
                      MinimumTime="08:00:00"
                      MaximumTime="18:00:00"
@@ -448,7 +448,7 @@ public void SetupMeetingRoomPicker(List<TimeSpan> bookedSlots)
 
 ### Use Case 4: Gym Class Schedule
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="gymClassPicker"
                      MinimumTime="06:00:00"
                      MaximumTime="21:00:00"
@@ -530,7 +530,7 @@ TimePickerValidator.ValidateTimeRange(minTime, maxTime);
 
 Time restrictions work seamlessly with interval properties:
 
-```xml
+```xaml
 <picker:SfTimePicker MinimumTime="09:00:00"
                      MaximumTime="17:00:00"
                      MinuteInterval="30"

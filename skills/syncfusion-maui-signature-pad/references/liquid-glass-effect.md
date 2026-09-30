@@ -76,7 +76,7 @@ The SignaturePad must be placed inside an `SfGlassEffectView` container to apply
 
 #### XAML Implementation
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
@@ -159,7 +159,7 @@ public class GlassSignaturePage : ContentPage
 
 **Critical:** The SignaturePad's `Background` property must be set to `Transparent` for the glass effect to work properly.
 
-```xml
+```xaml
 <!-- XAML -->
 <signaturePad:SfSignaturePad Background="Transparent" />
 ```
@@ -175,7 +175,7 @@ Without transparency, the glass effect will be obscured by the SignaturePad's so
 
 Customize the appearance with various properties:
 
-```xml
+```xaml
 <core:SfGlassEffectView CornerRadius="20"
                         EffectType="Regular"
                         EnableShadowEffect="True"
@@ -202,7 +202,7 @@ public enum LiquidGlassEffectType
 
 #### Examples
 
-```xml
+```xaml
 <!-- Regular effect (subtle) -->
 <core:SfGlassEffectView EffectType="Regular">
     <signaturePad:SfSignaturePad Background="Transparent" />
@@ -225,7 +225,7 @@ glassEffectView.EffectType = LiquidGlassEffectType.Prominent;
 
 Adds depth and elevation with shadow.
 
-```xml
+```xaml
 <!-- With shadow -->
 <core:SfGlassEffectView EnableShadowEffect="True">
     <signaturePad:SfSignaturePad Background="Transparent" />
@@ -247,7 +247,7 @@ glassEffectView.EnableShadowEffect = false; // Without shadow
 
 Rounds the corners of the glass container.
 
-```xml
+```xaml
 <!-- Slightly rounded -->
 <core:SfGlassEffectView CornerRadius="10">
     <signaturePad:SfSignaturePad Background="Transparent" />
@@ -288,7 +288,7 @@ signaturePad.StrokeColor = Colors.Black;
 
 ### Example 1: Modern Signature Card
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
@@ -429,7 +429,7 @@ public class AdaptiveSignaturePage : ContentPage
 
 ### Example 3: Multiple Effect Styles
 
-```xml
+```xaml
 <ScrollView>
     <VerticalStackLayout Spacing="30" Padding="20">
         
@@ -576,7 +576,7 @@ if (DeviceInfo.Version.Major < 26)
 **Cause:** Incorrect sizing or positioning
 
 **Solution:**
-```xml
+```xaml
 <!-- Ensure proper sizing -->
 <core:SfGlassEffectView HeightRequest="300"
                         HorizontalOptions="Fill"

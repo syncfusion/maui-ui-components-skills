@@ -14,7 +14,7 @@
 The `EnableAutoSize` property enables dynamic sizing of the ComboBox based on the content of the selected item or the text entry. The default value is `false`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -51,7 +51,7 @@ Customize the message and appearance when no matching items are found during fil
 The `NoResultsFoundText` property sets the text displayed when no items match the search criteria. The default value is `"No results found"`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -79,7 +79,7 @@ SfComboBox comboBox = new SfComboBox
 The `NoResultsFoundTemplate` property allows you to provide a custom view when no results are found.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -165,7 +165,7 @@ The `MaximumSuggestion` property limits the number of suggestions displayed in t
 **Default Value:** `-1` (shows all items)
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -198,7 +198,7 @@ When using `MaximumSuggestion`, you can customize the "Load More" button appeara
 The `LoadMoreText` property sets the text for the load more button. The default value is `"Load More"`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -217,7 +217,7 @@ comboBox.LoadMoreText = "Show More Items";
 The `LoadMoreTemplate` property allows you to customize the load more button appearance.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -250,7 +250,7 @@ The `LoadMoreTemplate` property allows you to customize the load more button app
 The `LoadMoreButtonTapped` event is raised when the user taps the load more button.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     MaximumSuggestion="5"
                     LoadMoreButtonTapped="comboBox_LoadMoreButtonTapped" />
@@ -287,7 +287,7 @@ private async Task LoadMoreDataAsync()
 The `IsDropDownOpen` property controls the dropdown's open state programmatically.
 
 **XAML:**
-```xml
+```xaml
 <VerticalStackLayout Spacing="10">
     <editors:SfComboBox x:Name="comboBox"
                         ItemsSource="{Binding SocialMedias}"
@@ -326,7 +326,7 @@ The `ReturnCommand` is executed when the user completes text entry by pressing t
 ### ReturnCommand Property
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="True"
                     ItemsSource="{Binding SocialMedias}"
@@ -359,7 +359,7 @@ public class ViewModel
 Pass additional data to the command using `ReturnCommandParameter`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="True"
                     ItemsSource="{Binding SocialMedias}"
@@ -395,7 +395,7 @@ public class ViewModel
 The `EnableLiquidGlassEffect` property enables a modern liquid glass visual effect on the ComboBox. This feature is primarily supported on iOS and macOS.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -424,7 +424,7 @@ SfComboBox comboBox = new SfComboBox
 ## Combined Advanced Features Example
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"

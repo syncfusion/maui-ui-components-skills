@@ -37,7 +37,7 @@ The .NET MAUI Scheduler provides rich interactive capabilities for managing appo
 
 Appointments can be rescheduled using drag-and-drop operations. Enable this feature by setting the `AllowAppointmentDrag` property to `true`. By default, this property is set to `true`.
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler"
                        View="Week" 
                        AllowAppointmentDrag="true">        
@@ -140,7 +140,7 @@ private void OnSchedulerAppointmentDrop(object? sender, AppointmentDropEventArgs
 
 Configure drag-and-drop behavior using the `DragDropSettings` property:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" View="Week">
     <scheduler:SfScheduler.DragDropSettings>
         <scheduler:DragDropSettings AllowNavigation="true" 
@@ -189,7 +189,7 @@ scheduler.DragDropSettings.ShowTimeIndicator = false;
 
 **Style:**
 
-```xml
+```xaml
 <scheduler:SfScheduler.DragDropSettings>
     <scheduler:DragDropSettings 
         TimeIndicatorStyle="{scheduler:SchedulerTextStyle TextColor=Green}"/>
@@ -217,7 +217,7 @@ scheduler.DragDropSettings.TimeIndicatorTextFormat = "hh:mm";
 
 Appointments can be resized interactively to adjust their duration. By default, `AllowAppointmentResize` is `false`. Enable it to allow resizing:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        View="Day" 
                        AllowAppointmentResize="true">
@@ -238,7 +238,7 @@ scheduler.AllowAppointmentResize = true;
 
 Configure resize behavior using `AppointmentResizeSettings`:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        View="Day" 
                        AllowAppointmentResize="true">
@@ -281,7 +281,7 @@ scheduler.AppointmentResizeSettings.ShowTimeIndicator = false;
 
 #### Customize Time Indicator Style
 
-```xml
+```xaml
 <scheduler:AppointmentResizeSettings>
     <scheduler:AppointmentResizeSettings.TimeIndicatorStyle>
         <scheduler:SchedulerTextStyle TextColor="Green" 
@@ -369,7 +369,7 @@ private void Scheduler_AppointmentResizeEnd(object sender, AppointmentResizeEndE
 
 The built-in appointment editor allows users to create, edit, and delete appointments through a popup dialog. Control editor availability using `AppointmentEditorMode`:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        View="Day" 
                        AppointmentEditorMode="Add,Edit">
@@ -490,7 +490,7 @@ private void Scheduler_RecurringAppointmentBeginningEdit(object? sender, Recurri
 
 Display contextual appointment details on hover (desktop) or tap (mobile):
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        View="Day" 
                        IsAppointmentToolTipEnabled="true">
@@ -509,7 +509,7 @@ scheduler.IsAppointmentToolTipEnabled = true;
 
 Customize tooltip appearance using `AppointmentToolTipSettings`:
 
-```xml
+```xaml
 <scheduler:SfScheduler IsAppointmentToolTipEnabled="true">
     <scheduler:SfScheduler.AppointmentToolTipSettings>
         <scheduler:AppointmentToolTipSettings Background="PaleGreen" 
@@ -546,7 +546,7 @@ scheduler.AppointmentToolTipSettings = new AppointmentToolTipSettings()
 
 Create custom tooltip layouts using `AppointmentToolTipTemplate`:
 
-```xml
+```xaml
 <scheduler:SfScheduler IsAppointmentToolTipEnabled="true">
     <scheduler:SfScheduler.AppointmentToolTipSettings>
         <scheduler:AppointmentToolTipSettings ToolTipPosition="Left"/>
@@ -587,7 +587,7 @@ Create custom tooltip layouts using `AppointmentToolTipTemplate`:
 
 Customize the appearance of selected cells using `CellSelectionView`:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler">
     <scheduler:SfScheduler.CellSelectionView>
         <scheduler:SchedulerCellSelectionView Stroke="Red"
@@ -620,7 +620,7 @@ scheduler.CellSelectionView = new SchedulerCellSelectionView
 
 Use a custom view for cell selection using `Template`:
 
-```xml
+```xaml
 <scheduler:SfScheduler.CellSelectionView>
     <scheduler:SchedulerCellSelectionView>
         <scheduler:SchedulerCellSelectionView.Template>
@@ -639,7 +639,7 @@ Use a custom view for cell selection using `Template`:
 
 ### Example 1: Full Interaction Setup
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler"
                        View="Week"
                        AllowAppointmentDrag="true"

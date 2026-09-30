@@ -30,7 +30,7 @@ The **Stroke** property controls the color of borders and lines in the text inpu
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name"
                                Stroke="#00AFA0"
                                HelperText="Enter your name">
@@ -68,7 +68,7 @@ Use Visual State Manager to customize colors for different states.
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Username"
                                Stroke="#00AFA0"
                                HelperText="Enter your username">
@@ -150,7 +150,7 @@ VisualStateManager.SetVisualStateGroups(inputLayout, visualStateGroupList);
 
 ### Material Design 3 Color Scheme
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Email"
                                ContainerType="Outlined">
     <VisualStateManager.VisualStateGroups>
@@ -180,7 +180,7 @@ VisualStateManager.SetVisualStateGroups(inputLayout, visualStateGroupList);
 
 ### Custom Brand Colors
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Company Email"
                                ContainerType="Filled">
     <VisualStateManager.VisualStateGroups>
@@ -216,7 +216,7 @@ Customize the thickness of strokes/borders for focused and unfocused states.
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name"
                                ContainerType="Outlined"
                                FocusedStrokeThickness="4"
@@ -248,19 +248,19 @@ var inputLayout = new SfTextInputLayout
 
 ### Recommended Values
 
-```xml
+```xaml
 <!-- Subtle change -->
 <inputLayout:SfTextInputLayout FocusedStrokeThickness="2"
                                UnfocusedStrokeThickness="1">
 ```
 
-```xml
+```xaml
 <!-- Prominent change (default-like) -->
 <inputLayout:SfTextInputLayout FocusedStrokeThickness="3"
                                UnfocusedStrokeThickness="1">
 ```
 
-```xml
+```xaml
 <!-- Bold emphasis -->
 <inputLayout:SfTextInputLayout FocusedStrokeThickness="4"
                                UnfocusedStrokeThickness="2">
@@ -268,7 +268,7 @@ var inputLayout = new SfTextInputLayout
 
 ### Example with Custom Colors and Thickness
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Password"
                                ContainerType="Outlined"
                                FocusedStrokeThickness="3"
@@ -302,7 +302,7 @@ Disable the text input layout to prevent user interaction.
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Read Only"
                                IsEnabled="False">
     <Entry Text="Cannot edit this" />
@@ -345,7 +345,7 @@ Customize the background fill color for Filled and Outlined containers.
 
 ### Filled Container Background
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Email"
                                ContainerType="Filled"
                                ContainerBackground="#E6EEF9"
@@ -367,7 +367,7 @@ var inputLayout = new SfTextInputLayout
 
 ### Outlined Container Background
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Phone"
                                ContainerType="Outlined"
                                ContainerBackground="#F5F5F5"
@@ -378,7 +378,7 @@ var inputLayout = new SfTextInputLayout
 
 ### Transparent Background
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name"
                                ContainerType="Filled"
                                ContainerBackground="Transparent">
@@ -388,7 +388,7 @@ var inputLayout = new SfTextInputLayout
 
 ### Background with VSM
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Username"
                                ContainerType="Filled"
                                ContainerBackground="#F5F5F5">
@@ -420,7 +420,7 @@ Customize the color of hint, helper, and error labels.
 
 ### Hint Label Color
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name"
                                ContainerType="Outlined"
                                Stroke="Red">
@@ -433,7 +433,7 @@ Customize the color of hint, helper, and error labels.
 
 ### Helper Text Color
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Email"
                                HelperText="We'll never share your email">
     <inputLayout:SfTextInputLayout.HelperLabelStyle>
@@ -445,7 +445,7 @@ Customize the color of hint, helper, and error labels.
 
 ### Error Text Color
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Password"
                                ErrorText="Password too weak"
                                HasError="True">
@@ -458,7 +458,7 @@ Customize the color of hint, helper, and error labels.
 
 ### All Labels with Custom Colors
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Username"
                                HelperText="3-20 characters"
                                ErrorText="Username taken"
@@ -512,7 +512,7 @@ borderView.BackgroundColor = inputLayout.CurrentActiveColor;
 
 Define styles in `App.xaml` or `Resources/Styles/Styles.xaml`:
 
-```xml
+```xaml
 <Application.Resources>
     <ResourceDictionary>
         
@@ -551,7 +551,7 @@ Define styles in `App.xaml` or `Resources/Styles/Styles.xaml`:
 
 ### Applying the Style
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Style="{StaticResource MD3InputStyle}"
                                Hint="Email">
     <Entry />
@@ -560,7 +560,7 @@ Define styles in `App.xaml` or `Resources/Styles/Styles.xaml`:
 
 ### Dark Mode Theme
 
-```xml
+```xaml
 <Style x:Key="DarkModeInputStyle" TargetType="inputLayout:SfTextInputLayout">
     <Setter Property="ContainerType" Value="Filled" />
     <Setter Property="ContainerBackground" Value="#1E1E1E" />

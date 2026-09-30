@@ -51,7 +51,7 @@ The `AssistAppointmentResponseCompleted` event fires whenever the AI completes p
 ### Subscribing to the Event
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SfSmartScheduler x:Name="smartScheduler" 
                                  AssistAppointmentResponseCompleted="OnAssistAppointmentResponseCompleted"/>
 ```
@@ -237,7 +237,7 @@ public void ResetAssistView()
 ```
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <Grid.RowDefinitions>
         <RowDefinition/>
@@ -276,7 +276,7 @@ public void CloseAssistView()
 ```
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <smartScheduler:SfSmartScheduler x:Name="smartScheduler"/>
     

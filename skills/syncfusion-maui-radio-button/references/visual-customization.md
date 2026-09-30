@@ -26,7 +26,7 @@ The `CheckedColor` property sets the color of the radio button when it's in the 
 
 #### XAML
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="Checked State" 
                        IsChecked="True" 
                        CheckedColor="#6200EE"/>
@@ -49,7 +49,7 @@ The `UncheckedColor` property sets the color of the radio button when it's in th
 
 #### XAML
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="Unchecked State" 
                        UncheckedColor="#B0BEC5"/>
 ```
@@ -66,7 +66,7 @@ SfRadioButton radioButton = new SfRadioButton
 
 ### Both States Together
 
-```xml
+```xaml
 <buttons:SfRadioGroup>
     <buttons:SfRadioButton Text="Success" 
                            IsChecked="True" 
@@ -104,7 +104,7 @@ The `StrokeThickness` property controls the thickness of the radio button's circ
 
 #### XAML
 
-```xml
+```xaml
 <buttons:SfRadioGroup>
     <buttons:SfRadioButton Text="Thin Border" StrokeThickness="1"/>
     <buttons:SfRadioButton Text="Normal Border" StrokeThickness="2" IsChecked="True"/>
@@ -137,7 +137,7 @@ Customize the caption text appearance using various font and color properties.
 
 Sets the color of the caption text.
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="Colored Text" 
                        TextColor="#1976D2" 
                        IsChecked="True"/>
@@ -151,7 +151,7 @@ radioButton.TextColor = Color.FromArgb("#1976D2");
 
 Controls the size of the caption text.
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="Large Text" FontSize="20"/>
 <buttons:SfRadioButton Text="Normal Text" FontSize="14"/>
 <buttons:SfRadioButton Text="Small Text" FontSize="12"/>
@@ -165,7 +165,7 @@ radioButton.FontSize = 18;
 
 Specifies the font family for the caption text.
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="Custom Font" 
                        FontFamily="Arial"
                        FontSize="16"/>
@@ -181,7 +181,7 @@ radioButton.FontFamily = "Arial";
 
 Sets font styling (Bold, Italic, or None).
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="Bold Text" FontAttributes="Bold"/>
 <buttons:SfRadioButton Text="Italic Text" FontAttributes="Italic"/>
 ```
@@ -196,7 +196,7 @@ radioButton.FontAttributes = FontAttributes.Italic;
 
 Controls the horizontal alignment of the text.
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="Left Aligned" 
                        HorizontalTextAlignment="Start"
                        WidthRequest="200"/>
@@ -214,7 +214,7 @@ radioButton.HorizontalTextAlignment = TextAlignment.Center;
 
 ### Complete Text Styling Example
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="Premium Plan" 
                        IsChecked="True"
                        CheckedColor="#6200EE"
@@ -254,7 +254,7 @@ The `LineBreakMode` property controls how text is wrapped or truncated when it e
 
 ### NoWrap (Default)
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="This is a very long text that will not wrap" 
                        LineBreakMode="NoWrap"
                        WidthRequest="200"/>
@@ -264,7 +264,7 @@ The `LineBreakMode` property controls how text is wrapped or truncated when it e
 
 Best for readable text wrapping:
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="The LineBreakMode allows you to wrap or truncate the text at word boundaries for better readability" 
                        LineBreakMode="WordWrap"
                        WidthRequest="250"
@@ -282,7 +282,7 @@ SfRadioButton wrappedButton = new SfRadioButton
 
 ### CharacterWrap
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="Characterwrappingbreakslongtextatanycharacterboundary" 
                        LineBreakMode="CharacterWrap"
                        WidthRequest="200"/>
@@ -290,7 +290,7 @@ SfRadioButton wrappedButton = new SfRadioButton
 
 ### Truncation Modes
 
-```xml
+```xaml
 <VerticalStackLayout WidthRequest="200" Spacing="10">
     <buttons:SfRadioButton Text="This is a very long text for truncation demo" 
                            LineBreakMode="HeadTruncation"/>
@@ -303,7 +303,7 @@ SfRadioButton wrappedButton = new SfRadioButton
 
 ### Practical Example: Long Descriptions
 
-```xml
+```xaml
 <buttons:SfRadioGroup WidthRequest="300">
     <buttons:SfRadioButton Text="Basic Plan: $9.99/month - Includes core features and basic support" 
                            Value="basic"
@@ -326,7 +326,7 @@ The `ControlSize` property sets the size (diameter) of the radio button circle.
 
 ### Basic Sizing
 
-```xml
+```xaml
 <buttons:SfRadioGroup Spacing="15">
     <buttons:SfRadioButton Text="Small (20)" ControlSize="20"/>
     <buttons:SfRadioButton Text="Default (24)" ControlSize="24" IsChecked="True"/>
@@ -353,7 +353,7 @@ SfRadioButton largeButton = new SfRadioButton
 
 For a balanced appearance, adjust font size proportionally:
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="Small Radio" 
                        ControlSize="20" 
                        FontSize="12"/>
@@ -387,7 +387,7 @@ The `ContentSpacing` property controls the spacing between the radio button circ
 
 ### Basic Usage
 
-```xml
+```xaml
 <buttons:SfRadioGroup>
     <buttons:SfRadioButton Text="Tight Spacing" ContentSpacing="5"/>
     <buttons:SfRadioButton Text="Normal Spacing" ContentSpacing="10" IsChecked="True"/>
@@ -419,7 +419,7 @@ The `FontAutoScalingEnabled` property enables automatic font size adjustment bas
 
 ### Enabling Auto Scaling
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="Auto-scaled Text" 
                        FontAutoScalingEnabled="True"
                        FontSize="14"/>
@@ -442,7 +442,7 @@ SfRadioButton accessibleButton = new SfRadioButton
 
 ### Example: Accessibility-First Form
 
-```xml
+```xaml
 <buttons:SfRadioGroup>
     <buttons:SfRadioButton Text="Small Font" 
                            FontSize="12"
@@ -462,7 +462,7 @@ The `EnabledAnimation` property controls whether state change animations are sho
 
 ### Disabling Animation
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="No Animation" 
                        EnabledAnimation="False"
                        IsChecked="True"/>
@@ -491,7 +491,7 @@ By default, `EnabledAnimation` is `true`, providing smooth visual feedback when 
 
 ### Example 1: Material Design Style
 
-```xml
+```xaml
 <buttons:SfRadioGroup>
     <buttons:SfRadioButton Text="Material Design" 
                            IsChecked="True"
@@ -508,7 +508,7 @@ By default, `EnabledAnimation` is `true`, providing smooth visual feedback when 
 
 ### Example 2: iOS-Style Radio Buttons
 
-```xml
+```xaml
 <buttons:SfRadioGroup Spacing="12">
     <buttons:SfRadioButton Text="iOS Style" 
                            CheckedColor="#007AFF"
@@ -523,7 +523,7 @@ By default, `EnabledAnimation` is `true`, providing smooth visual feedback when 
 
 ### Example 3: High Contrast Accessibility
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="High Contrast Mode" 
                        IsChecked="True"
                        CheckedColor="#FFFFFF"
@@ -540,7 +540,7 @@ By default, `EnabledAnimation` is `true`, providing smooth visual feedback when 
 
 ### Example 4: Custom Branded Radio Buttons
 
-```xml
+```xaml
 <buttons:SfRadioGroup Spacing="10">
     <buttons:SfRadioButton Text="Standard Plan" 
                            CheckedColor="#FF6B35"
@@ -583,7 +583,7 @@ ApplyBrandedStyle(option3);
 
 ### Example 5: Compact Form Layout
 
-```xml
+```xaml
 <buttons:SfRadioGroup Orientation="Horizontal" Spacing="5">
     <buttons:SfRadioButton Text="S" 
                            ControlSize="20"
@@ -608,7 +608,7 @@ ApplyBrandedStyle(option3);
 
 ### Example 6: Card-Style Selection
 
-```xml
+```xaml
 <buttons:SfRadioGroup Spacing="15">
     <buttons:SfRadioButton Text="Standard Shipping - 5-7 days" 
                            CheckedColor="#4CAF50"
@@ -638,7 +638,7 @@ ApplyBrandedStyle(option3);
 
 ### Example 7: Dark Theme Radio Buttons
 
-```xml
+```xaml
 <ContentPage BackgroundColor="#121212">
     <buttons:SfRadioGroup>
         <buttons:SfRadioButton Text="Dark Theme Option 1" 
@@ -691,7 +691,7 @@ public class RadioButtonStyle
 
 ### 2. Use Resources for Shared Styles
 
-```xml
+```xaml
 <ContentPage.Resources>
     <Color x:Key="PrimaryColor">#6200EE</Color>
     <Color x:Key="OnSurfaceColor">#000000</Color>
@@ -749,7 +749,7 @@ button.TextColor = Colors.White;
 
 Always test your radio buttons with various text lengths:
 
-```xml
+```xaml
 <buttons:SfRadioGroup WidthRequest="300">
     <buttons:SfRadioButton Text="Short" LineBreakMode="WordWrap"/>
     <buttons:SfRadioButton Text="Medium length option" LineBreakMode="WordWrap"/>
@@ -793,7 +793,7 @@ private void AdjustForScreenSize()
 ### 1. Inconsistent Sizing
 
 **❌ Avoid:**
-```xml
+```xaml
 <buttons:SfRadioGroup>
     <buttons:SfRadioButton Text="Option 1" ControlSize="20" FontSize="18"/>
     <buttons:SfRadioButton Text="Option 2" ControlSize="32" FontSize="12"/>
@@ -801,7 +801,7 @@ private void AdjustForScreenSize()
 ```
 
 **✅ Better:**
-```xml
+```xaml
 <buttons:SfRadioGroup>
     <buttons:SfRadioButton Text="Option 1" ControlSize="24" FontSize="16"/>
     <buttons:SfRadioButton Text="Option 2" ControlSize="24" FontSize="16"/>
@@ -811,14 +811,14 @@ private void AdjustForScreenSize()
 ### 2. Poor Color Contrast
 
 **❌ Avoid:**
-```xml
+```xaml
 <buttons:SfRadioButton Text="Low Contrast" 
                        CheckedColor="#E0E0E0"
                        TextColor="#CCCCCC"/>
 ```
 
 **✅ Better:**
-```xml
+```xaml
 <buttons:SfRadioButton Text="Good Contrast" 
                        CheckedColor="#1976D2"
                        TextColor="#000000"/>
@@ -827,13 +827,13 @@ private void AdjustForScreenSize()
 ### 3. Text Overflow Without LineBreakMode
 
 **❌ Avoid:**
-```xml
+```xaml
 <buttons:SfRadioButton Text="This is a very long text that will overflow" 
                        WidthRequest="150"/>
 ```
 
 **✅ Better:**
-```xml
+```xaml
 <buttons:SfRadioButton Text="This is a very long text that will wrap properly" 
                        WidthRequest="150"
                        LineBreakMode="WordWrap"/>

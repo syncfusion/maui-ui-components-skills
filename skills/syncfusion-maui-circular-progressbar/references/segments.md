@@ -17,7 +17,7 @@ Segments allow you to divide the progress bar into distinct sections, making it 
 The `SegmentCount` property splits the circular progress bar into the specified number of segments.
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="25" 
                                    SegmentCount="7" />
 ```
@@ -45,7 +45,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 Customize the spacing between segments using the `SegmentGapWidth` property.
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="25"
                                    SegmentCount="7" 
                                    SegmentGapWidth="10" />
@@ -73,7 +73,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 
 Track completion of form steps (4 steps).
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="20">
     <Label Text="Complete Registration (Step 2 of 4)" 
            FontSize="16" 
@@ -94,7 +94,7 @@ Track completion of form steps (4 steps).
 
 Show installation stages (5 stages).
 
-```xml
+```xaml
 <StackLayout>
     <progressBar:SfCircularProgressBar x:Name="installProgressBar"
                                     Progress="60"
@@ -159,7 +159,7 @@ private async Task RunInstallation()
 
 Apply color gradients to segmented progress bars.
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    SegmentCount="4"
                                    SegmentGapWidth="8">
@@ -184,7 +184,7 @@ Apply color gradients to segmented progress bars.
 
 Create semi-circle segmented progress.
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="50"
                                    SegmentCount="6"
                                    SegmentGapWidth="6"
@@ -222,7 +222,7 @@ Create semi-circle segmented progress.
 
 ## Complete Example: Multi-Step Wizard
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="20">
     <Label x:Name="wizardTitle"
            Text="Account Setup - Step 1 of 4"

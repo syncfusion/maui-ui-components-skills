@@ -164,7 +164,7 @@ public partial class App : Application
 ```
 
 **SfScheduler.fr-FR.resx:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8"?>
 <root>
   <data name="Day" xml:space="preserve">
@@ -193,7 +193,7 @@ public partial class App : Application
 
 **MainPage.xaml:**
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:scheduler="clr-namespace:Syncfusion.Maui.Scheduler;assembly=Syncfusion.Maui.Scheduler"
@@ -272,7 +272,7 @@ public partial class App : Application
 
 **MainPage.xaml:**
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:scheduler="clr-namespace:Syncfusion.Maui.Scheduler;assembly=Syncfusion.Maui.Scheduler"

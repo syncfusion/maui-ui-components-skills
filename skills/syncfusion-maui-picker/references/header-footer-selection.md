@@ -20,7 +20,7 @@ Enable the header by setting `Height` to a value greater than 0.
 **Default value:** `0` (disabled)
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.HeaderView>
         <picker:PickerHeaderView Height="40" />
@@ -37,7 +37,7 @@ picker.HeaderView.Height = 40;
 
 Set descriptive text to explain the picker's purpose.
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.HeaderView>
         <picker:PickerHeaderView Text="Select a color" Height="40" />
@@ -57,7 +57,7 @@ picker.HeaderView = new PickerHeaderView()
 
 Customize the header background color.
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.HeaderView>
         <picker:PickerHeaderView Background="#6750A4" Height="40" />
@@ -73,7 +73,7 @@ picker.HeaderView.Background = Color.FromArgb("#6750A4");
 
 Customize text appearance including color, font size, family, and attributes.
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.HeaderView>
         <picker:PickerHeaderView Height="40">
@@ -100,7 +100,7 @@ picker.HeaderView.TextStyle = new PickerTextStyle()
 
 Customize the divider line below the header.
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.HeaderView>
         <picker:PickerHeaderView DividerColor="Red" Height="40" />
@@ -116,7 +116,7 @@ picker.HeaderView.DividerColor = Colors.Red;
 
 Show a close button in the header (typically used with Dialog mode).
 
-```xml
+```xaml
 <Grid>
     <picker:SfPicker x:Name="picker" 
                      Mode="Dialog" 
@@ -146,7 +146,7 @@ private void Button_Clicked(object sender, EventArgs e)
 
 ### Custom Close Button Icon
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker" 
                  ShowCloseButton="True" 
                  Mode="Dialog" 
@@ -161,7 +161,7 @@ private void Button_Clicked(object sender, EventArgs e)
 
 Create fully custom header appearance using `DataTemplate`.
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.HeaderTemplate>
         <DataTemplate>
@@ -183,7 +183,7 @@ Create fully custom header appearance using `DataTemplate`.
 Apply different templates based on conditions.
 
 **XAML:**
-```xml
+```xaml
 <Grid.Resources>
     <DataTemplate x:Key="selectedItemTemplate">
         <Grid Background="LightBlue">
@@ -241,7 +241,7 @@ Enable the footer by setting `Height` to a value greater than 0.
 
 **Default value:** `0` (disabled)
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.FooterView>
         <picker:PickerFooterView Height="40"/>
@@ -257,7 +257,7 @@ picker.FooterView.Height = 40;
 
 Customize the footer background color.
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.FooterView>
         <picker:PickerFooterView Background="#6750A4" Height="40"/>
@@ -274,7 +274,7 @@ picker.FooterView.Background = Color.FromArgb("#6750A4");
 Control button visibility and text.
 
 **Show/Hide OK Button:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.FooterView>
         <picker:PickerFooterView ShowOkButton="True" Height="40"/>
@@ -285,7 +285,7 @@ Control button visibility and text.
 **Default value:** `true`
 
 **Customize Button Text:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.FooterView>
         <picker:PickerFooterView ShowOkButton="True"
@@ -306,7 +306,7 @@ picker.FooterView.CancelButtonText = "Exit";
 
 Customize button text appearance.
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.FooterView>
         <picker:PickerFooterView Height="40">
@@ -333,7 +333,7 @@ picker.FooterView.TextStyle = new PickerTextStyle()
 
 Customize the divider line above the footer.
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.FooterView>
         <picker:PickerFooterView DividerColor="Red" Height="40"/>
@@ -349,7 +349,7 @@ picker.FooterView.DividerColor = Colors.Red;
 
 Create a fully custom footer using `DataTemplate`.
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.FooterTemplate>
         <DataTemplate>
@@ -382,7 +382,7 @@ The selection view highlights the currently selected item in the picker.
 
 Customize the appearance of the selection indicator.
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.SelectionView>
         <picker:PickerSelectionView CornerRadius="10" 
@@ -413,7 +413,7 @@ picker.SelectionView = new PickerSelectionView()
 
 Handle user validation using OK and Cancel button events.
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  OkButtonClicked="Picker_OkButtonClicked"
                  CancelButtonClicked="Picker_CancelButtonClicked">
@@ -452,7 +452,7 @@ Control when the selection is committed.
 - Real-time selection updates
 
 **Example:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  IsSelectionImmediate="True">
     <!-- Picker configuration -->
@@ -465,7 +465,7 @@ picker.IsSelectionImmediate = true;
 
 ## Complete Example
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  HeightRequest="350"
                  WidthRequest="300">

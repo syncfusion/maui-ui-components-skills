@@ -29,7 +29,7 @@ public enum InputValidationMode
 **When:** Validation happens immediately as user types  
 **Use for:** Real-time feedback, preventing invalid characters
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     x:Name="phoneEntry"
     MaskType="Simple"
@@ -53,7 +53,7 @@ var phoneEntry = new SfMaskedEntry
 **When:** Validation happens when control loses focus  
 **Use for:** Less intrusive validation, validating complete input
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     x:Name="dateEntry"
     MaskType="Simple"
@@ -119,7 +119,7 @@ maskedEntry.ValueChanged += (s, e) =>
 **When:** Control receives focus (user taps/tabs into it)  
 **Event Args:** `FocusEventArgs`
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     x:Name="maskedEntry"
     Focused="OnMaskedEntryFocused" />
@@ -145,7 +145,7 @@ private void OnMaskedEntryFocused(object sender, FocusEventArgs e)
 **When:** Control loses focus (user taps/tabs away)  
 **Event Args:** `FocusEventArgs`
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     x:Name="maskedEntry"
     Unfocused="OnMaskedEntryUnfocused" />
@@ -408,7 +408,7 @@ dateEntry.ValueChanged += async (s, e) =>
 - Trigger search
 - Execute commands
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     x:Name="searchEntry"
     Completed="OnSearchCompleted" />
@@ -450,7 +450,7 @@ lastFieldEntry.Completed += async (s, e) =>
 - Show confirmation
 - Log clear actions
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     x:Name="maskedEntry"
     ClearButtonVisibility="WhileEditing"

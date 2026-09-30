@@ -16,7 +16,7 @@ The explode feature pulls segments outward from the chart center to emphasize sp
 Use `ExplodeIndex` to explode a specific segment by its index (0-based).
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:PieSeries ItemsSource="{Binding Data}"
                      XBindingPath="Product"
@@ -56,7 +56,7 @@ series.ExplodeIndex = -1;
 The `ExplodeRadius` property defines how far the segment moves from the center (in pixels).
 
 **XAML:**
-```xml
+```xaml
 <chart:DoughnutSeries ExplodeIndex="1" ExplodeRadius="15"/>
 ```
 
@@ -87,7 +87,7 @@ series.ExplodeRadius = 25;
 Enable interactive explosion by setting `ExplodeOnTouch` to `true`. Users can tap segments to explode/collapse them.
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:DoughnutSeries ItemsSource="{Binding Data}"
                           XBindingPath="XValue"
@@ -118,7 +118,7 @@ When `ExplodeOnTouch` is enabled:
 Use `ExplodeAll` to explode every segment simultaneously.
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:PieSeries ItemsSource="{Binding Data}"
                      XBindingPath="Product"
@@ -148,7 +148,7 @@ PieSeries series = new PieSeries
 
 ### Pre-exploded with Touch Interaction
 
-```xml
+```xaml
 <chart:DoughnutSeries ItemsSource="{Binding Data}"
                       XBindingPath="Category"
                       YBindingPath="Value"
@@ -178,7 +178,7 @@ This allows users to:
 
 ### Example 1: Highlight Top Performer
 
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:PieSeries ItemsSource="{Binding SalesData}"
                      XBindingPath="Region"
@@ -219,7 +219,7 @@ chart.Series.Add(series);
 
 ### Example 3: Burst Effect with All Segments
 
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Title>
         <Label Text="Market Distribution"/>
@@ -278,7 +278,7 @@ PieSeries normalSeries = new PieSeries
 
 ### Explode + Data Labels
 
-```xml
+```xaml
 <chart:PieSeries ExplodeIndex="1"
                  ExplodeRadius="15"
                  ShowDataLabels="True">
@@ -290,7 +290,7 @@ PieSeries normalSeries = new PieSeries
 
 ### Explode + Selection
 
-```xml
+```xaml
 <chart:DoughnutSeries ExplodeOnTouch="True"
                       ExplodeRadius="12">
     <chart:DoughnutSeries.SelectionBehavior>

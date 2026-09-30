@@ -64,7 +64,7 @@ chatSuggestions.Orientation = SuggestionsOrientation.Vertical;
 Show a persistent suggestion bar at the bottom of the entire chat control using `SfChat.Suggestions`.
 
 **XAML:**
-```xml
+```xaml
 <sfChat:SfChat Messages="{Binding Messages}"
                CurrentUser="{Binding CurrentUser}"
                Suggestions="{Binding ChatSuggestions}" />
@@ -118,7 +118,7 @@ sfChat.SuggestionItemSelected += (sender, e) =>
 ```
 
 **MVVM command approach:**
-```xml
+```xaml
 <sfChat:SfChat SuggestionItemSelectedCommand="{Binding SuggestionItemSelectedCommand}" ... />
 ```
 ```csharp

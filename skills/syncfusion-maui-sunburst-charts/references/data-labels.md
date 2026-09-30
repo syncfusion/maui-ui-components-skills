@@ -19,7 +19,7 @@ Data labels display information about segments at their visual location, helping
 Data labels are controlled by the `ShowLabels` property, which is `False` by default.
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ShowLabels="True"
                           ItemsSource="{Binding DataSource}"
                           ValueMemberPath="EmployeesCount">
@@ -58,7 +58,7 @@ When data labels are too large to fit within their segments, they can overlap. T
 Truncates labels with ellipsis (...) when they exceed segment space.
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ShowLabels="True"
                           ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Value">
@@ -94,7 +94,7 @@ this.Content = sunburst;
 Completely hides labels that don't fit within their segments.
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ShowLabels="True"
                           ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Value">
@@ -139,7 +139,7 @@ The `RotationMode` property controls how labels are oriented within segments.
 Labels rotate to align with the segment's radial direction, creating a sunburst effect.
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ShowLabels="True"
                           ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Sales">
@@ -182,7 +182,7 @@ this.Content = sunburst;
 Labels remain horizontal regardless of segment angle, improving readability.
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ShowLabels="True"
                           ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Count">
@@ -238,7 +238,7 @@ Customize label appearance using the `DataLabelSettings` property with `Sunburst
 ### Font Customization Example
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ShowLabels="True"
                           ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Amount">
@@ -275,7 +275,7 @@ this.Content = sunburst;
 ### Style Variations
 
 **Subtle Labels:**
-```xml
+```xaml
 <sunburst:SunburstDataLabelSettings 
     TextColor="Gray" 
     FontSize="9" 
@@ -283,7 +283,7 @@ this.Content = sunburst;
 ```
 
 **Prominent Labels:**
-```xml
+```xaml
 <sunburst:SunburstDataLabelSettings 
     TextColor="Black" 
     FontSize="14" 
@@ -291,7 +291,7 @@ this.Content = sunburst;
 ```
 
 **Themed Labels:**
-```xml
+```xaml
 <sunburst:SunburstDataLabelSettings 
     TextColor="{StaticResource PrimaryTextColor}" 
     FontSize="11" 
@@ -304,7 +304,7 @@ this.Content = sunburst;
 
 Show labels only for the outermost level using conditional styling or by controlling segment sizes.
 
-```xml
+```xaml
 <sunburst:SfSunburstChart ShowLabels="True" InnerRadius="0.6">
     <!-- Large inner radius makes inner rings thinner, 
          hiding their labels naturally -->
@@ -318,7 +318,7 @@ Show labels only for the outermost level using conditional styling or by control
 
 Use contrasting colors for maximum readability.
 
-```xml
+```xaml
 <sunburst:SfSunburstChart ShowLabels="True">
     <sunburst:SfSunburstChart.DataLabelSettings>
         <sunburst:SunburstDataLabelSettings 
@@ -333,7 +333,7 @@ Use contrasting colors for maximum readability.
 
 Smaller fonts with normal rotation for mobile readability.
 
-```xml
+```xaml
 <sunburst:SfSunburstChart ShowLabels="True">
     <sunburst:SfSunburstChart.DataLabelSettings>
         <sunburst:SunburstDataLabelSettings 
@@ -348,7 +348,7 @@ Smaller fonts with normal rotation for mobile readability.
 
 Clean labels with selective display.
 
-```xml
+```xaml
 <sunburst:SfSunburstChart ShowLabels="True" Radius="0.8">
     <sunburst:SfSunburstChart.DataLabelSettings>
         <sunburst:SunburstDataLabelSettings 
@@ -421,7 +421,7 @@ Clean labels with selective display.
 
 Combining all label features:
 
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Sales"
                           ShowLabels="True"

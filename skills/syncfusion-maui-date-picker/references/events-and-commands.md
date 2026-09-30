@@ -21,7 +21,7 @@ The event uses `DatePickerSelectionChangedEventArgs` which provides:
 
 ### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      SelectionChanged="OnDatePickerSelectionChanged">
 </picker:SfDatePicker>
@@ -86,7 +86,7 @@ Fires when the picker dialog is opened.
 
 #### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      Mode="Dialog"
                      Opened="OnDatePickerOpened">
@@ -124,7 +124,7 @@ Fires when the picker dialog is closing. This event can be cancelled to prevent 
 
 #### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      Mode="Dialog"
                      Closing="OnDatePickerClosing">
@@ -175,7 +175,7 @@ Fires when the picker dialog is closed.
 
 #### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      Mode="Dialog"
                      Closed="OnDatePickerClosed">
@@ -220,7 +220,7 @@ Fires when the OK button is clicked. This event is not applicable when the foote
 
 #### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      OkButtonClicked="OnDatePickerOkButtonClicked">
     <picker:SfDatePicker.FooterView>
@@ -266,7 +266,7 @@ Fires when the Cancel button is clicked. This event is not applicable when the f
 
 #### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      CancelButtonClicked="OnDatePickerCancelButtonClicked">
     <picker:SfDatePicker.FooterView>
@@ -318,7 +318,7 @@ Command invoked when the selection changes. Passes `DatePickerSelectionChangedEv
 
 #### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      SelectionChangedCommand="{Binding SelectionChangedCommand}">
 <ContentPage.BindingContext>
@@ -374,7 +374,7 @@ Command invoked when the OK button is clicked.
 
 #### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      AcceptCommand="{Binding AcceptCommand}">
     <picker:SfDatePicker.FooterView>
@@ -418,7 +418,7 @@ Command invoked when the Cancel button is clicked.
 
 #### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      DeclineCommand="{Binding DeclineCommand}">
     <picker:SfDatePicker.FooterView>

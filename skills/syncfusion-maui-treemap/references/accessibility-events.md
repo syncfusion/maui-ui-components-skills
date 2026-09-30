@@ -50,7 +50,7 @@ The TreeMap supports keyboard interaction for navigation and selection.
 Keyboard support is enabled by default. Ensure the TreeMap is focusable:
 
 **XAML:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Value"
                    SelectionMode="Single">
@@ -94,7 +94,7 @@ Interactive elements at least 44x44 pixels.
 - Use appropriate `Spacing` to avoid accidental taps
 - Test on touch devices
 
-```xml
+```xaml
 <treemap:TreeMapLeafItemSettings Spacing="3" />
 ```
 
@@ -105,7 +105,7 @@ Spacing helps separate items for accurate touch targeting.
 Don't rely solely on color to convey information. Use additional cues:
 
 **Good: Color + Text Labels**
-```xml
+```xaml
 <treemap:TreeMapRangeBrush LegendLabel="High Risk (>75%)" 
                            From="75" To="100" 
                            Brush="Red" />
@@ -129,7 +129,7 @@ Raised when selection changes.
 - `NewItems`: Currently selected items
 
 **Usage:**
-```xml
+```xaml
 <treemap:SfTreeMap SelectionChanged="OnSelectionChanged" />
 ```
 
@@ -184,7 +184,7 @@ Drilldown allows users to navigate into hierarchical data by tapping group heade
 Enable drilldown navigation for multi-level hierarchical TreeMaps.
 
 **XAML:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding CountryData}"
                    PrimaryValuePath="Population"
                    EnableDrillDown="True">
@@ -279,7 +279,7 @@ treeMap.LeafItemSettings = new TreeMapLeafItemSettings { LabelPath = "City" };
 
 ### Drilldown with Custom Header Style
 
-```xml
+```xaml
 <treemap:SfTreeMap EnableDrillDown="True">
     <treemap:SfTreeMap.Levels>
         <treemap:TreeMapLevel GroupPath="Category" 
@@ -320,7 +320,7 @@ Support RTL languages (Arabic, Hebrew, Persian, Urdu) by mirroring the TreeMap l
 Use the `FlowDirection` property to set layout direction.
 
 **XAML:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Value"
                    FlowDirection="RightToLeft">
@@ -372,7 +372,7 @@ public MainPage()
 
 ### Complete RTL Example
 
-```xml
+```xaml
 <ContentPage xmlns:treemap="clr-namespace:Syncfusion.Maui.TreeMap;assembly=Syncfusion.Maui.TreeMap">
     <Grid>
         <treemap:SfTreeMap DataSource="{Binding ArabicData}"
@@ -414,7 +414,7 @@ public MainPage()
 
 ### Example 1: Fully Accessible TreeMap
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding AccessibleData}"
                    PrimaryValuePath="Revenue"
                    SelectionMode="Single"
@@ -598,7 +598,7 @@ public partial class LocalizedTreeMapPage : ContentPage
 3. Check data has hierarchical structure matching GroupPath properties
 4. Confirm header areas are tappable (sufficient HeaderHeight)
 
-```xml
+```xaml
 <treemap:SfTreeMap EnableDrillDown="True">
     <treemap:SfTreeMap.Levels>
         <treemap:TreeMapLevel GroupPath="Category" HeaderHeight="30" />

@@ -16,7 +16,7 @@ Covers programmatic scrolling, auto-scroll behavior, the scroll-to-bottom button
 Use `SfChat.ScrollToMessage(object)` to programmatically scroll to any message in the collection.
 
 **XAML:**
-```xml
+```xaml
 <StackLayout>
     <Button x:Name="ScrollTo" Text="Scroll to message" HeightRequest="100" Clicked="ScrollTo_Clicked" />
     <sfChat:SfChat x:Name="sfChat"
@@ -44,7 +44,7 @@ private void ScrollTo_Clicked(object sender, EventArgs e)
 By default, `SfChat` scrolls to the bottom whenever a new message is added. To disable this behavior, set `CanAutoScrollToBottom` to `false`.
 
 **XAML:**
-```xml
+```xaml
 <sfChat:SfChat x:Name="sfChat"
                Messages="{Binding Messages}"
                CurrentUser="{Binding CurrentUser}"
@@ -60,7 +60,7 @@ Use this when you want to preserve the user's scroll position after new messages
 Display a floating button that lets users jump back to the latest message after scrolling up. Enable it with `ShowScrollToBottomButton="True"`.
 
 **XAML:**
-```xml
+```xaml
 <sfChat:SfChat x:Name="sfChat"
                Messages="{Binding Messages}"
                CurrentUser="{Binding CurrentUser}"
@@ -83,7 +83,7 @@ The button appears automatically when the user scrolls up through older messages
 Replace the default button appearance using `ScrollToBottomButtonTemplate`.
 
 **XAML:**
-```xml
+```xaml
 <ContentPage.Resources>
     <ResourceDictionary>
         <DataTemplate x:Key="scrollToBottomButtonTemplate">
@@ -133,7 +133,7 @@ The `Scrolled` event fires whenever the chat is scrolled. Use `ChatScrolledEvent
 **Key use case:** Disable auto-scroll while the user is reading older messages, then re-enable it once they scroll back to the bottom.
 
 **XAML:**
-```xml
+```xaml
 <sfChat:SfChat x:Name="sfChat"
                Messages="{Binding Messages}"
                CurrentUser="{Binding CurrentUser}"

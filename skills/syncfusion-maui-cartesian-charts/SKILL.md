@@ -1,6 +1,6 @@
 ---
 name: syncfusion-maui-cartesian-charts
-description: Implements Syncfusion .NET MAUI Cartesian Chart (SfCartesianChart) for data visualization with 20+ chart types including line, area, column, bar, financial, statistical, and stacked charts. Use when implementing cartesian charts, line charts, area charts, or financial charts (candle, OHLC). Covers chart axes, legends, tooltips, trackball, zooming and panning, chart annotations, and trendlines.
+description: Implements Syncfusion® .NET MAUI Cartesian Chart (SfCartesianChart) for data visualization with 20+ chart types including line, area, column, bar, financial, statistical, and stacked charts. Use when implementing cartesian charts, line charts, area charts, or financial charts (candle, OHLC). Covers chart axes, legends, tooltips, trackball, zooming and panning, chart annotations, and trendlines.
 metadata:
   author: "Syncfusion Inc"
   version: "34.1.29"
@@ -8,7 +8,7 @@ metadata:
 
 # Implementing .NET MAUI Cartesian Charts
 
-Guide users to implement the Syncfusion .NET MAUI Cartesian Chart (SfCartesianChart), a comprehensive data visualization solution with over 20 chart types, interactive features, and extensive customization options. Use this skill to implement charts ranging from simple line graphs to complex financial and statistical visualizations.
+Guide users to implement the Syncfusion® .NET MAUI Cartesian Chart (SfCartesianChart), a comprehensive data visualization solution with over 20 chart types, interactive features, and extensive customization options. Use this skill to implement charts ranging from simple line graphs to complex financial and statistical visualizations.
 
 ## When to Use This Skill
 

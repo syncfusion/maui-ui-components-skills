@@ -1,14 +1,14 @@
 ---
 name: syncfusion-maui-step-progressbar
-description: Implements Syncfusion .NET MAUI StepProgressBar (SfStepProgressBar) control. Use when implementing step progress visualization, multi-step process tracking, or sequential progress indication. This skill covers step appearance customization, step states (completed/in-progress/not-started), orientation options, tooltips, and accessibility for order tracking, registration forms, or checkout processes.
+description: Implements Syncfusion® .NET MAUI StepProgressBar (SfStepProgressBar) control. Use when implementing step progress visualization, multi-step process tracking, or sequential progress indication. This skill covers step appearance customization, step states (completed/in-progress/not-started), orientation options, tooltips, and accessibility for order tracking, registration forms, or checkout processes.
 metadata:
   author: "Syncfusion Inc"
   version: "34.1.29"
 ---
 
-# Implementing Syncfusion .NET MAUI StepProgressBar
+# Implementing .NET MAUI StepProgressBar
 
-A comprehensive guide for implementing and customizing the Syncfusion .NET MAUI StepProgressBar (SfStepProgressBar) control. This skill covers step progress visualization, multi-step process tracking, progress indication through sequential steps, customizing step appearance and content, handling step states (completed/in-progress/not-started), orientation options, tooltips, events, accessibility, RTL support, and the liquid glass effect.
+A comprehensive guide for implementing and customizing the Syncfusion® .NET MAUI StepProgressBar (SfStepProgressBar) control. This skill covers step progress visualization, multi-step process tracking, progress indication through sequential steps, customizing step appearance and content, handling step states (completed/in-progress/not-started), orientation options, tooltips, events, accessibility, RTL support, and the liquid glass effect.
 
 ## When to Use This Skill
 
@@ -28,7 +28,7 @@ Use this skill when the user needs to:
 
 ## Component Overview
 
-The **Syncfusion .NET MAUI StepProgressBar (SfStepProgressBar)** is a visual control that displays progress through multiple steps in a sequential process. It provides:
+The **.NET MAUI StepProgressBar (SfStepProgressBar)** is a visual control that displays progress through multiple steps in a sequential process. It provides:
 
 - **Multi-step visualization**: Display 3-10+ steps with clear progression
 - **Three progress states**: Completed, In Progress, and Not Started
@@ -51,7 +51,7 @@ Common use cases include order tracking systems, multi-page registration forms, 
 When to read: User is setting up StepProgressBar for the first time, needs installation steps, or wants a basic working example.
 
 Topics covered:
-- Installing Syncfusion.Maui.ProgressBar NuGet package
+- Installing `Syncfusion.Maui.ProgressBar` NuGet package
 - Registering the handler with ConfigureSyncfusionCore()
 - Adding SfStepProgressBar to XAML or C#
 - Populating items with ItemsSource and ObservableCollection

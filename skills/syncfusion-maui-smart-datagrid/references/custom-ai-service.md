@@ -76,6 +76,7 @@ In `MauiProgram.cs`:
 ```csharp
 using Syncfusion.Maui.Core.Hosting;
 using Syncfusion.Maui.SmartComponents;
+using Syncfusion.Maui.SmartComponents.Hosting;
 
 var builder = MauiApp.CreateBuilder();
 builder
@@ -181,14 +182,12 @@ public class CustomInferenceService : IChatInferenceService
 
 ### Step 1: Create Test Page
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:smartComponents="clr-namespace:Syncfusion.Maui.SmartComponents;assembly=Syncfusion.Maui.SmartComponents"
+             xmlns:smartComponents="clr-namespace:Syncfusion.Maui.SmartDataGrid;assembly=Syncfusion.Maui.SmartDataGrid"
              x:Class="YourApp.TestPage">
     
-    <smartComponents:SfSmartTextEditor
-        Placeholder="Type to test AI suggestions..."
-        SuggestionDisplayMode="Inline" />
+    <smartComponents:SfSmartDataGrid ItemsSource="{Binding Orders}" />
 </ContentPage>
 ```
 

@@ -41,7 +41,7 @@ public ImageSource? ToImageSource()
 
 ### Basic Usage (XAML + Code-Behind)
 
-```xml
+```xaml
 <Grid>
     <Grid.RowDefinitions>
         <RowDefinition Height="*" />
@@ -309,7 +309,7 @@ private void GetSignatureData()
 
 ### Complete Example with DrawCompleted Event
 
-```xml
+```xaml
 <signaturePad:SfSignaturePad x:Name="signaturePad"
                               DrawCompleted="OnDrawCompleted" />
 ```

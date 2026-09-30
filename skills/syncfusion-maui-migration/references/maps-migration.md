@@ -39,7 +39,7 @@ using Syncfusion.Maui.Maps;
 ### ShapeFileLayer
 
 **Xamarin:**
-```xml
+```xaml
 <maps:SfMaps>
     <maps:SfMaps.Layers>
         <maps:ShapeFileLayer Uri="world-map.shp">
@@ -54,7 +54,7 @@ using Syncfusion.Maui.Maps;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <maps:SfMaps>
     <maps:SfMaps.Layer>
         <maps:MapShapeLayer ShapesSource="world-map.shp">
@@ -80,7 +80,7 @@ using Syncfusion.Maui.Maps;
 ## Marker Migration
 
 **Xamarin:**
-```xml
+```xaml
 <maps:ShapeFileLayer>
     <maps:ShapeFileLayer.Markers>
         <maps:MapMarker Latitude="37.7749"
@@ -91,7 +91,7 @@ using Syncfusion.Maui.Maps;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <maps:MapShapeLayer>
     <maps:MapShapeLayer.Markers>
         <maps:MapMarker Latitude="37.7749"
@@ -188,7 +188,7 @@ layer.Markers.Add(marker);
 ### Color Mapping
 
 **Xamarin:**
-```xml
+```xaml
 <maps:ShapeFileLayer.ShapeSettings>
     <maps:ShapeSetting>
         <maps:ShapeSetting.ColorMappings>
@@ -200,7 +200,7 @@ layer.Markers.Add(marker);
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <maps:MapShapeLayer.ColorMappings>
     <maps:RangeColorMapping From="0" To="100" Fill="Green"/>
     <maps:RangeColorMapping From="100" To="200" Fill="Yellow"/>

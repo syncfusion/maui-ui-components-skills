@@ -119,7 +119,7 @@ namespace SignaturePadDemo
 
 Open your XAML page (e.g., `MainPage.xaml`) and add the SignaturePad namespace:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:signaturePad="clr-namespace:Syncfusion.Maui.SignaturePad;assembly=Syncfusion.Maui.SignaturePad"
@@ -134,7 +134,7 @@ Open your XAML page (e.g., `MainPage.xaml`) and add the SignaturePad namespace:
 
 Add the `SfSignaturePad` control to your layout:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:signaturePad="clr-namespace:Syncfusion.Maui.SignaturePad;assembly=Syncfusion.Maui.SignaturePad"
@@ -151,7 +151,7 @@ Add the `SfSignaturePad` control to your layout:
 
 #### Complete XAML Example with Buttons
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:signaturePad="clr-namespace:Syncfusion.Maui.SignaturePad;assembly=Syncfusion.Maui.SignaturePad"

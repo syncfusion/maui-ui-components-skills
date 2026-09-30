@@ -13,7 +13,7 @@ When a chart has many small segments, it becomes cluttered and hard to read. The
 Enable grouping by setting the `GroupTo` property with a threshold value.
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:PieSeries ItemsSource="{Binding Data}"
                      XBindingPath="Product"
@@ -44,7 +44,7 @@ The `GroupMode` property determines how grouping is calculated.
 Groups segments where the Y value is less than the `GroupTo` threshold.
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries GroupTo="10" GroupMode="Value"/>
 ```
 
@@ -64,7 +64,7 @@ series.GroupTo = 10;  // Group segments with value < 10
 Groups segments where the percentage is less than the `GroupTo` threshold.
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries GroupTo="5" GroupMode="Percentage"/>
 ```
 
@@ -85,7 +85,7 @@ series.GroupTo = 5;  // Group segments < 5%
 Groups segments where the angle is less than the `GroupTo` threshold (in degrees).
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries GroupTo="20" GroupMode="Angle"/>
 ```
 
@@ -103,7 +103,7 @@ series.GroupTo = 20;  // Group segments < 20 degrees
 
 ### Example 1: Group by Value Threshold
 
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Title>
         <Label Text="Product Sales (Values < 15 grouped)"/>
@@ -142,7 +142,7 @@ chart.Series.Add(series);
 
 ### Example 3: Doughnut Chart with Grouping
 
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:DoughnutSeries ItemsSource="{Binding MarketData}"
                           XBindingPath="Company"
@@ -175,7 +175,7 @@ public class SalesViewModel
 }
 ```
 
-```xml
+```xaml
 <Slider Minimum="0" 
         Maximum="50" 
         Value="{Binding GroupingThreshold}"
@@ -342,7 +342,7 @@ public ObservableCollection<DataModel> GetGroupedData(double threshold)
 
 ### Interactive Threshold Adjustment
 
-```xml
+```xaml
 <StackLayout>
     <Label Text="{Binding GroupThreshold, StringFormat='Group threshold: {0}'}"/>
     <Slider Minimum="0" 

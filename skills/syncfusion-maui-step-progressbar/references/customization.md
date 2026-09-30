@@ -29,7 +29,7 @@ Control the shape of step indicators using the `ShapeType` property in `StepSett
 ### Setting Shape Type
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar ItemsSource="{Binding StepProgressItem}"
                                    ActiveStepIndex="2" 
                                    ActiveStepProgressValue="50">
@@ -127,7 +127,7 @@ Customize what appears inside each step indicator using the `ContentType` proper
 ### Setting Content Types
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar x:Name="stepProgressBar"
                                    StepSize="40"
                                    StepContentSize="25"
@@ -218,7 +218,7 @@ Control the speed of progress animations using `ProgressAnimationDuration`.
 **Default:** 1000 milliseconds (1 second)
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     x:Name="stepProgressBar"
     ProgressBarBackground="LightBlue" 
@@ -255,7 +255,7 @@ this.Content = stepProgressBar;
 Customize the connector line color between steps.
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     x:Name="stepProgressBar"
     ProgressBarBackground="LightBlue">
@@ -329,7 +329,7 @@ public class ViewModel
 ```
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar
     x:Name="stepProgress"
     Orientation="Vertical"
@@ -363,7 +363,7 @@ Comprehensive styling for different step states using `InProgressStepSettings`, 
 ### Complete Styling Example
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar ItemsSource="{Binding StepProgressItem}"
                                    ActiveStepIndex="2" 
                                    ActiveStepProgressValue="50">
@@ -437,7 +437,7 @@ Use `StepTemplate` with `DataTemplate` for complete visual control over step app
 ### Basic Step Template
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     x:Name="stepProgress"
     Orientation="Horizontal"
@@ -505,7 +505,7 @@ public class StepTemplateSelector : DataTemplateSelector
 ```
 
 **XAML with Selector:**
-```xml
+```xaml
 <Grid>
     <Grid.Resources>
         <DataTemplate x:Key="template1">
@@ -573,7 +573,7 @@ Customize primary and secondary text appearance using templates.
 ### PrimaryTextTemplate Example
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     x:Name="stepProgress"
     Orientation="Horizontal"
@@ -663,7 +663,7 @@ public class PrimaryTemplateSelector : DataTemplateSelector
 ```
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <Grid.Resources>
         <DataTemplate x:Key="primaryTemplate1">
@@ -707,7 +707,7 @@ public class PrimaryTemplateSelector : DataTemplateSelector
 
 ### Example 1: Brand-Colored Progress Bar
 
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     ItemsSource="{Binding StepProgressItem}"
     ActiveStepIndex="2"

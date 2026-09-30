@@ -64,7 +64,7 @@ namespace YourApp
 ### Step 3: Add the Namespace
 
 **In XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
@@ -83,7 +83,7 @@ using Syncfusion.Maui.Inputs;
 ### Step 4: Create Your First Masked Entry
 
 **Basic Masked Entry (XAML):**
-```xml
+```xaml
 <editors:SfMaskedEntry x:Name="maskedEntry" />
 ```
 
@@ -100,7 +100,7 @@ This creates a basic masked entry control without any mask pattern.
 
 Use the `Mask` property to define the input pattern:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     WidthRequest="200"
     MaskType="Simple"
@@ -124,7 +124,7 @@ SfMaskedEntry maskedEntry = new SfMaskedEntry
 
 For more flexible patterns, use RegEx mask type:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     WidthRequest="200"
     MaskType="RegEx"
@@ -148,7 +148,7 @@ SfMaskedEntry maskedEntry = new SfMaskedEntry
 
 The `PromptChar` defines what character appears in unfilled positions (default is underscore `_`):
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     WidthRequest="200"
     MaskType="Simple"
@@ -180,7 +180,7 @@ SfMaskedEntry maskedEntry = new SfMaskedEntry
 
 Use the `Value` property to pre-populate the masked entry:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     WidthRequest="200"
     MaskType="Simple"
@@ -216,7 +216,7 @@ string currentValue = maskedEntry.Value?.ToString();
 Here's a complete phone number input implementation:
 
 **MainPage.xaml:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

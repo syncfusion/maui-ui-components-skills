@@ -41,7 +41,7 @@ public event EventHandler ValueChangeStart;
 ### Usage
 
 **XAML:**
-```xml
+```xaml
 <sliders:SfSlider ValueChangeStart="OnValueChangeStart" />
 ```
 
@@ -93,7 +93,7 @@ public event EventHandler<SliderValueChangingEventArgs> ValueChanging;
 ### Usage
 
 **XAML:**
-```xml
+```xaml
 <sliders:SfSlider ValueChanging="OnValueChanging" />
 ```
 
@@ -118,7 +118,7 @@ private void OnValueChanging(object sender, SliderValueChangingEventArgs e)
 
 ### Example: Real-Time Display
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="10">
     <Label x:Name="valueLabel" Text="Value: 50" FontSize="16" />
     <sliders:SfSlider Minimum="0"
@@ -183,7 +183,7 @@ public event EventHandler<SliderValueChangedEventArgs> ValueChanged;
 ### Usage
 
 **XAML:**
-```xml
+```xaml
 <sliders:SfSlider ValueChanged="OnValueChanged" />
 ```
 
@@ -272,7 +272,7 @@ public event EventHandler ValueChangeEnd;
 ### Usage
 
 **XAML:**
-```xml
+```xaml
 <sliders:SfSlider ValueChangeEnd="OnValueChangeEnd" />
 ```
 
@@ -341,7 +341,7 @@ The `DragStartedCommand` is executed when the user starts dragging the thumb. Th
 ### Command Setup
 
 **XAML with ViewModel Binding:**
-```xml
+```xaml
 <ContentPage.BindingContext>
     <local:ViewModel />
 </ContentPage.BindingContext>
@@ -384,7 +384,7 @@ SfSlider slider = new SfSlider
 Pass parameters to the command:
 
 **XAML:**
-```xml
+```xaml
 <sliders:SfSlider DragStartedCommand="{Binding DragStartedCommand}"
                   DragStartedCommandParameter="VolumeSlider" />
 ```
@@ -404,7 +404,7 @@ private void OnDragStarted(string parameter)
 
 ### Example with Command Parameter
 
-```xml
+```xaml
 <VerticalStackLayout>
     <sliders:SfSlider DragStartedCommand="{Binding DragStartedCommand}"
                       DragStartedCommandParameter="1" />
@@ -429,7 +429,7 @@ The `DragCompletedCommand` is executed when the user completes dragging the thum
 ### Command Setup
 
 **XAML with ViewModel Binding:**
-```xml
+```xaml
 <ContentPage.BindingContext>
     <local:ViewModel />
 </ContentPage.BindingContext>
@@ -461,7 +461,7 @@ public class ViewModel
 Pass parameters to the command:
 
 **XAML:**
-```xml
+```xaml
 <sliders:SfSlider DragCompletedCommand="{Binding DragCompletedCommand}"
                   DragCompletedCommandParameter="1" />
 ```
@@ -482,7 +482,7 @@ private void OnDragCompleted(int sliderId)
 
 ### Combined Drag Commands
 
-```xml
+```xaml
 <sliders:SfSlider DragStartedCommand="{Binding DragStartedCommand}"
                   DragCompletedCommand="{Binding DragCompletedCommand}"
                   Value="{Binding Volume, Mode=TwoWay}" />
@@ -548,7 +548,7 @@ public class ViewModel : INotifyPropertyChanged
 ### Example 1: Volume Control with Events
 
 **XAML:**
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="15">
     <Label Text="Volume Control" FontSize="18" FontAttributes="Bold" />
     
@@ -600,7 +600,7 @@ private void OnVolumeChangeEnd(object sender, EventArgs e)
 ### Example 2: MVVM Pattern with Commands
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sliders="clr-namespace:Syncfusion.Maui.Sliders;assembly=Syncfusion.Maui.Sliders"

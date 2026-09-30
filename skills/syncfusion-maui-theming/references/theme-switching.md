@@ -169,7 +169,7 @@ public class SettingsViewModel : INotifyPropertyChanged
 
 ### XAML Binding
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              x:Class="YourApp.SettingsPage">
     <StackLayout Padding="20">
@@ -345,7 +345,7 @@ public class ThemeOption
 }
 ```
 
-```xml
+```xaml
 <Picker ItemsSource="{Binding AvailableThemes}"
         ItemDisplayBinding="{Binding Name}"
         SelectedItem="{Binding SelectedTheme}"/>

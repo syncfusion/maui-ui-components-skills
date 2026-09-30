@@ -3,6 +3,7 @@
 ## Table of Contents
 - [Overview](#overview)
 - [Fast Line Chart](#fast-line-chart)
+- [Fast Scatter Chart](#fast-scatter-chart)
 - [Step Area Chart](#step-area-chart)
 - [Step Line Chart](#step-line-chart)
 - [Waterfall Chart](#waterfall-chart)
@@ -24,7 +25,7 @@ Fast line chart is optimized for rendering large datasets with thousands of data
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:DateTimeAxis/>
@@ -99,7 +100,7 @@ public class ViewModel
 
 ### Dashed Fast Line
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.Resources>
         <DoubleCollection x:Key="dashArray">
@@ -139,7 +140,7 @@ FastLineSeries series = new FastLineSeries()
 
 Enable anti-aliasing to reduce jagged edges:
 
-```xml
+```xaml
 <chart:FastLineSeries ItemsSource="{Binding LargeData}"
                       XBindingPath="Time"
                       YBindingPath="Value"
@@ -158,13 +159,91 @@ FastLineSeries series = new FastLineSeries()
 
 **Note**: Enabling anti-aliasing may slightly reduce performance but improves visual quality.
 
+## Fast Scatter Chart
+
+Fast scatter charts are designed for rendering large volumes of point data efficiently. They are a performance-oriented alternative to standard scatter charts when you need to visualize dense datasets without sacrificing responsiveness.
+
+### Basic Implementation
+
+```xaml
+<chart:SfCartesianChart>
+    <chart:SfCartesianChart.XAxes>
+        <chart:NumericalAxis/>
+    </chart:SfCartesianChart.XAxes>
+
+    <chart:SfCartesianChart.YAxes>
+        <chart:NumericalAxis/>
+    </chart:SfCartesianChart.YAxes>
+
+    <chart:FastScatterSeries ItemsSource="{Binding Data1}"
+                            XBindingPath="XValue"
+                            YBindingPath="YValue" />
+
+    <chart:FastScatterSeries ItemsSource="{Binding Data2}"
+                            XBindingPath="XValue"
+                            YBindingPath="YValue" />
+</chart:SfCartesianChart>
+```
+
+```csharp
+SfCartesianChart chart = new SfCartesianChart();
+
+NumericalAxis primaryAxis = new NumericalAxis();
+chart.XAxes.Add(primaryAxis);
+
+NumericalAxis secondaryAxis = new NumericalAxis();
+chart.YAxes.Add(secondaryAxis);
+
+FastScatterSeries scatterSeries1 = new FastScatterSeries
+{
+    ItemsSource = new ViewModel().Data1,
+    XBindingPath = "XValue",
+    YBindingPath = "YValue",
+};
+
+FastScatterSeries scatterSeries2 = new FastScatterSeries
+{
+    ItemsSource = new ViewModel().Data2,
+    XBindingPath = "XValue",
+    YBindingPath = "YValue",
+};
+
+chart.Series.Add(scatterSeries1);
+chart.Series.Add(scatterSeries2);
+```
+
+### Segment Customization
+
+Use `PointHeight`, `PointWidth`, and `Type` to control the appearance of each segment. The default `Type` is `ShapeType.Circle`, and the default size is `5` for both dimensions.
+
+```xaml
+<chart:FastScatterSeries ItemsSource="{Binding Data1}"
+                        XBindingPath="XValue"
+                        YBindingPath="YValue"
+                        PointHeight="10"
+                        PointWidth="10"
+                        Type="Rectangle"/>
+```
+
+```csharp
+FastScatterSeries scatterSeries = new FastScatterSeries
+{
+    ItemsSource = new ViewModel().Data1,
+    XBindingPath = "XValue",
+    YBindingPath = "YValue",
+    PointHeight = 10,
+    PointWidth = 10,
+    Type = ShapeType.Rectangle
+};
+```
+
 ## Step Area Chart
 
 Step area charts display data changes over time with horizontal and vertical lines creating steps, with the area beneath filled.
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:DateTimeAxis/>
@@ -230,7 +309,7 @@ public class ViewModel
 
 ### Enable Markers
 
-```xml
+```xaml
 <chart:StepAreaSeries ItemsSource="{Binding ProductionData}"
                       XBindingPath="Month"
                       YBindingPath="Units"
@@ -249,7 +328,7 @@ StepAreaSeries series = new StepAreaSeries()
 
 ### Marker Customization
 
-```xml
+```xaml
 <chart:StepAreaSeries ItemsSource="{Binding ProductionData}"
                       XBindingPath="Month"
                       YBindingPath="Units"
@@ -292,7 +371,7 @@ Step line charts connect data points with horizontal and vertical lines, creatin
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:DateTimeAxis/>
@@ -346,7 +425,7 @@ this.Content = chart;
 
 ### Dashed Step Line
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.Resources>
         <DoubleCollection x:Key="dashArray">
@@ -386,7 +465,7 @@ StepLineSeries series = new StepLineSeries()
 
 Render step line vertically using the `IsTransposed` property:
 
-```xml
+```xaml
 <chart:SfCartesianChart IsTransposed="True">
     <chart:SfCartesianChart.XAxes>
         <chart:DateTimeAxis/>
@@ -429,7 +508,7 @@ Waterfall charts visualize the cumulative effect of sequential positive and nega
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -509,7 +588,7 @@ public class ViewModel
 
 **AllowAutoSum**: Automatically calculates cumulative totals
 
-```xml
+```xaml
 <chart:WaterfallSeries ItemsSource="{Binding FinancialData}"
                        XBindingPath="Category"
                        YBindingPath="Value"
@@ -530,7 +609,7 @@ WaterfallSeries series = new WaterfallSeries()
 
 **ShowConnectorLine**: Display/hide connector lines between segments
 
-```xml
+```xaml
 <chart:WaterfallSeries ItemsSource="{Binding FinancialData}"
                        XBindingPath="Category"
                        YBindingPath="Value"
@@ -549,7 +628,7 @@ WaterfallSeries series = new WaterfallSeries()
 
 ### Connector Line Customization
 
-```xml
+```xaml
 <chart:WaterfallSeries ItemsSource="{Binding FinancialData}"
                        XBindingPath="Category"
                        YBindingPath="Value">
@@ -578,7 +657,7 @@ WaterfallSeries series = new WaterfallSeries()
 
 ### Complete Waterfall Example
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>

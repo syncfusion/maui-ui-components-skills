@@ -34,7 +34,7 @@ The track is the background rail that the thumb slides along. Customize it with 
 - **TrackStroke** (Color): Border color of the track
 
 **Example:**
-```xml
+```xaml
 <buttons:SfSwitch IsOn="True">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -84,7 +84,7 @@ The thumb is the circular element that slides to indicate state. Customize it wi
 - **ThumbStroke** (Color): Border color of the thumb
 
 **Example:**
-```xml
+```xaml
 <buttons:SfSwitch>
     <buttons:SfSwitch.SwitchSettings>
         <buttons:SwitchSettings ThumbBackground="#FFFFFF" ThumbStroke="#E0E0E0" />
@@ -104,7 +104,7 @@ settings.ThumbStroke = Color.FromRgba("#E0E0E0");
 Apply different colors for different states to provide clear visual feedback:
 
 **Example: Different Colors for On/Off States**
-```xml
+```xaml
 <buttons:SfSwitch IsOn="False">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -215,7 +215,7 @@ Control the size and shape of the track:
 - **TrackHeightRequest** (double): Height of the track
 
 **Example:**
-```xml
+```xaml
 <buttons:SfSwitch>
     <buttons:SfSwitch.SwitchSettings>
         <buttons:SwitchSettings TrackWidthRequest="75" TrackHeightRequest="25" />
@@ -231,7 +231,7 @@ Control the size of the thumb:
 - **ThumbHeightRequest** (double): Height of the thumb
 
 **Example:**
-```xml
+```xaml
 <buttons:SfSwitch>
     <buttons:SfSwitch.SwitchSettings>
         <buttons:SwitchSettings ThumbWidthRequest="20" ThumbHeightRequest="20" />
@@ -248,7 +248,7 @@ Control the width of borders:
 - **ThumbStrokeThickness** (double): Border width of the thumb
 
 **Example:**
-```xml
+```xaml
 <buttons:SfSwitch>
     <buttons:SfSwitch.SwitchSettings>
         <buttons:SwitchSettings TrackStrokeThickness="2" ThumbStrokeThickness="2" />
@@ -264,7 +264,7 @@ Create rounded or sharp corners:
 - **ThumbCornerRadius** (CornerRadius): Rounding of thumb corners
 
 **Example:**
-```xml
+```xaml
 <!-- Fully rounded -->
 <buttons:SfSwitch>
     <buttons:SfSwitch.SwitchSettings>
@@ -290,7 +290,7 @@ Create rounded or sharp corners:
 ### Complete Sizing Example
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSwitch>
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -377,7 +377,7 @@ You can add custom vector icons inside the thumb using the `CustomPath` property
 ### Icon Colors
 
 **Example:**
-```xml
+```xaml
 <buttons:SfSwitch>
     <buttons:SfSwitch.SwitchSettings>
         <buttons:SwitchSettings IconColor="DarkGreen" CustomPath="M17.2558 12.7442L15.8333 11.3217V8.33341..." />
@@ -390,7 +390,7 @@ You can add custom vector icons inside the thumb using the `CustomPath` property
 **Important:** Keep the CustomPath size within the thumb dimensions to avoid clipping.
 
 **Example: Notification Bell Icon**
-```xml
+```xaml
 <buttons:SfSwitch IsOn="{x:Null}" AllowIndeterminateState="True">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -471,7 +471,7 @@ onStyle.CustomPath = "M17.2558 12.7442L15.8333 11.3217V8.33341C15.8333 5.65258..
 
 ### Example 1: Material Design Style
 
-```xml
+```xaml
 <buttons:SfSwitch IsOn="True">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -520,7 +520,7 @@ onStyle.CustomPath = "M17.2558 12.7442L15.8333 11.3217V8.33341C15.8333 5.65258..
 
 ### Example 2: iOS/Cupertino Style
 
-```xml
+```xaml
 <buttons:SfSwitch IsOn="True">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -631,7 +631,7 @@ VisualStateManager.SetVisualStateGroups(brandedSwitch, visualStateGroupList);
 ## Best Practices
 
 ### 1. Maintain Consistent Dimensions Across States
-```xml
+```xaml
 <!-- Good: Same sizes for all states -->
 <VisualState x:Name="On">
     <VisualState.Setters>
@@ -678,7 +678,7 @@ settings.TrackWidthRequest = switchWidth;
 - Consider using platform-specific styles with `OnPlatform`
 
 ### 6. Use Gradients Carefully
-```xml
+```xaml
 <!-- Linear gradient for track -->
 <buttons:SwitchSettings>
     <buttons:SwitchSettings.TrackBackground>

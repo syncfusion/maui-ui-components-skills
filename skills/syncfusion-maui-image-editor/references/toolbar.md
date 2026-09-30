@@ -31,7 +31,7 @@ Control toolbar visibility using the `ShowToolbar` property:
 
 ### XAML
 
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg" ShowToolbar="True" />
 ```
 
@@ -93,7 +93,7 @@ The following built-in toolbar items are available:
 Show only specific crop types:
 
 **XAML:**
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg">
     <imageEditor:SfImageEditor.ToolbarSettings>
         <imageEditor:ImageEditorToolbarSettings 
@@ -117,7 +117,7 @@ imageEditor.ToolbarSettings.CropTypes =
 Show only specific effects:
 
 **XAML:**
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg">
     <imageEditor:SfImageEditor.ToolbarSettings>
         <imageEditor:ImageEditorToolbarSettings 
@@ -139,7 +139,7 @@ imageEditor.ToolbarSettings.EffectTypes =
 Show only specific shapes:
 
 **XAML:**
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg">
     <imageEditor:SfImageEditor.ToolbarSettings>
         <imageEditor:ImageEditorToolbarSettings 
@@ -164,7 +164,7 @@ imageEditor.ToolbarSettings.Shapes =
 Change default colors in toolbar color pickers:
 
 **XAML:**
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg">
     <imageEditor:SfImageEditor.ToolbarSettings>
         <imageEditor:ImageEditorToolbarSettings>
@@ -345,7 +345,7 @@ cropItem.SubToolbars.Add(customSubToolbar);
 
 Handle toolbar item clicks:
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           ToolbarItemSelected="OnToolbarItemSelected" />

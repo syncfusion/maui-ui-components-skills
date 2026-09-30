@@ -18,7 +18,7 @@ Swipe to reveal action buttons or content on the left or right side of items.
 
 ### Enable Swiping
 
-```xml
+```xaml
 <syncfusion:SfListView AllowSwiping="True" SwipeOffset="100" />
 ```
 
@@ -29,7 +29,7 @@ listView.SwipeOffset = 100; // Distance in pixels to trigger swipe
 
 ### Start Swipe Template
 
-```xml
+```xaml
 <syncfusion:SfListView AllowSwiping="True" SwipeOffset="80">
     <syncfusion:SfListView.StartSwipeTemplate>
         <DataTemplate>
@@ -47,7 +47,7 @@ listView.SwipeOffset = 100; // Distance in pixels to trigger swipe
 
 ### End Swipe Template
 
-```xml
+```xaml
 <syncfusion:SfListView.EndSwipeTemplate >
     <DataTemplate>
         <Grid BackgroundColor="#F44336" Padding="20">
@@ -63,7 +63,7 @@ listView.SwipeOffset = 100; // Distance in pixels to trigger swipe
 
 ### Both Templates
 
-```xml
+```xaml
 <syncfusion:SfListView AllowSwiping="True" SwipeOffset="100">
     <!-- Swipe Right to Archive -->
     <syncfusion:SfListView.StartSwipeTemplate>
@@ -144,7 +144,7 @@ listView.SwipeEnded += (sender, e) =>
 
 ### Swipe Actions with Multiple Buttons
 
-```xml
+```xaml
 <syncfusion:SfListView.StartSwipeTemplate>
     <DataTemplate>
         <Grid ColumnDefinitions="Auto, Auto, Auto">
@@ -220,7 +220,7 @@ Reorder items within the list or drag items between multiple lists.
 
 ### Enable Drag and Drop
 
-```xml
+```xaml
 <syncfusion:SfListView DragStartMode="OnHold" />
 ```
 
@@ -237,7 +237,7 @@ listView.DragStartMode = DragStartMode.OnHold;
 
 Create a custom drag handle:
 
-```xml
+```xaml
 <syncfusion:SfListView DragStartMode="OnDragIndicator">
     <syncfusion:SfListView.ItemTemplate>
         <DataTemplate>
@@ -359,7 +359,7 @@ listView.ItemDragging += (sender, e) =>
 
 Drag items between two ListViews:
 
-```xml
+```xaml
 <Grid ColumnDefinitions="*, *" ColumnSpacing="10">
     <StackLayout Grid.Column="0">
         <Label Text="To Do" FontAttributes="Bold" />
@@ -434,7 +434,7 @@ By defining the `SfListView.DragItemTemplate` property you can display a custom 
 
 XAML
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView">
     <syncfusion:SfListView x:Name="listView" 
                                      ItemsSource="{Binding ToDoList}"
@@ -491,7 +491,7 @@ Notes:
 
 Ensure swipe and drag features are accessible:
 
-```xml
+```xaml
 <!-- Add accessibility descriptions -->
 <Grid AutomationProperties.Name="Delete action" 
       AutomationProperties.HelpText="Swipe left to delete">
@@ -501,7 +501,7 @@ Ensure swipe and drag features are accessible:
 
 ## Complete Example: Email List with Swipe Actions
 
-```xml
+```xaml
 <syncfusion:SfListView x:Name="emailList"
                        ItemsSource="{Binding Emails}"
                        AllowSwiping="True"

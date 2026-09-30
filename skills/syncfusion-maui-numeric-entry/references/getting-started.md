@@ -121,13 +121,13 @@ namespace NumericEntryApp
 
 Add the Syncfusion namespace to your XAML page:
 
-```xml
+```xaml
 xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
 ```
 
 **Complete XAML example:**
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -151,7 +151,7 @@ using Syncfusion.Maui.Inputs;
 
 ### XAML Implementation
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
@@ -216,7 +216,7 @@ The Numeric Entry control allows numeric input and restricts alphabetic characte
 
 ### Basic Value Entry
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         HorizontalOptions="Center"
                         VerticalOptions="Center" />
@@ -230,7 +230,7 @@ The Numeric Entry control allows numeric input and restricts alphabetic characte
 
 ### Set Initial Value
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Value="1234.56" />
 ```
@@ -249,7 +249,7 @@ Use the `CustomFormat` property to display values in different formats. Default 
 
 ### Currency Format
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Value="12.5"
                         CustomFormat="C2" />
@@ -268,7 +268,7 @@ var numericEntry = new SfNumericEntry
 
 ### Percentage Format
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Value="0.75"
                         CustomFormat="P0" />
@@ -278,7 +278,7 @@ var numericEntry = new SfNumericEntry
 
 ### Decimal Format with Thousands Separator
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Value="123456.789"
                         CustomFormat="N2" />
@@ -288,7 +288,7 @@ var numericEntry = new SfNumericEntry
 
 ### Custom Format with Precision
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Value="12.5"
                         CustomFormat="0.000" />
@@ -302,7 +302,7 @@ By default, Numeric Entry allows **null** values. When the user clears the input
 
 ### Allow Null (Default Behavior)
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         AllowNull="True"
                         Placeholder="Enter value" />
@@ -315,7 +315,7 @@ By default, Numeric Entry allows **null** values. When the user clears the input
 
 ### Disallow Null
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Value="100"
                         AllowNull="False" />
@@ -337,7 +337,7 @@ var numericEntry = new SfNumericEntry
 
 ### Null with Minimum Value
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Minimum="10"
                         AllowNull="False" />
@@ -349,7 +349,7 @@ var numericEntry = new SfNumericEntry
 
 ### Placeholder Text and Color
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Placeholder="Enter amount"
                         PlaceholderColor="Gray" />
@@ -362,7 +362,7 @@ numericEntry.PlaceholderColor = Colors.Gray;
 
 ### Text Color
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         TextColor="Blue" />
 ```
@@ -373,7 +373,7 @@ numericEntry.TextColor = Colors.Blue;
 
 ### Font Properties
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         FontFamily="Arial"
                         FontSize="18"
@@ -394,7 +394,7 @@ numericEntry.FontAttributes = FontAttributes.Bold;
 
 ### Font Auto-Scaling
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         FontAutoScalingEnabled="True" />
 ```
@@ -461,7 +461,7 @@ numericEntry.Unfocus();
 
 Fired when the Numeric Entry **gains focus**.
 
-```xml
+```xaml
 <editors:SfNumericEntry x:Name="numericEntry"
                         WidthRequest="200"
                         Focused="NumericEntry_Focused" />
@@ -492,7 +492,7 @@ private void NumericEntry_Focused(object sender, FocusEventArgs e)
 
 Fired when the Numeric Entry **loses focus**.
 
-```xml
+```xaml
 <editors:SfNumericEntry x:Name="numericEntry"
                         WidthRequest="200"
                         Unfocused="NumericEntry_Unfocused" />
@@ -522,7 +522,7 @@ private void NumericEntry_Unfocused(object sender, FocusEventArgs e)
 
 Here's a complete working example combining multiple features:
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

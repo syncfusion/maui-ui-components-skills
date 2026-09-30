@@ -7,6 +7,12 @@
   - [Interaction Events](#interaction-events)
   - [View Changed Event](#view-changed-event)
   - [Commands (MVVM Support)](#commands-mvvm-support)
+- [Context Menu Support](#context-menu-support)
+  - [Built-in Scheduler Commands](#built-in-scheduler-commands)
+  - [Context Menu for Timeslot Cells](#context-menu-for-timeslot-cells)
+  - [Context Menu for Appointments](#context-menu-for-appointments)
+  - [Customize Context Menu Appearance](#customize-context-menu-appearance)
+  - [Handle Context Menu Opening](#handle-context-menu-opening)
 - [Load On Demand](#load-on-demand)
   - [QueryAppointments Event](#queryappointments-event)
   - [QueryAppointments Command](#queryappointments-command)
@@ -37,7 +43,7 @@ The scheduler provides events to handle user interactions with scheduler element
 
 Triggered when any scheduler element is tapped:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        Tapped="OnSchedulerTapped">
 </scheduler:SfScheduler>
@@ -70,6 +76,38 @@ private void OnSchedulerTapped(object sender, SchedulerTappedEventArgs e)
 - **Date**: Selected date
 - **Element**: Scheduler element tapped
 - **WeekNumber**: Week number (if applicable)
+
+#### RightTapped Event
+
+Triggered when a user performs a right-click on scheduler elements on desktop platforms such as Windows or macOS:
+
+```xaml
+<scheduler:SfScheduler x:Name="scheduler" 
+                       RightTapped="OnSchedulerRightTapped">
+</scheduler:SfScheduler>
+```
+
+```csharp
+scheduler.RightTapped += OnSchedulerRightTapped;
+
+private void OnSchedulerRightTapped(object sender, SchedulerRightTappedEventArgs e)
+{
+    var element = e.Element;               // Right-clicked element
+    var appointments = e.Appointments;     // Right-clicked appointments
+    var selectedDate = e.Date;             // Right-clicked date
+    var resource = e.Resource;             // Associated resource (if any)
+    var weekNumber = e.WeekNumber;         // Right-clicked week number
+
+    // Show context menu or custom action
+}
+```
+
+**Event args properties:**
+- **Appointments**: Collection of appointments associated with the clicked element
+- **Date**: The date corresponding to the clicked cell or appointment
+- **Element**: The scheduler element interacted with (appointment, cell, header, resource, week number)
+- **Resource**: The resource associated with the clicked element (in resource views)
+- **WeekNumber**: The week number value (not applicable in TimelineMonth and Agenda views)
 
 #### DoubleTapped Event
 
@@ -133,7 +171,7 @@ private void OnSchedulerSelectionChanged(object sender, SchedulerSelectionChange
 
 Notifies when the scheduler view changes (swipe or view switch):
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        ViewChanged="OnSchedulerViewChanged">
 </scheduler:SfScheduler>
@@ -168,7 +206,7 @@ Scheduler supports MVVM pattern with commands for all events.
 
 #### TappedCommand
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler"
                        TappedCommand="{Binding SchedulerTappedCommand}">
     <scheduler:SfScheduler.BindingContext>
@@ -195,12 +233,226 @@ public class SchedulerViewModel
 }
 ```
 
+#### RightTappedCommand
+
+```xaml
+<scheduler:SfScheduler x:Name="scheduler"
+                       RightTappedCommand="{Binding SchedulerRightTappedCommand}">
+    <scheduler:SfScheduler.BindingContext>
+        <local:SchedulerInteractionViewModel/>
+    </scheduler:SfScheduler.BindingContext>
+</scheduler:SfScheduler>
+```
+
+```csharp
+public class SchedulerInteractionViewModel
+{
+    public ICommand SchedulerRightTappedCommand { get; set; }
+
+    public SchedulerInteractionViewModel()
+    {
+        this.SchedulerRightTappedCommand = new Command<SchedulerRightTappedEventArgs>(ExecuteRightTapped, CanExecuteRightTapped);
+    }
+
+    private bool CanExecuteRightTapped(SchedulerRightTappedEventArgs arg)
+    {
+        return true;
+    }
+
+    private void ExecuteRightTapped(SchedulerRightTappedEventArgs obj)
+    {
+        var appointments = obj.Appointments;
+        var date = obj.Date;
+        var schedulerElement = obj.Element;
+        var resource = obj.Resource;
+        var weekNumber = obj.WeekNumber;
+    }
+}
+```
+
 #### Other Commands
 
+- **RightTappedCommand**: `Command<SchedulerRightTappedEventArgs>`
 - **DoubleTappedCommand**: `Command<SchedulerDoubleTappedEventArgs>`
 - **LongPressedCommand**: `Command<SchedulerLongPressedEventArgs>`
 - **ViewChangedCommand**: `Command<SchedulerViewChangedEventArgs>`
 - **SelectionChangedCommand**: `Command<SchedulerSelectionChangedEventArgs>`
+
+## Context Menu Support
+
+The scheduler supports context menus for timeslot cells, month cells, all-day panels, and appointments. These menus provide quick actions such as adding, editing, or deleting appointments and can be opened through right-click on desktop platforms or long press on touch devices.
+
+### Built-in Scheduler Commands
+
+Use built-in commands directly in context menu items:
+
+- **Add**: Creates a new appointment for the selected cell
+- **Edit**: Opens the selected appointment for editing
+- **Delete**: Deletes the selected appointment
+
+> Note: Built-in `Add` and `Edit` commands work only when `AppointmentEditorMode` includes the corresponding `Add` or `Edit` option.
+
+### Context Menu for Timeslot Cells
+
+Use `CellContextMenu` to define menu items for timeslot cells, month cells, and the all-day panel:
+
+```xaml
+<scheduler:SfScheduler x:Name="scheduler"
+                       View="Week"
+                       AppointmentEditorMode="Add,Edit">
+    <scheduler:SfScheduler.CellContextMenu>
+        <scheduler:MenuItemCollection>
+            <scheduler:MenuItem Text="Add"
+                                 Command="{x:Static scheduler:SchedulerCommands.Add}"
+                                 CommandParameter="{Binding}"/>
+        </scheduler:MenuItemCollection>
+    </scheduler:SfScheduler.CellContextMenu>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Week;
+scheduler.AppointmentEditorMode = AppointmentEditorMode.Add | AppointmentEditorMode.Edit;
+scheduler.CellContextMenu = new MenuItemCollection()
+{
+    new Syncfusion.Maui.Scheduler.MenuItem
+    {
+        Text = "Add",
+        Command = SchedulerCommands.Add,
+        CommandParameter = new Binding("."),
+        Icon = new FontImageSource
+        {
+            FontFamily = "MauiMaterialAssets",
+            Glyph = "&#xE70D;",
+        }
+    },
+};
+```
+
+### Context Menu for Appointments
+
+Use `AppointmentContextMenu` to define menu items for appointments that appear when the user right-clicks or long-presses an appointment:
+
+```xaml
+<scheduler:SfScheduler x:Name="scheduler"
+                       View="Week"
+                       AppointmentEditorMode="Edit">
+    <scheduler:SfScheduler.AppointmentContextMenu>
+        <scheduler:MenuItemCollection>
+            <scheduler:MenuItem Text="Edit"
+                                 Command="{x:Static scheduler:SchedulerCommands.Edit}"
+                                 CommandParameter="{Binding}"/>
+            <scheduler:MenuItem Text="Delete"
+                                 Command="{x:Static scheduler:SchedulerCommands.Delete}"
+                                 CommandParameter="{Binding}"/>
+        </scheduler:MenuItemCollection>
+    </scheduler:SfScheduler.AppointmentContextMenu>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Week;
+scheduler.AppointmentEditorMode = AppointmentEditorMode.Add | AppointmentEditorMode.Edit;
+scheduler.AppointmentContextMenu = new MenuItemCollection()
+{
+    new Syncfusion.Maui.Scheduler.MenuItem
+    {
+        Text = "Edit",
+        Command = SchedulerCommands.Edit,
+        CommandParameter = new Binding("."),
+        Icon = new FontImageSource
+        {
+            FontFamily = "MauiMaterialAssets",
+            Glyph = "&#xE710;",
+            Color = Colors.Blue,
+            Size = 16
+        }
+    },
+
+    new Syncfusion.Maui.Scheduler.MenuItem
+    {
+        Text = "Delete",
+        Command = SchedulerCommands.Delete,
+        CommandParameter = new Binding("."),
+        Icon = new FontImageSource
+        {
+            FontFamily = "MauiMaterialAssets",
+            Glyph = "&#xE70F;",
+            Color = Colors.Blue,
+            Size = 16
+            
+        }
+    },
+};
+```
+
+Each menu item uses `SchedulerContextMenuInfo` as its binding context, exposing the selected appointment, cell date and time, associated resource, and scheduler instance.
+
+### Customize Context Menu Appearance
+
+Use `ContextMenuBackground` and `ContextMenuTextStyle` to change the menu appearance:
+
+```xaml
+<scheduler:SfScheduler x:Name="scheduler"
+                       View="Week"
+                       ContextMenuBackground="LightGreen">
+    <scheduler:SfScheduler.ContextMenuTextStyle>
+        <scheduler:SchedulerTextStyle TextColor="Red"
+                                     FontSize="14"/>
+    </scheduler:SfScheduler.ContextMenuTextStyle>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Week;
+scheduler.ContextMenuBackground = new SolidColorBrush(Colors.LightGreen);
+scheduler.ContextMenuTextStyle = new SchedulerTextStyle()
+{
+    TextColor = Colors.Red,
+    FontSize = 14,
+};
+```
+
+### Handle Context Menu Opening
+
+The `ContextMenuOpening` event lets you inspect the menu before it is displayed and optionally cancel it:
+
+```xaml
+<schedule:SfScheduler x:Name="scheduler"
+                      View="Week"
+                      ContextMenuOpening="scheduler_ContextMenuOpening">
+</schedule:SfScheduler>
+```
+
+```csharp
+scheduler.ContextMenuOpening += scheduler_ContextMenuOpening;
+
+private void scheduler_ContextMenuOpening(object sender, SchedulerContextMenuOpeningEventArgs e)
+{
+    var contextMenu = e.ContextMenu;
+    var menuType = e.MenuType;
+    var menuInfo = e.MenuInfo;
+    var appointment = menuInfo?.Appointment;
+    var dateTime = menuInfo?.DateTime;
+    var resource = menuInfo?.Resource;
+    var scheduler = menuInfo?.Scheduler;
+
+    if (e.MenuType == SchedulerContextMenuType.Appointment)
+    {
+        e.Cancel = true;
+    }
+}
+```
+
+The event args provide the following details:
+
+- **ContextMenu**: The collection of menu items that will be displayed
+- **MenuInfo**: Information about the scheduler element that triggered the menu, including the selected appointment, cell date and time, associated resource, and scheduler instance
+- **MenuType**: The type of element that opened the context menu, such as `Appointment`, `SchedulerCell`, or `AllDay`
+- **Cancel**: Set to `true` to prevent the context menu from opening
 
 ## Load On Demand
 
@@ -210,7 +462,7 @@ Improve performance by loading appointments only for visible dates.
 
 Triggered when view or visible dates change:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        View="Week"
                        QueryAppointments="OnSchedulerQueryAppointments">
@@ -283,7 +535,7 @@ private ObservableCollection<SchedulerAppointment> GenerateAppointments(List<Dat
 
 MVVM pattern for load on demand:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler"
                        View="Week"
                        AppointmentsSource="{Binding Events}"
@@ -352,7 +604,7 @@ public class LoadOnDemandViewModel : INotifyPropertyChanged
 
 Show loading animation during appointment load:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        ShowBusyIndicator="true">
 </scheduler:SfScheduler>
@@ -371,7 +623,7 @@ scheduler.ShowBusyIndicator = false;
 
 #### Custom Busy Indicator
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" ShowBusyIndicator="true">
     <scheduler:SfScheduler.BusyIndicatorTemplate>
         <DataTemplate>
@@ -397,7 +649,7 @@ scheduler.ShowBusyIndicator = false;
 
 ### Enable Reminders
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        View="Week"
                        EnableReminder="true"
@@ -496,7 +748,7 @@ public class Meeting
 
 **Mapping:**
 
-```xml
+```xaml
 <scheduler:SfScheduler EnableReminder="true">
     <scheduler:SfScheduler.AppointmentMapping>
         <scheduler:SchedulerAppointmentMapping
@@ -686,7 +938,7 @@ scheduler.AppointmentsSource = appointments;
 
 Set scheduler's time zone to display all appointments in specific zone:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        TimeZone="{Binding SchedulerTimeZone}">
 </scheduler:SfScheduler>

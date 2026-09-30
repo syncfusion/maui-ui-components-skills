@@ -40,7 +40,7 @@ The seven-segment display is the most common digital display format, consisting 
 
 ### XAML Implementation
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="12345" 
                       CharacterType="SevenSegment" />
 ```
@@ -55,7 +55,7 @@ digitalGauge.CharacterType = DigitalGaugeCharacterType.SevenSegment;
 
 ### Complete Example
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges">
@@ -112,7 +112,7 @@ The fourteen-segment display extends the seven-segment display with additional d
 
 ### XAML Implementation
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="HELLO" 
                       CharacterType="FourteenSegment" />
 ```
@@ -127,7 +127,7 @@ digitalGauge.CharacterType = DigitalGaugeCharacterType.FourteenSegment;
 
 ### Complete Example
 
-```xml
+```xaml
 <ContentPage xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges">
     
     <VerticalStackLayout Padding="20" Spacing="20">
@@ -223,7 +223,7 @@ The sixteen-segment display provides the clearest rendering of alphabetic charac
 
 ### XAML Implementation
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="SYNCFUSION" 
                       CharacterType="SixteenSegment" />
 ```
@@ -238,7 +238,7 @@ digitalGauge.CharacterType = DigitalGaugeCharacterType.SixteenSegment;
 
 ### Complete Example
 
-```xml
+```xaml
 <ContentPage xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges">
     
     <VerticalStackLayout Padding="20" Spacing="20">
@@ -294,7 +294,7 @@ The 8×8 dot matrix display uses a grid of 64 dots to form characters. This prov
 
 ### XAML Implementation
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="@ # $ % *" 
                       CharacterType="EightCrossEightDotMatrix" />
 ```
@@ -309,7 +309,7 @@ digitalGauge.CharacterType = DigitalGaugeCharacterType.EightCrossEightDotMatrix;
 
 ### Complete Example
 
-```xml
+```xaml
 <ContentPage xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges">
     
     <VerticalStackLayout Padding="20" Spacing="20">
@@ -398,7 +398,7 @@ You can dynamically change the segment type at runtime:
 
 ### XAML with Picker
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="20">
     
     <Picker x:Name="segmentPicker" 

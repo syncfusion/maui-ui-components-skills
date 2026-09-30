@@ -41,7 +41,7 @@ When the precision mode is set to `Standard`, rating items are filled completely
 ### Implementation
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating x:Name="rating" 
                  Value="3"
                  Precision="Standard" />
@@ -83,7 +83,7 @@ When the precision mode is set to `Half`, rating items are filled partially base
 ### Implementation
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating x:Name="rating" 
                  Value="3.5"
                  Precision="Half" />
@@ -136,7 +136,7 @@ The fill level corresponds directly to the click/tap position within the star.
 ### Implementation
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating x:Name="rating" 
                  Value="3.75"
                  Precision="Exact" />
@@ -197,7 +197,7 @@ Exact precision shows proportional fills matching the exact value:
 
 ### Example 1: Product Review with Half Precision
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="15">
     <Label Text="Rate this product:" FontSize="18" FontAttributes="Bold" />
     
@@ -224,7 +224,7 @@ private void OnRatingChanged(object sender, ValueChangedEventArgs e)
 
 ### Example 2: Display Average Rating (Exact, Read-Only)
 
-```xml
+```xaml
 <HorizontalStackLayout Spacing="10">
     <rating:SfRating Value="4.73"
                      ItemCount="5"
@@ -240,7 +240,7 @@ private void OnRatingChanged(object sender, ValueChangedEventArgs e)
 
 ### Example 3: Comparison of All Precision Modes
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="25">
     
     <!-- Standard Precision -->
@@ -286,7 +286,7 @@ exactRating.Value = 3.7;  // Displays as 3.7
 
 Precision modes work seamlessly with data binding:
 
-```xml
+```xaml
 <rating:SfRating Value="{Binding AverageRating}"
                  Precision="Exact"
                  IsReadOnly="True" />

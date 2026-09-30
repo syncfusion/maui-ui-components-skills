@@ -71,7 +71,7 @@ namespace ComboBoxSample
 Add the namespace for Syncfusion controls in your XAML or C# file.
 
 **XAML:**
-```xml
+```xaml
 xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
 ```
 
@@ -83,7 +83,7 @@ using Syncfusion.Maui.Inputs;
 ### Step 5: Add a Basic ComboBox Control
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
@@ -150,7 +150,7 @@ public class SocialMediaViewModel
 Bind the ViewModel data to the ComboBox control using the `ItemsSource` property.
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
@@ -194,7 +194,7 @@ The ComboBox model contains two properties (ID and Name), so you need to specify
 - **DisplayMemberPath:** Property path used to display each data item in the dropdown list. Default: `string.Empty`
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     WidthRequest="250"
                     HeightRequest="50"
@@ -222,7 +222,7 @@ SfComboBox comboBox = new SfComboBox
 The ComboBox supports both editable and non-editable modes. To enable editing functionality, set the `IsEditable` property to `true`. The default value is `false`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     WidthRequest="250"
                     HeightRequest="50"

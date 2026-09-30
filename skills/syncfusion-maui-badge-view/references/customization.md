@@ -25,7 +25,7 @@ Customize badge text appearance using font properties in `BadgeSettings`.
 Control the size of badge text:
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="48">
     <badge:SfBadgeView.Content>
         <Button Text="Primary" WidthRequest="120" HeightRequest="60"/>
@@ -60,7 +60,7 @@ var badgeView = new SfBadgeView
 Apply bold, italic, or both:
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="New">
     <badge:SfBadgeView.Content>
         <Button Text="Products"/>
@@ -86,7 +86,7 @@ var badgeSettings = new BadgeSettings
 Use custom fonts:
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="12">
     <badge:SfBadgeView.Content>
         <Button Text="Messages"/>
@@ -127,7 +127,7 @@ badgeSettings.FontFamily = "CustomFont";
 ### Complete Font Example
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="VIP" 
                    WidthRequest="120" 
                    HeightRequest="80"  
@@ -155,7 +155,7 @@ Add borders to badges using stroke properties.
 ### Stroke and StrokeThickness
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="30">
     <badge:SfBadgeView.Content>
         <Button Text="Cart" WidthRequest="120" HeightRequest="60"/>
@@ -208,7 +208,7 @@ Customize text appearance with color and padding.
 ### TextColor
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="45">
     <badge:SfBadgeView.Content>
         <Button Text="Notifications"/>
@@ -234,7 +234,7 @@ var badgeSettings = new BadgeSettings
 Add spacing around badge text:
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="99+">
     <badge:SfBadgeView.Content>
         <Button Text="Messages"/>
@@ -282,7 +282,7 @@ The `Type` property supports these values:
 ### Using Predefined Types
 
 **XAML:**
-```xml
+```xaml
 <!-- Error Type (Red) -->
 <badge:SfBadgeView BadgeText="8">
     <badge:SfBadgeView.Content>
@@ -334,7 +334,7 @@ var infoBadge = new BadgeSettings { Type = BadgeType.Info };
 Create custom badge colors by setting `Type="None"` and using the `Background` property.
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="48">
     <badge:SfBadgeView.Content>
         <Button Text="Custom Badge"/>
@@ -383,7 +383,7 @@ var gradientBadge = new BadgeSettings
 Control badge shape with the `CornerRadius` property.
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="100">
     <badge:SfBadgeView.Content>
         <Button Text="Square Badge"/>
@@ -419,7 +419,7 @@ Position badge relative to content bounds using `BadgeAlignment`.
 - `End`: Right side (default when combined with top/bottom positions)
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="20">
     <badge:SfBadgeView.Content>
         <Label Text="CENTER" 
@@ -454,7 +454,7 @@ Badge positioning depends on how SfBadgeView and its Content are sized.
 Badge aligns relative to the SfBadgeView's fixed dimensions:
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="20"  
                    WidthRequest="100" 
                    HeightRequest="100">
@@ -477,7 +477,7 @@ Badge aligns relative to the SfBadgeView's fixed dimensions:
 SfBadgeView wraps content; badge aligns to content bounds:
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="20">
     <badge:SfBadgeView.Content>
         <Label Text="Start" 
@@ -500,7 +500,7 @@ SfBadgeView wraps content; badge aligns to content bounds:
 Both SfBadgeView and Content size automatically:
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="20">
     <badge:SfBadgeView.Content>
         <Label Text="Start" 
@@ -521,7 +521,7 @@ Both SfBadgeView and Content size automatically:
 Use `AutoHide` to maintain consistent alignment when some badges are hidden.
 
 **XAML:**
-```xml
+```xaml
 <HorizontalStackLayout Spacing="20" 
                        HorizontalOptions="Center" 
                        VerticalOptions="Center">
@@ -612,7 +612,7 @@ container.Children.Add(badge2);
 Enable automatic font size scaling based on OS text size settings.
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="15">
     <badge:SfBadgeView.Content>
         <Button Text="Accessible Badge"/>
@@ -643,7 +643,7 @@ var badgeSettings = new BadgeSettings
 Control badge visibility with the `IsVisible` property.
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="20">
     <badge:SfBadgeView.Content>
         <Button Text="Messages"/>
@@ -694,7 +694,7 @@ public class NotificationViewModel
 **Problem:** Custom background color doesn't appear.
 
 **Solution:** Ensure `Type="None"`:
-```xml
+```xaml
 <badge:BadgeSettings Type="None" Background="Purple"/>
 ```
 

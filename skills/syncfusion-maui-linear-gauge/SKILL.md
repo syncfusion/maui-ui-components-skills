@@ -1,14 +1,14 @@
 ---
 name: syncfusion-maui-linear-gauge
-description: Implements Syncfusion .NET MAUI Linear Gauge (SfLinearGauge) for data visualization with scales, pointers, and ranges. Use when creating linear gauges, displaying measurements on linear scales, showing progress indicators, or building thermometer-style visualizations. Covers gauge pointer configuration, bar pointers or shape markers, draggable gauge pointers, and animated gauge transitions.
+description: Implements Syncfusion® .NET MAUI Linear Gauge (SfLinearGauge) for data visualization with scales, pointers, and ranges. Use when creating linear gauges, displaying measurements on linear scales, showing progress indicators, or building thermometer-style visualizations. Covers gauge pointer configuration, bar pointers or shape markers, draggable gauge pointers, and animated gauge transitions.
 metadata:
   author: "Syncfusion Inc"
   version: "34.1.29"
 ---
 
-# Implementing Linear Gauges in .NET MAUI
+# Implementing .NET MAUI Linear Gauges
 
-The Syncfusion .NET MAUI Linear Gauge (SfLinearGauge) is a powerful data visualization control for displaying values on a linear scale. Use it to create intuitive measurement displays, progress indicators, thermometer-style visualizations, and interactive slider controls in your .NET MAUI applications.
+The Syncfusion® .NET MAUI Linear Gauge (SfLinearGauge) is a powerful data visualization control for displaying values on a linear scale. Use it to create intuitive measurement displays, progress indicators, thermometer-style visualizations, and interactive slider controls in your .NET MAUI applications.
 
 ## When to Use This Skill
 
@@ -44,8 +44,8 @@ Use this skill when you need to:
 **When to read:** First-time setup, installation, or basic implementation
 
 Topics covered:
-- Installing Syncfusion.Maui.Gauges NuGet package
-- Registering Syncfusion handler in MauiProgram.cs
+- Installing `Syncfusion.Maui.Gauges` NuGet package
+- Registering handler in MauiProgram.cs
 - Creating your first linear gauge
 - Adding basic scale elements
 - Adding ranges and pointers

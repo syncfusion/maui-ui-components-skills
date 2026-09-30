@@ -3,6 +3,7 @@
 ## Table of Contents
 - [Overview](#overview)
 - [Series Styling](#series-styling)
+- [Point Color Path](#point-color-path)
 - [Border and Corner Radius](#border-and-corner-radius)
 - [Plot Area Customization](#plot-area-customization)
 - [Common Styling Patterns](#common-styling-patterns)
@@ -17,7 +18,7 @@ Syncfusion .NET MAUI Cartesian Chart provides extensive customization options to
 
 Customize individual series appearance:
 
-```xml
+```xaml
 <chart:LineSeries ItemsSource="{Binding Data}"
                  XBindingPath="Month"
                  YBindingPath="Sales"
@@ -42,7 +43,7 @@ LineSeries series = new LineSeries
 
 Control transparency:
 
-```xml
+```xaml
 <chart:AreaSeries ItemsSource="{Binding Data}"
                  XBindingPath="Month"
                  YBindingPath="Value"
@@ -60,13 +61,46 @@ AreaSeries series = new AreaSeries
     Opacity = 0.6
 };
 ```
+
+## Point Color Path
+
+Use `PointColorPath` to assign a distinct color to each data point by binding a color property from your data model. This is helpful when you want per-point styling without creating multiple series.
+
+```xaml
+<chart:ColumnSeries ItemsSource="{Binding Data}"
+                   XBindingPath="XValue"
+                   YBindingPath="YValue"
+                   PointColorPath="PointColor"/>
+```
+
+```csharp
+ColumnSeries series = new ColumnSeries
+{
+    ItemsSource = data,
+    XBindingPath = "XValue",
+    YBindingPath = "YValue",
+    PointColorPath = "PointColor"
+};
+```
+
+```csharp
+public class ChartPoint
+{
+    public string? XValue { get; set; }
+    public double YValue { get; set; }
+    public Color? PointColor { get; set; }
+}
+```
+
+> This property is not applicable to area-based series, fast series, financial series, box plot, error bar, waterfall, and histogram types. When multiple styling sources are used, the priority is `Fill` > `PointColorPath` > `PaletteBrushes`.
+
 ## Border and Corner Radius
 
 ### Series Borders
 
 Add borders to series segments:
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}"
                    XBindingPath="Category"
                    YBindingPath="Value"
@@ -89,7 +123,7 @@ ColumnSeries series = new ColumnSeries
 
 ### Corner Radius for Columns
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}"
                    XBindingPath="Category"
                    YBindingPath="Value"
@@ -110,14 +144,20 @@ ColumnSeries series = new ColumnSeries
 
 The `PlotAreaBackgroundView` property allows you to add custom backgrounds, watermarks, or any visual element to the chart's plot area (the area where data is rendered).
 
+For the background view to be visible, wrap its content in an `AbsoluteLayout` and set `AbsoluteLayout.LayoutFlags` and `AbsoluteLayout.LayoutBounds` so the view fills the plot area.
+
 ### Add Background Image
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.PlotAreaBackgroundView>
-        <Image Source="background.png" 
-               Aspect="AspectFill"
-               Opacity="0.3"/>
+        <AbsoluteLayout>
+            <Image Source="background.png"
+                   Aspect="AspectFill"
+                   Opacity="0.3"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+        </AbsoluteLayout>
     </chart:SfCartesianChart.PlotAreaBackgroundView>
     
     <chart:SfCartesianChart.XAxes>
@@ -144,21 +184,30 @@ Image backgroundImage = new Image
     Opacity = 0.3
 };
 
-chart.PlotAreaBackgroundView = backgroundImage;
+AbsoluteLayout backgroundLayout = new AbsoluteLayout();
+AbsoluteLayout.SetLayoutFlags(backgroundImage, AbsoluteLayoutFlags.All);
+AbsoluteLayout.SetLayoutBounds(backgroundImage, new Rect(0, 0, 1, 1));
+backgroundLayout.Children.Add(backgroundImage);
+
+chart.PlotAreaBackgroundView = backgroundLayout;
 ```
 
 ### Add Watermark
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.PlotAreaBackgroundView>
-        <Label Text="CONFIDENTIAL"
-               FontSize="48"
-               TextColor="LightGray"
-               Opacity="0.2"
-               Rotation="-45"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
+        <AbsoluteLayout>
+            <Label Text="CONFIDENTIAL"
+                   FontSize="48"
+                   TextColor="LightGray"
+                   Opacity="0.2"
+                   Rotation="-45"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"/>
+        </AbsoluteLayout>
     </chart:SfCartesianChart.PlotAreaBackgroundView>
     
     <chart:SfCartesianChart.XAxes>
@@ -185,26 +234,34 @@ Label watermark = new Label
     TextColor = Colors.LightGray,
     Opacity = 0.2,
     Rotation = -45,
-    HorizontalOptions = LayoutOptions.Center,
-    VerticalOptions = LayoutOptions.Center
+    HorizontalTextAlignment = TextAlignment.Center,
+    VerticalTextAlignment = TextAlignment.Center
 };
 
-chart.PlotAreaBackgroundView = watermark;
+AbsoluteLayout watermarkLayout = new AbsoluteLayout();
+AbsoluteLayout.SetLayoutFlags(watermark, AbsoluteLayoutFlags.All);
+AbsoluteLayout.SetLayoutBounds(watermark, new Rect(0, 0, 1, 1));
+watermarkLayout.Children.Add(watermark);
+
+chart.PlotAreaBackgroundView = watermarkLayout;
 ```
 
 ### Custom Background with Gradient
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.PlotAreaBackgroundView>
-        <BoxView>
-            <BoxView.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                    <GradientStop Color="#E3F2FD" Offset="0.0"/>
-                    <GradientStop Color="White" Offset="1.0"/>
-                </LinearGradientBrush>
-            </BoxView.Background>
-        </BoxView>
+        <AbsoluteLayout>
+            <BoxView AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <BoxView.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#E3F2FD" Offset="0.0"/>
+                        <GradientStop Color="White" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+        </AbsoluteLayout>
     </chart:SfCartesianChart.PlotAreaBackgroundView>
     
     <chart:SfCartesianChart.XAxes>
@@ -239,26 +296,34 @@ BoxView background = new BoxView
     Background = gradientBrush
 };
 
-chart.PlotAreaBackgroundView = background;
+AbsoluteLayout backgroundLayout = new AbsoluteLayout();
+AbsoluteLayout.SetLayoutFlags(background, AbsoluteLayoutFlags.All);
+AbsoluteLayout.SetLayoutBounds(background, new Rect(0, 0, 1, 1));
+backgroundLayout.Children.Add(background);
+
+chart.PlotAreaBackgroundView = backgroundLayout;
 ```
 
 ### Complex Custom View
 
-You can add any .NET MAUI view to the plot area background:
+You can add any .NET MAUI view to the plot area background. Wrap the custom view in `AbsoluteLayout` and set layout flags/bounds so it fills the entire plot area:
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.PlotAreaBackgroundView>
-        <Grid>
-            <BoxView Color="#F5F5F5"/>
-            <Image Source="logo.png" 
-                   Aspect="AspectFit"
-                   Opacity="0.1"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   WidthRequest="200"
-                   HeightRequest="200"/>
-        </Grid>
+        <AbsoluteLayout>
+            <Grid AbsoluteLayout.LayoutFlags="All"
+                  AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <BoxView Color="#F5F5F5"/>
+                <Image Source="logo.png" 
+                       Aspect="AspectFit"
+                       Opacity="0.1"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       WidthRequest="200"
+                       HeightRequest="200"/>
+            </Grid>
+        </AbsoluteLayout>
     </chart:SfCartesianChart.PlotAreaBackgroundView>
     
     <chart:SfCartesianChart.XAxes>
@@ -280,7 +345,7 @@ You can add any .NET MAUI view to the plot area background:
 
 ### Pattern 1: Rounded Column Chart
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -302,7 +367,7 @@ You can add any .NET MAUI view to the plot area background:
 
 ### Pattern 2: Dark Mode Chart
 
-```xml
+```xaml
 <chart:SfCartesianChart BackgroundColor="#1e1e1e">
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis>
@@ -348,7 +413,7 @@ You can add any .NET MAUI view to the plot area background:
 
 ### Pattern 3: Chart with Watermark
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.PlotAreaBackgroundView>
         <Grid>
@@ -378,7 +443,7 @@ You can add any .NET MAUI view to the plot area background:
 
 ### Pattern 4: Multi-Series with Distinct Styles
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.Legend>
         <chart:ChartLegend/>

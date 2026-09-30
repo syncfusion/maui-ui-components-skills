@@ -40,7 +40,7 @@ Set the selection mode using the `SelectionMode` property.
 
 **XAML:**
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView" 
                        SelectionMode="Multiple"/>
 ```
@@ -59,7 +59,7 @@ treeView.SelectionMode = TreeViewSelectionMode.Multiple;
 
 Default mode where only one item can be selected at a time.
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        ItemsSource="{Binding Items}"
                        ChildPropertyName="SubItems"
@@ -88,7 +88,7 @@ treeView.SelectionMode = TreeViewSelectionMode.SingleDeselect;
 
 Allows selecting multiple items by clicking each one.
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        SelectionMode="Multiple"
                        ItemsSource="{Binding Files}"
@@ -129,7 +129,7 @@ treeView.SelectedItem = viewModel.Items[2];
 
 **XAML Binding:**
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        SelectedItem="{Binding SelectedPlace}"
                        ItemsSource="{Binding CountriesInfo}"
@@ -176,7 +176,7 @@ treeView.SelectedItems.Add(viewModel.Items[5]);
 
 **XAML Binding:**
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        SelectionMode="Multiple"
                        SelectedItems="{Binding SelectedCountries}"
@@ -267,7 +267,7 @@ By default, selection starts from the indent level. Enable full row selection to
 
 **XAML:**
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView" 
                        FullRowSelect="True"
                        SelectionMode="Single"/>
@@ -294,7 +294,7 @@ Customize the background color of selected items.
 
 **XAML:**
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        SelectionBackground="#EADDFF"
                        SelectionMode="Single"/>
@@ -312,7 +312,7 @@ Customize the text color of selected items (unbound mode only).
 
 **XAML:**
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        SelectionForeground="#1C1B1F"
                        SelectionBackground="#EADDFF"
@@ -526,7 +526,7 @@ private void TreeView_SelectionChanging(object sender, ItemSelectionChangingEven
 
 Always use two-way binding for selection properties:
 
-```xml
+```xaml
 <syncfusion:SfTreeView SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                        SelectedItems="{Binding SelectedItems, Mode=TwoWay}"/>
 ```
@@ -541,7 +541,7 @@ Always use two-way binding for selection properties:
 
 **Solution:** Don't set background in ItemTemplate Grid:
 
-```xml
+```xaml
 <!-- ❌ Wrong -->
 <DataTemplate>
     <Grid BackgroundColor="White">

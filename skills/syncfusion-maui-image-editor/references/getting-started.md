@@ -44,7 +44,7 @@ Install-Package Syncfusion.Maui.ImageEditor
 
 After installation, verify the package is listed in your `.csproj` file:
 
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.ImageEditor" Version="x.x.x.x" />
   <PackageReference Include="Syncfusion.Maui.Core" Version="x.x.x.x" />
@@ -91,7 +91,7 @@ public static class MauiProgram
 
 ### XAML Implementation
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:imageEditor="clr-namespace:Syncfusion.Maui.ImageEditor;assembly=Syncfusion.Maui.ImageEditor"
@@ -135,7 +135,7 @@ The `Source` property supports multiple image loading methods:
 
 **Supported formats:** JPEG, JPG, PNG, BMP
 
-```xml
+```xaml
 <!-- XAML -->
 <imageEditor:SfImageEditor Source="photo.jpg" />
 ```
@@ -150,7 +150,7 @@ imageEditor.Source = "photo.jpg";
 
 ### 2. Load from URI (Remote URL)
 
-```xml
+```xaml
 <!-- XAML -->
 <imageEditor:SfImageEditor Source="https://example.com/image.png" />
 ```
@@ -161,7 +161,7 @@ imageEditor.Source = ImageSource.FromUri(new Uri("https://example.com/image.png"
 ```
 
 > **iOS Note:** For HTTP URLs, configure App Transport Security in `Info.plist`:
-> ```xml
+> ```xaml
 > <key>NSAppTransportSecurity</key>
 > <dict>
 >     <key>NSAllowsArbitraryLoads</key>
@@ -177,7 +177,7 @@ imageEditor.Source = ImageSource.FromUri(new Uri("https://example.com/image.png"
 3. Select your image file
 4. Ensure **Build Action** is set to **MauiImage**
 
-```xml
+```xaml
 <!-- XAML -->
 <imageEditor:SfImageEditor Source="photo.jpg" />
 ```
@@ -295,7 +295,7 @@ else
 
 When placing ImageEditor inside a vertical stack, define `MinimumHeightRequest` (default: 100):
 
-```xml
+```xaml
 <VerticalStackLayout>
     <imageEditor:SfImageEditor Source="photo.jpg"
                                MinimumHeightRequest="400" />
@@ -316,7 +316,7 @@ verticalLayout.Add(imageEditor);
 
 Define `MinimumWidthRequest` (default: 100):
 
-```xml
+```xaml
 <HorizontalStackLayout>
     <imageEditor:SfImageEditor Source="photo.jpg"
                                MinimumWidthRequest="400" />
@@ -337,7 +337,7 @@ horizontalLayout.Add(imageEditor);
 
 No special requirements, but use appropriate row/column definitions:
 
-```xml
+```xaml
 <Grid RowDefinitions="*, Auto">
     <imageEditor:SfImageEditor Grid.Row="0" Source="photo.jpg" />
     <HorizontalStackLayout Grid.Row="1" Spacing="10" Padding="10">
@@ -351,7 +351,7 @@ No special requirements, but use appropriate row/column definitions:
 
 ### Change Background Color
 
-```xml
+```xaml
 <!-- XAML -->
 <imageEditor:SfImageEditor Source="photo.jpg"
                            Background="LightGray" />
@@ -364,7 +364,7 @@ imageEditor.Background = Colors.LightGray;
 
 ### Show/Hide Toolbar
 
-```xml
+```xaml
 <!-- XAML -->
 <imageEditor:SfImageEditor Source="photo.jpg"
                            ShowToolbar="False" />

@@ -19,7 +19,7 @@ The `Title` property displays informative text alongside the busy indicator to p
 ### Basic Title
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       Title="Loading..." />
@@ -76,7 +76,7 @@ The `TextColor` property controls the color of the title text.
 ### Basic Color
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       Title="Loading..."
@@ -97,7 +97,7 @@ SfBusyIndicator busyIndicator = new SfBusyIndicator
 ### Using Hex Colors
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator Title="Loading..."
                       TextColor="#512BD4" />
 ```
@@ -109,7 +109,7 @@ busyIndicator.TextColor = Color.FromArgb("#512BD4");
 
 ### Matching Brand Colors
 
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       Title="Loading your data..."
@@ -119,7 +119,7 @@ busyIndicator.TextColor = Color.FromArgb("#512BD4");
 
 ### Contrast for Dark Backgrounds
 
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       Title="Processing..."
                       IndicatorColor="White"
@@ -156,7 +156,7 @@ The `TitlePlacement` property determines where the title appears relative to the
 ### Bottom Placement (Default)
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       Title="Loading..."
                       TitlePlacement="Bottom" />
@@ -170,7 +170,7 @@ busyIndicator.TitlePlacement = BusyIndicatorTitlePlacement.Bottom;
 ### Top Placement
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       Title="Loading..."
@@ -195,7 +195,7 @@ SfBusyIndicator busyIndicator = new SfBusyIndicator
 To hide the title while keeping the `Title` property set:
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       Title="Loading..."
                       TitlePlacement="None" />
@@ -240,7 +240,7 @@ The `TitleSpacing` property controls the space between the indicator and the tit
 ### Basic Spacing
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       Title="Loading..."
@@ -264,7 +264,7 @@ SfBusyIndicator busyIndicator = new SfBusyIndicator
 
 ### Spacing Examples
 
-```xml
+```xaml
 <!-- Compact spacing -->
 <core:SfBusyIndicator Title="Loading..." TitleSpacing="5" />
 
@@ -313,7 +313,7 @@ The Busy Indicator provides comprehensive font customization through several pro
 ### Font Size
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       Title="Loading..."
                       FontSize="16" />
@@ -327,7 +327,7 @@ busyIndicator.FontSize = 16;
 ### Font Attributes (Bold/Italic)
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       Title="Loading..."
@@ -358,7 +358,7 @@ SfBusyIndicator busyIndicator = new SfBusyIndicator
 ### Bold and Italic Combined
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator Title="Loading..."
                       FontAttributes="Bold, Italic" />
 ```
@@ -371,7 +371,7 @@ busyIndicator.FontAttributes = FontAttributes.Bold | FontAttributes.Italic;
 ### Font Family
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       Title="Loading..."
@@ -397,7 +397,7 @@ SfBusyIndicator busyIndicator = new SfBusyIndicator
 
 ### Custom Font Families
 
-```xml
+```xaml
 <!-- Use built-in fonts -->
 <core:SfBusyIndicator Title="Loading..." FontFamily="Arial" />
 <core:SfBusyIndicator Title="Loading..." FontFamily="Times New Roman" />
@@ -427,7 +427,7 @@ The `FontAutoScalingEnabled` property allows the title text to scale according t
 ### Enable Auto-Scaling
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator FontAutoScalingEnabled="True" />
 ```
 
@@ -467,7 +467,7 @@ busyIndicator.FontSize = 14; // Base size
 
 ### Example 1: Branded Loading Screen
 
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="Globe"
                       IndicatorColor="White"
@@ -490,7 +490,7 @@ busyIndicator.FontSize = 14; // Base size
 
 ### Example 2: Minimal iOS-Style Loader
 
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="Cupertino"
                       IndicatorColor="#007AFF"
@@ -505,7 +505,7 @@ busyIndicator.FontSize = 14; // Base size
 
 ### Example 3: Material Design Loader
 
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       IndicatorColor="#6200EE"
@@ -521,7 +521,7 @@ busyIndicator.FontSize = 14; // Base size
 
 ### Example 4: Accessible Loader
 
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       Title="Loading content"
@@ -585,7 +585,7 @@ public class LoadingViewModel : INotifyPropertyChanged
 }
 ```
 
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="{Binding IsLoading}"
                       Title="{Binding LoadingTitle}"
                       AnimationType="CircularMaterial"
@@ -663,7 +663,7 @@ public void SetTitle(string title)
 
 ### Empty or Null Titles
 
-```xml
+```xaml
 <!-- Title property can be null or empty -->
 <core:SfBusyIndicator IsRunning="True" Title="" />
 <core:SfBusyIndicator IsRunning="True" Title="{x:Null}" />
@@ -673,7 +673,7 @@ public void SetTitle(string title)
 
 Titles are single-line by default. For multi-line scenarios, consider using a separate Label:
 
-```xml
+```xaml
 <Grid>
     <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
         <core:SfBusyIndicator IsRunning="True"

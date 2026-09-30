@@ -76,6 +76,64 @@ chart.PaletteBrushes = new List<Brush>
 this.Content = chart;
 ```
 
+## Point Color Path
+
+Use `PointColorPath` to assign a different color to each funnel segment by binding a color field from the data source. This is helpful when segment colors should come directly from the model rather than a shared palette.
+
+### Model Example
+
+```csharp
+public class PointColorViewModel
+{
+    public ObservableCollection<FunnelDataModel> Data { get; set; }
+
+    public PointColorViewModel()
+    {
+        Data = new ObservableCollection<FunnelDataModel>
+        {
+            new() { XValue = "Stage A", YValue = 1000, PointColor = Color.FromArgb("#cbb4e0") },
+            new() { XValue = "Stage B", YValue = 1300, PointColor = Color.FromArgb("#a678d6") },
+            new() { XValue = "Stage C", YValue = 2000, PointColor = Color.FromArgb("#5a189a") },
+            new() { XValue = "Stage D", YValue = 1700, PointColor = Color.FromArgb("#7b2cbf") },
+            new() { XValue = "Stage E", YValue = 1100, PointColor = Color.FromArgb("#cbb4e0") }
+        };
+    }
+}
+
+public class FunnelDataModel
+{
+    public string? XValue { get; set; }
+    public double YValue { get; set; }
+    public Color? PointColor { get; set; }
+}
+```
+
+### XAML
+
+```xaml
+<chart:SfFunnelChart ItemsSource="{Binding Data}"
+                     XBindingPath="XValue"
+                     YBindingPath="YValue"
+                     PointColorPath="PointColor">
+</chart:SfFunnelChart>
+```
+
+### C#
+
+```csharp
+SfFunnelChart chart = new SfFunnelChart
+{
+    ItemsSource = new PointColorViewModel().Data,
+    XBindingPath = "XValue",
+    YBindingPath = "YValue",
+    PointColorPath = "PointColor"
+};
+
+this.Content = chart;
+```
+
+> Color precedence is: `Fill` > `PointColorPath` > `PaletteBrushes`.
+
 ## Applying Gradients
 
 Enhance your funnel chart with gradient effects using `LinearGradientBrush` or `RadialGradientBrush`. Gradients add depth and visual interest to segments.

@@ -138,7 +138,7 @@ public static class MauiProgram
 
 In `App.xaml`:
 
-```xml
+```xaml
 <Application xmlns:syncTheme="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core">
     <Application.Resources>
         <ResourceDictionary>

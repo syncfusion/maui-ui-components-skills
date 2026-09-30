@@ -20,7 +20,7 @@ The event provides `StepTappedEventArgs` with:
 
 ### XAML Implementation
 
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     ItemsSource="{Binding StepProgressItem}"
     StepTapped="OnStepTapped">
@@ -95,7 +95,7 @@ The event provides `StepStatusChangedEventArgs` with:
 
 ### XAML Implementation
 
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     ItemsSource="{Binding StepProgressItem}"
     ActiveStepIndex="1"

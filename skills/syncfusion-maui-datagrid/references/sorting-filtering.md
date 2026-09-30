@@ -22,7 +22,7 @@
 
 ### Enable Sorting
 
-```xml
+```xaml
 <syncfusion:SfDataGrid SortingMode="Single"
                        ItemsSource="{Binding Orders}" />
 ```
@@ -40,7 +40,7 @@ dataGrid.SortingMode = DataGridSortingMode.Single;
 
 Hold Ctrl/Cmd and click multiple headers:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid SortingMode="Multiple" />
 ```
 
@@ -93,7 +93,7 @@ dataGrid.SortComparers.Add(new SortComparer
 
 ### Disable Sorting for Column
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="Notes"
                                AllowSorting="False" />
 ```
@@ -102,7 +102,7 @@ dataGrid.SortComparers.Add(new SortComparer
 
 Enable/disable clearing sort:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AllowTriStateSorting="True" />
 ```
 
@@ -114,7 +114,7 @@ When false: Ascending → Descending only
 
 Customize sort indicator icons:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid.DefaultStyle>
     <syncfusion:DataGridStyle SortIconColor="Red" />
 </syncfusion:SfDataGrid.DefaultStyle>
@@ -122,7 +122,7 @@ Customize sort indicator icons:
 
 ### Show Sort Numbers
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid" 
                        SortingMode="Multiple" 
                        ShowSortNumbers="True" 
@@ -136,7 +136,7 @@ dataGrid.ShowSortNumbers = true;
 
 ### Sorting Gesture (Double Tap)
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid" 
                        SortingMode="Single" 
                        SortingGestureType="DoubleTap" 
@@ -152,7 +152,7 @@ dataGrid.SortingGestureType = DataGridSortingGestureType.DoubleTap;
 
 #### SortColumnsChanging
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid" 
                        SortingMode="Single" 
                        SortColumnsChanging="dataGrid_SortColumnsChanging" 
@@ -185,7 +185,7 @@ private void dataGrid_SortColumnsChanged(object sender, DataGridSortColumnsChang
 
 ### Sort Icon Customization
 
-```xml
+```xaml
 <syncfusion:SfDataGrid ItemsSource="{Binding OrderInfoCollection}"
                        x:Name="dataGrid"
                        SortingMode="Multiple">
@@ -216,7 +216,7 @@ dataGrid.SortIconTemplate = new DataTemplate(() =>
 
 ### Enable Filtering
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AllowFiltering="True" />
 ```
 
@@ -270,7 +270,7 @@ dataGrid.View.RefreshFilter();
 
 ### Disable Filtering for Column
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="OrderID"
                                AllowFiltering="False" />
 ```
@@ -279,7 +279,7 @@ dataGrid.View.RefreshFilter();
 
 #### FilterChanging
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding OrderInfoCollection}" 
                        AllowFiltering="True"
@@ -328,7 +328,7 @@ private void dataGrid_FilterItemsPopulated(object sender, DataGridFilterItemsPop
 
 ### FilterPopupStyle
 
-```xml
+```xaml
 <ContentPage.Resources>
     <Style x:Key="filterViewStyle" TargetType="syncfusion:DataGridFilterView">
         <Setter Property="FilterMode" Value="AdvancedFilter"/>
@@ -350,7 +350,7 @@ private void dataGrid_FilterItemsPopulated(object sender, DataGridFilterItemsPop
 - `DateTyped` - Date filter options
 - `StronglyTyped` - Automatically detected based on underlying data type
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="OrderID" FilterBehavior="StringTyped"/>
 <syncfusion:DataGridNumericColumn MappingName="Quantity" FilterBehavior="NumberTyped"/>
 <syncfusion:DataGridDateColumn MappingName="OrderDate" FilterBehavior="DateTyped"/>
@@ -367,7 +367,7 @@ When `AllowBlankFilters` is `True`:
 - Combobox options have Null and Not Null choices in advanced filter
 - Checkbox filtering UI includes a Blanks option
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="OrderID" AllowBlankFilters="False"/>
 ```
 
@@ -377,7 +377,7 @@ dataGrid.Columns["OrderID"].AllowBlankFilters = false;
 
 ### Instant Filtering
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="OrderID" ImmediateUpdateColumnFilter="True"/>
 ```
 
@@ -387,7 +387,7 @@ dataGrid.Columns["OrderID"].ImmediateUpdateColumnFilter = true;
 
 ### Loading Performance
 
-```xml
+```xaml
 <ContentPage.Resources>
     <Style x:Key="filterViewStyle" TargetType="syncfusion:DataGridFilterView">
         <Setter Property="FilterMode" Value="AdvancedFilter"/>
@@ -405,7 +405,7 @@ dataGrid.Columns["OrderID"].ImmediateUpdateColumnFilter = true;
 
 #### Visibility of Sort Options
 
-```xml
+```xaml
 <ContentPage.Resources>
     <Style x:Key="filterViewStyle" TargetType="syncfusion:DataGridFilterView">
         <Setter Property="SortOptionsVisibility" Value="False"/>
@@ -436,7 +436,7 @@ private void dataGrid_FilterItemsPopulating(object sender, DataGridFilterItemsPo
 
 ### Customize Filter Icon
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding OrderInfoCollection}" 
                        AllowFiltering="True">
@@ -450,7 +450,7 @@ private void dataGrid_FilterItemsPopulating(object sender, DataGridFilterItemsPo
 
 Display filter row for user-driven filtering:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AllowFiltering="True"
                        FilterRowPosition="FixedTop" />
 ```
@@ -464,7 +464,7 @@ Display filter row for user-driven filtering:
 
 ## Combining Sorting and Filtering
 
-```xml
+```xaml
 <syncfusion:SfDataGrid SortingMode="Multiple"
                        AllowFiltering="True"
                        FilterRowPosition="FixedTop" />

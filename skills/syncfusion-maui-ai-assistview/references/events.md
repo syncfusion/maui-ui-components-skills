@@ -23,7 +23,7 @@ Raised when the user taps any item in the chat list.
 
 ### Event
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            ItemTapped="OnItemTapped" />
 ```
@@ -39,7 +39,7 @@ private void OnItemTapped(object sender, ItemTappedEventArgs e)
 
 ### Command (MVVM)
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            ItemTappedCommand="{Binding TappedCommand}" />
 ```
@@ -77,7 +77,7 @@ Raised when the user long-presses any item in the chat list.
 
 ### Event
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            ItemLongPressed="OnItemLongPressed" />
 ```
@@ -93,7 +93,7 @@ private void OnItemLongPressed(object sender, ItemLongPressedEventArgs e)
 
 ### Command (MVVM)
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            ItemLongPressedCommand="{Binding LongPressedCommand}" />
 ```
@@ -131,7 +131,7 @@ Raised when the user sends a message (taps the send button or submits from the e
 
 ### Event
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            Request="OnRequest" />
 ```
@@ -155,7 +155,7 @@ private async void OnRequest(object sender, RequestEventArgs e)
 
 ### Command (MVVM)
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            AssistItems="{Binding AssistItems}"
                            RequestCommand="{Binding RequestCommand}" />
@@ -199,7 +199,7 @@ These commands are triggered by action icons shown on response items. They are c
 
 Executed when the user taps the **copy** icon on a response item.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            ItemCopyCommand="{Binding CopyCommand}" />
 ```
@@ -216,7 +216,7 @@ public Command<object> CopyCommand { get; } = new Command<object>(obj =>
 
 Executed when the user taps the **retry** icon on a response item (re-sends the original request).
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            ItemRetryCommand="{Binding RetryCommand}" />
 ```
@@ -252,7 +252,7 @@ Executed when the user changes the rating (like / dislike) of a response item.
 
 
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            ItemRatingChangedCommand="{Binding RatingChangedCommand}" />
 ```

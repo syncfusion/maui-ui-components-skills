@@ -109,7 +109,7 @@ Install-Package Syncfusion.Maui.SmartComponents
 
 Check your `.csproj` file to confirm the package reference:
 
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.SmartComponents" Version="*" />
 </ItemGroup>
@@ -339,7 +339,7 @@ With the handler and AI service configured, you can now add the SfSmartScheduler
 
 Open `MainPage.xaml` and add the namespace declaration:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:smartScheduler="clr-namespace:Syncfusion.Maui.SmartComponents;assembly=Syncfusion.Maui.SmartComponents"
@@ -352,7 +352,7 @@ Open `MainPage.xaml` and add the namespace declaration:
 
 #### Step 2: Add SfSmartScheduler Control
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:smartScheduler="clr-namespace:Syncfusion.Maui.SmartComponents;assembly=Syncfusion.Maui.SmartComponents"

@@ -133,7 +133,7 @@ To use the kanban control, import the `Syncfusion.Maui.Kanban` namespace.
 
 Add the namespace declaration to your ContentPage:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:kanban="clr-namespace:Syncfusion.Maui.Kanban;assembly=Syncfusion.Maui.Kanban"
@@ -156,7 +156,7 @@ using Syncfusion.Maui.Kanban;
 
 **XAML Approach:**
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:kanban="clr-namespace:Syncfusion.Maui.Kanban;assembly=Syncfusion.Maui.Kanban"
@@ -277,7 +277,7 @@ namespace KanbanGettingStarted
 
 **XAML:**
 
-```xml
+```xaml
 <ContentPage xmlns:kanban="clr-namespace:Syncfusion.Maui.Kanban;assembly=Syncfusion.Maui.Kanban"
              xmlns:local="clr-namespace:KanbanGettingStarted">
     
@@ -364,7 +364,7 @@ namespace KanbanGettingStarted
 
 If you prefer to let the control generate columns automatically:
 
-```xml
+```xaml
 <kanban:SfKanban x:Name="kanban"
                  AutoGenerateColumns="True"
                  ItemsSource="{Binding Cards}">
@@ -421,7 +421,7 @@ Once the application runs, you should see:
 **Solution:**
 1. Verify the NuGet package is installed
 2. Ensure the namespace is imported correctly:
-   ```xml
+   ```xaml
    xmlns:kanban="clr-namespace:Syncfusion.Maui.Kanban;assembly=Syncfusion.Maui.Kanban"
    ```
 3. Clean and rebuild the solution

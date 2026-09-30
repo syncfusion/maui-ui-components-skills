@@ -41,7 +41,7 @@ public static class MauiProgram
 **Common Causes and Solutions:**
 
 **1. ShowIcon not enabled:**
-```xml
+```xaml
 <!-- ❌ Wrong: ShowIcon not set -->
 <buttons:SfButton ImageSource="icon.png" />
 
@@ -64,7 +64,7 @@ YourProject/
 **3. Build action not set correctly:**
 
 Check `.csproj` file:
-```xml
+```xaml
 <ItemGroup>
     <MauiImage Include="Resources\Images\icon.png" />
 </ItemGroup>
@@ -88,7 +88,7 @@ button.ImageSource = "Resources/Images/icon.png";
 **Solution:**
 Set `StrokeThickness` to a value greater than 0:
 
-```xml
+```xaml
 <!-- ❌ Wrong: StrokeThickness not set -->
 <buttons:SfButton Stroke="Black" />
 
@@ -105,7 +105,7 @@ Set `StrokeThickness` to a value greater than 0:
 **Solution:**
 Use `Background` property instead of `BackgroundColor` for SfButton:
 
-```xml
+```xaml
 <!-- ❌ Wrong: Using BackgroundColor -->
 <buttons:SfButton BackgroundColor="#6200EE" />
 
@@ -130,7 +130,7 @@ button.Background = Colors.Blue;
 **Common Causes and Solutions:**
 
 **1. Missing VisualStateGroup name:**
-```xml
+```xaml
 <!-- ❌ Wrong: No group name -->
 <VisualStateManager.VisualStateGroups>
     <VisualStateGroup>
@@ -147,7 +147,7 @@ button.Background = Colors.Blue;
 ```
 
 **2. IsCheckable not enabled for Checked state:**
-```xml
+```xaml
 <!-- ❌ Wrong: Checked state without IsCheckable -->
 <buttons:SfButton>
     <VisualStateManager.VisualStateGroups>
@@ -166,7 +166,7 @@ button.Background = Colors.Blue;
 ```
 
 **3. Using BackgroundColor instead of Background:**
-```xml
+```xaml
 <VisualState x:Name="Hovered">
     <VisualState.Setters>
         <!-- ❌ Wrong property -->
@@ -187,7 +187,7 @@ button.Background = Colors.Blue;
 **Solutions:**
 
 **1. Check IsEnabled property:**
-```xml
+```xaml
 <!-- ❌ Button disabled -->
 <buttons:SfButton IsEnabled="False" Clicked="OnButtonClicked" />
 
@@ -211,7 +211,7 @@ private void OnButtonClicked()  // Missing parameters
 ```
 
 **3. Check for overlapping elements:**
-```xml
+```xaml
 <!-- ❌ Button might be covered -->
 <Grid>
     <buttons:SfButton Text="Hidden" />
@@ -234,7 +234,7 @@ private void OnButtonClicked()  // Missing parameters
 **Solutions:**
 
 **1. Set explicit size when needed:**
-```xml
+```xaml
 <!-- May not size correctly without constraints -->
 <buttons:SfButton Text="Button" />
 
@@ -245,7 +245,7 @@ private void OnButtonClicked()  // Missing parameters
 ```
 
 **2. Use proper layout options:**
-```xml
+```xaml
 <VerticalStackLayout>
     <!-- Button fills width -->
     <buttons:SfButton Text="Full Width"
@@ -259,7 +259,7 @@ private void OnButtonClicked()  // Missing parameters
 ```
 
 **3. Check padding conflicts:**
-```xml
+```xaml
 <!-- Padding might make button appear incorrectly sized -->
 <buttons:SfButton Text="Button"
                   Padding="50"
@@ -281,7 +281,7 @@ dotnet restore
 ```
 
 **2. Check package version compatibility:**
-```xml
+```xaml
 <!-- Ensure compatible versions -->
 <ItemGroup>
     <PackageReference Include="Syncfusion.Maui.Buttons" Version="27.*" />
@@ -327,7 +327,7 @@ Use solid colors instead of gradients on iOS/macOS, or wait for framework fix.
 
 **Solution:**
 Ensure `EnableRippleEffect="True"` and button has solid background:
-```xml
+```xaml
 <buttons:SfButton Background="#6200EE"
                   EnableRippleEffect="True" />
 ```
@@ -364,7 +364,7 @@ using Syncfusion.Maui.Buttons;
 ```
 
 **XAML Namespace:**
-```xml
+```xaml
 <!-- Xamarin -->
 xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.XForms.Buttons"
 
@@ -379,7 +379,7 @@ xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Bu
 ### 1. Performance
 
 **Avoid excessive visual states:**
-```xml
+```xaml
 <!-- ❌ Overkill -->
 <VisualState x:Name="Normal">
     <VisualState.Setters>
@@ -402,7 +402,7 @@ xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Bu
 ```
 
 **Reuse button styles:**
-```xml
+```xaml
 <ContentPage.Resources>
     <Style x:Key="PrimaryButtonStyle" TargetType="buttons:SfButton">
         <Setter Property="Background" Value="#6200EE" />
@@ -419,14 +419,14 @@ xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Bu
 ### 2. Accessibility
 
 **Provide semantic descriptions:**
-```xml
+```xaml
 <buttons:SfButton Text="Submit"
                   SemanticProperties.Description="Submit form data"
                   SemanticProperties.Hint="Double tap to submit" />
 ```
 
 **Ensure sufficient touch target size:**
-```xml
+```xaml
 <!-- Minimum 44x44 for touch targets -->
 <buttons:SfButton Text="Small"
                   HeightRequest="44"

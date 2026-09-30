@@ -30,7 +30,7 @@ To achieve the glass look, set the layer's (or its content's) `Background` to `T
 ## Apply to the Front Layer
 
 **XAML:**
-```xml
+```xaml
 <backdrop:SfBackdropPage.FrontLayer>
     <backdrop:BackdropFrontLayer EnableLiquidGlassEffect="True"/>
 </backdrop:SfBackdropPage.FrontLayer>
@@ -47,7 +47,7 @@ this.FrontLayer.EnableLiquidGlassEffect = true;
 ## Apply to the Back Layer
 
 **XAML:**
-```xml
+```xaml
 <backdrop:SfBackdropPage.BackLayer>
     <backdrop:BackdropBackLayer EnableLiquidGlassEffect="True">
         <Grid Background="Transparent">
@@ -61,7 +61,7 @@ this.FrontLayer.EnableLiquidGlassEffect = true;
 
 ## Full Example (Front Layer + Gradient Back Layer)
 
-```xml
+```xaml
 <backdrop:SfBackdropPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

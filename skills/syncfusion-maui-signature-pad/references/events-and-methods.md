@@ -41,7 +41,7 @@ public event EventHandler<CancelEventArgs>? DrawStarted;
 
 ### Basic Usage (XAML)
 
-```xml
+```xaml
 <signaturePad:SfSignaturePad x:Name="signaturePad"
                               DrawStarted="OnDrawStarted" />
 ```
@@ -175,7 +175,7 @@ public event EventHandler? DrawCompleted;
 
 ### Basic Usage (XAML)
 
-```xml
+```xaml
 <signaturePad:SfSignaturePad x:Name="signaturePad"
                               DrawCompleted="OnDrawCompleted" />
 ```
@@ -306,7 +306,7 @@ private void OnClearButtonClicked(object sender, EventArgs e)
 
 ### Complete Example (XAML + Code)
 
-```xml
+```xaml
 <Grid>
     <Grid.RowDefinitions>
         <RowDefinition Height="*" />

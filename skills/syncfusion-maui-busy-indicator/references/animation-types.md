@@ -19,7 +19,7 @@ The Busy Indicator provides seven built-in animation types through the `Animatio
 The `AnimationType` property accepts values from the `AnimationType` enumeration. You can set it in XAML or C#:
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator AnimationType="CircularMaterial" IsRunning="True" />
 ```
 
@@ -43,7 +43,7 @@ The **CircularMaterial** animation is inspired by Android's Material Design. It 
 ### Implementation
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator x:Name="busyIndicator"
                       IsRunning="True"
                       AnimationType="CircularMaterial" />
@@ -60,7 +60,7 @@ SfBusyIndicator busyIndicator = new SfBusyIndicator
 
 ### Customization Example
 
-```xml
+```xaml
 <core:SfBusyIndicator AnimationType="CircularMaterial"
                       IsRunning="True"
                       IndicatorColor="#512BD4"
@@ -87,7 +87,7 @@ The **LinearMaterial** animation displays a horizontal progress bar with a movin
 ### Implementation
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator x:Name="busyIndicator"
                       IsRunning="True"
                       AnimationType="LinearMaterial" />
@@ -104,7 +104,7 @@ SfBusyIndicator busyIndicator = new SfBusyIndicator
 
 ### Positioned at Top of Page
 
-```xml
+```xaml
 <Grid>
     <Grid.RowDefinitions>
         <RowDefinition Height="Auto" />
@@ -142,7 +142,7 @@ The **Cupertino** animation mimics the iOS activity indicator with a rotating sp
 ### Implementation
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator x:Name="busyIndicator"
                       IsRunning="True"
                       AnimationType="Cupertino" />
@@ -159,7 +159,7 @@ SfBusyIndicator busyIndicator = new SfBusyIndicator
 
 ### iOS-Style Example
 
-```xml
+```xaml
 <core:SfBusyIndicator AnimationType="Cupertino"
                       IsRunning="True"
                       IndicatorColor="#007AFF"
@@ -198,7 +198,7 @@ The **SingleCircle** animation displays a simple rotating circle.
 ### Implementation
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator x:Name="busyIndicator"
                       IsRunning="True"
                       AnimationType="SingleCircle" />
@@ -215,7 +215,7 @@ SfBusyIndicator busyIndicator = new SfBusyIndicator
 
 ### Compact Example
 
-```xml
+```xaml
 <core:SfBusyIndicator AnimationType="SingleCircle"
                       IsRunning="True"
                       IndicatorColor="Gray"
@@ -240,7 +240,7 @@ The **DoubleCircle** animation features two concentric circles rotating in oppos
 ### Implementation
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator x:Name="busyIndicator"
                       IsRunning="True"
                       AnimationType="DoubleCircle" />
@@ -257,7 +257,7 @@ SfBusyIndicator busyIndicator = new SfBusyIndicator
 
 ### Stylized Example
 
-```xml
+```xaml
 <core:SfBusyIndicator AnimationType="DoubleCircle"
                       IsRunning="True"
                       IndicatorColor="#E91E63"
@@ -282,7 +282,7 @@ The **Globe** animation displays a rotating 3D globe effect, providing a unique 
 ### Implementation
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator AnimationType="Globe"
                       IsRunning="True" />
 ```
@@ -298,7 +298,7 @@ SfBusyIndicator busyIndicator = new SfBusyIndicator
 
 ### Network Operation Example
 
-```xml
+```xaml
 <core:SfBusyIndicator AnimationType="Globe"
                       IsRunning="{Binding IsSyncing}"
                       IndicatorColor="#4CAF50"
@@ -325,7 +325,7 @@ The **HorizontalPulsingBox** animation displays a series of horizontally arrange
 ### Implementation
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator AnimationType="HorizontalPulsingBox"
                       IsRunning="True" />
 ```
@@ -341,7 +341,7 @@ SfBusyIndicator busyIndicator = new SfBusyIndicator
 
 ### Modern UI Example
 
-```xml
+```xaml
 <core:SfBusyIndicator AnimationType="HorizontalPulsingBox"
                       IsRunning="True"
                       IndicatorColor="#FF9800"

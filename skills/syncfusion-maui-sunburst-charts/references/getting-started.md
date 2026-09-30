@@ -50,7 +50,7 @@ using Syncfusion.Maui.Core.Hosting;
 Add the sunburst chart namespace to your XAML or C# file:
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sunburst="clr-namespace:Syncfusion.Maui.SunburstChart;assembly=Syncfusion.Maui.SunburstChart"
@@ -149,7 +149,7 @@ public class SunburstViewModel
 Bind the view model to your page:
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns:model="clr-namespace:YourApp.ViewModels">
     <ContentPage.BindingContext>
         <model:SunburstViewModel/>
@@ -169,7 +169,7 @@ this.BindingContext = new SunburstViewModel();
 Bind the data source and specify which property determines segment size:
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}" 
                           ValueMemberPath="EmployeesCount">
 </sunburst:SfSunburstChart>
@@ -191,7 +191,7 @@ sunburst.ValueMemberPath = "EmployeesCount";
 Add hierarchical levels using SunburstHierarchicalLevel. Each level groups data by the specified property:
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}" 
                           ValueMemberPath="EmployeesCount">
     
@@ -222,7 +222,7 @@ sunburst.Levels.Add(new SunburstHierarchicalLevel() { GroupMemberPath = "JobGrou
 ### Add Title
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart>
     <sunburst:SfSunburstChart.Title>
         <Label Text="Employees Count" FontSize="18" FontAttributes="Bold"/>
@@ -243,7 +243,7 @@ sunburst.Title = new Label
 ### Add Legend
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart>
     <sunburst:SfSunburstChart.Legend>
         <sunburst:SunburstLegend/>
@@ -259,7 +259,7 @@ sunburst.Legend = new SunburstLegend();
 ### Enable Tooltips
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableTooltip="True">
 ```
 
@@ -271,7 +271,7 @@ sunburst.EnableTooltip = true;
 ### Enable Data Labels
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ShowLabels="True">
 ```
 
@@ -285,7 +285,7 @@ sunburst.ShowLabels = true;
 Here's a complete, working example combining all elements:
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sunburst="clr-namespace:Syncfusion.Maui.SunburstChart;assembly=Syncfusion.Maui.SunburstChart"

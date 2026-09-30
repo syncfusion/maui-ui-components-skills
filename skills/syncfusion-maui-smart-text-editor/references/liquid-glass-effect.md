@@ -29,7 +29,7 @@ There are three steps to enable the liquid glass effect:
 
 ## XAML Example
 
-```xml
+```xaml
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

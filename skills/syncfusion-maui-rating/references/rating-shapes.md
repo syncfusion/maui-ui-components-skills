@@ -36,7 +36,7 @@ The classic five-pointed star is the most recognizable rating symbol.
 **Implementation:**
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating RatingShape="Star" 
                  Value="4" 
                  ItemCount="5" />
@@ -62,7 +62,7 @@ The heart shape is perfect for expressing favorites, likes, or love.
 **Implementation:**
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating RatingShape="Heart" 
                  Value="3" 
                  ItemCount="5">
@@ -97,7 +97,7 @@ The diamond shape provides a unique, elegant rating indicator.
 **Implementation:**
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating RatingShape="Diamond" 
                  Value="4" 
                  ItemCount="5">
@@ -132,7 +132,7 @@ Simple circular indicators for minimal, modern designs.
 **Implementation:**
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating RatingShape="Circle" 
                  Value="3" 
                  ItemCount="5" />
@@ -174,7 +174,7 @@ The `Path` property accepts standard SVG path commands:
 ### Example: Custom Bell Icon
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating RatingShape="Custom" 
                  ItemSize="36"
                  Value="3"
@@ -197,7 +197,7 @@ rating.Path = "M17.5 35.5C19.9063 35.5 21.875 33.8846 21.875 31.9103H13.125C13.1
 
 ### Example: Custom Thumbs Up
 
-```xml
+```xaml
 <rating:SfRating RatingShape="Custom" 
                  ItemSize="40"
                  Value="4"
@@ -230,7 +230,7 @@ rating.Path = "M17.5 35.5C19.9063 35.5 21.875 33.8846 21.875 31.9103H13.125C13.1
 > **Important:** The `ItemSize` should match the path's coordinate system for proper display.
 
 If your SVG path has dimensions 35x35:
-```xml
+```xaml
 <rating:SfRating RatingShape="Custom" 
                  ItemSize="35"  <!-- Match path dimensions -->
                  Path="..." />
@@ -246,7 +246,7 @@ Common path dimensions:
 
 ### Side-by-Side Comparison
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="20">
     
     <!-- Star Shape -->
@@ -295,7 +295,7 @@ Common path dimensions:
 
 ### Example 1: Heart Rating with Custom Colors
 
-```xml
+```xaml
 <rating:SfRating RatingShape="Heart" 
                  Value="5" 
                  ItemCount="5"
@@ -312,7 +312,7 @@ Common path dimensions:
 
 ### Example 2: Diamond Luxury Rating
 
-```xml
+```xaml
 <rating:SfRating RatingShape="Diamond" 
                  Value="4" 
                  ItemCount="5"
@@ -331,7 +331,7 @@ Common path dimensions:
 
 ### Example 3: Minimalist Circle Rating
 
-```xml
+```xaml
 <rating:SfRating RatingShape="Circle" 
                  Value="3" 
                  ItemCount="5"
@@ -392,7 +392,7 @@ Common path dimensions:
 
 ### Half-Precision Heart Rating
 
-```xml
+```xaml
 <rating:SfRating RatingShape="Heart" 
                  Value="3.5" 
                  Precision="Half"
@@ -405,7 +405,7 @@ Common path dimensions:
 
 ### Read-Only Custom Shape Display
 
-```xml
+```xaml
 <rating:SfRating RatingShape="Custom" 
                  Value="4"
                  IsReadOnly="True"

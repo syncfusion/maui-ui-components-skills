@@ -44,7 +44,7 @@ dotnet add package Syncfusion.Maui.ProgressBar
 **Option 3: Package Reference (Manual)**
 
 Add to your `.csproj` file:
-```xml
+```xaml
 <ItemGroup>
     <PackageReference Include="Syncfusion.Maui.ProgressBar" Version="*" />
 </ItemGroup>
@@ -94,7 +94,7 @@ namespace GettingStarted
 ### Step 1: Import Namespace
 
 **XAML:**
-```xml
+```xaml
 xmlns:progressBar="clr-namespace:Syncfusion.Maui.ProgressBar;assembly=Syncfusion.Maui.ProgressBar"
 ```
 
@@ -106,7 +106,7 @@ using Syncfusion.Maui.ProgressBar;
 ### Step 2: Add Control to Page
 
 **XAML Implementation:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:progressBar="clr-namespace:Syncfusion.Maui.ProgressBar;assembly=Syncfusion.Maui.ProgressBar"
@@ -149,7 +149,7 @@ By default, the progress value should be specified between 0 and 100.
 ### Default Range (0-100)
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75" />
 ```
 
@@ -164,7 +164,7 @@ circularProgressBar.Progress = 75; // 75%
 To determine progress value between 0 and 1, set the Minimum property to 0 and the Maximum property to 1.
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Minimum="0" 
                                    Maximum="1" 
                                    Progress="0.75" />
@@ -184,7 +184,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 
 ### Complete XAML Page
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

@@ -23,7 +23,7 @@ The circular progress bar supports two types of animations:
 Represents the animation duration (in milliseconds) for the determinate state's progress indicator.
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75" 
                                    AnimationDuration="2000" />
 ```
@@ -60,7 +60,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 Represents the animation duration for the indeterminate state's indicator (full loop duration).
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar IsIndeterminate="True" 
                                    IndeterminateAnimationDuration="1500" />
 ```
@@ -89,7 +89,7 @@ Easing functions control the animation speed curve, making animations more natur
 Specifies the transfer function that controls animation speed for determinate state.
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    AnimationEasing="{x:Static Easing.CubicInOut}" />
 ```
@@ -108,7 +108,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 #### Linear (Default)
 Constant speed throughout animation.
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    AnimationEasing="{x:Static Easing.Linear}" />
 ```
@@ -116,7 +116,7 @@ Constant speed throughout animation.
 #### CubicInOut
 Slow start, fast middle, slow end. Most popular for smooth transitions.
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    AnimationEasing="{x:Static Easing.CubicInOut}" />
 ```
@@ -124,7 +124,7 @@ Slow start, fast middle, slow end. Most popular for smooth transitions.
 #### CubicIn
 Slow start, accelerates to the end.
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    AnimationEasing="{x:Static Easing.CubicIn}" />
 ```
@@ -132,7 +132,7 @@ Slow start, accelerates to the end.
 #### CubicOut
 Fast start, decelerates to the end.
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    AnimationEasing="{x:Static Easing.CubicOut}" />
 ```
@@ -140,7 +140,7 @@ Fast start, decelerates to the end.
 #### BounceIn
 Bouncing effect at the start.
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    AnimationEasing="{x:Static Easing.BounceIn}" />
 ```
@@ -148,7 +148,7 @@ Bouncing effect at the start.
 #### BounceOut
 Bouncing effect at the end.
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    AnimationEasing="{x:Static Easing.BounceOut}" />
 ```
@@ -156,7 +156,7 @@ Bouncing effect at the end.
 #### SpringIn
 Spring-like acceleration.
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    AnimationEasing="{x:Static Easing.SpringIn}" />
 ```
@@ -164,7 +164,7 @@ Spring-like acceleration.
 #### SpringOut
 Spring-like deceleration.
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    AnimationEasing="{x:Static Easing.SpringOut}" />
 ```
@@ -205,7 +205,7 @@ private void ApplyEasing(string easingType)
 Specifies easing function for indeterminate state animation.
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar IsIndeterminate="True" 
                                    IndeterminateAnimationEasing="{x:Static Easing.BounceIn}" />
 ```
@@ -347,7 +347,7 @@ public class MultiStepCircularPage : ContentPage
 
 ### Example 1: Smooth Progress Update with Animation
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="20">
     <progressBar:SfCircularProgressBar x:Name="animatedProgressBar"
                                        Progress="0"
@@ -438,7 +438,7 @@ public class MultiStageCircularPage : ContentPage
 
 ### Example 3: Indeterminate with Custom Easing
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar IsIndeterminate="True"
                                    IndeterminateAnimationDuration="1200"
                                    IndeterminateAnimationEasing="{x:Static Easing.CubicInOut}"
@@ -534,7 +534,7 @@ public class ToggleAnimationPage : ContentPage
 
 ### Example 6: Progress Bar with Dynamic Easing Picker
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="20">
     <Picker x:Name="easingPicker"
             Title="Select Easing"

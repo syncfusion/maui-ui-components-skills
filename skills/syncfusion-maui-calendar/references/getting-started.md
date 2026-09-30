@@ -32,7 +32,7 @@ dotnet add package Syncfusion.Maui.Calendar
 ```
 
 **Option D: Manual .csproj Edit**
-```xml
+```xaml
 <ItemGroup>
     <PackageReference Include="Syncfusion.Maui.Calendar" Version="*" />
 </ItemGroup>
@@ -80,7 +80,7 @@ namespace MyCalendarApp
 
 **XAML Implementation:**
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:calendar="clr-namespace:Syncfusion.Maui.Calendar;assembly=Syncfusion.Maui.Calendar"
@@ -121,7 +121,7 @@ This creates a basic calendar with default settings:
 Customize the starting day of the week using the `FirstDayOfWeek` property. The default is Sunday.
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar">
     <calendar:SfCalendar.MonthView>
         <calendar:CalendarMonthView FirstDayOfWeek="Monday" />
@@ -151,7 +151,7 @@ calendar.MonthView = new CalendarMonthView
 Customize the corner radius of the calendar using the `CornerRadius` property. The default value is `20`.
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Month"
                      CornerRadius="15" />
@@ -178,7 +178,7 @@ calendar.CornerRadius = new CornerRadius(20, 0, 0, 20);
 
 ### Example 1: Month View with Monday Start
 
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" View="Month">
     <calendar:SfCalendar.MonthView>
         <calendar:CalendarMonthView FirstDayOfWeek="Monday" />

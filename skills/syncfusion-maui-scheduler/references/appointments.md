@@ -48,7 +48,7 @@ The `SchedulerAppointment` class represents a scheduled event with the following
 
 ### Basic Appointment Example
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="Scheduler" View="Week">
 </scheduler:SfScheduler>
 ```
@@ -124,7 +124,7 @@ public class Meeting : INotifyPropertyChanged
 
 ### Mapping Business Object
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="Scheduler" View="Week">
     <scheduler:SfScheduler.AppointmentMapping>
         <scheduler:SchedulerAppointmentMapping
@@ -455,7 +455,7 @@ Scheduler.AppointmentTextStyle = appointmentTextStyle;
 
 ### Using DataTemplate
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="Scheduler" View="Week">
     <scheduler:SfScheduler.DaysView>
         <scheduler:SchedulerDaysView>
@@ -479,7 +479,7 @@ Scheduler.AppointmentTextStyle = appointmentTextStyle;
 
 ### Using DataTemplateSelector
 
-```xml
+```xaml
 <Grid.Resources>
     <DataTemplate x:Key="normalDateTemplate">
         <Grid Background="LightGreen">
@@ -525,7 +525,7 @@ public class AppointmentTemplateSelector : DataTemplateSelector
 
 Customize the selection background:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="Scheduler" 
                        SelectedAppointmentBackground="Orange">
 </scheduler:SfScheduler>

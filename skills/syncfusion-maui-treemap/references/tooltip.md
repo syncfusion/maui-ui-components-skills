@@ -12,7 +12,7 @@ Tooltips appear when users hover over or tap leaf items, showing contextual info
 
 **Basic Setup:**
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Size"
                    ShowToolTip="True">
@@ -29,7 +29,7 @@ Tooltips appear when users hover over or tap leaf items, showing contextual info
 Controls whether tooltips display on interaction.
 
 **Enable Tooltips:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding PopulationData}"
                    PrimaryValuePath="Population"
                    ShowToolTip="True">
@@ -53,7 +53,7 @@ treeMap.LeafItemSettings = new TreeMapLeafItemSettings
 
 ### Disable Tooltips (Default)
 
-```xml
+```xaml
 <treemap:SfTreeMap ShowToolTip="False" />
 ```
 
@@ -98,7 +98,7 @@ Create custom tooltip layouts using `ToolTipTemplate` with a `DataTemplate`.
 ### Basic Custom Template
 
 **XAML:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding PopulationData}"
                    PrimaryValuePath="Population"
                    ShowToolTip="True">
@@ -145,7 +145,7 @@ public class City
 ```
 
 **XAML Template:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Cities}"
                    PrimaryValuePath="Population"
                    ShowToolTip="True">
@@ -187,7 +187,7 @@ public class City
 
 ### Styled Tooltip with Icons
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding SalesData}"
                    PrimaryValuePath="Revenue"
                    ShowToolTip="True">
@@ -256,7 +256,7 @@ public class Product
 ```
 
 **XAML Template:**
-```xml
+```xaml
 <treemap:SfTreeMap.ToolTipTemplate>
     <DataTemplate>
         <Frame BackgroundColor="White" Padding="12" CornerRadius="8">
@@ -294,7 +294,7 @@ public class Employee
 ```
 
 **XAML Template:**
-```xml
+```xaml
 <treemap:SfTreeMap.ToolTipTemplate>
     <DataTemplate>
         <Frame BackgroundColor="White"
@@ -346,7 +346,7 @@ The tooltip `DataTemplate` receives a binding context with the data object acces
 ```
 
 **Accessing Properties:**
-```xml
+```xaml
 <!-- If your model is Country with Name and Population properties -->
 <Label Text="{Binding Data.Name}" />
 <Label Text="{Binding Data.Population}" />
@@ -360,7 +360,7 @@ Use `StringFormat` to format numeric and date values in tooltips.
 
 ### Number Formatting
 
-```xml
+```xaml
 <!-- Thousands separator -->
 <Label Text="{Binding Data.Population, StringFormat='{0:N0}'}" />
 <!-- Result: 1,234,567 -->
@@ -380,7 +380,7 @@ Use `StringFormat` to format numeric and date values in tooltips.
 
 ### Date Formatting
 
-```xml
+```xaml
 <!-- Short date -->
 <Label Text="{Binding Data.Date, StringFormat='{0:d}'}" />
 <!-- Result: 3/20/2026 -->
@@ -398,7 +398,7 @@ Use `StringFormat` to format numeric and date values in tooltips.
 
 ### Example 1: Simple Sales Tooltip
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding SalesData}"
                    PrimaryValuePath="Amount"
                    ShowToolTip="True">
@@ -441,7 +441,7 @@ public class Stock
 }
 ```
 
-```xml
+```xaml
 <treemap:SfTreeMap.ToolTipTemplate>
     <DataTemplate>
         <Frame BackgroundColor="White"
@@ -491,7 +491,7 @@ public class Region
 }
 ```
 
-```xml
+```xaml
 <treemap:SfTreeMap.ToolTipTemplate>
     <DataTemplate>
         <Frame BackgroundColor="#F5F5F5"
@@ -555,7 +555,7 @@ public class Region
 3. Check that data source is properly bound
 4. Confirm tooltip is not being clipped by parent container
 
-```xml
+```xaml
 <!-- Correct minimal setup -->
 <treemap:SfTreeMap ShowToolTip="True" 
                    PrimaryValuePath="Value">
@@ -575,7 +575,7 @@ public class Region
 3. Check for binding errors in output window
 4. Test with default tooltip first to verify data is available
 
-```xml
+```xaml
 <!-- Correct binding -->
 <Label Text="{Binding Data.Name}" />
 
@@ -593,7 +593,7 @@ public class Region
 3. Adjust padding and spacing for better fit
 4. Test on different screen sizes
 
-```xml
+```xaml
 <Frame Padding="12" 
        MaximumWidthRequest="300"
        CornerRadius="8">
@@ -612,7 +612,7 @@ public class Region
 2. Ensure property is correct data type (not string)
 3. Check for XAML syntax errors (quotes, braces)
 
-```xml
+```xaml
 <!-- Correct -->
 <Label Text="{Binding Data.Value, StringFormat='{0:N0}'}" />
 

@@ -73,7 +73,7 @@ namespace YourAppNamespace
 Add the Syncfusion.Maui.Accordion namespace to your XAML or C# file.
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander"
@@ -90,7 +90,7 @@ using Syncfusion.Maui.Accordion;
 ### Initialize SfAccordion
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander">
     <syncfusion:SfAccordion />
 </ContentPage>
@@ -117,7 +117,7 @@ Each accordion item consists of a **Header** and **Content**. Both accept any .N
 
 ### Example: Simple Accordion with Items
 
-```xml
+```xaml
 <syncfusion:SfAccordion>
     <syncfusion:SfAccordion.Items>
         <!-- First Item -->
@@ -175,7 +175,7 @@ The `ExpandMode` property controls how many items can be expanded simultaneously
 
 Only one item can be expanded at a time. Expanding a new item collapses the previously expanded item.
 
-```xml
+```xaml
 <syncfusion:SfAccordion ExpandMode="Single">
     <!-- Items -->
 </syncfusion:SfAccordion>
@@ -189,7 +189,7 @@ accordion.ExpandMode = AccordionExpandMode.Single;
 
 Multiple items can be expanded simultaneously. Expanding a new item does not collapse others.
 
-```xml
+```xaml
 <syncfusion:SfAccordion ExpandMode="Multiple">
     <!-- Items -->
 </syncfusion:SfAccordion>
@@ -203,7 +203,7 @@ accordion.ExpandMode = AccordionExpandMode.Multiple;
 
 Multiple items can be expanded, and tapping an expanded item's header collapses it without expanding another.
 
-```xml
+```xaml
 <syncfusion:SfAccordion ExpandMode="MultipleOrNone">
     <!-- Items -->
 </syncfusion:SfAccordion>
@@ -219,7 +219,7 @@ accordion.ExpandMode = AccordionExpandMode.MultipleOrNone;
 
 Customize the expand/collapse animation duration (in milliseconds). Default is 200ms.
 
-```xml
+```xaml
 <syncfusion:SfAccordion AnimationDuration="300">
     <!-- Items -->
 </syncfusion:SfAccordion>
@@ -242,7 +242,7 @@ Control the animation easing style. Default is `Linear`.
 - CubicOut
 - CubicInOut
 
-```xml
+```xaml
 <syncfusion:SfAccordion AnimationDuration="250" 
                         AnimationEasing="SinOut">
     <!-- Items -->
@@ -258,7 +258,7 @@ accordion.AnimationEasing = ExpanderAnimationEasing.SinOut;
 
 Add vertical spacing between accordion items using the `ItemSpacing` property.
 
-```xml
+```xaml
 <syncfusion:SfAccordion ItemSpacing="8">
     <!-- Items -->
 </syncfusion:SfAccordion>
@@ -276,7 +276,7 @@ Control where the expanded item scrolls to after expansion using `AutoScrollPosi
 - **MakeVisible**: Scrolls just enough to make the item visible
 - **Top**: Scrolls the expanded item to the top of the view
 
-```xml
+```xaml
 <syncfusion:SfAccordion AutoScrollPosition="Top">
     <!-- Items -->
 </syncfusion:SfAccordion>
@@ -296,7 +296,7 @@ accordion.BringIntoView(accordion.Items[5]);
 ```
 
 **Example with Button:**
-```xml
+```xaml
 <StackLayout>
     <Button Text="Scroll to Item 5" Clicked="ScrollButton_Clicked" />
     <syncfusion:SfAccordion x:Name="accordion">
@@ -330,7 +330,7 @@ The accordion will display with your configured items and settings.
 Here's a complete working example:
 
 **MainPage.xaml:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

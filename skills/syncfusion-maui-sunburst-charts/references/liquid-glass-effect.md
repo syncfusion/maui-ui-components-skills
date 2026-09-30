@@ -52,14 +52,14 @@ Wrap the sunburst chart in an `SfGlassEffectView` to apply a glass appearance to
 
 The `SfGlassEffectView` is available in the Syncfusion.Maui.Core package:
 
-```xml
+```xaml
 <PackageReference Include="Syncfusion.Maui.Core" Version="27.1.48" />
 ```
 
 ### Basic Glass Effect Implementation
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sunburst="clr-namespace:Syncfusion.Maui.SunburstChart;assembly=Syncfusion.Maui.SunburstChart"
@@ -134,7 +134,7 @@ this.Content = glassView;
 ### Effect Type Comparison
 
 **Regular Effect:**
-```xml
+```xaml
 <core:SfGlassEffectView EffectType="Regular">
     <!-- Blurred, frosted appearance -->
     <!-- More opaque -->
@@ -149,7 +149,7 @@ this.Content = glassView;
 - Creating depth and hierarchy
 
 **Clear Effect:**
-```xml
+```xaml
 <core:SfGlassEffectView EffectType="Clear">
     <!-- Crisper, glassy appearance -->
     <!-- More transparent -->
@@ -172,7 +172,7 @@ Apply the liquid glass effect to chart tooltips for a cohesive modern design.
 Set both `EnableLiquidGlassEffect` and `EnableTooltip` properties to true:
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableLiquidGlassEffect="True"
                           EnableTooltip="True"
                           ItemsSource="{Binding DataSource}"
@@ -201,7 +201,7 @@ this.Content = chart;
 When using custom tooltip templates, set background to `Transparent` to allow the glass effect to show through:
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableLiquidGlassEffect="True"
                           EnableTooltip="True"
                           ItemsSource="{Binding DataSource}"
@@ -241,7 +241,7 @@ When using custom tooltip templates, set background to `Transparent` to allow th
 
 ### Example 1: Full Glass Effect Dashboard
 
-```xml
+```xaml
 <ContentPage xmlns:sunburst="clr-namespace:Syncfusion.Maui.SunburstChart;assembly=Syncfusion.Maui.SunburstChart"
              xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core">
 
@@ -286,7 +286,7 @@ When using custom tooltip templates, set background to `Transparent` to allow th
 
 ### Example 2: Clear Glass with Drill-Down
 
-```xml
+```xaml
 <core:SfGlassEffectView CornerRadius="20"
                        Padding="12"
                        EffectType="Clear"
@@ -320,7 +320,7 @@ When using custom tooltip templates, set background to `Transparent` to allow th
 
 ### Example 3: Glass Effect with Center View
 
-```xml
+```xaml
 <core:SfGlassEffectView CornerRadius="30"
                        Padding="20"
                        EffectType="Regular"
@@ -360,7 +360,7 @@ When using custom tooltip templates, set background to `Transparent` to allow th
 
 ### Example 4: Compact Mobile Glass Card
 
-```xml
+```xaml
 <core:SfGlassEffectView CornerRadius="15"
                        Padding="10"
                        EffectType="Clear"
@@ -486,7 +486,7 @@ this.Content = chart;
 ```
 
 **XAML with OnPlatform:**
-```xml
+```xaml
 <ContentPage.Content>
     <OnPlatform x:TypeArguments="View">
         <On Platform="iOS, MacCatalyst">

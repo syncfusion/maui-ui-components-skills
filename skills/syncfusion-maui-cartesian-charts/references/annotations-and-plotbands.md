@@ -37,7 +37,7 @@ Annotations and PlotBands allow you to mark and highlight specific areas of inte
 
 Add annotations to the chart's `Annotations` collection:
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -85,7 +85,7 @@ chart.Annotations.Add(ellipse);
 - `Axis` (default): Position based on axis values
 - `Pixel`: Position based on pixel coordinates
 
-```xml
+```xaml
 <chart:RectangleAnnotation X1="0" Y1="100" X2="300" Y2="400" 
                           CoordinateUnit="Pixel"
                           Text="Pixel Position"/>
@@ -107,7 +107,7 @@ var rectangle = new RectangleAnnotation()
 
 Add simple text at specific points:
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.Annotations>
         <chart:TextAnnotation X1="2" Y1="25" 
@@ -143,7 +143,7 @@ var textAnnotation = new TextAnnotation()
 
 #### Rectangle Annotation
 
-```xml
+```xaml
 <chart:RectangleAnnotation X1="1" Y1="40" X2="2" Y2="20"
                           Fill="#20FF5722"
                           Stroke="#FF5722"
@@ -167,7 +167,7 @@ var rectangle = new RectangleAnnotation()
 
 #### Ellipse Annotation
 
-```xml
+```xaml
 <chart:EllipseAnnotation X1="2" X2="4" Y1="10" Y2="15"
                         Width="20" Height="20"
                         Fill="#204CAF50"
@@ -194,7 +194,7 @@ var ellipse = new EllipseAnnotation()
 
 #### Line Annotation
 
-```xml
+```xaml
 <chart:LineAnnotation X1="0.5" Y1="10" X2="3.5" Y2="20"
                      Stroke="Red"
                      StrokeWidth="2"
@@ -218,7 +218,7 @@ line.StrokeDashArray = new DoubleCollection { 5, 5 };
 
 #### Vertical and Horizontal Line Annotations
 
-```xml
+```xaml
 <chart:SfCartesianChart.Annotations>
     <chart:VerticalLineAnnotation X1="2.5"
                                  Stroke="Blue"
@@ -270,7 +270,7 @@ var horizontalLine = new HorizontalLineAnnotation()
 
 Add custom views as annotations:
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.Annotations>
         <chart:ViewAnnotation X1="3" Y1="30"
@@ -326,7 +326,7 @@ var viewAnnotation = new ViewAnnotation()
 
 Specify which axis to use for positioning:
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.YAxes>
         <chart:NumericalAxis/>
@@ -350,7 +350,7 @@ PlotBands shade specific regions in the plot area background.
 
 For NumericalAxis, CategoryAxis, and DateTimeCategoryAxis:
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.YAxes>
         <chart:NumericalAxis>
@@ -400,7 +400,7 @@ numericalAxis.PlotBands = plotBands;
 
 For DateTimeAxis:
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:DateTimeAxis>
@@ -437,7 +437,7 @@ dateTimeAxis.PlotBands = plotBands;
 
 Draw plot bands at regular intervals:
 
-```xml
+```xaml
 <chart:NumericalAxis>
     <chart:NumericalAxis.PlotBands>
         <chart:NumericalPlotBandCollection>
@@ -467,7 +467,7 @@ NumericalPlotBand plotBand = new NumericalPlotBand
 
 Limit plot band to specific associated axis range:
 
-```xml
+```xaml
 <chart:NumericalAxis>
     <chart:NumericalAxis.PlotBands>
         <chart:NumericalPlotBandCollection>
@@ -491,7 +491,7 @@ Limit plot band to specific associated axis range:
 
 Create plot lines by setting Start = End:
 
-```xml
+```xaml
 <chart:NumericalPlotBand Start="24" End="24"
                         Stroke="Red"
                         StrokeWidth="2"
@@ -519,7 +519,7 @@ Create plot lines by setting Start = End:
 ### Common Patterns
 
 **Threshold Marking:**
-```xml
+```xaml
 <chart:HorizontalLineAnnotation Y1="100"
                                Stroke="Red"
                                StrokeWidth="2"
@@ -528,7 +528,7 @@ Create plot lines by setting Start = End:
 ```
 
 **Region Highlighting:**
-```xml
+```xaml
 <chart:NumericalPlotBand Start="80" End="100"
                         Fill="#2000E190"
                         Text="Optimal Range"/>

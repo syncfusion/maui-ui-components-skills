@@ -18,7 +18,7 @@ The `MinimumDate` property restricts backward navigation and date selection. Use
 ### Set Minimum Date
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Month"
                      MinimumDate="2026-01-01" />
@@ -58,7 +58,7 @@ The `MaximumDate` property restricts forward navigation and date selection. User
 ### Set Maximum Date
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Month"
                      MaximumDate="2026-12-31" />
@@ -100,7 +100,7 @@ The `EnablePastDates` property controls whether dates before today can be select
 ### Disable Past Dates
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Month"
                      EnablePastDates="False" />
@@ -261,7 +261,7 @@ calendar.SelectableDayPredicate = (DateTime date) =>
 
 ### Example 3: Range Restriction with Custom Validation
 
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar"
                      SelectionMode="Range"
                      EnablePastDates="False"

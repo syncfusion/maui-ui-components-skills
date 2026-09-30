@@ -15,7 +15,7 @@ Selection allows users to interact with leaf items by tapping or clicking them. 
 
 **Basic Setup:**
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Size"
                    SelectionMode="Single">
@@ -40,7 +40,7 @@ Controls how users can select leaf items.
 
 No selection interaction available. Items cannot be selected.
 
-```xml
+```xaml
 <treemap:SfTreeMap SelectionMode="None" />
 ```
 
@@ -58,7 +58,7 @@ treeMap.SelectionMode = TreeMapSelectionMode.None;
 Users can select one item at a time. Selecting a new item deselects the previous one.
 
 **XAML:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Products}"
                    PrimaryValuePath="Sales"
                    SelectionMode="Single">
@@ -91,7 +91,7 @@ treeMap.LeafItemSettings = new TreeMapLeafItemSettings { LabelPath = "ProductNam
 Users can select multiple items simultaneously.
 
 **XAML:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Value"
                    SelectionMode="Multiple">
@@ -209,7 +209,7 @@ public class DashboardViewModel : INotifyPropertyChanged
 ```
 
 **XAML:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Products}"
                    PrimaryValuePath="Sales"
                    SelectionMode="Multiple"
@@ -236,7 +236,7 @@ Raised whenever the selection changes (items added or removed).
 ### Subscribing to SelectionChanged
 
 **XAML:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Value"
                    SelectionMode="Single"
@@ -357,7 +357,7 @@ While the TreeMap provides default highlighting, you can customize appearance th
 3. **Spacing**: Adequate spacing helps distinguish selected items
 
 **Example - Clear Visual Boundaries:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Value"
                    SelectionMode="Single">
@@ -377,7 +377,7 @@ The increased spacing and border width make selection highlighting more prominen
 ### Example 1: Single Selection with Detail View
 
 **XAML:**
-```xml
+```xaml
 <Grid RowDefinitions="*, Auto">
     <treemap:SfTreeMap Grid.Row="0"
                        DataSource="{Binding Products}"
@@ -429,7 +429,7 @@ private void OnProductSelected(object sender, TreeMapSelectionChangedEventArgs e
 ### Example 2: Multiple Selection with Batch Actions
 
 **XAML:**
-```xml
+```xaml
 <Grid RowDefinitions="Auto,*,Auto">
     <Label Grid.Row="0" 
            x:Name="SelectionCountLabel"
@@ -548,7 +548,7 @@ public partial class DashboardPage : ContentPage
 ### Example 4: Filter Selection by Criteria
 
 **XAML:**
-```xml
+```xaml
 <Grid RowDefinitions="Auto,*">
     <HorizontalStackLayout Grid.Row="0" Spacing="10" Padding="10">
         <Button Text="Select High Sales (>$50K)"
@@ -619,7 +619,7 @@ private void OnClearSelection(object sender, EventArgs e)
 3. Check that items are leaf items (not group headers)
 4. Confirm touch/mouse input is reaching the TreeMap
 
-```xml
+```xaml
 <!-- Ensure selection is enabled -->
 <treemap:SfTreeMap SelectionMode="Single" />
 ```

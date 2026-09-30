@@ -358,7 +358,7 @@ foreach (var product in newProducts)
 
 ### 3. Avoid Complex ItemTemplates
 
-```xml
+```xaml
 <!-- ✓ GOOD - Simple, flat structure -->
 <DataTemplate>
     <Grid Padding="10" ColumnDefinitions="Auto,*,Auto">
@@ -411,7 +411,7 @@ listView.AutoFitMode = AutoFitMode.Height;
 
 ### 5. Avoid ScrollView as Parent
 
-```xml
+```xaml
 <!-- ❌ WRONG - Disables virtualization -->
 <ScrollView>
     <syncfusion:SfListView ItemsSource="{Binding Products}" />

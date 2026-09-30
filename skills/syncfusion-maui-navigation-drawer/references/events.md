@@ -35,7 +35,7 @@ Triggered **before** the drawer starts opening. Use this event to prevent the dr
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer"
                                       DrawerOpening="OnDrawerOpening"/>
 ```
@@ -98,7 +98,7 @@ Triggered **after** the drawer has fully opened. Use this event to execute logic
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer"
                                       DrawerOpened="OnDrawerOpened"/>
 ```
@@ -149,7 +149,7 @@ Triggered **before** the drawer starts closing. Use this event to prevent the dr
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer"
                                       DrawerClosing="OnDrawerClosing"/>
 ```
@@ -224,7 +224,7 @@ Triggered **after** the drawer has fully closed. Use this event to clean up or u
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer"
                                       DrawerClosed="OnDrawerClosed"/>
 ```
@@ -276,7 +276,7 @@ Triggered **after** the drawer is toggled (either opened or closed). This event 
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer"
                                       DrawerToggled="OnDrawerToggled"/>
 ```
@@ -344,7 +344,7 @@ When closing a drawer:
 
 ### XAML + Code-Behind
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer"
                                       DrawerOpening="OnDrawerOpening"
                                       DrawerOpened="OnDrawerOpened"
@@ -466,7 +466,7 @@ private void OnDrawerClosing(object sender, CancelEventArgs e)
 
 ### Pattern 6: Dim Content Overlay
 
-```xml
+```xaml
 <!-- Overlay grid that appears when drawer opens -->
 <Grid x:Name="contentOverlay"
       IsVisible="False"

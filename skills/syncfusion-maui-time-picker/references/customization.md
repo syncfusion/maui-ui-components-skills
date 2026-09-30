@@ -37,7 +37,7 @@ The header view appears at the top of the picker and can be fully customized.
 ### Basic Header Customization
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker">
     <picker:SfTimePicker.HeaderView>
         <picker:PickerHeaderView Text="Select Time" 
@@ -77,7 +77,7 @@ this.Content = timePicker;
 
 ### Header with Gradient Background
 
-```xml
+```xaml
 <picker:SfTimePicker.HeaderView>
     <picker:PickerHeaderView Text="Appointment Time" Height="60">
         <picker:PickerHeaderView.Background>
@@ -136,7 +136,7 @@ The footer view contains OK and Cancel buttons for confirming or cancelling the 
 ### Basic Footer Customization
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker">
     <picker:SfTimePicker.FooterView>
         <picker:PickerFooterView ShowOkButton="True"
@@ -174,7 +174,7 @@ timePicker.FooterView = new PickerFooterView()
 
 ### Footer with Custom Colors
 
-```xml
+```xaml
 <picker:SfTimePicker.FooterView>
     <picker:PickerFooterView ShowOkButton="True"
                              Height="60"
@@ -210,7 +210,7 @@ Column headers display labels for each time component (Hour, Minute, Second, AM/
 ### Basic Column Header Customization
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker" Format="hh_mm_ss_tt">
     <picker:SfTimePicker.ColumnHeaderView>
         <picker:TimePickerColumnHeaderView Height="40"
@@ -250,7 +250,7 @@ timePicker.ColumnHeaderView = new TimePickerColumnHeaderView()
 
 ### Localized Column Headers
 
-```xml
+```xaml
 <picker:SfTimePicker.ColumnHeaderView>
     <picker:TimePickerColumnHeaderView Height="35"
                                       HourHeaderText="Heure"
@@ -279,7 +279,7 @@ The selection view is the highlight box that indicates the currently selected it
 ### Basic Selection View Customization
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker">
     <picker:SfTimePicker.SelectionView>
         <picker:PickerSelectionView Background="#E3F2FD"
@@ -315,7 +315,7 @@ timePicker.SelectionView = new PickerSelectionView()
 
 ### Selection View with Gradient
 
-```xml
+```xaml
 <picker:SfTimePicker.SelectionView>
     <picker:PickerSelectionView StrokeThickness="3" CornerRadius="12">
         <picker:PickerSelectionView.Background>
@@ -338,7 +338,7 @@ timePicker.SelectionView = new PickerSelectionView()
 
 ### Transparent Selection View
 
-```xml
+```xaml
 <picker:SfTimePicker.SelectionView>
     <picker:PickerSelectionView Background="Transparent"
                                 Stroke="#4CAF50"
@@ -373,7 +373,7 @@ public enum PickerTextDisplayMode
 
 Normal display without visual effects.
 
-```xml
+```xaml
 <picker:SfTimePicker TextDisplayMode="Default" />
 ```
 
@@ -382,7 +382,7 @@ Normal display without visual effects.
 Items farther from selection have reduced opacity.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      TextDisplayMode="Fade"
                      Format="hh_mm_tt">
@@ -399,7 +399,7 @@ timePicker.TextDisplayMode = PickerTextDisplayMode.Fade;
 Items farther from selection have smaller font size.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      TextDisplayMode="Shrink"
                      Format="hh_mm_tt">
@@ -416,7 +416,7 @@ timePicker.TextDisplayMode = PickerTextDisplayMode.Shrink;
 Combines both opacity and size reduction.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      TextDisplayMode="FadeAndShrink"
                      Format="hh_mm_tt">
@@ -432,7 +432,7 @@ timePicker.TextDisplayMode = PickerTextDisplayMode.FadeAndShrink;
 
 ### Comparison Example
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="20">
     
     <Label Text="Default Mode" FontAttributes="Bold" />
@@ -463,14 +463,14 @@ The Liquid Glass Effect creates a modern, translucent design with adaptive color
 
 **Step 1:** Import namespaces
 
-```xml
+```xaml
 xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
 xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
 ```
 
 **Step 2:** Wrap TimePicker in SfGlassEffectView
 
-```xml
+```xaml
 <ContentPage>
     <Grid>
         <!-- Background -->
@@ -521,7 +521,7 @@ timePicker.Background = Brushes.Transparent;
 
 ### Liquid Glass with Custom Background
 
-```xml
+```xaml
 <core:SfGlassEffectView CornerRadius="25" 
                        Margin="30"
                        VerticalOptions="Center"
@@ -550,7 +550,7 @@ timePicker.Background = Brushes.Transparent;
 
 ### Example 1: Material Design Theme
 
-```xml
+```xaml
 <picker:SfTimePicker Format="hh_mm_tt" HeightRequest="320">
     <!-- Header -->
     <picker:SfTimePicker.HeaderView>
@@ -613,7 +613,7 @@ timePicker.Background = Brushes.Transparent;
 
 ### Example 2: Dark Theme
 
-```xml
+```xaml
 <picker:SfTimePicker Format="HH_mm" 
                      HeightRequest="300"
                      TextDisplayMode="FadeAndShrink"
@@ -673,7 +673,7 @@ timePicker.Background = Brushes.Transparent;
 
 ### Example 3: Colorful Theme
 
-```xml
+```xaml
 <picker:SfTimePicker Format="h_mm_ss_tt" 
                      HeightRequest="350"
                      TextDisplayMode="Fade">
@@ -743,7 +743,7 @@ timePicker.Background = Brushes.Transparent;
 
 Ensure text is readable against backgrounds:
 
-```xml
+```xaml
 <!-- Good contrast -->
 <picker:PickerHeaderView Background="#1976D2">
     <picker:PickerHeaderView.TextStyle>
@@ -763,7 +763,7 @@ Ensure text is readable against backgrounds:
 
 Define reusable styles:
 
-```xml
+```xaml
 <ContentPage.Resources>
     <picker:PickerTextStyle x:Key="HeaderTextStyle"
                            TextColor="White"
@@ -800,13 +800,13 @@ timePicker.Format = PickerTimeFormat.hh_tt;        // Shortest
 
 Enhance visual hierarchy:
 
-```xml
+```xaml
 <picker:SfTimePicker TextDisplayMode="FadeAndShrink" />
 ```
 
 ### 5. Transparent Backgrounds for Glass Effect
 
-```xml
+```xaml
 <picker:SfTimePicker EnableLiquidGlassEffect="True"
                     Background="Transparent" />
 ```

@@ -19,7 +19,7 @@ The `TextDisplayMode` property accepts values from the `PickerTextDisplayMode` e
 
 The standard display mode without visual effects.
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      TextDisplayMode="Default">
 </picker:SfDatePicker>
@@ -38,7 +38,7 @@ SfDatePicker datePicker = new SfDatePicker()
 
 Gradually decreases the visibility (opacity) of unselected items relative to the selected item.
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      TextDisplayMode="Fade">
 </picker:SfDatePicker>
@@ -63,7 +63,7 @@ SfDatePicker datePicker = new SfDatePicker()
 
 Decreases the font size of items as they move away from the selected item.
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      TextDisplayMode="Shrink">
 </picker:SfDatePicker>
@@ -88,7 +88,7 @@ SfDatePicker datePicker = new SfDatePicker()
 
 Combines both fade and shrink effects for maximum visual emphasis.
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      TextDisplayMode="FadeAndShrink">
 </picker:SfDatePicker>
@@ -109,7 +109,7 @@ SfDatePicker datePicker = new SfDatePicker()
 
 ### Comparison Example
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="30">
     <Label Text="Text Display Modes Comparison" 
            FontSize="22" 
@@ -206,7 +206,7 @@ Set the `Background` property to `Transparent` for the glass effect to work prop
 
 #### XAML
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
@@ -328,7 +328,7 @@ glassView.EffectType = LiquidGlassEffectType.Clear;
 
 ### Customizing Glass Effect
 
-```xml
+```xaml
 <core:SfGlassEffectView EffectType="Regular"
                         CornerRadius="25"
                         WidthRequest="350"
@@ -419,7 +419,7 @@ public void SetupDatePicker()
 
 ### Example: Liquid Glass with FadeAndShrink Mode
 
-```xml
+```xaml
 <Grid>
     <Grid.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">

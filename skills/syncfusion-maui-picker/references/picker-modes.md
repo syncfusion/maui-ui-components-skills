@@ -26,7 +26,7 @@ The picker mode is set using the `Mode` property, which accepts one of three val
 Default mode displays the picker as an inline control embedded directly in your page layout. The picker is always visible and takes up space in the UI.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  Mode="Default"
                  HeightRequest="280"
@@ -58,7 +58,7 @@ this.Content = picker;
 Dialog mode displays the picker in a centered popup that overlays the current page. The background is dimmed, focusing attention on the picker.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  Mode="Dialog">
     <!-- Picker configuration -->
@@ -80,7 +80,7 @@ this.Content = picker;
 Set the `IsOpen` property to `true` to display the picker dialog.
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <picker:SfPicker x:Name="picker"
                      Mode="Dialog">
@@ -122,7 +122,7 @@ private void Button_Clicked(object sender, EventArgs e)
 RelativeDialog mode displays the picker in a popup positioned relative to a specific UI element. This provides flexibility in picker placement.
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <picker:SfPicker x:Name="picker" 
                      Mode="RelativeDialog"
@@ -187,7 +187,7 @@ picker.RelativePosition = PickerRelativePosition.AlignTopRight;
 Use the `RelativeView` property to specify which UI element the picker should be positioned relative to.
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <picker:SfPicker x:Name="picker" 
                      Mode="RelativeDialog"
@@ -249,7 +249,7 @@ if (picker.IsOpen)
 ```
 
 **Binding IsOpen in XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  Mode="Dialog"
                  IsOpen="{Binding IsPickerOpen}">
@@ -290,7 +290,7 @@ public class ViewModel : INotifyPropertyChanged
 Customize the dimensions of the picker popup in Dialog or RelativeDialog mode using `PopupWidth` and `PopupHeight` properties.
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <picker:SfPicker 
         x:Name="picker"

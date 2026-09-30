@@ -53,7 +53,7 @@ using Syncfusion.Maui.Core.Hosting;
 Import the Charts namespace in your XAML or C# file:
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts">
@@ -67,7 +67,7 @@ using Syncfusion.Maui.Charts;
 ### Step 2: Initialize SfCartesianChart
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCartesianChart/>
 ```
 
@@ -119,7 +119,7 @@ public class PersonViewModel
 ### Step 3: Set BindingContext
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns:model="clr-namespace:YourNamespace">
     <ContentPage.BindingContext>
         <model:PersonViewModel/>
@@ -146,7 +146,7 @@ Cartesian charts require both X and Y axes. Use the `XAxes` and `YAxes` collecti
 ### Basic Axis Setup
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis>
@@ -194,7 +194,7 @@ Series define the chart type and bind to your data. Use `XBindingPath` and `YBin
 ### ColumnSeries Example
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -230,7 +230,7 @@ chart.Series.Add(series);
 
 ### XAML Implementation
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
@@ -391,7 +391,7 @@ builder.ConfigureSyncfusionCore();
 
 **Solution:** Verify both XAxes and YAxes collections have at least one axis:
 
-```xml
+```xaml
 <chart:SfCartesianChart.XAxes>
     <chart:CategoryAxis/>
 </chart:SfCartesianChart.XAxes>
@@ -414,7 +414,7 @@ After getting your basic chart running:
 
 ### Minimum Required Code (XAML)
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>

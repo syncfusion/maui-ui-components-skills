@@ -32,7 +32,7 @@ Set a uniform height for all items using the `ItemHeight` property.
 
 ### XAML
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        ItemHeight="60"
                        ItemsSource="{Binding Items}"
@@ -92,7 +92,7 @@ private void TreeView_QueryNodeSize(object sender, QueryNodeSizeEventArgs e)
 
 ### XAML Setup
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        QueryNodeSize="TreeView_QueryNodeSize"
                        ItemsSource="{Binding Items}"
@@ -138,7 +138,7 @@ Automatically adjust item heights based on content size.
 
 ### Dynamic Sizing
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        NodeSizeMode="Dynamic"
                        ItemsSource="{Binding Items}"
@@ -206,7 +206,7 @@ private void TreeView_QueryNodeSize(object sender, QueryNodeSizeEventArgs e)
 
 When using images in `ItemTemplate`, you must specify explicit dimensions:
 
-```xml
+```xaml
 <syncfusion:SfTreeView.ItemTemplate>
     <DataTemplate>
         <Grid ColumnDefinitions="50,*" ColumnSpacing="10" Padding="5">
@@ -231,7 +231,7 @@ When using images in `ItemTemplate`, you must specify explicit dimensions:
 
 ## Complete Example: Mixed Content Types
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -345,12 +345,12 @@ private void TreeView_QueryNodeSize(object sender, QueryNodeSizeEventArgs e)
 ### ✅ Do's
 
 1. **Set explicit dimensions for images**
-   ```xml
+   ```xaml
    <Image WidthRequest="40" HeightRequest="40"/>
    ```
 
 2. **Use `NodeSizeMode="Dynamic"`** for content-driven layouts
-   ```xml
+   ```xaml
    <syncfusion:SfTreeView NodeSizeMode="Dynamic"/>
    ```
 

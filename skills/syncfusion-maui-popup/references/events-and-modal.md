@@ -35,7 +35,7 @@ The popup fires events in the following sequence:
 Fired before the popup becomes visible. Position of the popup can be handled before showing.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="popup"
                  PositionChanging="OnPopupPositionChanging"/>
 ```
@@ -60,7 +60,7 @@ private void OnPopupPositionChanging(object sender, PopupPositionChangingEventAr
 Fired before the popup becomes visible. Can be cancelled to prevent showing.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup"
                  Opening="OnPopupOpening">
 </sfPopup:SfPopup>
@@ -103,7 +103,7 @@ public partial class MainPage : ContentPage
 Fired after the popup is fully visible and animations complete.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup"
                  Opened="OnPopupOpened">
 </sfPopup:SfPopup>
@@ -126,7 +126,7 @@ private void OnPopupOpened(object sender, EventArgs e)
 Fired before the popup dismisses. Can be cancelled to prevent closing.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup"
                  Closing="OnPopupClosing">
 </sfPopup:SfPopup>
@@ -163,7 +163,7 @@ private bool HasUnsavedChanges()
 Fired after the popup is fully dismissed and animations complete.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup"
                  Closed="OnPopupClosed">
 </sfPopup:SfPopup>
@@ -275,7 +275,7 @@ private void OnPopupOpened(object sender, EventArgs e)
 Controls whether the overlay background is displayed and blocks interaction.
 
 **True (Default) - Modal Behavior:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup"
                  ShowOverlayAlways="True">
 </sfPopup:SfPopup>
@@ -286,7 +286,7 @@ Controls whether the overlay background is displayed and blocks interaction.
 - User must interact with popup before accessing other content
 
 **False - Non-Modal Behavior:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup"
                  ShowOverlayAlways="False">
 </sfPopup:SfPopup>
@@ -368,7 +368,7 @@ The `StaysOpen` property prevents the popup from closing when the user taps outs
 > - `StaysOpen="True"` keeps the popup open regardless of tapping outside. The popup stays until the close button or a programmatic `Dismiss()` is used.
 
 **XAML — Modal Window (StaysOpen):**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
@@ -426,50 +426,164 @@ private void ClickToShowPopup_Clicked(object sender, EventArgs e)
 
 While you can't directly set overlay color in properties, you can customize it through styling:
 
-```xml
+```xaml
 <!-- In your app's resource dictionary or styles -->
 <Style TargetType="sfPopup:SfPopup">
     <Setter Property="OverlayColor" Value="#80000000" />
 </Style>
 ```
 
-## Button Events
+## Button Commands
 
-### Accept Button Clicked Event
+### Accept Command
 
-Although not a separate event, you can handle accept button clicks through the `Closed` event:
+The `AcceptCommand` is fired when the Accept button in the popup footer is clicked.
 
-**Check Button Click via ShowAsync:**
+**Implementation Steps:**
+1. Create a custom class implementing `ICommand` interface
+2. Return `false` from `CanExecute()` to prevent popup closing, or `true` to proceed
+3. Implement required logic in `Execute()` method
+4. Create a property in your ViewModel and bind it to `AcceptCommand` in XAML
+
+**XAML:**
+```xaml
+<ContentPage.BindingContext>
+    <local:PopupViewModel />
+</ContentPage.BindingContext>
+
+<sfPopup:SfPopup x:Name="sfPopup"
+                 HeaderTitle="Confirmation"
+                 Message="Do you want to proceed?"
+                 ShowFooter="True"
+                 AppearanceMode="TwoButton"
+                 AcceptButtonText="Yes"
+                 AcceptCommand="{Binding PopupAcceptCommand}">
+</sfPopup:SfPopup>
+```
+
+**ViewModel with Custom Command:**
 ```csharp
-private async void OnShowPopup_Clicked(object sender, EventArgs e)
+
+public class PopupViewModel : INotifyPropertyChanged
 {
-    sfPopup.HeaderTitle = "Confirmation";
-    sfPopup.Message = "Do you want to proceed?";
-    sfPopup.ShowFooter = true;
-    sfPopup.AppearanceMode = PopupButtonAppearanceMode.TwoButton;
-    
-    bool accepted = await sfPopup.ShowAsync();
-    
-    if (accepted)
+    private ICommand _popupAcceptCommand;
+
+    public ICommand PopupAcceptCommand
     {
-        // User clicked Accept
-        await ProcessAcceptAction();
+        get { return _popupAcceptCommand; }
+        set { _popupAcceptCommand = value; }
     }
-    else
+
+    public PopupViewModel()
     {
-        // User clicked Decline or closed popup
-        await ProcessDeclineAction();
+        PopupAcceptCommand = new RelayCommand(OnAcceptExecuted, OnAcceptCanExecute);
+    }
+
+    private void OnAcceptExecuted()
+    {
+        // Handle accept button click
+        Debug.WriteLine("Accept button clicked");
+        // Perform your operations here
+    }
+
+    private bool OnAcceptCanExecute()
+    {
+        // Return true to allow popup to close, false to keep it open
+        return true;
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
+```
 
-private async Task ProcessAcceptAction()
+### Decline Command
+
+The `DeclineCommand` is fired when the Decline button in the popup footer is clicked (when using `AppearanceMode="TwoButton"`).
+
+**Implementation Steps:**
+1. Create a custom class implementing `ICommand` interface
+2. Return `false` from `CanExecute()` to prevent popup closing, or `true` to proceed
+3. Implement required logic in `Execute()` method
+4. Create a property in your ViewModel and bind it to `DeclineCommand` in XAML
+
+**XAML:**
+```xaml
+<ContentPage.BindingContext>
+    <local:PopupViewModel />
+</ContentPage.BindingContext>
+
+<sfPopup:SfPopup x:Name="sfPopup"
+                 HeaderTitle="Confirmation"
+                 Message="Do you want to proceed?"
+                 ShowFooter="True"
+                 AppearanceMode="TwoButton"
+                 AcceptButtonText="Yes"
+                 DeclineButtonText="No"
+                 DeclineCommand="{Binding PopupDeclineCommand}">
+</sfPopup:SfPopup>
+```
+
+**ViewModel:**
+```csharp
+public class PopupViewModel : INotifyPropertyChanged
 {
-    await DisplayAlert("Accepted", "You clicked Accept", "OK");
+    private ICommand _popupDeclineCommand;
+
+    public ICommand PopupDeclineCommand
+    {
+        get { return _popupDeclineCommand; }
+        set { _popupDeclineCommand = value; }
+    }
+
+    public PopupViewModel()
+    {
+        PopupDeclineCommand = new RelayCommand(OnDeclineExecuted, OnDeclineCanExecute);
+    }
+
+    private void OnDeclineExecuted()
+    {
+        Debug.WriteLine("Decline button clicked");
+        // Handle decline action
+    }
+
+    private bool OnDeclineCanExecute()
+    {
+        return true; // Allow closing
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
+```
+
+### Prevent Popup Closing on Button Click
+
+Return `false` from `CanExecute()` to prevent the popup from closing when Accept/Decline button is clicked:
+
+```csharp
+private bool OnAcceptCanExecute()
+{
+    // Validate form before allowing close
+    if (!ValidateForm())
+    {
+        return false; // Prevent closing
+    }
+    return true; // Allow closing
 }
 
-private async Task ProcessDeclineAction()
+private bool ValidateForm()
 {
-    await DisplayAlert("Declined", "You clicked Decline", "OK");
+    // Your validation logic
+    return true;
 }
 ```
 
@@ -477,7 +591,7 @@ private async Task ProcessDeclineAction()
 
 When using custom footer templates, wire up button events directly:
 
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup" ShowFooter="True">
     <sfPopup:SfPopup.FooterTemplate>
         <DataTemplate>

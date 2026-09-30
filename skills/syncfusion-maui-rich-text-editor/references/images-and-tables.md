@@ -17,7 +17,7 @@ The Rich Text Editor supports inserting images (JPEG, PNG) and tables into conte
 
 Include the Image toolbar item to allow users to insert images:
 
-```xml
+```xaml
 <rte:SfRichTextEditor ShowToolbar="True">
     <rte:SfRichTextEditor.ToolbarItems>
         <rte:RichTextToolbarItem Type="Bold" />
@@ -33,7 +33,7 @@ Include the Image toolbar item to allow users to insert images:
 When the user taps the Image toolbar button, the `ImageRequested` event fires. Handle this event to provide the image source.
 
 **XAML:**
-```xml
+```xaml
 <rte:SfRichTextEditor x:Name="richTextEditor"
                       ShowToolbar="True"
                       ImageRequested="OnImageRequested" />
@@ -313,7 +313,7 @@ private void InsertImage(Stream stream, int width, int height)
 
 Include the Table toolbar item to allow users to insert tables:
 
-```xml
+```xaml
 <rte:SfRichTextEditor ShowToolbar="True">
     <rte:SfRichTextEditor.ToolbarItems>
         <rte:RichTextToolbarItem Type="Bold" />
@@ -356,7 +356,7 @@ richTextEditor.InsertTable(2, 2);
 
 ### Insert Table with Button
 
-```xml
+```xaml
 <StackLayout>
     <Button Text="Insert 3x3 Table" Clicked="OnInsertTableClicked" />
     <rte:SfRichTextEditor x:Name="richTextEditor" ShowToolbar="True" />
@@ -437,7 +437,7 @@ public class TableTemplates
 
 ### Table Size Picker UI
 
-```xml
+```xaml
 <StackLayout>
     <Label Text="Insert Table" FontSize="18" FontAttributes="Bold" />
     
@@ -485,7 +485,7 @@ private void OnInsertCustomTableClicked(object sender, EventArgs e)
 On MacCatalyst, you must enable file access permissions in `Entitlements.plist`:
 
 **Entitlements.plist:**
-```xml
+```xaml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -500,7 +500,7 @@ On MacCatalyst, you must enable file access permissions in `Entitlements.plist`:
 
 For Android, ensure you have storage and camera permissions in `AndroidManifest.xml`:
 
-```xml
+```xaml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.CAMERA" />
@@ -538,7 +538,7 @@ public async Task<bool> RequestCameraPermission()
 
 For iOS, add usage descriptions in `Info.plist`:
 
-```xml
+```xaml
 <key>NSPhotoLibraryUsageDescription</key>
 <string>We need access to your photos to insert images</string>
 <key>NSCameraUsageDescription</key>
@@ -690,7 +690,7 @@ RichTextEditorImageSource imageSource = new RichTextEditorImageSource
 
 Give users flexibility in how they add images:
 
-```xml
+```xaml
 <StackLayout Orientation="Horizontal" Spacing="5">
     <Button Text="📷 Camera" Clicked="OnCameraClicked" />
     <Button Text="🖼️ Gallery" Clicked="OnGalleryClicked" />

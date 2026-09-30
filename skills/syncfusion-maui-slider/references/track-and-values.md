@@ -18,7 +18,7 @@ The `Minimum` and `Maximum` properties define the range of values the slider can
 
 The minimum value that the user can select. Default value is `0`.
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="20" />
 ```
 
@@ -35,7 +35,7 @@ SfSlider slider = new SfSlider
 
 The maximum value that the user can select. Default value is `1`.
 
-```xml
+```xaml
 <sliders:SfSlider Maximum="100" />
 ```
 
@@ -50,7 +50,7 @@ SfSlider slider = new SfSlider
 
 Always set both Minimum and Maximum together:
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Interval="10"
@@ -80,7 +80,7 @@ The `Value` property represents the currently selected value. The slider thumb i
 
 ### Setting Initial Value
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="50" />
@@ -100,7 +100,7 @@ SfSlider slider = new SfSlider
 Bind the Value property to a ViewModel property:
 
 **XAML:**
-```xml
+```xaml
 <ContentPage.BindingContext>
     <local:ViewModel />
 </ContentPage.BindingContext>
@@ -189,7 +189,7 @@ The track is the horizontal or vertical line along which the thumb moves. It con
 
 Use `SliderTrackStyle` to customize the track appearance:
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0" Maximum="100" Value="60">
     <sliders:SfSlider.TrackStyle>
         <sliders:SliderTrackStyle ActiveFill="#EE3F3F"
@@ -220,7 +220,7 @@ slider.TrackStyle.InactiveSize = 4;
 
 Color of the track from Minimum to current Value:
 
-```xml
+```xaml
 <sliders:SfSlider>
     <sliders:SfSlider.TrackStyle>
         <sliders:SliderTrackStyle ActiveFill="#FF6B6B" />
@@ -238,7 +238,7 @@ slider.TrackStyle.ActiveFill = new SolidColorBrush(Colors.CornflowerBlue);
 
 Color of the track from current Value to Maximum:
 
-```xml
+```xaml
 <sliders:SfSlider>
     <sliders:SfSlider.TrackStyle>
         <sliders:SliderTrackStyle InactiveFill="#E0E0E0" />
@@ -255,13 +255,13 @@ slider.TrackStyle.InactiveFill = new SolidColorBrush(Colors.Gray.WithAlpha(0.3f)
 ### Color Combinations
 
 **Example 1: High Contrast**
-```xml
+```xaml
 <sliders:SliderTrackStyle ActiveFill="#FF4081"
                           InactiveFill="#BDBDBD" />
 ```
 
 **Example 2: Monochrome with Transparency**
-```xml
+```xaml
 <sliders:SliderTrackStyle ActiveFill="#2196F3"
                           InactiveFill="#882196F3" />
 ```
@@ -289,7 +289,7 @@ slider.TrackStyle.ActiveFill = gradient;
 
 Height (horizontal slider) or width (vertical slider) of the active track:
 
-```xml
+```xaml
 <sliders:SfSlider>
     <sliders:SfSlider.TrackStyle>
         <sliders:SliderTrackStyle ActiveSize="10" />
@@ -305,7 +305,7 @@ slider.TrackStyle.ActiveSize = 10;
 
 Height (horizontal slider) or width (vertical slider) of the inactive track:
 
-```xml
+```xaml
 <sliders:SfSlider>
     <sliders:SfSlider.TrackStyle>
         <sliders:SliderTrackStyle InactiveSize="4" />
@@ -320,21 +320,21 @@ slider.TrackStyle.InactiveSize = 4;
 ### Size Variations
 
 **Example 1: Thick Active Track**
-```xml
+```xaml
 <sliders:SliderTrackStyle ActiveSize="12"
                           InactiveSize="4" />
 ```
 Creates emphasis on the selected portion.
 
 **Example 2: Uniform Track**
-```xml
+```xaml
 <sliders:SliderTrackStyle ActiveSize="6"
                           InactiveSize="6" />
 ```
 Both portions have the same thickness.
 
 **Example 3: Subtle Active Track**
-```xml
+```xaml
 <sliders:SliderTrackStyle ActiveSize="4"
                           InactiveSize="8" />
 ```
@@ -344,7 +344,7 @@ Inactive track is thicker (uncommon, but useful for certain designs).
 
 ### Example 1: Volume Slider
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="10">
     <Label Text="Volume" FontSize="16" />
     
@@ -366,7 +366,7 @@ Inactive track is thicker (uncommon, but useful for certain designs).
 
 ### Example 2: Temperature Control
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="10"
                   Maximum="30"
                   Value="22"
@@ -412,7 +412,7 @@ public class PriceSlider : ContentView
 
 ### Example 4: Vertical Slider with Custom Track
 
-```xml
+```xaml
 <sliders:SfSlider Orientation="Vertical"
                   Minimum="0"
                   Maximum="100"
@@ -462,7 +462,7 @@ public class PriceSlider : ContentView
 
 **Cause**: TrackStyle not properly instantiated  
 **Solution**: Ensure TrackStyle is created:
-```xml
+```xaml
 <sliders:SfSlider.TrackStyle>
     <sliders:SliderTrackStyle ActiveFill="Red" />
 </sliders:SfSlider.TrackStyle>

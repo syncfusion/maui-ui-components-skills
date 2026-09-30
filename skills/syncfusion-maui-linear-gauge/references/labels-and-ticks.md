@@ -39,7 +39,7 @@ Customize label appearance using the `LabelStyle` property.
 - `FontAttributes` - Bold, Italic, or both
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge>
     <gauge:SfLinearGauge.LabelStyle>
         <gauge:LinearLabelStyle TextColor="#2196F3"
@@ -88,7 +88,7 @@ Position labels inside or outside the gauge track using `LabelPosition`.
 - `Outside` - Labels outside the track
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge LabelPosition="Outside" 
                     TickPosition="Outside">
     <!-- Ticks typically move with labels -->
@@ -110,7 +110,7 @@ gauge.TickPosition = GaugeElementPosition.Outside;
 Adjust distance between tick ends and labels with `LabelOffset`.
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge LabelOffset="15"/>
 ```
 
@@ -142,7 +142,7 @@ gauge.LabelOffset = -10;
 Show or hide labels using `ShowLabels`.
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge ShowLabels="False"/>
 ```
 
@@ -159,7 +159,7 @@ gauge.ShowLabels = false;
 
 **Example: Clean Progress Bar**
 
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="0" 
                     Maximum="100" 
                     ShowLabels="False"
@@ -182,7 +182,7 @@ Format numeric labels using standard .NET format strings with `LabelFormat`.
 - `"0"` - Integer only (100)
 
 **XAML:**
-```xml
+```xaml
 <!-- Currency format -->
 <gauge:SfLinearGauge LabelFormat="C" 
                     Minimum="0" 
@@ -234,7 +234,7 @@ SfLinearGauge tempGauge = new SfLinearGauge
 Replace numeric labels with custom text using the `LabelCreated` event.
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge LabelCreated="OnLabelCreated"/>
 ```
 
@@ -320,7 +320,7 @@ private void OnConditionalLabelCreated(object sender, LabelCreatedEventArgs e)
 Control label density with `MaximumLabelsCount` - the maximum number of labels per 100 logical pixels.
 
 **XAML:**
-```xml
+```xaml
 <!-- Default: 3 labels per 100 pixels -->
 <gauge:SfLinearGauge MaximumLabelsCount="3"/>
 
@@ -350,7 +350,7 @@ Major ticks align with scale labels and mark primary intervals.
 **Styling Major Ticks:**
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge>
     <gauge:SfLinearGauge.MajorTickStyle>
         <gauge:LinearTickStyle Length="15"
@@ -394,7 +394,7 @@ Minor ticks appear between major ticks for finer granularity.
 **Styling Minor Ticks:**
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge MinorTicksPerInterval="4">
     <gauge:SfLinearGauge.MinorTickStyle>
         <gauge:LinearTickStyle Length="8"
@@ -432,7 +432,7 @@ gauge.MinorTicksPerInterval = 9;
 
 **Example: Ruler-Style Ticks**
 
-```xml
+```xaml
 <gauge:SfLinearGauge Interval="10" MinorTicksPerInterval="9">
     <gauge:SfLinearGauge.MajorTickStyle>
         <gauge:LinearTickStyle Length="20" StrokeThickness="2"/>
@@ -448,7 +448,7 @@ gauge.MinorTicksPerInterval = 9;
 Position ticks inside or outside the scale track.
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge TickPosition="Outside"/>
 ```
 
@@ -464,7 +464,7 @@ gauge.TickPosition = GaugeElementPosition.Outside;
 
 **Example: Outside Positioning**
 
-```xml
+```xaml
 <gauge:SfLinearGauge TickPosition="Outside" 
                     LabelPosition="Outside">
     <!-- Labels typically match tick position -->
@@ -476,7 +476,7 @@ gauge.TickPosition = GaugeElementPosition.Outside;
 Adjust tick distance from the scale using `TickOffset`.
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge TickOffset="10"/>
 ```
 
@@ -505,7 +505,7 @@ gauge.TickOffset = double.NaN;
 Show or hide all ticks using `ShowTicks`.
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge ShowTicks="False"/>
 ```
 
@@ -524,7 +524,7 @@ gauge.ShowTicks = false;
 
 ### Example 1: Dashboard Gauge with Styled Elements
 
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="0" 
                     Maximum="100" 
                     Interval="20"
@@ -650,7 +650,7 @@ performanceGauge.LabelStyle = new LinearLabelStyle
 
 ### Example 5: Minimalist Progress (No Decorations)
 
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="0" 
                     Maximum="100"
                     ShowLabels="False"

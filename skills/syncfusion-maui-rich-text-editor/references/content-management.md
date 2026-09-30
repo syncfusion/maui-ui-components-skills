@@ -22,7 +22,7 @@ Use the `Text` property to display or set plain, unformatted text.
 
 ### XAML Usage
 
-```xml
+```xaml
 <rte:SfRichTextEditor Text="The rich text editor component is WYSIWYG editor that provides the best user experience to create and update the content" />
 ```
 
@@ -73,7 +73,7 @@ Use the `HtmlText` property to work with HTML formatted content.
 
 ### XAML Usage
 
-```xml
+```xaml
 <rte:SfRichTextEditor HtmlText="The &lt;b&gt;rich text editor&lt;/b&gt; component is WYSIWYG editor that provides the best user experience to create and update the content" />
 ```
 
@@ -241,7 +241,7 @@ public async Task<string> GetSelectedFormatted()
 
 ### Selection-Based Actions
 
-```xml
+```xaml
 <StackLayout>
     <rte:SfRichTextEditor x:Name="richTextEditor" ShowToolbar="True" />
     
@@ -290,7 +290,7 @@ Display watermark text when the editor is empty.
 
 ### XAML Configuration
 
-```xml
+```xaml
 <rte:SfRichTextEditor Placeholder="Type your content here..."
                       PlaceholderFontFamily="Arial"
                       PlaceholderFontSize="14"
@@ -519,7 +519,7 @@ richTextEditor.Redo();
 
 ### Custom Undo/Redo Buttons
 
-```xml
+```xaml
 <StackLayout Orientation="Horizontal" Spacing="5">
     <Button Text="↶ Undo" Clicked="OnUndoClicked" />
     <Button Text="↷ Redo" Clicked="OnRedoClicked" />

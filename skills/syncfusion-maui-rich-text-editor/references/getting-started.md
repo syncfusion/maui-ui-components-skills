@@ -89,13 +89,13 @@ using Syncfusion.Maui.Core.Hosting;
 
 Add the Rich Text Editor namespace to your XAML page:
 
-```xml
+```xaml
 xmlns:rte="clr-namespace:Syncfusion.Maui.RichTextEditor;assembly=Syncfusion.Maui.RichTextEditor"
 ```
 
 **Complete page example:**
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -111,7 +111,7 @@ xmlns:rte="clr-namespace:Syncfusion.Maui.RichTextEditor;assembly=Syncfusion.Maui
 
 Place the `SfRichTextEditor` control in your layout:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:rte="clr-namespace:Syncfusion.Maui.RichTextEditor;assembly=Syncfusion.Maui.RichTextEditor"
@@ -126,7 +126,7 @@ Place the `SfRichTextEditor` control in your layout:
 
 Add common properties for a functional editor:
 
-```xml
+```xaml
 <rte:SfRichTextEditor x:Name="richTextEditor"
                       ShowToolbar="True"
                       Placeholder="Start typing your content..."
@@ -197,7 +197,7 @@ The toolbar provides formatting controls and is essential for user interaction. 
 
 ### XAML Approach
 
-```xml
+```xaml
 <rte:SfRichTextEditor ShowToolbar="True" />
 ```
 
@@ -236,7 +236,7 @@ Control which toolbar items appear by populating the `ToolbarItems` collection.
 
 Show only essential text formatting:
 
-```xml
+```xaml
 <rte:SfRichTextEditor ShowToolbar="True">
     <rte:SfRichTextEditor.ToolbarItems>
         <rte:RichTextToolbarItem Type="Bold" />
@@ -250,7 +250,7 @@ Show only essential text formatting:
 
 Group related items with separators:
 
-```xml
+```xaml
 <rte:SfRichTextEditor ShowToolbar="True">
     <rte:SfRichTextEditor.ToolbarItems>
         <!-- Character Formatting -->
@@ -307,7 +307,7 @@ All available `RichTextToolbarOptions` values:
 
 ### Complete Starter Template (XAML)
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

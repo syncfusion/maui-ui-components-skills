@@ -17,7 +17,7 @@ Pie charts divide a circle into slices to show proportional data. Each slice rep
 ### Basic Pie Chart
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:PieSeries ItemsSource="{Binding Data}" 
                      XBindingPath="Product" 
@@ -54,7 +54,7 @@ Doughnut charts are similar to pie charts but with a circular hole in the center
 ### Basic Doughnut Chart
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:DoughnutSeries ItemsSource="{Binding Data}" 
                           XBindingPath="Product" 
@@ -82,7 +82,7 @@ this.Content = chart;
 The `InnerRadius` property defines the size of the center hole. Values range from 0 to 1 (default is 0.4).
 
 **XAML:**
-```xml
+```xaml
 <chart:DoughnutSeries ItemsSource="{Binding Data}"
                       XBindingPath="Product"
                       YBindingPath="SalesRate"
@@ -109,7 +109,7 @@ DoughnutSeries series = new DoughnutSeries
 Display custom content in the center of the doughnut using the `CenterView` property.
 
 **XAML:**
-```xml
+```xaml
 <chart:DoughnutSeries ItemsSource="{Binding Data}"
                       XBindingPath="Name"
                       YBindingPath="Value">
@@ -147,7 +147,7 @@ series.CenterView = centerContent;
 The `CenterHoleSize` property returns the diameter of the center hole in pixels, useful for sizing center content proportionally.
 
 **XAML:**
-```xml
+```xaml
 <chart:DoughnutSeries ItemsSource="{Binding Data}"
                       XBindingPath="Name"
                       YBindingPath="Value">
@@ -178,7 +178,7 @@ Radial bar charts display each data point as a separate circular progress bar, u
 ### Basic Radial Bar Chart
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:RadialBarSeries ItemsSource="{Binding Data}" 
                            XBindingPath="Product" 
@@ -230,7 +230,7 @@ RadialBarSeries series = new RadialBarSeries
 Controls spacing between radial bars (default: 0.2, range: 0-1).
 
 **XAML:**
-```xml
+```xaml
 <chart:RadialBarSeries ItemsSource="{Binding Data}"
                        XBindingPath="Product"
                        YBindingPath="SalesRate"
@@ -252,7 +252,7 @@ Specifies the shape of bar endpoints (default: BothFlat).
 - `EndCurve`: Flat at start, rounded at end
 
 **XAML:**
-```xml
+```xaml
 <chart:RadialBarSeries ItemsSource="{Binding Data}"
                        XBindingPath="Product"
                        YBindingPath="SalesRate"
@@ -272,7 +272,7 @@ RadialBarSeries series = new RadialBarSeries
 Radial bars display a background track showing the full range. Customize it with these properties:
 
 **XAML:**
-```xml
+```xaml
 <chart:RadialBarSeries ItemsSource="{Binding Data}"
                        XBindingPath="Product"
                        YBindingPath="SalesRate"
@@ -296,7 +296,7 @@ RadialBarSeries series = new RadialBarSeries
 Similar to doughnut charts, radial bars support center content:
 
 **XAML:**
-```xml
+```xaml
 <chart:RadialBarSeries ItemsSource="{Binding Data}"
                        XBindingPath="Product"
                        YBindingPath="SalesRate"
@@ -328,7 +328,7 @@ These properties apply to all circular chart types:
 Controls the overall size of the chart (default: 0.8, range: 0-1).
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries ItemsSource="{Binding Data}"
                  XBindingPath="Product"
                  YBindingPath="SalesRate"
@@ -351,7 +351,7 @@ Create semi-circular or quarter-circular charts using `StartAngle` and `EndAngle
 ### Semi-Circle (180°)
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries ItemsSource="{Binding Data}"
                  XBindingPath="Product"
                  YBindingPath="SalesRate"
@@ -392,7 +392,7 @@ series.EndAngle = 270;
 ### Semi-Circular Examples for Each Type
 
 **Semi-Doughnut:**
-```xml
+```xaml
 <chart:DoughnutSeries ItemsSource="{Binding Data}"
                       XBindingPath="Product"
                       YBindingPath="SalesRate"
@@ -402,7 +402,7 @@ series.EndAngle = 270;
 ```
 
 **Semi-Radial Bar:**
-```xml
+```xaml
 <chart:RadialBarSeries ItemsSource="{Binding Data}"
                        XBindingPath="Product"
                        YBindingPath="SalesRate"
@@ -447,7 +447,7 @@ DoughnutSeries series = new DoughnutSeries
 
 ### Pie Chart with Custom Radius
 
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:PieSeries ItemsSource="{Binding Data}"
                      XBindingPath="Category"
@@ -459,7 +459,7 @@ DoughnutSeries series = new DoughnutSeries
 
 ### Doughnut with Center Summary
 
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:DoughnutSeries ItemsSource="{Binding Data}"
                           XBindingPath="Category"
@@ -496,7 +496,7 @@ RadialBarSeries series = new RadialBarSeries
 
 ### Semi-Circular Gauge
 
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:RadialBarSeries ItemsSource="{Binding Data}"
                            XBindingPath="Metric"

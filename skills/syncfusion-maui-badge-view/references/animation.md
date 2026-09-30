@@ -30,7 +30,7 @@ Use the `Animation` property in `BadgeSettings` to enable or disable animations.
 ### Basic Animation Setup
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="6">
     <badge:SfBadgeView.Content>
         <Image Source="notification_icon.png" 
@@ -60,7 +60,7 @@ var badgeView = new SfBadgeView
 ### Disable Animation
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="10">
     <badge:SfBadgeView.Content>
         <Button Text="Messages"/>
@@ -90,7 +90,7 @@ Default value: **250 milliseconds**
 ### Setting Custom Duration
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="6">
     <badge:SfBadgeView.Content>
         <Image Source="icon.png" 
@@ -135,7 +135,7 @@ var badgeSettings = new BadgeSettings
 Animate badge when new messages arrive:
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView x:Name="messageBadge" 
                    BadgeText="0">
     <badge:SfBadgeView.Content>
@@ -215,7 +215,7 @@ public class NotificationView : ContentView
 ### Shopping Cart Badge
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView x:Name="cartBadge" 
                    BadgeText="0">
     <badge:SfBadgeView.Content>
@@ -312,7 +312,7 @@ public enum UserStatus
 
 ### Animation + Position
 
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="5">
     <badge:SfBadgeView.Content>
         <Button Text="Alerts"/>
@@ -344,7 +344,7 @@ var animatedBadge = new BadgeSettings
 
 ### Animation + AutoHide
 
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="3">
     <badge:SfBadgeView.Content>
         <Button Text="Tasks"/>

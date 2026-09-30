@@ -101,7 +101,7 @@ namespace CheckBoxDemo
 
 ### XAML Implementation:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
@@ -141,7 +141,7 @@ The `Text` property sets the caption displayed next to the checkbox.
 
 ### XAML:
 
-```xml
+```xaml
 <buttons:SfCheckBox x:Name="checkBox" 
                     Text="Accept terms and conditions" 
                     IsChecked="True"/>
@@ -180,7 +180,7 @@ Indeterminate: [─]
 
 Set `IsThreeState="True"` to allow the indeterminate state:
 
-```xml
+```xaml
 <buttons:SfCheckBox x:Name="checkBox" 
                     Text="Select All" 
                     IsThreeState="True"
@@ -195,7 +195,7 @@ Single checkboxes are commonly used for binary yes/no choices.
 
 ### Example 1: Terms of Service Agreement
 
-```xml
+```xaml
 <StackLayout Padding="20">
     <buttons:SfCheckBox x:Name="termsCheckBox" 
                         Text="I agree to the terms of service for this site" 
@@ -209,7 +209,7 @@ Single checkboxes are commonly used for binary yes/no choices.
 
 ### Example 2: Remember Me (Login)
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="10">
     <Entry Placeholder="Username"/>
     <Entry Placeholder="Password" IsPassword="True"/>
@@ -224,7 +224,7 @@ Single checkboxes are commonly used for binary yes/no choices.
 
 ### Example 3: Newsletter Subscription
 
-```xml
+```xaml
 <buttons:SfCheckBox x:Name="newsletter" 
                     Text="Subscribe to our newsletter" 
                     IsChecked="True"/>
@@ -236,7 +236,7 @@ Multiple checkboxes allow users to select one or more non-mutually-exclusive opt
 
 ### Example: Pizza Toppings Selection
 
-```xml
+```xaml
 <StackLayout Padding="20">
     <Label Text="Pizza Toppings" 
            FontSize="18" 
@@ -290,7 +290,7 @@ The intermediate state is useful for parent-child checkbox hierarchies where a p
 
 ### XAML:
 
-```xml
+```xaml
 <StackLayout Padding="20">
     <Label Text="Pizza Toppings" 
            FontSize="18" 

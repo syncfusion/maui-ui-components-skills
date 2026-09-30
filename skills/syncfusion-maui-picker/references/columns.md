@@ -16,7 +16,7 @@ Columns are added to the picker using the `Columns` collection. Each column is r
 
 ### Single Column Example
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.Columns>
         <picker:PickerColumn ItemsSource="{Binding DataSource}" />
@@ -83,7 +83,7 @@ picker.Columns.Add(pickerColumn);
 ```
 
 **XAML Binding:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.Columns>
         <picker:PickerColumn DisplayMemberPath="Language"
@@ -111,7 +111,7 @@ Control the width of individual columns using the `Width` property.
 picker.Columns[0].Width = 150;
 ```
 
-```xml
+```xaml
 <picker:PickerColumn Width="150"
                     ItemsSource="{Binding DataSource}" />
 ```
@@ -131,7 +131,7 @@ Set which item is initially selected using `SelectedIndex`.
 picker.Columns[0].SelectedIndex = 5;
 ```
 
-```xml
+```xaml
 <picker:PickerColumn SelectedIndex="5"
                     ItemsSource="{Binding DataSource}" />
 ```
@@ -149,7 +149,7 @@ Get or set the currently selected item object using `SelectedItem`.
 picker.Columns[0].SelectedItem = "India";
 ```
 
-```xml
+```xaml
 <picker:PickerColumn SelectedItem="{Binding SelectedCountry}"
                     ItemsSource="{Binding DataSource}" />
 ```
@@ -169,7 +169,7 @@ Add descriptive text to column headers.
 picker.Columns[0].HeaderText = "Languages";
 ```
 
-```xml
+```xaml
 <picker:PickerColumn HeaderText="Languages"
                     ItemsSource="{Binding DataSource}" />
 ```
@@ -192,7 +192,7 @@ ObservableCollection<string> languages = new ObservableCollection<string>
 picker.Columns[0].ItemsSource = languages;
 ```
 
-```xml
+```xaml
 <picker:PickerColumn ItemsSource="{Binding Languages}" />
 ```
 
@@ -241,7 +241,7 @@ picker.Columns.Add(cityColumn);
 ```
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.Columns>
         <picker:PickerColumn HeaderText="Select Country"
@@ -287,7 +287,7 @@ picker.Columns.Add(new PickerColumn { HeaderText = "Year", ItemsSource = years }
 
 Customize the divider line between columns in multi-column pickers using `ColumnDividerColor`.
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  ColumnDividerColor="Red">
     <picker:SfPicker.Columns>

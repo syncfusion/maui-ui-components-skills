@@ -89,7 +89,7 @@ public static class MauiProgram
 ## Step 4: Add SfSmartTextEditor to a Page
 
 **XAML:**
-```xml
+```xaml
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -120,7 +120,7 @@ public partial class MainPage : ContentPage
 
 `UserRole` tells the AI who is typing and what tone to use — this is the most important property for getting relevant suggestions. `UserPhrases` provides a list of reusable expressions for offline fallback.
 
-```xml
+```xaml
 <smarttexteditor:SfSmartTextEditor
     Placeholder="Type your reply..."
     UserRole="Support engineer responding to customer tickets">

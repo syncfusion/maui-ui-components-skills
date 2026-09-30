@@ -8,7 +8,7 @@ By default, the Numeric Entry allows **null** values. When the input is cleared,
 
 ### Allow Null (Default Behavior)
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         AllowNull="True"
                         Placeholder="Enter value" />
@@ -31,7 +31,7 @@ var numericEntry = new SfNumericEntry
 
 ### Disallow Null
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Value="10"
                         AllowNull="False" />
@@ -56,7 +56,7 @@ var numericEntry = new SfNumericEntry
 
 #### AllowNull=True, Minimum=15
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Minimum="15"
                         AllowNull="True" />
@@ -66,7 +66,7 @@ var numericEntry = new SfNumericEntry
 
 #### AllowNull=False, Minimum=15
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Minimum="15"
                         AllowNull="False" />
@@ -76,7 +76,7 @@ var numericEntry = new SfNumericEntry
 
 ### Examples
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="15">
     
     <!-- Allow Null -->
@@ -128,7 +128,7 @@ Use `Minimum` and `Maximum` properties to enforce value constraints. Values outs
 
 ### Set Minimum Value
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Minimum="10"
                         Value="5" />
@@ -153,7 +153,7 @@ var numericEntry = new SfNumericEntry
 
 ### Set Maximum Value
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Maximum="100"
                         Value="150" />
@@ -177,7 +177,7 @@ var numericEntry = new SfNumericEntry
 
 ### Set Both Minimum and Maximum
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Value="50"
                         Minimum="10"
@@ -201,7 +201,7 @@ var numericEntry = new SfNumericEntry
 
 ### Range Validation Examples
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="15">
     
     <!-- Age (18-120) -->
@@ -274,7 +274,7 @@ The `IsEditable` property controls whether users can type directly into the Nume
 
 ### Enable Editing (Default)
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         IsEditable="True" />
 ```
@@ -288,7 +288,7 @@ The `IsEditable` property controls whether users can type directly into the Nume
 
 ### Disable Editing
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         IsEditable="False"
                         Value="50"
@@ -317,7 +317,7 @@ var numericEntry = new SfNumericEntry
 
 ### Example: Read-Only with Button Controls
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="15">
     
     <!-- Editable (Default) -->

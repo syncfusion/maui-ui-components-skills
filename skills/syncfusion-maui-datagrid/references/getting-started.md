@@ -96,7 +96,7 @@ namespace YourNamespace
 
 **MainPage.xaml:**
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -314,7 +314,7 @@ namespace YourNamespace
 
 **MainPage.xaml:**
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
@@ -386,7 +386,7 @@ public class OrderViewModel
 ```
 
 **In XAML:**
-```xml
+```xaml
 <syncfusion:SfDataGrid ItemsSource="{Binding Orders}" />
 ```
 
@@ -504,7 +504,7 @@ public class EmployeeViewModel
 
 **Manual Column Definition (Square Brackets Required):**
 
-```xml
+```xaml
 <syncfusion:SfDataGrid ItemsSource="{Binding Employees}"
                        AutoGenerateColumnsMode="None">
     <syncfusion:SfDataGrid.Columns>
@@ -520,7 +520,7 @@ public class EmployeeViewModel
 
 **Auto-Generation with Event Handler:**
 
-```xml
+```xaml
 <syncfusion:SfDataGrid ItemsSource="{Binding Employees}"
                        AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" />
 ```
@@ -559,7 +559,7 @@ public class OrderInfo
 
 **Bind Using Dot Notation:**
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AutoGenerateColumnsMode="None"
                        ItemsSource="{Binding Orders}">
     <syncfusion:SfDataGrid.Columns>
@@ -575,7 +575,7 @@ public class OrderInfo
 
 For complex types like indexers or dictionaries, set `UseBindingValue="True"`:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AutoGenerateColumnsMode="None"
                        ItemsSource="{Binding Orders}">
     <syncfusion:SfDataGrid.Columns>
@@ -594,7 +594,7 @@ For complex types like indexers or dictionaries, set `UseBindingValue="True"`:
 
 ### Basic Configuration Options
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding Orders}"
                        AutoGenerateColumnsMode="Reset"
@@ -683,7 +683,7 @@ builder.ConfigureSyncfusionCore();
 
 **Solution:**
 Add square brackets to `MappingName`:
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="[PropertyName]" />
 ```
 

@@ -8,6 +8,7 @@
 - [Advanced Zoom Features](#advanced-zoom-features)
 - [Shape Selection](#shape-selection)
 - [Tooltips](#tooltips)
+- [Programmatic Tooltip Display](#programmatic-tooltip-display)
 - [Best Practices](#best-practices)
 
 ## Zoom and Pan Overview
@@ -557,6 +558,44 @@ layer.ShapeTooltipSettings = new MapTooltipSettings
 - `Background`: Tooltip background color
 - `Padding`: Padding around text
 - `Duration`: Display duration
+
+## Programmatic Tooltip Display
+
+The Maps control also supports showing marker tooltips programmatically with the `ShowTooltip` method. This is useful for scenarios such as automatically highlighting a marker or displaying a sequence of tooltips from code-behind.
+
+```csharp
+private async void Button_Clicked(object sender, EventArgs e)
+{
+    var markers = new List<MapMarker>
+    {
+        new MapMarker { Latitude = 36.0, Longitude = 138.2529 },
+        new MapMarker { Latitude = 34.0479, Longitude = 100.6124 }
+    };
+
+    foreach (var marker in markers)
+    {
+        shapeLayer.ShowTooltip(marker);
+        await Task.Delay(4000);
+    }
+}
+```
+
+```xaml
+<VerticalStackLayout>
+    <Button Clicked="Button_Clicked" Text="ShowTooltip" />
+
+    <map:SfMaps>
+        <map:SfMaps.Layer>
+            <map:MapShapeLayer x:Name="shapeLayer"
+                               ShapesSource="url"
+                               ShowMarkerTooltip="True"
+                               ShowShapeTooltip="True" />
+        </map:SfMaps.Layer>
+    </map:SfMaps>
+</VerticalStackLayout>
+```
+
+> The tooltip display duration is controlled by `MarkerTooltipSettings.Duration` and the tooltip content is shown for the specified marker instance.
 - `TextStyle`: Font styling (size, color, attributes, family)
 
 ### Custom Tooltip Template

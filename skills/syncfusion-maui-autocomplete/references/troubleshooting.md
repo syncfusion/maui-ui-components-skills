@@ -21,12 +21,12 @@ Common issues, platform-specific behaviors, and solutions for the Syncfusion .NE
    ```
 
 3. Verify namespace is correct:
-   ```xml
+   ```xaml
    xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
    ```
 
 4. Check control dimensions:
-   ```xml
+   ```xaml
    <editors:SfAutocomplete WidthRequest="250" HeightRequest="50" />
    ```
 
@@ -47,7 +47,7 @@ Common issues, platform-specific behaviors, and solutions for the Syncfusion .NE
    ```
 
 3. Check data binding context:
-   ```xml
+   ```xaml
    <ContentPage.BindingContext>
        <local:ViewModel />
    </ContentPage.BindingContext>
@@ -62,7 +62,7 @@ Common issues, platform-specific behaviors, and solutions for the Syncfusion .NE
 **Problem:** Changing `HorizontalTextAlignment` at runtime doesn't work.
 
 **Solution:** Set alignment in XAML or during initialization:
-```xml
+```xaml
 <editors:SfAutocomplete HorizontalTextAlignment="Center" />
 ```
 
@@ -137,7 +137,7 @@ public class SocialMedia
 **Problem:** Custom objects display class name instead of property value.
 
 **Solution:** Ensure both `DisplayMemberPath` and `TextMemberPath` are set:
-```xml
+```xaml
 <editors:SfAutocomplete DisplayMemberPath="Name"
                         TextMemberPath="Name"
                         ItemsSource="{Binding SocialMedias}" />
@@ -151,7 +151,7 @@ public class SocialMedia
 
 **Solutions:**
 1. Use two-way binding:
-   ```xml
+   ```xaml
    <editors:SfAutocomplete SelectedItem="{Binding SelectedMedia, Mode=TwoWay}" />
    ```
 
@@ -178,12 +178,12 @@ public class SocialMedia
 **Solutions:**
 
 1. **Use MinimumPrefixCharacters:**
-   ```xml
+   ```xaml
    <editors:SfAutocomplete MinimumPrefixCharacters="3" />
    ```
 
 2. **Implement LoadMore:**
-   ```xml
+   ```xaml
    <editors:SfAutocomplete MaximumSuggestion="5" />
    ```
 
@@ -256,7 +256,7 @@ public class SocialMedia
    ```
 
 3. Verify FilterBehavior assignment:
-   ```xml
+   ```xaml
    <editors:SfAutocomplete.FilterBehavior>
        <local:CustomFilter />
    </editors:SfAutocomplete.FilterBehavior>
@@ -302,12 +302,12 @@ public async Task<object> GetMatchingItemsAsync(SfAutocomplete source, Autocompl
 **Solutions:**
 
 1. Check `MinimumPrefixCharacters`:
-   ```xml
+   ```xaml
    <editors:SfAutocomplete MinimumPrefixCharacters="1" />
    ```
 
 2. Verify `DropDownPlacement`:
-   ```xml
+   ```xaml
    <editors:SfAutocomplete DropDownPlacement="Auto" />
    ```
 
@@ -326,14 +326,14 @@ public async Task<object> GetMatchingItemsAsync(SfAutocomplete source, Autocompl
 **Solutions:**
 
 1. Verify mode settings:
-   ```xml
+   ```xaml
    <editors:SfAutocomplete SelectionMode="Multiple"
                            MultiSelectionDisplayMode="Token"
                            TokensWrapMode="Wrap" />
    ```
 
 2. Enable AutoSize for dynamic height:
-   ```xml
+   ```xaml
    <editors:SfAutocomplete EnableAutoSize="True" />
    ```
 
@@ -346,13 +346,13 @@ public async Task<object> GetMatchingItemsAsync(SfAutocomplete source, Autocompl
 **Solutions:**
 
 1. Set `TextHighlightMode`:
-   ```xml
+   ```xaml
    <editors:SfAutocomplete TextHighlightMode="FirstOccurrence"
                            HighlightedTextColor="Red" />
    ```
 
 2. For multiple occurrences, use Contains search:
-   ```xml
+   ```xaml
    <editors:SfAutocomplete TextSearchMode="Contains"
                            TextHighlightMode="MultipleOccurrence" />
    ```
@@ -366,7 +366,7 @@ public async Task<object> GetMatchingItemsAsync(SfAutocomplete source, Autocompl
 **Solutions:**
 
 1. Verify event subscription:
-   ```xml
+   ```xaml
    <editors:SfAutocomplete SelectionChanged="OnSelectionChanged" />
    ```
 
@@ -413,7 +413,7 @@ private void OnSelectionChanging(object sender, SelectionChangingEventArgs e)
    ```
 
 3. **Verify Binding:**
-   ```xml
+   ```xaml
    <!-- Add FallbackValue to detect binding issues -->
    <editors:SfAutocomplete ItemsSource="{Binding Items, FallbackValue={}}" />
    ```
@@ -427,7 +427,7 @@ private void OnSelectionChanging(object sender, SelectionChangingEventArgs e)
 **Cause:** Namespace not imported or NuGet package not installed.
 
 **Solution:**
-```xml
+```xaml
 xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
 ```
 

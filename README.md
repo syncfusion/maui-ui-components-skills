@@ -206,6 +206,7 @@ skills/
 - [Parallax View](skills/syncfusion-maui-parallax-view/SKILL.md)
 - [Pull to Refresh](skills/syncfusion-maui-pull-to-refresh/SKILL.md)
 - [Segmented Control](skills/syncfusion-maui-segmented-control/SKILL.md)
+- [Popup](skills/syncfusion-maui-popup/SKILL.md)
 
 ### Buttons and Indicators
 
@@ -225,4 +226,3 @@ skills/
 - [AI AssistView](skills/syncfusion-maui-ai-assistview/SKILL.md)
 - [Chat](skills/syncfusion-maui-chat/SKILL.md)
 - [Markdown Viewer](skills/syncfusion-maui-markdown-viewer/SKILL.md)
-- [TreeMap](skills/syncfusion-maui-treemap/SKILL.md)

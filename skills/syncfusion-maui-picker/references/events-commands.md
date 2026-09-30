@@ -31,7 +31,7 @@ The Picker provides six main events for handling user interactions, primarily us
 Triggered when the picker popup opens (Dialog or RelativeDialog mode).
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  Opened="Picker_Opened">
     <!-- Picker configuration -->
@@ -55,7 +55,7 @@ private void Picker_Opened(object sender, EventArgs e)
 Triggered before the picker popup closes. Can be canceled by setting `e.Cancel` to `true`.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  Closing="Picker_Closing">
     <!-- Picker configuration -->
@@ -94,7 +94,7 @@ private bool ValidateSelection()
 Triggered after the picker popup is closed.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  Closed="Picker_Closed">
     <!-- Picker configuration -->
@@ -126,7 +126,7 @@ Triggered after the selected index changes in the picker.
 - In multi-column pickers: Event fires for each column selection change
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  SelectionChanged="Picker_SelectionChanged">
     <!-- Picker configuration -->
@@ -167,7 +167,7 @@ Triggered when the OK button in the footer is clicked.
 - `ShowOkButton` must be `true`
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  OkButtonClicked="Picker_OkButtonClicked">
     <picker:SfPicker.FooterView>
@@ -200,7 +200,7 @@ Triggered when the Cancel button in the footer is clicked.
 - Footer view must be visible (`Height > 0`)
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  CancelButtonClicked="Picker_CancelButtonClicked">
     <picker:SfPicker.FooterView>
@@ -283,7 +283,7 @@ The Picker supports commands for MVVM pattern implementation.
 Execute a command when selection changes (MVVM-friendly).
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  SelectionChangedCommand="{Binding SelectionChangedCommand}">
     <picker:SfPicker.Columns>
@@ -338,7 +338,7 @@ private void OnSelectionChanged(PickerSelectionChangedEventArgs args)
 Execute a command when the OK button is clicked.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  AcceptCommand="{Binding AcceptCommand}">
     <picker:SfPicker.FooterView>
@@ -372,7 +372,7 @@ public class ViewModel
 Execute a command when the Cancel button is clicked.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  DeclineCommand="{Binding DeclineCommand}">
     <picker:SfPicker.FooterView>

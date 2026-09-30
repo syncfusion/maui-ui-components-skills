@@ -27,7 +27,7 @@ The `EnableAutoSize` property allows the editor to dynamically adjust its height
 
 ### XAML Configuration
 
-```xml
+```xaml
 <VerticalStackLayout>
     <rte:SfRichTextEditor x:Name="richTextEditor"
                           EnableAutoSize="True"
@@ -64,7 +64,7 @@ When `EnableAutoSize` is enabled:
 - `Grid` with `RowDefinition Height="Auto"` - For grid layouts
 
 **XAML Example with ScrollView:**
-```xml
+```xaml
 <ScrollView>
     <VerticalStackLayout Spacing="10" Padding="10">
         <Label Text="Your Notes" FontSize="20" FontAttributes="Bold" />
@@ -82,7 +82,7 @@ When `EnableAutoSize` is enabled:
 ### Use Cases
 
 **Comment Section:**
-```xml
+```xaml
 <ScrollView>
     <VerticalStackLayout>
         <!-- Existing comments -->
@@ -99,7 +99,7 @@ When `EnableAutoSize` is enabled:
 ```
 
 **Note-Taking App:**
-```xml
+```xaml
 <Grid RowDefinitions="Auto,*,Auto">
     <!-- Title -->
     <Entry Grid.Row="0" 
@@ -155,7 +155,7 @@ public class EmailComposerPage : ContentPage
 ```
 
 **Feedback Form:**
-```xml
+```xaml
 <ScrollView>
     <VerticalStackLayout Spacing="15" Padding="20">
         <Label Text="Feedback Form" FontSize="24" FontAttributes="Bold" />
@@ -180,7 +180,7 @@ public class EmailComposerPage : ContentPage
 **Don't Set HeightRequest:**
 When using `EnableAutoSize`, avoid setting `HeightRequest` as it interferes with automatic sizing:
 
-```xml
+```xaml
 <!-- ✓ Good -->
 <rte:SfRichTextEditor EnableAutoSize="True" />
 
@@ -191,7 +191,7 @@ When using `EnableAutoSize`, avoid setting `HeightRequest` as it interferes with
 **Use MinimumHeightRequest Instead:**
 To set a minimum height:
 
-```xml
+```xaml
 <rte:SfRichTextEditor EnableAutoSize="True" 
                       MinimumHeightRequest="100" />
 ```
@@ -242,7 +242,7 @@ The Liquid Glass Effect applies to:
 
 ### Basic Configuration (XAML)
 
-```xml
+```xaml
 <rte:SfRichTextEditor EnableLiquidGlassEffect="True"
                       EditorBackgroundColor="Transparent">
     <rte:SfRichTextEditor.ToolbarSettings>
@@ -270,7 +270,7 @@ richTextEditor.ToolbarSettings = new RichTextEditorToolbarSettings
 
 For best visual appearance with a sleek, glassy output:
 
-```xml
+```xaml
 <rte:SfRichTextEditor EnableLiquidGlassEffect="True"
                       ShowToolbar="True"
                       EditorBackgroundColor="Transparent"
@@ -286,7 +286,7 @@ For best visual appearance with a sleek, glassy output:
 Customize the toolbar and editor corner radius using Syncfusion theme keys:
 
 **App.xaml:**
-```xml
+```xaml
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncTheme="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core"
@@ -316,7 +316,7 @@ Available theme customization keys:
 
 ### Complete Example
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -417,7 +417,7 @@ namespace MyApp
 
 Create a modern, adaptive editor:
 
-```xml
+```xaml
 <ScrollView BackgroundColor="#F5F5F7">
     <VerticalStackLayout Spacing="15" Padding="20">
         <Label Text="Beautiful Notes" 
@@ -589,7 +589,7 @@ public async Task TestAutoSize()
 
 ### 2. Set Minimum Height for AutoSize
 
-```xml
+```xaml
 <!-- Prevent editor from becoming too small -->
 <rte:SfRichTextEditor EnableAutoSize="True"
                       MinimumHeightRequest="100" />
@@ -597,7 +597,7 @@ public async Task TestAutoSize()
 
 ### 3. Use Appropriate Parent Layout
 
-```xml
+```xaml
 <!-- ✓ Good: VerticalStackLayout -->
 <VerticalStackLayout>
     <rte:SfRichTextEditor EnableAutoSize="True" />

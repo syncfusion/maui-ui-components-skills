@@ -51,7 +51,7 @@ using Syncfusion.Maui.Core.Hosting;
 Add the Syncfusion.Maui.Charts namespace to your XAML or C# file:
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts">
 ```
 
@@ -65,7 +65,7 @@ using Syncfusion.Maui.Charts;
 Create an instance of the SfCircularChart control:
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart/>
 ```
 
@@ -117,7 +117,7 @@ public class SalesViewModel
 Assign the ViewModel as the chart's BindingContext:
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.BindingContext>
         <model:SalesViewModel/>
@@ -141,7 +141,7 @@ chart.BindingContext = new SalesViewModel();
 ### Add PieSeries
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.BindingContext>
         <model:SalesViewModel/>
@@ -175,7 +175,7 @@ this.Content = chart;
 ### Add Title
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Title>
         <Label Text="PRODUCT SALES"/>
@@ -194,7 +194,7 @@ chart.Title = new Label
 ### Add Legend
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Legend>
         <chart:ChartLegend/>
@@ -210,7 +210,7 @@ chart.Legend = new ChartLegend();
 ### Enable Data Labels
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries ItemsSource="{Binding Data}"
                  XBindingPath="Product"
                  YBindingPath="SalesRate"
@@ -225,7 +225,7 @@ series.ShowDataLabels = true;
 ### Enable Tooltips
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries ItemsSource="{Binding Data}"
                  XBindingPath="Product"
                  YBindingPath="SalesRate"
@@ -241,7 +241,7 @@ series.EnableTooltip = true;
 
 ### XAML Implementation
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ChartGettingStarted.MainPage"

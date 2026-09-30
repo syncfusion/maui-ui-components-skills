@@ -1,14 +1,14 @@
 ---
 name: syncfusion-maui-polar-charts
-description: Implements Syncfusion .NET MAUI Polar Charts (SfPolarChart) for visualizing data in polar coordinates. Use when working with polar charts, radar charts, spider charts, web charts, or circular data visualization. Ideal for displaying data in terms of values and angles, creating line or area series in polar layouts, or comparing multiple data series radially.
+description: Implements Syncfusion® .NET MAUI Polar Charts (SfPolarChart) for visualizing data in polar coordinates. Use when working with polar charts, radar charts, spider charts, web charts, or circular data visualization. Ideal for displaying data in terms of values and angles, creating line or area series in polar layouts, or comparing multiple data series radially.
 metadata:
   author: "Syncfusion Inc"
   version: "34.1.29"
 ---
 
-# Implementing Syncfusion .NET MAUI Polar Charts
+# Implementing .NET MAUI Polar Charts
 
-Guide users to implement Syncfusion .NET MAUI Polar Chart (SfPolarChart), which enables visualization of data in polar coordinates, representing values and angles in circular layouts. Also known as radar, spider, web, star, or cobweb charts, these visualizations are ideal for comparing multiple data series radially and displaying cyclic or directional data patterns.
+Guide users to implement Syncfusion® .NET MAUI Polar Chart (SfPolarChart), which enables visualization of data in polar coordinates, representing values and angles in circular layouts. Also known as radar, spider, web, star, or cobweb charts, these visualizations are ideal for comparing multiple data series radially and displaying cyclic or directional data patterns.
 
 ## When to Use This Skill
 
@@ -40,7 +40,7 @@ Use this skill when the user needs to:
 📄 **Read:** [references/getting-started.md](references/getting-started.md)
 
 When the user needs to:
-- Install and set up Syncfusion .NET MAUI Charts package
+- Install and set up Syncfusion® .NET MAUI Charts package
 - Create their first polar chart
 - Understand basic chart structure (SfPolarChart, PrimaryAxis, SecondaryAxis)
 - Initialize view model and data binding

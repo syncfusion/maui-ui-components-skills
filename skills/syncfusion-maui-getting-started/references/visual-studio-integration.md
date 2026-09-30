@@ -85,14 +85,14 @@ Drag-and-drop Syncfusion controls from toolbox.
 - ...and 50+ more
 
 **Auto-Generated XAML:**
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding YourData}">
 </syncfusion:SfDataGrid>
 ```
 
 Namespace added automatically:
-```xml
+```xaml
 xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
 ```
 
@@ -202,7 +202,7 @@ Advanced project scaffolding tool.
 
 **Solution:**
 - Manually add namespace:
-```xml
+```xaml
 xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
 ```
 - Verify NuGet package installed

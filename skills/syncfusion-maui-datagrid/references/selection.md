@@ -8,7 +8,7 @@
 
 ## Selection Modes
 
-```xml
+```xaml
 <syncfusion:SfDataGrid SelectionMode="Single" />  <!-- Default -->
 <syncfusion:SfDataGrid SelectionMode="Multiple" />
 <syncfusion:SfDataGrid SelectionMode="SingleDeselect" />
@@ -25,7 +25,7 @@
 
 ## Navigation Mode
 
-```xml
+```xaml
 <syncfusion:SfDataGrid NavigationMode="Cell" />
 <syncfusion:SfDataGrid NavigationMode="Row" />
 <syncfusion:SfDataGrid NavigationMode="Any" />

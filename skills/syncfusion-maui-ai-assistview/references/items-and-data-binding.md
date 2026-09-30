@@ -54,7 +54,7 @@ var item = new AssistItem
 
 `AssistItem` displays plain text content. It is the default item type for both requests and responses.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            AssistItems="{Binding AssistItems}" />
 ```
@@ -232,7 +232,7 @@ private async void GenerateAssistItems()
 Triggered when a user taps an `AssistImageItem`. The `ImageTappedEventArgs` provides:
 - `ImageItem` — the tapped `AssistImageItem`
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView ImageTapped="OnImageTapped"
                            ImageTappedCommand="{Binding ImageTappedCommand}" />
 ```
@@ -260,7 +260,7 @@ Triggered when a user taps a card or its button. The `CardTappedEventArgs` provi
 - `CardItem` — the parent `AssistCardItem`
 - `Handled` — set `true` to suppress default behavior
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView CardTapped="OnCardTapped"
                            CardTappedCommand="{Binding CardTappedCommand}" />
 ```
@@ -278,7 +278,7 @@ private void OnCardTapped(object sender, CardTappedEventArgs e)
 Triggered when a user taps an attachment preview. The `AttachmentTappedEventArgs` provides:
 - `Attachment` — the tapped `IAttachment`
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView AttachmentTapped="OnAttachmentTapped"
                            AttachmentTappedCommand="{Binding AttachmentTappedCommand}" />
 ```
@@ -351,7 +351,7 @@ private async Task GetResultAsync(AssistItem requestItem)
 | `CardItemView` | A single card within a response |
 | `CardButtonView` | An action button inside a card (exposes `Title`, `Value`) |
 
-```xml
+```xaml
 <ContentPage.Resources>
     <ResourceDictionary>
         <!-- Customize request text bubble -->
@@ -449,7 +449,7 @@ public class AssistItemConverter : IAssistItemConverter
 
 ### 3. Bind in XAML
 
-```xml
+```xaml
 <ContentPage.Resources>
     <local:AssistItemConverter x:Key="converter" />
 </ContentPage.Resources>
@@ -478,7 +478,7 @@ Context menus allow custom actions on request or response items. They appear whe
 
 Populate `RequestContextMenu` with `AssistContextMenuItem` instances. Each item inherits from `ActionButton` and exposes `Text`, `Icon`, `Command`, and `CommandParameter`. When the menu opens for a specific item, the control sets `AssistItem` on each menu item so commands can access the target.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            AssistItems="{Binding AssistItems}">
     <syncfusion:SfAIAssistView.RequestContextMenu>
@@ -514,7 +514,7 @@ sfAIAssistView.RequestContextMenu = new ObservableCollection<AssistContextMenuIt
 
 `ResponseContextMenu` follows the same pattern but targets response items.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            AssistItems="{Binding AssistItems}">
     <syncfusion:SfAIAssistView.ResponseContextMenu>
@@ -540,7 +540,7 @@ sfAIAssistView.ResponseContextMenu = new ObservableCollection<AssistContextMenuI
 
 Use `RequestContextMenuItemTemplate` / `ResponseContextMenuItemTemplate` to define a custom layout for each menu item. Bind `AssistItem` to `CommandParameter` to give the command access to the target item.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView.ResponseContextMenuItemTemplate>
     <DataTemplate>
         <Grid Padding="8">

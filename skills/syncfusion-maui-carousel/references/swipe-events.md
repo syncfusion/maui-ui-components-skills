@@ -26,7 +26,7 @@ These events enable you to create interactive experiences, track user behavior, 
 The `SwipeStarted` event is raised when the user begins a swipe gesture on the carousel.
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel x:Name="carousel"
                      ItemsSource="{Binding ImageCollection}"
                      ItemTemplate="{StaticResource itemTemplate}"
@@ -73,7 +73,7 @@ private void OnSwipeStarted(object sender, EventArgs e)
 The `Swiping` event is raised continuously while the user is actively swiping.
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel x:Name="carousel"
                      ItemsSource="{Binding ImageCollection}"
                      ItemTemplate="{StaticResource itemTemplate}"
@@ -131,7 +131,7 @@ private void OnSwiping(object sender, EventArgs e)
 The `SwipeEnded` event is raised when the swipe gesture completes and the carousel settles on an item.
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel x:Name="carousel"
                      ItemsSource="{Binding ImageCollection}"
                      ItemTemplate="{StaticResource itemTemplate}"

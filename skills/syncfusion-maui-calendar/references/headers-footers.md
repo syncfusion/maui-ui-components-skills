@@ -15,7 +15,7 @@ Customize the calendar header using the `HeaderView` property. The header displa
 ### Header Height
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" View="Month">
     <calendar:SfCalendar.HeaderView>
         <calendar:CalendarHeaderView Height="70" />
@@ -36,7 +36,7 @@ calendar.HeaderView = new CalendarHeaderView
 Customize background, text style, and text format.
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" View="Month">
     <calendar:SfCalendar.HeaderView>
         <calendar:CalendarHeaderView Background="LightBlue" 
@@ -104,7 +104,7 @@ calendar.HeaderView.TextFormat = "MMMM dd, yyyy";
 Display left/right navigation arrows in the header.
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar.HeaderView>
     <calendar:CalendarHeaderView ShowNavigationArrows="True" />
 </calendar:SfCalendar.HeaderView>
@@ -147,7 +147,7 @@ Create completely custom headers using `HeaderTemplate`. This provides full cont
 ### Basic Header Template
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" View="Month">
     <calendar:SfCalendar.HeaderTemplate>
         <DataTemplate>
@@ -172,7 +172,7 @@ Create completely custom headers using `HeaderTemplate`. This provides full cont
 
 ### Advanced Header Template with Custom Navigation
 
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" View="Month">
     <calendar:SfCalendar.HeaderTemplate>
         <DataTemplate>
@@ -227,7 +227,7 @@ private void OnNextMonthClicked(object sender, EventArgs e)
 
 ### Header Template with Picker
 
-```xml
+```xaml
 <calendar:SfCalendar.HeaderTemplate>
     <DataTemplate>
         <Grid Background="Teal" Padding="10">
@@ -249,7 +249,7 @@ Customize the calendar footer using the `FooterView` property. The footer can di
 ### Footer Height
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" View="Month">
     <calendar:SfCalendar.FooterView>
         <calendar:CalendarFooterView Height="70" 
@@ -274,7 +274,7 @@ calendar.FooterView = new CalendarFooterView
 Display OK and Cancel buttons in the footer.
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar.FooterView>
     <calendar:CalendarFooterView ShowActionButtons="True" />
 </calendar:SfCalendar.FooterView>
@@ -296,7 +296,7 @@ calendar.FooterView.ShowActionButtons = true;
 Display a button to quickly navigate to today's date.
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar.FooterView>
     <calendar:CalendarFooterView ShowTodayButton="True" />
 </calendar:SfCalendar.FooterView>
@@ -316,7 +316,7 @@ When tapped, the calendar navigates to the month containing today's date.
 Customize footer background, text style, and divider color.
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar.FooterView>
     <calendar:CalendarFooterView Background="LightGray"
                                  DividerColor="DarkGray"

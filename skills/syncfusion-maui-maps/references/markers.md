@@ -11,6 +11,7 @@
 - [Custom Marker Templates](#custom-marker-templates)
 - [Marker Tooltip Customization](#marker-tooltip-customization)
 - [Template Selectors](#template-selectors)
+- [Marker Selection](#marker-selection)
 - [Best Practices](#best-practices)
 
 ## Overview
@@ -1524,6 +1525,52 @@ public class MarkerTemplateSelector : DataTemplateSelector
     }
 }
 ```
+
+## Marker Selection
+
+The Maps control supports marker selection through command-based binding. Use `MarkerSelectedCommand` to handle selection in your view model and optionally pass a custom value with `MarkerSelectedCommandParameter`.
+
+### XAML Implementation
+
+```xaml
+<map:SfMaps>
+    <map:SfMaps.Layer>
+        <map:MapShapeLayer ShapesSource="https://cdn.syncfusion.com/maps/map-data/world-map.json"
+                           MarkerSelectedCommand="{Binding MarkerSelectedCommand}"
+                           MarkerSelectedCommandParameter="{Binding SelectionContext}"
+                           ShapeStroke="DarkGrey">
+            <map:MapShapeLayer.Markers>
+                <map:MapMarkerCollection>
+                    <!-- markers here -->
+                </map:MapMarkerCollection>
+            </map:MapShapeLayer.Markers>
+        </map:MapShapeLayer>
+    </map:SfMaps.Layer>
+</map:SfMaps>
+```
+
+### ViewModel Example
+
+```csharp
+public class MapViewModel
+{
+    public ICommand MarkerSelectedCommand { get; }
+    public string SelectionContext { get; set; }
+
+    public MapViewModel()
+    {
+        SelectionContext = "Default Context";
+        MarkerSelectedCommand = new Command<object>(OnMarkerSelected);
+    }
+
+    private void OnMarkerSelected(object parameter)
+    {
+        // Handle marker selection here
+    }
+}
+```
+
+> If `MarkerSelectedCommandParameter` is not specified, the selected marker instance is passed to the command by default.
 
 ## Best Practices
 

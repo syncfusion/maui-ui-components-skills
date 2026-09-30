@@ -1,11 +1,15 @@
 # Conversation History in SfAIAssistView
 
-`SfAIAssistView` includes a built-in conversation history panel accessible from the toolbar. It lets users revisit and restore past chat sessions.
+`SfAIAssistView` includes a built-in conversation history panel accessible from the toolbar. It lets users browse, filter, pin, rename, delete, and restore past chat sessions.
+
+# Conversation History in SfAIAssistView
+
+`SfAIAssistView` includes a built-in conversation history panel. It lets users revisit and restore past chat sessions.
 
 ## Table of Contents
 - [Enable Conversation History](#enable-conversation-history)
 - [Binding Conversation Items](#binding-conversation-items)
-- [Conversation Header and Empty View](#conversation-header-and-empty-view)
+- [Conversation Header and Filters](#conversation-header-and-filters)
 - [Handling Conversation Item Taps](#handling-conversation-item-taps)
 
 ---
@@ -14,7 +18,7 @@
 
 The history feature is enabled by default. Set `EnableConversationHistory` to `false` to disable the history panel in the toolbar.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            EnableConversationHistory="True" />
 ```
@@ -33,9 +37,16 @@ Use `ConversationItemsSource` to populate the history panel. Bind an `Observable
 
 | Property | Type | Description |
 |---|---|---|
-| `Title` | `string` | Display title for the conversation entry |
-| `DateTime` | `DateTime` | Timestamp shown in the history list |
+| `Title` | `string` | Display title for the conversation |
+| `DateTime` | `DateTime` | Conversation timestamp used for sorting and grouping |
 | `AssistItems` | `ObservableCollection<IAssistItem>` | The full message thread for this conversation |
+| `IsPinned` | `bool` | Indicates whether the conversation is pinned |
+
+### Behavior
+
+- Conversation items are sorted by `DateTime` in descending order.
+- Pinned conversations can be surfaced through the `Pinned` filter.
+- Deleting a conversation removes it from the source collection and refreshes the history list.
 
 ### ViewModel
 
@@ -103,7 +114,7 @@ public class AIAssistViewModel : INotifyPropertyChanged
 
 ### XAML Binding
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.AIAssistView;assembly=Syncfusion.Maui.AIAssistView"
              xmlns:local="clr-namespace:MyApp.ViewModels">
 
@@ -127,13 +138,13 @@ sfAIAssistView.ConversationItemsSource = viewModel.ConversationItems;
 
 ---
 
-## Conversation Header and Empty View
+## Conversation Header and Filters
 
 ### ConversationHeaderText
 
 Sets the label shown above the history list. Defaults to `string.Empty`.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            ConversationHeaderText="Chat History" />
 ```
@@ -142,30 +153,38 @@ Sets the label shown above the history list. Defaults to `string.Empty`.
 sfAIAssistView.ConversationHeaderText = "Chat History";
 ```
 
-### ConversationEmptyView
+### ConversationFilterText
 
-Shown when there are no conversation items. Accepts a `string` or a custom view.
-
-```xml
-<!-- String empty view -->
-<syncfusion:SfAIAssistView x:Name="sfAIAssistView"
-                           AssistItems="{Binding AssistItems}"
-                           ConversationEmptyView="No conversations available" />
-```
+Filters conversations by title and message content.
 
 ```csharp
-// String
-sfAIAssistView.ConversationEmptyView = "No conversations available";
-
-// Custom view
-sfAIAssistView.ConversationEmptyView = new Label
-{
-    Text = "No conversations yet.",
-    HorizontalOptions = LayoutOptions.Center,
-    VerticalOptions = LayoutOptions.Center,
-    TextColor = Colors.Gray
-};
+sfAIAssistView.ConversationFilterText = "MAUI";
 ```
+
+### ConversationFilterChangedCommand
+
+Executes when the active conversation filter changes.
+
+```xaml
+<!-- String empty view -->
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView"
+                           ConversationFilterChangedCommand="{Binding ConversationFilterChangedCommand}" />
+```
+
+### Built-In Filters
+
+The history panel supports these filters:
+
+- All
+- Today
+- Yesterday
+- Last 7 Days
+- Last 30 Days
+- Pinned
+
+### ConversationActions
+
+The history UI supports pin or unpin, rename, and delete actions for conversation items.
 
 ---
 
@@ -178,11 +197,11 @@ When a user selects an item in the history panel, `ConversationItemTapped` and `
 | Property | Type | Description |
 |---|---|---|
 | `ConversationItem` | `AssistConversationItem` | The selected conversation entry |
-| `Handled` | `bool` | Set to `true` to suppress the default behavior (automatically show the conversation items). Default: `false` |
+| `Handled` | `bool` | Set to `true` to suppress the default restore behavior |
 
 ### Event
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            ConversationItemTapped="OnConversationItemTapped" />
 ```
@@ -202,7 +221,7 @@ private void OnConversationItemTapped(object sender, ConversationItemTappedEvent
 
 ### Command (MVVM)
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            ConversationItemTappedCommand="{Binding ConversationItemTappedCommand}" />
 ```
@@ -224,3 +243,8 @@ public class AIAssistViewModel : INotifyPropertyChanged
     }
 }
 ```
+
+### Notes
+
+- Selecting a history item restores the selected `AssistConversationItem.AssistItems` by default.
+- Setting `ConversationItemTappedEventArgs.Handled` to `true` suppresses the default restore behavior.

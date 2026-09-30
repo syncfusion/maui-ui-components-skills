@@ -99,7 +99,7 @@ Exported images are saved in platform-specific directories:
 
 Add file writing permissions in `AndroidManifest.xml`:
 
-```xml
+```xaml
 <manifest>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -108,7 +108,7 @@ Add file writing permissions in `AndroidManifest.xml`:
 
 For Android 10+ (API level 29+), you may need to handle scoped storage:
 
-```xml
+```xaml
 <application android:requestLegacyExternalStorage="true">
 ```
 
@@ -116,7 +116,7 @@ For Android 10+ (API level 29+), you may need to handle scoped storage:
 
 Add permission descriptions in `Info.plist`:
 
-```xml
+```xaml
 <dict>
     <key>NSPhotoLibraryUsageDescription</key>    
     <string>This app needs permission to access Photos</string>    

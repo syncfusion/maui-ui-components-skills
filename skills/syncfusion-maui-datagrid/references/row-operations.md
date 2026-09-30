@@ -11,7 +11,7 @@
 
 ### Default Row Height
 
-```xml
+```xaml
 <syncfusion:SfDataGrid RowHeight="50" />
 ```
 
@@ -21,7 +21,7 @@ dataGrid.RowHeight = 50;
 
 ### Default Header Row Height
 
-```xml
+```xaml
 <syncfusion:SfDataGrid HeaderRowHeight="50" />
 ```
 
@@ -64,7 +64,7 @@ private void DataGrid_QueryRowHeight(object sender, DataGridQueryRowHeightEventA
 
 ### Enable Row Drag-Drop
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AllowDraggingRow="True" />
 ```
 
@@ -96,17 +96,113 @@ private void DataGrid_QueryRowDragging(object sender, DataGridQueryRowDraggingEv
 }
 ```
 
+### Multi-Row Dragging
+
+Drag multiple selected rows simultaneously:
+
+```xaml
+<syncfusion:SfDataGrid AllowDraggingRow="True"
+                       SelectionMode="Multiple"
+                       ItemsSource="{Binding Orders}" />
+```
+
+```csharp
+dataGrid.AllowDraggingRow = true;
+dataGrid.SelectionMode = DataGridSelectionMode.Multiple;
+```
+
+**Multi-Row Dragging Features:**
+- Select multiple rows
+- Drag all selected rows together
+- Drop at single target location
+- All selected rows move to drop position
+
+## Row Resizing
+
+Interactively resize rows by dragging row header borders.
+
+### Enable Row Resizing
+
+```xaml
+<syncfusion:SfDataGrid ShowRowHeader="True"
+                       AllowResizingRows="True"
+                       ItemsSource="{Binding Orders}" />
+```
+
+```csharp
+dataGrid.ShowRowHeader = true;
+dataGrid.AllowResizingRows = true;
+```
+
+**Features:**
+- Long-press on row header bottom edge to resize
+- Resized heights are cached during scrolling
+- Set `ShowRowHeader="True"` to enable row resizing UI
+- Requires a row header column
+
+### Row Resize Modes
+
+Control when row height is applied:
+
+**OnMoved Mode** - Live height update while resizing:
+
+```xaml
+<syncfusion:SfDataGrid ShowRowHeader="True"
+                       AllowResizingRows="True"
+                       RowResizeMode="OnMoved"
+                       ItemsSource="{Binding Orders}" />
+```
+
+```csharp
+dataGrid.RowResizeMode = DataGridRowResizeMode.OnMoved;
+```
+
+**OnTouchUp Mode** - Apply height after release (default):
+
+```xaml
+<syncfusion:SfDataGrid ShowRowHeader="True"
+                       AllowResizingRows="True"
+                       RowResizeMode="OnTouchUp"
+                       ItemsSource="{Binding Orders}" />
+```
+
+```csharp
+dataGrid.RowResizeMode = DataGridRowResizeMode.OnTouchUp;
+```
+
+### Row Resizing Events
+
+Handle the `RowResizing` event:
+
+```csharp
+dataGrid.RowResizing += DataGrid_RowResizing;
+
+private void DataGrid_RowResizing(object sender, DataGridRowResizingEventArgs e)
+{
+    // e.RowIndex - Index of row being resized
+    // e.RowData - Data object of the row
+    // e.NewValue - Requested height
+    // e.Cancel - Set true to cancel resize
+    
+    // Enforce minimum height
+    if (e.NewValue < 40)
+    {
+        e.Cancel = true;
+    }
+}
+```
+
 ## Row Swiping
 
 ### Enable Row Swiping
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AllowSwiping="True" />
 ```
 
 ### Swipe Templates
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AllowSwiping="True">
        <syncfusion:SfDataGrid.LeftSwipeTemplate>
                 <DataTemplate>

@@ -27,7 +27,7 @@ public class StateChangedEventArgs : EventArgs
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfCheckBox x:Name="checkBox" 
                     Text="Unchecked State" 
                     IsThreeState="True" 
@@ -72,7 +72,7 @@ private void CheckBox_StateChanged(object sender, StateChangedEventArgs e)
 
 #### Pattern 1: Display State in Label
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="10">
     <buttons:SfCheckBox x:Name="checkBox" 
                         Text="Click me" 
@@ -90,7 +90,7 @@ private void UpdateLabel_StateChanged(object sender, StateChangedEventArgs e)
 
 #### Pattern 2: Enable/Disable Controls
 
-```xml
+```xaml
 <StackLayout Padding="20">
     <buttons:SfCheckBox x:Name="enableCheckBox" 
                         Text="Enable additional options" 
@@ -112,7 +112,7 @@ private void EnableOptions_StateChanged(object sender, StateChangedEventArgs e)
 
 #### Pattern 3: Count Selected Items
 
-```xml
+```xaml
 <StackLayout Padding="20">
     <Label x:Name="countLabel" Text="Selected: 0"/>
     
@@ -179,7 +179,7 @@ public class StateChangingEventArgs : CancelEventArgs
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfCheckBox x:Name="checkBox" 
                     Text="CheckBox" 
                     StateChanging="OnStateChanging"/>
@@ -209,7 +209,7 @@ private void OnStateChanging(object sender, StateChangingEventArgs e)
 
 #### Pattern 1: Require Confirmation
 
-```xml
+```xaml
 <buttons:SfCheckBox x:Name="deleteCheckBox" 
                     Text="Delete all data" 
                     StateChanging="ConfirmDeletion_StateChanging"/>
@@ -259,7 +259,7 @@ private bool HasRequiredPermissions()
 
 #### Pattern 3: Maximum Selection Limit
 
-```xml
+```xaml
 <StackLayout Padding="20">
     <Label Text="Select up to 2 options"/>
     <buttons:SfCheckBox Text="Option 1" StateChanging="LimitSelection_StateChanging"/>
@@ -296,7 +296,7 @@ private int CountCheckedBoxes()
 
 #### Pattern 4: Require Other Selections First
 
-```xml
+```xaml
 <StackLayout Padding="20">
     <buttons:SfCheckBox x:Name="termsCheckBox" 
                         Text="Accept Terms and Conditions"/>
@@ -363,7 +363,7 @@ private void CheckBox2_StateChanged(object sender, StateChangedEventArgs e)
 
 ### Example: Multi-Step Form
 
-```xml
+```xaml
 <StackLayout Padding="20">
     <Label Text="Step 1: Basic Info" FontAttributes="Bold"/>
     <Entry x:Name="nameEntry" Placeholder="Name"/>
@@ -392,7 +392,7 @@ private void Step1_StateChanged(object sender, StateChangedEventArgs e)
 
 ### Example: Dynamic Pricing Display
 
-```xml
+```xaml
 <StackLayout Padding="20">
     <Label Text="Add-ons" FontSize="18" FontAttributes="Bold"/>
     

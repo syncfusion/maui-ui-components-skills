@@ -79,7 +79,7 @@ private void ScrollToBottom()
 
 Control scrollbar appearance:
 
-```xml
+```xaml
 <syncfusion:SfListView ScrollBarVisibility="Always" />
 ```
 
@@ -94,7 +94,7 @@ listView.ScrollBarVisibility = ScrollBarVisibility.Always;
 
 ### AllowSwiping with Scrolling
 
-```xml
+```xaml
 <syncfusion:SfListView AllowSwiping="True" 
                        ScrollBarVisibility="Always" />
 ```
@@ -161,7 +161,7 @@ For scenarios where you need ListView inside a ScrollView (not recommended for l
 
 ### Setup
 
-```xml
+```xaml
 <ScrollView>
     <syncfusion:SfListView x:Name="listView" 
                            ItemsSource="{Binding Items}"
@@ -189,7 +189,7 @@ private void OnListViewLoaded(object sender, EventArgs e)
 
 ### With AutoFitMode
 
-```xml
+```xaml
 <ScrollView>
     <syncfusion:SfListView x:Name="listView"
                            AutoFitMode="Height"
@@ -240,7 +240,7 @@ private void OnVisualContainerPropertyChanged(object sender, PropertyChangedEven
 
 ### Use Fixed ItemSize
 
-```xml
+```xaml
 <syncfusion:SfListView ItemSize="80" />
 ```
 
@@ -248,7 +248,7 @@ Fixed item size enables optimal scrolling performance.
 
 ### Avoid ScrollView Parent
 
-```xml
+```xaml
 <!-- ❌ AVOID -->
 <ScrollView>
     <syncfusion:SfListView ItemsSource="{Binding Items}" />
@@ -262,7 +262,7 @@ ListView has built-in scrolling. Nested scroll views cause performance issues.
 
 ### Simplify Item Templates
 
-```xml
+```xaml
 <!-- ✓ GOOD: Simple, flat structure -->
 <Grid Padding="10">
     <Label Text="{Binding Name}" />

@@ -18,7 +18,7 @@ Add an icon or custom view to the leading edge (left side) of the input.
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Birth Date"
                                LeadingViewPosition="Inside">
     <Entry />
@@ -50,7 +50,7 @@ Control whether the leading view appears inside or outside the container border.
 
 #### Inside Position (Default for Leading View: Outside)
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Search"
                                LeadingViewPosition="Inside"
                                ContainerType="Filled">
@@ -65,7 +65,7 @@ Control whether the leading view appears inside or outside the container border.
 
 #### Outside Position
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Email"
                                LeadingViewPosition="Outside"
                                ContainerType="Outlined">
@@ -93,7 +93,7 @@ var inputLayout = new SfTextInputLayout
 
 #### Calendar Icon
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Date of Birth"
                                LeadingViewPosition="Inside"
                                ContainerType="Outlined">
@@ -106,7 +106,7 @@ var inputLayout = new SfTextInputLayout
 
 #### User Icon
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Username"
                                LeadingViewPosition="Inside">
     <Entry />
@@ -118,7 +118,7 @@ var inputLayout = new SfTextInputLayout
 
 #### Location Pin
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Address"
                                LeadingViewPosition="Inside"
                                ContainerType="Outlined">
@@ -137,7 +137,7 @@ Add an icon or custom view to the trailing edge (right side) of the input.
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Birth Date"
                                TrailingViewPosition="Outside">
     <Entry />
@@ -169,7 +169,7 @@ Control whether the trailing view appears inside or outside the container.
 
 #### Inside Position (Default for Trailing View)
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Search"
                                TrailingViewPosition="Inside"
                                ContainerType="Filled">
@@ -184,7 +184,7 @@ Control whether the trailing view appears inside or outside the container.
 
 #### Outside Position
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Phone"
                                TrailingViewPosition="Outside"
                                ContainerType="Outlined">
@@ -201,7 +201,7 @@ Control whether the trailing view appears inside or outside the container.
 
 #### Clear Button
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout x:Name="searchInput"
                                Hint="Search"
                                TrailingViewPosition="Inside">
@@ -233,7 +233,7 @@ private void OnClearTapped(object sender, EventArgs e)
 
 #### Info Icon
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Credit Card"
                                TrailingViewPosition="Inside"
                                ContainerType="Outlined">
@@ -250,7 +250,7 @@ private void OnClearTapped(object sender, EventArgs e)
 
 #### Microphone Icon
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Voice Search"
                                TrailingViewPosition="Inside">
     <Entry />
@@ -270,7 +270,7 @@ Unicode characters and custom font icons provide scalable, customizable icons.
 
 ### Unicode Icons
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Email"
                                LeadingViewPosition="Inside">
     <Entry Keyboard="Email" />
@@ -301,7 +301,7 @@ builder.ConfigureFonts(fonts =>
 
 Then use in XAML:
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Location"
                                LeadingViewPosition="Inside">
     <Entry />
@@ -318,7 +318,7 @@ Then use in XAML:
 
 Use `Image` control for complex or colored icons.
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Company"
                                LeadingViewPosition="Inside"
                                ContainerType="Outlined">
@@ -335,7 +335,7 @@ Use `Image` control for complex or colored icons.
 
 Combine leading and trailing views for maximum functionality.
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Password"
                                LeadingViewPosition="Inside"
                                TrailingViewPosition="Inside"
@@ -369,7 +369,7 @@ Add interactivity to icons using gesture recognizers.
 
 ### Tap Gesture
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout.TrailingView>
     <Label Text="ℹ️" FontSize="18">
         <Label.GestureRecognizers>
@@ -388,7 +388,7 @@ private async void OnIconTapped(object sender, EventArgs e)
 
 ### Button as Icon
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Search"
                                TrailingViewPosition="Inside">
     <Entry x:Name="searchEntry" />
@@ -416,7 +416,7 @@ Use any .NET MAUI view as leading or trailing content.
 
 ### Custom Layout
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Amount"
                                TrailingViewPosition="Inside">
     <Entry Keyboard="Numeric" />
@@ -433,7 +433,7 @@ Use any .NET MAUI view as leading or trailing content.
 
 ### Multiple Icons
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout.TrailingView>
     <HorizontalStackLayout Spacing="10">
         <Label Text="🔍" FontSize="16">
@@ -491,7 +491,7 @@ Use any .NET MAUI view as leading or trailing content.
 
 ### Search Field
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Search"
                                LeadingViewPosition="Inside"
                                TrailingViewPosition="Inside"
@@ -517,7 +517,7 @@ Use any .NET MAUI view as leading or trailing content.
 
 ### Currency Input
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Price"
                                LeadingViewPosition="Inside"
                                ContainerType="Outlined">
@@ -533,7 +533,7 @@ Use any .NET MAUI view as leading or trailing content.
 
 ### Date Picker
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Date"
                                LeadingViewPosition="Inside"
                                ContainerType="Outlined">
@@ -546,7 +546,7 @@ Use any .NET MAUI view as leading or trailing content.
 
 ### Password with Strength Indicator
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout x:Name="passwordLayout"
                                Hint="Password"
                                TrailingViewPosition="Inside"

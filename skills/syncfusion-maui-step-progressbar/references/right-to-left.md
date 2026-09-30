@@ -10,7 +10,7 @@ Set the `FlowDirection` property to `RightToLeft` to enable RTL layout.
 
 ### XAML Implementation
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:stepProgressBar="clr-namespace:Syncfusion.Maui.ProgressBar;assembly=Syncfusion.Maui.ProgressBar"
@@ -132,7 +132,7 @@ public class RTLViewModel
 
 ### XAML Page
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -226,7 +226,7 @@ Common RTL languages:
 
 Set RTL on the entire page for consistency:
 
-```xml
+```xaml
 <ContentPage xmlns="..."
              FlowDirection="RightToLeft">
     
@@ -325,7 +325,7 @@ string iconPath = stepProgressBar.FlowDirection == FlowDirection.RightToLeft
 
 **Solution:** Set FlowDirection on template root:
 
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar.StepTemplate>
     <DataTemplate>
         <Grid FlowDirection="{Binding FlowDirection, Source={RelativeSource AncestorType={x:Type stepProgressBar:SfStepProgressBar}}}">

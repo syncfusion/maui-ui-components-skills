@@ -26,7 +26,7 @@ The `ViewChanged` event fires when the calendar view changes (swipe to previous/
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      ViewChanged="OnCalendarViewChanged" />
 ```
@@ -102,7 +102,7 @@ The `SelectionChanged` event fires when the user selects or deselects dates.
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      SelectionChanged="OnCalendarSelectionChanged" />
 ```
@@ -230,7 +230,7 @@ public enum CalendarElement
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      Tapped="OnCalendarTapped" />
 ```
@@ -304,7 +304,7 @@ The `DoubleTapped` event fires when the user double-taps on a calendar element.
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      DoubleTapped="OnCalendarDoubleTapped" />
 ```
@@ -354,7 +354,7 @@ The `LongPressed` event fires when the user long-presses on a calendar element.
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      LongPressed="OnCalendarLongPressed" />
 ```
@@ -423,7 +423,7 @@ All events have corresponding command properties for MVVM scenarios.
 
 ### XAML Binding
 
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar"
                      ViewChangedCommand="{Binding ViewChangedCommand}"
                      SelectionChangedCommand="{Binding SelectionChangedCommand}"

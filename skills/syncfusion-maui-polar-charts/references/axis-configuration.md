@@ -43,7 +43,7 @@ CategoryAxis is an indexed axis that plots values based on the index of data poi
 ### Basic Implementation
 
 **XAML:**
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.PrimaryAxis>
         <chart:CategoryAxis/>
@@ -78,7 +78,7 @@ CategoryAxis primaryAxis = new CategoryAxis
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:CategoryAxis Interval="2"/>
 ```
 
@@ -117,7 +117,7 @@ NumericalAxis plots numeric values with automatic scaling based on data range.
 ### Basic Implementation
 
 **XAML:**
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.PrimaryAxis>
         <chart:NumericalAxis/>
@@ -154,7 +154,7 @@ NumericalAxis axis = new NumericalAxis
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:NumericalAxis Interval="10"/>
 ```
 
@@ -204,7 +204,7 @@ PolarLineSeries series = new PolarLineSeries
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.PrimaryAxis>
         <chart:DateTimeAxis/>
@@ -235,7 +235,7 @@ DateTimeAxis primaryAxis = new DateTimeAxis
 - `Milliseconds`
 
 **XAML:**
-```xml
+```xaml
 <chart:DateTimeAxis Interval="6" IntervalType="Months"/>
 ```
 
@@ -251,7 +251,7 @@ DateTimeAxis primaryAxis = new DateTimeAxis
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:DateTimeAxis Minimum="2023/01/01" Maximum="2023/12/31" IntervalType="Months"/>
 ```
 
@@ -274,7 +274,7 @@ chart.PrimaryAxis = primaryAxis;
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.PrimaryAxis>
         <chart:DateTimeCategoryAxis/>
@@ -321,7 +321,7 @@ axis.LabelStyle = new ChartAxisLabelStyle
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:CategoryAxis>
     <chart:CategoryAxis.LabelStyle>
         <chart:ChartAxisLabelStyle TextColor="Blue"
@@ -377,7 +377,7 @@ axis.AxisLineStyle = new ChartLineStyle
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:CategoryAxis>
     <chart:CategoryAxis.AxisLineStyle>
         <chart:ChartLineStyle Stroke="Gray" 
@@ -412,7 +412,7 @@ axis.MajorGridLineStyle = new ChartLineStyle
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:NumericalAxis>
     <chart:NumericalAxis.MajorGridLineStyle>
         <chart:ChartLineStyle Stroke="LightGray" StrokeWidth="1"/>
@@ -454,7 +454,7 @@ axis.MajorTickStyle = new ChartAxisTickStyle
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:CategoryAxis>
     <chart:CategoryAxis.MajorTickStyle>
         <chart:ChartAxisTickStyle Stroke="Black" 
@@ -494,7 +494,7 @@ NumericalAxis axis = new NumericalAxis
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:NumericalAxis>
     <chart:NumericalAxis.Title>
         <chart:ChartAxisTitle Text="Performance Score (%)"
@@ -561,7 +561,7 @@ NumericalAxis axis = new NumericalAxis
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:NumericalAxis IsInversed="True"/>
 ```
 

@@ -24,7 +24,7 @@ The `Position` property determines where the badge appears relative to its conte
 ### TopRight Position (Default)
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="5">
     <badge:SfBadgeView.Content>
         <Button Text="Notifications" 
@@ -52,7 +52,7 @@ var badgeView = new SfBadgeView
 ### TopLeft Position
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="New">
     <badge:SfBadgeView.Content>
         <Image Source="product.png" 
@@ -71,7 +71,7 @@ var badgeView = new SfBadgeView
 Common for status indicators:
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView>
     <badge:SfBadgeView.Content>
         <Image Source="user_avatar.png" 
@@ -102,7 +102,7 @@ var badgeSettings = new BadgeSettings
 ### All Eight Positions
 
 **XAML:**
-```xml
+```xaml
 <Grid RowDefinitions="Auto,Auto,Auto" 
       ColumnDefinitions="*,*,*"
       RowSpacing="20"
@@ -215,7 +215,7 @@ The `Offset` property provides fine-grained control over badge placement using X
 ### Basic Offset Usage
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="8">
     <badge:SfBadgeView.Content>
         <Image Source="icon.png" 
@@ -275,7 +275,7 @@ badgeSettings.Offset = new Point(-5, 5);
 ### Practical Offset Scenarios
 
 **Overlap reduction on circular avatars:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="12">
     <badge:SfBadgeView.Content>
         <Frame WidthRequest="60" 
@@ -314,7 +314,7 @@ var badgeView = new SfBadgeView
 ```
 
 **Status indicator adjustment:**
-```xml
+```xaml
 <badge:SfBadgeView>
     <badge:SfBadgeView.Content>
         <Image Source="profile.png" 
@@ -335,7 +335,7 @@ var badgeView = new SfBadgeView
 Combine Position and Offset for precise control:
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="99+">
     <badge:SfBadgeView.Content>
         <Button Text="Messages" 
@@ -369,7 +369,7 @@ var badgeView = new SfBadgeView
 
 ### E-Commerce Product Badge
 
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="Sale">
     <badge:SfBadgeView.Content>
         <Image Source="product.png" 
@@ -409,7 +409,7 @@ var chatBadge = new SfBadgeView
 
 ### Notification Bell
 
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="15">
     <badge:SfBadgeView.Content>
         <Image Source="bell_icon.png" 

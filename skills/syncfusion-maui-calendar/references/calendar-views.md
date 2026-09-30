@@ -25,7 +25,7 @@ The Month view displays the days of the current month along with some days from 
 ### Basic Month View
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Month" />
 ```
@@ -50,7 +50,7 @@ The Year view displays all 12 months of the year in a grid format, allowing user
 ### Basic Year View
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Year" />
 ```
@@ -77,7 +77,7 @@ The Decade view displays 12 years (typically the current decade plus adjacent ye
 ### Basic Decade View
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Decade" />
 ```
@@ -106,7 +106,7 @@ The Century view displays decades (groups of 10 years) for long-range navigation
 ### Basic Century View
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Century" />
 ```
@@ -181,7 +181,7 @@ In Month view, customize the number of visible weeks using the `NumberOfVisibleW
 ### Custom Visible Weeks
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" View="Month">
     <calendar:SfCalendar.MonthView>
         <calendar:CalendarMonthView NumberOfVisibleWeeks="3" />
@@ -209,7 +209,7 @@ Display ISO week numbers alongside the calendar dates using the `ShowWeekNumber`
 ### Enable Week Numbers
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" View="Month">
     <calendar:SfCalendar.MonthView>
         <calendar:CalendarMonthView ShowWeekNumber="True" />
@@ -232,7 +232,7 @@ By default, `ShowWeekNumber` is `false`.
 Customize the appearance of week numbers using the `WeekNumberStyle` property.
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" View="Month">
     <calendar:SfCalendar.MonthView>
         <calendar:CalendarMonthView ShowWeekNumber="True">
@@ -289,7 +289,7 @@ Users can navigate through views by tapping:
 - **Month View:** Tap header → navigate to Year view (then Decade, then Century)
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Month"
                      AllowViewNavigation="True" />
@@ -300,7 +300,7 @@ Users can navigate through views by tapping:
 Users can select cells directly in Year, Decade, and Century views without navigating.
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Year"
                      AllowViewNavigation="False"

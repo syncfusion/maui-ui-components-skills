@@ -26,7 +26,7 @@ Raised when the selection is about to change. This event can be canceled to prev
 - `Cancel` - Set to `true` to prevent the selection change
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -74,7 +74,7 @@ Raised after the selection has changed.
 - `RemovedItems` - Collection of previously selected items
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     SelectionChanged="comboBox_SelectionChanged" />
 ```
@@ -122,7 +122,7 @@ Raised when the `SelectedValue` property changes.
 **Event Args:** `EventArgs`
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     SelectedValuePath="ID"
                     ValueChanged="comboBox_ValueChanged" />
@@ -151,7 +151,7 @@ Raised when the dropdown is about to open. This event can be canceled to prevent
 - `Cancel` - Set to `true` to prevent dropdown from opening
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     DropDownOpening="comboBox_DropDownOpening" />
 ```
@@ -178,7 +178,7 @@ Raised after the dropdown has been opened.
 **Event Args:** `EventArgs`
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     DropDownOpened="comboBox_DropDownOpened" />
 ```
@@ -206,7 +206,7 @@ Raised after the dropdown has been closed.
 **Event Args:** `EventArgs`
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     DropDownClosed="comboBox_DropDownClosed" />
 ```
@@ -233,7 +233,7 @@ Raised when the user finalizes text entry by pressing the return key (editable m
 **Event Args:** `EventArgs`
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="True"
                     Completed="comboBox_Completed" />
@@ -262,7 +262,7 @@ Raised when the clear button is clicked.
 **Event Args:** `EventArgs`
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsClearButtonVisible="True"
                     ClearButtonClicked="comboBox_ClearButtonClicked" />
@@ -291,7 +291,7 @@ Raised when the load more button is tapped (when `MaximumSuggestion` is set).
 **Event Args:** `EventArgs`
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     MaximumSuggestion="10"
                     LoadMoreButtonTapped="comboBox_LoadMoreButtonTapped" />

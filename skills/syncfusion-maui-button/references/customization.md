@@ -20,7 +20,7 @@ The Syncfusion .NET MAUI Button control provides extensive customization options
 Controls the color of the button text:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Text="Colored Text"
                   TextColor="White"
                   Background="#6200EE" />
@@ -41,7 +41,7 @@ var button = new SfButton
 Adjusts the text size (in device-independent units):
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Text="Large Text"
                   FontSize="20"
                   WidthRequest="150" />
@@ -68,7 +68,7 @@ var button = new SfButton
 Sets text style to Bold, Italic, or None:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Text="Bold Button"
                   FontAttributes="Bold"
                   FontSize="16" />
@@ -106,7 +106,7 @@ var combinedButton = new SfButton
 Use custom fonts for button text:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Text="Custom Font"
                   FontFamily="Roboto" />
 ```
@@ -136,7 +136,7 @@ var button = new SfButton
 Control horizontal and vertical text positioning:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Text="Centered"
                   HorizontalTextAlignment="Center"
                   VerticalTextAlignment="Center"
@@ -170,7 +170,7 @@ var centeredButton = new SfButton
 Transform text casing:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Text="Submit"
                   TextTransform="Uppercase" />  <!-- Output: SUBMIT -->
 
@@ -197,7 +197,7 @@ var button = new SfButton
 Control how text wraps or truncates:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Text="This is a very long button text that needs handling"
                   LineBreakMode="MiddleTruncation"
                   WidthRequest="150" />
@@ -228,7 +228,7 @@ var button = new SfButton
 Use the `Background` property (not `BackgroundColor`) for solid colors:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Text="Blue Button"
                   Background="#2196F3"
                   TextColor="White" />
@@ -257,7 +257,7 @@ var button = new SfButton
 Set border color with `Stroke` property:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Text="Outline Button"
                   Background="Transparent"
                   TextColor="#6200EE"
@@ -286,7 +286,7 @@ var outlineButton = new SfButton
 Control border width:
 
 **XAML:**
-```xml
+```xaml
 <!-- Thin border -->
 <buttons:SfButton Text="Thin Border"
                   Stroke="Black"
@@ -308,7 +308,7 @@ Control border width:
 Create rounded corners:
 
 **XAML:**
-```xml
+```xaml
 <!-- Slightly rounded -->
 <buttons:SfButton Text="Rounded"
                   CornerRadius="8" />
@@ -349,7 +349,7 @@ var roundedButton = new SfButton
 Enable icon display:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Text="Save"
                   ShowIcon="True"
                   ImageSource="save_icon.png" />
@@ -362,7 +362,7 @@ Enable icon display:
 Specify the icon image:
 
 **XAML:**
-```xml
+```xaml
 <!-- File-based image -->
 <buttons:SfButton Text="Download"
                   ShowIcon="True"
@@ -410,7 +410,7 @@ var fontButton = new SfButton
 Control icon dimensions:
 
 **XAML:**
-```xml
+```xaml
 <!-- Small icon -->
 <buttons:SfButton Text="Small Icon"
                   ShowIcon="True"
@@ -444,7 +444,7 @@ var button = new SfButton
 Position icon relative to text:
 
 **XAML:**
-```xml
+```xaml
 <!-- Icon on left (default) -->
 <buttons:SfButton Text="Start"
                   ShowIcon="True"
@@ -497,7 +497,7 @@ var button = new SfButton
 Control internal spacing:
 
 **XAML:**
-```xml
+```xaml
 <!-- Uniform padding -->
 <buttons:SfButton Text="Padded"
                   Padding="20" />
@@ -525,7 +525,7 @@ var button = new SfButton
 Set explicit dimensions:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Text="Fixed Size"
                   WidthRequest="200"
                   HeightRequest="44" />
@@ -554,7 +554,7 @@ Apply linear or radial gradients:
 ### Linear Gradient
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Text="Linear Gradient"
                   TextColor="White"
                   CornerRadius="8">
@@ -591,7 +591,7 @@ button.Background = gradient;
 ### Radial Gradient
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Text="Radial Gradient"
                   TextColor="White"
                   CornerRadius="8">
@@ -615,7 +615,7 @@ button.Background = gradient;
 Enable touch feedback with ripple animation:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Text="Ripple Effect"
                   EnableRippleEffect="True"
                   Background="#6200EE"
@@ -639,7 +639,7 @@ var button = new SfButton
 Add custom content using below codes:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton  CornerRadius="10" Text="SfButton" Background="#4125BC">
             <buttons:SfButton.Content>
                 <DataTemplate>
@@ -726,7 +726,7 @@ public class MyViewModel : INotifyPropertyChanged
 ```
 
 **XAML:**
-```xml
+```xaml
 <ContentPage.BindingContext>
     <local:MyViewModel />
 </ContentPage.BindingContext>
@@ -740,7 +740,7 @@ public class MyViewModel : INotifyPropertyChanged
 
 ### Example 1: Material Design Primary Button
 
-```xml
+```xaml
 <buttons:SfButton Text="PRIMARY ACTION"
                   TextColor="White"
                   Background="#6200EE"
@@ -755,7 +755,7 @@ public class MyViewModel : INotifyPropertyChanged
 
 ### Example 2: Gradient Button with Icon
 
-```xml
+```xaml
 <buttons:SfButton Text="Download"
                   TextColor="White"
                   ShowIcon="True"
@@ -776,7 +776,7 @@ public class MyViewModel : INotifyPropertyChanged
 
 ### Example 3: Outline Button
 
-```xml
+```xaml
 <buttons:SfButton Text="Cancel"
                   TextColor="#6200EE"
                   Background="Transparent"
@@ -790,7 +790,7 @@ public class MyViewModel : INotifyPropertyChanged
 
 ### Example 4: Circular Icon Button
 
-```xml
+```xaml
 <buttons:SfButton ShowIcon="True"
                   ImageSource="favorite_icon.png"
                   ImageSize="24"
@@ -804,7 +804,7 @@ public class MyViewModel : INotifyPropertyChanged
 
 ### Example 5: Text Button (Flat)
 
-```xml
+```xaml
 <buttons:SfButton Text="Learn More"
                   TextColor="#6200EE"
                   Background="Transparent"

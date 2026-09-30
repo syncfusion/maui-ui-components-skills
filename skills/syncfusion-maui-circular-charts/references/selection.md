@@ -7,7 +7,7 @@ Selection allows users to highlight chart segments by tapping them. This guide c
 Create an instance of `DataPointSelectionBehavior` and assign it to the series' `SelectionBehavior` property.
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:DoughnutSeries ItemsSource="{Binding Data}"
                           XBindingPath="Category"
@@ -39,7 +39,7 @@ The `Type` property controls how selection behaves. Use the `ChartSelectionType`
 User can select only one item at a time. Selecting a new item deselects the previous one.
 
 **XAML:**
-```xml
+```xaml
 <chart:DataPointSelectionBehavior Type="Single" 
                                   SelectionBrush="Orange"/>
 ```
@@ -54,7 +54,7 @@ selection.Type = ChartSelectionType.Single;
 User can select one item, and tap again to deselect it.
 
 **XAML:**
-```xml
+```xaml
 <chart:DataPointSelectionBehavior Type="SingleDeselect" 
                                   SelectionBrush="Green"/>
 ```
@@ -69,7 +69,7 @@ selection.Type = ChartSelectionType.SingleDeselect;
 User can select and deselect multiple items.
 
 **XAML:**
-```xml
+```xaml
 <chart:DataPointSelectionBehavior Type="Multiple" 
                                   SelectionBrush="Purple"/>
 ```
@@ -93,7 +93,7 @@ selection.Type = ChartSelectionType.None;
 The `SelectionBrush` property defines the color applied to selected segments.
 
 **XAML:**
-```xml
+```xaml
 <chart:DataPointSelectionBehavior SelectionBrush="#FF6347"/>
 ```
 
@@ -110,7 +110,7 @@ selection.SelectionBrush = Colors.Tomato;
 Use `SelectedIndex` to select a specific segment programmatically.
 
 **XAML:**
-```xml
+```xaml
 <chart:DataPointSelectionBehavior SelectedIndex="2"/>
 ```
 
@@ -199,7 +199,7 @@ private void OnSelectionChanged(object sender, ChartSelectionChangedEventArgs e)
 
 ### Example 1: Single Selection with Custom Color
 
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:PieSeries ItemsSource="{Binding Data}"
                      XBindingPath="Product"
@@ -288,7 +288,7 @@ series.SelectionBehavior = selection;
 
 ### Example 5: Selection with Tooltip and Data Labels
 
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:PieSeries ItemsSource="{Binding Data}"
                      XBindingPath="Region"
@@ -324,7 +324,7 @@ series.SelectionBehavior = selection;
 
 ### Selection + Explode
 
-```xml
+```xaml
 <chart:DoughnutSeries ExplodeOnTouch="True" ExplodeRadius="15">
     <chart:DoughnutSeries.SelectionBehavior>
         <chart:DataPointSelectionBehavior Type="Single"
@@ -335,7 +335,7 @@ series.SelectionBehavior = selection;
 
 ### Selection + Legend Toggle
 
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Legend>
         <chart:ChartLegend ToggleSeriesVisibility="True"/>

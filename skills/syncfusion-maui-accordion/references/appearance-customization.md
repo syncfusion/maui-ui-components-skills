@@ -39,7 +39,7 @@ Control the position of the expand/collapse icon in the header using `HeaderIcon
 - `Start` - Icon appears on the left side
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfAccordion HeaderIconPosition="Start">
     <syncfusion:SfAccordion.Items>
         <syncfusion:AccordionItem>
@@ -72,7 +72,7 @@ accordion.HeaderIconPosition = Syncfusion.Maui.Expander.ExpanderIconPosition.Sta
 Customize the background color of individual accordion item headers using `HeaderBackground`.
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfAccordion>
     <syncfusion:SfAccordion.Items>
         <syncfusion:AccordionItem HeaderBackground="#6750A4">
@@ -123,7 +123,7 @@ item.HeaderBackground = new SolidColorBrush(Color.FromArgb("#6750A4"));
 Customize the expand/collapse icon color using `HeaderIconColor`.
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfAccordion>
     <syncfusion:SfAccordion.Items>
         <syncfusion:AccordionItem HeaderIconColor="Brown">
@@ -182,7 +182,7 @@ The Visual State Manager enables state-based styling that automatically applies 
 
 Apply different styling when items are expanded vs. collapsed.
 
-```xml
+```xaml
 <ContentPage.Resources>
     <Style TargetType="syncfusion:AccordionItem">
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -232,7 +232,7 @@ Apply different styling when items are expanded vs. collapsed.
 
 Style items when they receive keyboard focus.
 
-```xml
+```xaml
 <VisualState Name="Focused">
     <VisualState.Setters>
         <Setter Property="HeaderBackground" Value="#FFE5E5"/>
@@ -250,7 +250,7 @@ Style items when they receive keyboard focus.
 
 Apply hover effects on desktop platforms.
 
-```xml
+```xaml
 <VisualState Name="PointerOver">
     <VisualState.Setters>
         <Setter Property="HeaderBackground" Value="#E0E0E0"/>
@@ -268,7 +268,7 @@ Apply hover effects on desktop platforms.
 
 Define the default appearance when no interaction is occurring.
 
-```xml
+```xaml
 <VisualState Name="Normal">
     <VisualState.Setters>
         <Setter Property="HeaderBackground" Value="White"/>
@@ -282,7 +282,7 @@ Define the default appearance when no interaction is occurring.
 Here's a comprehensive example using all five visual states:
 
 **MainPage.xaml:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -397,7 +397,7 @@ Here's a comprehensive example using all five visual states:
 
 Place styles in `ContentPage.Resources` or `App.xaml` for reusability:
 
-```xml
+```xaml
 <Application.Resources>
     <Style TargetType="syncfusion:AccordionItem">
         <!-- Style definition -->
@@ -438,7 +438,7 @@ Verify appearance in all five visual states:
 ### 6. Use Consistent Spacing
 
 Maintain consistent padding and margins:
-```xml
+```xaml
 <Grid HeightRequest="48" Padding="16,0">
     <Label Margin="0" />
 </Grid>

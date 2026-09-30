@@ -7,7 +7,7 @@ The legend provides a visual key that helps identify data points in the chart. T
 Initialize the `ChartLegend` class and assign it to the chart's `Legend` property.
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Legend>
         <chart:ChartLegend/>
@@ -26,7 +26,7 @@ chart.Legend = new ChartLegend();
 Control legend visibility using the `IsVisible` property (default: `true`).
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Legend>
         <chart:ChartLegend IsVisible="True"/>
@@ -47,7 +47,7 @@ chart.Legend = new ChartLegend
 Control individual series visibility in the legend using `IsVisibleOnLegend` (default: `true`).
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries ItemsSource="{Binding Data}"
                  XBindingPath="XValue"
                  YBindingPath="YValue"
@@ -74,7 +74,7 @@ Use the `Placement` property to position the legend relative to the chart area.
 - **Right**
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Legend>
         <chart:ChartLegend Placement="Bottom"/>
@@ -111,7 +111,7 @@ chart.Legend.Placement = LegendPlacement.Right;
 Position the legend inside the chart area using `IsFloating`, `OffsetX`, and `OffsetY`.
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Legend>
         <chart:ChartLegend Placement="Right" 
@@ -148,7 +148,7 @@ chart.Legend = new ChartLegend
 Change the legend icon using the `LegendIcon` property on the series.
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries ItemsSource="{Binding Data}"
                  XBindingPath="XValue"
                  YBindingPath="YValue"
@@ -182,7 +182,7 @@ PieSeries series = new PieSeries
 Use the `LabelStyle` property to customize legend label appearance.
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Legend>
         <chart:ChartLegend>
@@ -227,7 +227,7 @@ chart.Legend.LabelStyle = labelStyle;
 Enable users to show/hide series by tapping legend items using `ToggleSeriesVisibility`.
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Legend>
         <chart:ChartLegend ToggleSeriesVisibility="True"/>
@@ -253,7 +253,7 @@ When enabled:
 Customize the arrangement of legend items using the `ItemsLayout` property.
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Legend>
         <chart:ChartLegend>
@@ -283,7 +283,7 @@ The `ItemsLayout` accepts any layout type (FlexLayout, StackLayout, Grid, etc.).
 Create fully custom legend items using the `ItemTemplate` property.
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Resources>
         <DataTemplate x:Key="legendTemplate">
@@ -336,7 +336,7 @@ The template's binding context (`ChartLegendItem`) provides:
 Override the `GetMaximumSizeCoefficient` method to control legend size (value between 0 and 1).
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Legend>
         <local:LegendExt/>
@@ -402,7 +402,7 @@ Access and modify these properties in the event handler:
 
 ### Example 1: Bottom Legend with Custom Style
 
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Legend>
         <chart:ChartLegend Placement="Bottom">
@@ -453,7 +453,7 @@ chart.Series.Add(series);
 
 ### Example 3: Custom Legend Template with Icons
 
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Resources>
         <DataTemplate x:Key="customTemplate">

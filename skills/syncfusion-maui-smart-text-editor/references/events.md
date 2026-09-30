@@ -16,7 +16,7 @@
 
 ### XAML Subscription
 
-```xml
+```xaml
 <smarttexteditor:SfSmartTextEditor
     x:Name="smartTextEditor"
     TextChanged="OnTextChanged" />
@@ -49,7 +49,7 @@ smartTextEditor.TextChanged += OnTextChanged;
 
 ### XAML Binding
 
-```xml
+```xaml
 <ContentPage.BindingContext>
     <local:SmartTextEditorViewModel />
 </ContentPage.BindingContext>
@@ -81,7 +81,7 @@ public class SmartTextEditorViewModel
 
 > `TextChangedCommand` does not pass the new/old text values as a parameter. For value access in MVVM, bind `Text` to a ViewModel property alongside `TextChangedCommand`:
 
-```xml
+```xaml
 <smarttexteditor:SfSmartTextEditor
     Text="{Binding ReplyText, Mode=TwoWay}"
     TextChangedCommand="{Binding TextChangedCommand}" />

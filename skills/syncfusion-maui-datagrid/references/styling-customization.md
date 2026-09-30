@@ -19,7 +19,7 @@
 
 ### Styling Record Cell
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid">
     <ContentPage.Resources>
         <Style TargetType="syncfusion:DataGridCell">
@@ -35,7 +35,7 @@
 
 ### Styling Record Row
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid">
     <ContentPage.Resources>
         <Style TargetType="syncfusion:DataGridRow">
@@ -47,7 +47,7 @@
 
 ### Styling Header Cell
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid">
     <ContentPage.Resources>
         <Style TargetType="syncfusion:DataGridHeaderCell">
@@ -63,7 +63,7 @@
 
 ## Set datagrid style from page resources
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -84,7 +84,7 @@
 
 ### Default Style
 
-```xml
+```xaml
 <syncfusion:SfDataGrid.DefaultStyle>
        <syncfusion:DataGridStyle x:Key="customStyle" 
                                   RowBackground="LightBlue"
@@ -96,7 +96,7 @@
 
 ### Conditional Cell Styling
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid">
     <ContentPage.Resources>
         <local:ColorConverter x:Key="converter"/>
@@ -128,7 +128,7 @@ public class ColorConverter : IValueConverter
 
 ### Alternating Row Colors
 
-```xml
+```xaml
 <syncfusion:SfDataGrid.DefaultStyle>
     <syncfusion:DataGridStyle AlternateRowBackground="LightGray"
                               RowBackground="White" />
@@ -137,7 +137,7 @@ public class ColorConverter : IValueConverter
 
 ### AlternationRowCount
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid">
     <ContentPage.Content>
         <syncfusion:SfDataGrid x:Name="dataGrid" AlternationRowCount="3" 
@@ -164,7 +164,7 @@ public partial class MainPage : ContentPage
 
 ### AllowRowHoverHighlighting
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid">
     <ContentPage.Content>
         <syncfusion:SfDataGrid x:Name="dataGrid"
@@ -188,7 +188,7 @@ public partial class MainPage : ContentPage
 
 ### RowHoveredBackground
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid">
     <ContentPage.Content>
         <syncfusion:SfDataGrid x:Name="dataGrid"
@@ -216,7 +216,7 @@ public partial class MainPage : ContentPage
 
 ### Conditional Row Styling
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid">
     <ContentPage.Resources>
         <local:ColorConverter x:Key="converter"/>
@@ -250,7 +250,7 @@ public class ColorConverter : IValueConverter
 
 ## Header Styling
 
-```xml
+```xaml
 <syncfusion:SfDataGrid.DefaultStyle>
     <syncfusion:DataGridStyle HeaderRowBackground="#0074E3"
                               HeaderRowTextColor="White"
@@ -261,7 +261,7 @@ public class ColorConverter : IValueConverter
 
 ## Changing the font style
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid">
     <ContentPage.Content>
         <syncfusion:SfDataGrid x:Name="dataGrid" ItemsSource="{Binding OrderInfoCollection}">
@@ -286,7 +286,7 @@ Following are the list of options available to customize the grid borders:
 - Vertical
 - None
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid">
     <ContentPage.Content>
         <syncfusion:SfDataGrid x:Name="dataGrid" ItemsSource="{Binding OrderInfoCollection}"
@@ -310,7 +310,7 @@ public partial class MainPage : ContentPage
 
 ## Changing the border color and width
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid">
     <ContentPage.Content>
         <syncfusion:SfDataGrid x:Name="dataGrid" ItemsSource="{Binding OrderInfoCollection}">
@@ -338,7 +338,7 @@ dataGrid.DefaultStyle = defaultsyle;
 
 ## Theme Customization
 
-```xml
+```xaml
 <syncfusion:SfDataGrid.DefaultStyle>
     <syncfusion:DataGridStyle GridLineColor="Gray"
                               GridLineStrokeThickness="1"

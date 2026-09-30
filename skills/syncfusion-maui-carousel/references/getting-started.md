@@ -43,7 +43,7 @@ dotnet add package Syncfusion.Maui.Carousel
 ```
 
 **Option 4 - Direct .csproj Edit:**
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.Carousel" Version="*" />
 </ItemGroup>
@@ -92,7 +92,7 @@ namespace CarouselSample
 Add the carousel namespace to your XAML or C# file.
 
 **XAML:**
-```xml
+```xaml
 xmlns:carousel="clr-namespace:Syncfusion.Maui.Carousel;assembly=Syncfusion.Maui.Carousel"
 ```
 
@@ -104,7 +104,7 @@ using Syncfusion.Maui.Carousel;
 ### Step 5: Add a Basic Carousel
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel />
 ```
 
@@ -160,7 +160,7 @@ public class CarouselViewModel
 > **Note:** Image files should be added to the `Resources/Images` folder of your MAUI project.
 
 **3. Bind to Carousel (XAML):**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:carousel="clr-namespace:Syncfusion.Maui.Carousel;assembly=Syncfusion.Maui.Carousel"
@@ -261,7 +261,7 @@ namespace CarouselSample
 Use `ItemHeight` and `ItemWidth` properties to control the size of carousel items.
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel x:Name="carousel"
                      ItemTemplate="{StaticResource itemTemplate}" 
                      ItemsSource="{Binding ImageCollection}"
@@ -291,7 +291,7 @@ carousel.SetBinding(SfCarousel.ItemsSourceProperty, "ImageCollection");
 Use the `SelectedIndex` property to specify which item should be selected initially or programmatically.
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel x:Name="carousel"
                      ItemTemplate="{StaticResource itemTemplate}" 
                      ItemsSource="{Binding ImageCollection}"
@@ -341,7 +341,7 @@ public class CarouselViewModel
 }
 ```
 
-```xml
+```xaml
 <!-- MainPage.xaml -->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

@@ -29,16 +29,16 @@ The Smart DataGrid requires several setup steps including NuGet package installa
 
 ## Step 2: Install Required NuGet Packages
 
-The Smart DataGrid is part of the `Syncfusion.Maui.SmartComponents` package, which depends on `Syncfusion.Maui.Core`.
+The Smart DataGrid is part of the `Syncfusion.Maui.SmartDataGrid` package, which mainly depends on `Syncfusion.Maui.Core`, `Syncfusion.Maui.DataGrid` and `Syncfusion.Maui.SmartComponents`.
 
 1. Right-click your project in **Solution Explorer**
 2. Select **Manage NuGet Packages**
-3. Search for `Syncfusion.Maui.SmartComponents`
+3. Search for `Syncfusion.Maui.SmartDataGrid`
 4. Install the latest version
 5. Wait for all dependencies to restore
 
 **Package Details:**
-- `Syncfusion.Maui.SmartComponents` - Main Smart Components package
+- `Syncfusion.Maui.SmartDataGrid` - Smart DataGrid package
 - `Syncfusion.Maui.Core` - Core Syncfusion MAUI utilities (auto-installed)
 
 ## Step 3: Register Syncfusion Core Handler
@@ -193,7 +193,7 @@ In `MainPage.xaml`, add the Smart DataGrid with data binding:
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.SmartComponents;assembly=Syncfusion.Maui.SmartComponents"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.SmartDataGrid;assembly=Syncfusion.Maui.SmartDataGrid"
              xmlns:sfdatagrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
              xmlns:local="clr-namespace:GettingStarted"
              x:Class="GettingStarted.MainPage">

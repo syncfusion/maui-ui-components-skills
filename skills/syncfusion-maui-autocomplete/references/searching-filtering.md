@@ -20,7 +20,7 @@ The Autocomplete control provides powerful search and filtering capabilities to 
 
 The `DisplayMemberPath` property specifies which property value to display in the dropdown list. When `TextMemberPath` is null or empty, searching is also performed based on `DisplayMemberPath`.
 
-```xml
+```xaml
 <editors:SfAutocomplete ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name" />
 ```
@@ -39,7 +39,7 @@ Typing "T" will filter items where the `Name` property starts with "T": Twitter,
 
 The `TextMemberPath` property specifies which property to use for searching. This takes precedence over `DisplayMemberPath`.
 
-```xml
+```xaml
 <editors:SfAutocomplete ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
                         TextMemberPath="ID" />
@@ -66,7 +66,7 @@ The `TextSearchMode` property controls how filtering is performed. It supports c
 
 Filters items that start with the entered text. The first matching item is highlighted.
 
-```xml
+```xaml
 <editors:SfAutocomplete TextSearchMode="StartsWith"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
@@ -81,7 +81,7 @@ autocomplete.TextSearchMode = AutocompleteTextSearchMode.StartsWith;
 
 Filters items that contain the entered text anywhere in the property value.
 
-```xml
+```xaml
 <editors:SfAutocomplete TextSearchMode="Contains"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
@@ -98,7 +98,7 @@ Typing "gram" will match "Instagram", "Telegram", etc.
 
 Use `MinimumPrefixCharacters` to require a minimum number of characters before displaying suggestions. This improves performance with large datasets.
 
-```xml
+```xaml
 <editors:SfAutocomplete MinimumPrefixCharacters="3"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
@@ -148,7 +148,7 @@ public class CityFilteringBehavior : IAutocompleteFilterBehavior
 
 ### Step 2: Apply Filter Behavior
 
-```xml
+```xaml
 <editors:SfAutocomplete DisplayMemberPath="CityName"
                         ItemsSource="{Binding Cities}">
     <editors:SfAutocomplete.FilterBehavior>
@@ -226,7 +226,7 @@ public class CapitalCitySearchingBehavior : IAutocompleteSearchBehavior
 
 ### Step 2: Apply Search Behavior
 
-```xml
+```xaml
 <editors:SfAutocomplete DisplayMemberPath="CityName"
                         ItemsSource="{Binding Cities}">
     <editors:SfAutocomplete.FilterBehavior>
@@ -246,7 +246,7 @@ When entering a country name like "USA", the first capital city (e.g., "Washingt
 
 ### Complete Example with Both Behaviors
 
-```xml
+```xaml
 <ContentPage.BindingContext>
     <local:CityViewModel />
 </ContentPage.BindingContext>
@@ -301,7 +301,7 @@ public class CustomAsyncFilter : IAutocompleteFilterBehavior
 ```
 
 **Apply:**
-```xml
+```xaml
 <editors:SfAutocomplete>
     <editors:SfAutocomplete.FilterBehavior>
         <local:CustomAsyncFilter />
@@ -321,7 +321,7 @@ For detailed guidance for the Async Filter, please refer to our [documentation](
 
 Display the complete dropdown list when the control receives focus, before any text is entered.
 
-```xml
+```xaml
 <editors:SfAutocomplete ShowSuggestionsOnFocus="True"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"

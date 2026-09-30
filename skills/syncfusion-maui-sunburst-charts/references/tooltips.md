@@ -28,7 +28,7 @@ Enable tooltips using the `EnableTooltip` property.
 - **Default**: `False`
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableTooltip="True"
                           ItemsSource="{Binding DataSource}"
                           ValueMemberPath="EmployeesCount">
@@ -73,7 +73,7 @@ Customize tooltip appearance using the `TooltipSettings` property with `Sunburst
 ### Basic Customization Example
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableTooltip="True"
                           ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Sales">
@@ -116,7 +116,7 @@ this.Content = sunburst;
 ### Style Variations
 
 **Dark Theme Tooltip:**
-```xml
+```xaml
 <sunburst:SunburstTooltipSettings   
     Background="#2D2D2D" 
     TextColor="White"  
@@ -126,7 +126,7 @@ this.Content = sunburst;
 ```
 
 **Accent Color Tooltip:**
-```xml
+```xaml
 <sunburst:SunburstTooltipSettings   
     Background="{StaticResource PrimaryColor}" 
     TextColor="White"  
@@ -136,7 +136,7 @@ this.Content = sunburst;
 ```
 
 **Subtle Light Tooltip:**
-```xml
+```xaml
 <sunburst:SunburstTooltipSettings   
     Background="#F5F5F5" 
     TextColor="#333333"  
@@ -146,7 +146,7 @@ this.Content = sunburst;
 ```
 
 **High Contrast Tooltip:**
-```xml
+```xaml
 <sunburst:SunburstTooltipSettings   
     Background="Black" 
     TextColor="Yellow"  
@@ -158,25 +158,25 @@ this.Content = sunburst;
 ### Duration Guidelines
 
 **Quick glimpse:**
-```xml
+```xaml
 <sunburst:SunburstTooltipSettings Duration="2000"/>
 <!-- 2 seconds - for simple data -->
 ```
 
 **Standard:**
-```xml
+```xaml
 <sunburst:SunburstTooltipSettings Duration="3000"/>
 <!-- 3 seconds - default recommended -->
 ```
 
 **Extended:**
-```xml
+```xaml
 <sunburst:SunburstTooltipSettings Duration="5000"/>
 <!-- 5 seconds - for complex information -->
 ```
 
 **Persistent:**
-```xml
+```xaml
 <sunburst:SunburstTooltipSettings Duration="10000"/>
 <!-- 10 seconds - requires dismissal or timeout -->
 ```
@@ -186,7 +186,7 @@ this.Content = sunburst;
 Add spacing around tooltip content:
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SunburstTooltipSettings Margin="10,5,10,5"/>
 <!-- Left: 10, Top: 5, Right: 10, Bottom: 5 -->
 ```
@@ -197,7 +197,7 @@ tooltipSettings.Margin = new Thickness(10, 5, 10, 5);
 ```
 
 **Uniform margin:**
-```xml
+```xaml
 <sunburst:SunburstTooltipSettings Margin="8"/>
 <!-- 8 units on all sides -->
 ```
@@ -216,7 +216,7 @@ The template's binding context provides access to:
 ### Basic Custom Template Example
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableTooltip="True" 
                           ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Sales"
@@ -263,7 +263,7 @@ this.Content = sunburst;
 
 **Example 1: Card Style with Icon**
 
-```xml
+```xaml
 <DataTemplate x:Key="CardTooltip">
     <Border BackgroundColor="White" 
             StrokeThickness="0"
@@ -293,7 +293,7 @@ this.Content = sunburst;
 
 **Example 2: Multi-Line Information**
 
-```xml
+```xaml
 <DataTemplate x:Key="DetailedTooltip">
     <StackLayout BackgroundColor="#2C3E50" 
                 Padding="12"
@@ -315,7 +315,7 @@ this.Content = sunburst;
 
 **Example 3: Percentage Display**
 
-```xml
+```xaml
 <DataTemplate x:Key="PercentageTooltip">
     <Grid BackgroundColor="White" 
          Padding="10">
@@ -353,7 +353,7 @@ this.Content = sunburst;
 
 **Example 4: Hierarchical Path Display**
 
-```xml
+```xaml
 <DataTemplate x:Key="PathTooltip">
     <StackLayout BackgroundColor="#1E1E1E" 
                 Padding="12"
@@ -384,7 +384,7 @@ this.Content = sunburst;
 **For glass effect compatibility:**
 Set background to Transparent when using liquid glass effect:
 
-```xml
+```xaml
 <DataTemplate x:Key="GlassTooltip">
     <StackLayout BackgroundColor="Transparent" Padding="12">
         <!-- Tooltip content -->
@@ -402,7 +402,7 @@ Set background to Transparent when using liquid glass effect:
 
 ### Example 1: Professional Business Tooltip
 
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableTooltip="True"
                           ItemsSource="{Binding EmployeeData}"
                           ValueMemberPath="Count">
@@ -427,7 +427,7 @@ Set background to Transparent when using liquid glass effect:
 
 ### Example 2: Dark Mode with Custom Template
 
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableTooltip="True"
                           ItemsSource="{Binding SalesData}"
                           ValueMemberPath="Revenue"
@@ -468,7 +468,7 @@ Set background to Transparent when using liquid glass effect:
 
 ### Example 3: Mobile-Optimized Tooltip
 
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableTooltip="True"
                           ItemsSource="{Binding Data}"
                           ValueMemberPath="Value">

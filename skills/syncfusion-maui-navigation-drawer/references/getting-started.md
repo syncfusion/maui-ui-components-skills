@@ -74,7 +74,7 @@ Add the NavigationDrawer namespace to your XAML or C# file.
 
 ### XAML
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:navigationDrawer="clr-namespace:Syncfusion.Maui.NavigationDrawer;assembly=Syncfusion.Maui.NavigationDrawer"
@@ -97,7 +97,7 @@ The simplest drawer requires only a `ContentView` (mandatory):
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <navigationDrawer:SfNavigationDrawer.ContentView>
         <Grid>
@@ -130,7 +130,7 @@ this.Content = navigationDrawer;
 
 Set the drawer width to make it visible when opened:
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <navigationDrawer:SfNavigationDrawer.DrawerSettings>
         <navigationDrawer:DrawerSettings DrawerWidth="250"/>
@@ -161,7 +161,7 @@ Create an interactive hamburger button to open/close the drawer.
 
 ### Complete XAML Example
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <navigationDrawer:SfNavigationDrawer.DrawerSettings>
         <navigationDrawer:DrawerSettings DrawerWidth="250"/>
@@ -307,7 +307,7 @@ public partial class MainPage : ContentPage
 
 Complete the drawer by adding header and content views.
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <navigationDrawer:SfNavigationDrawer.DrawerSettings>
         <navigationDrawer:DrawerSettings DrawerWidth="250"
@@ -429,7 +429,7 @@ navigationDrawer.ToggleDrawer();
 
 ### Minimum Required Code (XAML)
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <navigationDrawer:SfNavigationDrawer.ContentView>
         <Grid/>

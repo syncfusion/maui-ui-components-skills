@@ -30,7 +30,7 @@ public PickerTimeFormat Format { get; set; }
 **Type:** `PickerTimeFormat` (enum)
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker Format="hh_mm_tt" />
 ```
 
@@ -58,7 +58,7 @@ timePicker.Format = PickerTimeFormat.hh_mm_tt;
 **Example:** `9:30`, `14:45`  
 **Description:** 24-hour format without leading zero for hours, no seconds
 
-```xml
+```xaml
 <picker:SfTimePicker Format="H_mm" />
 ```
 
@@ -74,7 +74,7 @@ timePicker.Format = PickerTimeFormat.H_mm;
 **Example:** `9:30:15`, `14:45:30`  
 **Description:** 24-hour format without leading zero for hours, includes seconds
 
-```xml
+```xaml
 <picker:SfTimePicker Format="H_mm_ss" />
 ```
 
@@ -90,7 +90,7 @@ timePicker.Format = PickerTimeFormat.H_mm_ss;
 **Example:** `09:30`, `14:45`  
 **Description:** 24-hour format with leading zero for hours, no seconds
 
-```xml
+```xaml
 <picker:SfTimePicker Format="HH_mm" />
 ```
 
@@ -106,7 +106,7 @@ timePicker.Format = PickerTimeFormat.HH_mm;
 **Example:** `09:30:15`, `14:45:30`  
 **Description:** 24-hour format with leading zero for hours, includes seconds
 
-```xml
+```xaml
 <picker:SfTimePicker Format="HH_mm_ss" />
 ```
 
@@ -122,7 +122,7 @@ timePicker.Format = PickerTimeFormat.HH_mm_ss;
 **Example:** `09:30:15.500`, `14:45:30.250`  
 **Description:** 24-hour format with milliseconds
 
-```xml
+```xaml
 <picker:SfTimePicker Format="HH_mm_ss_fff" />
 ```
 
@@ -138,7 +138,7 @@ timePicker.Format = PickerTimeFormat.HH_mm_ss_fff;
 **Example:** `9:30 AM`, `2:45 PM`  
 **Description:** 12-hour format without leading zero, no seconds
 
-```xml
+```xaml
 <picker:SfTimePicker Format="h_mm_tt" />
 ```
 
@@ -154,7 +154,7 @@ timePicker.Format = PickerTimeFormat.h_mm_tt;
 **Example:** `9:30:15 AM`, `2:45:30 PM`  
 **Description:** 12-hour format without leading zero, includes seconds
 
-```xml
+```xaml
 <picker:SfTimePicker Format="h_mm_ss_tt" />
 ```
 
@@ -170,7 +170,7 @@ timePicker.Format = PickerTimeFormat.h_mm_ss_tt;
 **Example:** `09:30 AM`, `02:45 PM`  
 **Description:** 12-hour format with leading zero, no seconds
 
-```xml
+```xaml
 <picker:SfTimePicker Format="hh_mm_tt" />
 ```
 
@@ -186,7 +186,7 @@ timePicker.Format = PickerTimeFormat.hh_mm_tt;
 **Example:** `09:30:15 AM`, `02:45:30 PM`  
 **Description:** 12-hour format with leading zero, includes seconds
 
-```xml
+```xaml
 <picker:SfTimePicker Format="hh_mm_ss_tt" />
 ```
 
@@ -202,7 +202,7 @@ timePicker.Format = PickerTimeFormat.hh_mm_ss_tt;
 **Example:** `09:30:15.500 AM`, `02:45:30.250 PM`  
 **Description:** 12-hour format with milliseconds and AM/PM
 
-```xml
+```xaml
 <picker:SfTimePicker Format="hh_mm_ss_fff_tt" />
 ```
 
@@ -218,7 +218,7 @@ timePicker.Format = PickerTimeFormat.hh_mm_ss_fff_tt;
 **Example:** `09 AM`, `02 PM`  
 **Description:** 12-hour format showing only hours with AM/PM
 
-```xml
+```xaml
 <picker:SfTimePicker Format="hh_tt" />
 ```
 
@@ -234,7 +234,7 @@ timePicker.Format = PickerTimeFormat.hh_tt;
 **Example:** `30:15`, `45:30`  
 **Description:** Minutes and seconds only (useful for timers/countdowns)
 
-```xml
+```xaml
 <picker:SfTimePicker Format="mm_ss" />
 ```
 
@@ -250,7 +250,7 @@ timePicker.Format = PickerTimeFormat.mm_ss;
 **Example:** `30:15.500`, `45:30.250`  
 **Description:** Minutes, seconds, and milliseconds
 
-```xml
+```xaml
 <picker:SfTimePicker Format="mm_ss_fff" />
 ```
 
@@ -266,7 +266,7 @@ timePicker.Format = PickerTimeFormat.mm_ss_fff;
 **Example:** `15.500`, `30.250`  
 **Description:** Seconds and milliseconds only
 
-```xml
+```xaml
 <picker:SfTimePicker Format="ss_fff" />
 ```
 
@@ -282,7 +282,7 @@ timePicker.Format = PickerTimeFormat.ss_fff;
 **Example:** Varies by system culture  
 **Description:** Uses the device's current culture time format
 
-```xml
+```xaml
 <picker:SfTimePicker Format="Default" />
 ```
 
@@ -297,7 +297,7 @@ timePicker.Format = PickerTimeFormat.Default;
 ## Format Usage Examples
 
 ### Example 1: Appointment Scheduler (12-hour)
-```xml
+```xaml
 <picker:SfTimePicker x:Name="appointmentPicker"
                      Format="hh_mm_tt"
                      SelectedTime="09:30:00">
@@ -312,7 +312,7 @@ timePicker.Format = PickerTimeFormat.Default;
 ---
 
 ### Example 2: Military/24-Hour Time
-```xml
+```xaml
 <picker:SfTimePicker x:Name="militaryPicker"
                      Format="HH_mm"
                      SelectedTime="14:30:00">
@@ -327,7 +327,7 @@ timePicker.Format = PickerTimeFormat.Default;
 ---
 
 ### Example 3: Stopwatch/Timer with Milliseconds
-```xml
+```xaml
 <picker:SfTimePicker x:Name="stopwatchPicker"
                      Format="mm_ss_fff"
                      SelectedTime="00:05:30.500">
@@ -342,7 +342,7 @@ timePicker.Format = PickerTimeFormat.Default;
 ---
 
 ### Example 4: Alarm Clock
-```xml
+```xaml
 <picker:SfTimePicker x:Name="alarmPicker"
                      Format="h_mm_tt"
                      SelectedTime="06:00:00">
@@ -359,7 +359,7 @@ timePicker.Format = PickerTimeFormat.Default;
 You can change the format programmatically based on user preference or application logic:
 
 **XAML:**
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="10">
     
     <Label Text="Time Format Selector" FontSize="18" FontAttributes="Bold" />
@@ -430,7 +430,7 @@ else
 ### 3. Match Format with Intervals
 When using intervals, ensure format displays the relevant components:
 
-```xml
+```xaml
 <!-- Minute intervals: use format without seconds -->
 <picker:SfTimePicker Format="hh_mm_tt" 
                      MinuteInterval="15" />

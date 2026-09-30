@@ -55,6 +55,9 @@ Use the `TooltipBehavior` property with a `ChartTooltipBehavior` instance to cus
 | **FontAttributes** | FontAttributes | Font style (Bold, Italic, None) |
 | **Duration** | int | Display duration in seconds |
 | **Margin** | Thickness | Margin around the tooltip content |
+| **Stroke** | Brush | Tooltip border color |
+| **StrokeWidth** | double | Tooltip border thickness |
+| **UseSeriesFillColor** | bool | Uses the associated segment fill color as the tooltip background |
 
 ### Basic Customization
 
@@ -116,6 +119,31 @@ chart.TooltipBehavior = new ChartTooltipBehavior()
     FontAttributes = FontAttributes.Bold,
     Duration = 3,
     Margin = 10
+};
+```
+
+### Tooltip Border and Series Fill
+
+Use the `Stroke` and `StrokeWidth` properties of `ChartTooltipBehavior` to add a border around the pyramid tooltip. Set `UseSeriesFillColor` to `true` to make the tooltip adopt the associated segment fill color as its background.
+
+**XAML:**
+```xaml
+<chart:SfPyramidChart EnableTooltip="True">
+    <chart:SfPyramidChart.TooltipBehavior>
+        <chart:ChartTooltipBehavior Stroke="DarkSlateGray"
+                                    StrokeWidth="1"
+                                    UseSeriesFillColor="True"/>
+    </chart:SfPyramidChart.TooltipBehavior>
+</chart:SfPyramidChart>
+```
+
+**C#:**
+```csharp
+chart.TooltipBehavior = new ChartTooltipBehavior()
+{
+    Stroke = Colors.DarkSlateGray,
+    StrokeWidth = 1,
+    UseSeriesFillColor = true
 };
 ```
 

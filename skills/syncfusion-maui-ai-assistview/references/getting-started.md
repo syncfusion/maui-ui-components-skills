@@ -60,7 +60,7 @@ public class MauiProgram
 ### XAML
 Import the namespace and add the control to your page:
 
-```xml
+```xaml
 <!-- MainPage.xaml -->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -92,7 +92,7 @@ public partial class MainPage : ContentPage
 
 ## Step 4: Define the ViewModel
 
-Create a ViewModel that holds the conversation items and handles the request command. The `AssistItems` property is of type `IList<IAssistItem>` — use `ObservableCollection<IAssistItem>` to get automatic UI updates.
+Create a ViewModel that holds the conversation items and handles the request command. The `AssistItems` property is of type `IList<IAssistItem>` â€” use `ObservableCollection<IAssistItem>` to get automatic UI updates.
 
 ```csharp
 // ViewModel.cs
@@ -177,7 +177,7 @@ public class ViewModel : INotifyPropertyChanged
 Set the ViewModel as `BindingContext` and bind `AssistItems` and `RequestCommand`.
 
 ### XAML
-```xml
+```xaml
 <!-- MainPage.xaml -->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -238,7 +238,7 @@ var requestItem = new AssistItem
     IsRequested = true
 };
 
-// AI response — link it back to the request via RequestItem
+// AI response â€” link it back to the request via RequestItem
 var responseItem = new AssistItem
 {
     Text = "MAUI is a cross-platform UI framework...",

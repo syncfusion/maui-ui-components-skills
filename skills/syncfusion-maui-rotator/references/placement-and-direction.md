@@ -30,7 +30,7 @@ Controls where the navigation strip (dots or thumbnails) appears relative to the
 Navigation appears below the main content.
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationStripMode="Dots"
                       NavigationStripPosition="Bottom"
@@ -55,7 +55,7 @@ rotator.NavigationStripPosition = NavigationStripPosition.Bottom;
 Navigation appears above the main content.
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationStripMode="Dots"
                       NavigationStripPosition="Top"
@@ -80,7 +80,7 @@ rotator.NavigationStripPosition = NavigationStripPosition.Top;
 Navigation appears on the left side.
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationStripMode="Thumbnail"
                       NavigationStripPosition="Left"
@@ -104,7 +104,7 @@ rotator.NavigationStripPosition = NavigationStripPosition.Left;
 Navigation appears on the right side.
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationStripMode="Thumbnail"
                       NavigationStripPosition="Right"
@@ -144,7 +144,7 @@ Controls how items transition and which directions users can navigate.
 Items slide left and right. Users can swipe in both directions.
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationDirection="Horizontal"
                       NavigationStripMode="Dots"
@@ -169,7 +169,7 @@ rotator.NavigationDirection = NavigationDirection.Horizontal;
 Items slide up and down. Users can swipe in both directions.
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationDirection="Vertical"
                       NavigationStripMode="Dots"
@@ -193,7 +193,7 @@ rotator.NavigationDirection = NavigationDirection.Vertical;
 Items transition only from left to right (unidirectional).
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationDirection="LeftToRight"
                       NavigationStripMode="Thumbnail"
@@ -219,7 +219,7 @@ rotator.NavigationDirection = NavigationDirection.LeftToRight;
 Items transition only from right to left (unidirectional).
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationDirection="RightToLeft"
                       EnableAutoPlay="True"
@@ -242,7 +242,7 @@ rotator.NavigationDirection = NavigationDirection.RightToLeft;
 Items transition only from top to bottom (unidirectional).
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationDirection="TopToBottom"
                       NavigationStripMode="Dots"
@@ -270,7 +270,7 @@ Items transition only from bottom to top (unidirectional).
 **Complete Example:**
 
 **XAML:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -344,7 +344,7 @@ Strategic combinations create different user experiences.
 
 Classic image gallery layout.
 
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationDirection="Horizontal"
                       NavigationStripPosition="Bottom"
@@ -364,7 +364,7 @@ Classic image gallery layout.
 
 Stories or timeline navigation.
 
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding Stories}"
                       NavigationDirection="Vertical"
                       NavigationStripPosition="Right"
@@ -392,7 +392,7 @@ Stories or timeline navigation.
 
 Product showcase or portfolio.
 
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding Products}"
                       NavigationDirection="LeftToRight"
                       NavigationStripPosition="Bottom"
@@ -417,7 +417,7 @@ Product showcase or portfolio.
 
 News ticker or announcement rotator.
 
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding Announcements}"
                       NavigationDirection="TopToBottom"
                       NavigationStripPosition="Top"
@@ -446,7 +446,7 @@ News ticker or announcement rotator.
 
 ### Example 1: Full-Screen Horizontal Gallery
 
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding GalleryImages}"
                       NavigationDirection="Horizontal"
                       NavigationStripPosition="Bottom"
@@ -487,7 +487,7 @@ var rotator = new SfRotator
 
 ### Example 3: Auto-Advancing Diagonal Slideshow
 
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding SlideImages}"
                       NavigationDirection="LeftToRight"
                       NavigationStripPosition="Bottom"
@@ -558,7 +558,7 @@ NavigationStripMode = NavigationStripMode.Dots
 
 Use unidirectional navigation (LeftToRight, TopToBottom, etc.) when EnableAutoPlay is true:
 
-```xml
+```xaml
 <syncfusion:SfRotator NavigationDirection="LeftToRight"
                       EnableAutoPlay="True"
                       EnableLooping="True">

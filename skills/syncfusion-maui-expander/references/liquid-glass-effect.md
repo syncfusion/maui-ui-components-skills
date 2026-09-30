@@ -62,14 +62,14 @@ To apply the Liquid Glass Effect, wrap the SfExpander inside `SfGlassEffectView`
 
 ### Import Namespace
 
-```xml
+```xaml
 xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
 xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
 ```
 
 ### Basic Wrapper
 
-```xml
+```xaml
 <core:SfGlassEffectView EffectType="Regular"
                         CornerRadius="20">
     <syncfusion:SfExpander>
@@ -106,7 +106,7 @@ Set the `EnableLiquidGlassEffect` property to `true` on the SfExpander control.
 
 ### XAML
 
-```xml
+```xaml
 <core:SfGlassEffectView EffectType="Regular" CornerRadius="20">
     <syncfusion:SfExpander EnableLiquidGlassEffect="True"
                            AnimationDuration="200">
@@ -140,7 +140,7 @@ To achieve the glass-like effect, set the `Background` property to `Transparent`
 
 ### XAML
 
-```xml
+```xaml
 <syncfusion:SfExpander EnableLiquidGlassEffect="True"
                        Background="Transparent">
     <!-- Header and Content -->
@@ -163,7 +163,7 @@ Full example with gradient background and glass effect:
 
 ### XAML
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -432,7 +432,7 @@ public partial class MainPage : ContentPage
 
 Create an invoice layout with multiple glass-effect expanders:
 
-```xml
+```xaml
 <core:SfGlassEffectView EffectType="Regular" CornerRadius="20">
     <ScrollView>
         <StackLayout Spacing="8" Padding="12">
@@ -572,7 +572,7 @@ else
 
 Always provide fallback for unsupported platforms:
 
-```xml
+```xaml
 <syncfusion:SfExpander Background="{OnPlatform iOS=Transparent, 
                                                MacCatalyst=Transparent, 
                                                Default=#F5F5F5}"
@@ -587,7 +587,7 @@ Always provide fallback for unsupported platforms:
 
 Glass effect works best with gradient backgrounds:
 
-```xml
+```xaml
 <Grid.Background>
     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
         <GradientStop Color="#0F4C75" Offset="0.0"/>
@@ -607,7 +607,7 @@ Ensure text remains readable with glass effect:
 ### 4. Optimize Animation
 
 Use shorter animation durations for smoother experience:
-```xml
+```xaml
 <syncfusion:SfExpander AnimationDuration="200" AnimationEasing="SinOut">
 ```
 

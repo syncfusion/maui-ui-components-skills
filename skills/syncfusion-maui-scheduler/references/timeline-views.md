@@ -10,6 +10,7 @@
 - [Hide Non-Working Days](#hide-non-working-days-in-timeline-month)
 - [Flexible Working Hours](#flexible-working-hours)
 - [Special Time Regions](#special-time-regions)
+- [Display Special Time Regions in Timeline Month](#display-special-time-regions-in-timeline-month)
 - [Full Screen Scheduler](#full-screen-scheduler)
 - [Current Time Indicator](#current-time-indicator)
 - [Time Ruler Height](#time-ruler-height)
@@ -337,6 +338,32 @@ public class TimeRegionTemplateSelector : DataTemplateSelector
 ```
 
 **Note:** BindingContext is `SchedulerTimeRegion`.
+
+### Display Special Time Regions in Timeline Month
+
+Enable special time regions in Timeline Month view to visually represent unavailable, blocked, or highlighted date ranges using the `ShowMonthTimeRegions` property.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="TimelineMonth">
+    <scheduler:SfScheduler.TimelineView>
+        <scheduler:SchedulerTimelineView ShowMonthTimeRegions="True" />
+    </scheduler:SfScheduler.TimelineView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.TimelineMonth;
+scheduler.TimelineView.ShowMonthTimeRegions = true;
+this.Content = scheduler;
+```
+
+**Default:** `false`
+
+**Behavior:**
+- Applies to `TimelineMonth` view only
+- Renders configured `TimeRegions` as date-column spanning blocks
+- Supports recurring regions and template-based rendering
 
 ## Full Screen Scheduler
 

@@ -18,7 +18,7 @@ Selection allows users to interactively select data points or entire series in a
 
 To enable data point selection, create an instance of `DataPointSelectionBehavior` and assign it to the series `SelectionBehavior` property.
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -66,7 +66,7 @@ this.Content = chart;
 
 To enable series selection, create an instance of `SeriesSelectionBehavior` and assign it to the chart's `SelectionBehavior` property.
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.SelectionBehavior>
         <chart:SeriesSelectionBehavior SelectionBrush="#314A6E"/>
@@ -146,7 +146,7 @@ The `Type` property in `ChartSelectionBehavior` controls the selection mode usin
 
 ### Single Selection
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}"
                    XBindingPath="Category"
                    YBindingPath="Value">
@@ -175,7 +175,7 @@ ColumnSeries series = new ColumnSeries()
 
 ### Multiple Selection
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}"
                    XBindingPath="Category"
                    YBindingPath="Value">
@@ -200,7 +200,7 @@ The `SelectionBrush` property customizes the appearance of selected items.
 
 ### For Data Point Selection
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}"
                    XBindingPath="Category"
                    YBindingPath="Value">
@@ -224,7 +224,7 @@ ColumnSeries series = new ColumnSeries()
 
 ### For Series Selection
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.SelectionBehavior>
         <chart:SeriesSelectionBehavior SelectionBrush="LightBlue"/>
@@ -292,7 +292,7 @@ DataPointSelectionBehavior selection = new DataPointSelectionBehavior();
 selection.SelectedIndex = 2; // Select item at index 2
 ```
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}"
                    XBindingPath="Category"
                    YBindingPath="Value">
@@ -325,7 +325,7 @@ selection.ClearSelection();
 
 ### Data Point Selection Example
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -432,14 +432,14 @@ private void OnSeriesSelectionChanged(object sender, ChartSelectionChangedEventA
 ### Common Patterns
 
 **Dashboard Selection:**
-```xml
+```xaml
 <chart:ColumnSeries SelectionBehavior="SelectPoint"
                     SelectionBrush="#FF5722"
                     SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}"/>
 ```
 
 **Comparison Highlighting:**
-```xml
+```xaml
 <chart:LineSeries SelectionBehavior="SelectSeries"
                   SelectionBrush="#4CAF50"/>
 ```

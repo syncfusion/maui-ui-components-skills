@@ -28,7 +28,7 @@ The `SelectionChanged` event fires when the user selects a different segment or 
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl SelectionChanged="OnSelectionChanged">
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">
@@ -102,7 +102,7 @@ The `SegmentTapped` event fires every time a segment is tapped, regardless of wh
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl SegmentTapped="OnSegmentTapped">
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">

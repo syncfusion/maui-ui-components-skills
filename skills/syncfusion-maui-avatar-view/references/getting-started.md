@@ -53,7 +53,7 @@ dotnet add package Syncfusion.Maui.Core
 
 Check your `.csproj` file to confirm the package reference:
 
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.Core" Version="33.1.44" />
 </ItemGroup>

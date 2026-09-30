@@ -17,7 +17,7 @@ Range area charts display the area between two lines representing high and low v
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -90,7 +90,7 @@ public class ViewModel
 
 Display markers at both high and low data points:
 
-```xml
+```xaml
 <chart:RangeAreaSeries ItemsSource="{Binding TemperatureData}"
                        XBindingPath="Month"
                        High="MaxTemp"
@@ -113,7 +113,7 @@ RangeAreaSeries series = new RangeAreaSeries()
 
 Customize marker appearance for both high and low points:
 
-```xml
+```xaml
 <chart:RangeAreaSeries ItemsSource="{Binding TemperatureData}"
                        XBindingPath="Month"
                        High="MaxTemp"
@@ -158,7 +158,7 @@ Range column charts use vertical columns where the height represents the differe
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -228,7 +228,7 @@ public class ViewModel
 
 Control the appearance of range columns:
 
-```xml
+```xaml
 <chart:RangeColumnSeries ItemsSource="{Binding PriceData}"
                          XBindingPath="Product"
                          High="HighPrice"
@@ -255,7 +255,7 @@ RangeColumnSeries series = new RangeColumnSeries()
 
 ### Complete Customization Example
 
-```xml
+```xaml
 <chart:RangeColumnSeries ItemsSource="{Binding PriceData}"
                          XBindingPath="Product"
                          High="HighPrice"
@@ -290,7 +290,7 @@ Spline range area charts display smooth curves between high and low values, prov
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -336,7 +336,7 @@ The `Type` property controls the spline curve rendering:
 
 Natural spline creates smooth curves:
 
-```xml
+```xaml
 <chart:SplineRangeAreaSeries ItemsSource="{Binding WeatherData}"
                              XBindingPath="Day"
                              High="HighTemp"
@@ -348,7 +348,7 @@ Natural spline creates smooth curves:
 
 Monotonic spline ensures curves don't create false peaks or valleys:
 
-```xml
+```xaml
 <chart:SplineRangeAreaSeries ItemsSource="{Binding WeatherData}"
                              XBindingPath="Day"
                              High="HighTemp"
@@ -360,7 +360,7 @@ Monotonic spline ensures curves don't create false peaks or valleys:
 
 Cardinal spline provides controllable curve tension:
 
-```xml
+```xaml
 <chart:SplineRangeAreaSeries ItemsSource="{Binding WeatherData}"
                              XBindingPath="Day"
                              High="HighTemp"
@@ -372,7 +372,7 @@ Cardinal spline provides controllable curve tension:
 
 Clamped spline controls curve behavior at endpoints:
 
-```xml
+```xaml
 <chart:SplineRangeAreaSeries ItemsSource="{Binding WeatherData}"
                              XBindingPath="Day"
                              High="HighTemp"
@@ -397,7 +397,7 @@ chart.Series.Add(series);
 
 ### Enable Markers for Spline Range
 
-```xml
+```xaml
 <chart:SplineRangeAreaSeries ItemsSource="{Binding WeatherData}"
                              XBindingPath="Day"
                              High="HighTemp"
@@ -418,7 +418,7 @@ SplineRangeAreaSeries series = new SplineRangeAreaSeries()
 
 ### Marker Customization for Spline
 
-```xml
+```xaml
 <chart:SplineRangeAreaSeries ItemsSource="{Binding WeatherData}"
                              XBindingPath="Day"
                              High="HighTemp"
@@ -570,7 +570,7 @@ public class ViewModel : INotifyPropertyChanged
 
 **Complete Styled Range Area:**
 
-```xml
+```xaml
 <chart:RangeAreaSeries ItemsSource="{Binding Data}"
                        XBindingPath="Category"
                        High="HighValue"
@@ -592,7 +592,7 @@ public class ViewModel : INotifyPropertyChanged
 
 **Complete Styled Range Column:**
 
-```xml
+```xaml
 <chart:RangeColumnSeries ItemsSource="{Binding Data}"
                          XBindingPath="Category"
                          High="HighValue"

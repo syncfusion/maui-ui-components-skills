@@ -32,7 +32,7 @@ While DataForm auto-generates editors based on data types, you have full control
 
 Set `AutoGenerateItems` to `false` and manually define editors:
 
-```xml
+```xaml
 <dataForm:SfDataForm x:Name="dataForm" 
                      DataObject="{Binding ContactInfo}"
                      AutoGenerateItems="False">
@@ -69,7 +69,7 @@ this.Content = dataForm;
 
 ### With Groups
 
-```xml
+```xaml
 <dataForm:SfDataForm x:Name="dataForm" 
                      DataObject="{Binding ContactInfo}"
                      AutoGenerateItems="False">
@@ -97,7 +97,7 @@ this.Content = dataForm;
 
 Use `DataFormCustomItem` to embed any view:
 
-```xml
+```xaml
 <dataForm:SfDataForm x:Name="dataForm" 
                      DataObject="{Binding Profile}"
                      AutoGenerateItems="False">

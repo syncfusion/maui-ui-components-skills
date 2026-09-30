@@ -22,7 +22,7 @@ The determinate state is the default mode. Use it when you can calculate or esti
 ### Basic Determinate Progress
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75" />
 ```
 
@@ -86,7 +86,7 @@ The indeterminate state shows continuous animation without a specific progress v
 ### Basic Indeterminate Progress
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar IsIndeterminate="True" />
 ```
 
@@ -133,7 +133,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 
 ## Complete Example: Real-World Scenario
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="20">
     <Label x:Name="statusLabel" 
            Text="Ready to start" 

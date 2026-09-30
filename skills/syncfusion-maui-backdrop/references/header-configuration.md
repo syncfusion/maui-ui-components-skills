@@ -50,7 +50,7 @@ Replace the default icons with custom images using `OpenIconImageSource` and `Cl
 - Resource-based (`FromResource`)
 
 **XAML:**
-```xml
+```xaml
 <backdrop:SfBackdropPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -85,7 +85,7 @@ public partial class BackdropSamplePage : SfBackdropPage
 Display a text label alongside (or instead of) the toolbar icon using `OpenText` and `CloseText`.
 
 **XAML:**
-```xml
+```xaml
 <backdrop:SfBackdropPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

@@ -398,7 +398,7 @@ dotnet restore
 - Or add nuget.org to firewall whitelist
 
 **NuGet.config proxy example:**
-```xml
+```xaml
 <configuration>
   <config>
     <add key="http_proxy" value="http://proxy.address:port" />
@@ -420,7 +420,7 @@ dotnet restore
 
 Ensure all Syncfusion packages use same version:
 
-```xml
+```xaml
 <!-- In .csproj - all should match -->
 <PackageReference Include="Syncfusion.Maui.Core" Version="24.1.45" />
 <PackageReference Include="Syncfusion.Maui.DataGrid" Version="24.1.45" />

@@ -71,7 +71,7 @@ foreach (var key in Application.Current.Resources.Keys)
 ### Buttons and Actions
 
 #### SfButton
-```xml
+```xaml
 <!-- Backgrounds -->
 <Color x:Key="SfButtonNormalBackground">#2196F3</Color>
 <Color x:Key="SfButtonHoverBackground">#1976D2</Color>
@@ -96,7 +96,7 @@ foreach (var key in Application.Current.Resources.Keys)
 ### Input Controls
 
 #### SfAutocomplete
-```xml
+```xaml
 <!-- Normal State -->
 <Color x:Key="SfAutocompleteNormalBackground">White</Color>
 <Color x:Key="SfAutocompleteNormalTextColor">#212121</Color>
@@ -125,7 +125,7 @@ foreach (var key in Application.Current.Resources.Keys)
 ### Data Display
 
 #### SfDataGrid
-```xml
+```xaml
 <!-- Header -->
 <Color x:Key="SfDataGridHeaderBackgroundColor">#1976D2</Color>
 <Color x:Key="SfDataGridHeaderTextColor">White</Color>
@@ -150,7 +150,7 @@ foreach (var key in Application.Current.Resources.Keys)
 **Elements:** Header, Cells, Selection, Borders, Icons
 
 #### SfCalendar
-```xml
+```xaml
 <!-- Header -->
 <Color x:Key="SfCalendarHeaderBackgroundColor">#1976D2</Color>
 <Color x:Key="SfCalendarHeaderTextColor">White</Color>
@@ -195,7 +195,7 @@ foreach (var key in Application.Current.Resources.Keys)
 **Elements:** Header, Dates, Selection, Today, Weekends, Special Dates, Ranges
 
 #### SfCards
-```xml
+```xaml
 <Color x:Key="SfCardViewBorderColor">#E0E0E0</Color>
 <Color x:Key="SfCardViewIndicatorColor">#2196F3</Color>
 ```
@@ -203,7 +203,7 @@ foreach (var key in Application.Current.Resources.Keys)
 ### Navigation
 
 #### SfAccordion
-```xml
+```xaml
 <!-- Header Normal -->
 <Color x:Key="SfAccordionNormalHeaderBackground">White</Color>
 <Color x:Key="SfAccordionNormalHeaderIconColor">#757575</Color>
@@ -231,7 +231,7 @@ foreach (var key in Application.Current.Resources.Keys)
 ### Data Visualization
 
 #### SfChart
-```xml
+```xaml
 <!-- Series -->
 <Color x:Key="SfChartSeriesFillColor">#2196F3</Color>
 
@@ -253,7 +253,7 @@ foreach (var key in Application.Current.Resources.Keys)
 ```
 
 #### SfRadialGauge
-```xml
+```xaml
 <!-- Needle Pointer -->
 <Color x:Key="SfRadialGaugeNeedlePointerNeedleFillColor">#212121</Color>
 <Color x:Key="SfRadialGaugeNeedlePointerKnobFillColor">#2196F3</Color>
@@ -270,20 +270,20 @@ foreach (var key in Application.Current.Resources.Keys)
 ### Layout
 
 #### SfBadgeView
-```xml
+```xaml
 <Color x:Key="SfBadgeViewNormalBackground">#F44336</Color>
 <Color x:Key="SfBadgeViewNormalStroke">#F44336</Color>
 ```
 
 #### SfAvatarView
-```xml
+```xaml
 <Color x:Key="SfAvatarViewNormalBackground">#9E9E9E</Color>
 <Color x:Key="SfAvatarViewNormalStroke">#757575</Color>
 <Color x:Key="SfAvatarViewNormalInitialsColor">White</Color>
 ```
 
 #### SfBusyIndicator
-```xml
+```xaml
 <Color x:Key="SfBusyIndicatorNormalOverlayFill">#80000000</Color>
 <Color x:Key="SfBusyIndicatorNormalIndicatorColor">#2196F3</Color>
 <Color x:Key="SfBusyIndicatorNormalTextColor">#212121</Color>
@@ -294,7 +294,7 @@ foreach (var key in Application.Current.Resources.Keys)
 
 To create a fully custom theme, register theme names for each control:
 
-```xml
+```xaml
 <ResourceDictionary>
     <!-- Register custom theme -->
     <x:String x:Key="SfButtonTheme">MyCustomTheme</x:String>
@@ -325,7 +325,7 @@ To create a fully custom theme, register theme names for each control:
 
 ### Override Specific Keys
 
-```xml
+```xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>

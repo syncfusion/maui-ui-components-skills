@@ -31,14 +31,14 @@ using Syncfusion.Maui.Inputs;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <maskedEdit:SfMaskedEdit Mask="000-000-0000"
                          MaskType="Simple"
                          Value="{Binding PhoneNumber}"/>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <inputs:SfMaskedEntry Mask="000-000-0000"
                       MaskType="Simple"
                       Value="{Binding PhoneNumber}"/>
@@ -66,7 +66,7 @@ Most properties maintained with minor updates:
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <comboBox:SfComboBox DataSource="{Binding Countries}"
                      DisplayMemberPath="Name"
                      AllowFiltering="True"
@@ -74,7 +74,7 @@ Most properties maintained with minor updates:
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <inputs:SfComboBox ItemsSource="{Binding Countries}"
                    DisplayMemberPath="Name"
                    IsFilteringEnabled="True"
@@ -104,14 +104,14 @@ using Syncfusion.Maui.Inputs;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <autoComplete:SfAutoComplete DataSource="{Binding Cities}"
                              SuggestionMode="StartsWith"
                              MaximumSuggestion="5"/>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <inputs:SfAutocomplete ItemsSource="{Binding Cities}"
                        TextSearchMode="StartsWith"
                        MaxDropDownHeight="200"/>
@@ -139,14 +139,14 @@ using Syncfusion.Maui.Picker;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <picker:SfPicker ItemsSource="{Binding Colors}"
                  SelectedItem="{Binding SelectedColor}"
                  ColumnHeaderText="Select Color"/>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.Columns>
         <picker:PickerColumn
@@ -184,7 +184,7 @@ using Syncfusion.Maui.Inputs;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <numericTextBox:SfNumericTextBox Value="{Binding Price}"
                                  Minimum="0"
                                  Maximum="10000"
@@ -192,7 +192,7 @@ using Syncfusion.Maui.Inputs;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <inputs:SfNumericEntry Value="{Binding Price}"
                        Minimum="0"
                        Maximum="10000"
@@ -220,14 +220,14 @@ using Syncfusion.Maui.Core;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <textInputLayout:SfTextInputLayout Hint="Email">
     <Entry Text="{Binding Email}"/>
 </textInputLayout:SfTextInputLayout>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Email">
     <Entry Text="{Binding Email}"/>
 </inputLayout:SfTextInputLayout>

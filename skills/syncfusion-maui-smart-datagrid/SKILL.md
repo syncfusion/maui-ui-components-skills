@@ -38,7 +38,7 @@ The `SfSmartDataGrid` (Syncfusion .NET MAUI Smart DataGrid) is an advanced data 
 
 ### Getting Started
 📄 **Read:** [references/getting-started.md](references/getting-started.md)
-- Install Syncfusion.Maui.SmartComponents NuGet package
+- Install Syncfusion.Maui.SmartDataGrid NuGet package
 - Register handlers in MauiProgram.cs
 - Configure Azure AI service with credentials
 - Create basic Smart DataGrid with data binding

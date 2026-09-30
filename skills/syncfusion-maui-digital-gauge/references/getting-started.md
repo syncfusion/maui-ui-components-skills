@@ -60,7 +60,7 @@ dotnet add package Syncfusion.Maui.Gauges
 
 Check your project file (.csproj) contains the package reference:
 
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.Gauges" Version="*" />
 </ItemGroup>
@@ -122,7 +122,7 @@ namespace DigitalGaugeApp
 
 In your XAML file (e.g., `MainPage.xaml`), add the gauge namespace:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges"
@@ -135,7 +135,7 @@ In your XAML file (e.g., `MainPage.xaml`), add the gauge namespace:
 
 #### Add Basic DigitalGauge
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges"
@@ -186,7 +186,7 @@ The most important property of DigitalGauge is the `Text` property, which specif
 
 ### XAML with Text
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="12345" />
 ```
 
@@ -200,7 +200,7 @@ this.Content = digitalGauge;
 
 ### Complete XAML Example
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges"
@@ -358,7 +358,7 @@ Now that you have a basic DigitalGauge working, explore:
 
 ### Minimal XAML Setup
 
-```xml
+```xaml
 <ContentPage xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges">
     <gauge:SfDigitalGauge Text="HELLO" />
 </ContentPage>

@@ -1,12 +1,12 @@
 ---
 name: syncfusion-maui-chat
-description: Implements Syncfusion .NET MAUI Chat (SfChat) control in .NET MAUI applications. Use when working with chat interfaces, messaging UI, conversational interfaces, chat bubbles, or message threads. Covers message types (text, image, calendar, card), data binding, events, suggestions, typing indicators, time breaks, and swiping actions.
+description: Implements Syncfusion® .NET MAUI Chat (SfChat) control in .NET MAUI applications. Use when working with chat interfaces, messaging UI, conversational interfaces, chat bubbles, or message threads. Covers message types (text, image, calendar, card), data binding, events, suggestions, typing indicators, time breaks, and swiping actions.
 metadata:
   author: "Syncfusion Inc"
   version: "34.1.29"
 ---
 
-# Syncfusion .NET MAUI Chat (SfChat)
+# Syncfusion® .NET MAUI Chat (SfChat)
 
 The Syncfusion .NET MAUI Chat control (`SfChat`) delivers a contemporary conversational UI for building chatbot interfaces, customer support screens, and multi-user messaging experiences. It supports rich message types, real-time typing indicators, suggestions, load-more history, swiping, and deep styling customization.
 
@@ -19,6 +19,22 @@ The Syncfusion .NET MAUI Chat control (`SfChat`) delivers a contemporary convers
 - Customizing message appearance, shapes, delivery states, or themes
 - Adding swipe actions, time-break grouping, or attachment buttons
 - Localizing the chat UI or enabling accessibility features
+
+## Component Overview
+
+**SfChat** is a powerful, customizable conversational control that:
+- Shows incoming and outgoing messages in a chat layout
+- Supports text, avatars, timestamps, and custom message designs
+- Binds easily to data using ItemsSource and MVVM
+- Allows UI customization with templates and styles
+- Automatically aligns and groups user and other messages
+- Includes a built-in text input with send functionality
+- Supports interactions like sending and tapping messages
+- Can display rich content like images or custom layouts
+- Provides smooth scrolling and auto-scroll to new messages
+- Offers full control over appearance (colors, fonts, bubbles)
+
+---
 
 ## Documentation and Navigation Guide
 
@@ -118,152 +134,3 @@ The Syncfusion .NET MAUI Chat control (`SfChat`) delivers a contemporary convers
 - Hiding the message input view (`ShowMessageInputView`)
 
 ---
-
-## Quick Start
-
-**1. Install the NuGet package:**
-```bash
-dotnet add package Syncfusion.Maui.Chat
-```
-
-**2. Register the handler in `MauiProgram.cs`:**
-```csharp
-using Syncfusion.Maui.Core.Hosting;
-
-builder.ConfigureSyncfusionCore();
-```
-
-**3. Add `SfChat` in XAML:**
-```xml
-<ContentPage xmlns:sfChat="clr-namespace:Syncfusion.Maui.Chat;assembly=Syncfusion.Maui.Chat"
-             xmlns:local="clr-namespace:MyApp">
-    <ContentPage.BindingContext>
-        <local:ChatViewModel/>
-    </ContentPage.BindingContext>
-    <sfChat:SfChat Messages="{Binding Messages}"
-                   CurrentUser="{Binding CurrentUser}" />
-</ContentPage>
-```
-
-**4. Define the ViewModel:**
-```csharp
-using Syncfusion.Maui.Chat;
-
-public class ChatViewModel : INotifyPropertyChanged
-{
-    public ObservableCollection<object> Messages { get; set; }
-    public Author CurrentUser { get; set; }
-
-    public ChatViewModel()
-    {
-        CurrentUser = new Author { Name = "Nancy" };
-        Messages = new ObservableCollection<object>
-        {
-            new TextMessage
-            {
-                Author = CurrentUser,
-                Text = "Hello! How can I help you today?"
-            },
-            new TextMessage
-            {
-                Author = new Author { Name = "Bot", Avatar = "bot.png" },
-                Text = "Hi Nancy! I am here to assist you."
-            }
-        };
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-}
-```
-
----
-
-## Common Patterns
-
-### Sending a message and responding
-```csharp
-// In ViewModel
-public ICommand SendMessageCommand => new Command<object>(OnSendMessage);
-
-private void OnSendMessage(object args)
-{
-    var e = args as SendMessageEventArgs;
-    
-    // ⚠️ IMPORTANT: By default, SfChat automatically adds the user's message to the 
-    // Messages collection. Do NOT manually add it unless you set e.Handled = true
-    
-    // Add bot response after user sends message
-    MainThread.BeginInvokeOnMainThread(async () =>
-    {
-        await Task.Delay(500); // Simulate processing
-        Messages.Add(new TextMessage
-        {
-            Author = new Author { Name = "Bot", Avatar = "bot.png" },
-            Text = $"You said: {e.Message.Text}"
-        });
-    });
-}
-```
-
-**If you need full control over message addition, set `Handled = true`:**
-```csharp
-private void OnSendMessage(object args)
-{
-    var e = args as SendMessageEventArgs;
-    e.Handled = true; // Prevent SfChat from auto-adding the message
-    
-    // Now you must manually add the message
-    if (e.Message is TextMessage textMessage)
-    {
-        Messages.Add(textMessage); // You add it
-        
-        // Then handle response...
-    }
-}
-```
-
-### Adding quick reply suggestions
-```csharp
-Messages.Add(new TextMessage
-{
-    Author = new Author { Name = "Bot" },
-    Text = "How would you like to proceed?",
-    Suggestions = new ObservableCollection<ISuggestion>
-    {
-        new Suggestion { Text = "Option A" },
-        new Suggestion { Text = "Option B" }
-    }
-});
-```
-
-### Showing a typing indicator
-```csharp
-sfChat.ShowTypingIndicator = true;
-sfChat.TypingIndicator = new TypingIndicator
-{
-    Authors = new ObservableCollection<Author>
-    {
-        new Author { Name = "Bot", Avatar = "bot.png" }
-    },
-    Text = "Bot is typing..."
-};
-```
-
----
-
-## Key Properties
-
-| Property | Type | Purpose |
-|---|---|---|
-| `Messages` | `ObservableCollection<object>` | Collection of all messages |
-| `CurrentUser` | `Author` | Identifies the local user (outgoing messages) |
-| `ShowTypingIndicator` | `bool` | Toggle typing indicator |
-| `TypingIndicator` | `TypingIndicator` | Set who is typing |
-| `ShowDeliveryState` | `bool` | Show sent/delivered/read/failed icons |
-| `AllowPinning` | `bool` | Enable message pinning |
-| `MessageShape` | `MessageShape` | Message bubble shape |
-| `MessageSpacing` | `double` | Vertical gap between messages |
-| `ShowMessageInputView` | `bool` | Show/hide the message editor |
-| `LoadMoreBehavior` | `LoadMoreOption` | Enable load-more on scroll |
-| `AllowMultilineInput` | `bool` | Allow multi-line message entry |
-| `ShowKeyboardAlways` | `bool` | Keep keyboard open after send |

@@ -84,7 +84,7 @@ namespace MyRatingApp
 ### Step 4: Add Namespace
 
 **In XAML:**
-```xml
+```xaml
 xmlns:rating="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
 ```
 
@@ -96,7 +96,7 @@ using Syncfusion.Maui.Inputs;
 ### Step 5: Add SfRating Control
 
 **XAML Example:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:rating="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
@@ -135,7 +135,7 @@ The `ItemCount` property determines how many rating items are displayed.
 > **Default:** 5 items
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating ItemCount="5" />
 ```
 
@@ -157,7 +157,7 @@ The `Value` property sets the currently selected rating value.
 > **Default:** 0 (no rating)
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating Value="3" />
 ```
 
@@ -168,7 +168,7 @@ rating.Value = 3;
 ```
 
 **Example with ItemCount and Value:**
-```xml
+```xaml
 <!-- Display 5 stars with 3 selected -->
 <rating:SfRating Value="3" ItemCount="5" />
 ```
@@ -180,7 +180,7 @@ The `Precision` property controls rating accuracy levels.
 > **Default:** `Standard` (full item selection)
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating Precision="Standard" />
 ```
 
@@ -200,7 +200,7 @@ rating.Precision = Precision.Standard;
 Here's a complete working example combining all basic features:
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:rating="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"

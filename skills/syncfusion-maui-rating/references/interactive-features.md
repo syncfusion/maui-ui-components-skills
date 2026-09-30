@@ -21,7 +21,7 @@ The `IsReadOnly` property determines whether users can interact with the rating 
 Users can click/tap rating items to change the value.
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating x:Name="rating" 
                  Value="3"
                  IsReadOnly="False" />
@@ -45,7 +45,7 @@ rating.IsReadOnly = false; // Interactive, users can change rating
 The rating control becomes display-only; users cannot change the value.
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating x:Name="rating" 
                  Value="4.5"
                  IsReadOnly="True" />
@@ -85,7 +85,7 @@ rating.IsReadOnly = true; // Display-only, users cannot change rating
 
 **Example 1: Display Average Rating (Read-Only)**
 
-```xml
+```xaml
 <HorizontalStackLayout Spacing="10">
     <rating:SfRating Value="4.73"
                      ItemCount="5"
@@ -102,7 +102,7 @@ rating.IsReadOnly = true; // Display-only, users cannot change rating
 
 **Example 2: User Rating Input (Interactive)**
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="10">
     <Label Text="Rate this product:" 
            FontSize="16" 
@@ -168,7 +168,7 @@ public class ValueChangedEventArgs : EventArgs
 ### Basic Event Handling
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating x:Name="rating" 
                  Value="0"
                  ValueChanged="OnRatingValueChanged" />
@@ -208,7 +208,7 @@ rating.ValueChanged += (sender, e) =>
 
 **Example 1: Display Current Value**
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="15">
     <Label Text="Rate this item:" FontSize="18" />
     
@@ -312,7 +312,7 @@ private Color GetColorForRating(double rating)
 ### Interaction States
 
 **Normal (IsReadOnly = False):**
-```xml
+```xaml
 <rating:SfRating Value="3" />
 ```
 - Interactive
@@ -321,7 +321,7 @@ private Color GetColorForRating(double rating)
 - Fires ValueChanged event
 
 **Read-Only (IsReadOnly = True):**
-```xml
+```xaml
 <rating:SfRating Value="3" IsReadOnly="True" />
 ```
 - Non-interactive
@@ -330,7 +330,7 @@ private Color GetColorForRating(double rating)
 - Does not fire ValueChanged event
 
 **Disabled (IsEnabled = False):**
-```xml
+```xaml
 <rating:SfRating Value="3" IsEnabled="False" />
 ```
 - Completely disabled
@@ -503,14 +503,14 @@ public class ProductViewModel : INotifyPropertyChanged
 ```
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating Value="{Binding UserRating, Mode=TwoWay}" 
                  ItemCount="5" />
 ```
 
 ### Combining Events and Binding
 
-```xml
+```xaml
 <rating:SfRating Value="{Binding UserRating, Mode=TwoWay}"
                  ValueChanged="OnRatingChanged"
                  ItemCount="5" />
@@ -601,7 +601,7 @@ private void LoadProductRating()
 
 ## Complete Example: Product Rating Form
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:rating="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
@@ -734,7 +734,7 @@ public partial class ProductRatingPage : ContentPage
 3. **Focus Indicators**: Provide clear visual focus states
 4. **Announcements**: Announce value changes to screen readers
 
-```xml
+```xaml
 <rating:SfRating AutomationId="ProductRating"
                  SemanticProperties.Description="Product rating, 4 out of 5 stars"
                  ValueChanged="OnRatingChanged" />

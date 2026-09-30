@@ -23,35 +23,35 @@ Customize the start and end angles to create semi-circles, arcs, or custom circu
 ### Common Angle Patterns
 
 #### Full Circle (Default)
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75" 
                                    StartAngle="0" 
                                    EndAngle="360" />
 ```
 
 #### Semi-Circle (Bottom Half)
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75" 
                                    StartAngle="180" 
                                    EndAngle="360" />
 ```
 
 #### Semi-Circle (Top Half)
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75" 
                                    StartAngle="0" 
                                    EndAngle="180" />
 ```
 
 #### Three-Quarter Circle
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75" 
                                    StartAngle="90" 
                                    EndAngle="360" />
 ```
 
 #### Arc (Quarter Circle)
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75" 
                                    StartAngle="0" 
                                    EndAngle="90" />
@@ -82,7 +82,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 ### Practical Angle Examples
 
 **Dashboard Card (Semi-Circle):**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="68" 
                                    StartAngle="180" 
                                    EndAngle="360"
@@ -93,7 +93,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 ```
 
 **Speedometer Style:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75" 
                                    StartAngle="135" 
                                    EndAngle="405"
@@ -117,7 +117,7 @@ The `GradientStops` property holds a collection of `ProgressGradientStop` object
 
 Define distinct color blocks for different ranges.
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="100">
     <progressBar:SfCircularProgressBar.GradientStops>
         <!-- Range 1: 0-25% (Teal) -->
@@ -160,7 +160,7 @@ circularProgressBar.GradientStops.Add(new ProgressGradientStop { Color = Color.F
 
 Create smooth color transitions between ranges.
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="100">
     <progressBar:SfCircularProgressBar.GradientStops>
         <progressBar:ProgressGradientStop Color="#00bdaf" Value="0"/>
@@ -177,7 +177,7 @@ Create smooth color transitions between ranges.
 
 **Example: Low/Medium/High Indicators**
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="85">
     <progressBar:SfCircularProgressBar.GradientStops>
         <!-- Red: 0-33% (Low) -->
@@ -215,7 +215,7 @@ Control the size and thickness of progress and track indicators.
 #### Pixel Mode
 Exact pixel values for thickness.
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    ThicknessUnit="Pixel"
                                    ProgressThickness="20"
@@ -225,7 +225,7 @@ Exact pixel values for thickness.
 #### Factor Mode
 Percentage of outer radius (0-1).
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    ThicknessUnit="Factor"
                                    ProgressThickness="0.1"
@@ -239,7 +239,7 @@ Percentage of outer radius (0-1).
 
 ### Complete Thickness Example
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    TrackRadiusFactor="0.8" 
                                    ProgressRadiusFactor="0.75"
@@ -264,7 +264,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 ### Thin vs Thick Progress Bars
 
 **Thin Progress Bar (Factor 0.03):**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    ThicknessUnit="Factor"
                                    ProgressThickness="0.03"
@@ -272,7 +272,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 ```
 
 **Thick Progress Bar (Factor 0.15):**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    ThicknessUnit="Factor"
                                    ProgressThickness="0.15"
@@ -280,7 +280,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 ```
 
 **Fixed Pixel Thickness:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    ThicknessUnit="Pixel"
                                    ProgressThickness="25"
@@ -305,7 +305,7 @@ Customize the corner shape of progress and track indicators.
 
 ### BothFlat (Default)
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    ProgressCornerStyle="BothFlat"
                                    TrackCornerStyle="BothFlat" />
@@ -313,7 +313,7 @@ Customize the corner shape of progress and track indicators.
 
 ### BothCurve (Rounded)
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="50"
                                    TrackCornerStyle="BothCurve"
                                    ProgressCornerStyle="BothCurve"
@@ -335,7 +335,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 
 ### Mixed Corner Styles
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    ProgressCornerStyle="StartCurve"
                                    TrackCornerStyle="BothFlat" />
@@ -343,7 +343,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 
 ### Modern Rounded Design
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="65"
                                    ProgressCornerStyle="BothCurve"
                                    TrackCornerStyle="BothCurve"
@@ -364,7 +364,7 @@ Simple color customization for progress and track.
 
 ### Basic Color Customization
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75"
                                    TrackFill="#3351483a" 
                                    ProgressFill="#FF51483a" />
@@ -388,7 +388,7 @@ Use alpha channel for transparency (first 2 hex digits).
 - **#33** = 20% opacity (~51)
 - **#80** = 50% opacity (128)
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="60"
                                    TrackFill="#33c15244"   <!-- 20% opacity -->
                                    ProgressFill="#FFc15244" /> <!-- Fully opaque -->
@@ -409,7 +409,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 
 ### Example 1: Modern Dashboard Card
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="73"
                                    StartAngle="180"
                                    EndAngle="360"
@@ -439,7 +439,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 
 ### Example 2: Health Monitor (Gradient Colors)
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="82">
     <progressBar:SfCircularProgressBar.GradientStops>
         <progressBar:ProgressGradientStop Color="#FF0000" Value="0"/>   <!-- Red (Critical) -->
@@ -453,7 +453,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 
 ### Example 3: Thick Arc with Custom Angles
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="68"
                                    StartAngle="135"
                                    EndAngle="405"
@@ -468,7 +468,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 
 ### Example 4: Minimalist Thin Ring
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="45"
                                    ThicknessUnit="Factor"
                                    ProgressThickness="0.02"
@@ -481,7 +481,7 @@ SfCircularProgressBar circularProgressBar = new SfCircularProgressBar
 
 ### Example 5: Multi-Color Segmented Progress
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="100"
                                    SegmentCount="4"
                                    SegmentGapWidth="8"

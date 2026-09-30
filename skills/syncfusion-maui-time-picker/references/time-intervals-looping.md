@@ -40,7 +40,7 @@ public int HourInterval { get; set; }
 ### Basic Hour Interval Example
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      HourInterval="2"
                      Format="HH_mm" />
@@ -61,7 +61,7 @@ this.Content = timePicker;
 
 ### Example: 3-Hour Intervals
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="shiftPicker"
                      HourInterval="3"
                      Format="HH_mm"
@@ -95,7 +95,7 @@ public int MinuteInterval { get; set; }
 ### Basic Minute Interval Example
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      MinuteInterval="15"
                      Format="hh_mm_tt" />
@@ -117,32 +117,32 @@ this.Content = timePicker;
 ### Common Minute Intervals
 
 **5-Minute Intervals:**
-```xml
+```xaml
 <picker:SfTimePicker MinuteInterval="5" />
 <!-- Shows: 00, 05, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55 -->
 ```
 
 **10-Minute Intervals:**
-```xml
+```xaml
 <picker:SfTimePicker MinuteInterval="10" />
 <!-- Shows: 00, 10, 20, 30, 40, 50 -->
 ```
 
 **15-Minute Intervals:**
-```xml
+```xaml
 <picker:SfTimePicker MinuteInterval="15" />
 <!-- Shows: 00, 15, 30, 45 -->
 ```
 
 **30-Minute Intervals:**
-```xml
+```xaml
 <picker:SfTimePicker MinuteInterval="30" />
 <!-- Shows: 00, 30 -->
 ```
 
 ### Example: Appointment Booking (15-minute slots)
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="appointmentPicker"
                      MinuteInterval="15"
                      Format="hh_mm_tt"
@@ -182,7 +182,7 @@ public int SecondInterval { get; set; }
 ### Basic Second Interval Example
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      SecondInterval="10"
                      Format="HH_mm_ss" />
@@ -203,7 +203,7 @@ this.Content = timePicker;
 
 ### Example: Timer with 15-second Intervals
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timerPicker"
                      SecondInterval="15"
                      Format="mm_ss"
@@ -238,7 +238,7 @@ public int MilliSecondInterval { get; set; }
 ### Basic MilliSecond Interval Example
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      MilliSecondInterval="100"
                      Format="HH_mm_ss_fff" />
@@ -259,7 +259,7 @@ this.Content = timePicker;
 
 ### Example: Stopwatch with 100ms Precision
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="stopwatchPicker"
                      MilliSecondInterval="100"
                      Format="mm_ss_fff"
@@ -308,7 +308,7 @@ public bool EnableLooping { get; set; }
 ### Basic Looping Example
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      EnableLooping="True"
                      Format="hh_mm_tt" />
@@ -340,7 +340,7 @@ this.Content = timePicker;
 
 ### Example: Alarm Clock with Looping
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="alarmPicker"
                      EnableLooping="True"
                      MinuteInterval="5"
@@ -367,7 +367,7 @@ You can combine multiple intervals for precise time control.
 
 ### Example 1: Hour + Minute Intervals
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="meetingPicker"
                      HourInterval="1"
                      MinuteInterval="30"
@@ -389,7 +389,7 @@ You can combine multiple intervals for precise time control.
 
 ### Example 2: Minute + Second Intervals for Timer
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="workoutTimer"
                      MinuteInterval="5"
                      SecondInterval="30"
@@ -433,7 +433,7 @@ this.Content = detailedPicker;
 
 ### Example 1: Restaurant Reservation (30-minute slots, business hours)
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="reservationPicker"
                      MinuteInterval="30"
                      Format="hh_mm_tt"
@@ -454,7 +454,7 @@ this.Content = detailedPicker;
 
 ### Example 2: Parking Duration (15-minute increments)
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="parkingDuration"
                      HourInterval="1"
                      MinuteInterval="15"
@@ -472,7 +472,7 @@ this.Content = detailedPicker;
 
 ### Example 3: Flight Time (5-minute intervals)
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="flightTimePicker"
                      MinuteInterval="5"
                      Format="HH_mm"
@@ -488,7 +488,7 @@ this.Content = detailedPicker;
 
 ### Example 4: Medication Schedule (Every 4 hours)
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="medicationPicker"
                      HourInterval="4"
                      Format="hh_mm_tt"
@@ -532,7 +532,7 @@ this.Content = restTimer;
 
 Ensure the format displays the interval component:
 
-```xml
+```xaml
 <!-- Good: Minute interval with minute format -->
 <picker:SfTimePicker MinuteInterval="15" Format="hh_mm_tt" />
 
@@ -546,17 +546,17 @@ Ensure the format displays the interval component:
 ### 2. Choose Appropriate Intervals
 
 **For appointments:** 15 or 30-minute intervals
-```xml
+```xaml
 <picker:SfTimePicker MinuteInterval="15" />
 ```
 
 **For general time selection:** 5-minute intervals
-```xml
+```xaml
 <picker:SfTimePicker MinuteInterval="5" />
 ```
 
 **For duration/timers:** Minute + second intervals
-```xml
+```xaml
 <picker:SfTimePicker MinuteInterval="1" SecondInterval="10" />
 ```
 
@@ -564,13 +564,13 @@ Ensure the format displays the interval component:
 
 Enable looping for clock-style time selection:
 
-```xml
+```xaml
 <picker:SfTimePicker EnableLooping="True" Format="hh_mm_tt" />
 ```
 
 Disable looping when there are clear boundaries:
 
-```xml
+```xaml
 <picker:SfTimePicker EnableLooping="False" 
                      MinimumTime="09:00:00" 
                      MaximumTime="17:00:00" />
@@ -596,7 +596,7 @@ SfTimePicker officePicker = new SfTimePicker()
 
 Large intervals reduce scrolling but may miss desired times:
 
-```xml
+```xaml
 <!-- Too coarse for appointments -->
 <picker:SfTimePicker MinuteInterval="60" />
 

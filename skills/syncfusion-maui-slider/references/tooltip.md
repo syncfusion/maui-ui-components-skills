@@ -19,7 +19,7 @@ The tooltip displays the current slider value when the user interacts with the t
 Create a `SliderTooltip` instance and assign it to the `Tooltip` property:
 
 **XAML:**
-```xml
+```xaml
 <sliders:SfSlider>
     <sliders:SfSlider.Tooltip>
         <sliders:SliderTooltip />
@@ -41,7 +41,7 @@ SfSlider slider = new SfSlider
 
 By default, the tooltip displays the slider value formatted according to the slider's `NumberFormat` property (or "0.##" if not specified).
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="50"
@@ -60,7 +60,7 @@ The `ShowAlways` property controls whether the tooltip is always visible or only
 
 ### Always Visible Tooltip
 
-```xml
+```xaml
 <sliders:SfSlider>
     <sliders:SfSlider.Tooltip>
         <sliders:SliderTooltip ShowAlways="True" />
@@ -82,7 +82,7 @@ SfSlider slider = new SfSlider
 
 ### Interactive Tooltip (Default)
 
-```xml
+```xaml
 <sliders:SfSlider>
     <sliders:SfSlider.Tooltip>
         <sliders:SliderTooltip ShowAlways="False" />
@@ -113,7 +113,7 @@ The `NumberFormat` property on `SliderTooltip` allows independent formatting of 
 
 ### Basic Number Formatting
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="50">
@@ -134,7 +134,7 @@ slider.Tooltip = new SliderTooltip
 
 ### Currency Format
 
-```xml
+```xaml
 <sliders:SfSlider.Tooltip>
     <sliders:SliderTooltip NumberFormat="$#,##0.00" />
 </sliders:SfSlider.Tooltip>
@@ -144,7 +144,7 @@ slider.Tooltip = new SliderTooltip
 
 ### Percentage Format
 
-```xml
+```xaml
 <sliders:SfSlider.Tooltip>
     <sliders:SliderTooltip NumberFormat="0'%'" />
 </sliders:SfSlider.Tooltip>
@@ -155,19 +155,19 @@ slider.Tooltip = new SliderTooltip
 ### Custom Unit Formats
 
 **Temperature:**
-```xml
+```xaml
 <sliders:SliderTooltip NumberFormat="0.0'°C'" />
 ```
 Result: "22.5°C"
 
 **Weight:**
-```xml
+```xaml
 <sliders:SliderTooltip NumberFormat="0.0'kg'" />
 ```
 Result: "75.5kg"
 
 **Distance:**
-```xml
+```xaml
 <sliders:SliderTooltip NumberFormat="0.##'km'" />
 ```
 Result: "12.5km"
@@ -176,7 +176,7 @@ Result: "12.5km"
 
 Slider labels and tooltip can have different formats:
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="50"
@@ -200,7 +200,7 @@ The `TooltipLabelCreated` event provides full control over tooltip text and styl
 ### Event Setup
 
 **XAML:**
-```xml
+```xaml
 <sliders:SfSlider>
     <sliders:SfSlider.Tooltip>
         <sliders:SliderTooltip TooltipLabelCreated="OnTooltipLabelCreated" />
@@ -383,7 +383,7 @@ private void OnTooltipLabelCreated(object sender, SliderTooltipLabelCreatedEvent
 
 ### Example 1: Always-Visible Tooltip with Currency
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="10">
     <Label Text="Price Selector" FontSize="16" />
     
@@ -403,7 +403,7 @@ private void OnTooltipLabelCreated(object sender, SliderTooltipLabelCreatedEvent
 ### Example 2: Temperature Slider with Custom Tooltip
 
 **XAML:**
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="22"
@@ -430,7 +430,7 @@ private void OnTemperatureTooltipCreated(object sender, SliderTooltipLabelCreate
 
 ### Example 3: Volume Slider with Percentage
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="75"
@@ -447,7 +447,7 @@ private void OnTemperatureTooltipCreated(object sender, SliderTooltipLabelCreate
 ### Example 4: Time Slider (Media Player)
 
 **XAML:**
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="300"
                   Value="120"
@@ -501,7 +501,7 @@ private void OnTimeTooltipCreated(object sender, SliderTooltipLabelCreatedEventA
 
 **Cause**: Tooltip not instantiated  
 **Solution**: Create and assign SliderTooltip:
-```xml
+```xaml
 <sliders:SfSlider.Tooltip>
     <sliders:SliderTooltip />
 </sliders:SfSlider.Tooltip>
@@ -511,7 +511,7 @@ private void OnTimeTooltipCreated(object sender, SliderTooltipLabelCreatedEventA
 
 **Cause**: NumberFormat syntax error or incorrect format string  
 **Solution**: Use valid .NET numeric format strings. Quote literals:
-```xml
+```xaml
 <sliders:SliderTooltip NumberFormat="0'%'" />  <!-- Correct -->
 <sliders:SliderTooltip NumberFormat="0%" />    <!-- Wrong -->
 ```
@@ -520,7 +520,7 @@ private void OnTimeTooltipCreated(object sender, SliderTooltipLabelCreatedEventA
 
 **Cause**: Event not wired correctly or Tooltip is null  
 **Solution**: Ensure tooltip exists and event is attached:
-```xml
+```xaml
 <sliders:SfSlider.Tooltip>
     <sliders:SliderTooltip TooltipLabelCreated="OnTooltipLabelCreated" />
 </sliders:SfSlider.Tooltip>
@@ -530,7 +530,7 @@ private void OnTimeTooltipCreated(object sender, SliderTooltipLabelCreatedEventA
 
 **Cause**: ShowAlways is True  
 **Solution**: Set ShowAlways to False:
-```xml
+```xaml
 <sliders:SliderTooltip ShowAlways="False" />
 ```
 

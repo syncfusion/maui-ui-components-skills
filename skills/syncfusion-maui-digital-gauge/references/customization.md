@@ -35,7 +35,7 @@ Sets the height of each character in pixels.
 **Default Value:** 60
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="12345" 
                       CharacterHeight="100" />
 ```
@@ -54,7 +54,7 @@ Sets the width of each character in pixels.
 **Default Value:** 40
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="12345" 
                       CharacterWidth="70" />
 ```
@@ -66,7 +66,7 @@ digitalGauge.CharacterWidth = 70;
 
 ### Combined Height and Width
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="SYNCFUSION" 
                       CharacterHeight="90" 
                       CharacterWidth="70"
@@ -153,7 +153,7 @@ Control the space between characters using the `CharacterSpacing` property.
 ### Basic Spacing
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="01-01-24" 
                       CharacterType="EightCrossEightDotMatrix"
                       CharacterSpacing="10" />
@@ -178,7 +178,7 @@ digitalGauge.CharacterType = DigitalGaugeCharacterType.EightCrossEightDotMatrix;
 
 ### Complete Spacing Example
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="20">
     
     <Label Text="No Spacing (0)" />
@@ -260,7 +260,7 @@ The `CharacterStroke` property controls the color of active (lit) segments.
 ### Basic Color Setting
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="12345" 
                       CharacterStroke="Purple" />
 ```
@@ -272,7 +272,7 @@ digitalGauge.CharacterStroke = Colors.Purple;
 
 ### Named Colors
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="15">
     
     <!-- Red display -->
@@ -308,7 +308,7 @@ digitalGauge.CharacterStroke = Colors.Purple;
 
 ### Hex Colors
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="CUSTOM" 
                       CharacterStroke="#FF6B35"
                       CharacterType="SixteenSegment" />
@@ -399,7 +399,7 @@ The `StrokeWidth` property controls the thickness of character segments.
 ### Basic Width Setting
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="12345" 
                       StrokeWidth="3" />
 ```
@@ -420,7 +420,7 @@ digitalGauge.StrokeWidth = 3;
 
 ### Stroke Width Examples
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="20">
     
     <Label Text="Thin (Width: 1)" />
@@ -449,7 +449,7 @@ digitalGauge.StrokeWidth = 3;
 
 ### Combined Stroke Color and Width
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="12:30:45" 
                       CharacterType="SevenSegment"
                       CharacterHeight="120"
@@ -468,7 +468,7 @@ When a segment is not active (disabled), you can control its appearance using `D
 Sets the color of inactive segments.
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="12345" 
                       DisabledSegmentStroke="LightSkyBlue" />
 ```
@@ -487,7 +487,7 @@ Sets the opacity of disabled segments (0.0 to 1.0).
 **Default Value:** Varies by platform
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="12345" 
                       DisabledSegmentAlpha="0.1" />
 ```
@@ -499,7 +499,7 @@ digitalGauge.DisabledSegmentAlpha = 0.1;
 
 ### Combined Disabled Segment Styling
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="12345" 
                       CharacterType="SevenSegment"
                       CharacterHeight="100"
@@ -515,7 +515,7 @@ digitalGauge.DisabledSegmentAlpha = 0.1;
 
 Create an authentic LED display appearance:
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="88:88:88" 
                       CharacterType="SevenSegment"
                       CharacterHeight="120"
@@ -529,7 +529,7 @@ Create an authentic LED display appearance:
 
 ### Disabled Segment Visibility Examples
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="20">
     
     <Label Text="Hidden Disabled Segments (Alpha: 0)" />
@@ -565,7 +565,7 @@ Set the background color of the entire gauge using the standard `BackgroundColor
 ### Basic Background
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="12345" 
                       BackgroundColor="Blue" />
 ```
@@ -577,7 +577,7 @@ digitalGauge.BackgroundColor = Colors.Blue;
 
 ### Classic Dark Background
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="12:30:45" 
                       CharacterType="SevenSegment"
                       CharacterHeight="100"
@@ -640,7 +640,7 @@ public class ThemedGaugePage : ContentPage
 
 ### Classic Digital Clock
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="12:30:45" 
                       CharacterType="SevenSegment"
                       CharacterHeight="120"
@@ -655,7 +655,7 @@ public class ThemedGaugePage : ContentPage
 
 ### Modern Status Display
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="ONLINE" 
                       CharacterType="SixteenSegment"
                       CharacterHeight="90"
@@ -670,7 +670,7 @@ public class ThemedGaugePage : ContentPage
 
 ### Retro Calculator Display
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="000000" 
                       CharacterType="SevenSegment"
                       CharacterHeight="80"
@@ -685,7 +685,7 @@ public class ThemedGaugePage : ContentPage
 
 ### Industrial Panel Display
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="TEMP: 72.5" 
                       CharacterType="EightCrossEightDotMatrix"
                       CharacterHeight="70"

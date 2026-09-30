@@ -36,7 +36,7 @@ Control whether users can zoom using the `AllowZoom` property:
 
 ### XAML
 
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg" AllowZoom="True" />
 ```
 
@@ -64,7 +64,7 @@ Programmatically control the zoom level using the `ZoomLevel` property:
 
 ### Basic Usage
 
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg" ZoomLevel="2" />
 ```
 
@@ -85,7 +85,7 @@ this.Content = imageEditor;
 
 ### Dynamic Zoom Control
 
-```xml
+```xaml
 <Grid RowDefinitions="0.8*, 0.1*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     
@@ -137,7 +137,7 @@ Define the maximum allowed zoom level using the `MaximumZoomLevel` property:
 
 ### XAML
 
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg" 
                           ZoomLevel="2"
                           MaximumZoomLevel="5" />
@@ -229,7 +229,7 @@ Control the stacking order of annotations using z-ordering methods:
 
 Move selected annotation to the front of all annotations:
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Bring To Front" Clicked="OnBringToFrontClicked" />
@@ -247,7 +247,7 @@ private void OnBringToFrontClicked(object sender, EventArgs e)
 
 Move selected annotation to the back of all annotations:
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Send To Back" Clicked="OnSendToBackClicked" />
@@ -265,7 +265,7 @@ private void OnSendToBackClicked(object sender, EventArgs e)
 
 Move selected annotation one step forward:
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Bring Forward" Clicked="OnBringForwardClicked" />
@@ -283,7 +283,7 @@ private void OnBringForwardClicked(object sender, EventArgs e)
 
 Move selected annotation one step backward:
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Send Backward" Clicked="OnSendBackwardClicked" />
@@ -403,7 +403,7 @@ private void OrganizeAnnotationLayers()
 
 ### Custom Zoom Controls
 
-```xml
+```xaml
 <Grid RowDefinitions="*, Auto, Auto">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     

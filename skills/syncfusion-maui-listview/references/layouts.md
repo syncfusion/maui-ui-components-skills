@@ -16,7 +16,7 @@ LinearLayout is the default layout that arranges items linearly in a single colu
 
 ### Vertical Linear Layout
 
-```xml
+```xaml
 <syncfusion:SfListView x:Name="listView"
                        ItemsSource="{Binding CategoryInfo}"
                        ItemSize="100">
@@ -34,7 +34,7 @@ listView.ItemsLayout = new LinearLayout();
 
 ### Horizontal Linear Layout
 
-```xml
+```xaml
 <syncfusion:SfListView Orientation="Horizontal" ItemSize="150">
     <syncfusion:SfListView.ItemsLayout>
         <syncfusion:LinearLayout />
@@ -59,7 +59,7 @@ GridLayout arranges items in a grid with a predefined number of columns (in vert
 
 ### Basic Grid Layout
 
-```xml
+```xaml
 <syncfusion:SfListView x:Name="listView"
                        ItemsSource="{Binding GalleryInfo}"
                        ItemSize="150">
@@ -80,23 +80,23 @@ listView.ItemsLayout = new GridLayout() { SpanCount = 2 };
 ### SpanCount Examples
 
 **Two Columns:**
-```xml
+```xaml
 <syncfusion:GridLayout SpanCount="2" />
 ```
 
 **Three Columns:**
-```xml
+```xaml
 <syncfusion:GridLayout SpanCount="3" />
 ```
 
 **Four Columns:**
-```xml
+```xaml
 <syncfusion:GridLayout SpanCount="4" />
 ```
 
 ### Grid Layout with Horizontal Orientation
 
-```xml
+```xaml
 <syncfusion:SfListView Orientation="Horizontal" ItemSize="150">
     <syncfusion:SfListView.ItemsLayout>
         <syncfusion:GridLayout SpanCount="3" />
@@ -142,7 +142,7 @@ public partial class MainPage : ContentPage
 ```
 
 **With Toggle Button:**
-```xml
+```xaml
 <StackLayout>
     <HorizontalStackLayout HorizontalOptions="Center" Spacing="10" Margin="10">
         <Button Text="Linear" Clicked="OnLinearLayoutClicked" />
@@ -267,7 +267,7 @@ protected override void OnSizeAllocated(double width, double height)
 ### Performance Considerations
 
 1. **Fixed ItemSize:** Set a fixed ItemSize for better performance
-   ```xml
+   ```xaml
    <syncfusion:SfListView ItemSize="150" />
    ```
 
@@ -297,7 +297,7 @@ protected override void OnSizeAllocated(double width, double height)
 
 ## Complete Example: Responsive Grid Gallery
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"

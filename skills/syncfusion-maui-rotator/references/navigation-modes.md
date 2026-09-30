@@ -29,7 +29,7 @@ The navigation appearance is controlled by the `NavigationStripMode` property.
 
 ### Setting Navigation Mode in XAML
 
-```xml
+```xaml
 <syncfusion:SfRotator NavigationStripMode="Thumbnail"
                       ItemsSource="{Binding ImageCollection}">
     <!-- Content -->
@@ -53,7 +53,7 @@ Thumbnail mode displays small preview images of all rotator items, allowing quic
 ### Basic Thumbnail Implementation
 
 **XAML:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -129,7 +129,7 @@ Dots mode displays simple indicator dots for each item, providing a clean, minim
 ### Basic Dots Implementation
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationStripMode="Dots"
                       NavigationStripPosition="Bottom"
@@ -169,7 +169,7 @@ Controls the border/outline color of dots.
 **Default:** System default
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationStripMode="Dots"
                       NavigationStripPosition="Bottom"
@@ -197,7 +197,7 @@ Sets the fill color of the currently selected dot.
 **Default:** System accent color
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator DotsStroke="Aqua"
                       SelectedDotColor="Blue"
                       NavigationStripMode="Dots">
@@ -222,7 +222,7 @@ Sets the fill color of inactive dots.
 **Complete Dots Customization Example:**
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationStripMode="Dots"
                       NavigationStripPosition="Bottom"
@@ -261,7 +261,7 @@ Sets the border color of the currently selected thumbnail.
 **Default:** System accent color
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationStripMode="Thumbnail"
                       NavigationStripPosition="Bottom"
@@ -294,7 +294,7 @@ Sets the border color of inactive thumbnails.
 **Complete Thumbnail Customization Example:**
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationStripMode="Thumbnail"
                       NavigationStripPosition="Bottom"
@@ -331,7 +331,7 @@ Sets the color of the arrow icons.
 **Default:** System default
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator NavigationStripMode="Thumbnail"
                       NavigationButtonIconColor="Blue"
                       ItemsSource="{Binding ImageCollection}">
@@ -354,7 +354,7 @@ Sets the background color of navigation buttons.
 **Default:** Semi-transparent
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator NavigationStripMode="Thumbnail"
                       NavigationButtonBackgroundColor="Pink"
                       NavigationButtonIconColor="Blue"
@@ -378,7 +378,7 @@ Show or hide navigation buttons.
 **Default:** `true`
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator NavigationStripMode="Thumbnail"
                       ShowNavigationButton="False"
                       ItemsSource="{Binding ImageCollection}">
@@ -405,7 +405,7 @@ Control where dots appear relative to the main content.
 
 Dots appear inside the rotator area (default behavior).
 
-```xml
+```xaml
 <syncfusion:SfRotator DotPlacement="Default">
     <!-- Content -->
 </syncfusion:SfRotator>
@@ -415,7 +415,7 @@ Dots appear inside the rotator area (default behavior).
 
 Hides dots completely (clean appearance).
 
-```xml
+```xaml
 <syncfusion:SfRotator DotPlacement="None"
                       NavigationStripMode="Dots">
     <!-- Content -->
@@ -426,7 +426,7 @@ Hides dots completely (clean appearance).
 
 Places dots outside the rotator area.
 
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationStripMode="Dots"
                       NavigationStripPosition="Bottom"
@@ -452,7 +452,7 @@ rotator.DotPlacement = DotsPlacement.OutSide;
 
 ### Example 1: Fully Customized Dots Mode
 
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationStripMode="Dots"
                       NavigationStripPosition="Bottom"
@@ -475,7 +475,7 @@ rotator.DotPlacement = DotsPlacement.OutSide;
 
 ### Example 2: Fully Customized Thumbnail Mode
 
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       NavigationStripMode="Thumbnail"
                       NavigationStripPosition="Bottom"

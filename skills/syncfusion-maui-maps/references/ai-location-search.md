@@ -11,7 +11,7 @@ Integrate Azure OpenAI with Syncfusion .NET MAUI Maps (SfMaps) to enable intelli
 - API endpoint and authentication key
 
 **NuGet Packages Required:**
-```xml
+```xaml
 <!-- .NET 9 compatible versions -->
 <PackageReference Include="Azure.AI.OpenAI" Version="1.0.0-beta.12" />
 <PackageReference Include="Syncfusion.Maui.Maps" Version="27.*" />

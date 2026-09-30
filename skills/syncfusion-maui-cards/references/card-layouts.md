@@ -32,7 +32,7 @@ The `ShowSwipedCard` property determines whether swiped cards are displayed at t
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardLayout ShowSwipedCard="True" HeightRequest="400">
     <cards:SfCardView>
         <Label Text="Card 1" BackgroundColor="Cyan"/>
@@ -99,7 +99,7 @@ The `VisibleIndex` property gets or sets the index of the card that should be di
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardLayout VisibleIndex="1" HeightRequest="400">
     <cards:SfCardView>
         <Label Text="Card 0"/>
@@ -220,7 +220,7 @@ The `SwipeDirection` property specifies the direction(s) in which cards can be s
 ### Single Direction Examples
 
 **Swipe Left Only:**
-```xml
+```xaml
 <cards:SfCardLayout SwipeDirection="Left" HeightRequest="400">
     <!-- Cards -->
 </cards:SfCardLayout>

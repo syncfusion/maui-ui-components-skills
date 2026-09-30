@@ -142,7 +142,7 @@ Set the ViewModel instance as the BindingContext of your page.
 
 **XAML:**
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cards="clr-namespace:Syncfusion.Maui.Cards;assembly=Syncfusion.Maui.Cards"
@@ -176,7 +176,7 @@ Use `BindableLayout.ItemsSource` to bind your data collection to the SfCardLayou
 
 **XAML:**
 
-```xml
+```xaml
 <cards:SfCardLayout BindableLayout.ItemsSource="{Binding Cards}"
                     HeightRequest="500"
                     SwipeDirection="Left"
@@ -209,7 +209,7 @@ Use `BindableLayout.ItemTemplate` with a `DataTemplate` to define how each card 
 
 **XAML:**
 
-```xml
+```xaml
 <cards:SfCardLayout BindableLayout.ItemsSource="{Binding Colors}"
                     SwipeDirection="Left"
                     HeightRequest="300"
@@ -266,7 +266,7 @@ this.Content = cardLayout;
 
 **XAML:**
 
-```xml
+```xaml
 <cards:SfCardLayout BindableLayout.ItemsSource="{Binding Cards}"
                     SwipeDirection="Left"
                     HeightRequest="500"
@@ -383,7 +383,7 @@ public class TaskViewModel : INotifyPropertyChanged
 
 **XAML:**
 
-```xml
+```xaml
 <ContentPage.BindingContext>
     <local:TaskViewModel/>
 </ContentPage.BindingContext>
@@ -547,7 +547,7 @@ public class ProductViewModel : INotifyPropertyChanged
 
 **XAML with Image Cards:**
 
-```xml
+```xaml
 <cards:SfCardLayout BindableLayout.ItemsSource="{Binding Products}"
                     SwipeDirection="Left"
                     HeightRequest="600"
@@ -674,7 +674,7 @@ public class CardItem : INotifyPropertyChanged
 
 ### 4. Handle Empty States
 
-```xml
+```xaml
 <Grid>
     <cards:SfCardLayout BindableLayout.ItemsSource="{Binding Cards}"
                         IsVisible="{Binding HasCards}"/>

@@ -66,7 +66,7 @@ namespace GettingStarted
 Make the page inherit from `SfBackdropPage` instead of `ContentPage`.
 
 **XAML:**
-```xml
+```xaml
 <backdrop:SfBackdropPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -102,7 +102,7 @@ public partial class BackdropSamplePage : SfBackdropPage
 The back layer holds actionable or contextual content (navigation menus, filters) that appears behind the front layer. It fills the entire background or only as much as its content height.
 
 **XAML:**
-```xml
+```xaml
 <backdrop:SfBackdropPage.BackLayer>
     <backdrop:BackdropBackLayer>
         <Grid>
@@ -154,7 +154,7 @@ this.BackLayer = new BackdropBackLayer
 The front layer always appears in front of the back layer, spans the full width, and holds the primary content of the page.
 
 **XAML:**
-```xml
+```xaml
 <backdrop:SfBackdropPage.FrontLayer>
     <backdrop:BackdropFrontLayer>
         <Grid BackgroundColor="WhiteSmoke" />
@@ -182,7 +182,7 @@ Three ways to reveal/conceal the back layer:
 ### Programmatically
 Set `IsBackLayerRevealed` to `true` to reveal, `false` to conceal.
 
-```xml
+```xaml
 <backdrop:SfBackdropPage ... IsBackLayerRevealed="True">
 ```
 ```csharp

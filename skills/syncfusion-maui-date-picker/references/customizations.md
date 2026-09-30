@@ -17,7 +17,7 @@ Customize the date picker header using the `HeaderView` property.
 
 ### Set Header Text
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.HeaderView>
         <picker:PickerHeaderView Text="Date Picker" Height="40" />
@@ -35,7 +35,7 @@ datePicker.HeaderView = new PickerHeaderView()
 
 ### Set Divider Color
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.HeaderView>
         <picker:PickerHeaderView DividerColor="Red" Height="40" />
@@ -45,7 +45,7 @@ datePicker.HeaderView = new PickerHeaderView()
 
 ### Customize Header Style
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.HeaderView>
         <picker:PickerHeaderView Text="Select Date" 
@@ -61,7 +61,7 @@ datePicker.HeaderView = new PickerHeaderView()
 
 ### Custom Header Template
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.HeaderTemplate>
         <DataTemplate>
@@ -82,7 +82,7 @@ datePicker.HeaderView = new PickerHeaderView()
 
 ### Header DataTemplateSelector
 
-```xml
+```xaml
 <Grid.Resources>
     <DataTemplate x:Key="todayDatesTemplate">
         <Grid Background="LightBlue" Padding="10">
@@ -137,7 +137,7 @@ Customize the column headers for Day, Month, and Year columns.
 
 ### Set Custom Column Headers
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.ColumnHeaderView>
         <picker:DatePickerColumnHeaderView DayHeaderText="Day Column"
@@ -160,7 +160,7 @@ datePicker.ColumnHeaderView = new DatePickerColumnHeaderView()
 
 ### Set Column Header Divider Color
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.ColumnHeaderView>
         <picker:DatePickerColumnHeaderView DividerColor="Red" Height="40" />
@@ -170,7 +170,7 @@ datePicker.ColumnHeaderView = new DatePickerColumnHeaderView()
 
 ### Customize Column Header Style
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.ColumnHeaderView>
         <picker:DatePickerColumnHeaderView Background="#F5F5F5" Height="45">
@@ -186,7 +186,7 @@ datePicker.ColumnHeaderView = new DatePickerColumnHeaderView()
 
 ### Custom Column Header Template
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.ColumnHeaderTemplate>
         <DataTemplate>
@@ -219,7 +219,7 @@ Customize the footer with OK and Cancel buttons.
 
 ### Set Footer Buttons
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.FooterView>
         <picker:PickerFooterView ShowOkButton="True"
@@ -242,7 +242,7 @@ datePicker.FooterView = new PickerFooterView()
 
 ### Set Footer Divider Color
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.FooterView>
         <picker:PickerFooterView DividerColor="Red" Height="40" />
@@ -252,7 +252,7 @@ datePicker.FooterView = new PickerFooterView()
 
 ### Customize Footer Style
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.FooterView>
         <picker:PickerFooterView ShowOkButton="True"
@@ -270,7 +270,7 @@ datePicker.FooterView = new PickerFooterView()
 
 ### Custom Footer Template
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.FooterTemplate>
         <DataTemplate>
@@ -305,7 +305,7 @@ Customize the appearance of the selected date item.
 
 ### Set Selection View Style
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.SelectionView>
         <picker:PickerSelectionView CornerRadius="10" 
@@ -329,7 +329,7 @@ datePicker.SelectionView = new PickerSelectionView()
 
 ### Customize Selected Text Style
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.SelectedTextStyle>
         <picker:PickerTextStyle FontSize="18" 
@@ -352,7 +352,7 @@ datePicker.SelectedTextStyle = new PickerTextStyle()
 
 Customize the color of dividers between date columns.
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      ColumnDividerColor="#6200EE">
 </picker:SfDatePicker>
@@ -368,7 +368,7 @@ datePicker.ColumnDividerColor = Color.FromArgb("#6200EE");
 
 Enable the close button in the header (Dialog/RelativeDialog modes only).
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker" 
                      Mode="Dialog"
                      ShowCloseButton="True">
@@ -382,7 +382,7 @@ Enable the close button in the header (Dialog/RelativeDialog modes only).
 
 ### Custom Close Button Icon
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker" 
                      Mode="Dialog"
                      ShowCloseButton="True"
@@ -401,7 +401,7 @@ Customize individual date columns (Day, Month, Year).
 
 ### Day Column Customization
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      DayColumnWidth="120">
     <picker:SfDatePicker.DayColumnTextStyle>
@@ -424,7 +424,7 @@ datePicker.DayColumnTextStyle = new PickerTextStyle()
 
 ### Month Column Customization
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      MonthColumnWidth="150">
     <picker:SfDatePicker.MonthColumnTextStyle>
@@ -447,7 +447,7 @@ datePicker.MonthColumnTextStyle = new PickerTextStyle()
 
 ### Year Column Customization
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      YearColumnWidth="100">
     <picker:SfDatePicker.YearColumnTextStyle>
@@ -470,7 +470,7 @@ datePicker.YearColumnTextStyle = new PickerTextStyle()
 
 ### All Columns Combined
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      DayColumnWidth="100"
                      MonthColumnWidth="140"
@@ -489,7 +489,7 @@ datePicker.YearColumnTextStyle = new PickerTextStyle()
 
 ## Complete Customization Example
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      Mode="Dialog"
                      ShowCloseButton="True"

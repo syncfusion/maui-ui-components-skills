@@ -48,7 +48,7 @@ Allows free-form cropping by dragging and resizing:
 imageEditor.Crop(ImageCropType.Free);
 ```
 
-```xml
+```xaml
 <!-- XAML Example with Button -->
 <Grid RowDefinitions="*, Auto">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
@@ -222,7 +222,7 @@ imageEditor.CancelEdits();
 
 ### Example — Crop with Confirmation
 
-```xml
+```xaml
 <Grid RowDefinitions="*, Auto, Auto">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     
@@ -282,7 +282,7 @@ imageEditor.Rotate();
 
 ### Rotation with Button Example
 
-```xml
+```xaml
 <Grid RowDefinitions="*, Auto">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Rotate 90°" Clicked="OnRotateClicked" />
@@ -336,7 +336,7 @@ Creates an upside-down mirror image.
 
 ### Flip Example with Buttons
 
-```xml
+```xaml
 <Grid RowDefinitions="*, Auto">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <HorizontalStackLayout Grid.Row="1" Spacing="10" Padding="10" HorizontalOptions="Center">

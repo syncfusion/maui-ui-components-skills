@@ -30,7 +30,7 @@ public double CornerRadius { get; set; }
 ### Usage:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfCheckBox x:Name="checkBox" 
                     Text="Rounded CheckBox" 
                     IsChecked="True" 
@@ -57,7 +57,7 @@ this.Content = checkBox;
 
 ### Example: Different Corner Radii
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="15">
     <buttons:SfCheckBox Text="Square (0)" 
                         IsChecked="True" 
@@ -91,7 +91,7 @@ public Color UncheckedColor { get; set; }   // Color for unchecked state
 ### Usage:
 
 **XAML:**
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="10">
     <!-- Checked state with custom color -->
     <buttons:SfCheckBox x:Name="check" 
@@ -147,7 +147,7 @@ this.Content = stackLayout;
 
 ### Color Examples:
 
-```xml
+```xaml
 <!-- Brand colors -->
 <buttons:SfCheckBox Text="Primary" CheckedColor="#007AFF" IsChecked="True"/>
 <buttons:SfCheckBox Text="Success" CheckedColor="#28A745" IsChecked="True"/>
@@ -174,7 +174,7 @@ public double StrokeThickness { get; set; }
 ### Usage:
 
 **XAML:**
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="10">
     <buttons:SfCheckBox Text="Thin (1)" 
                         StrokeThickness="1" 
@@ -257,7 +257,7 @@ public double FontSize { get; set; }                          // Font size
 ### Complete Example:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfCheckBox x:Name="caption" 
                     Text="Custom Text Styling" 
                     IsChecked="True" 
@@ -285,7 +285,7 @@ this.Content = caption;
 
 ### Text Alignment Options:
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="10">
     <buttons:SfCheckBox Text="Start Alignment" 
                         HorizontalTextAlignment="Start"/>
@@ -300,7 +300,7 @@ this.Content = caption;
 
 ### Font Attributes:
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="10">
     <buttons:SfCheckBox Text="Normal Text" 
                         FontAttributes="None"/>
@@ -318,7 +318,7 @@ this.Content = caption;
 
 ### Custom Fonts:
 
-```xml
+```xaml
 <!-- Using system fonts -->
 <buttons:SfCheckBox Text="Arial Font" FontFamily="Arial"/>
 <buttons:SfCheckBox Text="Georgia Font" FontFamily="Georgia"/>
@@ -341,7 +341,7 @@ public Color TickColor { get; set; }
 ### Usage:
 
 **XAML:**
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="10">
     <buttons:SfCheckBox x:Name="checkBox" 
                         IsChecked="True" 
@@ -391,7 +391,7 @@ this.Content = stackLayout;
 
 Ensure sufficient contrast between `CheckedColor` and `TickColor` for visibility:
 
-```xml
+```xaml
 <!-- Good contrast examples -->
 <buttons:SfCheckBox CheckedColor="DarkGreen" TickColor="White" IsChecked="True"/>
 <buttons:SfCheckBox CheckedColor="Navy" TickColor="Yellow" IsChecked="True"/>
@@ -422,7 +422,7 @@ public LineBreakMode LineBreakMode { get; set; }
 ### Usage:
 
 **XAML:**
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="15">
     <!-- Word Wrap -->
     <buttons:SfCheckBox x:Name="wordWrap" 
@@ -493,7 +493,7 @@ public double ControlSize { get; set; }
 ### Usage:
 
 **XAML:**
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="10">
     <buttons:SfCheckBox Text="Small (20)" 
                         ControlSize="20" 
@@ -550,7 +550,7 @@ public bool FontAutoScalingEnabled { get; set; }  // Default: false
 ### Usage:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfCheckBox Text="Auto-Scaling Font" 
                     FontAutoScalingEnabled="True"
                     FontSize="16"/>
@@ -587,7 +587,7 @@ public bool EnabledAnimation { get; set; }  // Default: true
 ### Usage:
 
 **XAML:**
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="10">
     <buttons:SfCheckBox Text="With Animation" 
                         EnabledAnimation="True"/>
@@ -632,7 +632,7 @@ public double ContentSpacing { get; set; }
 ### Usage:
 
 **XAML:**
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="15">
     <buttons:SfCheckBox Text="Tight Spacing (5)" 
                         ContentSpacing="5"/>
@@ -674,7 +674,7 @@ this.Content = stackLayout;
 
 ### Example 1: Modern Material Design Style
 
-```xml
+```xaml
 <buttons:SfCheckBox Text="Material Design" 
                     IsChecked="True"
                     CheckedColor="#6200EE"
@@ -690,7 +690,7 @@ this.Content = stackLayout;
 
 ### Example 2: High Contrast Accessibility
 
-```xml
+```xaml
 <buttons:SfCheckBox Text="High Contrast Mode" 
                     IsChecked="True"
                     CheckedColor="Black"
@@ -706,7 +706,7 @@ this.Content = stackLayout;
 
 ### Example 3: Soft Rounded Style
 
-```xml
+```xaml
 <buttons:SfCheckBox Text="Soft Design" 
                     IsChecked="True"
                     CheckedColor="#4CAF50"
@@ -723,7 +723,7 @@ this.Content = stackLayout;
 
 ### Example 4: Compact List Item
 
-```xml
+```xaml
 <buttons:SfCheckBox Text="Compact checkbox for dense lists with text truncation" 
                     ControlSize="18"
                     FontSize="14"

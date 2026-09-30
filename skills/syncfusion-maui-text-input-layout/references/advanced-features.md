@@ -17,7 +17,7 @@ Enable a toggle icon that allows users to show or hide password characters.
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Password"
                                EnablePasswordVisibilityToggle="True">
     <Entry IsPassword="True" Text="1234" />
@@ -46,7 +46,7 @@ var inputLayout = new SfTextInputLayout
 
 **Important:** Password visibility toggle only works with the `Entry` control, not with `Editor` or other input views.
 
-```xml
+```xaml
 <!-- ✓ Works -->
 <inputLayout:SfTextInputLayout EnablePasswordVisibilityToggle="True">
     <Entry IsPassword="True" />
@@ -60,7 +60,7 @@ var inputLayout = new SfTextInputLayout
 
 ### Combining with Container Types
 
-```xml
+```xaml
 <!-- Filled Container -->
 <inputLayout:SfTextInputLayout Hint="Password"
                                EnablePasswordVisibilityToggle="True"
@@ -79,7 +79,7 @@ var inputLayout = new SfTextInputLayout
 
 ### With Helper Text and Validation
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout x:Name="passwordInput"
                                Hint="Password"
                                HelperText="At least 8 characters"
@@ -106,7 +106,7 @@ Respond to password visibility changes with the **PasswordVisibilityToggled** ev
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Password"
                                EnablePasswordVisibilityToggle="True"
                                PasswordVisibilityToggled="OnPasswordVisibilityToggled">
@@ -188,7 +188,7 @@ Support languages that read right-to-left (Arabic, Hebrew, etc.).
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout x:Name="inputLayout"
                                FlowDirection="RightToLeft"
                                ContainerType="Outlined"
@@ -233,7 +233,7 @@ inputLayout.FlowDirection = isRtl ? FlowDirection.RightToLeft : FlowDirection.Le
 
 ### RTL with Icons
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout FlowDirection="RightToLeft"
                                Hint="البريد الإلكتروني"
                                LeadingViewPosition="Inside"
@@ -253,7 +253,7 @@ SfTextInputLayout works with multiple .NET MAUI input controls.
 
 ### Entry (Single-Line)
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name"
                                HelperText="Enter your name"
                                ContainerType="Outlined">
@@ -265,7 +265,7 @@ SfTextInputLayout works with multiple .NET MAUI input controls.
 
 ### Editor (Multi-Line)
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Notes"
                                HelperText="Add additional notes"
                                ContainerType="Outlined">
@@ -279,7 +279,7 @@ SfTextInputLayout works with multiple .NET MAUI input controls.
 
 ### SfAutocomplete
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Country"
                                ContainerType="Outlined">
     <autocomplete:SfAutocomplete>
@@ -300,7 +300,7 @@ SfTextInputLayout works with multiple .NET MAUI input controls.
 
 ### SfComboBox
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Country"
                                ContainerType="Outlined">
     <combobox:SfComboBox>
@@ -321,7 +321,7 @@ SfTextInputLayout works with multiple .NET MAUI input controls.
 
 ### SfMaskedEntry
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Card Number"
                                HelperText="Required *"
                                ContainerType="Outlined">
@@ -334,7 +334,7 @@ SfTextInputLayout works with multiple .NET MAUI input controls.
 
 ### SfNumericEntry
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Amount"
                                HelperText="Enter the amount"
                                ContainerType="Outlined">
@@ -348,7 +348,7 @@ SfTextInputLayout works with multiple .NET MAUI input controls.
 
 ### Picker
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Fruit"
                                HelperText="Select a fruit"
                                ContainerType="Outlined">
@@ -370,7 +370,7 @@ SfTextInputLayout works with multiple .NET MAUI input controls.
 
 ### DatePicker
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Date of Birth"
                                HelperText="Select birth date"
                                ContainerType="Outlined">
@@ -384,7 +384,7 @@ SfTextInputLayout works with multiple .NET MAUI input controls.
 
 ### TimePicker
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Time"
                                HelperText="Select a start time"
                                ContainerType="Outlined">
@@ -406,7 +406,7 @@ The following controls are **not supported** as Content on Windows:
 - **TimePicker** — Use DateTimePicker or custom implementation
 
 **Supported alternatives for Windows:**
-```xml
+```xaml
 <!-- Instead of Picker, use SfComboBox -->
 <inputLayout:SfTextInputLayout Hint="Selection">
     <combobox:SfComboBox ItemsSource="{Binding Items}" />
@@ -430,7 +430,7 @@ Full support for all input views:
 3. Insufficient space to display floating hint
 
 **Solution:**
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name" ShowHint="True">
     <Entry />
 </inputLayout:SfTextInputLayout>
@@ -444,7 +444,7 @@ Full support for all input views:
 3. Entry's `IsPassword` not set to `True`
 
 **Solution:**
-```xml
+```xaml
 <inputLayout:SfTextInputLayout EnablePasswordVisibilityToggle="True">
     <Entry IsPassword="True" />
 </inputLayout:SfTextInputLayout>
@@ -489,7 +489,7 @@ private void OnTextChanged(object sender, TextChangedEventArgs e)
 3. `UnfocusedStrokeThickness` set to 0
 
 **Solution:**
-```xml
+```xaml
 <inputLayout:SfTextInputLayout ContainerType="Outlined"
                                Stroke="#000000"
                                UnfocusedStrokeThickness="1">
@@ -502,7 +502,7 @@ private void OnTextChanged(object sender, TextChangedEventArgs e)
 **Cause:** `AutoSize` property not set
 
 **Solution:**
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Notes">
     <Editor AutoSize="TextChanges" />
 </inputLayout:SfTextInputLayout>
@@ -527,7 +527,7 @@ builder.ConfigureFonts(fonts =>
 ```
 
 3. Use in XAML:
-```xml
+```xaml
 <inputLayout:SfTextInputLayout.HintLabelStyle>
     <inputLayout:LabelStyle FontFamily="CustomFont" FontSize="16" />
 </inputLayout:SfTextInputLayout.HintLabelStyle>
@@ -537,7 +537,7 @@ builder.ConfigureFonts(fonts =>
 
 ### How to Create a Login Form
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="20" Padding="30">
     
     <Label Text="Sign In" FontSize="28" FontAttributes="Bold" />
@@ -562,7 +562,7 @@ builder.ConfigureFonts(fonts =>
 
 ### How to Implement Real-Time Validation
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout x:Name="emailInput"
                                Hint="Email"
                                HelperText="Enter a valid email"
@@ -603,7 +603,7 @@ private bool IsValidEmail(string email)
 
 ### How to Create a Search Field with Clear Button
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout x:Name="searchLayout"
                                Hint="Search"
                                LeadingViewPosition="Inside"
@@ -645,7 +645,7 @@ private void OnClearSearch(object sender, EventArgs e)
 
 ### How to Implement Character Counter with Validation
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout x:Name="bioInput"
                                Hint="Bio"
                                CharMaxLength="200"

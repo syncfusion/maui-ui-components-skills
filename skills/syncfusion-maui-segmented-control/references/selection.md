@@ -29,7 +29,7 @@ Set the default selected segment using the `SelectedIndex` property.
 ### Setting Initial Selection
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl SelectedIndex="1">
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">
@@ -78,7 +78,7 @@ The selection indicator visually highlights the selected segment. Choose from fo
 The indicator fills the entire selected segment with a background color.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl>
     <buttons:SfSegmentedControl.SelectionIndicatorSettings>
         <buttons:SelectionIndicatorSettings 
@@ -111,7 +111,7 @@ segmentedControl.SelectionIndicatorSettings = new SelectionIndicatorSettings
 Highlights the selected segment with a border around all edges.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl>
     <buttons:SfSegmentedControl.SelectionIndicatorSettings>
         <buttons:SelectionIndicatorSettings 
@@ -139,7 +139,7 @@ segmentedControl.SelectionIndicatorSettings = new SelectionIndicatorSettings
 Places the indicator at the top edge of the selected segment.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl>
     <buttons:SfSegmentedControl.SelectionIndicatorSettings>
         <buttons:SelectionIndicatorSettings 
@@ -167,7 +167,7 @@ segmentedControl.SelectionIndicatorSettings = new SelectionIndicatorSettings
 Places the indicator at the bottom edge of the selected segment.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl>
     <buttons:SfSegmentedControl.SelectionIndicatorSettings>
         <buttons:SelectionIndicatorSettings 
@@ -199,7 +199,7 @@ Control how users can interact with segments and whether deselection is allowed.
 Allows selecting one segment at a time. Once a segment is selected, it remains selected until another segment is tapped.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl SelectionMode="Single">
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">
@@ -229,7 +229,7 @@ segmentedControl.SelectionMode = SegmentSelectionMode.Single;
 Allows deselecting the currently selected segment by tapping it again.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl SelectionMode="SingleDeselect">
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">
@@ -262,7 +262,7 @@ Customize the visual appearance of selected segments to match your app's design.
 Apply a background color to all selected segments.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl>
     <buttons:SfSegmentedControl.SelectionIndicatorSettings>
         <buttons:SelectionIndicatorSettings 
@@ -323,7 +323,7 @@ var segmentedControl = new SfSegmentedControl
 Change the text color for all selected segments.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl>
     <buttons:SfSegmentedControl.SelectionIndicatorSettings>
         <buttons:SelectionIndicatorSettings 
@@ -371,7 +371,7 @@ var segmentedControl = new SfSegmentedControl
 Customize the border color for selected segments (applies to Border, TopBorder, BottomBorder placements).
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl>
     <buttons:SfSegmentedControl.SelectionIndicatorSettings>
         <buttons:SelectionIndicatorSettings 
@@ -399,7 +399,7 @@ segmentedControl.SelectionIndicatorSettings = new SelectionIndicatorSettings
 Control the thickness of the selection border.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl>
     <buttons:SfSegmentedControl.SelectionIndicatorSettings>
         <buttons:SelectionIndicatorSettings 
@@ -422,7 +422,7 @@ Enable or disable the tap ripple animation that provides visual feedback when a 
 ### Enabling Ripple Effect (Default)
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl EnableRippleEffect="True">
     <!-- Items -->
 </buttons:SfSegmentedControl>
@@ -436,7 +436,7 @@ segmentedControl.EnableRippleEffect = true;  // Default
 ### Disabling Ripple Effect
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl EnableRippleEffect="False">
     <!-- Items -->
 </buttons:SfSegmentedControl>

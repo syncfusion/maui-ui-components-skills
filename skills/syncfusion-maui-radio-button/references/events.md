@@ -34,7 +34,7 @@ The event provides `StateChangedEventArgs` with the following property:
 
 #### XAML
 
-```xml
+```xaml
 <buttons:SfRadioGroup x:Name="notificationGroup">
     <buttons:SfRadioButton Text="Email" 
                            StateChanged="OnNotificationChanged"/>
@@ -108,7 +108,7 @@ private void OnStateChanged(object sender, StateChangedEventArgs e)
 
 ### Updating UI Based on State
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="10" Padding="20">
     <Label Text="Select Theme:" FontAttributes="Bold"/>
     
@@ -191,7 +191,7 @@ The `StateChangingEventArgs` provides:
 
 #### XAML
 
-```xml
+```xaml
 <buttons:SfRadioGroup x:Name="agreementGroup">
     <buttons:SfRadioButton x:Name="agreeButton" 
                            Text="I agree to the terms" 
@@ -347,7 +347,7 @@ button2.StateChanged += (s, e) => Console.WriteLine("Button 2 - StateChanged");
 
 ### Scenario 1: Form Validation
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="15" Padding="20">
     <Entry x:Name="nameEntry" Placeholder="Enter your name"/>
     <Entry x:Name="emailEntry" Placeholder="Enter your email"/>
@@ -390,7 +390,7 @@ private void OnSubscriptionChanging(object sender, StateChangingEventArgs e)
 
 ### Scenario 2: Dynamic Pricing Updates
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="10" Padding="20">
     <Label Text="Select Plan:" FontAttributes="Bold"/>
     

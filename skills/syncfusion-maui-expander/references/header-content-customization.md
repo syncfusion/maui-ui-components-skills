@@ -28,7 +28,7 @@ The `Header` property defines what appears in the always-visible header section.
 
 ### Basic Header
 
-```xml
+```xaml
 <syncfusion:SfExpander>
     <syncfusion:SfExpander.Header>
         <Grid>
@@ -56,7 +56,7 @@ expander.Header = headerGrid;
 
 ### Header with Icon and Text
 
-```xml
+```xaml
 <syncfusion:SfExpander.Header>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -82,7 +82,7 @@ expander.Header = headerGrid;
 
 ### Header with Image
 
-```xml
+```xaml
 <syncfusion:SfExpander.Header>
     <Grid Padding="10">
         <Grid.ColumnDefinitions>
@@ -111,7 +111,7 @@ The `Content` property defines what appears in the expandable/collapsible sectio
 
 ### Basic Content
 
-```xml
+```xaml
 <syncfusion:SfExpander>
     <syncfusion:SfExpander.Content>
         <Grid Padding="20">
@@ -124,7 +124,7 @@ The `Content` property defines what appears in the expandable/collapsible sectio
 
 ### Content with Multiple Elements
 
-```xml
+```xaml
 <syncfusion:SfExpander.Content>
     <StackLayout Padding="15" Spacing="10">
         <Label Text="Name: John Doe" FontSize="14"/>
@@ -137,7 +137,7 @@ The `Content` property defines what appears in the expandable/collapsible sectio
 
 ### Content with Grid Layout
 
-```xml
+```xaml
 <syncfusion:SfExpander.Content>
     <Grid Padding="15" RowSpacing="8">
         <Grid.RowDefinitions>
@@ -168,7 +168,7 @@ The `Content` property defines what appears in the expandable/collapsible sectio
 
 Common pattern for professional-looking expanders with icons:
 
-```xml
+```xaml
 <syncfusion:SfExpander AnimationDuration="200" IsExpanded="True">
     <syncfusion:SfExpander.Header>
         <Grid>
@@ -274,7 +274,7 @@ expander.Content = contentGrid;
 
 Create accordion-style layouts with multiple expanders:
 
-```xml
+```xaml
 <ScrollView>
     <StackLayout Spacing="8" Padding="8">
         
@@ -346,7 +346,7 @@ Wrap content in Grid, StackLayout, or other layout controls - never use individu
 ### 2. Set Appropriate Padding
 
 Add padding to content for better visual spacing:
-```xml
+```xaml
 <syncfusion:SfExpander.Content>
     <Grid Padding="15">
         <!-- Content here -->
@@ -357,7 +357,7 @@ Add padding to content for better visual spacing:
 ### 3. Platform-Specific Font Families
 
 Use `OnPlatform` for icon fonts that require different paths per platform:
-```xml
+```xaml
 FontFamily='{OnPlatform Android=MyFont.ttf#,
                        WinUI=MyFont.ttf#MyFont,
                        MacCatalyst=MyFont,
@@ -367,7 +367,7 @@ FontFamily='{OnPlatform Android=MyFont.ttf#,
 ### 4. Consistent Height for Headers
 
 Set fixed or consistent header heights for uniform appearance:
-```xml
+```xaml
 <Grid>
     <Grid.RowDefinitions>
         <RowDefinition Height="48"/>
@@ -379,7 +379,7 @@ Set fixed or consistent header heights for uniform appearance:
 ### 5. Use Borders for Visual Separation
 
 Wrap expanders in Border controls for professional styling:
-```xml
+```xaml
 <Border StrokeShape="RoundRectangle 8" Stroke="#CAC4D0" StrokeThickness="1">
     <syncfusion:SfExpander>
         <!-- Expander content -->
@@ -395,7 +395,7 @@ Wrap expanders in Border controls for professional styling:
 
 **Problem:** Loading Label directly in Header or Content causes runtime exception.
 
-```xml
+```xaml
 <!-- WRONG - Will crash -->
 <syncfusion:SfExpander.Header>
     <Label Text="Header"/>
@@ -404,7 +404,7 @@ Wrap expanders in Border controls for professional styling:
 
 **Solution:** Wrap in a layout container.
 
-```xml
+```xaml
 <!-- CORRECT -->
 <syncfusion:SfExpander.Header>
     <Grid>
@@ -419,7 +419,7 @@ Wrap expanders in Border controls for professional styling:
 
 **Solution:** Add padding to content Grid/StackLayout.
 
-```xml
+```xaml
 <syncfusion:SfExpander.Content>
     <Grid Padding="15">
         <!-- Content with proper spacing -->
@@ -433,7 +433,7 @@ Wrap expanders in Border controls for professional styling:
 
 **Solution:** Set fixed RowDefinition height in all headers.
 
-```xml
+```xaml
 <Grid>
     <Grid.RowDefinitions>
         <RowDefinition Height="48"/>
@@ -447,7 +447,7 @@ Wrap expanders in Border controls for professional styling:
 
 ### Custom Header with Button
 
-```xml
+```xaml
 <syncfusion:SfExpander.Header>
     <Grid Padding="10">
         <Grid.ColumnDefinitions>
@@ -467,7 +467,7 @@ Wrap expanders in Border controls for professional styling:
 
 ### Content with Nested Views
 
-```xml
+```xaml
 <syncfusion:SfExpander.Content>
     <StackLayout Padding="15" Spacing="10">
         

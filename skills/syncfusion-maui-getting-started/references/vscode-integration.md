@@ -111,7 +111,7 @@ In XAML file:
 Type: `sf-datagrid` → Tab
 
 **Expands to:**
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding Items}"
                        AutoGenerateColumnsMode="None">
@@ -163,7 +163,7 @@ Auto-completion for Syncfusion control properties.
 - Required attribute warnings
 
 **Example:**
-```xml
+```xaml
 <syncfusion:SfDataGrid Auto
 ```
 IntelliSense shows:

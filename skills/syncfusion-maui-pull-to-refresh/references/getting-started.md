@@ -113,7 +113,7 @@ namespace MyPullToRefreshApp
 
 Open `MainPage.xaml` and add the PullToRefresh control:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.PullToRefresh;assembly=Syncfusion.Maui.PullToRefresh"
@@ -154,7 +154,7 @@ The `PullableContent` property defines the view that users can pull to refresh. 
 
 ### Basic PullableContent Example
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.PullToRefresh;assembly=Syncfusion.Maui.PullToRefresh"
@@ -247,7 +247,7 @@ The PullToRefresh supports two transition modes that control how the refresh ind
 
 The refresh indicator slides on top of the pullable content.
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh"
                              TransitionMode="SlideOnTop"
                              Refreshing="PullToRefresh_Refreshing">
@@ -265,7 +265,7 @@ The refresh indicator slides on top of the pullable content.
 
 The refresh indicator pushes the content down as it appears.
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh"
                              TransitionMode="Push"
                              Refreshing="PullToRefresh_Refreshing">
@@ -293,7 +293,7 @@ The refresh indicator pushes the content down as it appears.
 - OR use `LayoutOptions` (e.g., `HorizontalOptions="FillAndExpand"`, `VerticalOptions="FillAndExpand"`)
 
 **Example with Layout Options:**
-```xml
+```xaml
 <syncfusion:SfPullToRefresh HorizontalOptions="FillAndExpand"
                              VerticalOptions="FillAndExpand">
     <!-- PullableContent here -->
@@ -301,7 +301,7 @@ The refresh indicator pushes the content down as it appears.
 ```
 
 **Example with Explicit Size:**
-```xml
+```xaml
 <syncfusion:SfPullToRefresh HeightRequest="500"
                              WidthRequest="400">
     <!-- PullableContent here -->

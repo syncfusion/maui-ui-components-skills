@@ -24,7 +24,7 @@ Each step can display two text labels:
 ### Basic Text Usage
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar
     x:Name="stepProgress"
     VerticalOptions="Center"
@@ -210,7 +210,7 @@ public class ViewModel
 ```
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar
     x:Name="stepProgress"
     VerticalOptions="Center"
@@ -232,7 +232,7 @@ Control the space between the step indicator and its text labels using the `Labe
 **Default:** 5 pixels
 
 **XAML Example:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar
     LabelSpacing="28"
     ItemsSource="{Binding StepProgressItem}">
@@ -273,7 +273,7 @@ Control where labels appear relative to the step indicator using the `LabelPosit
 ### Horizontal Orientation Examples
 
 **Bottom Position (Default):**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar
     Orientation="Horizontal"
     LabelPosition="Bottom"
@@ -282,7 +282,7 @@ Control where labels appear relative to the step indicator using the `LabelPosit
 ```
 
 **Top Position:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar
     Orientation="Horizontal"
     LabelPosition="Top"
@@ -291,7 +291,7 @@ Control where labels appear relative to the step indicator using the `LabelPosit
 ```
 
 **Start Position:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar
     Orientation="Horizontal"
     LabelPosition="Start"
@@ -300,7 +300,7 @@ Control where labels appear relative to the step indicator using the `LabelPosit
 ```
 
 **End Position:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar
     Orientation="Horizontal"
     LabelPosition="End"
@@ -311,7 +311,7 @@ Control where labels appear relative to the step indicator using the `LabelPosit
 ### Vertical Orientation Examples
 
 **End Position (Default):**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar
     Orientation="Vertical"
     LabelPosition="End"
@@ -375,7 +375,7 @@ public class ViewModel
 ```
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar
     x:Name="stepProgress"
     VerticalOptions="Center"

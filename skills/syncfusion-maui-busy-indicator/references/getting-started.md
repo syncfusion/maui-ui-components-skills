@@ -98,7 +98,7 @@ namespace BusyIndicatorDemo
 2. Add the Syncfusion namespace
 3. Add the SfBusyIndicator control
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -144,7 +144,7 @@ The default animation type is CircularMaterial. You can specify a different anim
 
 ### XAML Example
 
-```xml
+```xaml
 <core:SfBusyIndicator x:Name="busyIndicator"
                       IsRunning="True"
                       AnimationType="CircularMaterial" />
@@ -175,7 +175,7 @@ Here's a complete working example with a button to toggle the busy state:
 
 ### MainPage.xaml
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

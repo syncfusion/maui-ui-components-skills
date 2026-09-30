@@ -28,7 +28,7 @@ Columns in a kanban board represent different stages of a workflow (e.g., To Do,
 Columns are automatically created based on unique values in the data.
 
 **XAML:**
-```xml
+```xaml
 <kanban:SfKanban ItemsSource="{Binding Cards}"
                  AutoGenerateColumns="True"
                  ColumnMappingPath="Category" />
@@ -53,7 +53,7 @@ kanban.ItemsSource = viewModel.Cards;
 Explicitly define columns for full control.
 
 **XAML:**
-```xml
+```xaml
 <kanban:SfKanban ItemsSource="{Binding Cards}"
                  AutoGenerateColumns="False">
     <kanban:SfKanban.Columns>
@@ -113,7 +113,7 @@ Control column widths through three properties:
 
 Set exact width for all columns:
 
-```xml
+```xaml
 <kanban:SfKanban ColumnWidth="300" />
 ```
 
@@ -127,7 +127,7 @@ kanban.ColumnWidth = 300;
 
 Set range constraints:
 
-```xml
+```xaml
 <kanban:SfKanban MinimumColumnWidth="250" 
                  MaximumColumnWidth="400" />
 ```
@@ -173,13 +173,13 @@ kanban.ColumnMappingPath = "Status";  // Must specify
 Maps data values to columns.
 
 **Single Category:**
-```xml
+```xaml
 <kanban:KanbanColumn Title="In Progress" 
                      Categories="In Progress" />
 ```
 
 **Multiple Categories (see next section):**
-```xml
+```xaml
 <kanban:KanbanColumn Title="Backlog" 
                      Categories="Open,Postponed,New" />
 ```
@@ -198,7 +198,7 @@ Work-In-Progress (WIP) limits control the number of cards allowed in a column.
 
 ### Setting Limits
 
-```xml
+```xaml
 <kanban:KanbanColumn Title="In Progress"
                      Categories="In Progress"
                      MinimumLimit="2"
@@ -272,7 +272,7 @@ Shows:
 
 ### Custom Header Template
 
-```xml
+```xaml
 <kanban:SfKanban.HeaderTemplate>
     <DataTemplate>
         <Border Background="#F5F5F5" 
@@ -311,7 +311,7 @@ Group related statuses into a single column.
 
 ### Example: Grouping "Done" States
 
-```xml
+```xaml
 <kanban:KanbanColumn Title="Completed"
                      Categories="Done,Closed,Resolved,Won't Fix" />
 ```
@@ -353,7 +353,7 @@ Categories = new List<object> { "Code Review", "Testing", "QA", "Validation" }
 
 ### Pattern 1: Responsive Column Sizing
 
-```xml
+```xaml
 <kanban:SfKanban MinimumColumnWidth="200"
                  MaximumColumnWidth="400" />
 ```
@@ -362,7 +362,7 @@ Columns resize based on screen width but stay within bounds.
 
 ### Pattern 2: Fixed-Width for Consistency
 
-```xml
+```xaml
 <kanban:SfKanban ColumnWidth="320" />
 ```
 

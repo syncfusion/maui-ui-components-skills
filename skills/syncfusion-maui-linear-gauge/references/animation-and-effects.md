@@ -39,7 +39,7 @@ Animate the scale, ticks, and labels on initial load.
 ### EnableAxisAnimation
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge EnableAxisAnimation="True" 
                     AnimationDuration="1500"/>
 ```
@@ -85,7 +85,7 @@ Animate ranges on initial load.
 ### EnableRangeAnimation
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge EnableRangeAnimation="True" 
                     AnimationDuration="1200">
     <gauge:SfLinearGauge.Ranges>
@@ -159,7 +159,7 @@ All three pointer types support animation:
 Enable animation for individual pointers.
 
 **XAML:**
-```xml
+```xaml
 <gauge:BarPointer Value="75" 
                  EnableAnimation="True"
                  AnimationDuration="1000"/>
@@ -257,7 +257,7 @@ Control the acceleration curve of animations.
 | `SpringOut` | Spring release at end | Bouncy exit |
 
 **XAML:**
-```xml
+```xaml
 <gauge:BarPointer Value="70" 
                  EnableAnimation="True"
                  AnimationDuration="1000"
@@ -347,7 +347,7 @@ The `IsMirrored` property flips all gauge elements horizontally or vertically.
 ### IsMirrored Property
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge IsMirrored="True"/>
 ```
 
@@ -405,7 +405,7 @@ if (CultureInfo.CurrentCulture.TextInfo.IsRightToLeft)
 ```
 
 **Symmetric Dual Gauges:**
-```xml
+```xaml
 <HorizontalStackLayout>
     <!-- Left gauge (normal) -->
     <gauge:SfLinearGauge IsMirrored="False">
@@ -434,12 +434,12 @@ gauge.IsMirrored = true;
 Switch between horizontal and vertical orientations.
 
 **Horizontal:**
-```xml
+```xaml
 <gauge:SfLinearGauge Orientation="Horizontal"/>
 ```
 
 **Vertical:**
-```xml
+```xaml
 <gauge:SfLinearGauge Orientation="Vertical" HeightRequest="300"/>
 ```
 
@@ -663,7 +663,7 @@ public async Task SimulateTemperatureRise()
 
 ### Example 6: Mirrored Dual Gauge Comparison
 
-```xml
+```xaml
 <HorizontalStackLayout Spacing="20" Padding="20">
     
     <!-- Left gauge (Person A) -->

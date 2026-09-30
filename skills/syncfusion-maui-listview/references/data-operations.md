@@ -35,7 +35,7 @@ listView.DataSource.SortDescriptors.Add(new SortDescriptor
 });
 ```
 
-```xml
+```xaml
 <syncfusion:SfListView x:Name="listView" ItemsSource="{Binding Books}">
     <syncfusion:SfListView.DataSource>
         <data:DataSource>
@@ -115,7 +115,7 @@ listView.DataSource.SortDescriptors.Add(new SortDescriptor
 
 ### Dynamic Sorting (User Selection)
 
-```xml
+```xaml
 <StackLayout>
     <Picker x:Name="sortPicker" 
             Title="Sort By"
@@ -192,7 +192,7 @@ listView.DataSource.RefreshFilter();
 
 ### Search Bar Filter
 
-```xml
+```xaml
 <StackLayout>
     <SearchBar x:Name="searchBar"
                Placeholder="Search products..."
@@ -295,6 +295,318 @@ private void OnCategorySelected(object sender, ItemTappedEventArgs e)
 }
 ```
 
+### Custom Filter UI Support
+
+SfListView provides built-in APIs to display a customizable filtering UI. This allows users to apply filters through an interactive popup interface instead of programmatic filtering alone.
+
+#### Filtering UI APIs
+
+- **FilteringUITitle**: Specifies the title displayed in the filtering UI popup.
+- **ShowFilteringUICommand**: Triggers the filtering UI programmatically, typically from a button or other UI interaction.
+- **FilteringUITemplate**: Defines the custom layout of the filtering UI, allowing you to design filter elements such as buttons, chips, or other controls.
+
+#### Basic Filtering UI with Header
+
+```xaml
+<syncfusion:SfListView x:Name="listView"
+                       ItemsSource="{Binding Employees}"
+                       FilteringUITitle="Filter Employees">
+
+    <!-- Trigger Filtering UI with Button -->
+    <syncfusion:SfListView.HeaderTemplate>
+        <DataTemplate>
+            <Button Text="Filter"
+                    Command="{Binding Source={x:Reference listView}, Path=ShowFilteringUICommand}"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                    Padding="10" />
+        </DataTemplate>
+    </syncfusion:SfListView.HeaderTemplate>
+
+    <syncfusion:SfListView.ItemTemplate>
+        <DataTemplate>
+            <StackLayout Padding="10">
+                <!-- Your content -->
+            </StackLayout>
+        </DataTemplate>
+    </syncfusion:SfListView.ItemTemplate>
+</syncfusion:SfListView>
+```
+
+#### Custom Filtering UI Template
+
+Customize the filtering UI with specific filter controls:
+
+```xaml
+<syncfusion:SfListView x:Name="listView"
+                       ItemsSource="{Binding Employees}"
+                       FilteringUITitle="Advanced Filters">
+
+    <!-- Header with Filter Button -->
+    <syncfusion:SfListView.HeaderTemplate>
+        <DataTemplate>
+            <Button Text="⚙️ Filters"
+                    Command="{Binding Source={x:Reference listView}, Path=ShowFilteringUICommand}"
+                    BackgroundColor="#2196F3"
+                    TextColor="White" />
+        </DataTemplate>
+    </syncfusion:SfListView.HeaderTemplate>
+
+    <!-- Custom Filtering UI Layout -->
+    <syncfusion:SfListView.FilteringUITemplate>
+        <DataTemplate>
+            <VerticalStackLayout Padding="14" Spacing="10">
+                
+                <!-- Department Filter -->
+                <Label Text="Department" FontAttributes="Bold" FontSize="16" />
+                <Picker x:Name="departmentPicker" 
+                        Title="Select Department">
+                    <Picker.Items>
+                        <x:String>All</x:String>
+                        <x:String>Engineering</x:String>
+                        <x:String>Sales</x:String>
+                        <x:String>HR</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <!-- Salary Range Filter -->
+                <Label Text="Salary Range" FontAttributes="Bold" FontSize="16" />
+                <Label Text="Min: $50,000" FontSize="12" />
+                <Slider x:Name="minSalarySlider" 
+                        Minimum="0" 
+                        Maximum="200000" 
+                        Value="50000" />
+                
+                <Label Text="Max: $150,000" FontSize="12" />
+                <Slider x:Name="maxSalarySlider" 
+                        Minimum="0" 
+                        Maximum="200000" 
+                        Value="150000" />
+
+                <!-- Status Filter -->
+                <Label Text="Status" FontAttributes="Bold" FontSize="16" />
+                <HorizontalStackLayout Spacing="10">
+                    <CheckBox x:Name="activeCheckbox" 
+                              IsChecked="True" />
+                    <Label Text="Active" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+
+                <!-- Action Buttons -->
+                <HorizontalStackLayout Spacing="10" Margin="0,10,0,0">
+                    <Button Text="Apply" 
+                            BackgroundColor="#4CAF50" 
+                            TextColor="White"
+                            HorizontalOptions="Fill"
+                            Command="{Binding ApplyFilterCommand}" />
+                    <Button Text="Reset" 
+                            BackgroundColor="#F44336" 
+                            TextColor="White"
+                            HorizontalOptions="Fill"
+                            Command="{Binding ResetFilterCommand}" />
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </DataTemplate>
+    </syncfusion:SfListView.FilteringUITemplate>
+
+    <syncfusion:SfListView.ItemTemplate>
+        <DataTemplate>
+            <StackLayout Padding="10">
+                <Label Text="{Binding Name}" FontAttributes="Bold" />
+                <Label Text="{Binding Department}" FontSize="12" TextColor="Gray" />
+                <Label Text="{Binding Salary, StringFormat='${0:N0}'}" FontSize="12" />
+            </StackLayout>
+        </DataTemplate>
+    </syncfusion:SfListView.ItemTemplate>
+</syncfusion:SfListView>
+```
+
+#### Programmatic Filtering UI Control
+
+Show the filtering UI programmatically:
+
+```csharp
+// Show filtering UI with button click
+private void OnFilterButtonClicked(object sender, EventArgs e)
+{
+    // Execute ShowFilteringUICommand to display the filtering UI popup
+    if (listView.ShowFilteringUICommand.CanExecute(null))
+    {
+        listView.ShowFilteringUICommand.Execute(null);
+    }
+}
+
+// Alternative approach - direct method call
+private void ShowFilteringUI()
+{
+    listView.ShowFilteringUIForm();
+}
+```
+
+#### Filter UI with Applied Filters Display
+
+```xaml
+<Grid RowDefinitions="Auto,*">
+    <!-- Active Filters Display -->
+    <HorizontalScrollView Grid.Row="0">
+        <HorizontalStackLayout x:Name="activeFiltersPanel" 
+                               Spacing="5" 
+                               Padding="10">
+            <!-- Chip-style filter tags will be added here dynamically -->
+        </HorizontalStackLayout>
+    </HorizontalScrollView>
+
+    <!-- Filter Button and ListView -->
+    <Grid Grid.Row="1" RowDefinitions="Auto,*">
+        <Button Text="🔍 Filter & Sort"
+                Command="{Binding Source={x:Reference listView}, Path=ShowFilteringUICommand}"
+                BackgroundColor="#2196F3"
+                TextColor="White"
+                Margin="10" />
+
+        <syncfusion:SfListView Grid.Row="1"
+                               x:Name="listView"
+                               ItemsSource="{Binding Employees}"
+                               FilteringUITitle="Filter Employees">
+            <syncfusion:SfListView.FilteringUITemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Padding="14" Spacing="10">
+                        <!-- Filter controls here -->
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </syncfusion:SfListView.FilteringUITemplate>
+        </syncfusion:SfListView>
+    </Grid>
+</Grid>
+```
+
+#### ViewModel Implementation for Custom Filters
+
+```csharp
+public class EmployeeFilterViewModel : INotifyPropertyChanged
+{
+    private string selectedDepartment = "All";
+    private decimal minSalary = 50000;
+    private decimal maxSalary = 150000;
+    private bool isActive = true;
+    private ObservableCollection<Employee> employees;
+
+    public EmployeeFilterViewModel()
+    {
+        ApplyFilterCommand = new Command(ApplyFilter);
+        ResetFilterCommand = new Command(ResetFilter);
+    }
+
+    public string SelectedDepartment
+    {
+        get => selectedDepartment;
+        set
+        {
+            if (selectedDepartment != value)
+            {
+                selectedDepartment = value;
+                OnPropertyChanged();
+            }
+        }
+    }
+
+    public decimal MinSalary
+    {
+        get => minSalary;
+        set
+        {
+            if (minSalary != value)
+            {
+                minSalary = value;
+                OnPropertyChanged();
+            }
+        }
+    }
+
+    public decimal MaxSalary
+    {
+        get => maxSalary;
+        set
+        {
+            if (maxSalary != value)
+            {
+                maxSalary = value;
+                OnPropertyChanged();
+            }
+        }
+    }
+
+    public bool IsActive
+    {
+        get => isActive;
+        set
+        {
+            if (isActive != value)
+            {
+                isActive = value;
+                OnPropertyChanged();
+            }
+        }
+    }
+
+    public ICommand ApplyFilterCommand { get; }
+    public ICommand ResetFilterCommand { get; }
+
+    private void ApplyFilter()
+    {
+        // Apply custom filter logic based on selected criteria
+        listView.DataSource.Filter = (obj) =>
+        {
+            var employee = obj as Employee;
+            if (employee == null)
+                return false;
+
+            // Department filter
+            if (SelectedDepartment != "All" && employee.Department != SelectedDepartment)
+                return false;
+
+            // Salary range filter
+            if (employee.Salary < MinSalary || employee.Salary > MaxSalary)
+                return false;
+
+            // Status filter
+            if (IsActive && !employee.IsActive)
+                return false;
+
+            return true;
+        };
+
+        listView.DataSource.RefreshFilter();
+    }
+
+    private void ResetFilter()
+    {
+        SelectedDepartment = "All";
+        MinSalary = 50000;
+        MaxSalary = 150000;
+        IsActive = true;
+
+        listView.DataSource.Filter = null;
+        listView.DataSource.RefreshFilter();
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected void OnPropertyChanged([CallerMemberName] string name = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+    }
+}
+```
+
+#### Features of Filtering UI
+
+- **Popup Display**: Filtering UI is displayed in a modal popup overlay
+- **Custom Templates**: Design UI using any MAUI controls (Pickers, Sliders, CheckBox, etc.)
+- **Apply/Reset Options**: Provide buttons to apply or reset filter criteria
+- **Responsive Layout**: Adapts to different screen sizes and orientations
+- **Integration**: Works seamlessly with programmatic filtering and data operations
+
 ## Grouping
 
 Group items using `GroupDescriptor` objects added to `DataSource.GroupDescriptors` collection.
@@ -308,7 +620,7 @@ listView.DataSource.GroupDescriptors.Add(new GroupDescriptor
 });
 ```
 
-```xml
+```xaml
 <syncfusion:SfListView x:Name="listView" ItemsSource="{Binding Products}">
     <syncfusion:SfListView.DataSource>
         <data:DataSource>
@@ -330,7 +642,7 @@ listView.DataSource.GroupDescriptors.Add(new GroupDescriptor
 
 ### Sticky Group Headers
 
-```xml
+```xaml
 <syncfusion:SfListView x:Name="listView"
                        IsStickyGroupHeader="True"
                        ItemsSource="{Binding Contacts}">
@@ -369,7 +681,7 @@ listView.DataSource.GroupDescriptors.Add(new GroupDescriptor
 
 ### Custom Group Header Template
 
-```xml
+```xaml
 <syncfusion:SfListView.GroupHeaderTemplate>
     <DataTemplate>
         <Grid BackgroundColor="#E0E0E0" Padding="10,5">
@@ -565,7 +877,7 @@ searchBar.TextChanged += async (s, e) =>
 
 ## Complete Example: Product List with All Operations
 
-```xml
+```xaml
 <StackLayout>
     <SearchBar x:Name="searchBar" 
                Placeholder="Search products..."

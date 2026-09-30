@@ -25,7 +25,7 @@ The SfKanban control supports right-to-left (RTL) layout for languages like Arab
 ### Setting Flow Direction
 
 **XAML:**
-```xml
+```xaml
 <kanban:SfKanban FlowDirection="RightToLeft"
                  ItemsSource="{Binding Cards}">
     <kanban:SfKanban.Columns>
@@ -142,7 +142,7 @@ public partial class App : Application
 ### Resource File Content
 
 **SfKanban.resx (English - Default):**
-```xml
+```xaml
 <data name="ItemsCount" xml:space="preserve">
     <value>Items: {0}</value>
 </data>
@@ -155,7 +155,7 @@ public partial class App : Application
 ```
 
 **SfKanban.fr-FR.resx (French):**
-```xml
+```xaml
 <data name="ItemsCount" xml:space="preserve">
     <value>Éléments: {0}</value>
 </data>
@@ -196,7 +196,7 @@ public class LocalizationService
 
 ### Example: Language Selector
 
-```xml
+```xaml
 <Picker x:Name="languagePicker"
         Title="Select Language"
         SelectedIndexChanged="OnLanguageChanged">
@@ -332,7 +332,7 @@ ConfigureForCulture(preferredLanguage);
 
 ### Use Case 3: App Settings
 
-```xml
+```xaml
 <ContentPage>
     <StackLayout>
         <Label Text="Language Settings" />
@@ -369,7 +369,7 @@ Debug.WriteLine($"Resource Manager: {SfKanbanResources.ResourceManager}");
 ### Issue: Text not displaying in RTL
 
 **Solution:** Ensure font supports RTL characters:
-```xml
+```xaml
 <Label Text="{Binding ArabicText}"
        FontFamily="NotoSansArabic" />
 ```

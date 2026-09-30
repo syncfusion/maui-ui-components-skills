@@ -27,7 +27,7 @@ Control thumb size using the `Radius` property of `SliderThumbStyle`.
 
 ### Setting Thumb Radius
 
-```xml
+```xaml
 <sliders:SfSlider>
     <sliders:SfSlider.ThumbStyle>
         <sliders:SliderThumbStyle Radius="15" />
@@ -72,7 +72,7 @@ Customize thumb color using the `Fill` property of `SliderThumbStyle`.
 
 ### Setting Thumb Fill
 
-```xml
+```xaml
 <sliders:SfSlider>
     <sliders:SfSlider.ThumbStyle>
         <sliders:SliderThumbStyle Fill="#EE3F3F" />
@@ -123,7 +123,7 @@ Add a border to the thumb using stroke properties.
 
 ### Stroke Color and Thickness
 
-```xml
+```xaml
 <sliders:SfSlider>
     <sliders:SfSlider.ThumbStyle>
         <sliders:SliderThumbStyle Stroke="#EE3F3F"
@@ -147,7 +147,7 @@ slider.ThumbStyle.StrokeThickness = 2;
 ### Creating Outlined Thumbs
 
 **Thick Border:**
-```xml
+```xaml
 <sliders:SliderThumbStyle Fill="White"
                           Stroke="#2196F3"
                           StrokeThickness="4"
@@ -155,7 +155,7 @@ slider.ThumbStyle.StrokeThickness = 2;
 ```
 
 **Hollow Thumb:**
-```xml
+```xaml
 <sliders:SliderThumbStyle Fill="Transparent"
                           Stroke="#FF6B6B"
                           StrokeThickness="3"
@@ -165,7 +165,7 @@ slider.ThumbStyle.StrokeThickness = 2;
 ### Color Combinations
 
 **Example 1: Classic**
-```xml
+```xaml
 <sliders:SliderThumbStyle Fill="White"
                           Stroke="#666666"
                           StrokeThickness="2"
@@ -173,7 +173,7 @@ slider.ThumbStyle.StrokeThickness = 2;
 ```
 
 **Example 2: Material Design**
-```xml
+```xaml
 <sliders:SliderThumbStyle Fill="#6200EE"
                           Stroke="White"
                           StrokeThickness="2"
@@ -181,7 +181,7 @@ slider.ThumbStyle.StrokeThickness = 2;
 ```
 
 **Example 3: High Contrast**
-```xml
+```xaml
 <sliders:SliderThumbStyle Fill="#FF4081"
                           Stroke="Black"
                           StrokeThickness="3"
@@ -194,7 +194,7 @@ The thumb overlay is a circular ripple effect that appears around the thumb duri
 
 ### Setting Overlay Radius
 
-```xml
+```xaml
 <sliders:SfSlider>
     <sliders:SfSlider.ThumbOverlayStyle>
         <sliders:SliderThumbOverlayStyle Radius="18" />
@@ -231,7 +231,7 @@ Customize overlay color using the `Fill` property of `SliderThumbOverlayStyle`.
 
 ### Setting Overlay Fill
 
-```xml
+```xaml
 <sliders:SfSlider>
     <sliders:SfSlider.ThumbOverlayStyle>
         <sliders:SliderThumbOverlayStyle Fill="#66FFD700" />
@@ -275,7 +275,7 @@ slider.ThumbOverlayStyle.Fill = new SolidColorBrush(thumbColor.WithAlpha(0.3f));
 
 ### Complete Thumb and Overlay Setup
 
-```xml
+```xaml
 <sliders:SfSlider>
     <sliders:SfSlider.ThumbStyle>
         <sliders:SliderThumbStyle Radius="14"
@@ -309,7 +309,7 @@ Use Visual State Manager (VSM) to customize thumb appearance when the slider is 
 ### Complete Example with VSM
 
 **XAML:**
-```xml
+```xaml
 <ContentPage.Resources>
     <Style TargetType="sliders:SfSlider">
         <Setter Property="Interval" Value="0.25" />
@@ -445,7 +445,7 @@ Customize any slider property based on state:
 
 ### Example 1: Material Design Style
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="60"
@@ -472,7 +472,7 @@ Customize any slider property based on state:
 
 ### Example 2: iOS Style
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="50">
@@ -497,7 +497,7 @@ Customize any slider property based on state:
 
 ### Example 3: Bold and Colorful
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="75"
@@ -589,7 +589,7 @@ public class MinimalistSlider : ContentView
 
 **Cause**: Thumb fill color matches background or radius is 0  
 **Solution**: Set contrasting fill color and appropriate radius:
-```xml
+```xaml
 <sliders:SliderThumbStyle Fill="#FF6B6B" Radius="12" />
 ```
 
@@ -597,7 +597,7 @@ public class MinimalistSlider : ContentView
 
 **Cause**: Overlay color is fully transparent or radius too small  
 **Solution**: Use semi-transparent color:
-```xml
+```xaml
 <sliders:SliderThumbOverlayStyle Fill="#66FF6B6B" Radius="24" />
 ```
 
@@ -605,7 +605,7 @@ public class MinimalistSlider : ContentView
 
 **Cause**: StrokeThickness is 0 or Stroke color not set  
 **Solution**: Set both stroke and thickness:
-```xml
+```xaml
 <sliders:SliderThumbStyle Stroke="White" StrokeThickness="2" />
 ```
 

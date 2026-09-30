@@ -7,7 +7,7 @@ The SfCarousel control provides animation support to create smooth transitions w
 The Duration property specifies the time (in milliseconds) taken to animate an item from its current position to the selected item position in Default mode.
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel x:Name="carousel"
                      ItemsSource="{Binding ImageCollection}"
                      ItemTemplate="{StaticResource itemTemplate}" 
@@ -99,7 +99,7 @@ carousel.Duration = 1500;
 
 For fast-paced content browsing:
 
-```xml
+```xaml
 <carousel:SfCarousel ItemsSource="{Binding NewsFeed}"
                      ItemTemplate="{StaticResource newsTemplate}"
                      Duration="350"
@@ -124,7 +124,7 @@ var carousel = new SfCarousel
 
 Balanced animation for general use:
 
-```xml
+```xaml
 <carousel:SfCarousel ItemsSource="{Binding Photos}"
                      ItemTemplate="{StaticResource photoTemplate}"
                      Duration="600"
@@ -141,7 +141,7 @@ Balanced animation for general use:
 
 Elegant slow animations for featured content:
 
-```xml
+```xaml
 <carousel:SfCarousel ItemsSource="{Binding FeaturedProducts}"
                      ItemTemplate="{StaticResource premiumTemplate}"
                      Duration="1100"
@@ -158,7 +158,7 @@ Elegant slow animations for featured content:
 
 Slow, deliberate transitions for instructional content:
 
-```xml
+```xaml
 <carousel:SfCarousel ItemsSource="{Binding OnboardingSteps}"
                      ItemTemplate="{StaticResource tutorialTemplate}"
                      Duration="900"
@@ -367,7 +367,7 @@ public class CarouselViewModel
 }
 ```
 
-```xml
+```xaml
 <StackLayout>
     <Label Text="Animation Speed"/>
     <Picker SelectedIndexChanged="OnAnimationSpeedChanged">

@@ -28,7 +28,7 @@ The Load More feature allows you to dynamically load additional items when the u
 Use the `AllowLoadMore` property to enable load more functionality:
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel x:Name="carousel"
                      ItemsSource="{Binding ImageCollection}"
                      ItemTemplate="{StaticResource itemTemplate}"
@@ -63,7 +63,7 @@ carousel.SetBinding(SfCarousel.ItemsSourceProperty, "ImageCollection");
 The `LoadMoreItemsCount` property specifies how many items to load when the load more button is tapped.
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel AllowLoadMore="True"
                      LoadMoreItemsCount="10"
                      ItemsSource="{Binding ImageCollection}"
@@ -124,7 +124,7 @@ public class CarouselViewModel
 The `LoadMoreView` property allows you to customize the appearance of the load more button.
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel AllowLoadMore="True"
                      ItemsSource="{Binding ImageCollection}"
                      ItemTemplate="{StaticResource itemTemplate}">
@@ -185,7 +185,7 @@ carousel.LoadMoreView = loadMoreView;
 ```
 
 **Custom Load More with Icon:**
-```xml
+```xaml
 <carousel:SfCarousel.LoadMoreView>
     <Frame CornerRadius="25" 
            HasShadow="True"
@@ -209,7 +209,7 @@ carousel.LoadMoreView = loadMoreView;
 The `LoadMore` event is raised when the load more view is tapped.
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel AllowLoadMore="True"
                      LoadMoreItemsCount="10"
                      LoadMore="OnLoadMore"
@@ -289,7 +289,7 @@ UI Virtualization improves performance by creating UI elements only for visible 
 Use the `EnableVirtualization` property:
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel EnableVirtualization="True"
                      ItemsSource="{Binding LargeImageCollection}"
                      ItemTemplate="{StaticResource itemTemplate}"
@@ -349,7 +349,7 @@ With Virtualization: ~50MB memory
    ```
 
 2. **Optimize ItemTemplate:**
-   ```xml
+   ```xaml
    <!-- Good: Simple, efficient -->
    <DataTemplate x:Key="efficientTemplate">
        <Image Source="{Binding Image}" Aspect="AspectFit"/>
@@ -378,7 +378,7 @@ With Virtualization: ~50MB memory
    ```
 
 4. **Combine with Load More:**
-   ```xml
+   ```xaml
    <carousel:SfCarousel EnableVirtualization="True"
                         AllowLoadMore="True"
                         LoadMoreItemsCount="20"
@@ -393,7 +393,7 @@ With Virtualization: ~50MB memory
 Apply rotation to items in Default ViewMode:
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel ViewMode="Default"
                      RotationAngle="45"
                      ItemsSource="{Binding ImageCollection}"
@@ -423,7 +423,7 @@ var carousel = new SfCarousel
 
 While not directly supported, you can apply scale in ItemTemplate:
 
-```xml
+```xaml
 <DataTemplate x:Key="scaledTemplate">
     <Grid>
         <Frame Scale="0.9" CornerRadius="10">
@@ -452,7 +452,7 @@ carousel.SelectionChanged += (s, e) =>
 
 Combine rotation, offset, and custom transforms:
 
-```xml
+```xaml
 <carousel:SfCarousel ViewMode="Default"
                      RotationAngle="35"
                      Offset="250"
@@ -543,7 +543,7 @@ Debug.WriteLine($"Memory used by carousel: {memoryUsed} MB");
 
 ### Example 1: Large Photo Gallery
 
-```xml
+```xaml
 <carousel:SfCarousel EnableVirtualization="True"
                      AllowLoadMore="True"
                      LoadMoreItemsCount="20"

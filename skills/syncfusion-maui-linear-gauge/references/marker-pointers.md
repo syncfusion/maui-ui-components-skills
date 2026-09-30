@@ -48,7 +48,7 @@ The LinearShapePointer supports five built-in shapes:
 - `Rectangle` - Square/rectangular marker
 
 **XAML:**
-```xml
+```xaml
 <!-- Default shape (Inverted Triangle) -->
 <gauge:LinearShapePointer Value="50"/>
 
@@ -108,7 +108,7 @@ gauge.MarkerPointers.Add(new LinearShapePointer
 Control marker size with `ShapeHeight` and `ShapeWidth`.
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearShapePointer Value="50" 
                          ShapeType="Circle"
                          ShapeHeight="25" 
@@ -165,7 +165,7 @@ gauge.MarkerPointers.Add(new LinearShapePointer
 **Fill Color:**
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearShapePointer Value="70" 
                          ShapeType="Circle"
                          Fill="#2196F3"/>
@@ -211,7 +211,7 @@ Position markers relative to the scale.
 - `Cross` - Crossing the scale
 
 **XAML:**
-```xml
+```xaml
 <!-- Outside (default) -->
 <gauge:LinearShapePointer Value="50" Position="Outside"/>
 
@@ -251,7 +251,7 @@ gauge.MarkerPointers.Add(new LinearShapePointer
 Adjust marker distance from scale with `Offset`.
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearShapePointer Value="60" 
                          Position="Outside" 
                          Offset="10"/>
@@ -272,7 +272,7 @@ gauge.MarkerPointers.Add(new LinearShapePointer
 Add borders to shape markers.
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearShapePointer Value="50" 
                          ShapeType="Circle"
                          Fill="White"
@@ -318,7 +318,7 @@ Use custom content as markers - images, text, or any MAUI view.
 ### Image Content
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearContentPointer Value="50">
     <gauge:LinearContentPointer.Content>
         <Image Source="pin.png" 
@@ -361,7 +361,7 @@ gauge.MarkerPointers.Add(new LinearContentPointer
 ### Text Content
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearContentPointer Value="65">
     <gauge:LinearContentPointer.Content>
         <Label Text="65°" 
@@ -396,7 +396,7 @@ gauge.MarkerPointers.Add(new LinearContentPointer
 Create complex markers with multiple elements.
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearContentPointer Value="75" Alignment="End">
     <gauge:LinearContentPointer.Content>
         <Grid HeightRequest="30" WidthRequest="30">
@@ -486,7 +486,7 @@ Control how content aligns with the value position.
 - `End` - Content ends at value position
 
 **XAML:**
-```xml
+```xaml
 <!-- Center aligned (default) -->
 <gauge:LinearContentPointer Value="50" Alignment="Center"/>
 
@@ -526,7 +526,7 @@ gauge.MarkerPointers.Add(new LinearContentPointer
 Position content markers relative to scale.
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearContentPointer Value="50" Position="Outside">
     <gauge:LinearContentPointer.Content>
         <Image Source="marker.png" HeightRequest="20" WidthRequest="20"/>
@@ -549,7 +549,7 @@ gauge.MarkerPointers.Add(new LinearContentPointer
 Adjust distance from scale.
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearContentPointer Value="60" 
                            Position="Outside" 
                            OffsetY="15" OffsetX="15">
@@ -577,7 +577,7 @@ Combine multiple markers on the same scale.
 
 **Example: Current vs Target**
 
-```xml
+```xaml
 <gauge:SfLinearGauge>
     <gauge:SfLinearGauge.MarkerPointers>
         
@@ -667,7 +667,7 @@ gauge.MarkerPointers.Add(new LinearContentPointer
 
 ### Pattern 2: Value with Label
 
-```xml
+```xaml
 <gauge:LinearContentPointer Value="68" Alignment="End">
     <gauge:LinearContentPointer.Content>
         <VerticalStackLayout Spacing="2">
@@ -710,7 +710,7 @@ gauge.MarkerPointers.Add(new LinearShapePointer
 
 ### Pattern 4: Interactive Selector with Value Display
 
-```xml
+```xaml
 <gauge:LinearContentPointer Value="50" 
                            IsInteractive="True"
                            ValueChanging="OnValueChanging">

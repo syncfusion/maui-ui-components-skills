@@ -57,7 +57,7 @@ public static class MauiProgram
 Add the Syncfusion namespace to your XAML or C# file:
 
 **XAML:**
-```xml
+```xaml
 xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
 ```
 
@@ -69,7 +69,7 @@ using Syncfusion.Maui.Inputs;
 ### Step 2: Create Basic Autocomplete
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs">
@@ -108,7 +108,7 @@ autocomplete.ItemsSource = new List<string>
 ```
 
 **XAML with ViewModel:**
-```xml
+```xaml
 <ContentPage.BindingContext>
     <local:SocialMediaViewModel />
 </ContentPage.BindingContext>
@@ -153,7 +153,7 @@ public class SocialMediaViewModel
 
 Bind to Autocomplete:
 
-```xml
+```xaml
 <editors:SfAutocomplete ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
                         TextMemberPath="Name" />
@@ -166,14 +166,14 @@ When binding complex objects, specify which properties to use:
 - **DisplayMemberPath**: Property displayed in the dropdown list
 - **TextMemberPath**: Property used for searching and displayed in input box
 
-```xml
+```xaml
 <editors:SfAutocomplete ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
                         TextMemberPath="Name" />
 ```
 
 **Different Paths Example:**
-```xml
+```xaml
 <!-- Display Name in dropdown, but search by ID -->
 <editors:SfAutocomplete ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
@@ -199,7 +199,7 @@ public class SocialMedia
 
 Display hint text when the control is empty:
 
-```xml
+```xaml
 <editors:SfAutocomplete Placeholder="Select a social media"
                         PlaceholderColor="Gray"
                         ItemsSource="{Binding SocialMedias}"
@@ -229,7 +229,7 @@ Default value: `string.Empty`
 
 The SfAutocomplete provides AutomationId support for UI automation frameworks. The control's AutomationId is used to generate unique IDs for inner elements:
 
-```xml
+```xaml
 <editors:SfAutocomplete AutomationId="EmployeeAutocomplete" />
 ```
 
@@ -241,7 +241,7 @@ This enables stable, predictable identifiers for automated UI testing.
 
 ## Complete Example
 
-```xml
+```xaml
 <!-- MainPage.xaml -->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

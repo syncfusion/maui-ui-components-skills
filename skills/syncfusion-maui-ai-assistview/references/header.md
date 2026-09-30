@@ -8,7 +8,7 @@ The header appears at the top of the `SfAIAssistView` content area (below the to
 
 Use `ShowHeader` to toggle the header visibility. The default value is `false`.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            AssistItems="{Binding AssistItems}"
                            ShowHeader="True" />
@@ -26,7 +26,7 @@ sfAIAssistView.ShowHeader = true;
 
 Use `HeaderText` to display a simple string title inside the default header layout.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            ShowHeader="True"
                            HeaderText="Ask AI Anything" />
@@ -45,7 +45,7 @@ Use `HeaderTemplate` to replace the default header with a fully custom layout. A
 
 ### XAML
 
-```xml
+```xaml
 <ContentPage.Resources>
     <DataTemplate x:Key="customHeaderTemplate">
         <Grid RowDefinitions="45,30,Auto"
@@ -135,7 +135,7 @@ private DataTemplate CreateHeaderTemplate()
 
 The most common use of the header is to pair it with `Suggestions` — quick-start chips shown below the header content.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView
     AssistItems="{Binding AssistItems}"
     Suggestions="{Binding Suggestions}"

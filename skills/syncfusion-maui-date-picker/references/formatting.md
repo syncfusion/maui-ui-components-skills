@@ -92,7 +92,7 @@ The DatePicker supports 20+ predefined formats through the `PickerDateFormat` en
 
 ## Setting Format in XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      Format="MM_dd_yyyy">
 </picker:SfDatePicker>
@@ -113,7 +113,7 @@ this.Content = datePicker;
 
 ### Example 1: US Date Format
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      Format="MM_dd_yyyy"
                      SelectedDate="9/15/2023">
@@ -127,7 +127,7 @@ this.Content = datePicker;
 
 ### Example 2: European Date Format
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      Format="dd_MM_yyyy"
                      SelectedDate="15/09/2023">
@@ -141,7 +141,7 @@ this.Content = datePicker;
 
 ### Example 3: Long Month Name Format
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      Format="dd_MMMM_yyyy"
                      SelectedDate="15/09/2023">
@@ -155,7 +155,7 @@ this.Content = datePicker;
 
 ### Example 4: Month-Year Only
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      Format="MMM_yyyy"
                      SelectedDate="09/2023">
@@ -169,7 +169,7 @@ this.Content = datePicker;
 
 ### Example 5: ISO-Like Format
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      Format="yyyy_MM_dd"
                      SelectedDate="2023/09/15">
@@ -224,7 +224,7 @@ public partial class MainPage : ContentPage
 
 Combine format settings with custom column headers for clarity:
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      Format="MMM_dd_yyyy">
     <picker:SfDatePicker.ColumnHeaderView>
@@ -263,7 +263,7 @@ Choose formats that match the user's expected date format based on their locale:
 ### 2. Provide Clear Headers
 When using less common formats, provide clear header text:
 
-```xml
+```xaml
 <picker:PickerHeaderView Text="Select Date (dd/MM/yyyy)" Height="40" />
 ```
 
@@ -278,7 +278,7 @@ Test your format choices with different culture settings to ensure proper displa
 ## Common Use Cases
 
 ### Birth Date Selection
-```xml
+```xaml
 <picker:SfDatePicker Format="dd_MMMM_yyyy"
                      MaximumDate="{x:Static sys:DateTime.Now}">
     <picker:SfDatePicker.HeaderView>
@@ -288,7 +288,7 @@ Test your format choices with different culture settings to ensure proper displa
 ```
 
 ### Credit Card Expiry
-```xml
+```xaml
 <picker:SfDatePicker Format="MM_yyyy"
                      MinimumDate="{x:Static sys:DateTime.Now}">
     <picker:SfDatePicker.HeaderView>
@@ -298,7 +298,7 @@ Test your format choices with different culture settings to ensure proper displa
 ```
 
 ### Appointment Scheduling
-```xml
+```xaml
 <picker:SfDatePicker Format="ddd_dd_MM_YYYY"
                      MinimumDate="{x:Static sys:DateTime.Now}">
     <picker:SfDatePicker.HeaderView>

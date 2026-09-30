@@ -23,7 +23,7 @@ The ComboBox has built-in support to filter data items based on the text entered
 To enable filtering functionality, set both the `IsFilteringEnabled` and `IsEditable` properties to `true`. The default value is `false`. The dropdown will open automatically when you start typing.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="true"
                     IsFilteringEnabled="true"
@@ -59,7 +59,7 @@ The string comparison for filtering suggestions can be changed using the `TextSe
 Filter matching items based on the starting text. The first filtered item will be appended to the typed input and highlighted in the dropdown.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     TextSearchMode="StartsWith"
                     IsEditable="true"
@@ -93,7 +93,7 @@ SfComboBox comboBox = new SfComboBox
 Filter matching items that contain specific text. The first filtered item will be highlighted in the dropdown.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     TextSearchMode="Contains"
                     IsEditable="true"
@@ -184,7 +184,7 @@ public class CityFilteringBehavior : IComboBoxFilterBehavior
 Apply the custom filtering to the ComboBox using the `FilterBehavior` property.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox TextMemberPath="CityName"
                     DisplayMemberPath="CityName"
                     IsEditable="True"
@@ -300,7 +300,7 @@ public class DatabaseFilterBehavior : IComboBoxFilterBehavior
 Instead of displaying the suggestion list on every character entry, you can filter and display matches after a few character entries using the `MinimumPrefixCharacters` property. The default value is `1`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsFilteringEnabled="True"
                     IsEditable="True"

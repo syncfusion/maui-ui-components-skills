@@ -7,7 +7,7 @@ Tooltips display information about chart segments when users tap or hover over t
 Enable tooltips by setting the `EnableTooltip` property to `true` on the series.
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:PieSeries EnableTooltip="True" 
                      ItemsSource="{Binding Data}"
@@ -33,7 +33,7 @@ Customize tooltip appearance using the `TooltipBehavior` property on the chart.
 ### Basic Customization
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.TooltipBehavior>
         <chart:ChartTooltipBehavior Background="DarkBlue"
@@ -65,6 +65,35 @@ chart.TooltipBehavior = new ChartTooltipBehavior
 };
 ```
 
+### Tooltip Border and Series Fill
+
+Use the `Stroke` and `StrokeWidth` properties of `ChartTooltipBehavior` to add a border around the tooltip. Set `UseSeriesFillColor` to `true` to make the tooltip background adopt the associated series fill color.
+
+**XAML:**
+```xaml
+<chart:SfCircularChart>
+    <chart:SfCircularChart.TooltipBehavior>
+        <chart:ChartTooltipBehavior Stroke="DarkSlateGray"
+                                    StrokeWidth="1"
+                                    UseSeriesFillColor="True"/>
+    </chart:SfCircularChart.TooltipBehavior>
+
+    <chart:PieSeries EnableTooltip="True"/>
+</chart:SfCircularChart>
+```
+
+**C#:**
+```csharp
+SfCircularChart chart = new SfCircularChart();
+
+chart.TooltipBehavior = new ChartTooltipBehavior
+{
+    Stroke = Colors.DarkSlateGray,
+    StrokeWidth = 1,
+    UseSeriesFillColor = true
+};
+```
+
 ### Tooltip Properties
 
 | Property | Type | Description |
@@ -76,6 +105,9 @@ chart.TooltipBehavior = new ChartTooltipBehavior
 | **FontFamily** | string | Font family name |
 | **Duration** | int | Display duration in milliseconds |
 | **Margin** | Thickness | Spacing around tooltip |
+| **Stroke** | Color | Tooltip border color |
+| **StrokeWidth** | double | Tooltip border thickness |
+| **UseSeriesFillColor** | bool | Uses the associated series fill color as the tooltip background |
 
 ## Custom Tooltip Template
 
@@ -84,7 +116,7 @@ Create fully custom tooltips using the `TooltipTemplate` property on the series.
 ### Basic Custom Template
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Resources>
         <DataTemplate x:Key="tooltipTemplate">
@@ -130,7 +162,7 @@ The tooltip template's binding context provides:
 
 ### Advanced Template with Styling
 
-```xml
+```xaml
 <DataTemplate x:Key="advancedTooltip">
     <Border BackgroundColor="#2C3E50" 
             Padding="15,10" 
@@ -161,7 +193,7 @@ The tooltip template's binding context provides:
 
 ### Template with Icons and Colors
 
-```xml
+```xaml
 <DataTemplate x:Key="iconTooltip">
     <Grid Padding="10" BackgroundColor="White">
         <Grid.RowDefinitions>
@@ -212,7 +244,7 @@ chart.TooltipBehavior = new ChartTooltipBehavior
 
 ### Example 1: Styled Tooltip with Custom Colors
 
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.TooltipBehavior>
         <chart:ChartTooltipBehavior Background="#34495E"
@@ -232,7 +264,7 @@ chart.TooltipBehavior = new ChartTooltipBehavior
 
 ### Example 2: Custom Template with Percentage
 
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Resources>
         <DataTemplate x:Key="percentTooltip">
@@ -280,7 +312,7 @@ chart.Series.Add(series);
 
 ### Example 4: Multi-Line Tooltip
 
-```xml
+```xaml
 <DataTemplate x:Key="multiLineTooltip">
     <StackLayout BackgroundColor="White" 
                  Padding="15" 

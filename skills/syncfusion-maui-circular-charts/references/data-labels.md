@@ -16,7 +16,7 @@ Data labels display values or information about chart segments, helping users un
 Enable data labels by setting the `ShowDataLabels` property to `true`.
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries ItemsSource="{Binding Data}"  
                  XBindingPath="Product" 
                  YBindingPath="SalesRate"
@@ -42,7 +42,7 @@ The `LabelPosition` property controls whether labels appear inside or outside th
 Labels are placed within the chart segments:
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries ShowDataLabels="True">
     <chart:PieSeries.DataLabelSettings>
         <chart:CircularDataLabelSettings LabelPosition="Inside"/>
@@ -67,7 +67,7 @@ PieSeries series = new PieSeries
 Labels are placed outside the chart segments with connector lines:
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries ShowDataLabels="True">
     <chart:PieSeries.DataLabelSettings>
         <chart:CircularDataLabelSettings LabelPosition="Outside"/>
@@ -101,7 +101,7 @@ The `SmartLabelAlignment` property prevents label overlap by automatically adjus
 ### Shift Alignment
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries ShowDataLabels="True">
     <chart:PieSeries.DataLabelSettings>
         <chart:CircularDataLabelSettings LabelPosition="Outside" 
@@ -158,7 +158,7 @@ Control what data is displayed in labels using the `LabelContext` property.
 #### Show Percentage
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries ItemsSource="{Binding Data}"
                  XBindingPath="Product"
                  YBindingPath="SalesRate"
@@ -174,7 +174,7 @@ series.LabelContext = LabelContext.Percentage;
 #### Show Y Value
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries LabelContext="YValue"/>
 ```
 
@@ -197,7 +197,7 @@ Connector lines join data labels to their corresponding segments when labels are
 Use the `ConnectorLineSettings` property to customize connector line appearance:
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Resources>
         <DoubleCollection x:Key="dashArray">
@@ -266,7 +266,7 @@ Create fully custom data labels using the `LabelTemplate` property.
 ### Basic Custom Template
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.Resources>
         <DataTemplate x:Key="labelTemplate">
@@ -334,7 +334,7 @@ The binding context provides access to:
 
 ### Advanced Custom Template with Icons
 
-```xml
+```xaml
 <DataTemplate x:Key="advancedTemplate">
     <StackLayout Orientation="Horizontal" Padding="5">
         <Image Source="{Binding Item.Icon}" 
@@ -355,7 +355,7 @@ The binding context provides access to:
 Apply the series color to the label background:
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries ShowDataLabels="True">
     <chart:PieSeries.DataLabelSettings>
         <chart:CircularDataLabelSettings UseSeriesPalette="True"/>
@@ -376,7 +376,7 @@ series.DataLabelSettings = new CircularDataLabelSettings
 Use the `LabelStyle` property to customize label appearance:
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries ShowDataLabels="True">
     <chart:PieSeries.DataLabelSettings>
         <chart:CircularDataLabelSettings>
@@ -426,7 +426,7 @@ series.DataLabelSettings = new CircularDataLabelSettings
 
 ### Example 1: Outside Labels with Percentage
 
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:PieSeries ItemsSource="{Binding Data}"
                      XBindingPath="Category"
@@ -482,7 +482,7 @@ series.DataLabelSettings = new CircularDataLabelSettings
 
 ### Example 3: Inside Labels with Series Colors
 
-```xml
+```xaml
 <chart:DoughnutSeries ShowDataLabels="True" LabelContext="Percentage">
     <chart:DoughnutSeries.DataLabelSettings>
         <chart:CircularDataLabelSettings LabelPosition="Inside"

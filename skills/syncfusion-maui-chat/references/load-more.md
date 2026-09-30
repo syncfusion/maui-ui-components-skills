@@ -28,7 +28,7 @@ The load-more feature lets users fetch older message history by scrolling to the
 ## Manual Load More
 
 **XAML:**
-```xml
+```xaml
 <sfChat:SfChat LoadMoreBehavior="Manual"
                LoadMoreCommand="{Binding LoadMoreCommand}"
                IsLazyLoading="{Binding IsBusy}"
@@ -93,7 +93,7 @@ public class LoadMoreViewModel : INotifyPropertyChanged
 
 With `Auto`, the command executes as soon as the user reaches the top — no button needed.
 
-```xml
+```xaml
 <sfChat:SfChat LoadMoreBehavior="Auto"
                LoadMoreCommand="{Binding LoadMoreCommand}"
                IsLazyLoading="{Binding IsBusy}"
@@ -122,7 +122,7 @@ private bool CanLoadMoreItems(object obj)
 
 Replace the default button/indicator with a fully custom view using `LoadMoreTemplate`:
 
-```xml
+```xaml
 <sfChat:SfChat LoadMoreCommand="{Binding LoadMoreCommand}"
                IsLazyLoading="{Binding IsBusy}"
                LoadMoreBehavior="{Binding LoadMoreBehavior}"

@@ -16,7 +16,7 @@ The `IsRunning` property is a boolean that determines whether the busy indicator
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator x:Name="busyIndicator"
                       AnimationType="CircularMaterial"
                       IsRunning="True" />
@@ -78,7 +78,7 @@ When `IsRunning` is `false`:
 
 **Important:** The default value of `IsRunning` is `false`, so the indicator will not appear unless explicitly set to `true`.
 
-```xml
+```xaml
 <!-- This indicator will NOT be visible on page load -->
 <core:SfBusyIndicator AnimationType="CircularMaterial" />
 
@@ -153,7 +153,7 @@ public class DataViewModel : INotifyPropertyChanged
 ```
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="{Binding IsLoading}"
                       AnimationType="CircularMaterial"
                       Title="Loading data..." />
@@ -185,7 +185,7 @@ public class MainViewModel : INotifyPropertyChanged
 ```
 
 **XAML:**
-```xml
+```xaml
 <!-- Show when ANY operation is running -->
 <core:SfBusyIndicator IsRunning="{Binding IsAnyLoading}" />
 
@@ -270,7 +270,7 @@ private async void OnRefreshing(object sender, EventArgs e)
 
 ### Pattern 1: Form Submission
 
-```xml
+```xaml
 <StackLayout>
     <Entry Placeholder="Username" />
     <Entry Placeholder="Password" IsPassword="True" />

@@ -100,7 +100,7 @@ The included Syncfusion license key is invalid.
 
 **Step 2: Check Version Match**
 Your NuGet packages:
-```xml
+```xaml
 <PackageReference Include="Syncfusion.Maui.Core" Version="26.2.4" />
 ```
 
@@ -247,7 +247,7 @@ The included Syncfusion license (25.1.35) is invalid for version 26.2.4.
 
 **Option A: Update License Key (Recommended)**
 1. Check your installed package version:
-   ```xml
+   ```xaml
    <PackageReference Include="Syncfusion.Maui.Core" Version="26.2.4" />
    ```
 2. Generate license key for version 26.2.4
@@ -257,7 +257,7 @@ The included Syncfusion license (25.1.35) is invalid for version 26.2.4.
 If your license doesn't cover the newer version:
 1. Identify licensed version (e.g., 25.1.35)
 2. Downgrade all Syncfusion packages to that version:
-   ```xml
+   ```xaml
    <PackageReference Include="Syncfusion.Maui.Core" Version="25.1.35" />
    ```
 3. Clean and rebuild
@@ -302,7 +302,7 @@ Could not load Syncfusion.Licensing.dll assembly version [VERSION]
 **Step 1: Verify NuGet Package Installation**
 Ensure Syncfusion.Licensing package is installed:
 
-```xml
+```xaml
 <!-- Should appear in .csproj -->
 <PackageReference Include="Syncfusion.Licensing" Version="26.2.4" />
 ```
@@ -315,7 +315,7 @@ dotnet add package Syncfusion.Licensing
 **Step 2: Check Assembly Version Match**
 All Syncfusion assemblies should be same version:
 
-```xml
+```xaml
 <!-- All should be same version -->
 <PackageReference Include="Syncfusion.Maui.Core" Version="26.2.4" />
 <PackageReference Include="Syncfusion.Licensing" Version="26.2.4" />
@@ -331,7 +331,7 @@ For traditional assembly references (not NuGet):
 3. Set "Copy Local" to **True**
 
 In .csproj file:
-```xml
+```xaml
 <Reference Include="Syncfusion.Licensing">
   <HintPath>..\packages\Syncfusion.Licensing.26.2.4\lib\net6.0\Syncfusion.Licensing.dll</HintPath>
   <Private>True</Private> <!-- This is Copy Local -->

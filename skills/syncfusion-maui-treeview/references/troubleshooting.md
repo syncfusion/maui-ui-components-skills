@@ -40,12 +40,12 @@ builder.ConfigureSyncfusionTreeView();
 **Solutions:**
 
 1. **Verify ItemsSource binding:**
-   ```xml
+   ```xaml
    <syncfusion:SfTreeView ItemsSource="{Binding Countries}"/>
    ```
 
 2. **Check ChildPropertyName:**
-   ```xml
+   ```xaml
    <syncfusion:SfTreeView ChildPropertyName="States"/>
    ```
 
@@ -61,7 +61,7 @@ builder.ConfigureSyncfusionTreeView();
 
 **Solution:** Ensure ItemTemplateContextType is set correctly:
 
-```xml
+```xaml
 <syncfusion:SfTreeView ItemTemplateContextType="Node">
     <syncfusion:SfTreeView.ItemTemplate>
         <DataTemplate>
@@ -120,7 +120,7 @@ builder.ConfigureSyncfusionTreeView();
 **Solutions:**
 
 1. **Enable selection mode:**
-   ```xml
+   ```xaml
    <syncfusion:SfTreeView SelectionMode="Single"/>
    ```
 
@@ -134,7 +134,7 @@ builder.ConfigureSyncfusionTreeView();
 
 **Solution:**
 
-```xml
+```xaml
 <syncfusion:SfTreeView SelectedItem="{Binding SelectedCountry, Mode=TwoWay}"/>
 ```
 
@@ -160,17 +160,17 @@ public object SelectedCountry
 **Solutions:**
 
 1. **Use load on demand:**
-   ```xml
+   ```xaml
    <syncfusion:SfTreeView LoadOnDemandCommand="{Binding TreeViewOnDemandCommand}"/>
    ```
 
 2. **Optimize item height:**
-   ```xml
+   ```xaml
    <syncfusion:SfTreeView ItemHeight="50"/>
    ```
 
 3. **Disable animations:**
-   ```xml
+   ```xaml
    <syncfusion:SfTreeView IsAnimationEnabled="False"/>
    ```
 
@@ -199,7 +199,7 @@ public object SelectedCountry
 
 **Solution:**
 
-```xml
+```xaml
 <syncfusion:SfTreeView AllowDragging="True"/>
 ```
 
@@ -230,12 +230,12 @@ private void OnItemDragging(object sender, TreeViewItemDraggingEventArgs e)
 ### Binding to Wrong Context
 
 **Mistake:**
-```xml
+```xaml
 <Label Text="{Binding Name}"/>  <!-- Wrong when ItemTemplateContextType="Node" -->
 ```
 
 **Fix:**
-```xml
+```xaml
 <Label Text="{Binding Content.Name}"/>  <!-- Correct -->
 ```
 

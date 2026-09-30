@@ -25,14 +25,14 @@ using Syncfusion.Maui.SignaturePad;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <signaturePad:SfSignaturePad MinimumStrokeThickness="1"
                              MaximumStrokeThickness="4"
                              StrokeColor="Blue"/>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <signaturePad:SfSignaturePad MinimumStrokeThickness="1"
                              MaximumStrokeThickness="4"
                              StrokeColor="Blue"/>
@@ -55,13 +55,13 @@ using Syncfusion.Maui.Chat;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <chat:SfChat Messages="{Binding Messages}"
              CurrentUser="{Binding CurrentUser}"/>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <chat:SfChat Messages="{Binding Messages}"
              CurrentUser="{Binding CurrentUser}"/>
 ```
@@ -89,14 +89,14 @@ using Syncfusion.Maui.Sliders;
 ### Migration Example
 
 **Xamarin (Single Value):**
-```xml
+```xaml
 <slider:SfRangeSlider Minimum="0"
                       Maximum="100"
                       Value="50"/>
 ```
 
 **.NET MAUI SfSlider:**
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="50"/>
@@ -107,7 +107,7 @@ using Syncfusion.Maui.Sliders;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <slider:SfRangeSlider Minimum="0"
                       Maximum="100"
                       RangeStart="25"
@@ -115,7 +115,7 @@ using Syncfusion.Maui.Sliders;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <sliders:SfRangeSlider Minimum="0"
                        Maximum="100"
                        RangeStart="25"
@@ -137,7 +137,7 @@ using Syncfusion.Maui.RadialMenu;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <radialMenu:SfRadialMenu CenterButtonText="Menu"
                          RimRadius="150">
     <radialMenu:SfRadialMenuItem Text="Item 1"/>
@@ -146,7 +146,7 @@ using Syncfusion.Maui.RadialMenu;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <radialMenu:SfRadialMenu CenterButtonText="Menu"
                          RimRadius="150">
     <radialMenu:SfRadialMenuItem Text="Item 1"/>
@@ -171,7 +171,7 @@ using Syncfusion.Maui.PullToRefresh;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <pullToRefresh:SfPullToRefresh IsRefreshing="{Binding IsRefreshing}"
                                RefreshCommand="{Binding RefreshCommand}">
     <pullToRefresh:SfPullToRefresh.PullableContent>
@@ -181,7 +181,7 @@ using Syncfusion.Maui.PullToRefresh;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <pullToRefresh:SfPullToRefresh IsRefreshing="{Binding IsRefreshing}"
                                RefreshCommand="{Binding RefreshCommand}">
     <pullToRefresh:SfPullToRefresh.PullableContent>
@@ -237,7 +237,7 @@ slider.ValueChanged += (s, e) =>
 ### Issue: Single value SfRangeSlider migration
 
 **Solution:** Use `SfSlider` for single values:
-```xml
+```xaml
 <!-- Xamarin (single value) -->
 <slider:SfRangeSlider Value="50"/>
 
@@ -248,7 +248,7 @@ slider.ValueChanged += (s, e) =>
 ### Issue: Range selection migration
 
 **Solution:** Continue using `SfRangeSlider`:
-```xml
+```xaml
 <!-- Both Xamarin and MAUI -->
 <sliders:SfRangeSlider RangeStart="25" RangeEnd="75"/>
 ```

@@ -110,7 +110,7 @@ Add the Syncfusion namespace to your XAML or C# files.
 
 Open your **MainPage.xaml** and add the namespace:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
@@ -137,7 +137,7 @@ The most basic implementation adds a floating hint label to an Entry control.
 
 #### XAML
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
@@ -190,7 +190,7 @@ Helper text provides additional guidance below the input field.
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Email"
                                HelperText="We'll never share your email">
     <Entry Keyboard="Email" />
@@ -214,7 +214,7 @@ Enable password visibility toggling with a single property.
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Password"
                                EnablePasswordVisibilityToggle="True">
     <Entry IsPassword="True" />
@@ -240,7 +240,7 @@ Use `Editor` for multi-line text input.
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Comments"
                                HelperText="Share your thoughts">
     <Editor AutoSize="TextChanges" />
@@ -264,7 +264,7 @@ var commentsInput = new SfTextInputLayout
 
 Here's a complete login form example:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"

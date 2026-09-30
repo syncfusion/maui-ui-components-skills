@@ -43,7 +43,7 @@ The `AnimationDuration` property controls how long the expand/collapse animation
 
 ### XAML
 
-```xml
+```xaml
 <syncfusion:SfExpander x:Name="expander" 
                        AnimationDuration="250">
     <!-- Header and Content -->
@@ -67,7 +67,7 @@ expander.AnimationDuration = 250;
 
 ### Example: Different Speeds
 
-```xml
+```xaml
 <StackLayout Spacing="8">
     
     <!-- Fast animation -->
@@ -123,7 +123,7 @@ The `AnimationEasing` property controls the rate of change during animation (acc
 
 ### XAML
 
-```xml
+```xaml
 <syncfusion:SfExpander x:Name="expander"
                        AnimationEasing="SinOut">
     <!-- Header and Content -->
@@ -138,7 +138,7 @@ expander.AnimationEasing = ExpanderAnimationEasing.SinOut;
 
 ### Comparison Example
 
-```xml
+```xaml
 <StackLayout Spacing="8">
     
     <syncfusion:SfExpander AnimationDuration="400" AnimationEasing="Linear">
@@ -174,7 +174,7 @@ The `IsExpanded` property controls whether content is visible.
 
 ### XAML
 
-```xml
+```xaml
 <syncfusion:SfExpander x:Name="expander" 
                        IsExpanded="True">
     <!-- Header and Content -->
@@ -198,7 +198,7 @@ private void OnToggleClicked(object sender, EventArgs e)
 
 ### Expand on Button Click
 
-```xml
+```xaml
 <StackLayout>
     <Button Text="Expand All" Clicked="OnExpandAllClicked"/>
     
@@ -230,7 +230,7 @@ private void OnExpandAllClicked(object sender, EventArgs e)
 
 ### XAML
 
-```xml
+```xaml
 <syncfusion:SfExpander Expanding="OnExpanding">
     <!-- Header and Content -->
 </syncfusion:SfExpander>
@@ -287,7 +287,7 @@ private void OnExpanding(object sender, ExpandingAndCollapsingEventArgs e)
 
 ### XAML
 
-```xml
+```xaml
 <syncfusion:SfExpander Expanded="OnExpanded">
     <!-- Header and Content -->
 </syncfusion:SfExpander>
@@ -343,7 +343,7 @@ private void OnExpanded(object sender, ExpandedAndCollapsedEventArgs e)
 
 ### XAML
 
-```xml
+```xaml
 <syncfusion:SfExpander Collapsing="OnCollapsing">
     <!-- Header and Content -->
 </syncfusion:SfExpander>
@@ -403,7 +403,7 @@ private async void OnCollapsing(object sender, ExpandingAndCollapsingEventArgs e
 
 ### XAML
 
-```xml
+```xaml
 <syncfusion:SfExpander Collapsed="OnCollapsed">
     <!-- Header and Content -->
 </syncfusion:SfExpander>
@@ -445,7 +445,7 @@ private void OnCollapsed(object sender, ExpandedAndCollapsedEventArgs e)
 
 ### Pattern 1: All Events Combined
 
-```xml
+```xaml
 <syncfusion:SfExpander Expanding="OnExpanding"
                        Expanded="OnExpanded"
                        Collapsing="OnCollapsing"
@@ -518,7 +518,7 @@ private void OnExpanding(object sender, ExpandingAndCollapsingEventArgs e)
 
 ### Pattern 4: Loading Indicator During Expansion
 
-```xml
+```xaml
 <syncfusion:SfExpander Expanding="OnExpanding" Expanded="OnExpanded">
     <syncfusion:SfExpander.Header>
         <Grid><Label Text="Click to load data"/></Grid>
@@ -562,7 +562,7 @@ private async void OnExpanded(object sender, ExpandedAndCollapsedEventArgs e)
 
 ### Example 1: FAQ with Event Tracking
 
-```xml
+```xaml
 <syncfusion:SfExpander AnimationDuration="250"
                        AnimationEasing="SinOut"
                        Expanding="OnFAQExpanding"
@@ -599,7 +599,7 @@ private void OnFAQExpanded(object sender, ExpandedAndCollapsedEventArgs e)
 
 ### Example 2: Settings Panel with Unsaved Changes Check
 
-```xml
+```xaml
 <syncfusion:SfExpander x:Name="settingsExpander"
                        AnimationDuration="300"
                        Collapsing="OnSettingsCollapsing">
@@ -665,7 +665,7 @@ private void SaveSettings()
 
 ### Example 3: Programmatic Expand/Collapse with Animation Control
 
-```xml
+```xaml
 <StackLayout>
     <Grid ColumnDefinitions="*,*" Margin="10">
         <Button Text="Expand All" Clicked="OnExpandAllClicked"/>

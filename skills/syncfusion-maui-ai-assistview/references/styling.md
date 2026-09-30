@@ -28,7 +28,7 @@ All style keys are applied via `SyncfusionThemeDictionary`. Every section requir
 
 All style keys must be set inside a `SyncfusionThemeDictionary` with `SfAIAssistViewTheme` = `"CustomTheme"`. Without the theme key, overrides are ignored.
 
-```xml
+```xaml
 xmlns:syncTheme="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core"
 
 <ContentPage.Resources>
@@ -58,7 +58,7 @@ this.Resources.Add(dictionary);
 Set `SfAIAssistView.Background` directly. For the color to show, also set the theme key `SfAIAssistViewBackground` to `transparent`.
 
 ### Solid Color
-```xml
+```xaml
 <ResourceDictionary>
     <x:String x:Key="SfAIAssistViewTheme">CustomTheme</x:String>
     <Color x:Key="SfAIAssistViewBackground">transparent</Color>
@@ -68,7 +68,7 @@ Set `SfAIAssistView.Background` directly. For the color to show, also set the th
 ```
 
 ### Image Background
-```xml
+```xaml
 <Grid>
     <Image Source="backgroundimage.jpg" Aspect="AspectFill" />
     <syncfusion:SfAIAssistView Background="Transparent" ... />
@@ -76,7 +76,7 @@ Set `SfAIAssistView.Background` directly. For the color to show, also set the th
 ```
 
 ### Gradient Background
-```xml
+```xaml
 <syncfusion:SfAIAssistView ...>
     <syncfusion:SfAIAssistView.Background>
         <LinearGradientBrush>
@@ -105,7 +105,7 @@ Set `SfAIAssistView.Background` directly. For the color to show, also set the th
 | `SfAIAssistViewRequestItemAuthorFontAttributes` | Author name font attributes |
 | `SfAIAssistViewRequestItemAuthorFontSize` | Author name font size |
 
-```xml
+```xaml
 <Color x:Key="SfAIAssistViewRequestItemTextColor">Gray</Color>
 <Color x:Key="SfAIAssistViewRequestItemAuthorTextColor">Gray</Color>
 <Color x:Key="SfAIAssistViewRequestItemBackground">#eee479</Color>
@@ -130,7 +130,7 @@ Set `SfAIAssistView.Background` directly. For the color to show, also set the th
 | `SfAIAssistViewResponseItemAuthorFontAttributes` | Author name font attributes |
 | `SfAIAssistViewResponseItemAuthorFontSize` | Author name font size |
 
-```xml
+```xaml
 <Color x:Key="SfAIAssistViewResponseItemTextColor">Gray</Color>
 <Color x:Key="SfAIAssistViewResponseItemBackground">#eee479</Color>
 <Color x:Key="SfAIAssistViewResponseItemAuthorTextColor">Gray</Color>
@@ -151,7 +151,7 @@ Set `SfAIAssistView.Background` directly. For the color to show, also set the th
 | `SfAIAssistViewHyperlinkDescriptionBackground` | Meta description background |
 | `SfAIAssistViewHyperlinkMetaTitleTextColor` | Meta title text color |
 
-```xml
+```xaml
 <Color x:Key="SfAIAssistViewRequestHyperlinkColor">#94b6ec</Color>
 <Color x:Key="SfAIAssistViewHyperlinkMetaTitleTextColor">#f29d0a</Color>
 <Color x:Key="SfAIAssistViewHyperlinkDescriptionTextColor">Black</Color>
@@ -185,7 +185,7 @@ Set `SfAIAssistView.Background` directly. For the color to show, also set the th
 | `SfAIAssistViewCardButtonFontSize` | Card button font size |
 | `SfAIAssistViewCardButtonFontAttributes` | Card button font attributes |
 
-```xml
+```xaml
 <Color x:Key="SfAIAssistViewCardBackground">#94b6ec</Color>
 <Color x:Key="SfAIAssistViewCardStroke">#f29d0a</Color>
 <Color x:Key="SfAIAssistViewCardTitleTextColor">Black</Color>
@@ -207,7 +207,7 @@ Set `SfAIAssistView.Background` directly. For the color to show, also set the th
 | `SfAIAssistViewEditorFontAttributes` | Editor font attributes |
 | `SfAIAssistViewEditorFontSize` | Editor font size |
 
-```xml
+```xaml
 <Color x:Key="SfAIAssistViewEditorPlaceholderTextColor">Blue</Color>
 <Color x:Key="SfAIAssistViewEditorTextColor">Black</Color>
 <Color x:Key="SfAIAssistViewEditorBackground">LightGreen</Color>
@@ -223,7 +223,7 @@ Set `SfAIAssistView.Background` directly. For the color to show, also set the th
 |---|---|
 | `SfAIAssistViewInputViewBackground` | Background color of the entire input area (editor + send button row) |
 
-```xml
+```xaml
 <Color x:Key="SfAIAssistViewInputViewBackground">#94b6ec</Color>
 ```
 
@@ -236,7 +236,7 @@ Set `SfAIAssistView.Background` directly. For the color to show, also set the th
 | `SfAIAssistViewDisabledSendButtonIconColor` | Send button icon color when disabled |
 | `SfAIAssistViewDisabledSendButtonColor` | Send button background color when disabled |
 
-```xml
+```xaml
 <Color x:Key="SfAIAssistViewDisabledSendButtonIconColor">Purple</Color>
 <Color x:Key="SfAIAssistViewDisabledSendButtonColor">LightGreen</Color>
 ```
@@ -256,7 +256,7 @@ The action view includes the copy, retry, like, and dislike icons on response it
 | `SfAIAssistViewSelectedLikeIconColor` | Like icon color when selected |
 | `SfAIAssistViewSelectedDisLikeIconColor` | Dislike icon color when selected |
 
-```xml
+```xaml
 <Color x:Key="SfAIAssistViewNormalActionViewColor">Blue</Color>
 <Color x:Key="SfAIAssistViewHoverActionViewColor">LightGray</Color>
 <Color x:Key="SfAIAssistViewPressedActionViewColor">DarkGray</Color>
@@ -278,7 +278,7 @@ The quick action popup button that opens the `ActionButtons` list.
 | `SfAIAssistViewActionButtonViewTextColor` | Text color of items in the popup |
 | `SfAIAssistViewActionButtonsPopupBackground` | Popup background color |
 
-```xml
+```xaml
 <Color x:Key="SfAIAssistViewActionButtonBackground">Orange</Color>
 <Color x:Key="SfAIAssistViewActionButtonIconColor">White</Color>
 <Color x:Key="SfAIAssistViewActionButtonViewTextColor">Black</Color>
@@ -300,7 +300,7 @@ The quick action popup button that opens the `ActionButtons` list.
 | `SfAIAssistViewStopRespondingStroke` | Border/stroke color |
 | `SfAIAssistViewStopRespondingStrokeThickness` | Stroke thickness |
 
-```xml
+```xaml
 <Color x:Key="SfAIAssistViewStopRespondingIconColor">Red</Color>
 <Color x:Key="SfAIAssistViewStopRespondingTextColor">DarkBlue</Color>
 <x:String x:Key="SfAIAssistViewStopRespondingFontFamily">Segoe UI</x:String>
@@ -324,7 +324,7 @@ Styles for response item suggestion chips.
 | `SfAIAssistViewSuggestionItemFontAttributes` | Chip font attributes |
 | `SfAIAssistViewSuggestionItemFontSize` | Chip font size |
 
-```xml
+```xaml
 <Color x:Key="SfAIAssistViewSuggestionItemTextColor">Blue</Color>
 <Color x:Key="SfAIAssistViewSuggestionItemBackground">#d9d9d9</Color>
 <Color x:Key="SfAIAssistViewSuggestionBackground">Violet</Color>
@@ -348,7 +348,7 @@ Styles for the header/common suggestion chips (requires `ShowHeader=true`).
 | `SfAIAssistViewHeaderSuggestionItemFontFamily` | Chip font family |
 | `SfAIAssistViewHeaderSuggestionItemFontAttribute` | Chip font attributes |
 
-```xml
+```xaml
 <Color x:Key="SfAIAssistViewHeaderSuggestionBackground">LightSkyBlue</Color>
 <Color x:Key="SfAIAssistViewHeaderSuggestionItemStroke">BlueViolet</Color>
 <x:Double x:Key="SfAIAssistViewHeaderSuggestionItemStrokeThickness">2</x:Double>
@@ -370,7 +370,7 @@ Styles for the `SuggestionHeaderText` label shown above response suggestion chip
 | `SfAIAssistViewSuggestionHeaderFontFamily` | Header label font family |
 | `SfAIAssistViewSuggestionHeaderFontAttributes` | Header label font attributes |
 
-```xml
+```xaml
 <Color x:Key="SfAIAssistViewSuggestionHeaderTextColor">DarkBlue</Color>
 <x:Double x:Key="SfAIAssistViewSuggestionHeaderFontSize">14</x:Double>
 <x:String x:Key="SfAIAssistViewSuggestionHeaderFontFamily">Roboto-Medium</x:String>
@@ -392,7 +392,7 @@ Styles for the autocomplete overlay that appears as the user types in the editor
 | `SfAIAssistViewAutoCompleteSuggestionItemFontSize` | Item font size |
 | `SfAIAssistViewAutoCompleteSuggestionItemFontAttributes` | Item font attributes |
 
-```xml
+```xaml
 <Color x:Key="SfAIAssistViewAutoCompleteSuggestionBackground">Orange</Color>
 <Color x:Key="SfAIAssistViewAutoCompleteSuggestionItemBackground">LightSkyBlue</Color>
 <Color x:Key="SfAIAssistViewAutoCompleteSuggestionItemTextColor">Green</Color>
@@ -409,7 +409,7 @@ Styles for the autocomplete overlay that appears as the user types in the editor
 | `SfAIAssistViewScrollToBottomButtonBackground` | Button background color |
 | `SfAIAssistViewScrollToBottomButtonIconColor` | Button icon color |
 
-```xml
+```xaml
 <Color x:Key="SfAIAssistViewScrollToBottomButtonBackground">Orange</Color>
 <Color x:Key="SfAIAssistViewScrollToBottomButtonIconColor">White</Color>
 ```
@@ -422,7 +422,7 @@ Styles for the autocomplete overlay that appears as the user types in the editor
 |---|---|
 | `SfAIAssistViewSelectionTextHighLightColor` | Color used to highlight selected text |
 
-```xml
+```xaml
 <Color x:Key="SfAIAssistViewSelectionTextHighLightColor">Orange</Color>
 ```
 

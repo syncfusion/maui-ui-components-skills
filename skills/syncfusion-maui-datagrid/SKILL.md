@@ -60,7 +60,7 @@ Use this skill when you need to:
 📄 **Read:** [references/columns.md](references/columns.md)
 - Auto-generating columns (AutoGenerateColumnsMode)
 - Manually defining columns
-- Column types (Text, Numeric, Date, Checkbox, Image, ComboBox, Picker, Template)
+- Column types (Text, Numeric, Date, Checkbox, Image, ComboBox, Picker, Template, TimePicker, Percent, Currency, CheckBoxSelector)
 - Column properties (MappingName, HeaderText, Format, Width)
 - Column sizing and width options
 - Column visibility and ordering
@@ -68,11 +68,13 @@ Use this skill when you need to:
 
 ### Column Operations
 📄 **Read:** [references/column-operations.md](references/column-operations.md)
-- Column resizing (manual and auto-fit)
+- Column resizing (manual and auto-fit, OnMoved vs OnTouchUp modes)
 - Column drag and drop (reordering)
 - Stacked headers (multi-level column headers)
 - Unbound columns (calculated/expression columns)
 - Freeze panes (frozen columns)
+- Column hovering highlighting (AllowColumnHoverHighlighting)
+- Header cell hovering (AllowHeaderCellHoverHighlighting)
 - Column customization and events
 
 ### Cell Editing
@@ -83,6 +85,7 @@ Use this skill when you need to:
 - Cell editing events (BeginEdit, EndEdit, CellValueChanged)
 - Programmatic editing
 - Enter key and Tab navigation during editing
+- Undo and Redo functionality (AllowUndoRedo, MaxUndoRedoActions, UndoRedoController)
 
 ### Data Validation
 📄 **Read:** [references/data-validation.md](references/data-validation.md)
@@ -111,6 +114,7 @@ Use this skill when you need to:
 - Case sensitivity options
 - Search navigation (next/previous)
 - Programmatic search control
+- Built-in Search UI
 
 ### Grouping & Summaries
 📄 **Read:** [references/grouping-summaries.md](references/grouping-summaries.md)
@@ -118,6 +122,7 @@ Use this skill when you need to:
 - Group expand/collapse behavior
 - Custom grouping logic
 - Group header customization
+- Group row height customization
 - Summary rows (Table, Group, Caption summaries)
 - Built-in aggregate functions (Sum, Average, Count, Min, Max)
 - Custom summary calculations
@@ -142,12 +147,14 @@ Use this skill when you need to:
 - Pull to Refresh
 - Data virtualization for performance
 - Large dataset handling
+- Scroll to row and column
 
 ### Row Operations
 📄 **Read:** [references/row-operations.md](references/row-operations.md)
 - Row height customization
 - Auto row height (QueryRowHeight event)
-- Row drag and drop
+- Row drag and drop (single and multi-row)
+- Row resizing (OnMoved vs OnTouchUp modes, AllowResizingRows)
 - Row swiping actions
 - Adding new rows programmatically
 - Deleting rows
@@ -169,8 +176,8 @@ Use this skill when you need to:
 - Master-Details View (hierarchical/relational data)
 - Record Template View (custom row layouts)
 - Empty view customization
-- Context menu implementation
-- Tooltips for cells
+- Context menu implementation (with separator support)
+- Tooltips for cells (with delay customization, TooltipDelay)
 - Merged cells
 - Serialization (save/load grid state)
 - Conditional styling by data

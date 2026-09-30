@@ -2,6 +2,8 @@
 
 Financial charts are specialized visualizations designed for displaying stock prices, forex data, and other financial information. These charts represent price movements using Open, High, Low, and Close (OHLC) values.
 
+Keywords: OHLC, financial, Candle, Candlestick, High, Low, Open, Close, HiLoOpenCloseSeries, CandleSeries
+
 ## Overview
 
 Syncfusion .NET MAUI Cartesian Chart provides two financial chart types:
@@ -55,7 +57,7 @@ Candle charts display price movements as rectangular "candles" with wicks. The b
 
 ### Basic Candle Chart
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -102,7 +104,7 @@ chart.Series.Add(series);
 
 Customize colors for bullish (price up) and bearish (price down) candles:
 
-```xml
+```xaml
 <chart:CandleSeries ItemsSource="{Binding StockPrices}"
                    XBindingPath="Date"
                    Open="Open"
@@ -135,7 +137,7 @@ CandleSeries series = new CandleSeries()
 
 Control whether candles are filled or hollow using `EnableSolidCandle`:
 
-```xml
+```xaml
 <chart:CandleSeries ItemsSource="{Binding StockPrices}"
                    XBindingPath="Date"
                    Open="Open"
@@ -171,7 +173,7 @@ CandleSeries series = new CandleSeries()
 
 ### Candle Width and Spacing
 
-```xml
+```xaml
 <chart:CandleSeries ItemsSource="{Binding StockPrices}"
                    XBindingPath="Date"
                    Open="Open"
@@ -191,7 +193,7 @@ OHLC charts use lines and tick marks instead of candles to represent the same da
 
 ### Basic OHLC Chart
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -231,7 +233,7 @@ chart.Series.Add(series);
 
 ### Bull and Bear Colors for OHLC
 
-```xml
+```xaml
 <chart:HiLoOpenCloseSeries ItemsSource="{Binding StockPrices}"
                           XBindingPath="Date"
                           Open="Open"
@@ -274,7 +276,7 @@ HiLoOpenCloseSeries series = new HiLoOpenCloseSeries()
 
 ## Complete Financial Chart Example
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
@@ -326,7 +328,7 @@ HiLoOpenCloseSeries series = new HiLoOpenCloseSeries()
 
 ### Pattern 1: Stock Price with DateTime Axis
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:DateTimeAxis IntervalType="Days" Interval="1"/>
@@ -347,7 +349,7 @@ HiLoOpenCloseSeries series = new HiLoOpenCloseSeries()
 
 ### Pattern 2: Multiple Timeframes
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.Legend>
         <chart:ChartLegend/>
@@ -372,7 +374,7 @@ HiLoOpenCloseSeries series = new HiLoOpenCloseSeries()
 
 ### Pattern 3: Financial Chart with Zooming
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.ZoomPanBehavior>
         <chart:ChartZoomPanBehavior EnablePinchZooming="True"
@@ -463,7 +465,7 @@ Open = 45.0   // This won't work
 
 ### DateTime vs Category Axis
 
-```xml
+```xaml
 <!-- For actual DateTime objects -->
 <chart:DateTimeAxis IntervalType="Days"/>
 

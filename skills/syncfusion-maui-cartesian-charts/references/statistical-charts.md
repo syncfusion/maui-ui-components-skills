@@ -22,7 +22,7 @@ Box and whisker charts (box plots) display the distribution of data within a pop
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -103,7 +103,7 @@ The `BoxPlotMode` property determines how quartiles are calculated:
 
 Calculates quartiles using the formula (N+1) * P, with index starting from 1:
 
-```xml
+```xaml
 <chart:BoxAndWhiskerSeries ItemsSource="{Binding BoxWhiskerData}"
                            XBindingPath="Department"
                            YBindingPath="Age"
@@ -124,7 +124,7 @@ BoxAndWhiskerSeries series = new BoxAndWhiskerSeries()
 
 Calculates quartiles using the formula (N-1) * P, with index starting from 0:
 
-```xml
+```xaml
 <chart:BoxAndWhiskerSeries ItemsSource="{Binding BoxWhiskerData}"
                            XBindingPath="Department"
                            YBindingPath="Age"
@@ -135,7 +135,7 @@ Calculates quartiles using the formula (N-1) * P, with index starting from 0:
 
 Extends whiskers to minimum and maximum values within two standard deviations:
 
-```xml
+```xaml
 <chart:BoxAndWhiskerSeries ItemsSource="{Binding BoxWhiskerData}"
                            XBindingPath="Department"
                            YBindingPath="Age"
@@ -146,7 +146,7 @@ Extends whiskers to minimum and maximum values within two standard deviations:
 
 Display the median line within the box:
 
-```xml
+```xaml
 <chart:BoxAndWhiskerSeries ItemsSource="{Binding BoxWhiskerData}"
                            XBindingPath="Department"
                            YBindingPath="Age"
@@ -173,7 +173,7 @@ Outliers are data points that lie beyond the whiskers (typically 1.5 × IQR from
 
 **Show/Hide Outliers:**
 
-```xml
+```xaml
 <chart:BoxAndWhiskerSeries ItemsSource="{Binding BoxWhiskerData}"
                            XBindingPath="Department"
                            YBindingPath="Age"
@@ -192,7 +192,7 @@ BoxAndWhiskerSeries series = new BoxAndWhiskerSeries()
 
 **Outlier Shape Types:**
 
-```xml
+```xaml
 <chart:BoxAndWhiskerSeries ItemsSource="{Binding BoxWhiskerData}"
                            XBindingPath="Department"
                            YBindingPath="Age"
@@ -226,7 +226,7 @@ Histogram charts organize data into user-specified intervals (bins) and display 
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:NumericalAxis/>
@@ -300,7 +300,7 @@ public class ViewModel
 
 Control the width of bins using `HistogramInterval`:
 
-```xml
+```xaml
 <chart:HistogramSeries ItemsSource="{Binding HistogramData}"
                        XBindingPath="Value"
                        YBindingPath="Size"
@@ -321,7 +321,7 @@ HistogramSeries series = new HistogramSeries()
 
 Display a bell curve overlay showing the normal distribution:
 
-```xml
+```xaml
 <chart:HistogramSeries ItemsSource="{Binding HistogramData}"
                        XBindingPath="Value"
                        YBindingPath="Size"
@@ -360,7 +360,7 @@ Error bars indicate uncertainty or variability in data measurements. They displa
 
 Error bars are typically used with scatter series or other point-based charts:
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:NumericalAxis/>
@@ -426,7 +426,7 @@ The `Mode` property controls whether error bars display horizontally, vertically
 
 **Both (Default):**
 
-```xml
+```xaml
 <chart:ErrorBarSeries ItemsSource="{Binding EnergyProductions}"
                       XBindingPath="ID"
                       YBindingPath="Coal"
@@ -437,7 +437,7 @@ The `Mode` property controls whether error bars display horizontally, vertically
 
 **Horizontal Only:**
 
-```xml
+```xaml
 <chart:ErrorBarSeries ItemsSource="{Binding EnergyProductions}"
                       XBindingPath="ID"
                       YBindingPath="Coal"
@@ -447,7 +447,7 @@ The `Mode` property controls whether error bars display horizontally, vertically
 
 **Vertical Only:**
 
-```xml
+```xaml
 <chart:ErrorBarSeries ItemsSource="{Binding EnergyProductions}"
                       XBindingPath="ID"
                       YBindingPath="Coal"
@@ -459,7 +459,7 @@ The `Mode` property controls whether error bars display horizontally, vertically
 
 Control which direction(s) the error bars extend:
 
-```xml
+```xaml
 <chart:ErrorBarSeries ItemsSource="{Binding EnergyProductions}"
                       XBindingPath="ID"
                       YBindingPath="Coal"
@@ -493,7 +493,7 @@ The `Type` property defines how error values are calculated:
 
 **1. Fixed (Default):**
 
-```xml
+```xaml
 <chart:ErrorBarSeries ItemsSource="{Binding EnergyProductions}"
                       XBindingPath="ID"
                       YBindingPath="Coal"
@@ -506,7 +506,7 @@ The `Type` property defines how error values are calculated:
 
 Error calculated as a percentage of the data value:
 
-```xml
+```xaml
 <chart:ErrorBarSeries ItemsSource="{Binding EnergyProductions}"
                       XBindingPath="ID"
                       YBindingPath="Coal"
@@ -519,7 +519,7 @@ Error calculated as a percentage of the data value:
 
 Error calculated using standard deviation:
 
-```xml
+```xaml
 <chart:ErrorBarSeries ItemsSource="{Binding EnergyProductions}"
                       XBindingPath="ID"
                       YBindingPath="Coal"
@@ -531,7 +531,7 @@ Error calculated using standard deviation:
 
 Error calculated using standard error of the mean:
 
-```xml
+```xaml
 <chart:ErrorBarSeries ItemsSource="{Binding EnergyProductions}"
                       XBindingPath="ID"
                       YBindingPath="Coal"
@@ -543,7 +543,7 @@ Error calculated using standard error of the mean:
 
 Bind to custom error values from data source:
 
-```xml
+```xaml
 <chart:ErrorBarSeries ItemsSource="{Binding EnergyProductions}"
                       XBindingPath="ID"
                       YBindingPath="Coal"
@@ -576,7 +576,7 @@ ErrorBarSeries errorBarSeries = new ErrorBarSeries()
 
 **Line Style:**
 
-```xml
+```xaml
 <chart:ErrorBarSeries ItemsSource="{Binding EnergyProductions}"
                       XBindingPath="ID"
                       YBindingPath="Coal"
@@ -613,7 +613,7 @@ ErrorBarSeries errorBarSeries = new ErrorBarSeries()
 
 **Cap Line Style:**
 
-```xml
+```xaml
 <chart:ErrorBarSeries ItemsSource="{Binding EnergyProductions}"
                       XBindingPath="ID"
                       YBindingPath="Coal"

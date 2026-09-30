@@ -115,7 +115,7 @@ public class CarouselViewModel
 Use ItemTemplate to define how each item should appear:
 
 **XAML:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -196,7 +196,7 @@ namespace CarouselSample
 
 For rich UI with multiple elements:
 
-```xml
+```xaml
 <DataTemplate x:Key="productTemplate">
     <Grid Padding="10">
         <Frame CornerRadius="15" 
@@ -227,7 +227,7 @@ For rich UI with multiple elements:
 </DataTemplate>
 ```
 
-```xml
+```xaml
 <carousel:SfCarousel ItemsSource="{Binding Products}"
                      ItemTemplate="{StaticResource productTemplate}"
                      ItemHeight="350"

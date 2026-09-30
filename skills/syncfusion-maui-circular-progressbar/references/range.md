@@ -16,7 +16,7 @@ The range represents the entire span of the circular progress bar and is defined
 By default, progress values are specified between 0 and 100, representing percentages.
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75" />
 ```
 
@@ -43,7 +43,7 @@ You can define any custom range using the `Minimum` and `Maximum` properties.
 Common for decimal progress values.
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Minimum="0" 
                                    Maximum="1" 
                                    Progress="0.5" />
@@ -78,7 +78,7 @@ double percent = factorValue * 100; // 75
 Display temperature progress from 0°C to 100°C.
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Minimum="0" 
                                    Maximum="100" 
                                    Progress="72">
@@ -101,7 +101,7 @@ Display temperature progress from 0°C to 100°C.
 Display game score from 0 to 1000.
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Minimum="0" 
                                    Maximum="1000" 
                                    Progress="750">
@@ -155,7 +155,7 @@ You can use negative values in your range.
 
 ### Example: Temperature Range (Negative to Positive)
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Minimum="-20" 
                                    Maximum="40" 
                                    Progress="15">
@@ -181,7 +181,7 @@ SfCircularProgressBar temperatureBar = new SfCircularProgressBar
 
 ### Example 1: Hour Range (0-24)
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Minimum="0" 
                                    Maximum="24" 
                                    Progress="14.5"
@@ -259,7 +259,7 @@ bool isValid = ProgressCalculator.IsInRange(50, 0, 100); // true
 
 ### Example 1: Storage Usage Indicator
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="20">
     <Label Text="Storage Usage" 
            FontSize="18" 

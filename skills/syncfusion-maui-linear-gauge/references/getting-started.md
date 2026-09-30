@@ -35,7 +35,7 @@ dotnet add package Syncfusion.Maui.Gauges
 
 **Option 4: Edit .csproj Directly**
 
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.Gauges" Version="*" />
 </ItemGroup>
@@ -88,7 +88,7 @@ public static class MauiProgram
 
 In your XAML page, add the Syncfusion.Maui.Gauges namespace:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges"
@@ -110,7 +110,7 @@ using Syncfusion.Maui.Gauges;
 The simplest linear gauge with default settings:
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge />
 ```
 
@@ -127,7 +127,7 @@ this.Content = gauge;
 Set custom minimum and maximum values:
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="0" Maximum="200" />
 ```
 
@@ -150,7 +150,7 @@ Ranges highlight specific value zones on the scale. They're perfect for color-co
 **Basic Range:**
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge>
     <gauge:SfLinearGauge.Ranges>
         <gauge:LinearRange StartValue="20" EndValue="80" />
@@ -172,7 +172,7 @@ this.Content = gauge;
 **Styled Range with Color:**
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearRange StartValue="0" 
                    EndValue="50" 
                    Fill="#FF6B6B"
@@ -194,7 +194,7 @@ gauge.Ranges.Add(new LinearRange
 
 **Multiple Ranges (Color Zones):**
 
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="0" Maximum="100">
     <gauge:SfLinearGauge.Ranges>
         <!-- Green zone (good) -->
@@ -216,7 +216,7 @@ Pointers indicate specific values on the scale. Linear Gauge supports three poin
 A filled bar from the scale start to the pointer value.
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge>
     <gauge:SfLinearGauge.BarPointers>
         <gauge:BarPointer Value="60" Fill="#2196F3"/>
@@ -240,7 +240,7 @@ this.Content = gauge;
 A shape (circle, triangle, diamond, etc.) that marks a specific value.
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge>
     <gauge:SfLinearGauge.MarkerPointers>
         <gauge:LinearShapePointer Value="70" 
@@ -276,7 +276,7 @@ gauge.MarkerPointers.Add(new LinearShapePointer
 Use custom content (images, text, or any view) as a pointer.
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge>
     <gauge:SfLinearGauge.MarkerPointers>
         <gauge:LinearContentPointer Value="80">
@@ -311,7 +311,7 @@ Here's a complete example combining ranges and multiple pointer types:
 
 **XAML (MainPage.xaml):**
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

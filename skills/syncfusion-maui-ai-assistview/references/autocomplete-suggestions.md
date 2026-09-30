@@ -1,6 +1,6 @@
 # AutoComplete Suggestions
 
-AutoComplete suggestions in AI AssistView provide a real-time overlay of matching suggestions as users type, improving prompt quality and accelerating interactions. The overlay appears after typing a minimum number of characters and dynamically filters based on each keystroke.
+AutoComplete suggestions in AI AssistView provide a real-time overlay of matching suggestions as users type, improving prompt quality and accelerating interactions. The overlay supports category-based grouping and dynamically filters based on each keystroke.
 
 ## Table of Contents
 - [When to Use AutoComplete Suggestions](#when-to-use-autocomplete-suggestions)
@@ -18,6 +18,7 @@ AutoComplete suggestions in AI AssistView provide a real-time overlay of matchin
 - [Monitoring Overlay State](#monitoring-overlay-state)
   - [IsOpen Property](#isopen-property)
 - [Common Patterns](#common-patterns)
+    - [Category-Based Grouping](#category-based-grouping)
   - [Pattern 1: Dynamic Suggestions Based on Context](#pattern-1-dynamic-suggestions-based-on-context)
   - [Pattern 2: Combined with Regular Suggestions](#pattern-2-combined-with-regular-suggestions)
   - [Pattern 3: Server-Based AutoComplete](#pattern-3-server-based-autocomplete)
@@ -56,11 +57,11 @@ public class AIAssistViewModel : INotifyPropertyChanged
     {
         AutoCompleteSuggestions = new ObservableCollection<ISuggestion>()
         {
-            new AssistSuggestion() { Text = "What is .NET MAUI?" },
-            new AssistSuggestion() { Text = "How do I get started with AI AssistView?" },
-            new AssistSuggestion() { Text = "Explain data binding in .NET MAUI" },
-            new AssistSuggestion() { Text = "Show me code examples" },
-            new AssistSuggestion() { Text = "What are the key features?" }
+            new AssistSuggestion() { Text = "What is .NET MAUI?", Category = "recommended" },
+            new AssistSuggestion() { Text = "How do I get started with AI AssistView?", Category = "recommended" },
+            new AssistSuggestion() { Text = "Explain data binding in .NET MAUI", Category = "history" },
+            new AssistSuggestion() { Text = "Show me code examples", Category = "history" },
+            new AssistSuggestion() { Text = "What are the key features?", Category = "recommended" }
         };
     }
 
@@ -83,7 +84,7 @@ public class AIAssistViewModel : INotifyPropertyChanged
 
 ### XAML Configuration
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="aiAssistView">
     <syncfusion:SfAIAssistView.AutoSuggestionOverlay>
         <syncfusion:AutoSuggestionOverlay 
@@ -93,6 +94,22 @@ public class AIAssistViewModel : INotifyPropertyChanged
 ```
 
 **Result:** As the user types, matching suggestions appear in an overlay. Once they type enough characters (default: 1), the filtered list displays.
+
+### CategoryField
+
+`AssistSuggestion.Category` lets applications assign each suggestion to a group such as history or recommended.
+
+```csharp
+AutoCompleteSuggestions = new ObservableCollection<ISuggestion>()
+{
+    new AssistSuggestion { Text = "Resume last topic", Category = "history" },
+    new AssistSuggestion { Text = "Generate a summary", Category = "recommended" }
+};
+```
+
+### Scenario: Group suggestions by category
+
+- When suggestions include `Category` values, the overlay groups them under category headers such as history and recommended.
 
 ---
 
@@ -107,7 +124,7 @@ Controls how many characters must be typed before the autocomplete overlay appea
 - Set to `1` for small, focused suggestion sets
 - Increase for network-based lookups to reduce API calls
 
-```xml
+```xaml
 <syncfusion:AutoSuggestionOverlay 
     AutoSuggestions="{Binding AutoCompleteSuggestions}"
     MinimumPrefixCharacters="3" />
@@ -133,7 +150,7 @@ Sets the delay (in milliseconds) before triggering the suggestion query after th
 - Keep default for responsive, real-time filtering
 - Helps with performance when suggestions involve complex filtering
 
-```xml
+```xaml
 <syncfusion:AutoSuggestionOverlay 
     AutoSuggestions="{Binding AutoCompleteSuggestions}"
     SuggestionOpenDelay="300" />
@@ -151,16 +168,16 @@ aiAssistView.AutoSuggestionOverlay = new AutoSuggestionOverlay()
 
 ### CancelRequest
 
-Controls whether selecting a suggestion submits it immediately or populates the editor for review. Default is `false`.
+Controls whether selecting a suggestion submits it immediately or populates the editor for review.
 
 - **`false`** (default): Selected suggestion is placed in the editor; user can review/edit before submitting
 - **`true`**: Selected suggestion is immediately sent as a request without confirmation
 
-```xml
+```xaml
 <!-- Immediate submission -->
 <syncfusion:AutoSuggestionOverlay 
     AutoSuggestions="{Binding AutoCompleteSuggestions}"
-    CancelRequest="false" />
+    CancelRequest="False" />
 ```
 
 ```csharp
@@ -183,7 +200,7 @@ aiAssistView.AutoSuggestionOverlay = new AutoSuggestionOverlay()
 
 Execute custom logic when a suggestion is selected:
 
-```xml
+```xaml
 <syncfusion:AutoSuggestionOverlay 
     AutoSuggestions="{Binding AutoCompleteSuggestions}"
     ItemSelectedCommand="{Binding SuggestionSelectedCommand}" />
@@ -218,6 +235,8 @@ private void OnSuggestionSelected(ISuggestion selectedSuggestion)
 - Customize behavior per suggestion type
 - Trigger side effects (navigation, state changes)
 
+**Behavior:** When `CancelRequest` is `true`, selecting a suggestion populates the editor; when `false`, the selected suggestion submits immediately.
+
 ---
 
 ## Custom Templates
@@ -226,7 +245,7 @@ private void OnSuggestionSelected(ISuggestion selectedSuggestion)
 
 Customize the visual appearance of each suggestion row with icons, secondary text, or custom layouts:
 
-```xml
+```xaml
 <ContentPage.Resources>
     <DataTemplate x:Key="autoSuggestionTemplate">
         <Grid Padding="12,8">
@@ -288,7 +307,7 @@ aiAssistView.AutoSuggestionOverlay.AutoSuggestionTemplate = CreateSuggestionTemp
 
 ### IsOpen Property
 
-The `IsOpen` property (read-only) indicates whether the autocomplete overlay is currently visible:
+The `IsOpen` property is two-way bindable and indicates whether the autocomplete overlay is currently visible:
 
 ```csharp
 var autoOverlay = aiAssistView.AutoSuggestionOverlay;
@@ -315,6 +334,22 @@ else
 ---
 
 ## Common Patterns
+
+### Category-Based Grouping
+
+Use `AssistSuggestion.Category` to group suggestions such as history and recommended:
+
+```csharp
+private void BuildCategorizedSuggestions()
+{
+    AutoCompleteSuggestions = new ObservableCollection<ISuggestion>()
+    {
+        new AssistSuggestion { Text = "Resume previous topic", Category = "history" },
+        new AssistSuggestion { Text = "Generate a summary", Category = "recommended" },
+        new AssistSuggestion { Text = "Open recent example", Category = "history" }
+    };
+}
+```
 
 ### Pattern 1: Dynamic Suggestions Based on Context
 
@@ -348,7 +383,7 @@ private void UpdateAutoCompleteSuggestions(string context)
 
 Use both AutoComplete (as-you-type) and regular suggestions (displayed below header):
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView 
     Suggestions="{Binding CommonSuggestions}">
     <syncfusion:SfAIAssistView.AutoSuggestionOverlay>

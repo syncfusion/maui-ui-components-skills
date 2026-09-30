@@ -140,7 +140,7 @@ this.kanban.Workflows = new List<KanbanWorkflow>
 
 **XAML:**
 
-```xml
+```xaml
 <kanban:SfKanban x:Name="kanban">
     <kanban:SfKanban.Workflows>
         <kanban:KanbanWorkflow Category="Open">

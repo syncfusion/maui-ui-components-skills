@@ -1,14 +1,14 @@
 ---
 name: syncfusion-maui-digital-gauge
-description: Implements Syncfusion .NET MAUI DigitalGauge (SfDigitalGauge) control to display alphanumeric characters in LED-style digital format. Use when working with digital gauges, LED displays, seven-segment displays, digital clocks, or digital counters. Ideal for displaying numbers, letters, or special characters in a digital/electronic display format.
+description: Implements Syncfusion® .NET MAUI DigitalGauge (SfDigitalGauge) control to display alphanumeric characters in LED-style digital format. Use when working with digital gauges, LED displays, seven-segment displays, digital clocks, or digital counters. Ideal for displaying numbers, letters, or special characters in a digital/electronic display format.
 metadata:
   author: "Syncfusion Inc"
   version: "34.1.29"
 ---
 
-# Implementing Digital Gauges in .NET MAUI
+# Implementing .NET MAUI Digital Gauges
 
-The Syncfusion .NET MAUI DigitalGauge (SfDigitalGauge) control displays alphanumeric characters in digital LED-style format. It supports multiple segment types for rendering numbers, alphabets, and special characters, making it ideal for digital clocks, counters, status displays, and retro-style interfaces.
+The Syncfusion® .NET MAUI DigitalGauge (SfDigitalGauge) control displays alphanumeric characters in digital LED-style format. It supports multiple segment types for rendering numbers, alphabets, and special characters, making it ideal for digital clocks, counters, status displays, and retro-style interfaces.
 
 ## When to Use This Skill
 
@@ -33,7 +33,7 @@ The DigitalGauge provides four different character segment types:
 
 ### Getting Started
 📄 **Read:** [references/getting-started.md](references/getting-started.md)
-- Installing Syncfusion.Maui.Gauges NuGet package
+- Installing `Syncfusion.Maui.Gauges` NuGet package
 - Registering handlers in MauiProgram.cs
 - Basic DigitalGauge implementation in XAML and C#
 - Displaying text with the Text property

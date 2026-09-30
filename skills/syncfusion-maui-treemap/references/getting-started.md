@@ -250,7 +250,7 @@ Now add the TreeMap control to your XAML page.
 
 Open your `MainPage.xaml` and add the TreeMap namespace declaration:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:treemap="clr-namespace:Syncfusion.Maui.TreeMap;assembly=Syncfusion.Maui.TreeMap"
@@ -262,7 +262,7 @@ Open your `MainPage.xaml` and add the TreeMap namespace declaration:
 
 Add the TreeMap within your page layout:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:treemap="clr-namespace:Syncfusion.Maui.TreeMap;assembly=Syncfusion.Maui.TreeMap"
@@ -317,7 +317,7 @@ public partial class MainPage : ContentPage
 
 The `DataSource` property binds your data collection to the TreeMap:
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding PopulationDetails}" ... />
 ```
 
@@ -330,7 +330,7 @@ treeMap.DataSource = viewModel.PopulationDetails;
 
 The `PrimaryValuePath` specifies which property determines the size of each rectangle:
 
-```xml
+```xaml
 <treemap:SfTreeMap PrimaryValuePath="Population" ... />
 ```
 
@@ -340,7 +340,7 @@ The `PrimaryValuePath` specifies which property determines the size of each rect
 
 When using range-based coloring with legends, specify which property determines the color:
 
-```xml
+```xaml
 <treemap:SfTreeMap RangeColorValuePath="Population" ... />
 ```
 
@@ -352,7 +352,7 @@ To display text labels on TreeMap items, use the `LeafItemSettings` property:
 
 ### XAML Approach
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding PopulationDetails}"
                    PrimaryValuePath="Population">
     <treemap:SfTreeMap.LeafItemSettings>
@@ -378,7 +378,7 @@ The `LabelPath` property specifies which data property to display as text on eac
 
 Apply a uniform color to all leaf items:
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding PopulationDetails}"
                    PrimaryValuePath="Population">
     <treemap:SfTreeMap.LeafItemSettings>
@@ -401,7 +401,7 @@ treeMap.LeafItemBrushSettings = new TreeMapUniformBrushSettings
 
 ### Using Color from Hex Code
 
-```xml
+```xaml
 <treemap:TreeMapUniformBrushSettings Brush="#FF6B35" />
 ```
 
@@ -457,7 +457,7 @@ namespace TreeMapDemo.ViewModels
 ```
 
 ### MainPage.xaml
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -597,7 +597,7 @@ public class PopulationData
 3. Set `HorizontalOptions` and `VerticalOptions` for layout behavior
 
 Example:
-```xml
+```xaml
 <Grid>
     <treemap:SfTreeMap HeightRequest="500"
                        HorizontalOptions="FillAndExpand"

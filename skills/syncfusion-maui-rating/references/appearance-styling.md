@@ -20,7 +20,7 @@ The `ItemSize` property controls the size of each rating item in device-independ
 > **Default:** 50
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating ItemSize="40" />
 ```
 
@@ -37,7 +37,7 @@ rating.ItemSize = 40;
 - **Extra Large (75+)**: Marketing, showcase
 
 **Example with Different Sizes:**
-```xml
+```xaml
 <VerticalStackLayout Spacing="15">
     <Label Text="Small (30px)" />
     <rating:SfRating ItemSize="30" Value="4" />
@@ -57,7 +57,7 @@ The `ItemSpacing` property sets the horizontal space between rating items.
 > **Default:** 5
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating ItemSpacing="10" />
 ```
 
@@ -74,7 +74,7 @@ rating.ItemSpacing = 10;
 - **Very Loose (15+)**: Emphasis on individual items
 
 **Example:**
-```xml
+```xaml
 <VerticalStackLayout Spacing="15">
     <Label Text="Tight Spacing (3px)" />
     <rating:SfRating ItemSpacing="3" Value="4" ItemSize="40" />
@@ -94,7 +94,7 @@ The `ItemCount` property determines the number of rating items displayed.
 > **Default:** 5
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating ItemCount="5" />
 ```
 
@@ -131,7 +131,7 @@ public class RatingSettings
 ### Basic RatingSettings Usage
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating Value="3">
     <rating:SfRating.RatingSettings>
         <rating:RatingSettings RatedFill="Gold"
@@ -171,7 +171,7 @@ Fill colors determine the interior color of rating items.
 Sets the fill color for rated (selected) items.
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating Value="4">
     <rating:SfRating.RatingSettings>
         <rating:RatingSettings RatedFill="#FFD700" />
@@ -190,7 +190,7 @@ rating.RatingSettings = settings;
 ```
 
 **Popular RatedFill Colors:**
-```xml
+```xaml
 <!-- Gold (Classic) -->
 <rating:RatingSettings RatedFill="#FFD700" />
 
@@ -212,7 +212,7 @@ rating.RatingSettings = settings;
 Sets the fill color for unrated (unselected) items.
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating Value="3">
     <rating:SfRating.RatingSettings>
         <rating:RatingSettings UnratedFill="#E0E0E0" />
@@ -234,7 +234,7 @@ rating.RatingSettings = settings;
 - **White**: High contrast on dark backgrounds
 
 **Example Combinations:**
-```xml
+```xaml
 <!-- Gold & Light Gray (Traditional) -->
 <rating:RatingSettings RatedFill="#FFD700" UnratedFill="#E0E0E0" />
 
@@ -257,7 +257,7 @@ Strokes add outlines to rating items for enhanced visibility and style.
 Sets the stroke (border) color for rated items.
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating Value="3">
     <rating:SfRating.RatingSettings>
         <rating:RatingSettings RatedStroke="#FFA500" />
@@ -277,7 +277,7 @@ rating.RatingSettings = settings;
 Sets the stroke color for unrated items.
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating Value="3">
     <rating:SfRating.RatingSettings>
         <rating:RatingSettings UnratedStroke="#9E9E9E" />
@@ -299,7 +299,7 @@ Control the width of the stroke outline.
 #### RatedStrokeThickness Property
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating Value="3">
     <rating:SfRating.RatingSettings>
         <rating:RatingSettings RatedStroke="#FFA500"
@@ -319,7 +319,7 @@ rating.RatingSettings = settings;
 #### UnratedStrokeThickness Property
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating Value="3">
     <rating:SfRating.RatingSettings>
         <rating:RatingSettings UnratedStroke="#9E9E9E"
@@ -345,7 +345,7 @@ rating.RatingSettings = settings;
 ### Stroke Style Examples
 
 **Example 1: Outline Only Style**
-```xml
+```xaml
 <rating:SfRating Value="3" ItemSize="50">
     <rating:SfRating.RatingSettings>
         <rating:RatingSettings RatedFill="Transparent"
@@ -359,7 +359,7 @@ rating.RatingSettings = settings;
 ```
 
 **Example 2: Filled with Contrasting Stroke**
-```xml
+```xaml
 <rating:SfRating Value="4" ItemSize="45">
     <rating:SfRating.RatingSettings>
         <rating:RatingSettings RatedFill="#FFD700"
@@ -373,7 +373,7 @@ rating.RatingSettings = settings;
 ```
 
 **Example 3: Bold Emphasis**
-```xml
+```xaml
 <rating:SfRating Value="5" ItemSize="55">
     <rating:SfRating.RatingSettings>
         <rating:RatingSettings RatedFill="#4CAF50"
@@ -391,7 +391,7 @@ rating.RatingSettings = settings;
 Set the background color for the entire rating control.
 
 **XAML:**
-```xml
+```xaml
 <rating:SfRating Value="3" 
                  BackgroundColor="#F5F5F5"
                  Padding="10" />
@@ -416,7 +416,7 @@ rating.BackgroundColor = Color.FromArgb("#F5F5F5");
 
 ### Example 1: Classic Gold Rating
 
-```xml
+```xaml
 <rating:SfRating Value="4"
                  ItemCount="5"
                  ItemSize="50"
@@ -434,7 +434,7 @@ rating.BackgroundColor = Color.FromArgb("#F5F5F5");
 
 ### Example 2: Modern Minimalist
 
-```xml
+```xaml
 <rating:SfRating Value="3.5"
                  ItemCount="5"
                  ItemSize="40"
@@ -452,7 +452,7 @@ rating.BackgroundColor = Color.FromArgb("#F5F5F5");
 
 ### Example 3: Heart Favorites (Red/Pink)
 
-```xml
+```xaml
 <rating:SfRating Value="4"
                  ItemCount="5"
                  ItemSize="45"
@@ -469,7 +469,7 @@ rating.BackgroundColor = Color.FromArgb("#F5F5F5");
 
 ### Example 4: Luxury Diamond Rating
 
-```xml
+```xaml
 <rating:SfRating Value="5"
                  ItemCount="5"
                  ItemSize="50"
@@ -488,7 +488,7 @@ rating.BackgroundColor = Color.FromArgb("#F5F5F5");
 
 ### Example 5: Dark Theme Rating
 
-```xml
+```xaml
 <rating:SfRating Value="3"
                  ItemCount="5"
                  ItemSize="45"
@@ -508,7 +508,7 @@ rating.BackgroundColor = Color.FromArgb("#F5F5F5");
 
 ### Example 6: Outline-Only Style
 
-```xml
+```xaml
 <rating:SfRating Value="4"
                  ItemCount="5"
                  ItemSize="55"
@@ -567,7 +567,7 @@ rating.BackgroundColor = Color.FromArgb("#F5F5F5");
 
 ## Dynamic Styling with Data Binding
 
-```xml
+```xaml
 <rating:SfRating Value="{Binding CurrentRating}"
                  ItemSize="{Binding RatingSize}">
     <rating:SfRating.RatingSettings>

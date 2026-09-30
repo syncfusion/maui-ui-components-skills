@@ -42,7 +42,7 @@ Fires when the user submits a message from the input editor.
 
 ⚠️ **CRITICAL**: By default, SfChat **automatically adds the user's message to the `Messages` collection**. You should **NOT** manually add it unless you set `e.Handled = true`. Only set `Handled = true` if you need full control over when the message appears.
 
-```xml
+```xaml
 <sfChat:SfChat SendMessage="OnSendMessage"
                SendMessageCommand="{Binding SendMessageCommand}" ... />
 ```
@@ -121,7 +121,7 @@ public ICommand SendMessageCommand => new Command<object>(args =>
 
 Fires when the user taps any message. Provides the tapped message and tap position.
 
-```xml
+```xaml
 <sfChat:SfChat MessageTapped="OnMessageTapped" ... />
 ```
 ```csharp
@@ -134,7 +134,7 @@ private void OnMessageTapped(object sender, MessageTappedEventArgs e)
 ```
 
 **MVVM:**
-```xml
+```xaml
 <sfChat:SfChat MessageTappedCommand="{Binding MessageTappedCommand}" ... />
 ```
 ```csharp
@@ -265,7 +265,7 @@ sfChat.MessageUnpinned += (sender, e) =>
 
 ## Pattern: Handling All Interactions in MVVM
 
-```xml
+```xaml
 <sfChat:SfChat Messages="{Binding Messages}"
                CurrentUser="{Binding CurrentUser}"
                SendMessageCommand="{Binding SendMessageCommand}"

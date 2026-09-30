@@ -8,7 +8,7 @@ Covers empty view display, localization of built-in strings, RTL support, and th
 
 `EmptyView` is displayed when `AssistItems` contains no items. Accepts a `string` or any `View`.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            AssistItems="{Binding AssistItems}"
                            EmptyView="Ask AI Anything" />
@@ -22,7 +22,7 @@ sfAIAssistView.EmptyView = "Ask AI Anything";
 
 Fully customizes the empty state layout. The `EmptyViewTemplate` is only rendered when `EmptyView` is also set.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            AssistItems="{Binding AssistItems}"
                            EmptyView="No Items">
@@ -152,7 +152,7 @@ public partial class App : Application
 
 Enable right-to-left layout by setting `FlowDirection` on the control or its parent page.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            AssistItems="{Binding AssistItems}"
                            FlowDirection="RightToLeft" />
@@ -163,7 +163,7 @@ sfAIAssistView.FlowDirection = FlowDirection.RightToLeft;
 ```
 
 To apply RTL to the entire page:
-```xml
+```xaml
 <ContentPage FlowDirection="RightToLeft">
     ...
 </ContentPage>
@@ -185,7 +185,7 @@ Applies a modern translucent glass-like appearance with adaptive color tinting a
 
 ### XAML
 
-```xml
+```xaml
 xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
 xmlns:assistView="clr-namespace:Syncfusion.Maui.AIAssistView;assembly=Syncfusion.Maui.AIAssistView"
 

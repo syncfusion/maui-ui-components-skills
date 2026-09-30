@@ -84,7 +84,7 @@ Exported images are saved to different locations depending on the platform:
 
 Add file writing permissions to `AndroidManifest.xml`:
 
-```xml
+```xaml
 <manifest>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -93,7 +93,7 @@ Add file writing permissions to `AndroidManifest.xml`:
 
 For Android 13+ (API 33+), use scoped storage permissions:
 
-```xml
+```xaml
 <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 ```
 
@@ -101,7 +101,7 @@ For Android 13+ (API 33+), use scoped storage permissions:
 
 Add photo library permissions to `Info.plist`:
 
-```xml
+```xaml
 <dict>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>This App needs permission to access Photos</string>
@@ -163,7 +163,7 @@ await embedInEmail(chartStream);
 
 ### Use Case 1: Export Button
 
-```xml
+```xaml
 <StackLayout>
     <Button Text="Export Chart" Clicked="OnExportClicked"/>
     

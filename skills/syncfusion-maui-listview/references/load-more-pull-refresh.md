@@ -23,7 +23,7 @@ The `SfListView` enables the Load More view by setting the `SfListView.LoadMoreO
 
 Example (Load more at the end):
 
-```xml
+```xaml
 <syncfusion:SfListView LoadMoreOption="Auto"
                        LoadMorePosition="End"
                        LoadMoreCommand="{Binding LoadMoreItemsCommand}"
@@ -32,7 +32,7 @@ Example (Load more at the end):
 
 Example (Load more at the start with manual mode):
 
-```xml
+```xaml
 <syncfusion:SfListView LoadMoreOption="Manual"
                        LoadMorePosition="Start"
                        LoadMoreCommand="{Binding LoadMoreItemsCommand}"
@@ -56,7 +56,7 @@ The LoadMore Indicator will be displayed when loading more items. Use the `SfLis
 
 ### Auto Load More
 
-```xml
+```xaml
 <syncfusion:SfListView LoadMoreOption="Auto"
                        LoadMoreCommand="{Binding LoadMoreItemsCommand}"
                        IsLazyLoading="{Binding IsLoading}" />
@@ -74,7 +74,7 @@ Automatically loads more items when scrolling reaches the bottom. Use `IsLazyLoa
 
 ### Manual Load More
 
-```xml
+```xaml
 <syncfusion:SfListView LoadMoreOption="Manual"
                        LoadMoreCommand="{Binding LoadMoreItemsCommand}"
                        IsLazyLoading="{Binding IsLoading}" />
@@ -84,7 +84,7 @@ Shows a "Load More" button that users must tap to load additional items. The com
 
 ### AutoOnScroll
 
-```xml
+```xaml
 <syncfusion:SfListView LoadMoreOption="AutoOnScroll"
                        LoadMoreCommand="{Binding LoadMoreItemsCommand}"
                        IsLazyLoading="{Binding IsLoading}" />
@@ -94,7 +94,7 @@ Loads more items only when user scrolls, not on initial load. Use `IsLazyLoading
 
 ### Disable Load More
 
-```xml
+```xaml
 <syncfusion:SfListView LoadMoreOption="None" />
 ```
 
@@ -185,7 +185,7 @@ public class ProductViewModel : INotifyPropertyChanged
 
 ### Custom Load More Template
 
-```xml
+```xaml
 <syncfusion:SfListView LoadMoreOption="Manual" IsLazyLoading="{Binding IsLoading}">
     <syncfusion:SfListView.LoadMoreTemplate>
         <DataTemplate>
@@ -257,7 +257,7 @@ Enable users to refresh data by pulling down from the top of the list.
 ### Basic Pull to Refresh
 Place `SfListView` inside the `SfPullToRefresh` and set the PullableContent of `SfPullToRefresh` as `SfListView`.
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                 x:Class="RefreshableListView.MainPage"
@@ -334,7 +334,7 @@ using Syncfusion.Maui.PullToRefresh;
 
 ListView already uses virtualization, but ensure ItemSize is set for optimal performance:
 
-```xml
+```xaml
 <syncfusion:SfListView ItemSize="100" />
 ```
 
@@ -346,7 +346,7 @@ Load data in chunks (pages) rather than all at once.
 
 Keep templates simple for better scrolling performance:
 
-```xml
+```xaml
 <!-- GOOD: Simple template -->
 <Grid Padding="10">
     <Label Text="{Binding Name}" />
@@ -370,7 +370,7 @@ Keep templates simple for better scrolling performance:
 - Enable image caching
 - Consider lazy loading images
 
-```xml
+```xaml
 <Image Source="{Binding ThumbnailUrl}" 
        CachingEnabled="True"
        HeightRequest="80" 

@@ -17,7 +17,7 @@ Configure the layout properties to control:
 Set a fixed width for all segments using `SegmentWidth`.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl SegmentWidth="80">
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">
@@ -108,7 +108,7 @@ segmentedControl.ItemsSource = new List<SfSegmentItem>
 Control the height of all segments using `SegmentHeight`.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl SegmentHeight="50">
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">
@@ -142,7 +142,7 @@ segmentedControl.SegmentHeight = 50;
 Control how many segments are visible without scrolling using `VisibleSegmentsCount`.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl VisibleSegmentsCount="3">
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">
@@ -227,7 +227,7 @@ Control Width = User-specified or container width
 
 Segments fill available horizontal space equally:
 
-```xml
+```xaml
 <buttons:SfSegmentedControl HorizontalOptions="FillAndExpand">
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">
@@ -243,7 +243,7 @@ Segments fill available horizontal space equally:
 
 Control centered with explicit segment widths:
 
-```xml
+```xaml
 <buttons:SfSegmentedControl HorizontalOptions="Center" SegmentWidth="100">
     <!-- Items -->
 </buttons:SfSegmentedControl>

@@ -24,7 +24,7 @@ using Syncfusion.Maui.Backdrop;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <backdrop:SfBackdropPage BackLayerRevealOption="Auto">
     <backdrop:SfBackdropPage.BackLayer>
         <Grid><!-- Navigation content --></Grid>
@@ -36,7 +36,7 @@ using Syncfusion.Maui.Backdrop;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <backdrop:SfBackdropPage BackLayerRevealOption="Auto">
     <backdrop:SfBackdropPage.BackLayer>
         <Grid><!-- Navigation content --></Grid>
@@ -64,7 +64,7 @@ using Syncfusion.Maui.Cards;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <cards:SfCardView CornerRadius="10"
                   HasShadow="True">
     <Grid>
@@ -74,7 +74,7 @@ using Syncfusion.Maui.Cards;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <cards:SfCardView CornerRadius="10">
     <Grid>
         <!-- Card content -->
@@ -99,7 +99,7 @@ using Syncfusion.Maui.ParallaxView;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <parallax:SfParallaxView>
     <parallax:SfParallaxView.Content>
         <Image Source="background.jpg"/>
@@ -113,7 +113,7 @@ using Syncfusion.Maui.ParallaxView;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <parallax:SfParallaxView>
     <parallax:SfParallaxView.Content>
         <Image Source="background.jpg"/>
@@ -149,7 +149,7 @@ using Syncfusion.Maui.Popup;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <popupLayout:SfPopupLayout IsOpen="{Binding ShowPopup}">
     <popupLayout:SfPopupLayout.PopupView>
         <popupLayout:PopupView>
@@ -164,7 +164,7 @@ using Syncfusion.Maui.Popup;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <popup:SfPopup IsOpen="{Binding ShowPopup}">
     <popup:SfPopup.ContentTemplate>
         <DataTemplate>
@@ -181,7 +181,7 @@ Structure simplified in MAUI.
 ### SfBorder - Use Native MAUI Border
 
 **Xamarin:**
-```xml
+```xaml
 <border:SfBorder CornerRadius="10"
                  BorderColor="Blue"
                  BorderWidth="2">
@@ -190,7 +190,7 @@ Structure simplified in MAUI.
 ```
 
 **.NET MAUI (Native Control):**
-```xml
+```xaml
 <Border Stroke="Blue"
         StrokeThickness="2"
         StrokeShape="RoundRectangle 10">
@@ -203,7 +203,7 @@ Structure simplified in MAUI.
 ### SfGradientView - Use Native MAUI Gradients
 
 **Xamarin:**
-```xml
+```xaml
 <gradient:SfGradientView>
     <gradient:SfGradientView.BackgroundBrush>
         <gradient:SfLinearGradientBrush>
@@ -215,7 +215,7 @@ Structure simplified in MAUI.
 ```
 
 **.NET MAUI (Native Gradients):**
-```xml
+```xaml
 <Grid>
     <Grid.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -262,7 +262,7 @@ SfPopup popup = new SfPopup();
 ### Issue: SfBorder not available
 
 **Solution:** Use native MAUI `Border`:
-```xml
+```xaml
 <!-- Change -->
 <syncfusion:SfBorder ...>
 
@@ -273,7 +273,7 @@ SfPopup popup = new SfPopup();
 ### Issue: SfGradientView not available
 
 **Solution:** Use native MAUI gradients:
-```xml
+```xaml
 <Grid>
     <Grid.Background>
         <LinearGradientBrush>...</LinearGradientBrush>

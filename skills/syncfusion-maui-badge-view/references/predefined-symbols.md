@@ -30,7 +30,7 @@ Badge View supports predefined icons as an alternative to text badges. Icons are
 ### Basic Icon Usage
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView>
     <badge:SfBadgeView.Content>
         <Image Source="user_avatar.png" 
@@ -69,7 +69,7 @@ var badgeView = new SfBadgeView
 ### Available (Online Status)
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView>
     <badge:SfBadgeView.Content>
         <Frame WidthRequest="60" 
@@ -111,7 +111,7 @@ var awayBadge = new SfBadgeView
 ### Busy Status
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView>
     <badge:SfBadgeView.Content>
         <Image Source="profile.png" 
@@ -154,7 +154,7 @@ var addBadge = new SfBadgeView
 ### Delete Icon
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView>
     <badge:SfBadgeView.Content>
         <Button Text="Remove Item" 
@@ -193,7 +193,7 @@ var dotBadge = new SfBadgeView
 ### Prohibit Icons
 
 **XAML:**
-```xml
+```xaml
 <!-- Prohibit Style 1 -->
 <badge:SfBadgeView>
     <badge:SfBadgeView.Content>
@@ -228,7 +228,7 @@ var dotBadge = new SfBadgeView
 When both `BadgeText` and `Icon` are set, only text is displayed:
 
 **XAML:**
-```xml
+```xaml
 <!-- Only "5" will be displayed, not the Away icon -->
 <badge:SfBadgeView BadgeText="5">
     <badge:SfBadgeView.Content>
@@ -350,7 +350,7 @@ public enum UserStatus
 ### Contact List with Status
 
 **XAML:**
-```xml
+```xaml
 <CollectionView ItemsSource="{Binding Contacts}">
     <CollectionView.ItemTemplate>
         <DataTemplate>
@@ -432,7 +432,7 @@ public Frame CreateProductCard(Product product)
 ### Icon with Custom Colors
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView>
     <badge:SfBadgeView.Content>
         <Image Source="user.png" WidthRequest="60" HeightRequest="60"/>
@@ -463,7 +463,7 @@ var animatedIconBadge = new BadgeSettings
 ### Icon with Stroke
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView>
     <badge:SfBadgeView.Content>
         <Image Source="profile.png"/>

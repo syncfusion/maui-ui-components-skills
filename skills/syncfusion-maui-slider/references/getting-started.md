@@ -88,7 +88,7 @@ namespace SliderGettingStarted
 
 **XAML Implementation:**
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sliders="clr-namespace:Syncfusion.Maui.Sliders;assembly=Syncfusion.Maui.Sliders"
@@ -129,7 +129,7 @@ This creates a basic slider with default settings:
 
 ### Setting Minimum, Maximum, and Value
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="50" />
@@ -148,7 +148,7 @@ SfSlider slider = new SfSlider
 
 Display labels at regular intervals:
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="10"
                   Value="5"
@@ -171,7 +171,7 @@ SfSlider slider = new SfSlider
 
 Display major and minor ticks:
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="10"
                   Value="5"
@@ -198,7 +198,7 @@ SfSlider slider = new SfSlider
 
 Change the slider orientation from horizontal (default) to vertical:
 
-```xml
+```xaml
 <sliders:SfSlider Orientation="Vertical"
                   Minimum="0"
                   Maximum="10"
@@ -231,7 +231,7 @@ SfSlider slider = new SfSlider
 
 Reverse the slider so the minimum value is on the right (horizontal) or top (vertical):
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="10"
                   Value="5"
@@ -265,7 +265,7 @@ SfSlider slider = new SfSlider
 
 Add prefix or suffix to labels using NumberFormat:
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="20"
                   Maximum="100"
                   Value="60"
@@ -301,7 +301,7 @@ SfSlider slider = new SfSlider
 Here's a fully configured slider for a temperature control:
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sliders="clr-namespace:Syncfusion.Maui.Sliders;assembly=Syncfusion.Maui.Sliders"
@@ -390,7 +390,7 @@ public class MainPage : ContentPage
 
 **Cause**: ShowLabels is false or Interval not set  
 **Solution**: 
-```xml
+```xaml
 <sliders:SfSlider ShowLabels="True" Interval="10" />
 ```
 Or use `Interval="0"` for automatic interval calculation.
@@ -399,7 +399,7 @@ Or use `Interval="0"` for automatic interval calculation.
 
 **Cause**: ShowTicks is false  
 **Solution**:
-```xml
+```xaml
 <sliders:SfSlider ShowTicks="True" Interval="10" />
 ```
 

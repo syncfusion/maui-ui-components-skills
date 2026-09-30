@@ -26,7 +26,7 @@ Controls the increment/decrement amount for:
 - Mouse scrolling
 - Up/Down button clicks
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Value="10"
                         SmallChange="5" />
@@ -55,7 +55,7 @@ Controls the increment/decrement amount for:
 - Page Up key
 - Page Down key
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Value="10"
                         SmallChange="5"
@@ -80,7 +80,7 @@ var numericEntry = new SfNumericEntry
 
 ### Example: Fine and Coarse Control
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="15">
     
     <!-- Price with $0.01 and $1 increments -->
@@ -134,7 +134,7 @@ The `UpDownPlacementMode` property controls the visibility and position of up/do
 
 No buttons are displayed.
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         UpDownPlacementMode="Hidden" />
 ```
@@ -147,7 +147,7 @@ No buttons are displayed.
 
 Buttons displayed **horizontally** beside the entry.
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Value="360"
                         UpDownPlacementMode="Inline" />
@@ -175,7 +175,7 @@ var numericEntry = new SfNumericEntry
 
 Buttons displayed **vertically** stacked.
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Value="360"
                         UpDownPlacementMode="InlineVertical" />
@@ -202,7 +202,7 @@ var numericEntry = new SfNumericEntry
 
 ### Example: All Placement Modes
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="20">
     
     <!-- Hidden -->
@@ -240,7 +240,7 @@ The `UpDownButtonAlignment` property controls the horizontal position of buttons
 
 Buttons displayed on the **right** side.
 
-```xml
+```xaml
 <editors:SfNumericEntry Value="123"
                         WidthRequest="200"
                         UpDownPlacementMode="Inline"
@@ -260,7 +260,7 @@ Buttons displayed on the **right** side.
 
 Buttons displayed on the **left** side.
 
-```xml
+```xaml
 <editors:SfNumericEntry Value="123"
                         HorizontalTextAlignment="End"
                         WidthRequest="200"
@@ -292,7 +292,7 @@ var numericEntry = new SfNumericEntry
 
 Buttons displayed on **both** sides.
 
-```xml
+```xaml
 <editors:SfNumericEntry Value="123"
                         HorizontalTextAlignment="Center"
                         WidthRequest="200"
@@ -322,7 +322,7 @@ var numericEntry = new SfNumericEntry
 
 ### Example: All Alignments
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="20">
     
     <!-- Right (Default) -->
@@ -365,7 +365,7 @@ The `UpDownOrder` property controls the order of up and down buttons.
 
 Up button appears first (left or top), then down button.
 
-```xml
+```xaml
 <editors:SfNumericEntry Value="123"
                         WidthRequest="200"
                         UpDownOrder="UpThenDown"
@@ -394,7 +394,7 @@ Up button appears first (left or top), then down button.
 
 Down button appears first (left or top), then up button.
 
-```xml
+```xaml
 <editors:SfNumericEntry Value="123"
                         WidthRequest="200"
                         UpDownOrder="DownThenUp"
@@ -430,7 +430,7 @@ var numericEntry = new SfNumericEntry
 
 ### Example: Button Order
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="20">
     
     <!-- UpThenDown (Default) -->
@@ -460,7 +460,7 @@ var numericEntry = new SfNumericEntry
 
 The `UpDownButtonColor` property customizes the color of button icons.
 
-```xml
+```xaml
 <editors:SfNumericEntry HeightRequest="50"
                         WidthRequest="200"
                         Value="360"
@@ -481,7 +481,7 @@ var numericEntry = new SfNumericEntry
 
 ### Example: Themed Buttons
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="20">
     
     <!-- Blue Theme -->
@@ -520,7 +520,7 @@ Use `UpButtonTemplate` and `DownButtonTemplate` properties to completely customi
 
 ### Custom Button Templates
 
-```xml
+```xaml
 <editors:SfNumericEntry x:Name="numericEntry"
                         WidthRequest="200"
                         HeightRequest="40"
@@ -626,7 +626,7 @@ The `AutoReverse` property makes the value wrap around when reaching `Minimum` o
 
 ### Enable Auto Reverse
 
-```xml
+```xaml
 <editors:SfNumericEntry UpDownPlacementMode="Inline"
                         AutoReverse="True"
                         Minimum="0"
@@ -657,7 +657,7 @@ var numericEntry = new SfNumericEntry
 
 ### Example: Hour Selector (0-23)
 
-```xml
+```xaml
 <StackLayout Spacing="5">
     <Label Text="Hour (0-23, wraps around):" />
     <editors:SfNumericEntry WidthRequest="250"
@@ -677,7 +677,7 @@ var numericEntry = new SfNumericEntry
 
 ### Example: Minute/Second Selector (0-59)
 
-```xml
+```xaml
 <HorizontalStackLayout Spacing="10">
     
     <!-- Minutes -->
@@ -721,7 +721,7 @@ var numericEntry = new SfNumericEntry
 
 ## Complete UpDown Buttons Example
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

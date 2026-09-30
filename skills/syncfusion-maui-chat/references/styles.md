@@ -21,7 +21,7 @@
 
 SfChat uses Syncfusion's theme dictionary system. Override built-in resource keys inside a `SyncfusionThemeDictionary` to apply custom styles. Always include `SfChatTheme` set to `"CustomTheme"` as the first entry.
 
-```xml
+```xaml
 xmlns:syncTheme="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core"
 
 <ContentPage.Resources>
@@ -49,13 +49,13 @@ this.Resources.Add(dict);
 ## Chat Background
 
 ### Solid color background
-```xml
+```xaml
 <sfChat:SfChat Background="#94b6ec" ... />
 ```
 > To extend the background into the message input area, also set `SfChatMessageInputViewBackground` to `Transparent`.
 
 ### Image background
-```xml
+```xaml
 <Grid>
     <Image Source="background.jpg" Aspect="AspectFill" />
     <sfChat:SfChat Background="Transparent" ... />
@@ -63,7 +63,7 @@ this.Resources.Add(dict);
 ```
 
 ### Gradient background
-```xml
+```xaml
 <sfChat:SfChat ...>
     <sfChat:SfChat.Background>
         <LinearGradientBrush>
@@ -93,7 +93,7 @@ this.Resources.Add(dict);
 | `SfChatIncomingMessageTimestampFontFamily` | Timestamp font family |
 | `SfChatIncomingMessageTimestampFontSize` | Timestamp font size |
 
-```xml
+```xaml
 <ResourceDictionary>
     <x:String x:Key="SfChatTheme">CustomTheme</x:String>
     <Color x:Key="SfChatIncomingMessageTextColor">Gray</Color>
@@ -118,7 +118,7 @@ this.Resources.Add(dict);
 | `SfChatOutgoingMessageFontAttributes` | Font attributes |
 | `SfChatOutgoingMessageTimestampFontSize` | Timestamp font size |
 
-```xml
+```xaml
 <ResourceDictionary>
     <x:String x:Key="SfChatTheme">CustomTheme</x:String>
     <Color x:Key="SfChatOutgoingMessageTextColor">White</Color>
@@ -132,7 +132,7 @@ this.Resources.Add(dict);
 ## Message Input View and Editor Styling
 
 ### Message input view (container)
-```xml
+```xaml
 <Color x:Key="SfChatMessageInputViewBackground">#f0f0f0</Color>
 ```
 
@@ -149,7 +149,7 @@ this.Resources.Add(dict);
 | `SfChatEditorFontSize` | Font size |
 | `SfChatEditorFontAttributes` | Font attributes |
 
-```xml
+```xaml
 <ResourceDictionary>
     <x:String x:Key="SfChatTheme">CustomTheme</x:String>
     <Color x:Key="SfChatEditorTextColor">Black</Color>
@@ -172,7 +172,7 @@ this.Resources.Add(dict);
 | `SfChatTypingIndicatorFontSize` | Font size |
 | `SfChatTypingIndicatorFontAttributes` | Font attributes |
 
-```xml
+```xaml
 <Color x:Key="SfChatTypingIndicatorTextColor">Blue</Color>
 <Color x:Key="SfChatTypingIndicatorBackground">#eee479</Color>
 <x:Double x:Key="SfChatTypingIndicatorFontSize">13</x:Double>
@@ -191,7 +191,7 @@ this.Resources.Add(dict);
 | `SfChatTimeBreakViewFontSize` | Font size |
 | `SfChatTimeBreakViewFontAttributes` | Font attributes |
 
-```xml
+```xaml
 <Color x:Key="SfChatTimeBreakViewTextColor">Blue</Color>
 <Color x:Key="SfChatTimeBreakViewBackground">#e2f9cd</Color>
 <Color x:Key="SfChatTimeBreakViewStroke">LimeGreen</Color>
@@ -211,7 +211,7 @@ this.Resources.Add(dict);
 | `SfChatSuggestionListItemFontSize` | Font size |
 | `SfChatSuggestionListItemFontAttributes` | Font attributes |
 
-```xml
+```xaml
 <Color x:Key="SfChatSuggestionListItemTextColor">Blue</Color>
 <Color x:Key="SfChatSuggestionListItemBackground">#d9d9d9</Color>
 <Color x:Key="SfChatSuggestionListBackground">Violet</Color>
@@ -230,7 +230,7 @@ this.Resources.Add(dict);
 | `SfChatHoveredSendButtonBackground` | Background (hovered) |
 | `SfChatPressedSendButtonBackground` | Background (pressed) |
 
-```xml
+```xaml
 <Color x:Key="SfChatSendButtonColor">DeepPink</Color>
 <Color x:Key="SfChatSendButtonBackground">SkyBlue</Color>
 <Color x:Key="SfChatSendButtonDisabledColor">Purple</Color>
@@ -248,7 +248,7 @@ this.Resources.Add(dict);
 | `SfChatPressedAttachmentBackground` | Pressed background |
 | `SfChatHoveredAttachmentButtonColor` | Icon color when hovered |
 
-```xml
+```xaml
 <Color x:Key="SfChatAttachmentButtonColor">Orange</Color>
 ```
 
@@ -263,7 +263,7 @@ this.Resources.Add(dict);
 | `SfChatDeliveryStateReadIconColor` | Read icon color |
 | `SfChatDeliveryStateFailedIconColor` | Failed icon color |
 
-```xml
+```xaml
 <Color x:Key="SfChatDeliveryStateSentIconColor">DarkGray</Color>
 <Color x:Key="SfChatDeliveryStateDeliveredIconColor">DarkGray</Color>
 <Color x:Key="SfChatDeliveryStateReadIconColor">Blue</Color>
@@ -275,13 +275,13 @@ this.Resources.Add(dict);
 ## Message Type Styling
 
 ### Calendar message
-```xml
+```xaml
 <Color x:Key="SfChatCalendarBackground">White</Color>
 <Color x:Key="SfChatCalendarStroke">Black</Color>
 ```
 
 ### Date picker message
-```xml
+```xaml
 <Color x:Key="SfChatDatePickerBackground">SkyBlue</Color>
 <Color x:Key="SfChatDatePickerTextColor">White</Color>
 <Color x:Key="SfChatDatePickerIconColor">Blue</Color>
@@ -289,7 +289,7 @@ this.Resources.Add(dict);
 ```
 
 ### Time picker message
-```xml
+```xaml
 <Color x:Key="SfChatTimePickerBackground">SkyBlue</Color>
 <Color x:Key="SfChatTimePickerTextColor">White</Color>
 <Color x:Key="SfChatTimePickerIconColor">Blue</Color>
@@ -297,7 +297,7 @@ this.Resources.Add(dict);
 ```
 
 ### Hyperlink message
-```xml
+```xaml
 <Color x:Key="SfChatIncomingHyperlinkColor">#94b6ec</Color>
 <Color x:Key="SfChatOutgoingHyperlinkColor">#0056b3</Color>
 <Color x:Key="SfChatHyperlinkMetaTitleTextColor">#f29d0a</Color>
@@ -306,7 +306,7 @@ this.Resources.Add(dict);
 ```
 
 ### Image message
-```xml
+```xaml
 <Color x:Key="SfChatIncomingImageStroke">LightGray</Color>
 <Color x:Key="SfChatOutgoingImageStroke">LightGray</Color>
 ```
@@ -322,7 +322,7 @@ this.Resources.Add(dict);
 | `SfChatLoadMoreStroke` | Border color |
 | `SfChatLoadMoreIndicatorColor` | Spinner indicator color |
 
-```xml
+```xaml
 <Color x:Key="SfChatLoadMoreBackground">White</Color>
 <Color x:Key="SfChatLoadMoreTextColor">Blue</Color>
 <Color x:Key="SfChatLoadMoreStroke">LightGray</Color>

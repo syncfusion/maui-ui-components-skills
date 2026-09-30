@@ -59,7 +59,7 @@ The `GroupPath` property specifies which data property to use for grouping at a 
 
 ### Basic GroupPath Example
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding PopulationDetails}"
                    PrimaryValuePath="Population">
     <treemap:SfTreeMap.Levels>
@@ -123,7 +123,7 @@ public class DetailedPopulationData
 }
 ```
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding DetailedData}"
                    PrimaryValuePath="Population">
     <treemap:SfTreeMap.Levels>
@@ -194,7 +194,7 @@ Each level can be customized independently with various properties.
 
 Control the space between group header items:
 
-```xml
+```xaml
 <treemap:SfTreeMap.Levels>
     <treemap:TreeMapLevel GroupPath="Continent"
                           Spacing="3" />
@@ -215,7 +215,7 @@ treeMap.Levels.Add(new TreeMapLevel
 
 Adjust the height of group headers:
 
-```xml
+```xaml
 <treemap:SfTreeMap.Levels>
     <treemap:TreeMapLevel GroupPath="Continent"
                           HeaderHeight="30" />
@@ -239,7 +239,7 @@ treeMap.Levels.Add(new TreeMapLevel
 
 Set custom background colors for group headers:
 
-```xml
+```xaml
 <treemap:SfTreeMap.Levels>
     <treemap:TreeMapLevel GroupPath="Continent"
                           Background="LightGreen" />
@@ -256,7 +256,7 @@ treeMap.Levels.Add(new TreeMapLevel
 
 ### Using Hex Colors
 
-```xml
+```xaml
 <treemap:TreeMapLevel GroupPath="Continent"
                       Background="#E8F5E9" />
 ```
@@ -273,7 +273,7 @@ treeMap.Levels.Add(new TreeMapLevel
 
 Customize header border colors:
 
-```xml
+```xaml
 <treemap:SfTreeMap.Levels>
     <treemap:TreeMapLevel GroupPath="Continent"
                           Stroke="Red"
@@ -294,7 +294,7 @@ treeMap.Levels.Add(new TreeMapLevel
 
 Customize header text appearance:
 
-```xml
+```xaml
 <treemap:SfTreeMap.Levels>
     <treemap:TreeMapLevel GroupPath="Continent">
         <treemap:TreeMapLevel.TextStyle>
@@ -323,7 +323,7 @@ treeMap.Levels.Add(new TreeMapLevel
 
 ### Complete Customization Example
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding PopulationDetails}"
                    PrimaryValuePath="Population">
     <treemap:SfTreeMap.Levels>
@@ -353,7 +353,7 @@ treeMap.Levels.Add(new TreeMapLevel
 
 ### Different Styles for Different Levels
 
-```xml
+```xaml
 <treemap:SfTreeMap.Levels>
     <!-- Level 1: Department -->
     <treemap:TreeMapLevel GroupPath="Department"
@@ -383,7 +383,7 @@ Use `GroupItemBrushSettings` to color group headers differently from leaf items.
 
 ### Using PaletteBrushSettings for Groups
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding PopulationDetails}"
                    PrimaryValuePath="Population">
     <treemap:SfTreeMap.Levels>
@@ -459,7 +459,7 @@ public class SalesViewModel
 }
 ```
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Sales}"
                    PrimaryValuePath="Revenue">
     <treemap:SfTreeMap.Levels>
@@ -536,7 +536,7 @@ public class BudgetData
 }
 ```
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding BudgetItems}"
                    PrimaryValuePath="Amount"
                    RangeColorValuePath="Amount">
@@ -626,7 +626,7 @@ Ensure GroupPath values in data are consistent:
 
 Order levels from broad to specific:
 
-```xml
+```xaml
 <!-- Good: Broad to specific -->
 <treemap:TreeMapLevel GroupPath="Continent" />
 <treemap:TreeMapLevel GroupPath="Country" />

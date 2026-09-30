@@ -1,6 +1,6 @@
 # Scroll to Bottom in SfAIAssistView
 
-`SfAIAssistView` provides an optional scroll-to-bottom button that helps users quickly jump to the latest messages after scrolling up in a long conversation.
+`SfAIAssistView` provides an optional scroll-to-bottom button and an `AutoScrollBehavior` property that help users stay aligned with the latest request or response in a long conversation.
 
 ---
 
@@ -8,7 +8,7 @@
 
 The button is hidden by default. Set `ShowScrollToBottomButton` to `true` to enable it. The button appears when the user scrolls away from the bottom and disappears once they are at the latest message.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            AssistItems="{Binding AssistItems}"
                            ShowScrollToBottomButton="True" />
@@ -26,7 +26,7 @@ Use `ScrollToBottomButtonTemplate` to replace the default button appearance with
 
 ### XAML
 
-```xml
+```xaml
 <ContentPage.Resources>
     <DataTemplate x:Key="scrollToBottomTemplate">
         <Grid WidthRequest="40" HeightRequest="40">
@@ -78,3 +78,24 @@ sfAIAssistView.ScrollToBottomButtonTemplate = new DataTemplate(() =>
     return grid;
 });
 ```
+
+---
+
+## AutoScrollBehavior
+
+Use `AutoScrollBehavior` to control whether the conversation view automatically scrolls to the latest user request or the most recent AI response. The default value is `ScrollToLastResponse`.
+
+```xaml
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView"
+                           AssistItems="{Binding AssistItems}"
+                           AutoScrollBehavior="ScrollToLastRequest" />
+```
+
+```csharp
+sfAIAssistView.AutoScrollBehavior = AssistViewScrollBehavior.ScrollToLastRequest;
+```
+
+### Scenarios
+
+- When `AutoScrollBehavior` is set to `ScrollToLastRequest`, new content scrolls to the latest user request.
+- When `AutoScrollBehavior` is set to `ScrollToLastResponse`, new content scrolls to the most recent AI response.

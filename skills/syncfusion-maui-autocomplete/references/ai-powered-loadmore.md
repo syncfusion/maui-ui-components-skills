@@ -20,7 +20,7 @@ Restrict displayed items and load more on demand for better performance with lar
 
 ### Basic Configuration
 
-```xml
+```xaml
 <editors:SfAutocomplete MaximumSuggestion="10"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
@@ -35,7 +35,7 @@ autocomplete.MaximumSuggestion = 10;
 
 ### Custom LoadMore Text
 
-```xml
+```xaml
 <editors:SfAutocomplete MaximumSuggestion="5"
                         LoadMoreText="Show more options..."
                         ItemsSource="{Binding SocialMedias}"
@@ -47,7 +47,7 @@ autocomplete.MaximumSuggestion = 10;
 
 Customize the LoadMore button appearance:
 
-```xml
+```xaml
 <editors:SfAutocomplete MaximumSuggestion="5"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
@@ -93,7 +93,7 @@ autocomplete.LoadMoreTemplate = new DataTemplate(() =>
 
 Handle when user taps LoadMore button:
 
-```xml
+```xaml
 <editors:SfAutocomplete MaximumSuggestion="5"
                         LoadMoreButtonTapped="OnLoadMore"
                         ItemsSource="{Binding SocialMedias}"

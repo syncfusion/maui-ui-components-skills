@@ -25,7 +25,7 @@ Notifies when the selected item changes, either through user interaction (swipin
 ### Basic Event Handling
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator x:Name="rotator"
                       ItemsSource="{Binding ImageCollection}"
                       SelectedIndexChanged="OnRotatorIndexChanged"
@@ -54,7 +54,7 @@ private void OnRotatorIndexChanged(object sender, SelectedIndexChangedEventArgs 
 ### Complete Event Example
 
 **XAML:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -274,7 +274,7 @@ protected override void OnAppearing()
 
 Synchronize rotator with other UI components.
 
-```xml
+```xaml
 <Grid RowDefinitions="*, Auto">
     <!-- Rotator -->
     <syncfusion:SfRotator x:Name="rotator"

@@ -11,7 +11,7 @@ The Syncfusion .NET MAUI ComboBox control allows you to add custom header and fo
 Use the `ShowDropdownHeaderView` property to show or hide the header view in the dropdown. The default value is `false`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ShowDropdownHeaderView="True" />
 ```
@@ -26,7 +26,7 @@ comboBox.ShowDropdownHeaderView = true;
 Use the `DropDownHeaderView` property to provide a custom view as the header.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -81,7 +81,7 @@ SfComboBox comboBox = new SfComboBox
 You can customize the header height using the `HeightRequest` property on the header view.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox.DropDownHeaderView>
     <Grid BackgroundColor="LightCyan" 
           HeightRequest="60">
@@ -99,7 +99,7 @@ You can customize the header height using the `HeightRequest` property on the he
 Use the `ShowDropdownFooterView` property to show or hide the footer view in the dropdown. The default value is `false`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ShowDropdownFooterView="True" />
 ```
@@ -114,7 +114,7 @@ comboBox.ShowDropdownFooterView = true;
 Use the `DropDownFooterView` property to provide a custom view as the footer.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -181,7 +181,7 @@ void OnFooterTapped(object sender, EventArgs e)
 You can customize the footer height using the `HeightRequest` property on the footer view.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox.DropDownFooterView>
     <Grid BackgroundColor="LightGreen" 
           HeightRequest="50">
@@ -198,7 +198,7 @@ You can customize the footer height using the `HeightRequest` property on the fo
 You can use both header and footer views simultaneously.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -246,7 +246,7 @@ You can use both header and footer views simultaneously.
 ### 1. Category Header
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox.DropDownHeaderView>
     <Grid BackgroundColor="LightBlue" HeightRequest="35">
         <Label Text="Available Options"
@@ -260,7 +260,7 @@ You can use both header and footer views simultaneously.
 ### 2. Action Button Footer
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox.DropDownFooterView>
     <Grid BackgroundColor="WhiteSmoke" HeightRequest="50">
         <Button Text="+ Add New Item"
@@ -276,7 +276,7 @@ You can use both header and footer views simultaneously.
 ### 3. Information Footer
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox.DropDownFooterView>
     <Grid BackgroundColor="#FFFACD" HeightRequest="40">
         <Label Text="💡 Tip: Type to search items"
@@ -290,7 +290,7 @@ You can use both header and footer views simultaneously.
 ### 4. Multi-line Header
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox.DropDownHeaderView>
     <VerticalStackLayout BackgroundColor="AliceBlue" 
                          Padding="10"

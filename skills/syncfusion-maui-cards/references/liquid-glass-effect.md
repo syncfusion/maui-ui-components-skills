@@ -30,7 +30,7 @@ The `EnableLiquidGlassEffect` property controls whether the liquid glass effect 
 Set the `EnableLiquidGlassEffect` property to `true`:
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardView EnableLiquidGlassEffect="True">
     <Label Text="Glass Effect Card"/>
 </cards:SfCardView>
@@ -50,7 +50,7 @@ var card = new SfCardView
 For optimal glass effect, set the background to transparent:
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardView EnableLiquidGlassEffect="True"
                   Background="Transparent"
                   BorderColor="Transparent">
@@ -76,7 +76,7 @@ var card = new SfCardView
 ### Example 1: Basic Glass Card
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cards="clr-namespace:Syncfusion.Maui.Cards;assembly=Syncfusion.Maui.Cards"
@@ -155,7 +155,7 @@ this.Content = mainGrid;
 ### Example 2: Glass Card with Content
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <Grid.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -209,7 +209,7 @@ this.Content = mainGrid;
 ### Example 3: Multiple Glass Cards
 
 **XAML:**
-```xml
+```xaml
 <Grid Padding="20">
     <Grid.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -290,7 +290,7 @@ this.Content = mainGrid;
 ### Gradient Backgrounds
 
 **Cool Blue Gradient:**
-```xml
+```xaml
 <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
     <GradientStop Color="#0F4C75" Offset="0.0"/>
     <GradientStop Color="#3282B8" Offset="0.5"/>
@@ -299,7 +299,7 @@ this.Content = mainGrid;
 ```
 
 **Purple Pink Gradient:**
-```xml
+```xaml
 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
     <GradientStop Color="#667eea" Offset="0.0"/>
     <GradientStop Color="#764ba2" Offset="1.0"/>
@@ -307,7 +307,7 @@ this.Content = mainGrid;
 ```
 
 **Sunset Gradient:**
-```xml
+```xaml
 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
     <GradientStop Color="#fa709a" Offset="0.0"/>
     <GradientStop Color="#fee140" Offset="1.0"/>
@@ -315,7 +315,7 @@ this.Content = mainGrid;
 ```
 
 **Ocean Gradient:**
-```xml
+```xaml
 <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
     <GradientStop Color="#2E3192" Offset="0.0"/>
     <GradientStop Color="#1BFFFF" Offset="1.0"/>
@@ -324,7 +324,7 @@ this.Content = mainGrid;
 
 ### Image Backgrounds
 
-```xml
+```xaml
 <Grid>
     <Image Source="background.jpg" Aspect="AspectFill"/>
     
@@ -343,7 +343,7 @@ this.Content = mainGrid;
 
 Rounded corners enhance the modern glass effect:
 
-```xml
+```xaml
 <cards:SfCardView EnableLiquidGlassEffect="True"
                  CornerRadius="20"
                  Background="Transparent">
@@ -355,7 +355,7 @@ Rounded corners enhance the modern glass effect:
 
 Ensure text is readable with proper color contrast:
 
-```xml
+```xaml
 <Label Text="Readable Text"
        TextColor="White"
        FontAttributes="Bold"/>
@@ -365,7 +365,7 @@ Ensure text is readable with proper color contrast:
 
 Add padding and margin for breathing room:
 
-```xml
+```xaml
 <cards:SfCardView EnableLiquidGlassEffect="True"
                  Background="Transparent"
                  Margin="20"
@@ -378,7 +378,7 @@ Add padding and margin for breathing room:
 
 Create depth with multiple glass cards:
 
-```xml
+```xaml
 <Grid>
     <!-- Background card -->
     <cards:SfCardView EnableLiquidGlassEffect="True"
@@ -456,7 +456,7 @@ card.BorderColor = Colors.Transparent;
 - macOS 26+ or iOS 26+
 
 **Solution 3:** Check parent background has content:
-```xml
+```xaml
 <!-- Glass needs something to show through -->
 <Grid>
     <Grid.Background>

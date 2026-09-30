@@ -14,7 +14,7 @@ The Default mode displays the DatePicker inline within the layout. This is the d
 
 ### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      Mode="Default">
 </picker:SfDatePicker>
@@ -41,7 +41,7 @@ Dialog mode displays the DatePicker in a centered popup dialog. This is useful w
 
 #### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      Mode="Dialog">
 </picker:SfDatePicker>
@@ -66,7 +66,7 @@ The DatePicker can be opened programmatically by setting the `IsOpen` property t
 
 #### Complete Example
 
-```xml
+```xaml
 <Grid>
     <picker:SfDatePicker x:Name="datePicker"
                          Mode="Dialog">
@@ -119,7 +119,7 @@ The `RelativePosition` property accepts the following values:
 
 #### XAML
 
-```xml
+```xaml
 <Grid>
     <picker:SfDatePicker x:Name="datePicker" 
                          Mode="RelativeDialog"
@@ -155,7 +155,7 @@ The `RelativeView` property specifies which view the picker should be positioned
 
 #### XAML
 
-```xml
+```xaml
 <Grid>
     <picker:SfDatePicker x:Name="datePicker" 
                          Mode="RelativeDialog"
@@ -195,7 +195,7 @@ In Dialog and RelativeDialog modes, you can customize the popup size using the `
 
 ### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker" 
                      Mode="Dialog"
                      PopupWidth="300"
@@ -220,7 +220,7 @@ this.Content = datePicker;
 
 ### Example 1: Dialog with Custom Size and Styling
 
-```xml
+```xaml
 <Grid>
     <picker:SfDatePicker x:Name="datePicker"
                          Mode="Dialog"
@@ -269,7 +269,7 @@ private void OpenDialog_Clicked(object sender, EventArgs e)
 
 ### Example 2: RelativeDialog with Multiple Position Options
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="20">
     <Label Text="Select Date Picker Position:" FontSize="18" FontAttributes="Bold"/>
     
@@ -349,7 +349,7 @@ private void PositionPicker_SelectedIndexChanged(object sender, EventArgs e)
 
 ### Example 3: Dialog with Programmatic Control
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="15">
     <Label Text="Date Picker Dialog Control" 
            FontSize="20" 

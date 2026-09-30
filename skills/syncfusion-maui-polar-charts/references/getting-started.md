@@ -105,7 +105,7 @@ public class PlantViewModel
 Set the ViewModel as the page's BindingContext:
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
@@ -136,7 +136,7 @@ Polar charts require two axes:
 - **SecondaryAxis**: Y-axis (vertical, typically Numeric)
 
 **XAML:**
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.PrimaryAxis>
         <chart:CategoryAxis/>
@@ -169,7 +169,7 @@ chart.SecondaryAxis = secondaryAxis;
 Add a PolarLineSeries to display data:
 
 **XAML:**
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.PrimaryAxis>
         <chart:CategoryAxis/>
@@ -212,7 +212,7 @@ this.Content = chart;
 
 ### XAML Implementation
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"

@@ -50,7 +50,7 @@ dotnet add package Syncfusion.Maui.ProgressBar
 **Option 3: Package Reference (Manual)**
 
 Add to your `.csproj` file:
-```xml
+```xaml
 <ItemGroup>
     <PackageReference Include="Syncfusion.Maui.ProgressBar" Version="*" />
 </ItemGroup>
@@ -104,7 +104,7 @@ namespace YourAppNamespace
 First, import the Syncfusion.Maui.ProgressBar namespace:
 
 **XAML:**
-```xml
+```xaml
 xmlns:stepProgressBar="clr-namespace:Syncfusion.Maui.ProgressBar;assembly=Syncfusion.Maui.ProgressBar"
 ```
 
@@ -116,7 +116,7 @@ using Syncfusion.Maui.ProgressBar;
 ### Initialize the Control
 
 **XAML Implementation:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:stepProgressBar="clr-namespace:Syncfusion.Maui.ProgressBar;assembly=Syncfusion.Maui.ProgressBar"
@@ -197,7 +197,7 @@ namespace YourNamespace
 ### Step 2: Bind to ItemsSource
 
 **XAML with Binding:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:stepProgressBar="clr-namespace:Syncfusion.Maui.ProgressBar;assembly=Syncfusion.Maui.ProgressBar"
@@ -258,7 +258,7 @@ The `ActiveStepIndex` property specifies which step is currently active (0-based
 The `ActiveStepProgressValue` property sets the progress percentage (0-100) within the active step. This shows partial completion of the current step.
 
 **Example:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     ItemsSource="{Binding StepProgressItem}"
     ActiveStepIndex="2"
@@ -285,7 +285,7 @@ SfStepProgressBar stepProgressBar = new SfStepProgressBar()
 Here's a full working example with all components:
 
 ### MainPage.xaml
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

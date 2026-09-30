@@ -51,7 +51,7 @@ The SfCheckBox control supports three visual states:
 
 ### Basic Structure
 
-```xml
+```xaml
 <buttons:SfCheckBox Text="CheckBox" IsThreeState="True">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -81,7 +81,7 @@ The SfCheckBox control supports three visual states:
 
 ### Complete XAML Example
 
-```xml
+```xaml
 <buttons:SfCheckBox Text="CheckBox" IsThreeState="True">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -279,7 +279,7 @@ The following properties can be customized in visual states:
 
 ### Example 1: Traffic Light Pattern
 
-```xml
+```xaml
 <buttons:SfCheckBox Text="Status" IsThreeState="True">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -321,7 +321,7 @@ The following properties can be customized in visual states:
 
 ### Example 2: High Contrast Mode
 
-```xml
+```xaml
 <buttons:SfCheckBox Text="Toggle" IsThreeState="False">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -354,7 +354,7 @@ The following properties can be customized in visual states:
 
 ### Example 3: Soft Material Design
 
-```xml
+```xaml
 <buttons:SfCheckBox Text="Material CheckBox" IsThreeState="False">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -385,7 +385,7 @@ The following properties can be customized in visual states:
 
 ### Example 4: Dynamic Text Per State
 
-```xml
+```xaml
 <buttons:SfCheckBox IsThreeState="True" IsChecked="{x:Null}">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -425,7 +425,7 @@ The following properties can be customized in visual states:
 
 Create reusable styles with visual states:
 
-```xml
+```xaml
 <ContentPage.Resources>
     <Style x:Key="ThemeCheckBoxStyle" TargetType="buttons:SfCheckBox">
         <Setter Property="IsThreeState" Value="True"/>
@@ -455,7 +455,7 @@ Create reusable styles with visual states:
 
 ### Scenario 2: Animation-Like Effect with Opacity
 
-```xml
+```xaml
 <buttons:SfCheckBox Text="Fade Effect" IsThreeState="False">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -481,7 +481,7 @@ Create reusable styles with visual states:
 
 ### Scenario 3: Size Changes Per State
 
-```xml
+```xaml
 <buttons:SfCheckBox Text="Dynamic Size" IsThreeState="False">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">

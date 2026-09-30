@@ -30,7 +30,7 @@ Customize the ImageEditor background using the `Background` property:
 
 ### Solid Color Background
 
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg" 
                           Background="#F0F0F0" />
 ```
@@ -43,7 +43,7 @@ imageEditor.Background = Colors.LightGray;
 
 ### Transparent Background
 
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg" 
                           Background="Transparent" />
 ```
@@ -64,7 +64,7 @@ Customize the appearance of selected annotations using the `SelectionStroke` pro
 
 ### Selection Stroke Color
 
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg"
                           SelectionStroke="#AE97FF" />
 ```
@@ -89,7 +89,7 @@ Customize toolbar appearance using `ImageEditorToolbarSettings`:
 
 ### Background and Stroke
 
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg">
     <imageEditor:SfImageEditor.ToolbarSettings>
         <imageEditor:ImageEditorToolbarSettings 
@@ -108,7 +108,7 @@ imageEditor.ToolbarSettings.Stroke = Color.FromArgb("#444444");
 
 ### Transparent Toolbar
 
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg">
     <imageEditor:SfImageEditor.ToolbarSettings>
         <imageEditor:ImageEditorToolbarSettings 
@@ -136,7 +136,7 @@ Apply modern translucent glass-like styling (iOS 26+, macOS 26+, .NET 10).
 
 ### Basic Implementation
 
-```xml
+```xaml
 <Grid BackgroundColor="Transparent">
     <core:SfGlassEffectView EffectType="Regular"
                             CornerRadius="20">
@@ -207,7 +207,7 @@ this.Content = grid;
 
 ### Dark Theme Styling
 
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg"
                           Background="#1E1E1E"
                           SelectionStroke="#BB86FC">
@@ -229,7 +229,7 @@ this.Content = grid;
 
 ### Light Theme Styling
 
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg"
                           Background="#FFFFFF"
                           SelectionStroke="#6200EE">
@@ -304,7 +304,7 @@ private void ApplyTheme(bool isDarkMode)
 
 ### Minimal Transparent Design
 
-```xml
+```xaml
 <Grid>
     <Image Source="background_pattern.png" Aspect="Fill" />
     
@@ -421,7 +421,7 @@ imageEditor.ToolbarSettings.Background =
 **Cause:** Platform/version not supported or missing wrapper.
 
 **Solution:**
-```xml
+```xaml
 <!-- Ensure wrapped in SfGlassEffectView -->
 <core:SfGlassEffectView>
     <imageEditor:SfImageEditor EnableLiquidGlassEffect="True" />
@@ -443,7 +443,7 @@ if (DeviceInfo.Version.Major < 26)
 **Cause:** Parent container has non-transparent background.
 
 **Solution:**
-```xml
+```xaml
 <!-- Set Grid background to transparent -->
 <Grid BackgroundColor="Transparent">
     <imageEditor:SfImageEditor Background="Transparent" />

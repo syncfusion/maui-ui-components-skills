@@ -42,7 +42,7 @@ richTextEditor.InsertHyperlink("Click here", "https://example.com");
 
 ### Insert Hyperlink with Button
 
-```xml
+```xaml
 <StackLayout>
     <Button Text="Insert Link" Clicked="OnInsertLinkClicked" />
     <rte:SfRichTextEditor x:Name="richTextEditor" ShowToolbar="True" />
@@ -341,7 +341,7 @@ When users click on a hyperlink within the editor content, a quick tooltip autom
 
 The link quick tooltip is enabled automatically when you include the Hyperlink toolbar item:
 
-```xml
+```xaml
 <rte:SfRichTextEditor ShowToolbar="True">
     <rte:SfRichTextEditor.ToolbarItems>
         <rte:RichTextToolbarItem Type="Hyperlink" />
@@ -368,7 +368,7 @@ void HyperlinkClicked(object sender, RichTextEditorHyperlinkClickedEventArgs e)
 
 ### XAML Subscription
 
-```xml
+```xaml
 <rte:SfRichTextEditor x:Name="richTextEditor"
                       ShowToolbar="True"
                       HyperlinkClicked="OnHyperlinkClicked" />

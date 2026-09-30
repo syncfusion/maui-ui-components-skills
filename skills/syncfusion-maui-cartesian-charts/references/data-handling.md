@@ -8,6 +8,9 @@
 - [Data Point Collection Methods](#data-point-collection-methods)
   - [GetDataPoints by Rectangle](#getdatapoints-by-rectangle)
   - [GetDataPoints by Range](#getdatapoints-by-range)
+- [Real-Time Updates and Notifications](#real-time-updates-and-notifications)
+  - [ListenPropertyChange](#listenpropertychange)
+  - [Suspend and Resume Notifications](#suspend-and-resume-notifications)
 - [Touch Position](#touch-position)
   - [OnTouchDown](#ontouchdown)
   - [OnTouchMove](#ontouchmove)
@@ -55,7 +58,7 @@ The `EmptyPointMode` property specifies how empty points are handled:
 
 #### Zero Mode
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -88,7 +91,7 @@ chart.Series.Add(series);
 
 #### Average Mode
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding ProductSales}"
                    XBindingPath="Product"
                    YBindingPath="Sales"
@@ -109,7 +112,7 @@ ColumnSeries series = new ColumnSeries()
 
 Customize appearance of empty points using `EmptyPointSettings`:
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -260,6 +263,101 @@ double width = seriesBounds.Width;
 double height = seriesBounds.Height;
 ```
 
+## Real-Time Updates and Notifications
+
+### ListenPropertyChange
+
+Use `ListenPropertyChange` when your data model implements `INotifyPropertyChanged` and you want the chart to refresh automatically as values change.
+
+```xaml
+<chart:SfCartesianChart>
+    <chart:LineSeries ItemsSource="{Binding DataSource}"
+                      XBindingPath="Category"
+                      YBindingPath="Metric"
+                      ListenPropertyChange="True"/>
+</chart:SfCartesianChart>
+```
+
+```csharp
+public class DataModel : INotifyPropertyChanged
+{
+    private string category;
+    private double metric;
+
+    public string Category
+    {
+        get => category;
+        set
+        {
+            if (category != value)
+            {
+                category = value;
+                OnPropertyChanged(nameof(Category));
+            }
+        }
+    }
+
+    public double Metric
+    {
+        get => metric;
+        set
+        {
+            if (metric != value)
+            {
+                metric = value;
+                OnPropertyChanged(nameof(Metric));
+            }
+        }
+    }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    protected void OnPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
+```
+
+> Enable `ListenPropertyChange` only when you need dynamic updates. With a large number of points, it can add overhead because each object registers a `PropertyChanged` listener.
+
+### Suspend and Resume Notifications
+
+When appending or updating many data points, suspend notifications while batching changes and resume them once updates are complete.
+
+#### Series-Level Suspension
+
+```csharp
+series.SuspendNotification();
+
+for (int i = 0; i < 1000; i++)
+{
+    viewModel.Data.Add(new DataModel
+    {
+        XValue = i,
+        YValue = GetRandomValue()
+    });
+}
+
+series.ResumeNotification();
+```
+
+#### Chart-Level Suspension
+
+```csharp
+chart.SuspendSeriesNotification();
+
+for (int i = 0; i < 1000; i++)
+{
+    viewModel.Data1.Add(new DataModel { XValue = i, YValue = GetValue1(i) });
+    viewModel.Data2.Add(new DataModel { XValue = i, YValue = GetValue2(i) });
+}
+
+chart.ResumeSeriesNotification();
+```
+
+> These methods help reduce refresh cycles during bulk updates. They apply to series data updates and do not suspend other chart elements such as annotations.
+
 ## Touch Position
 
 Handle touch interactions using `ChartInteractiveBehavior`:
@@ -297,7 +395,7 @@ public class ChartInteractiveExt : ChartInteractiveBehavior
 
 ### Adding Interactive Behavior
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.InteractiveBehavior>
         <local:ChartInteractiveExt/>
@@ -418,7 +516,7 @@ private void FinalizeSelection()
 ### Common Patterns
 
 **Empty Point Handling with Customization:**
-```xml
+```xaml
 <chart:LineSeries EmptyPointMode="Average"
                  ShowMarkers="True">
     <chart:LineSeries.EmptyPointSettings>

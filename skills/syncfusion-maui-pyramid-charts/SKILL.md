@@ -1,6 +1,6 @@
 ---
 name: syncfusion-maui-pyramid-charts
-description: Implements Syncfusion .NET MAUI Pyramid Chart (SfPyramidChart) for visually representing hierarchical, proportional, and parts-to-whole data using pyramid-shaped segments. Use this for pyramid charts, hierarchical data visualization, proportional data display, or segment-based charts. This skill covers installation, data binding, legends, tooltips, data labels, appearance customization, and gradients.
+description: Implements Syncfusion® .NET MAUI Pyramid Chart (SfPyramidChart) for visually representing hierarchical, proportional, and parts-to-whole data using pyramid-shaped segments. Use this for pyramid charts, hierarchical data visualization, proportional data display, or segment-based charts. This skill covers installation, data binding, legends, tooltips, data labels, appearance customization, and gradients.
 metadata:
   author: "Syncfusion Inc"
   version: "34.1.29"
@@ -8,7 +8,7 @@ metadata:
 
 # Implementing .NET MAUI Pyramid Charts
 
-Guide users to implement Syncfusion .NET MAUI Pyramid Chart (SfPyramidChart), which visualizes proportions of a total in hierarchical segments, making it ideal for displaying parts-to-whole relationships in high-quality .NET MAUI applications. As a single-series chart without axes, data is represented as percentages where the sum of parts equals the whole.
+Guide users to implement Syncfusion® .NET MAUI Pyramid Chart (SfPyramidChart), which visualizes proportions of a total in hierarchical segments, making it ideal for displaying parts-to-whole relationships in high-quality .NET MAUI applications. As a single-series chart without axes, data is represented as percentages where the sum of parts equals the whole.
 
 ## When to Use This Skill
 
@@ -45,7 +45,7 @@ The **SfPyramidChart** control provides:
 📄 **Read:** [references/getting-started.md](references/getting-started.md)
 
 When the user needs to:
-- Install the Syncfusion.Maui.Charts NuGet package
+- Install the `Syncfusion.Maui.Charts` NuGet package
 - Initialize SfPyramidChart in XAML or C#
 - Create view models and bind data to the chart
 - Configure ItemsSource, XBindingPath, and YBindingPath

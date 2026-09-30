@@ -16,7 +16,7 @@ Use `RequestItemTemplate` to customize the appearance of all request (user-sent)
 
 ### Simple DataTemplate
 
-```xml
+```xaml
 <ContentPage.Resources>
     <DataTemplate x:Key="customRequestTemplate">
         <Grid Padding="8">
@@ -85,7 +85,7 @@ public class CustomRequestTemplateSelector : RequestItemTemplateSelector
 
 #### Applying the Selector
 
-```xml
+```xaml
 <ContentPage.Resources>
     <local:CustomRequestTemplateSelector x:Key="requestSelector" />
 </ContentPage.Resources>
@@ -167,7 +167,7 @@ public class CustomResponseTemplateSelector : ResponseItemTemplateSelector
 
 #### Applying the Selector
 
-```xml
+```xaml
 <ContentPage.Resources>
     <local:CustomResponseTemplateSelector x:Key="responseSelector" />
 </ContentPage.Resources>
@@ -206,7 +206,7 @@ private async void GenerateAssistItems()
 
 `ControlTemplate` allows complete replacement of the `SfAIAssistView` visual structure. Use this when you need to composite the chat view with entirely custom views (e.g., a compose mode panel alongside the chat panel).
 
-```xml
+```xaml
 <local:CustomAssistView x:Name="sfAIAssistView"
                         AssistItems="{Binding AssistItems}">
     <local:CustomAssistView.ControlTemplate>
@@ -266,7 +266,7 @@ public class CustomAssistViewChat : AssistViewChat
 
 ### Usage in XAML
 
-```xml
+```xaml
 <local:CustomAIAssistView x:Name="sfAIAssistView"
                           AssistItems="{Binding AssistItems}" />
 ```

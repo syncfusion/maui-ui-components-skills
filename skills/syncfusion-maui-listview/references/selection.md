@@ -26,7 +26,7 @@ Control how many items can be selected using the `SelectionMode` property.
 
 ### None - No Selection
 
-```xml
+```xaml
 <syncfusion:SfListView SelectionMode="None" />
 ```
 
@@ -40,7 +40,7 @@ listView.SelectionMode = SelectionMode.None;
 
 ### Single - Select One Item
 
-```xml
+```xaml
 <syncfusion:SfListView SelectionMode="Single" />
 ```
 
@@ -57,7 +57,7 @@ listView.SelectionMode = SelectionMode.Single;
 
 ### SingleDeselect - Toggle Selection
 
-```xml
+```xaml
 <syncfusion:SfListView SelectionMode="SingleDeselect" />
 ```
 
@@ -74,7 +74,7 @@ Like single, but tapping a selected item deselects it (toggle behavior).
 
 ### Multiple - Select Multiple Items
 
-```xml
+```xaml
 <syncfusion:SfListView SelectionMode="Multiple" />
 ```
 
@@ -91,7 +91,7 @@ Multiple items can be selected simultaneously. Tapping a selected item does NOT 
 
 ### Extended - Select Multiple Items
 
-```xml
+```xaml
 <syncfusion:SfListView SelectionMode="Extended" />
 ```
 
@@ -109,7 +109,7 @@ Control which gesture triggers selection using the `SelectionGesture` property.
 
 ### Tap (Default)
 
-```xml
+```xaml
 <syncfusion:SfListView SelectionGesture="Tap" />
 ```
 
@@ -123,7 +123,7 @@ Single tap selects the item.
 
 ### DoubleTap
 
-```xml
+```xaml
 <syncfusion:SfListView SelectionGesture="DoubleTap" />
 ```
 
@@ -137,7 +137,7 @@ Double-tap required to select. Single tap can trigger `ItemTapped` event without
 
 ### LongPress (Hold)
 
-```xml
+```xaml
 <syncfusion:SfListView SelectionGesture="LongPress" />
 ```
 
@@ -171,7 +171,7 @@ listView.SelectedItem = null;
 ```
 
 **XAML Binding:**
-```xml
+```xaml
 <syncfusion:SfListView SelectionMode="Single"
                        SelectedItem="{Binding SelectedProduct, Mode=TwoWay}" />
 ```
@@ -195,7 +195,7 @@ listView.SelectedItems.Clear();
 ```
 
 **XAML Binding:**
-```xml
+```xaml
 <syncfusion:SfListView SelectionMode="Multiple"
                        SelectedItems="{Binding SelectedProducts, Mode=TwoWay}" />
 ```
@@ -204,7 +204,7 @@ listView.SelectedItems.Clear();
 
 Customizes the selected item background color/brush.
 
-```xml
+```xaml
 <syncfusion:SfListView SelectionBackground="#4CAF50" />
 ```
 
@@ -317,7 +317,7 @@ private void OnSelectFavoritesClicked(object sender, EventArgs e)
 
 ### Pattern 1: Master-Detail with Single Selection
 
-```xml
+```xaml
 <Grid ColumnDefinitions="*, 2*">
     <!-- Master list -->
     <syncfusion:SfListView Grid.Column="0"
@@ -339,7 +339,7 @@ private void OnSelectFavoritesClicked(object sender, EventArgs e)
 
 ### Pattern 2: Multi-Select with Action Bar
 
-```xml
+```xaml
 <Grid RowDefinitions="Auto, *">
     <!-- Action bar (visible when items selected) -->
     <Grid Grid.Row="0" 
@@ -373,7 +373,7 @@ private void OnSelectionChanged(object sender, ItemSelectionChangedEventArgs e)
 
 ### Pattern 3: Checkbox-Style Selection
 
-```xml
+```xaml
 <syncfusion:SfListView SelectionMode="Multiple" SelectionBackground="Transparent">
     <syncfusion:SfListView.ItemTemplate>
         <DataTemplate>
@@ -430,7 +430,7 @@ listView.SelectionChanging += (sender, e) =>
 
 ### Pattern 5: Select All / Deselect All Buttons
 
-```xml
+```xaml
 <StackLayout>
     <Grid ColumnDefinitions="*, *" Padding="10">
         <Button Grid.Column="0" 

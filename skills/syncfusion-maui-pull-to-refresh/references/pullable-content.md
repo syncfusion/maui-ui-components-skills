@@ -27,7 +27,7 @@ The `PullableContent` property accepts any View-derived type, making it highly f
 
 ### Basic Syntax
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh>
     <syncfusion:SfPullToRefresh.PullableContent>
         <!-- Your content here -->
@@ -39,7 +39,7 @@ The `PullableContent` property accepts any View-derived type, making it highly f
 
 ### Simple Label Content
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh"
                              PullingThreshold="120"
                              RefreshViewHeight="30"
@@ -59,7 +59,7 @@ The `PullableContent` property accepts any View-derived type, making it highly f
 
 ### StackLayout with Multiple Elements
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh"
                              Refreshing="OnRefreshing">
     <syncfusion:SfPullToRefresh.PullableContent>
@@ -111,7 +111,7 @@ dotnet add package Syncfusion.Maui.DataGrid
 
 #### 1. Add Namespace References
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sfgrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
@@ -121,7 +121,7 @@ dotnet add package Syncfusion.Maui.DataGrid
 
 #### 2. Define DataGrid as PullableContent
 
-```xml
+```xaml
 <pulltoRefresh:SfPullToRefresh x:Name="pullToRefresh"
                                RefreshViewHeight="50"
                                RefreshViewThreshold="30"
@@ -189,7 +189,7 @@ namespace MyApp
 
 To use Push mode instead of SlideOnTop:
 
-```xml
+```xaml
 <pulltoRefresh:SfPullToRefresh TransitionMode="Push"
                                Refreshing="OnRefreshing">
     <pulltoRefresh:SfPullToRefresh.PullableContent>
@@ -220,14 +220,14 @@ dotnet add package Syncfusion.Maui.ListView
 
 #### 1. Add Namespace References
 
-```xml
+```xaml
 <ContentPage xmlns:listView="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
              xmlns:pulltoRefresh="clr-namespace:Syncfusion.Maui.PullToRefresh;assembly=Syncfusion.Maui.PullToRefresh">
 ```
 
 #### 2. Define ListView as PullableContent
 
-```xml
+```xaml
 <pulltoRefresh:SfPullToRefresh x:Name="pullToRefresh"
                                RefreshViewHeight="50"
                                RefreshViewThreshold="30"
@@ -372,7 +372,7 @@ You can host any custom view or layout as PullableContent.
 
 ### ScrollView with Custom Content
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh"
                              Refreshing="OnRefreshing">
     <syncfusion:SfPullToRefresh.PullableContent>
@@ -418,7 +418,7 @@ You can host any custom view or layout as PullableContent.
 
 ### CollectionView (Built-in MAUI)
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh"
                              Refreshing="OnRefreshing">
     <syncfusion:SfPullToRefresh.PullableContent>
@@ -589,7 +589,7 @@ private async void OnRefreshing(object sender, EventArgs e)
 
 **Solution:** Ensure the content is scrollable or tall enough to detect pull gestures:
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh.PullableContent>
     <ScrollView>
         <!-- Content here -->
@@ -656,7 +656,7 @@ public class ViewModel : INotifyPropertyChanged
 
 **Solution:** Check that PullToRefresh has proper size/layout:
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh HorizontalOptions="FillAndExpand"
                              VerticalOptions="FillAndExpand">
     <!-- PullableContent -->

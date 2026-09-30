@@ -255,7 +255,7 @@ public class ProductViewModel : INotifyPropertyChanged
 
 XAML with data binding:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
@@ -342,7 +342,7 @@ XAML with data binding:
 
 Execute command when item is tapped:
 
-```xml
+```xaml
 <syncfusion:SfListView TapCommand="{Binding ItemTappedCommand}"
                        TapCommandParameter="{Binding .}" />
 ```
@@ -368,7 +368,7 @@ public ProductViewModel()
 
 Execute command on long press:
 
-```xml
+```xaml
 <syncfusion:SfListView LongPressCommand="{Binding ItemLongPressCommand}"
                        LongPressCommandParameter="{Binding .}" />
 ```
@@ -440,21 +440,21 @@ public List<Product> Products { get; set; }
 
 Enable UI changes to update ViewModel:
 
-```xml
+```xaml
 <syncfusion:SfListView SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
                        SelectedItems="{Binding SelectedProducts, Mode=TwoWay}" />
 ```
 
 ### Binding to Nested Properties
 
-```xml
+```xaml
 <Label Text="{Binding SelectedProduct.Name}" />
 <Label Text="{Binding SelectedProduct.FormattedPrice}" />
 ```
 
 ### Binding to ViewModel Commands from ItemTemplate
 
-```xml
+```xaml
 <DataTemplate>
     <Grid>
         <Button Text="Delete"
@@ -468,7 +468,7 @@ Enable UI changes to update ViewModel:
 
 ### Pattern 1: Command in ItemTemplate
 
-```xml
+```xaml
 <syncfusion:SfListView.ItemTemplate>
     <DataTemplate>
         <Grid>

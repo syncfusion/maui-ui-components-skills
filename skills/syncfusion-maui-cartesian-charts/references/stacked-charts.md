@@ -27,7 +27,7 @@ Stacked area charts visually represent data points layered on top of each other 
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -99,7 +99,7 @@ this.Content = chart;
 
 Display markers at data points:
 
-```xml
+```xaml
 <chart:StackingAreaSeries ItemsSource="{Binding Data1}"
                           XBindingPath="Year"
                           YBindingPath="Value"
@@ -118,7 +118,7 @@ StackingAreaSeries series = new StackingAreaSeries()
 
 ### Marker Customization
 
-```xml
+```xaml
 <chart:StackingAreaSeries ItemsSource="{Binding Data1}"
                           XBindingPath="Year"
                           YBindingPath="Value"
@@ -161,7 +161,7 @@ Stacked column charts represent data values in vertical columns stacked on each 
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -229,7 +229,7 @@ this.Content = chart;
 
 ### Appearance Customization
 
-```xml
+```xaml
 <chart:StackingColumnSeries ItemsSource="{Binding Data1}"
                             XBindingPath="Category"
                             YBindingPath="Value"
@@ -260,7 +260,7 @@ Stacked line charts display multiple line series stacked on top of each other sh
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -328,7 +328,7 @@ this.Content = chart;
 
 ### Dashed Lines
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.Resources>
         <DoubleCollection x:Key="dashArray">
@@ -360,7 +360,7 @@ StackingLineSeries series = new StackingLineSeries()
 
 ### Markers with Customization
 
-```xml
+```xaml
 <chart:StackingLineSeries ItemsSource="{Binding Data1}"
                           XBindingPath="Month"
                           YBindingPath="Value"
@@ -403,7 +403,7 @@ StackingLineSeries series = new StackingLineSeries()
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -475,7 +475,7 @@ this.Content = chart;
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -547,7 +547,7 @@ this.Content = chart;
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -615,7 +615,7 @@ this.Content = chart;
 
 ### Dashed 100% Stacked Line
 
-```xml
+```xaml
 <chart:SfCartesianChart.Resources>
     <DoubleCollection x:Key="dashArray">
         <x:Double>5</x:Double>
@@ -647,7 +647,7 @@ The `GroupingLabel` property allows you to create multiple independent stacked g
 
 ### Basic Grouping
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -741,7 +741,7 @@ this.Content = chart;
 
 ### Grouping 100% Series
 
-```xml
+```xaml
 <chart:StackingColumn100Series ItemsSource="{Binding Data1}"
                                XBindingPath="Category"
                                YBindingPath="Value"
@@ -879,7 +879,7 @@ public class ViewModel
 
 ### Styling Complete Example
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis>

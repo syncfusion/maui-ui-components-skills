@@ -8,7 +8,7 @@ SfListView supports headers, footers, and group headers to organize content and 
 
 ### Basic Header
 
-```xml
+```xaml
 <syncfusion:SfListView ItemsSource="{Binding Items}">
     <syncfusion:SfListView.HeaderTemplate>
         <DataTemplate>
@@ -27,7 +27,7 @@ SfListView supports headers, footers, and group headers to organize content and 
 ### Sticky Header
 
 The header remains visible at the top while scrolling.
-```xml
+```xaml
 <syncfusion:SfListView IsStickyHeader="True">
     <syncfusion:SfListView.HeaderTemplate>
         <DataTemplate>
@@ -45,7 +45,7 @@ listView.IsStickyHeader = true;
 
 ### Complex Header Example
 
-```xml
+```xaml
 <syncfusion:SfListView.HeaderTemplate>
     <DataTemplate>
         <StackLayout Padding="15" Spacing="10" BackgroundColor="White">
@@ -69,7 +69,7 @@ listView.IsStickyHeader = true;
 
 ### Basic Footer
 
-```xml
+```xaml
 <syncfusion:SfListView ItemsSource="{Binding Items}">
     <syncfusion:SfListView.FooterTemplate>
         <DataTemplate>
@@ -85,7 +85,7 @@ listView.IsStickyHeader = true;
 
 ### Sticky Footer
 
-```xml
+```xaml
 <syncfusion:SfListView IsStickyFooter="True">
     <syncfusion:SfListView.FooterTemplate>
         <DataTemplate>
@@ -107,7 +107,7 @@ Use the `StickyFooterPosition` property to control where the sticky footer is an
 | `ListViewFooterPosition.Default` | Footer sticks at the bottom of the visible list area (default) |
 | `ListViewFooterPosition.Body` | Footer sticks at the bottom of the list body (below all items), scrolling with content until it reaches the bottom |
 
-```xml
+```xaml
 <!-- XAML -->
 <syncfusion:SfListView IsStickyFooter="True"
                        StickyFooterPosition="Body">
@@ -137,7 +137,7 @@ listView.StickyFooterPosition = ListViewFooterPosition.Body;     // ✅ Correct
 
 ### Basic Group Header
 
-```xml
+```xaml
 <syncfusion:SfListView IsStickyGroupHeader="True">
     <syncfusion:SfListView.DataSource>
         <data:DataSource>
@@ -162,7 +162,7 @@ listView.StickyFooterPosition = ListViewFooterPosition.Body;     // ✅ Correct
 
 ### Group Header with Item Count
 
-```xml
+```xaml
 <syncfusion:SfListView.GroupHeaderTemplate>
     <DataTemplate>
         <Grid BackgroundColor="#F5F5F5" Padding="15,10">
@@ -188,7 +188,7 @@ listView.StickyFooterPosition = ListViewFooterPosition.Body;     // ✅ Correct
 
 ### Expandable Group Header
 
-```xml
+```xaml
 <syncfusion:SfListView.GroupHeaderTemplate>
     <DataTemplate>
         <Grid Padding="10" BackgroundColor="LightBlue">
@@ -256,7 +256,7 @@ listView.SelectionChanged += (sender, e) =>
 
 ### Dynamic Footer with Statistics
 
-```xml
+```xaml
 <syncfusion:SfListView.FooterTemplate>
     <DataTemplate>
         <StackLayout Padding="15" BackgroundColor="White">
@@ -284,7 +284,7 @@ listView.SelectionChanged += (sender, e) =>
 
 ### Pattern 1: Header with Filters
 
-```xml
+```xaml
 <syncfusion:SfListView.HeaderTemplate>
     <DataTemplate>
         <StackLayout Padding="10" Spacing="10">
@@ -305,7 +305,7 @@ listView.SelectionChanged += (sender, e) =>
 
 ### Pattern 2: Sticky Action Bar
 
-```xml
+```xaml
 <syncfusion:SfListView IsStickyHeader="True">
     <syncfusion:SfListView.HeaderTemplate>
         <DataTemplate>

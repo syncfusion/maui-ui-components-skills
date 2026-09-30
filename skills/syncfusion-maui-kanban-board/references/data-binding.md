@@ -115,7 +115,7 @@ namespace MyApp
 
 **XAML:**
 
-```xml
+```xaml
 <ContentPage xmlns:kanban="clr-namespace:Syncfusion.Maui.Kanban;assembly=Syncfusion.Maui.Kanban"
              xmlns:local="clr-namespace:MyApp">
     
@@ -276,7 +276,7 @@ namespace MyApp
 
 **XAML:**
 
-```xml
+```xaml
 <ContentPage xmlns:kanban="clr-namespace:Syncfusion.Maui.Kanban;assembly=Syncfusion.Maui.Kanban"
              xmlns:local="clr-namespace:MyApp">
     
@@ -426,7 +426,7 @@ kanban.ColumnMappingPath = "Status";
 
 **Auto-Generated Columns (ColumnMappingPath + AutoGenerateColumns=True):**
 
-```xml
+```xaml
 <kanban:SfKanban ItemsSource="{Binding TaskDetails}"
                  ColumnMappingPath="Status"
                  AutoGenerateColumns="True" />
@@ -436,7 +436,7 @@ kanban.ColumnMappingPath = "Status";
 
 **Manual Columns (ColumnMappingPath + Manual Definition):**
 
-```xml
+```xaml
 <kanban:SfKanban ItemsSource="{Binding TaskDetails}"
                  ColumnMappingPath="Status"
                  AutoGenerateColumns="False">
@@ -471,7 +471,7 @@ public IEnumerable<KanbanModel> Cards { get; set; }
 
 **XAML Binding:**
 
-```xml
+```xaml
 <kanban:SfKanban ItemsSource="{Binding Cards}" />
 ```
 
@@ -569,7 +569,7 @@ public class TaskViewModel : INotifyPropertyChanged
 
 **View (MainPage.xaml):**
 
-```xml
+```xaml
 <ContentPage xmlns:kanban="clr-namespace:Syncfusion.Maui.Kanban;assembly=Syncfusion.Maui.Kanban"
              xmlns:local="clr-namespace:MyApp">
     
@@ -686,7 +686,7 @@ public async Task LoadTasksFromAPI()
 
 ### Pattern 2: Grouping Multiple Categories
 
-```xml
+```xaml
 <kanban:KanbanColumn Title="Backlog" 
                      Categories="Open,Postponed,New" />
 ```

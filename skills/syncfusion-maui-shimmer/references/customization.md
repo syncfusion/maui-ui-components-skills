@@ -12,7 +12,7 @@ Changes the **background color** of the shimmer placeholder shapes.
 
 ### XAML
 
-```xml
+```xaml
 <shimmer:SfShimmer Type="CirclePersona"
                    Fill="#89CFF0"
                    VerticalOptions="Fill">
@@ -45,7 +45,7 @@ Changes the **color of the animated wave highlight** that sweeps across the shim
 
 ### XAML
 
-```xml
+```xaml
 <shimmer:SfShimmer Type="CirclePersona"
                    WaveColor="#89CFF0"
                    VerticalOptions="Fill">
@@ -78,7 +78,7 @@ Controls the **width of the wave band** that sweeps across the shimmer.
 
 ### XAML
 
-```xml
+```xaml
 <shimmer:SfShimmer Type="CirclePersona"
                    WaveColor="#89CFF0"
                    WaveWidth="50"
@@ -118,7 +118,7 @@ Controls the **direction** the wave travels across the shimmer.
 
 ### XAML
 
-```xml
+```xaml
 <shimmer:SfShimmer Type="CirclePersona"
                    WaveDirection="RightToLeft"
                    VerticalOptions="Fill">
@@ -151,7 +151,7 @@ Specifies how many times the shimmer shape is **repeated vertically** in the con
 
 ### XAML
 
-```xml
+```xaml
 <shimmer:SfShimmer Type="CirclePersona"
                    RepeatCount="3"
                    VerticalOptions="Fill">
@@ -185,7 +185,7 @@ Controls **how long one wave cycle takes** in milliseconds.
 
 ### XAML
 
-```xml
+```xaml
 <shimmer:SfShimmer Type="CirclePersona"
                    AnimationDuration="3000"
                    VerticalOptions="Fill">
@@ -213,7 +213,7 @@ this.Content = shimmer;
 
 All customization properties can be used together:
 
-```xml
+```xaml
 <shimmer:SfShimmer x:Name="shimmer"
                    Type="Article"
                    Fill="#E8F4FD"

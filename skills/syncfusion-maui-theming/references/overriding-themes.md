@@ -15,7 +15,7 @@ Theme overriding allows you to selectively customize specific colors or styles w
 
 ### Override Specific Keys
 
-```xml
+```xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
@@ -44,7 +44,7 @@ Theme overriding allows you to selectively customize specific colors or styles w
 
 The order of merged dictionaries determines which values take precedence:
 
-```xml
+```xaml
 <ResourceDictionary.MergedDictionaries>
     <!-- 1. Base theme (lowest priority) -->
     <syncTheme:SyncfusionThemeResourceDictionary VisualTheme="MaterialDark"/>
@@ -70,7 +70,7 @@ The order of merged dictionaries determines which values take precedence:
 
 Primary keys affect multiple controls:
 
-```xml
+```xaml
 <ResourceDictionary>
     <!-- These would affect multiple controls if they existed as primary keys -->
     <!-- Note: Syncfusion primarily uses control-specific keys -->
@@ -83,7 +83,7 @@ Primary keys affect multiple controls:
 
 Keys for specific control elements (most common):
 
-```xml
+```xaml
 <ResourceDictionary>
     <!-- Button keys -->
     <Color x:Key="SfButtonNormalBackground">#2196F3</Color>
@@ -107,7 +107,7 @@ Keys for specific control elements (most common):
 
 Apply company colors across all controls:
 
-```xml
+```xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
@@ -138,7 +138,7 @@ Apply company colors across all controls:
 
 ### Scenario 2: High Contrast for Accessibility
 
-```xml
+```xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
@@ -168,7 +168,7 @@ Apply company colors across all controls:
 
 Only customize DataGrid, keep other controls default:
 
-```xml
+```xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
@@ -193,7 +193,7 @@ Only customize DataGrid, keep other controls default:
 
 Customize specific interaction states:
 
-```xml
+```xaml
 <ResourceDictionary>
     <!-- Normal state -->
     <Color x:Key="SfButtonNormalBackground">#2196F3</Color>
@@ -217,7 +217,7 @@ Customize specific interaction states:
 
 Define reusable colors:
 
-```xml
+```xaml
 <Application.Resources>
     <ResourceDictionary>
         <!-- Define named colors first -->
@@ -334,7 +334,7 @@ public void ApplyThemeWithBranding(bool useBranding)
 
 ### Theme Specific Controls Only
 
-```xml
+```xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
@@ -390,20 +390,20 @@ public void VerifyThemeOverrides()
 ### Typo in Key Name
 
 ❌ **Incorrect:**
-```xml
+```xaml
 <Color x:Key="SfButtonBackgroundColor">#FF5722</Color>
 <!-- Missing "Normal" in key name -->
 ```
 
 ✅ **Correct:**
-```xml
+```xaml
 <Color x:Key="SfButtonNormalBackground">#FF5722</Color>
 ```
 
 ### Wrong Override Order
 
 ❌ **Incorrect:**
-```xml
+```xaml
 <ResourceDictionary.MergedDictionaries>
     <!-- Overrides first (will be replaced by theme) -->
     <ResourceDictionary>
@@ -415,7 +415,7 @@ public void VerifyThemeOverrides()
 ```
 
 ✅ **Correct:**
-```xml
+```xaml
 <ResourceDictionary.MergedDictionaries>
     <!-- Theme first -->
     <syncTheme:SyncfusionThemeResourceDictionary VisualTheme="MaterialDark"/>
@@ -430,12 +430,12 @@ public void VerifyThemeOverrides()
 ### Invalid Color Format
 
 ❌ **Incorrect:**
-```xml
+```xaml
 <Color x:Key="SfButtonNormalBackground">rgb(255, 87, 34)</Color>
 ```
 
 ✅ **Correct:**
-```xml
+```xaml
 <Color x:Key="SfButtonNormalBackground">#FF5722</Color>
 <!-- or -->
 <Color x:Key="SfButtonNormalBackground">Color.FromRgb(255, 87, 34)</Color>

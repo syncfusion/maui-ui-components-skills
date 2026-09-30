@@ -38,7 +38,7 @@ navigationDrawer.ToggleDrawer();
 
 **XAML:**
 
-```xml
+```xaml
 <ImageButton Source="hamburgericon.png"
              Clicked="OnHamburgerClicked"/>
 ```
@@ -54,7 +54,7 @@ private void OnHamburgerClicked(object sender, EventArgs e)
 
 ### Inline Toggle
 
-```xml
+```xaml
 <ImageButton Source="hamburgericon.png"
              Clicked="(s,e) => navigationDrawer.ToggleDrawer()"/>
 ```
@@ -83,7 +83,7 @@ The `IsOpen` property provides direct control over the drawer state. Unlike `Tog
 navigationDrawer.DrawerSettings.IsOpen = true;
 ```
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings IsOpen="True">
 </navigationDrawer:DrawerSettings>
 ```
@@ -133,7 +133,7 @@ Control whether the drawer starts open or closed when the app loads.
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <navigationDrawer:SfNavigationDrawer.DrawerSettings>
         <navigationDrawer:DrawerSettings IsOpen="True"
@@ -180,7 +180,7 @@ navigationDrawer.DrawerSettings = new DrawerSettings
 
 ### From Button
 
-```xml
+```xaml
 <Button Text="Menu"
         Clicked="OnMenuClicked"/>
 ```
@@ -194,7 +194,7 @@ private void OnMenuClicked(object sender, EventArgs e)
 
 ### From TapGestureRecognizer
 
-```xml
+```xaml
 <Label Text="☰ Menu">
     <Label.GestureRecognizers>
         <TapGestureRecognizer Tapped="OnMenuTapped"/>
@@ -211,7 +211,7 @@ private void OnMenuTapped(object sender, EventArgs e)
 
 ### From Toolbar Item
 
-```xml
+```xaml
 <ContentPage.ToolbarItems>
     <ToolbarItem Text="Menu"
                  IconImageSource="menu.png"
@@ -276,7 +276,7 @@ private async void OnDrawerOpened(object sender, EventArgs e)
 
 ### Pattern 3: Close on Content Area Tap
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer.ContentView>
     <Grid>
         <Grid.GestureRecognizers>
@@ -328,7 +328,7 @@ public class MainViewModel : INotifyPropertyChanged
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings IsOpen="{Binding IsDrawerOpen}"/>
 
 <Button Text="Menu" 
@@ -380,7 +380,7 @@ navigationDrawer.SecondaryDrawerSettings.IsOpen = !navigationDrawer.SecondaryDra
 
 ### Both Drawers Example
 
-```xml
+```xaml
 <Grid ColumnDefinitions="Auto,*,Auto">
     <!-- Left button for primary drawer -->
     <ImageButton Grid.Column="0"

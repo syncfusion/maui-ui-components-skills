@@ -17,7 +17,7 @@ The `CenterView` property allows adding any MAUI view to the chart's center area
 ### Adding a Simple Label
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           ValueMemberPath="EmployeesCount"
                           InnerRadius="0.5">
@@ -62,7 +62,7 @@ The `CenterHoleSize` property returns the diameter of the center hole in device-
 **Binding to CenterHoleSize:**
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart x:Name="sunburst" 
                           ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Sales"
@@ -95,7 +95,7 @@ The `CenterHoleSize` property returns the diameter of the center hole in device-
 
 ### Example 1: Multi-Line Summary
 
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Count"
                           InnerRadius="0.55">
@@ -128,7 +128,7 @@ The `CenterHoleSize` property returns the diameter of the center hole in device-
 
 ### Example 2: Styled Border with Content
 
-```xml
+```xaml
 <sunburst:SfSunburstChart x:Name="chart" 
                           ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Revenue"
@@ -174,7 +174,7 @@ The `CenterHoleSize` property returns the diameter of the center hole in device-
 
 ### Example 3: Icon with Text
 
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Count"
                           InnerRadius="0.6">
@@ -206,7 +206,7 @@ The `CenterHoleSize` property returns the diameter of the center hole in device-
 
 ### Example 4: Interactive Button
 
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Amount"
                           InnerRadius="0.5">
@@ -244,7 +244,7 @@ Sometimes you need to use value converters to properly size or format center vie
 ### Corner Radius Converter
 
 **XAML:**
-```xml
+```xaml
 <ContentPage.Resources>
     <ResourceDictionary>
         <local:HalfValueConverter x:Key="HalfConverter"/>
@@ -343,7 +343,7 @@ public class SunburstViewModel : INotifyPropertyChanged
 ```
 
 **XAML with Dynamic Updates:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Value"
                           InnerRadius="0.6"
@@ -448,7 +448,7 @@ private void OnSelectionChanged(object sender, SunburstSelectionChangedEventArgs
 
 ### Pattern 1: Summary Metric Display
 
-```xml
+```xaml
 <sunburst:SfSunburstChart.CenterView>
     <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="Total" FontSize="14" TextColor="Gray"/>
@@ -459,7 +459,7 @@ private void OnSelectionChanged(object sender, SunburstSelectionChangedEventArgs
 
 ### Pattern 2: Logo Branding
 
-```xml
+```xaml
 <sunburst:SfSunburstChart.CenterView>
     <Image Source="logo.png" 
          HeightRequest="80" 
@@ -471,7 +471,7 @@ private void OnSelectionChanged(object sender, SunburstSelectionChangedEventArgs
 
 ### Pattern 3: Dynamic Selection Display
 
-```xml
+```xaml
 <sunburst:SfSunburstChart.CenterView>
     <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding SelectedItem, FallbackValue='Select an item'}" 
@@ -485,7 +485,7 @@ private void OnSelectionChanged(object sender, SunburstSelectionChangedEventArgs
 
 ### Pattern 4: Call-to-Action
 
-```xml
+```xaml
 <sunburst:SfSunburstChart.CenterView>
     <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
         <Label Text="Explore Data" FontSize="16"/>

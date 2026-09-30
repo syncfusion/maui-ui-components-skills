@@ -4,6 +4,8 @@ Customize the visual appearance of circular charts using colors, gradients, stro
 
 ## Table of Contents
 - [Custom Palette Brushes](#custom-palette-brushes)
+- [Point Color Path](#point-color-path)
+- [Listen Property Change](#listen-property-change)
 - [Gradient Colors](#gradient-colors)
 - [Stroke Customization](#stroke-customization)
 - [Opacity](#opacity)
@@ -15,7 +17,7 @@ Customize the visual appearance of circular charts using colors, gradients, stro
 Define custom colors for chart segments using the `PaletteBrushes` property.
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:PieSeries ItemsSource="{Binding Data}"
                      XBindingPath="XValue"
@@ -57,6 +59,122 @@ series.PaletteBrushes = new List<Brush>
 };
 ```
 
+## Point Color Path
+
+Use `PointColorPath` to assign a different color to each data point by binding a color field in the data source. This is useful when you want segment colors to come directly from the model instead of using a shared palette.
+
+**Model:**
+```csharp
+public class PointColorViewModel
+{
+    public ObservableCollection<Model> Data { get; set; }
+
+    public PointColorViewModel()
+    {
+        Data = new ObservableCollection<Model>
+        {
+            new() { XValue = "Purchases", YValue = 1000, PointColor = Color.FromArgb("#C695F0") },
+            new() { XValue = "Electronics", YValue = 1300, PointColor = Color.FromArgb("#A35DE5") },
+            new() { XValue = "Investment", YValue = 2000, PointColor = Color.FromArgb("#551E8B") },
+            new() { XValue = "Research", YValue = 1700, PointColor = Color.FromArgb("#8933DE") },
+            new() { XValue = "Jewelry", YValue = 1100, PointColor = Color.FromArgb("#D1A8F3") }
+        };
+    }
+}
+
+public class Model
+{
+    public string? XValue { get; set; }
+    public double YValue { get; set; }
+    public Color? PointColor { get; set; }
+}
+```
+
+**XAML:**
+```xaml
+<chart:SfCircularChart>
+    <chart:PieSeries ItemsSource="{Binding Data}"
+                     XBindingPath="XValue"
+                     YBindingPath="YValue"
+                     PointColorPath="PointColor"/>
+</chart:SfCircularChart>
+```
+
+**C#:**
+```csharp
+SfCircularChart chart = new SfCircularChart();
+
+PieSeries series = new PieSeries
+{
+    ItemsSource = new PointColorViewModel().Data,
+    XBindingPath = "XValue",
+    YBindingPath = "YValue",
+    PointColorPath = "PointColor"
+};
+
+chart.Series.Add(series);
+```
+
+> Color precedence is: `Fill` > `PointColorPath` > `PaletteBrushes`.
+
+## Listen Property Change
+
+Use `ListenPropertyChange` when your data model implements `INotifyPropertyChanged` and you want the chart to refresh automatically as values change. This is useful for live dashboards and data that updates from a service or user interaction.
+
+**XAML:**
+```xaml
+<chart:SfCircularChart>
+    <chart:PieSeries ItemsSource="{Binding Data}"
+                     XBindingPath="XValue"
+                     YBindingPath="YValue"
+                     ListenPropertyChange="True"/>
+</chart:SfCircularChart>
+```
+
+**C#:**
+```csharp
+public class DataModel : INotifyPropertyChanged
+{
+    private string xValue;
+    private double yValue;
+
+    public string XValue
+    {
+        get => xValue;
+        set
+        {
+            if (xValue != value)
+            {
+                xValue = value;
+                OnPropertyChanged(nameof(XValue));
+            }
+        }
+    }
+
+    public double YValue
+    {
+        get => yValue;
+        set
+        {
+            if (yValue != value)
+            {
+                yValue = value;
+                OnPropertyChanged(nameof(YValue));
+            }
+        }
+    }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    protected void OnPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
+```
+
+> Enable `ListenPropertyChange` only when you need dynamic updates. With a large number of points, it can add overhead because each object registers a `PropertyChanged` listener.
+
 ## Gradient Colors
 
 Apply linear or radial gradients to chart segments.
@@ -64,7 +182,7 @@ Apply linear or radial gradients to chart segments.
 ### Linear Gradient
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:PieSeries ItemsSource="{Binding Data}"
                      XBindingPath="XValue"
@@ -142,7 +260,7 @@ Add borders to chart segments using `Stroke` and `StrokeWidth`.
 ### Basic Stroke
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries ItemsSource="{Binding Data}"
                  XBindingPath="Product"
                  YBindingPath="Value"
@@ -171,7 +289,7 @@ series.StrokeWidth = 1.5;
 Control segment transparency using the `Opacity` property (0.0 to 1.0).
 
 **XAML:**
-```xml
+```xaml
 <chart:PieSeries ItemsSource="{Binding Data}"
                  XBindingPath="Category"
                  YBindingPath="Value"
@@ -196,7 +314,7 @@ RadialBarSeries has additional appearance properties.
 Control spacing between radial bars (default: 0.2, range: 0-1).
 
 **XAML:**
-```xml
+```xaml
 <chart:RadialBarSeries ItemsSource="{Binding Data}"
                        XBindingPath="Metric"
                        YBindingPath="Score"
@@ -216,7 +334,7 @@ RadialBarSeries series = new RadialBarSeries
 Set the maximum value for radial bar range.
 
 **XAML:**
-```xml
+```xaml
 <chart:RadialBarSeries MaximumValue="100"/>
 ```
 
@@ -230,7 +348,7 @@ series.MaximumValue = 100;  // All bars scale to 100
 Define the shape of bar endpoints.
 
 **XAML:**
-```xml
+```xaml
 <chart:RadialBarSeries CapStyle="BothCurve"/>
 ```
 
@@ -250,7 +368,7 @@ series.CapStyle = CapStyle.BothCurve;
 Customize the background track for radial bars.
 
 **XAML:**
-```xml
+```xaml
 <chart:RadialBarSeries TrackFill="#FFF7ED"
                        TrackStroke="#FED7AA"
                        TrackStrokeWidth="1"/>
@@ -277,7 +395,7 @@ RadialBarSeries series = new RadialBarSeries
 Add custom views to the chart's plot area background.
 
 **XAML:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:SfCircularChart.PlotAreaBackgroundView>
         <AbsoluteLayout>
@@ -353,7 +471,7 @@ chart.PlotAreaBackgroundView = layout;
 
 ### Example 1: Pie Chart with Custom Colors and Strokes
 
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:PieSeries ItemsSource="{Binding Data}"
                      XBindingPath="Category"

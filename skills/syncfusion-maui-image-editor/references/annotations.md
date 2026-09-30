@@ -62,7 +62,7 @@ imageEditor.AddShape(AnnotationShape.Rectangle);
 
 **XAML Example:**
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Add Arrow" Clicked="OnAddShapeClicked" />
@@ -373,7 +373,7 @@ imageEditor.ClearAnnotations();
 
 Triggered when an annotation is selected:
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="image.png"
                           AnnotationSelected="OnAnnotationSelected" />

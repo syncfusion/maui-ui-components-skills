@@ -55,7 +55,7 @@ In unbound mode, you create `TreeViewNode` objects and add them to the `Nodes` c
 
 ### XAML Example
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.TreeView;assembly=Syncfusion.Maui.TreeView"
@@ -221,7 +221,7 @@ public class FileManagerViewModel
 
 **XAML:**
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.TreeView;assembly=Syncfusion.Maui.TreeView"
@@ -296,7 +296,7 @@ public class SubFile : INotifyPropertyChanged
 
 #### XAML Configuration
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView" ItemsSource="{Binding Folders}">
     <syncfusion:SfTreeView.HierarchyPropertyDescriptors>
         <treeviewengine:HierarchyPropertyDescriptor 
@@ -345,7 +345,7 @@ Controls when child nodes are populated.
 
 ### Example
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        NodePopulationMode="Instant"
                        ItemsSource="{Binding Items}"

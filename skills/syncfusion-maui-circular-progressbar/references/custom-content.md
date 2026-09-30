@@ -22,7 +22,7 @@ The `Content` property allows you to place custom views at the center of the cir
 ### Simple Label
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="75">
     <progressBar:SfCircularProgressBar.Content>
         <Label Text="75%" 
@@ -59,7 +59,7 @@ this.Content = circularProgressBar;
 Bind label text to the progress value for automatic updates.
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar x:Name="customContentCircularProgressBar" 
                                    Progress="23">
     <progressBar:SfCircularProgressBar.Content>
@@ -144,7 +144,7 @@ Content = new StackLayout
 
 ### Play/Pause Button
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar x:Name="controlProgressBar" 
                                    Progress="0">
     <progressBar:SfCircularProgressBar.Content>
@@ -196,7 +196,7 @@ private void StartProgress()
 
 ### Image at Center
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="65">
     <progressBar:SfCircularProgressBar.Content>
         <Image Source="download_icon.png"
@@ -210,7 +210,7 @@ private void StartProgress()
 
 ### Grid Layout with Multiple Elements
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar x:Name="dashboardProgress" 
                                    Progress="75"
                                    HeightRequest="200"
@@ -294,7 +294,7 @@ public partial class DynamicContentPage : ContentPage
 
 ### Pattern 1: Timer Display
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar x:Name="timerProgress" 
                                    Minimum="0"
                                    Maximum="60"
@@ -318,7 +318,7 @@ public partial class DynamicContentPage : ContentPage
 
 ### Pattern 2: Score Display
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Minimum="0" 
                                    Maximum="100" 
                                    Progress="85">
@@ -347,7 +347,7 @@ public partial class DynamicContentPage : ContentPage
 
 ### Pattern 3: Multi-Value Display
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar x:Name="multiValueProgress" 
                                    Progress="73">
     <progressBar:SfCircularProgressBar.Content>
@@ -382,7 +382,7 @@ public partial class DynamicContentPage : ContentPage
 
 ### Pattern 4: Interactive Control Panel
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar x:Name="interactiveProgress" 
                                    Progress="0"
                                    HeightRequest="250"

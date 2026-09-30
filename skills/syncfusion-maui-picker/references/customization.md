@@ -16,7 +16,7 @@ Learn how to customize the visual appearance of the Syncfusion .NET MAUI Picker 
 Customize the appearance of the currently selected item using `SelectedTextStyle`.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.SelectedTextStyle>
         <picker:PickerTextStyle FontSize="18" 
@@ -43,7 +43,7 @@ picker.SelectedTextStyle = new PickerTextStyle()
 Customize the appearance of non-selected items using `TextStyle`.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.TextStyle>
         <picker:PickerTextStyle FontSize="14" 
@@ -76,7 +76,7 @@ picker.TextStyle = new PickerTextStyle()
 
 ### Picker Background
 
-```xml
+```xaml
 <picker:SfPicker Background="LightBlue">
     <!-- Picker configuration -->
 </picker:SfPicker>
@@ -108,7 +108,7 @@ picker.ColumnHeaderView.Background = Color.FromArgb("#F0F0F0");
 Customize the selection indicator appearance.
 
 **Complete Example:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.SelectionView>
         <picker:PickerSelectionView CornerRadius="12" 
@@ -131,7 +131,7 @@ Create fully custom item layouts using `DataTemplate`.
 
 ### Basic Custom Template
 
-```xml
+```xaml
 <Grid>
     <Grid.Resources>
         <DataTemplate x:Key="customItemTemplate">
@@ -155,7 +155,7 @@ Create fully custom item layouts using `DataTemplate`.
 
 ### Template with Icons
 
-```xml
+```xaml
 <DataTemplate x:Key="iconItemTemplate">
     <Grid Padding="5,2">
         <Grid.ColumnDefinitions>
@@ -181,7 +181,7 @@ Create fully custom item layouts using `DataTemplate`.
 
 ### Template with Color Indicators
 
-```xml
+```xaml
 <DataTemplate x:Key="colorItemTemplate">
     <Grid Padding="5">
         <Grid.ColumnDefinitions>
@@ -234,7 +234,7 @@ public class PickerTemplate : DataTemplateSelector
 ```
 
 **XAML Usage:**
-```xml
+```xaml
 <Grid>
     <Grid.Resources>
         <DataTemplate x:Key="indianLanguage">
@@ -270,7 +270,7 @@ public class PickerTemplate : DataTemplateSelector
 
 Style the divider between columns in multi-column pickers.
 
-```xml
+```xaml
 <picker:SfPicker ColumnDividerColor="#6750A4">
     <picker:SfPicker.Columns>
         <picker:PickerColumn ItemsSource="{Binding Column1Data}" />
@@ -287,7 +287,7 @@ picker.ColumnDividerColor = Color.FromArgb("#6750A4");
 
 Here's a complete example with consistent theming:
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  Background="White"
                  ColumnDividerColor="#E0E0E0"
@@ -368,7 +368,7 @@ Here's a complete example with consistent theming:
 
 ## Dark Theme Example
 
-```xml
+```xaml
 <picker:SfPicker Background="#1E1E1E"
                  ColumnDividerColor="#3A3A3A">
     

@@ -27,7 +27,7 @@ Tooltips are **disabled by default**. Enable them using the `ShowToolTip` proper
 ### Basic Enable
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar
     x:Name="stepProgress"
     Orientation="Horizontal"
@@ -96,7 +96,7 @@ public class ViewModel
 
 ### XAML with Binding
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:stepProgressBar="clr-namespace:Syncfusion.Maui.ProgressBar;assembly=Syncfusion.Maui.ProgressBar"
@@ -135,7 +135,7 @@ Use `ToolTipSettings` to customize tooltip styling.
 ### Basic Styling Example
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     x:Name="stepProgressBar"
     ItemsSource="{Binding StepProgressItem}"
@@ -204,7 +204,7 @@ Duration = new TimeSpan(0, 0, 0, 1, 500)
 ### Color Scheme Examples
 
 **Professional Blue:**
-```xml
+```xaml
 <stepProgressBar:StepProgressBarToolTipSettings 
     Background="#2196F3"
     Stroke="#1976D2"
@@ -218,7 +218,7 @@ Duration = new TimeSpan(0, 0, 0, 1, 500)
 ```
 
 **Success Green:**
-```xml
+```xaml
 <stepProgressBar:StepProgressBarToolTipSettings 
     Background="#4CAF50"
     Stroke="#388E3C"
@@ -233,7 +233,7 @@ Duration = new TimeSpan(0, 0, 0, 1, 500)
 ```
 
 **Dark Theme:**
-```xml
+```xaml
 <stepProgressBar:StepProgressBarToolTipSettings 
     Background="#212121"
     Stroke="#424242"
@@ -253,7 +253,7 @@ For advanced layouts, use `ToolTipTemplate` with `DataTemplate`.
 ### Basic Custom Template
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     x:Name="stepProgressBar"
     ItemsSource="{Binding StepProgressItem}"
@@ -322,7 +322,7 @@ this.Content = stepProgressBar;
 ### Advanced Template with Multiple Elements
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar.ToolTipTemplate>
     <DataTemplate>
         <Border Background="#2196F3" 
@@ -361,7 +361,7 @@ this.Content = stepProgressBar;
 
 ### Template with Status Indicator
 
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar.ToolTipTemplate>
     <DataTemplate>
         <Frame BackgroundColor="#263238" 
@@ -567,7 +567,7 @@ For very long tooltip content:
 - Consider using custom template with ScrollView for very long content
 - Or link to a details page instead
 
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar.ToolTipTemplate>
     <DataTemplate>
         <Frame MaximumWidthRequest="300">

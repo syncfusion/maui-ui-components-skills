@@ -33,7 +33,7 @@ PolarLineSeries series = new PolarLineSeries
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:PolarLineSeries ItemsSource="{Binding PlantDetails}"
                        XBindingPath="Direction"
                        YBindingPath="Tree"
@@ -67,7 +67,7 @@ series.DataLabelSettings = new PolarDataLabelSettings
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:PolarLineSeries ShowDataLabels="True">
     <chart:PolarLineSeries.DataLabelSettings>
         <chart:PolarDataLabelSettings>
@@ -95,7 +95,7 @@ series.DataLabelSettings = new PolarDataLabelSettings
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:PolarDataLabelSettings UseSeriesPalette="True"/>
 ```
 
@@ -119,7 +119,7 @@ PolarAreaSeries series = new PolarAreaSeries
 - `LabelContext.Percentage` - Show percentage of total
 
 **XAML:**
-```xml
+```xaml
 <chart:PolarAreaSeries ShowDataLabels="True" LabelContext="Percentage"/>
 ```
 
@@ -127,7 +127,7 @@ PolarAreaSeries series = new PolarAreaSeries
 
 Create custom data label layouts:
 
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.Resources>
         <DataTemplate x:Key="labelTemplate">
@@ -168,7 +168,7 @@ PolarLineSeries series = new PolarLineSeries
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:PolarLineSeries ItemsSource="{Binding PlantDetails}"
                        XBindingPath="Direction"
                        YBindingPath="Tree"
@@ -200,7 +200,7 @@ series.MarkerSettings = new ChartMarkerSettings
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:PolarLineSeries ShowMarkers="True">
     <chart:PolarLineSeries.MarkerSettings>
         <chart:ChartMarkerSettings Type="Diamond"
@@ -290,7 +290,7 @@ series.DataLabelSettings = new PolarDataLabelSettings
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:PolarLineSeries ItemsSource="{Binding Data}"
                        XBindingPath="Category"
                        YBindingPath="Value"
@@ -511,7 +511,7 @@ MarkerSettings = new ChartMarkerSettings
 **Problem:** Labels appear cut off at chart edges.
 
 **Solution:**
-```xml
+```xaml
 <!-- Add padding to chart -->
 <chart:SfPolarChart Margin="20">
     <!-- Series here -->

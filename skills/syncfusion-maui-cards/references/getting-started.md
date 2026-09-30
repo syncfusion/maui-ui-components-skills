@@ -85,7 +85,7 @@ namespace MyCardApp
 Add the namespace to your XAML or C# file:
 
 **XAML:**
-```xml
+```xaml
 xmlns:cards="clr-namespace:Syncfusion.Maui.Cards;assembly=Syncfusion.Maui.Cards"
 ```
 
@@ -98,7 +98,7 @@ using Syncfusion.Maui.Cards;
 
 **XAML Implementation:**
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cards="clr-namespace:Syncfusion.Maui.Cards;assembly=Syncfusion.Maui.Cards"
@@ -148,7 +148,7 @@ namespace MyCardApp
 Enable swipe-to-dismiss functionality to create a dismissible card:
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardView SwipeToDismiss="True">
     <Label Text="Swipe me left or right!" 
            Background="MediumPurple" 
@@ -179,7 +179,7 @@ SfCardView cardView = new SfCardView
 Create multiple stacked cards with swipe navigation:
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardLayout HeightRequest="500" BackgroundColor="#F0F0F0">
 
     <cards:SfCardView CornerRadius="10">

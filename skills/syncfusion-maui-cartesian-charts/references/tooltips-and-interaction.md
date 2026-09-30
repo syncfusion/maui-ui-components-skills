@@ -3,6 +3,7 @@
 ## Table of Contents
 - [Overview](#overview)
 - [Tooltip](#tooltip)
+  - [Tooltip Border and Series Fill](#tooltip-border-and-series-fill)
 - [Trackball](#trackball)
 - [Crosshair](#crosshair)
 - [Best Practices](#best-practices)
@@ -17,7 +18,7 @@ Tooltips display information about data points when users hover over or tap them
 
 ### Basic Tooltip
 
-```xml
+```xaml
 <chart:LineSeries ItemsSource="{Binding Data}"
                  XBindingPath="Month"
                  YBindingPath="Value"
@@ -36,7 +37,7 @@ LineSeries series = new LineSeries()
 
 ### Tooltip Customization
 
-```xml
+```xaml
 <chart:LineSeries ItemsSource="{Binding Data}"
                  XBindingPath="Month"
                  YBindingPath="Value"
@@ -57,7 +58,7 @@ LineSeries series = new LineSeries()
 
 ### Chart Tooltip Behavior
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.TooltipBehavior>
         <chart:ChartTooltipBehavior Background="#4CAF50"
@@ -75,13 +76,44 @@ LineSeries series = new LineSeries()
 </chart:SfCartesianChart>
 ```
 
+### Tooltip Border and Series Fill
+
+Use the `Stroke` and `StrokeWidth` properties of `ChartTooltipBehavior` to add a border around the tooltip. Set `UseSeriesFillColor` to `true` to make the tooltip adopt the associated series fill color as its background.
+
+```xaml
+<chart:SfCartesianChart>
+    <chart:SfCartesianChart.TooltipBehavior>
+        <chart:ChartTooltipBehavior Stroke="DarkSlateGray"
+                                    StrokeWidth="1"
+                                    UseSeriesFillColor="True"/>
+    </chart:SfCartesianChart.TooltipBehavior>
+
+    <chart:ColumnSeries ItemsSource="{Binding Data}"
+                        XBindingPath="Category"
+                        YBindingPath="Value"
+                        EnableTooltip="True"/>
+</chart:SfCartesianChart>
+```
+
+```csharp
+ChartTooltipBehavior tooltipBehavior = new ChartTooltipBehavior
+{
+    Stroke = Colors.DarkSlateGray,
+    StrokeWidth = 1,
+    UseSeriesFillColor = true
+};
+
+SfCartesianChart chart = new SfCartesianChart();
+chart.TooltipBehavior = tooltipBehavior;
+```
+
 ## Trackball
 
 Trackball displays a vertical line and shows data values for all series at that position.
 
 ### Basic Trackball
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.TrackballBehavior>
         <chart:ChartTrackballBehavior/>
@@ -127,7 +159,7 @@ chart.Series.Add(series2);
 
 ### Trackball Customization
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.TrackballBehavior>
         <chart:ChartTrackballBehavior ShowLine="True"
@@ -152,7 +184,7 @@ chart.Series.Add(series2);
 
 ### Trackball Label Template
 
-```xml
+```xaml
 <chart:ChartTrackballBehavior>
     <chart:ChartTrackballBehavior.LabelTemplate>
         <DataTemplate>
@@ -174,7 +206,7 @@ Crosshair displays perpendicular lines with axis labels at the touch/cursor posi
 
 ### Basic Crosshair
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.CrosshairBehavior>
         <chart:ChartCrosshairBehavior/>
@@ -203,7 +235,7 @@ chart.CrosshairBehavior = crosshair;
 
 ### Crosshair Customization
 
-```xml
+```xaml
 <chart:ChartCrosshairBehavior ShowHorizontalLine="True"
                               ShowVerticalLine="True"
                               ShowLabel="True">
@@ -235,7 +267,7 @@ chart.CrosshairBehavior = crosshair;
 
 ### Complete Crosshair Example
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.CrosshairBehavior>
         <chart:ChartCrosshairBehavior ShowHorizontalLine="True"
@@ -296,7 +328,7 @@ chart.CrosshairBehavior = crosshair;
 ### Combining Features
 
 Avoid using all features simultaneously:
-```xml
+```xaml
 <!-- Good: Use tooltip OR trackball -->
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.TooltipBehavior>

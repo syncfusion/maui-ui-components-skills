@@ -43,7 +43,7 @@ Simple masks are best for **fixed-length** inputs with predictable patterns like
 
 #### 1. Phone Number
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="Simple"
     Mask="(000) 000-0000" />
@@ -55,7 +55,7 @@ Simple masks are best for **fixed-length** inputs with predictable patterns like
 
 #### 2. Date (MM/DD/YYYY)
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="Simple"
     Mask="00/00/0000" />
@@ -67,7 +67,7 @@ Simple masks are best for **fixed-length** inputs with predictable patterns like
 
 #### 3. Social Security Number
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="Simple"
     Mask="000-00-0000" />
@@ -78,7 +78,7 @@ Simple masks are best for **fixed-length** inputs with predictable patterns like
 
 #### 4. Time (HH:MM:SS)
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="Simple"
     Mask="00:00:00" />
@@ -89,7 +89,7 @@ Simple masks are best for **fixed-length** inputs with predictable patterns like
 
 #### 5. Credit Card
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="Simple"
     Mask="0000-0000-0000-0000" />
@@ -100,7 +100,7 @@ Simple masks are best for **fixed-length** inputs with predictable patterns like
 
 #### 6. Product Key (Uppercase)
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="Simple"
     Mask=">AAAAA-AAAAA-AAAAA-AAAAA" />
@@ -112,7 +112,7 @@ Simple masks are best for **fixed-length** inputs with predictable patterns like
 
 #### 7. License Plate
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="Simple"
     Mask=">LLL-0000" />
@@ -123,7 +123,7 @@ Simple masks are best for **fixed-length** inputs with predictable patterns like
 
 #### 8. Postal Code (Optional Extension)
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="Simple"
     Mask="00000-9999" />
@@ -137,7 +137,7 @@ Simple masks are best for **fixed-length** inputs with predictable patterns like
 
 #### Lowercase Conversion
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="Simple"
     Mask="<AAAA" />
@@ -148,7 +148,7 @@ Simple masks are best for **fixed-length** inputs with predictable patterns like
 
 #### Uppercase Conversion
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="Simple"
     Mask=">aaaa" />
@@ -159,7 +159,7 @@ Simple masks are best for **fixed-length** inputs with predictable patterns like
 
 #### Mixed Case
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="Simple"
     Mask=">LL<LL" />
@@ -202,7 +202,7 @@ RegEx masks provide **flexible, variable-length** patterns using regular express
 
 #### 1. Email Address
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="RegEx"
     Mask="[A-Za-z0-9._%-]+@[A-Za-z0-9]+\.[A-Za-z]{2,3}" />
@@ -223,7 +223,7 @@ Mask = "[A-Za-z0-9._%-]+@[A-Za-z0-9]+\\.[A-Za-z]{2,3}"
 
 #### 2. Alphanumeric Code
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="RegEx"
     Mask="[A-Z]{3}[0-9]{4}" />
@@ -234,7 +234,7 @@ Mask = "[A-Za-z0-9._%-]+@[A-Za-z0-9]+\\.[A-Za-z]{2,3}"
 
 #### 3. Flexible Phone Number
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="RegEx"
     Mask="\d{3}-?\d{3}-?\d{4}" />
@@ -245,7 +245,7 @@ Mask = "[A-Za-z0-9._%-]+@[A-Za-z0-9]+\\.[A-Za-z]{2,3}"
 
 #### 4. Password (Min 8 Characters)
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="RegEx"
     Mask="\w{8,}" />
@@ -256,7 +256,7 @@ Mask = "[A-Za-z0-9._%-]+@[A-Za-z0-9]+\\.[A-Za-z]{2,3}"
 
 #### 5. IP Address
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="RegEx"
     Mask="\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}" />
@@ -267,7 +267,7 @@ Mask = "[A-Za-z0-9._%-]+@[A-Za-z0-9]+\\.[A-Za-z]{2,3}"
 
 #### 6. Hex Color Code
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="RegEx"
     Mask="#[0-9A-Fa-f]{6}" />
@@ -278,7 +278,7 @@ Mask = "[A-Za-z0-9._%-]+@[A-Za-z0-9]+\\.[A-Za-z]{2,3}"
 
 #### 7. Variable-Length Code
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="RegEx"
     Mask="[A-Z0-9]{4,10}" />
@@ -289,7 +289,7 @@ Mask = "[A-Za-z0-9._%-]+@[A-Za-z0-9]+\\.[A-Za-z]{2,3}"
 
 #### 8. Username (Letters, Numbers, Underscore)
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="RegEx"
     Mask="[A-Za-z][A-Za-z0-9_]{2,19}" />

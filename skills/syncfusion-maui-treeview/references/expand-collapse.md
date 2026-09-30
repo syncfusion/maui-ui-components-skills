@@ -39,7 +39,7 @@ The `ExpandActionTarget` property determines which part of the item triggers exp
 
 **XAML:**
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView" 
                        ExpandActionTarget="Node"/>
 ```
@@ -77,7 +77,7 @@ Control the initial expansion state of nodes when the TreeView loads.
 
 **XAML:**
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        AutoExpandMode="RootNodesExpanded"
                        ItemsSource="{Binding Files}"
@@ -94,7 +94,7 @@ treeView.AutoExpandMode = TreeViewAutoExpandMode.RootNodesExpanded;
 
 #### Expand All Nodes
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        AutoExpandMode="AllNodesExpanded"
                        ItemsSource="{Binding Items}"
@@ -190,7 +190,7 @@ treeView.CollapseAll();
 
 ### Complete Example with Buttons
 
-```xml
+```xaml
 <StackLayout>
     <HorizontalStackLayout Spacing="10" Padding="10">
         <Button Text="Expand All" Clicked="OnExpandAll"/>
@@ -255,7 +255,7 @@ In unbound mode, bind the `IsExpanded` property to a ViewModel property.
 
 ### XAML Binding
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeview">
     <syncfusion:SfTreeView.Nodes>
         <treeviewengine:TreeViewNode 
@@ -318,7 +318,7 @@ public ViewModel()
 }
 ```
 
-```xml
+```xaml
 <Button Text="Toggle All Nodes" 
         Command="{Binding ToggleExpansionCommand}"/>
 ```
@@ -451,7 +451,7 @@ private void TreeView_NodeCollapsed(object sender, NodeExpandedCollapsedEventArg
 
 You can also use `ExpandCommand` and `CollapseCommand` properties for MVVM scenarios:
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        ExpandCommand="{Binding ExpandingCommand}"
                        CollapseCommand="{Binding CollapsingCommand}"/>

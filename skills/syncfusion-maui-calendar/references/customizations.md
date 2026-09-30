@@ -19,7 +19,7 @@ Customize all aspects of month view cells using the `MonthView` property.
 Style normal dates using `TextStyle` and `Background` properties.
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" View="Month" Background="LightBlue">
     <calendar:SfCalendar.MonthView>
         <calendar:CalendarMonthView Background="White">
@@ -54,7 +54,7 @@ calendar.MonthView = new CalendarMonthView
 Highlight the current date with custom styling.
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar.MonthView>
     <calendar:CalendarMonthView TodayBackground="Pink">
         <calendar:CalendarMonthView.TodayTextStyle>
@@ -107,7 +107,7 @@ calendar.MonthView = new CalendarMonthView
 Style dates that are disabled due to restrictions (MinimumDate, MaximumDate, EnablePastDates, SelectableDayPredicate).
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar.MonthView>
     <calendar:CalendarMonthView DisabledDatesBackground="LightGray">
         <calendar:CalendarMonthView.DisabledDatesTextStyle>
@@ -136,7 +136,7 @@ calendar.MonthView = new CalendarMonthView
 Customize weekends (Saturday and Sunday by default).
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar.MonthView>
     <calendar:CalendarMonthView WeekendDatesBackground="#E2F9F3">
         <calendar:CalendarMonthView.WeekendDatesTextStyle>
@@ -412,7 +412,7 @@ calendar.YearView = new CalendarYearView
 Customize month display format in Year view:
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar View="Year">
     <calendar:SfCalendar.YearView>
         <calendar:CalendarYearView MonthFormat="MMMM" />
@@ -460,7 +460,7 @@ calendar.MonthView.SelectionTextStyle = new CalendarTextStyle
 
 ### Range Selection Customization
 
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      SelectionMode="Range"
                      SelectionBackground="Pink"

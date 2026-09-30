@@ -11,7 +11,7 @@ The `IsEditable` property controls whether users can type in the text box or onl
 In editable mode, the ComboBox allows users to edit the text box and automatically appends the remaining letters to the entered text when it is valid.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="true"
                     ItemsSource="{Binding SocialMedias}"
@@ -41,7 +41,7 @@ SfComboBox comboBox = new SfComboBox
 Non-editable mode prevents users from editing and instead allows them to only select from the dropdown list.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="false"
                     ItemsSource="{Binding SocialMedias}"
@@ -80,7 +80,7 @@ comboBox.Text = "Facebook";
 ```
 
 **Data binding:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="true"
                     Text="{Binding SelectedText}"
@@ -96,7 +96,7 @@ By default, the clear button (X) is displayed in the editor of the ComboBox cont
 ### Hide Clear Button
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="true"
                     IsClearButtonVisible="false"
@@ -124,7 +124,7 @@ SfComboBox comboBox = new SfComboBox
 You can customize the clear button icon color using the `ClearButtonIconColor` property. The default value is `Colors.Black`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="true"
                     ClearButtonIconColor="Red"
@@ -150,7 +150,7 @@ SfComboBox comboBox = new SfComboBox
 The cursor position in the input view can be obtained or updated using the `CursorPosition` property.
 
 **Set cursor position:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="True"
                     CursorPosition="4"
@@ -187,7 +187,7 @@ The `ReturnType` property specifies the return button (e.g., Next, Done, Go) of 
 - Send
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="true"
                     ReturnType="Next"
@@ -232,7 +232,7 @@ SfComboBox comboBox = new SfComboBox
 
 ### Required Field (No Clear Button)
 
-```xml
+```xaml
 <editors:SfComboBox IsEditable="true"
                     IsClearButtonVisible="false"
                     Placeholder="Required: Select an option"
@@ -257,7 +257,7 @@ comboBox.TextChanged += (s, e) =>
 
 ### Navigation Between Fields
 
-```xml
+```xaml
 <StackLayout Spacing="10">
     <editors:SfComboBox x:Name="firstComboBox"
                         IsEditable="true"

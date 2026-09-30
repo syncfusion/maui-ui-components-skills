@@ -16,7 +16,7 @@ Enable the column header view by setting the `Height` property to a value greate
 **Default value:** `0` (disabled)
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.ColumnHeaderView>
         <picker:PickerColumnHeaderView Height="40"/>
@@ -34,7 +34,7 @@ picker.ColumnHeaderView.Height = 40;
 Add descriptive text to individual columns using the `HeaderText` property on each `PickerColumn`.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.HeaderView>
         <picker:PickerHeaderView Text="Select a color" Height="40" />
@@ -88,7 +88,7 @@ this.Content = picker;
 Customize the background color of the column header view.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.ColumnHeaderView>
         <picker:PickerColumnHeaderView Background="#E5E4E2" Height="40"/>
@@ -106,7 +106,7 @@ picker.ColumnHeaderView.Background = Color.FromArgb("#E5E4E2");
 Customize the text style including color, font size, font family, and font attributes.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.ColumnHeaderView>
         <picker:PickerColumnHeaderView Height="40">
@@ -135,7 +135,7 @@ picker.ColumnHeaderView.TextStyle = new PickerTextStyle()
 Customize the divider line color below the column headers.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.ColumnHeaderView>
         <picker:PickerColumnHeaderView DividerColor="Red" Height="40"/>
@@ -153,7 +153,7 @@ picker.ColumnHeaderView.DividerColor = Colors.Red;
 When using multiple columns, each column can have its own header text.
 
 **Example:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.Columns>
         <picker:PickerColumn HeaderText="Country" 
@@ -203,7 +203,7 @@ picker.ColumnHeaderView = new PickerColumnHeaderView()
 Create a fully custom column header appearance using `DataTemplate`.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.ColumnHeaderTemplate>
         <DataTemplate>
@@ -225,7 +225,7 @@ Create a fully custom column header appearance using `DataTemplate`.
 Apply different templates based on conditions using `DataTemplateSelector`.
 
 **XAML:**
-```xml
+```xaml
 <Grid.Resources>
     <DataTemplate x:Key="selectedItemTemplate">
         <Grid Background="LightBlue">
@@ -277,7 +277,7 @@ public class PickerTemplateSelector : DataTemplateSelector
 
 Here's a complete example combining all column header customization options:
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  HeightRequest="350"
                  WidthRequest="320">

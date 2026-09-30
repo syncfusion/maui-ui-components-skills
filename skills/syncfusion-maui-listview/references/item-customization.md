@@ -5,7 +5,7 @@
 - [Item Templates](#item-templates)
 - [Item Sizing](#item-sizing)
 - [Item Appearance](#item-appearance)
-- [Item Spacing and Borders](#item-spacing-and-borders)
+- [Item Spacing](#item-spacing)
 - [Visual Effects](#visual-effects)
 - [Advanced Customization Techniques](#advanced-customization-techniques)
 
@@ -23,7 +23,7 @@ SfListView provides extensive customization options for item appearance, includi
 
 Define how each item appears using DataTemplate:
 
-```xml
+```xaml
 <syncfusion:SfListView.ItemTemplate>
     <DataTemplate>
         <Grid Padding="15" ColumnSpacing="10">
@@ -73,7 +73,7 @@ public class MessageTemplateSelector : DataTemplateSelector
 }
 ```
 
-```xml
+```xaml
 <ContentPage.Resources>
     <DataTemplate x:Key="IncomingTemplate">
         <Grid Padding="10,5" HorizontalOptions="Start">
@@ -101,7 +101,7 @@ public class MessageTemplateSelector : DataTemplateSelector
 
 ### Complex Template Example
 
-```xml
+```xaml
 <syncfusion:SfListView.ItemTemplate>
     <DataTemplate>
         <Frame Padding="0" Margin="10,5" CornerRadius="12" HasShadow="True">
@@ -178,7 +178,7 @@ public class MessageTemplateSelector : DataTemplateSelector
 
 Set a fixed height (vertical) or width (horizontal) for all items:
 
-```xml
+```xaml
 <syncfusion:SfListView ItemSize="100" />
 ```
 
@@ -192,7 +192,7 @@ listView.ItemSize = 80;
 
 Automatically calculate item size based on content:
 
-```xml
+```xaml
 <syncfusion:SfListView AutoFitMode="Height" />
 ```
 
@@ -233,10 +233,97 @@ listView.QueryItemSize += (sender, e) =>
 
 ### Item Borders
 
-```xml
+Apply borders to items:
+Customize the border color, thickness, margin, and corner radius.
+
+- **ShowItemBorder**: Enables or disables the visibility of item borders. (Default: false)
+- **ItemBorderColor**: Sets the color of the item border.
+- **ItemBorderThickness**: Defines the border thickness for each side of the item.
+- **ItemBorderMargin**: Sets the margin around the border within the item.
+- **ItemBorderRadius**: Sets the corner radius of the item border.
+
+> **Note:** `ItemBorderRadius` is applicable only when `ItemBorderThickness` has uniform values on all sides.
+
+```xaml
 <syncfusion:SfListView x:Name="listView"
                        ShowItemBorder="True"
-                       ItemsSource="{Binding BookInfo}"/>
+                       ItemBorderColor="Black"
+                       ItemBorderThickness="2"
+                       ItemBorderMargin="5,2,5,2"
+                       ItemBorderRadius="20,0,0,20"
+                       ItemsSource="{Binding BookInfo}">
+</syncfusion:SfListView>
+```
+
+### Group Header Border
+
+Apply borders to group header items:
+Customize the border color, thickness, margin, and corner radius.
+
+- **ShowGroupHeaderBorder**: Enables or disables the visibility of group header borders. (Default: false)
+- **GroupHeaderBorderColor**: Sets the color of the group header border.
+- **GroupHeaderBorderThickness**: Defines the border thickness for each side of the group header.
+- **GroupHeaderBorderMargin**: Sets the margin around the border within the group header.
+- **GroupHeaderBorderRadius**: Sets the corner radius of the group header border.
+
+> **Note:** `GroupHeaderBorderRadius` is applicable only when `GroupHeaderBorderThickness` has uniform values on all sides.
+
+```xaml
+<syncfusion:SfListView x:Name="listView"
+                       GroupHeaderSize="50"
+                       ShowGroupHeaderBorder="True"
+                       GroupHeaderBorderColor="Black"
+                       GroupHeaderBorderThickness="2"
+                       GroupHeaderBorderMargin="5,2,5,2"
+                       GroupHeaderBorderRadius="20,0,0,20"
+                       AllowGroupExpandCollapse="True"
+                       ItemsSource="{Binding BookInfo}"
+                       GroupKeySelector="{Binding Category}">
+</syncfusion:SfListView>
+```
+
+**Important Limitations:**
+- Group header borders are rendered on top of the group header template content and do not interfere with touch interactions.
+- `GroupHeaderBorderRadius` is applicable only when `GroupHeaderBorderThickness` has uniform values on all sides.
+- Group header borders are only supported with grouped data sources (when `GroupKeySelector` is set).
+
+### Item Separator
+
+Add separator line between items:
+
+- **ShowItemSeparator**: Enables or disables separators between items. (Default: false)
+- **ItemSeparatorColor**: Sets the color of the item separator line.
+- **ItemSeparatorThickness**: Specifies the thickness (height) of the separator line.
+- **ItemSeparatorMargin**: Specifies the insets applied to the separator. For vertical orientation, left and right margin values are considered. For horizontal orientation, only top and bottom margin values are applied.
+
+```xaml
+<syncfusion:SfListView x:Name="listView"
+                       ShowItemSeparator="True"
+                       ItemSeparatorColor="#D0BCFF"
+                       ItemSeparatorThickness="2"
+                       ItemSeparatorMargin="10"
+                       ItemsSource="{Binding BookInfo}">
+</syncfusion:SfListView>
+```
+
+### Group item Separator
+
+Add separator line between group items:
+
+- **ShowGroupItemSeparator**: Enables or disables separators below group headers. (Default: false)
+- **GroupItemSeparatorColor**: Sets the color of the separator rendered below group headers.
+- **GroupItemSeparatorThickness**: Specifies the thickness of the group header separator.
+- **GroupItemSeparatorMargin**: Specifies inset/margin for the group header separator for alignment with headers or items.
+
+```xaml
+<syncfusion:SfListView x:Name="listView"
+                       ItemSize="60"
+                       ShowGroupItemSeparator="True"
+                       GroupItemSeparatorColor="#6750A4"
+                       GroupItemSeparatorThickness="2"
+                       GroupItemSeparatorMargin="40"
+                       ItemsSource="{Binding BookInfo}">
+</syncfusion:SfListView>
 ```
 
 ### Alternating Row Colors
@@ -257,7 +344,7 @@ public class AlternatingColorTemplateSelector : DataTemplateSelector
 
 Or use converter with index:
 
-```xml
+```xaml
 <syncfusion:SfListView.ItemTemplate>
     <DataTemplate>
         <Grid Padding="10" 
@@ -272,7 +359,7 @@ Or use converter with index:
 
 Apply different styles based on item state:
 
-```xml
+```xaml
 <syncfusion:SfListView.ItemTemplate>
     <DataTemplate>
         <Grid Padding="15">
@@ -297,28 +384,24 @@ Apply different styles based on item state:
 </syncfusion:SfListView.ItemTemplate>
 ```
 
-## Item Spacing and Borders
+## Item Spacing
 
 ### ItemSpacing Property
 
 Add space between items:
 
-```xml
-<syncfusion:SfListView ItemSpacing="10,5,10,5" />
+```xaml
+<syncfusion:SfListView x:Name="listView"
+                       ItemSpacing="10,5,10,5"
+                       ItemsSource="{Binding BookInfo}">
+</syncfusion:SfListView>
 ```
 
-Values: Left, Top, Right, Bottom spacing.
-
-### Item Borders with ItemBorder Property
-
-```xml
-<syncfusion:SfListView ItemBorderColor="LightGray"
-                       ItemBorderThickness="1,0,1,1" />
-```
+Values: Left, Top, Right, Bottom spacing
 
 ### Custom Spacing with Margin
 
-```xml
+```xaml
 <syncfusion:SfListView.ItemTemplate>
     <DataTemplate>
         <Grid Margin="15,10">
@@ -334,7 +417,7 @@ Values: Left, Top, Right, Bottom spacing.
 
 Create a modern glassmorphism effect (only on above iOS 26 versions):
 
-```xml
+```xaml
 <Grid>
       <core:SfGlassEffectView x:Name="glassview" EffectType="Regular">
           <ListView:SfListView x:Name="listView"
@@ -357,7 +440,7 @@ Create a modern glassmorphism effect (only on above iOS 26 versions):
 
 ### Shadow Effects
 
-```xml
+```xaml
 <syncfusion:SfListView.ItemTemplate>
     <DataTemplate>
         <Frame Margin="10,5" 
@@ -377,7 +460,7 @@ Create a modern glassmorphism effect (only on above iOS 26 versions):
 
 ### Gradient Backgrounds
 
-```xml
+```xaml
 <syncfusion:SfListView.ItemTemplate>
     <DataTemplate>
         <Grid Padding="15" Margin="10,5">
@@ -400,7 +483,7 @@ Create a modern glassmorphism effect (only on above iOS 26 versions):
 
 Add interactive controls within items:
 
-```xml
+```xaml
 <syncfusion:SfListView.ItemTemplate>
     <DataTemplate>
         <Grid Padding="15" ColumnSpacing="10">
@@ -432,7 +515,7 @@ Add interactive controls within items:
 
 Create accordion-style expandable items:
 
-```xml
+```xaml
 <syncfusion:SfListView.ItemTemplate>
     <DataTemplate>
         <StackLayout>
@@ -517,7 +600,7 @@ listView.ItemAppearing += (sender, e) =>
 
 ## Complete Example: Card-Style Product List
 
-```xml
+```xaml
 <syncfusion:SfListView x:Name="listView"
                        ItemsSource="{Binding Products}"
                        ItemSize="280"

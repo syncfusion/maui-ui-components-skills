@@ -18,7 +18,7 @@ The `MinimumDate` property restricts selection to dates on or after the specifie
 
 #### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      MinimumDate="2020/01/01">
 </picker:SfDatePicker>
@@ -34,7 +34,7 @@ this.Content = datePicker;
 
 ### Example: Prevent Past Date Selection
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      MinimumDate="{x:Static sys:DateTime.Now}">
     <picker:SfDatePicker.HeaderView>
@@ -55,7 +55,7 @@ DateTime eighteenYearsAgo = DateTime.Now.AddYears(-18);
 datePicker.MaximumDate = eighteenYearsAgo;
 ```
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="birthDatePicker">
     <picker:SfDatePicker.HeaderView>
         <picker:PickerHeaderView Text="Select Birth Date (18+ only)" Height="40" />
@@ -76,7 +76,7 @@ The `MaximumDate` property restricts selection to dates on or before the specifi
 
 #### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      MaximumDate="2030/12/31">
 </picker:SfDatePicker>
@@ -92,7 +92,7 @@ this.Content = datePicker;
 
 ### Example: Historical Data Entry
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      MaximumDate="{x:Static sys:DateTime.Now}">
     <picker:SfDatePicker.HeaderView>
@@ -111,7 +111,7 @@ Combine `MinimumDate` and `MaximumDate` to create a specific date range.
 
 ### Example: Booking Window (7-30 days from now)
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="bookingDatePicker">
     <picker:SfDatePicker.HeaderView>
         <picker:PickerHeaderView Text="Select Booking Date" Height="40" />
@@ -127,7 +127,7 @@ bookingDatePicker.MaximumDate = DateTime.Now.AddDays(30).Date;
 
 ### Example: Current Year Only
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      MinimumDate="2023/01/01"
                      MaximumDate="2023/12/31">
@@ -159,7 +159,7 @@ The `BlackoutDates` property allows you to specify a collection of specific date
 
 #### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.BlackoutDates>
         <x:DateTime>2023-09-10</x:DateTime>
@@ -234,7 +234,7 @@ public async Task LoadUnavailableDates(SfDatePicker datePicker)
 
 ### Example 1: Appointment Booking System
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="15">
     <Label Text="Book Your Appointment" 
            FontSize="22" 
@@ -325,7 +325,7 @@ public partial class AppointmentPage : ContentPage
 
 ### Example 2: Age Verification Form
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="15">
     <Label Text="Enter Birth Date" 
            FontSize="18" 

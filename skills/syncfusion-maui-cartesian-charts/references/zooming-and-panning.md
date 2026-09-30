@@ -18,7 +18,7 @@ Zooming and panning enable users to explore large datasets by focusing on specif
 
 ### Basic Zooming Setup
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.ZoomPanBehavior>
         <chart:ChartZoomPanBehavior/>
@@ -54,7 +54,7 @@ chart.ZoomPanBehavior = zoomPan;
 
 Zoom both axes simultaneously:
 
-```xml
+```xaml
 <chart:ChartZoomPanBehavior ZoomMode="XY"/>
 ```
 
@@ -62,7 +62,7 @@ Zoom both axes simultaneously:
 
 Zoom only horizontally:
 
-```xml
+```xaml
 <chart:ChartZoomPanBehavior ZoomMode="X"/>
 ```
 
@@ -70,7 +70,7 @@ Zoom only horizontally:
 
 Zoom only vertically:
 
-```xml
+```xaml
 <chart:ChartZoomPanBehavior ZoomMode="Y"/>
 ```
 
@@ -85,7 +85,7 @@ ChartZoomPanBehavior zoomPan = new ChartZoomPanBehavior()
 
 Enable touch-based pinch zooming:
 
-```xml
+```xaml
 <chart:ChartZoomPanBehavior EnablePinchZooming="True"/>
 ```
 
@@ -100,7 +100,7 @@ ChartZoomPanBehavior zoomPan = new ChartZoomPanBehavior()
 
 ### Enable Selection Zoom
 
-```xml
+```xaml
 <chart:ChartZoomPanBehavior EnableSelectionZooming="True"/>
 ```
 
@@ -113,7 +113,7 @@ ChartZoomPanBehavior zoomPan = new ChartZoomPanBehavior()
 
 ### Customize Selection Rectangle
 
-```xml
+```xaml
 <chart:ChartZoomPanBehavior EnableSelectionZooming="True"
                             SelectionRectStroke="Blue"
                             SelectionRectStrokeWidth="2"
@@ -134,7 +134,7 @@ ChartZoomPanBehavior zoomPan = new ChartZoomPanBehavior()
 
 ### Enable Panning
 
-```xml
+```xaml
 <chart:ChartZoomPanBehavior EnablePanning="True"/>
 ```
 
@@ -147,7 +147,7 @@ ChartZoomPanBehavior zoomPan = new ChartZoomPanBehavior()
 
 ### Combined Zoom and Pan
 
-```xml
+```xaml
 <chart:ChartZoomPanBehavior EnablePanning="True"
                             EnablePinchZooming="True"
                             EnableDoubleTap="True"/>
@@ -166,7 +166,7 @@ ChartZoomPanBehavior zoomPan = new ChartZoomPanBehavior()
 
 ### Enable Double-Tap Reset
 
-```xml
+```xaml
 <chart:ChartZoomPanBehavior EnableDoubleTap="True"/>
 ```
 
@@ -193,7 +193,7 @@ chart.XAxes[0].ZoomPosition = 0.25;
 
 ### Maximum Zoom Level
 
-```xml
+```xaml
 <chart:ChartZoomPanBehavior MaximumZoomLevel="5"/>
 ```
 
@@ -206,7 +206,7 @@ ChartZoomPanBehavior zoomPan = new ChartZoomPanBehavior()
 
 ## Complete Example
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.ZoomPanBehavior>
         <chart:ChartZoomPanBehavior EnablePanning="True"
@@ -280,21 +280,21 @@ ChartZoomPanBehavior zoomPan = new ChartZoomPanBehavior()
 ### Common Patterns
 
 **Time-Series Analysis:**
-```xml
+```xaml
 <chart:ChartZoomPanBehavior EnablePanning="True"
                             ZoomMode="X"
                             EnableDoubleTap="True"/>
 ```
 
 **Data Exploration:**
-```xml
+```xaml
 <chart:ChartZoomPanBehavior EnablePanning="True"
                             EnableSelectionZooming="True"
                             ZoomMode="XY"/>
 ```
 
 **Mobile-Optimized:**
-```xml
+```xaml
 <chart:ChartZoomPanBehavior EnablePinchZooming="True"
                             EnableDoubleTap="True"
                             MaximumZoomLevel="5"/>

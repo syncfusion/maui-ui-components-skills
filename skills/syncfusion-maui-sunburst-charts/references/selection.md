@@ -47,7 +47,7 @@ The `Type` property of `SunburstSelectionSettings` determines which segments are
 Highlights only the tapped segment.
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Value">
     
@@ -85,7 +85,7 @@ this.Content = sunburst;
 Highlights the selected segment and all its descendants.
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Sales">
     
@@ -121,7 +121,7 @@ sunburst.SelectionSettings = selectionSettings;
 Highlights all segments at the same level as the selected segment.
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Count">
     
@@ -157,7 +157,7 @@ sunburst.SelectionSettings = selectionSettings;
 Highlights the selected segment and its ancestors up to the root.
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Amount">
     
@@ -215,7 +215,7 @@ The `DisplayMode` property controls how selected segments are visually highlight
 Changes selected segment color to the specified Fill color.
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Value">
     
@@ -261,7 +261,7 @@ sunburst.SelectionSettings = selectionSettings;
 Dims unselected segments while keeping selected segments at full opacity.
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Sales">
     
@@ -306,7 +306,7 @@ sunburst.SelectionSettings = selectionSettings;
 Adds a border around selected segments.
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Count">
     
@@ -363,7 +363,7 @@ Fired before a segment is selected, allowing cancellation.
 - **Cancel**: Set to true to prevent selection
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart SelectionChanging="OnSelectionChanging">
     <sunburst:SfSunburstChart.SelectionSettings>
         <sunburst:SunburstSelectionSettings Type="Single"/>
@@ -403,7 +403,7 @@ Fired after a segment is selected or deselected.
 - **OldSegment**: Previously selected segment
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart SelectionChanged="OnSelectionChanged">
     <sunburst:SfSunburstChart.SelectionSettings>
         <sunburst:SunburstSelectionSettings Type="Child"/>
@@ -443,7 +443,7 @@ private void OnSelectionChanged(object sender, SunburstSelectionChangedEventArgs
 
 ### Example 1: Comprehensive Selection Configuration
 
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding EmployeeData}"
                           ValueMemberPath="Count"
                           SelectionChanging="OnSelectionChanging"
@@ -466,7 +466,7 @@ private void OnSelectionChanged(object sender, SunburstSelectionChangedEventArgs
 
 ### Example 2: Elegant Opacity-Based Selection
 
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding SalesData}"
                           ValueMemberPath="Revenue"
                           ShowLabels="True"
@@ -489,7 +489,7 @@ private void OnSelectionChanged(object sender, SunburstSelectionChangedEventArgs
 
 ### Example 3: Stroke-Based Group Selection
 
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding BudgetData}"
                           ValueMemberPath="Amount"
                           Radius="0.85"
@@ -512,7 +512,7 @@ private void OnSelectionChanged(object sender, SunburstSelectionChangedEventArgs
 
 ### Example 4: Parent Path Highlighting
 
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding FileSystemData}"
                           ValueMemberPath="Size"
                           SelectionChanged="ShowFilePath">

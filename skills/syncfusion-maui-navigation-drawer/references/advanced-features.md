@@ -22,7 +22,7 @@ The Navigation Drawer supports opening drawers on multiple sides simultaneously 
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <!-- Primary Drawer (Left) -->
     <navigationDrawer:SfNavigationDrawer.DrawerSettings>
@@ -195,7 +195,7 @@ The liquid glass effect (glass morphism/acrylic) provides a frosted, translucent
 
 **XAML:**
 
-```xml
+```xaml
 <Grid>
     <!-- Background to make effect visible -->
     <Image Source="wallpaper.jpg" Aspect="AspectFill"/>
@@ -224,7 +224,7 @@ SfNavigationDrawer navigationDrawer = new SfNavigationDrawer
 
 **1. Use Transparent Backgrounds**
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings ContentBackground="Transparent">
     <navigationDrawer:DrawerSettings.DrawerContentView>
         <VerticalStackLayout Background="Transparent">
@@ -236,7 +236,7 @@ SfNavigationDrawer navigationDrawer = new SfNavigationDrawer
 
 **2. Transparent ContentView**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer.ContentView>
     <Grid Background="Transparent">
         <!-- Content -->
@@ -309,7 +309,7 @@ private void OnCategorySelected(object sender, SelectionChangedEventArgs e)
 
 ### Pattern 2: Tabbed Navigation Inside Drawer
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -395,7 +395,7 @@ private async Task LoadDrawerContentAsync()
 
 ### 2. Virtualize Long Lists
 
-```xml
+```xaml
 <!-- Use CollectionView for virtualization -->
 <CollectionView ItemsSource="{Binding MenuItems}"
                 SelectionMode="Single">

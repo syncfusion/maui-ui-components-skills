@@ -19,7 +19,7 @@ chart.Legend = new ChartLegend();
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.Legend>
         <chart:ChartLegend/>
@@ -38,7 +38,7 @@ chart.Legend = new ChartLegend
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:ChartLegend IsVisible="True"/>
 ```
 
@@ -74,7 +74,7 @@ chart.Legend = new ChartLegend
 - `LegendPlacement.Right`
 
 **XAML:**
-```xml
+```xaml
 <chart:ChartLegend Placement="Bottom"/>
 ```
 
@@ -93,7 +93,7 @@ chart.Legend.LabelStyle = new ChartLegendLabelStyle
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:ChartLegend>
     <chart:ChartLegend.LabelStyle>
         <chart:ChartLegendLabelStyle TextColor="Blue"
@@ -132,7 +132,7 @@ PolarLineSeries series = new PolarLineSeries
 - `Hexagon`
 
 **XAML:**
-```xml
+```xaml
 <chart:PolarLineSeries Label="Data" LegendIcon="Diamond"/>
 ```
 
@@ -148,7 +148,7 @@ chart.Legend = new ChartLegend
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:ChartLegend ToggleSeriesVisibility="True"/>
 ```
 
@@ -163,7 +163,7 @@ series2.IsVisibleOnLegend = false;
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:PolarLineSeries IsVisibleOnLegend="True" Label="Visible"/>
 <chart:PolarLineSeries IsVisibleOnLegend="False" Label="Hidden"/>
 ```
@@ -172,7 +172,7 @@ series2.IsVisibleOnLegend = false;
 
 Create custom legend item layouts:
 
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.Resources>
         <DataTemplate x:Key="legendTemplate">
@@ -196,7 +196,7 @@ Create custom legend item layouts:
 
 Customize legend item arrangement:
 
-```xml
+```xaml
 <chart:ChartLegend>
     <chart:ChartLegend.ItemsLayout>
         <FlexLayout HorizontalOptions="Start"
@@ -244,7 +244,7 @@ chart.TooltipBehavior = new ChartTooltipBehavior();
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.TooltipBehavior>
         <chart:ChartTooltipBehavior/>
@@ -272,7 +272,7 @@ chart.TooltipBehavior = new ChartTooltipBehavior
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:ChartTooltipBehavior Background="DarkBlue"
                             TextColor="White"
                             FontSize="14"
@@ -280,6 +280,44 @@ chart.TooltipBehavior = new ChartTooltipBehavior
                             FontFamily="Arial"
                             Margin="5"/>
 ```
+
+### Tooltip Border and Series Fill
+
+Use the `Stroke` and `StrokeWidth` properties of `ChartTooltipBehavior` to add a border around the polar chart tooltip. Set `UseSeriesFillColor` to `true` to make the tooltip adopt the associated series fill color as its background.
+
+```csharp
+chart.TooltipBehavior = new ChartTooltipBehavior
+{
+    Stroke = Colors.DarkSlateGray,
+    StrokeWidth = 1,
+    UseSeriesFillColor = true
+};
+```
+
+**XAML:**
+```xaml
+<chart:SfPolarChart>
+    <chart:SfPolarChart.TooltipBehavior>
+        <chart:ChartTooltipBehavior Stroke="DarkSlateGray"
+                                    StrokeWidth="1"
+                                    UseSeriesFillColor="True"/>
+    </chart:SfPolarChart.TooltipBehavior>
+</chart:SfPolarChart>
+```
+
+### Tooltip Properties
+
+| Property | Type | Description |
+|----------|------|-------------|
+| **Background** | Brush | Tooltip background color |
+| **TextColor** | Color | Text color |
+| **FontSize** | double | Font size |
+| **FontAttributes** | FontAttributes | Font style |
+| **FontFamily** | string | Font family |
+| **Margin** | Thickness | Outer spacing |
+| **Stroke** | Color | Tooltip border color |
+| **StrokeWidth** | double | Tooltip border thickness |
+| **UseSeriesFillColor** | bool | Uses the associated series fill color as the tooltip background |
 
 ### Tooltip Duration
 
@@ -293,7 +331,7 @@ chart.TooltipBehavior = new ChartTooltipBehavior
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:ChartTooltipBehavior Duration="5000"/>
 ```
 
@@ -301,7 +339,7 @@ chart.TooltipBehavior = new ChartTooltipBehavior
 
 Create custom tooltip layouts:
 
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.Resources>
         <DataTemplate x:Key="tooltipTemplate">
@@ -359,7 +397,7 @@ chartTooltipBehavior.Hide();
 
 Use both for comprehensive chart interactivity:
 
-```xml
+```xaml
 <chart:SfPolarChart>
     <!-- Legend for series identification -->
     <chart:SfPolarChart.Legend>
@@ -523,7 +561,7 @@ chart.TooltipBehavior = new ChartTooltipBehavior();
 **Problem:** Legend text or items are clipped.
 
 **Solutions:**
-```xml
+```xaml
 <!-- Add padding to chart -->
 <chart:SfPolarChart Padding="10">
     <chart:SfPolarChart.Legend>

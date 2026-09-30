@@ -17,7 +17,7 @@
 
 ### Optimize Column Templates
 
-```xml
+```xaml
 <!-- Avoid -->
 <syncfusion:DataGridTemplateColumn>
     <syncfusion:DataGridTemplateColumn.CellTemplate>
@@ -90,7 +90,7 @@ dataGrid.SwipeEnded += DataGrid_SwipeEnded;
 
 ### Cell Events
 
-```Xml
+```xaml
 // Cell tapped
 <syncfusion:SfDataGrid x:Name="dataGrid"
                    CellTapped="dataGrid_CellTapped"
@@ -110,7 +110,7 @@ private void dataGrid_CellTapped(object sender, DataGridCellTappedEventArgs e)
 }
 ```
 
-```Xml
+```xaml
 // Cell double tapped
 <syncfusion:SfDataGrid x:Name="dataGrid"
                    CellDoubleTapped="dataGrid_CellDoubleTapped"
@@ -128,7 +128,7 @@ private void dataGrid_CellDoubleTapped(object sender, DataGridCellDoubleTappedEv
     var column = e.Column;
 }
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                    CellLongPress="dataGrid_CellLongPress"
                    ItemsSource="{Binding OrderInfoCollection}" />
@@ -148,7 +148,7 @@ private void dataGrid_CellLongPress(object sender, DataGridCellLongPressEventArg
 }
 ```
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                    CellRightTapped="SfDataGrid_CellRightTapped"
                    ItemsSource="{Binding OrderInfoCollection}" />
@@ -167,6 +167,37 @@ private void SfDataGrid_CellRightTapped(object sender, DataGridCellRightTappedEv
     var pointerDeviceType = e.PointerDeviceType;
 }
 ```
+
+### Cell Hovered Event
+
+Handle mouse hover over cells (desktop platforms):
+
+```xaml
+<syncfusion:SfDataGrid x:Name="dataGrid"
+                       AllowColumnHovering="True"
+                       CellHovered="DataGrid_CellHovered"
+                       ItemsSource="{Binding Orders}" />
+```
+
+```csharp
+dataGrid.CellHovered += DataGrid_CellHovered;
+
+private void DataGrid_CellHovered(object sender, DataGridCellHoveredEventArgs e)
+{
+    // e.RowColumnIndex - Row and column index of hovered cell
+    // e.RowData - Data associated with the hovered row
+    // e.Column - Column that contains the hovered cell
+    // e.Point - Location (coordinates) of the hovered cell.
+    // e.CellValue - Value contained in the hovered cell.
+    // e.CellType - Type of cell (HeaderCell, RecordCell, etc.)
+    
+    var cellType = e.CellType;
+    var columnName = e.Column.MappingName;
+    
+    Debug.WriteLine($"Hovering over {cellType} in column {columnName}");
+}
+```
+
 ## Event Handling Patterns
 
 ### Pattern 1: Handle Cell Tap

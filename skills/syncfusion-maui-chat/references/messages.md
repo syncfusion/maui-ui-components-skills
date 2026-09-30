@@ -158,7 +158,7 @@ messages.Add(new ImageMessage
 
 Handle image taps to show full-screen previews or sharing options:
 
-```xml
+```xaml
 <sfChat:SfChat ImageTapped="sfChat_ImageTapped" ... />
 ```
 ```csharp
@@ -173,7 +173,7 @@ private void sfChat_ImageTapped(object sender, ImageTappedEventArgs e)
 
 ### ImageTappedCommand (MVVM)
 
-```xml
+```xaml
 <sfChat:SfChat ImageTappedCommand="{Binding ImageTappedCommand}" ... />
 ```
 ```csharp
@@ -232,7 +232,7 @@ messages.Add(new CardMessage
 
 Fires when a card or its button is tapped. `CardTappedEventArgs.Action` is non-null only when a button is tapped.
 
-```xml
+```xaml
 <sfChat:SfChat CardTapped="sfChat_CardTapped" ... />
 ```
 ```csharp
@@ -249,7 +249,7 @@ private void sfChat_CardTapped(object sender, CardTappedEventArgs e)
 
 ### CardCommand (MVVM)
 
-```xml
+```xaml
 <sfChat:SfChat CardCommand="{Binding CardTappedCommand}" ... />
 ```
 ```csharp
@@ -267,7 +267,7 @@ public ICommand CardTappedCommand => new Command<object>(args =>
 Show message delivery status indicators (sent, delivered, read, failed).
 
 **Enable delivery states:**
-```xml
+```xaml
 <sfChat:SfChat ShowDeliveryState="True" ... />
 ```
 
@@ -303,7 +303,7 @@ private async void UpdateDeliveryState(TextMessage message)
 ```
 
 **Custom delivery icons:**
-```xml
+```xaml
 <sfChat:SfChat ShowDeliveryState="True"
                SentIcon="senticon.png"
                DeliveredIcon="deliveredicon.png"
@@ -318,7 +318,7 @@ private async void UpdateDeliveryState(TextMessage message)
 Allow users to pin messages for quick reference.
 
 **Enable pinning:**
-```xml
+```xaml
 <sfChat:SfChat AllowPinning="True" ... />
 ```
 
@@ -333,23 +333,23 @@ var pinned = sfChat.PinnedMessages; // Read-only collection
 ```
 
 **Hide the pinned messages container:**
-```xml
+```xaml
 <sfChat:SfChat AllowPinning="True" ShowPinnedMessagesContainer="False" ... />
 ```
 
 **Adjust container height:**
-```xml
+```xaml
 <sfChat:SfChat AllowPinning="True" PinnedContainerHeight="80" ... />
 ```
 
 **Custom pinned message template:**
-```xml
+```xaml
 <sfChat:SfChat AllowPinning="True"
                PinnedMessageTemplate="{StaticResource MyPinnedTemplate}" ... />
 ```
 
 **Pin/unpin events:**
-```xml
+```xaml
 <sfChat:SfChat MessagePinned="OnMessagePinned"
                MessageUnpinned="OnMessageUnpinned" ... />
 ```
@@ -441,7 +441,7 @@ Target specific parts of incoming/outgoing messages using `ControlTemplate` styl
 | `MessageSuggestionView` | Per-message suggestion list |
 | `ChatSuggestionView` | Chat-level suggestion list |
 
-```xml
+```xaml
 <ContentPage.Resources>
     <Style TargetType="sfChat:IncomingMessageContentView">
         <Setter Property="ControlTemplate">
@@ -463,17 +463,17 @@ Target specific parts of incoming/outgoing messages using `ControlTemplate` styl
 ## Message Appearance
 
 ### Message Shape
-```xml
+```xaml
 <sfChat:SfChat MessageShape="DualTearDrop" ... />
 ```
 
 ### Message Spacing
-```xml
+```xaml
 <sfChat:SfChat MessageSpacing="24" ... />
 ```
 
 ### Timestamp Format
-```xml
+```xaml
 <sfChat:SfChat IncomingMessageTimestampFormat="hh:mm tt"
                OutgoingMessageTimestampFormat="hh:mm tt" ... />
 ```
@@ -481,13 +481,13 @@ Target specific parts of incoming/outgoing messages using `ControlTemplate` styl
 ### Avatar and Author Name Visibility
 
 **Show avatar/name for outgoing messages (hidden by default):**
-```xml
+```xaml
 <sfChat:SfChat ShowOutgoingMessageAvatar="True"
                ShowOutgoingMessageAuthorName="True" ... />
 ```
 
 **Hide avatar/name for incoming messages (shown by default):**
-```xml
+```xaml
 <sfChat:SfChat ShowIncomingMessageAvatar="False"
                ShowIncomingMessageAuthorName="False" ... />
 ```
@@ -568,27 +568,27 @@ sfChat.SendMessage += (sender, e) =>
 ```
 
 **MVVM command approach:**
-```xml
+```xaml
 <sfChat:SfChat SendMessageCommand="{Binding SendMessageCommand}" ... />
 ```
 
 ### Keyboard Behaviour
 
-```xml
+```xaml
 <!-- Keep keyboard open after send (default: true) -->
 <sfChat:SfChat ShowKeyboardAlways="False" ... />
 ```
 
 ### Single-Line Input
 
-```xml
+```xaml
 <!-- Prevent multi-line; shows Send button on keyboard -->
 <sfChat:SfChat AllowMultilineInput="False" ... />
 ```
 
 ### Hide the Input Editor
 
-```xml
+```xaml
 <!-- Useful for read-only chat or bot-only conversations -->
 <sfChat:SfChat ShowMessageInputView="False" ... />
 ```

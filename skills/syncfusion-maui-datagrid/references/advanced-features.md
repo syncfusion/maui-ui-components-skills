@@ -38,7 +38,7 @@ The SfDataGrid supports displaying hierarchical data using [Master-Details View]
 
 ### Auto-Generating Relations
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        AutoGenerateRelations="True"
                        ItemsSource="{Binding Employees}">
@@ -51,7 +51,7 @@ dataGrid.AutoGenerateRelations = true;
 
 ### Manually Defining Relations
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        AutoGenerateRelations="False"
                        ItemsSource="{Binding Employees}">
@@ -111,7 +111,7 @@ var detailsViewDataGrid = dataGrid.GetDetailsViewGrid(2);
 
 #### Customize Header Appearance
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        AutoGenerateRelations="True"
                        ItemsSource="{Binding Employees}">
@@ -126,7 +126,7 @@ var detailsViewDataGrid = dataGrid.GetDetailsViewGrid(2);
 
 The padding of DetailsViewDataGrid can be customized using the DetailsViewPadding property.
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        AutoGenerateRelations="True"
                        ItemsSource="{Binding Employees}"
@@ -140,7 +140,7 @@ dataGrid.DetailsViewPadding = new Thickness(15);
 
 #### Customize ExpanderColumn Width
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        AutoGenerateRelations="True"
                        ItemsSource="{Binding Employees}"
@@ -161,7 +161,7 @@ detailsViewDataGrid.HeaderRowHeight = 0;
 
 ### Hide Empty Grid Definitions
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        AutoGenerateRelations="True"
                        ItemsSource="{Binding Employees}"
@@ -175,7 +175,7 @@ dataGrid.HideEmptyDataGridViewDefinition = true;
 
 ### Hide Indent Cells in Details View
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        AutoGenerateRelations="True"
                        ItemsSource="{Binding Employees}"
@@ -260,7 +260,7 @@ var selectedRows = detailsGrid.SelectedRows;
 
 ### Defining Row Template
 
-```xml
+```xaml
 <syncfusion:SfDataGrid ItemsSource="{Binding Employees}">
     <syncfusion:SfDataGrid.DetailsViewDefinition>
         <syncfusion:TemplateViewDefinition x:Name="Template"
@@ -285,7 +285,7 @@ var selectedRows = detailsGrid.SelectedRows;
 - **Fixed** - Arranges template for the specified height in [TemplateViewDefinition.Height](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.DataGrid.TemplateViewDefinition.html#Syncfusion_Maui_DataGrid_TemplateViewDefinition_Height).
 - **ViewportHeight** - Arranges template for the ViewPortHeight when the RowTemplate actual height is greater than ViewPortHeight.
 
-```xml
+```xaml
 <syncfusion:SfDataGrid ItemsSource="{Binding Employees}">
     <syncfusion:SfDataGrid.DetailsViewDefinition>
         <syncfusion:TemplateViewDefinition x:Name="Template"
@@ -334,7 +334,7 @@ dataGrid.CollapseDetailsViewAt(1);
 
 Display when no data:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid ItemsSource="{Binding OrderInfoCollection}">
     <syncfusion:SfDataGrid.EmptyView>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
@@ -348,7 +348,7 @@ Display when no data:
 
 Show context menu to the header cell:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid" ItemsSource="{Binding Orders}">
     <syncfusion:SfDataGrid.HeaderContextMenu>
         <syncfusion:MenuItemCollection>
@@ -364,7 +364,7 @@ Show context menu to the header cell:
 
 Show content menu to the data cell:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid" ItemsSource="{Binding Orders}">
     <syncfusion:SfDataGrid.RecordContextMenu>
         <syncfusion:MenuItemCollection>
@@ -377,11 +377,46 @@ Show content menu to the data cell:
 </syncfusion:SfDataGrid>
 ```
 
+### Customize Separator Appearance
+
+Context menu separators are enabled by default. Use `DataGridStyle` properties to customize separator colors:
+
+```xaml
+<syncfusion:SfDataGrid x:Name="dataGrid" ItemsSource="{Binding Orders}">
+    <syncfusion:SfDataGrid.DefaultStyle>
+        <syncfusion:DataGridStyle ContextMenuSeparatorColor="Gray"
+                                  ContextMenuSeparatorStroke="DarkGray" />
+    </syncfusion:SfDataGrid.DefaultStyle>
+    
+    <syncfusion:SfDataGrid.RecordContextMenu>
+        <syncfusion:MenuItemCollection>
+            <syncfusion:MenuItem Text="Cut"/>
+            <syncfusion:MenuItem Text="Copy"/>
+            <syncfusion:MenuItem Text="Paste"/>
+        </syncfusion:MenuItemCollection>
+    </syncfusion:SfDataGrid.RecordContextMenu>
+</syncfusion:SfDataGrid>
+```
+
+```csharp
+var style = new DataGridStyle()
+{
+    ContextMenuSeparatorColor = Colors.LightGray,
+    ContextMenuSeparatorStroke = Colors.DarkGray
+};
+dataGrid.DefaultStyle = style;
+```
+
+**Separator Customization Properties:**
+- `ContextMenuSeparatorColor` - Background/fill color of the separator
+- `ContextMenuSeparatorStroke` - Border/line color of the separator
+
+
 ## Tooltips
 
 Show tooltips on cells:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid ItemsSource="{Binding OrdersInfo}"
                               ShowToolTip="True" />
 ```
@@ -396,6 +431,21 @@ private void DataGrid_CellToolTipOpening(object sender, DataGridCellToolTipOpeni
     // e.RowColumnIndex - Gets the row and column index of the cell.
     // e.ToolTipText - Gets the text content that is displayed within the tooltip.
 }
+```
+
+### Customize Tooltip Delay
+
+Control the delay before tooltips appear:
+
+```xaml
+<syncfusion:SfDataGrid ItemsSource="{Binding Orders}"
+                       ShowToolTip="True"
+                       TooltipDelay="1500" />
+```
+
+```csharp
+dataGrid.ShowToolTip = true;
+dataGrid.TooltipDelay = 1500;
 ```
 
 ## Merged Cells
@@ -464,7 +514,7 @@ using (var file = File.Open(localPath, FileMode.Open))
 
 Style cells based on data:
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="http://schemas.syncfusion.com/maui">
     <ContentPage.Resources>
         <local:ColorConverter x:Key="converter"/>

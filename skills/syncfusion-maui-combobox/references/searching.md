@@ -44,7 +44,7 @@ public class SocialMedia
 ```
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -71,7 +71,7 @@ In edit mode, searching is performed based on the `TextMemberPath` property whil
 
 **Example: Search by ID Instead of Name**
 
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="true"
                     ItemsSource="{Binding SocialMedias}"
@@ -110,7 +110,7 @@ The `TextSearchMode` property controls how the control matches user input agains
 Searches for items based on the starting text. The first matching item is highlighted and (in editable mode) the remaining text is auto-appended.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     TextSearchMode="StartsWith"
                     ItemsSource="{Binding SocialMedias}"
@@ -147,7 +147,7 @@ SfComboBox comboBox = new SfComboBox
 Searches for items containing the specific text anywhere in the value. The first matching item is highlighted in the dropdown.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="True"
                     TextSearchMode="Contains"
@@ -188,7 +188,7 @@ SfComboBox comboBox = new SfComboBox
 Instead of displaying suggestions on every character entry, matches can be filtered and displayed after a few character entries using the `MinimumPrefixCharacters` property. The default value is `1`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsFilteringEnabled="True"
                     IsEditable="True"
@@ -256,7 +256,7 @@ SfComboBox comboBox = new SfComboBox
    ```
 
 3. **Combine with filtering for real-time results**
-   ```xml
+   ```xaml
    <editors:SfComboBox IsFilteringEnabled="True"
                        IsEditable="True"
                        TextSearchMode="StartsWith"
@@ -289,7 +289,7 @@ comboBox.TextMemberPath = "Code";    // Search by code when typing
 ```
 
 **Search Different Property than Display:**
-```xml
+```xaml
 <!-- Display employee name, but allow searching by employee ID -->
 <editors:SfComboBox IsEditable="True"
                     DisplayMemberPath="Name"
@@ -318,7 +318,7 @@ comboBox.IsFilteringEnabled = true;
 
 ### Code-Based Search with Name Display
 
-```xml
+```xaml
 <editors:SfComboBox IsEditable="True"
                     DisplayMemberPath="ProductName"
                     TextMemberPath="ProductCode"
@@ -350,7 +350,7 @@ public async Task<object?> GetMatchingIndexes(SfComboBox source, ComboBoxFilterI
 
 ### Progressive Search (Minimum Characters)
 
-```xml
+```xaml
 <!-- Wait for 3 characters before searching -->
 <editors:SfComboBox IsEditable="True"
                     IsFilteringEnabled="True"
@@ -362,7 +362,7 @@ public async Task<object?> GetMatchingIndexes(SfComboBox source, ComboBoxFilterI
 
 ### Auto-Complete with StartsWith
 
-```xml
+```xaml
 <editors:SfComboBox IsEditable="True"
                     TextSearchMode="StartsWith"
                     ItemsSource="{Binding Countries}"

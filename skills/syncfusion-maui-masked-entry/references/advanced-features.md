@@ -42,7 +42,7 @@ maskedEntry.Culture = new CultureInfo("ja-JP");
 
 **US Culture (en-US):**
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="Simple"
     Mask="$ 0,000.00"
@@ -207,7 +207,7 @@ public partial class LocalizedFormPage : ContentPage
 
 Mask entered characters for password security:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="RegEx"
     Mask="\w+"
@@ -237,7 +237,7 @@ var passwordEntry = new SfMaskedEntry
 
 Show the last typed character briefly before masking:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="RegEx"
     Mask="\w+"
@@ -324,7 +324,7 @@ var ssnEntry = new SfMaskedEntry
 
 Hide prompt characters when the control loses focus for a cleaner appearance:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     Mask="00/00/0000"
     PromptChar="#"
@@ -365,7 +365,7 @@ Create modern, translucent glass-like designs with the Liquid Glass Effect (requ
 
 #### Step 1: Wrap in SfGlassEffectView
 
-```xml
+```xaml
 <Grid>
     <!-- Background image -->
     <Image Source="wallpaper.png" Aspect="AspectFill" />
@@ -446,7 +446,7 @@ public enum LiquidGlassEffectType
 
 ### Complete Liquid Glass Example
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
@@ -701,7 +701,7 @@ maskedEntry.Placeholder = "Enter 10-digit phone number";
 
 Masked Entry inherits MAUI's RTL support:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     FlowDirection="RightToLeft"
     Mask="00/00/0000" />

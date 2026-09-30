@@ -31,7 +31,7 @@ PolarLineSeries displays data points connected by line segments in a circular la
 ### Basic Implementation
 
 **XAML:**
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.PrimaryAxis>
         <chart:CategoryAxis/>
@@ -105,7 +105,7 @@ PolarAreaSeries displays data as a filled area, making it easy to see the magnit
 ### Basic Implementation
 
 **XAML:**
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.PrimaryAxis>
         <chart:CategoryAxis/>
@@ -188,7 +188,7 @@ chart.GridLineType = PolarChartGridLineType.Circle;
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:SfPolarChart GridLineType="Circle">
     <!-- Series here -->
 </chart:SfPolarChart>
@@ -209,7 +209,7 @@ chart.GridLineType = PolarChartGridLineType.Polygon;
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:SfPolarChart GridLineType="Polygon">
     <!-- Series here -->
 </chart:SfPolarChart>
@@ -257,7 +257,7 @@ PolarLineSeries series = new PolarLineSeries
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:PolarLineSeries ItemsSource="{Binding Data}" 
                        XBindingPath="Direction" 
                        YBindingPath="Value"
@@ -284,7 +284,7 @@ PolarLineSeries series = new PolarLineSeries
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:PolarLineSeries ItemsSource="{Binding Data}" 
                        XBindingPath="Direction" 
                        YBindingPath="Value"
@@ -303,7 +303,7 @@ Polar charts can display multiple series simultaneously, ideal for comparisons.
 ### Overlaying Multiple Series
 
 **XAML:**
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.PrimaryAxis>
         <chart:CategoryAxis/>

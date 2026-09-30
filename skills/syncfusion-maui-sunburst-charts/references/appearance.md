@@ -14,7 +14,7 @@ Control the arc span of the sunburst chart by adjusting the start and end angles
 - **Default**: StartAngle = 0, EndAngle = 360 (full circle)
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}" 
                           StartAngle="180"
                           EndAngle="360"
@@ -40,27 +40,27 @@ this.Content = sunburst;
 ### Common Angle Configurations
 
 **Semi-circle (Bottom Half):**
-```xml
+```xaml
 <sunburst:SfSunburstChart StartAngle="180" EndAngle="360">
 ```
 
 **Semi-circle (Top Half):**
-```xml
+```xaml
 <sunburst:SfSunburstChart StartAngle="0" EndAngle="180">
 ```
 
 **Three-quarter Circle:**
-```xml
+```xaml
 <sunburst:SfSunburstChart StartAngle="0" EndAngle="270">
 ```
 
 **Quarter Circle:**
-```xml
+```xaml
 <sunburst:SfSunburstChart StartAngle="0" EndAngle="90">
 ```
 
 **Right Semi-circle:**
-```xml
+```xaml
 <sunburst:SfSunburstChart StartAngle="270" EndAngle="90">
 ```
 
@@ -81,7 +81,7 @@ Control the overall size of the sunburst chart with the Radius property.
 - **Default**: 0.9
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           Radius="0.7"
                           ValueMemberPath="EmployeesCount">
@@ -125,7 +125,7 @@ Create a donut-style sunburst chart by adjusting the inner radius. This creates 
 - **Default**: 0.4 (approximately, creates a visible center)
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           InnerRadius="0.4"
                           ValueMemberPath="EmployeesCount">
@@ -149,25 +149,25 @@ this.Content = sunburst;
 ### Inner Radius Styles
 
 **Small Center Hole (0.2-0.3):**
-```xml
+```xaml
 <sunburst:SfSunburstChart InnerRadius="0.25">
 <!-- Minimal center, emphasizes hierarchical rings -->
 ```
 
 **Medium Center Hole (0.4-0.5):**
-```xml
+```xaml
 <sunburst:SfSunburstChart InnerRadius="0.45">
 <!-- Balanced donut style, room for center content -->
 ```
 
 **Large Center Hole (0.6-0.7):**
-```xml
+```xaml
 <sunburst:SfSunburstChart InnerRadius="0.65">
 <!-- Prominent center, thin rings -->
 ```
 
 **No Center Hole (0):**
-```xml
+```xaml
 <sunburst:SfSunburstChart InnerRadius="0">
 <!-- Full pie style, no hollow center -->
 ```
@@ -190,7 +190,7 @@ Add visual separation between segments using stroke color and width.
 - **Default**: Stroke = null (no border), StrokeWidth = 0
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}" 
                           Stroke="Black"
                           StrokeWidth="2"
@@ -216,25 +216,25 @@ this.Content = sunburst;
 ### Stroke Styling Options
 
 **Subtle Separation:**
-```xml
+```xaml
 <sunburst:SfSunburstChart Stroke="LightGray" StrokeWidth="1">
 <!-- Gentle borders for clean look -->
 ```
 
 **Bold Separation:**
-```xml
+```xaml
 <sunburst:SfSunburstChart Stroke="Black" StrokeWidth="3">
 <!-- Strong borders for high contrast -->
 ```
 
 **White Borders (Dark Background):**
-```xml
+```xaml
 <sunburst:SfSunburstChart Stroke="White" StrokeWidth="2">
 <!-- Crisp separation on dark themes -->
 ```
 
 **Transparent (No Borders):**
-```xml
+```xaml
 <sunburst:SfSunburstChart Stroke="Transparent" StrokeWidth="0">
 <!-- Seamless segments without borders -->
 ```
@@ -249,7 +249,7 @@ this.Content = sunburst;
 
 ### Example 1: Dashboard Semi-Circle Widget
 
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           StartAngle="180" EndAngle="360"
                           Radius="0.8"
@@ -267,7 +267,7 @@ Creates a bottom semi-circle with large center hole and white borders.
 
 ### Example 2: Compact Inline Visualization
 
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           Radius="0.6"
                           InnerRadius="0.3"
@@ -284,7 +284,7 @@ Small, subtle chart suitable for embedding in content.
 
 ### Example 3: Full-Featured Display
 
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           StartAngle="0" EndAngle="360"
                           Radius="0.9"
@@ -303,7 +303,7 @@ Full circle with prominent display and clear segment separation.
 
 ### Example 4: Minimal Clean Style
 
-```xml
+```xaml
 <sunburst:SfSunburstChart ItemsSource="{Binding DataSource}"
                           Radius="0.85"
                           InnerRadius="0.4"
@@ -359,27 +359,27 @@ Clean, borderless design with smooth color transitions.
 ## Common Patterns
 
 ### Pattern: Emphasize Center Content
-```xml
+```xaml
 <sunburst:SfSunburstChart InnerRadius="0.65" Radius="0.85">
 ```
 
 ### Pattern: Maximize Data Display
-```xml
+```xaml
 <sunburst:SfSunburstChart InnerRadius="0.25" Radius="0.95">
 ```
 
 ### Pattern: Clean Modern Look
-```xml
+```xaml
 <sunburst:SfSunburstChart Stroke="Transparent" StrokeWidth="0">
 ```
 
 ### Pattern: High Definition Separation
-```xml
+```xaml
 <sunburst:SfSunburstChart Stroke="White" StrokeWidth="3">
 ```
 
 ### Pattern: Compact Dashboard Widget
-```xml
+```xaml
 <sunburst:SfSunburstChart StartAngle="180" EndAngle="360" Radius="0.7" InnerRadius="0.5">
 ```
 

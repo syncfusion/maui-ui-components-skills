@@ -35,7 +35,7 @@ The .NET MAUI Scheduler provides comprehensive date navigation and restriction c
 
 Navigate to specific dates using the `DisplayDate` property:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        View="Week"
                        DisplayDate="{Binding SelectedDisplayDate}">
@@ -61,7 +61,7 @@ scheduler.DisplayDate = new DateTime(2026, 4, 15, 10, 0, 0);
 
 Navigate to the next immediate date/period:
 
-```xml
+```xaml
 <Grid>
     <Grid.RowDefinitions>
         <RowDefinition/>
@@ -110,7 +110,7 @@ private void OnBackwardClicked(object sender, EventArgs e)
 
 Programmatically select dates using `SelectedDate`:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        View="Week"
                        SelectedDate="{Binding SelectedDate}">
@@ -131,7 +131,7 @@ scheduler.SelectedDate = new DateTime(2026, 4, 15, 14, 0, 0);
 
 Enable quick navigation to Day or Timeline Day view by tapping on month cells or view headers:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        View="Month"
                        AllowViewNavigation="true">
@@ -149,11 +149,33 @@ scheduler.AllowViewNavigation = true;
 
 **Not applicable for:** Day and Timeline Day views (already most detailed views)
 
+### Enable or Disable Swipe Navigation
+
+Control whether users can navigate between dates using swipe-based interactions:
+
+```xaml
+<scheduler:SfScheduler x:Name="scheduler" 
+                       View="Week"
+                       EnableSwipeNavigation="false">
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.EnableSwipeNavigation = false;
+```
+
+**Default:** `true`
+
+**Behavior:**
+- `true`: enables swipe gestures and header navigation interactions
+- `false`: disables swipe-based navigation interactions
+
 ## Date Picker
 
 Enable date picker in header for quick date selection:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        View="Week"
                        ShowDatePickerButton="true">
@@ -175,7 +197,7 @@ scheduler.ShowDatePickerButton = true;
 
 Configure which views users can switch between:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        View="Week"
                        AllowedViews="Day,Week,WorkWeek,Month,TimelineDay,TimelineWeek,TimelineWorkWeek,TimelineMonth">
@@ -210,7 +232,7 @@ scheduler.AllowedViews = SchedulerViews.Day |
 
 Control visibility of view switching buttons:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        AllowedViews="Day,Week,Month"
                        ShowAllowedViews="false">
@@ -233,7 +255,7 @@ scheduler.ShowAllowedViews = false; // Hide view buttons
 
 Restrict backward navigation and disable dates before minimum:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        View="Month"
                        MinimumDateTime="{Binding MinDate}">
@@ -259,7 +281,7 @@ scheduler.MinimumDateTime = new DateTime(DateTime.Today.Year, 1, 1);
 
 Restrict forward navigation and disable dates after maximum:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        View="Month"
                        MaximumDateTime="{Binding MaxDate}">
@@ -341,7 +363,7 @@ scheduler.SelectableDayPredicate = (date) =>
 
 Customize appearance of disabled dates:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler"
                        DisabledDateBackground="LightGray">
     <scheduler:SfScheduler.DisabledDateTextStyle>
@@ -377,7 +399,7 @@ scheduler.DisabledDateBackground = Colors.LightGray;
 
 Customize header height:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" View="Week">
     <scheduler:SfScheduler.HeaderView>
         <scheduler:SchedulerHeaderView Height="100"/>
@@ -395,7 +417,7 @@ scheduler.HeaderView.Height = 100;
 
 Customize date format displayed in header:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" View="Week">
     <scheduler:SfScheduler.HeaderView>
         <scheduler:SchedulerHeaderView TextFormat="MMM yy"/>
@@ -416,7 +438,7 @@ scheduler.HeaderView.TextFormat = "ddd, MMM dd";    // Mon, Jan 15
 
 Customize header background and text style:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" View="Week">
     <scheduler:SfScheduler.HeaderView>
         <scheduler:SchedulerHeaderView Background="LightGreen">
@@ -447,7 +469,7 @@ scheduler.HeaderView.TextStyle = new SchedulerTextStyle()
 
 Create fully custom header layouts:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" View="Week">
     <scheduler:SfScheduler.HeaderView>
         <scheduler:SchedulerHeaderView>
@@ -493,7 +515,7 @@ Create fully custom header layouts:
 
 Choose header template dynamically based on conditions:
 
-```xml
+```xaml
 <Grid>
     <Grid.Resources>
         <!-- Today template (highlighted) -->
@@ -625,7 +647,7 @@ public class BusinessScheduler : ContentPage
 
 ### Example 2: Healthcare Appointment Scheduler
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        View="Day"
                        ShowDatePickerButton="true"

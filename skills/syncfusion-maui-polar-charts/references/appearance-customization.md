@@ -4,6 +4,8 @@
 - [Overview](#overview)
 - [Default Palette](#default-palette)
 - [Custom Palette Brushes](#custom-palette-brushes)
+- [Point Color Path](#point-color-path)
+- [Listen Property Change](#listen-property-change)
 - [Gradient Brushes](#gradient-brushes)
 - [Series-Specific Styling](#series-specific-styling)
 - [Plotting Area Customization](#plotting-area-customization)
@@ -23,7 +25,7 @@ Customize polar chart appearance using:
 
 Syncfusion applies default brushes to series automatically:
 
-```xml
+```xaml
 <chart:SfPolarChart>
     <!-- Series automatically get colors from default palette -->
     <chart:PolarLineSeries ItemsSource="{Binding Data1}" 
@@ -58,7 +60,7 @@ chart.PaletteBrushes = customBrushes;
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:SfPolarChart x:Name="chart" PaletteBrushes="{Binding CustomBrushes}">
     <!-- Series -->
 </chart:SfPolarChart>
@@ -125,6 +127,126 @@ gradients.Add(gradient3);
 chart.PaletteBrushes = gradients;
 ```
 
+## Point Color Path
+
+Use `PointColorPath` to assign a different color to each point by binding a color field from the data source. This is useful when you want point colors to come directly from the model rather than relying on the chart palette.
+
+```csharp
+public class PointColorViewModel
+{
+    public ObservableCollection<Model> Data { get; set; }
+
+    public PointColorViewModel()
+    {
+        Data = new ObservableCollection<Model>
+        {
+            new() { XValue = "North", YValue = 80, PointColor = Color.FromArgb("#cbb4e0") },
+            new() { XValue = "NorthEast", YValue = 85, PointColor = Color.FromArgb("#ab80d8") },
+            new() { XValue = "East", YValue = 78, PointColor = Color.FromArgb("#8238c2") },
+            new() { XValue = "SouthEast", YValue = 90, PointColor = Color.FromArgb("#5f209d") },
+            new() { XValue = "South", YValue = 78, PointColor = Color.FromArgb("#441372") },
+            new() { XValue = "SouthWest", YValue = 83, PointColor = Color.FromArgb("#a256de") },
+            new() { XValue = "West", YValue = 79, PointColor = Color.FromArgb("#ba93df") },
+            new() { XValue = "NorthWest", YValue = 88, PointColor = Color.FromArgb("#e1aeff") }
+        };
+    }
+}
+
+public class Model
+{
+    public string? XValue { get; set; }
+    public double YValue { get; set; }
+    public Color? PointColor { get; set; }
+}
+```
+
+**XAML:**
+```xaml
+<chart:SfPolarChart>
+    <chart:PolarLineSeries ItemsSource="{Binding Data}"
+                           XBindingPath="XValue"
+                           YBindingPath="YValue"
+                           PointColorPath="PointColor"/>
+</chart:SfPolarChart>
+```
+
+**C#:**
+```csharp
+SfPolarChart chart = new SfPolarChart();
+
+PolarLineSeries series = new PolarLineSeries
+{
+    ItemsSource = new PointColorViewModel().Data,
+    XBindingPath = "XValue",
+    YBindingPath = "YValue",
+    PointColorPath = "PointColor"
+};
+
+chart.Series.Add(series);
+```
+
+> The property is not applicable to `PolarAreaSeries`.
+>
+> Color precedence is: `Fill` > `PointColorPath` > `PaletteBrushes`.
+
+## Listen Property Change
+
+Use `ListenPropertyChange` when your data model implements `INotifyPropertyChanged` and you want the polar chart to refresh automatically as values change. This is helpful for real-time data updates or interactive dashboards.
+
+**XAML:**
+```xaml
+<chart:SfPolarChart>
+    <chart:PolarLineSeries ItemsSource="{Binding Data}"
+                           XBindingPath="XValue"
+                           YBindingPath="YValue"
+                           ListenPropertyChange="True"/>
+</chart:SfPolarChart>
+```
+
+**C#:**
+```csharp
+public class DataModel : INotifyPropertyChanged
+{
+    private string xValue;
+    private double yValue;
+
+    public string XValue
+    {
+        get => xValue;
+        set
+        {
+            if (xValue != value)
+            {
+                xValue = value;
+                OnPropertyChanged(nameof(XValue));
+            }
+        }
+    }
+
+    public double YValue
+    {
+        get => yValue;
+        set
+        {
+            if (yValue != value)
+            {
+                yValue = value;
+                OnPropertyChanged(nameof(YValue));
+            }
+        }
+    }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    protected void OnPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
+```
+
+> Enable `ListenPropertyChange` only when you need dynamic updates. With a large number of points, it can add overhead because each object registers a `PropertyChanged` listener.
+
 ## Series-Specific Styling
 
 ### PolarLineSeries Styling
@@ -178,7 +300,7 @@ Add custom views to the chart plot area:
 
 ### Watermark
 
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.PlotAreaBackgroundView>
         <AbsoluteLayout>
@@ -198,7 +320,7 @@ Add custom views to the chart plot area:
 
 ### Copyright Notice
 
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.PlotAreaBackgroundView>
         <AbsoluteLayout>
@@ -214,7 +336,7 @@ Add custom views to the chart plot area:
 
 ### Background Gradient
 
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.PlotAreaBackgroundView>
         <Grid>
@@ -237,7 +359,7 @@ Modern glassy appearance for iOS and macOS (.NET 10+).
 
 Wrap chart in `SfGlassEffectView`:
 
-```xml
+```xaml
 <core:SfGlassEffectView CornerRadius="20"
                         Padding="12"
                         EffectType="Regular"
@@ -270,7 +392,7 @@ chart.EnableLiquidGlassEffect = true;
 ```
 
 **XAML:**
-```xml
+```xaml
 <chart:SfPolarChart EnableLiquidGlassEffect="True">
     <chart:SfPolarChart.TooltipBehavior>
         <chart:ChartTooltipBehavior/>
@@ -401,7 +523,7 @@ series.Opacity = 1.0;
 **Problem:** PlotAreaBackgroundView set but not visible.
 
 **Solution:**
-```xml
+```xaml
 <!-- Ensure view has size -->
 <chart:SfPolarChart.PlotAreaBackgroundView>
     <Grid HeightRequest="400" WidthRequest="400">

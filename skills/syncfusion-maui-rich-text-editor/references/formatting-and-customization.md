@@ -30,7 +30,7 @@ Customize the visual appearance of the editor content area.
 
 ### XAML Configuration
 
-```xml
+```xaml
 <rte:SfRichTextEditor EditorBackgroundColor="LightYellow"
                       BorderColor="SlateGray"
                       BorderThickness="2"
@@ -122,7 +122,7 @@ richTextEditor.ToggleSuperscript();
 
 ### Implementing Custom Formatting Buttons
 
-```xml
+```xaml
 <StackLayout Orientation="Horizontal" Spacing="5">
     <Button Text="B" FontAttributes="Bold" Clicked="OnBoldClicked" />
     <Button Text="I" FontAttributes="Italic" Clicked="OnItalicClicked" />
@@ -185,7 +185,7 @@ richTextEditor.ToggleNumberList();
 
 ### Custom List Buttons
 
-```xml
+```xaml
 <StackLayout Orientation="Horizontal" Spacing="5">
     <Button Text="• Bullets" Clicked="OnBulletsClicked" />
     <Button Text="1. Numbers" Clicked="OnNumbersClicked" />
@@ -239,7 +239,7 @@ richTextEditor.AlignJustify();
 
 ### Custom Alignment UI
 
-```xml
+```xaml
 <StackLayout Orientation="Horizontal" Spacing="5">
     <Button Text="⬅" Clicked="OnAlignLeftClicked" />
     <Button Text="⬌" Clicked="OnAlignCenterClicked" />
@@ -328,7 +328,7 @@ richTextEditor.ApplyHighlightColor(Colors.Transparent);
 
 ### Custom Font Picker
 
-```xml
+```xaml
 <Picker x:Name="fontPicker" 
         Title="Select Font"
         SelectedIndexChanged="OnFontSelected">
@@ -357,7 +357,7 @@ private void OnFontSelected(object sender, EventArgs e)
 
 ### Custom Color Picker
 
-```xml
+```xaml
 <StackLayout Orientation="Horizontal" Spacing="5">
     <Button BackgroundColor="Red" WidthRequest="40" HeightRequest="40" 
             Clicked="OnRedClicked" />
@@ -418,7 +418,7 @@ richTextEditor.ApplyParagraphFormat(RichTextEditorParagraphFormat.Normal);
 
 ### Custom Heading Picker
 
-```xml
+```xaml
 <Picker x:Name="headingPicker" 
         Title="Paragraph Style"
         SelectedIndexChanged="OnHeadingSelected">
@@ -479,7 +479,7 @@ richTextEditor.DecreaseIndent();
 
 ### Custom Indentation Buttons
 
-```xml
+```xaml
 <StackLayout Orientation="Horizontal" Spacing="5">
     <Button Text="← Outdent" Clicked="OnOutdentClicked" />
     <Button Text="Indent →" Clicked="OnIndentClicked" />
@@ -525,7 +525,7 @@ Set default styling for newly typed text.
 
 ### XAML Configuration
 
-```xml
+```xaml
 <rte:SfRichTextEditor DefaultFontFamily="Arial"
                       DefaultFontSize="14"
                       DefaultTextColor="Black" />

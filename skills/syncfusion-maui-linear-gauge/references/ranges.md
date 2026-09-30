@@ -27,7 +27,7 @@ Ranges are visual elements that highlight specific value zones on the scale trac
 Create a simple range by specifying start and end values.
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge>
     <gauge:SfLinearGauge.Ranges>
         <gauge:LinearRange StartValue="20" EndValue="80"/>
@@ -64,7 +64,7 @@ Control range shape using width properties to create rectangles, trapezoids, or 
 ### Rectangle Range (Constant Width)
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearRange StartValue="0" 
                    EndValue="100" 
                    StartWidth="20"
@@ -85,7 +85,7 @@ gauge.Ranges.Add(new LinearRange
 ### Convex Range (Bulge Outward)
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearRange StartValue="0" 
                    EndValue="100"
                    StartWidth="10" 
@@ -110,7 +110,7 @@ gauge.Ranges.Add(new LinearRange
 For concave shapes, extend `LinearRange` and override `UpdateMidRangePath`:
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge>
     <gauge:SfLinearGauge.Ranges>
         <local:ConcaveLinearRange StartValue="0" 
@@ -146,7 +146,7 @@ gauge.Ranges.Add(new ConcaveLinearRange
 ### Tapered Range (Wedge Shape)
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearRange StartValue="0" 
                    EndValue="100"
                    StartWidth="5"
@@ -169,7 +169,7 @@ gauge.Ranges.Add(new LinearRange
 ### Solid Fill Color
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearRange StartValue="0" 
                    EndValue="100" 
                    Fill="#4CAF50"/>
@@ -190,7 +190,7 @@ gauge.Ranges.Add(new LinearRange
 Apply gradients using `GradientStops`:
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearRange StartValue="0" EndValue="100" StartWidth="30">
     <gauge:LinearRange.GradientStops>
         <gauge:GaugeGradientStop Value="0" Color="Red"/>
@@ -247,7 +247,7 @@ Position ranges relative to the scale track.
 **`Cross`** - Range crosses the scale
 
 **XAML:**
-```xml
+```xaml
 <!-- Outside (default) -->
 <gauge:LinearRange Position="Outside"/>
 
@@ -291,7 +291,7 @@ Add multiple ranges to create segmented visualizations.
 ### Three-Zone Performance Indicator
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge>
     <gauge:SfLinearGauge.Ranges>
         <!-- Red zone (0-33): Poor -->
@@ -402,7 +402,7 @@ gauge.Ranges.Add(new LinearRange
 Add custom content inside ranges using the `Child` property.
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge ShowLabels="False" ShowTicks="False">
     <gauge:SfLinearGauge.Ranges>
         
@@ -482,7 +482,7 @@ gauge.Ranges.Add(rangeWithIcon);
 Apply range colors to scale elements (track, labels, ticks) using `UseRangeColorForAxis`.
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge UseRangeColorForAxis="True">
     <gauge:SfLinearGauge.Ranges>
         <gauge:LinearRange StartValue="0" 
@@ -539,7 +539,7 @@ coloredAxisGauge.Ranges.Add(new LinearRange
 
 ### Pattern 1: Background Track for Progress
 
-```xml
+```xaml
 <gauge:SfLinearGauge ShowLabels="False" ShowTicks="False">
     <!-- Gray background range -->
     <gauge:SfLinearGauge.Ranges>
@@ -589,7 +589,7 @@ gauge.Ranges.Add(new LinearRange
 
 ### Pattern 3: Layered Ranges (Inside + Outside)
 
-```xml
+```xaml
 <gauge:SfLinearGauge>
     <!-- Outside background -->
     <gauge:SfLinearGauge.Ranges>

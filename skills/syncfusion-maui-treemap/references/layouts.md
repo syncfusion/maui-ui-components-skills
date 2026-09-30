@@ -64,7 +64,7 @@ The Squarified layout is the default and most commonly used layout. It creates s
 
 ### XAML Implementation
 
-```xml
+```xaml
 <treemap:SfTreeMap x:Name="treeMap"
                    DataSource="{Binding PopulationDetails}"
                    LayoutType="Squarified"
@@ -133,7 +133,7 @@ The SliceAndDiceAuto layout automatically alternates between horizontal and vert
 
 ### XAML Implementation
 
-```xml
+```xaml
 <treemap:SfTreeMap x:Name="treeMap"
                    DataSource="{Binding PopulationDetails}"
                    LayoutType="SliceAndDiceAuto"
@@ -201,7 +201,7 @@ The SliceAndDiceHorizontal layout arranges all rectangles horizontally in rows. 
 
 ### XAML Implementation
 
-```xml
+```xaml
 <treemap:SfTreeMap x:Name="treeMap"
                    DataSource="{Binding PopulationDetails}"
                    LayoutType="SliceAndDiceHorizontal"
@@ -274,7 +274,7 @@ public class SalesViewModel
 }
 ```
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Sales}"
                    LayoutType="SliceAndDiceHorizontal"
                    PrimaryValuePath="Revenue">
@@ -308,7 +308,7 @@ The SliceAndDiceVertical layout arranges all rectangles vertically in columns. E
 
 ### XAML Implementation
 
-```xml
+```xaml
 <treemap:SfTreeMap x:Name="treeMap"
                    DataSource="{Binding PopulationDetails}"
                    LayoutType="SliceAndDiceVertical"
@@ -390,7 +390,7 @@ You can change the layout at runtime based on user preferences, screen orientati
 
 ### Using Picker Control
 
-```xml
+```xaml
 <StackLayout>
     <Picker x:Name="layoutPicker"
             Title="Select Layout"
@@ -461,7 +461,7 @@ When using multiple levels (GroupPath), the layout applies recursively to each l
 
 ### Squarified with Levels
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding PopulationDetails}"
                    LayoutType="Squarified"
                    PrimaryValuePath="Population">
@@ -479,7 +479,7 @@ Each continent group uses Squarified layout, and within each continent, countrie
 
 ### SliceAndDiceHorizontal with Levels
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding SalesData}"
                    LayoutType="SliceAndDiceHorizontal"
                    PrimaryValuePath="Revenue">
@@ -541,7 +541,7 @@ treeMap.DataSource = filteredData;
 - Show labels only for larger items
 - Use tooltips for full text
 
-```xml
+```xaml
 <treemap:SfTreeMap.LeafItemSettings>
     <treemap:TreeMapLeafItemSettings LabelPath="Country"
                                      OverflowMode="Trim">

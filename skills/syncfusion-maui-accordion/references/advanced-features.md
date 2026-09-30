@@ -20,7 +20,7 @@ Scrolls the minimum amount needed to bring the item into view. If the item is al
 - Minimize disorientation from excessive scrolling
 - Short accordion items that fit in viewport
 
-```xml
+```xaml
 <syncfusion:SfAccordion AutoScrollPosition="MakeVisible">
     <syncfusion:SfAccordion.Items>
         <!-- Items -->
@@ -41,7 +41,7 @@ Always scrolls the expanded item to the top of the viewport, providing a consist
 - Forms or sections where users need to start reading from the top
 - Predictable, consistent user experience
 
-```xml
+```xaml
 <syncfusion:SfAccordion AutoScrollPosition="Top">
     <syncfusion:SfAccordion.Items>
         <!-- Items -->
@@ -54,7 +54,7 @@ accordion.AutoScrollPosition = AccordionAutoScrollPosition.Top;
 ```
 
 **Example: FAQ with Long Answers**
-```xml
+```xaml
 <syncfusion:SfAccordion AutoScrollPosition="Top">
     <syncfusion:SfAccordion.Items>
         <syncfusion:AccordionItem>
@@ -116,7 +116,7 @@ private void ValidateForm()
 ```
 
 **2. Jump to Section Button:**
-```xml
+```xaml
 <StackLayout>
     <HorizontalStackLayout Spacing="8" Padding="16">
         <Button Text="Jump to Section 1" Clicked="JumpToSection1_Clicked" />
@@ -198,7 +198,7 @@ The Liquid Glass Effect introduces a modern, translucent design with adaptive co
 
 ### Step 1: Wrap Inside SfGlassEffectView
 
-```xml
+```xaml
 <core:SfGlassEffectView EffectType="Regular" CornerRadius="20">
     <syncfusion:SfAccordion Background="Transparent" 
                             EnableLiquidGlassEffect="True">
@@ -217,7 +217,7 @@ Set `Background="Transparent"` to achieve the glass-like effect.
 
 ### Complete Example
 
-```xml
+```xaml
 <Grid>
     <!-- Background gradient for glass effect -->
     <Grid.Background>
@@ -318,7 +318,7 @@ if (DeviceInfo.Platform == DevicePlatform.iOS &&
 When using SfAccordion inside a Grid with `Height="Auto"`, child elements may not receive height changes at runtime.
 
 **Problem:**
-```xml
+```xaml
 <!-- ❌ May not size correctly -->
 <Grid>
     <Grid.RowDefinitions>
@@ -331,7 +331,7 @@ When using SfAccordion inside a Grid with `Height="Auto"`, child elements may no
 **Solution:**
 Set `HorizontalOptions` and `VerticalOptions` to `FillAndExpand`:
 
-```xml
+```xaml
 <!-- ✅ Correct -->
 <Grid>
     <Grid.RowDefinitions>
@@ -349,7 +349,7 @@ The SfAccordion is a template-based control, so its default height cannot be det
 ### Layout Best Practices
 
 **1. Use Star-Sized Rows When Possible:**
-```xml
+```xaml
 <Grid>
     <Grid.RowDefinitions>
         <RowDefinition Height="*"/> <!-- Better for Accordion -->
@@ -359,19 +359,19 @@ The SfAccordion is a template-based control, so its default height cannot be det
 ```
 
 **2. Specify Minimum Height:**
-```xml
+```xaml
 <syncfusion:SfAccordion MinimumHeightRequest="300" />
 ```
 
 **3. Use ScrollView for Long Content:**
-```xml
+```xaml
 <ScrollView>
     <syncfusion:SfAccordion />
 </ScrollView>
 ```
 
 **4. Avoid Nested Auto Heights:**
-```xml
+```xaml
 <!-- ❌ Avoid -->
 <Grid RowDefinitions="Auto">
     <StackLayout>

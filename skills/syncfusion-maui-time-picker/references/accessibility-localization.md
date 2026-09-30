@@ -15,7 +15,7 @@ The TimePicker control is designed with accessibility in mind, ensuring all user
 
 ### Semantic Properties
 
-```xml
+```xaml
 <picker:SfTimePicker 
     SemanticProperties.Description="Select appointment time"
     SemanticProperties.Hint="Choose a time between 9 AM and 5 PM"
@@ -36,7 +36,7 @@ var timePicker = new SfTimePicker
 
 ### Accessible Labels
 
-```xml
+```xaml
 <StackLayout>
     <Label 
         Text="Meeting Time"
@@ -59,7 +59,7 @@ The TimePicker meets WCAG 2.1 Level AA standards for accessibility:
 
 Ensure text and background colors meet minimum contrast ratios:
 
-```xml
+```xaml
 <!-- High contrast theme for accessibility -->
 <picker:SfTimePicker>
     <picker:SfTimePicker.HeaderView>
@@ -103,7 +103,7 @@ The TimePicker works seamlessly with screen readers like TalkBack (Android) and 
 
 ### Configuring for Screen Readers
 
-```xml
+```xaml
 <picker:SfTimePicker 
     AutomationId="AppointmentTimePicker"
     SemanticProperties.Description="Appointment time selector"
@@ -128,7 +128,7 @@ var timePicker = new SfTimePicker
 
 ### Accessible Header and Footer
 
-```xml
+```xaml
 <picker:SfTimePicker>
     <picker:SfTimePicker.HeaderView>
         <picker:PickerHeaderView 
@@ -210,7 +210,7 @@ public partial class App : Application
 **Step 1:** Create a resource file for each language (e.g., `SfPickerResources.resx`, `SfPickerResources.es.resx`):
 
 **SfPickerResources.resx** (English - default):
-```xml
+```xaml
 <data name="OK" xml:space="preserve">
     <value>OK</value>
 </data>
@@ -220,7 +220,7 @@ public partial class App : Application
 ```
 
 **SfPickerResources.es.resx** (Spanish):
-```xml
+```xaml
 <data name="OK" xml:space="preserve">
     <value>Aceptar</value>
 </data>
@@ -244,7 +244,7 @@ SfPickerResources.ResourceManager = new ResourceManager(
 
 ### Localized TimePicker Example
 
-```xml
+```xaml
 <picker:SfTimePicker 
     Format="HH_mm"
     SelectedTime="15:30:00">
@@ -421,7 +421,7 @@ The TimePicker supports Right-to-Left (RTL) languages like Arabic and Hebrew.
 
 ### Enabling RTL
 
-```xml
+```xaml
 <ContentPage xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
              FlowDirection="RightToLeft">
     

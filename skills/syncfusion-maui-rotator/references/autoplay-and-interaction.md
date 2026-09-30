@@ -31,7 +31,7 @@ Automatically advances through rotator items at specified intervals.
 ### Basic Autoplay
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       EnableAutoPlay="True"
                       NavigationDelay="3000"
@@ -52,7 +52,7 @@ rotator.NavigationDelay = 3000; // 3 seconds
 
 ### Complete Autoplay Example
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -135,7 +135,7 @@ Specifies the delay (in milliseconds) between automatic item transitions when En
 ### Setting Navigation Delay
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator NavigationDelay="5000"
                       EnableAutoPlay="True"
                       ItemsSource="{Binding ImageCollection}">
@@ -151,7 +151,7 @@ rotator.EnableAutoPlay = true;
 
 ### Complete Example with Custom Delay
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -210,7 +210,7 @@ Enables infinite scrolling from the last item back to the first (and vice versa)
 ### Basic Looping
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator EnableLooping="True"
                       EnableAutoPlay="True"
                       NavigationDelay="3000"
@@ -228,7 +228,7 @@ rotator.NavigationDelay = 3000;
 
 ### Complete Looping Example
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -318,7 +318,7 @@ Controls whether users can swipe/drag to navigate between items.
 Useful for auto-only navigation or restricted interaction.
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       EnableSwiping="False"
                       EnableAutoPlay="True"
@@ -341,7 +341,7 @@ rotator.EnableAutoPlay = true;
 
 ### Complete Example - Auto-Only Navigation
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -410,7 +410,7 @@ Programmatically selects a specific item by its zero-based index.
 ### Setting Initial Selection
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       SelectedIndex="2"
                       HeightRequest="400">
@@ -467,7 +467,7 @@ public partial class MainPage : ContentPage
 
 ### Binding SelectedIndex
 
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                       SelectedIndex="{Binding CurrentIndex, Mode=TwoWay}"
                       HeightRequest="400">
@@ -499,7 +499,7 @@ public class RotatorViewModel : INotifyPropertyChanged
 
 ### Example 1: Auto-Advancing Banner
 
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding Banners}"
                       EnableAutoPlay="True"
                       NavigationDelay="5000"
@@ -522,7 +522,7 @@ public class RotatorViewModel : INotifyPropertyChanged
 
 ### Example 2: User-Controlled Gallery
 
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding Photos}"
                       EnableSwiping="True"
                       EnableAutoPlay="False"

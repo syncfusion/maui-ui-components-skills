@@ -43,7 +43,7 @@ dotnet add package Syncfusion.Maui.Toolbar
 
 **Verify Installation:**
 Check your `.csproj` file to confirm the package reference:
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.Toolbar" Version="*" />
 </ItemGroup>

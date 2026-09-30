@@ -23,7 +23,7 @@ The Picker control supports interaction with:
 The Picker's header text is accessible to screen readers and assistive technologies.
 
 **Implementation:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.HeaderView>
         <picker:PickerHeaderView Text="Select City" Height="40" />
@@ -41,7 +41,7 @@ The Picker's header text is accessible to screen readers and assistive technolog
 Column headers provide descriptive labels for each data column.
 
 **Implementation:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.Columns>
         <picker:PickerColumn HeaderText="Country" 
@@ -66,7 +66,7 @@ Column headers provide descriptive labels for each data column.
 Footer buttons (OK and Cancel) are fully accessible.
 
 **Implementation:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.FooterView>
         <picker:PickerFooterView ShowOkButton="True"
@@ -128,7 +128,7 @@ The Picker supports comprehensive keyboard navigation for users who cannot or pr
 
 ### Example: Full Keyboard Navigation
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  Mode="Dialog"
                  HeightRequest="300">
@@ -207,7 +207,7 @@ picker.Background = Color.FromArgb("#F5F5F5");
 
 Support multiple languages for global accessibility:
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.HeaderView>
         <picker:PickerHeaderView Text="{x:Static local:AppResources.SelectCity}" 
@@ -315,7 +315,7 @@ picker.HeaderView.TextStyle.FontSize = 16;
 
 ## Example: Fully Accessible Picker
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  Mode="Dialog"
                  HeightRequest="350"

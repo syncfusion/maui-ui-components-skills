@@ -25,7 +25,7 @@ Place standard MAUI layout elements inside `SfShimmer.CustomView`. The shimmer w
 
 ### XAML
 
-```xml
+```xaml
 <shimmer:SfShimmer>
     <shimmer:SfShimmer.CustomView>
         <Grid Padding="10" ColumnSpacing="15" RowSpacing="10">
@@ -79,7 +79,7 @@ Place standard MAUI layout elements inside `SfShimmer.CustomView`. The shimmer w
 
 ### XAML
 
-```xml
+```xaml
 <shimmer:SfShimmer>
     <shimmer:SfShimmer.CustomView>
         <Grid Padding="10" ColumnSpacing="15" RowSpacing="10">
@@ -186,7 +186,7 @@ this.Content = shimmer;
 
 A card-style shimmer mimicking a user profile with header text, avatar, and detail lines:
 
-```xml
+```xaml
 <shimmer:SfShimmer VerticalOptions="Fill">
     <shimmer:SfShimmer.CustomView>
         <Grid Padding="16" RowSpacing="12" ColumnSpacing="12">

@@ -124,7 +124,7 @@ Import the namespace and initialize the control.
 
 ### XAML
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
@@ -163,7 +163,7 @@ The Expander consists of two main parts:
 
 ### XAML Example
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
@@ -242,7 +242,7 @@ public partial class MainPage : ContentPage
 
 **Do NOT load Label as a direct child of Header or Content** - this will cause an exception.
 
-```xml
+```xaml
 <!-- ❌ WRONG - Will crash -->
 <syncfusion:SfExpander.Header>
     <Label Text="Header"/>
@@ -270,7 +270,7 @@ Press **F5** in Visual Studio or Rider to build and run the application. The exp
 
 A real-world example with multiple expanders showing invoice details:
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -413,7 +413,7 @@ Always wrap UI elements in a layout container (Grid, StackLayout, etc.) when pla
 ### Platform-Specific Styling
 
 Use `OnPlatform` markup extension for platform-specific values:
-```xml
+```xaml
 WidthRequest="{OnPlatform MacCatalyst=460,WinUI=340,Default=360}"
 ```
 

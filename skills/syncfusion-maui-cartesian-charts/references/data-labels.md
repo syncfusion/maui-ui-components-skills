@@ -6,6 +6,7 @@
 - [Label Template](#label-template)
 - [Label Positioning](#label-positioning)
 - [Label Styling](#label-styling)
+- [Data Label Tapped Event](#data-label-tapped-event)
 - [Data Labels in Release Mode](#data-labels-in-release-mode)
 - [Best Practices](#best-practices)
 
@@ -17,7 +18,7 @@ Data labels display values of data points directly on the chart, making it easie
 
 ### Enable Data Labels
 
-```xml
+```xaml
 <chart:LineSeries ItemsSource="{Binding Data}"
                  XBindingPath="Month"
                  YBindingPath="Value"
@@ -36,7 +37,7 @@ LineSeries series = new LineSeries()
 
 ### Multiple Series with Labels
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -64,7 +65,7 @@ LineSeries series = new LineSeries()
 
 ### Custom Label Template
 
-```xml
+```xaml
 <chart:LineSeries ItemsSource="{Binding Data}"
                  XBindingPath="Month"
                  YBindingPath="Value"
@@ -91,7 +92,7 @@ LineSeries series = new LineSeries()
 
 ### Advanced Template with Icon
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}"
                     XBindingPath="Category"
                     YBindingPath="Value"
@@ -128,7 +129,7 @@ LineSeries series = new LineSeries()
 
 ### Label Position
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}"
                     XBindingPath="Category"
                     YBindingPath="Value"
@@ -165,7 +166,7 @@ ColumnSeries series = new ColumnSeries()
 
 ### Label Alignment
 
-```xml
+```xaml
 <chart:LineSeries ItemsSource="{Binding Data}"
                  XBindingPath="Month"
                  YBindingPath="Value"
@@ -191,7 +192,7 @@ CartesianDataLabelSettings labelSettings = new CartesianDataLabelSettings()
 
 The alignment of data labels inside the series is defined by using the BarAlignment property. 
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}"
                  XBindingPath="Category"
                  YBindingPath="Value"
@@ -212,7 +213,7 @@ The alignment of data labels inside the series is defined by using the BarAlignm
 
 ### Basic Styling
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}"
                     XBindingPath="Category"
                     YBindingPath="Value"
@@ -225,7 +226,7 @@ The alignment of data labels inside the series is defined by using the BarAlignm
 
 Define style in resources:
 
-```xml
+```xaml
 <chart:SfCartesianChart.Resources>
     <chart:ChartDataLabelStyle x:Key="labelStyle"
                                TextColor="White"
@@ -239,7 +240,7 @@ Define style in resources:
 
 ### Complete Label Styling
 
-```xml
+```xaml
 <chart:LineSeries ItemsSource="{Binding Data}"
                  XBindingPath="Month"
                  YBindingPath="Value"
@@ -295,7 +296,7 @@ LineSeries series = new LineSeries()
 
 For pie-like arrangements or when labels are far from points:
 
-```xml
+```xaml
 <chart:LineSeries ItemsSource="{Binding Data}"
                  XBindingPath="Month"
                  YBindingPath="Value"
@@ -306,6 +307,47 @@ For pie-like arrangements or when labels are far from points:
     </chart:LineSeries.DataLabelSettings>
 </chart:LineSeries>
 ```
+## Data Label Tapped Event
+
+Use the `DataLabelTapped` event on `SfCartesianChart` to respond when a user taps a data label. The event args expose the associated series, data point index, data item, tap position, and optionally the segment.
+
+```xaml
+<chart:SfCartesianChart DataLabelTapped="OnDataLabelTapped">
+    <chart:SfCartesianChart.XAxes>
+        <chart:CategoryAxis/>
+    </chart:SfCartesianChart.XAxes>
+
+    <chart:SfCartesianChart.YAxes>
+        <chart:NumericalAxis/>
+    </chart:SfCartesianChart.YAxes>
+
+    <chart:ColumnSeries ItemsSource="{Binding Data}"
+                        XBindingPath="Category"
+                        YBindingPath="Value"
+                        ShowDataLabels="True"/>
+</chart:SfCartesianChart>
+```
+
+```csharp
+private void OnDataLabelTapped(object sender, DataLabelTappedEventArgs e)
+{
+    var series = e.Series;
+    var dataIndex = e.DataIndex;
+    var dataItem = e.DataItem;
+    var tapPosition = e.Position;
+    var segment = e.Segment;
+
+    string message = $"Series: {series}\n" +
+                     $"Data Item: {dataItem}\n" +
+                     $"Data Index: {dataIndex}\n" +
+                     $"Tap Location: ({tapPosition.X:F0}, {tapPosition.Y:F0})";
+
+    DisplayAlertAsync("Data Label Details", message, "OK");
+}
+```
+
+The event is raised only when `ShowDataLabels` is set to `true`.
+
 ## Best Practices
 
 ### When to Use Data Labels
@@ -353,7 +395,7 @@ For pie-like arrangements or when labels are far from points:
 ### Common Use Cases
 
 **Financial Data:**
-```xml
+```xaml
 <chart:ColumnSeries ShowDataLabels="True"
                     LabelFormat="C0">
     <chart:ColumnSeries.DataLabelSettings>
@@ -369,7 +411,7 @@ For pie-like arrangements or when labels are far from points:
 ```
 
 **Percentage Data:**
-```xml
+```xaml
 <chart:LineSeries ShowDataLabels="True"
                  LabelFormat="P1">
     <chart:LineSeries.DataLabelSettings>
@@ -380,7 +422,7 @@ For pie-like arrangements or when labels are far from points:
 ```
 
 **Abbreviated Large Numbers:**
-```xml
+```xaml
 <chart:ColumnSeries ShowDataLabels="True">
     <chart:ColumnSeries.DataLabelSettings>
         <chart:CartesianDataLabelSettings>

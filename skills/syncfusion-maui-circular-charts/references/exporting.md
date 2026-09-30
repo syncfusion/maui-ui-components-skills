@@ -199,14 +199,14 @@ C:\Users\[Username]\Pictures\ChartExport.png
 
 Add to `AndroidManifest.xml`:
 
-```xml
+```xaml
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
 For Android 13+ (API 33+), add:
 
-```xml
+```xaml
 <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 ```
 
@@ -235,7 +235,7 @@ if (await RequestStoragePermission())
 
 Add to `Info.plist`:
 
-```xml
+```xaml
 <dict>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>This app needs access to save chart images to your photo library</string>
@@ -265,7 +265,7 @@ public async Task<bool> RequestPhotosPermission()
 ### Example 1: Simple Export Button
 
 **XAML:**
-```xml
+```xaml
 <StackLayout>
     <Button Text="Export Chart" 
             Clicked="OnExportClicked"/>

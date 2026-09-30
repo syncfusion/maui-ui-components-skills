@@ -25,7 +25,7 @@ SfChat supports two data binding strategies:
 
 The simplest approach — bind an `ObservableCollection<object>` directly to the `Messages` property. Add Syncfusion message types (`TextMessage`, `ImageMessage`, etc.) directly to the collection.
 
-```xml
+```xaml
 <sfChat:SfChat Messages="{Binding Messages}"
                CurrentUser="{Binding CurrentUser}" />
 ```
@@ -159,7 +159,7 @@ public class MessageConverter : IChatMessageConverter
 
 ### Step 4: Bind in XAML
 
-```xml
+```xaml
 <ContentPage.Resources>
     <local:MessageConverter x:Key="MessageConverter"/>
 </ContentPage.Resources>

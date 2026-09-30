@@ -49,7 +49,7 @@ using Syncfusion.Maui.Charts;
 ### Initialization
 
 **Xamarin.Forms:**
-```xml
+```xaml
 <chart:SfChart>
     <chart:SfChart.PrimaryAxis>
         <chart:CategoryAxis/>
@@ -65,7 +65,7 @@ using Syncfusion.Maui.Charts;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -140,7 +140,7 @@ using Syncfusion.Maui.Charts;
 ### Initialization
 
 **Xamarin.Forms:**
-```xml
+```xaml
 <chart:SfChart>
     <chart:PieSeries ItemsSource="{Binding Data}" 
                      XBindingPath="Category" 
@@ -149,7 +149,7 @@ using Syncfusion.Maui.Charts;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <chart:SfCircularChart>
     <chart:PieSeries ItemsSource="{Binding Data}"
                      XBindingPath="Category"
@@ -178,7 +178,7 @@ using Syncfusion.Maui.Charts;
 ### Initialization
 
 **.NET MAUI:**
-```xml
+```xaml
 <chart:SfPolarChart>
     <chart:SfPolarChart.PrimaryAxis>
         <chart:CategoryAxis/>
@@ -204,7 +204,7 @@ using Syncfusion.Maui.Charts;
 ### Initialization
 
 **.NET MAUI:**
-```xml
+```xaml
 <chart:SfFunnelChart ItemsSource="{Binding Data}"
                      XBindingPath="Category"
                      YBindingPath="Value">
@@ -226,7 +226,7 @@ using Syncfusion.Maui.Charts;
 ### Initialization
 
 **.NET MAUI:**
-```xml
+```xaml
 <chart:SfPyramidChart ItemsSource="{Binding Data}"
                       XBindingPath="Category"
                       YBindingPath="Value">
@@ -257,7 +257,7 @@ using Syncfusion.Maui.Charts;
 ### Data Labels
 
 **Xamarin:**
-```xml
+```xaml
 <chart:LineSeries>
     <chart:LineSeries.DataMarker>
         <chart:ChartDataMarker ShowLabel="True"/>
@@ -266,7 +266,7 @@ using Syncfusion.Maui.Charts;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <chart:LineSeries ShowDataLabels="True">
     <chart:LineSeries.DataLabelSettings>
         <chart:CartesianDataLabelSettings/>
@@ -277,7 +277,7 @@ using Syncfusion.Maui.Charts;
 ### Tooltip
 
 **Xamarin:**
-```xml
+```xaml
 <chart:SfChart>
     <chart:SfChart.ChartBehaviors>
         <chart:ChartTooltipBehavior/>
@@ -286,7 +286,7 @@ using Syncfusion.Maui.Charts;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.TooltipBehavior>
         <chart:ChartTooltipBehavior/>
@@ -297,14 +297,14 @@ using Syncfusion.Maui.Charts;
 ### Zooming & Panning
 
 **Xamarin:**
-```xml
+```xaml
 <chart:ChartBehaviors>
     <chart:ChartZoomPanBehavior EnablePanning="True" EnableZooming="True"/>
 </chart:ChartBehaviors>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <chart:SfCartesianChart.ZoomPanBehavior>
     <chart:ChartZoomPanBehavior EnablePanning="True" EnableZooming="True"/>
 </chart:SfCartesianChart.ZoomPanBehavior>
@@ -313,14 +313,14 @@ using Syncfusion.Maui.Charts;
 ### Selection
 
 **Xamarin:**
-```xml
+```xaml
 <chart:ChartBehaviors>
     <chart:ChartSelectionBehavior/>
 </chart:ChartBehaviors>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <chart:SfCartesianChart.SelectionBehavior>
     <chart:SeriesSelectionBehavior/>
 </chart:SfCartesianChart.SelectionBehavior>

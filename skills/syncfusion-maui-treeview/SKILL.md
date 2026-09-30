@@ -1,19 +1,18 @@
 ---
 name: syncfusion-maui-treeview
-description: Implements and customize Syncfusion .NET MAUI TreeView (SfTreeView) for displaying hierarchical data structures. Use when working with TreeView, hierarchical data display, tree structures, organizational charts, nested data, expand/collapse nodes, file explorer UI, folder structures, parent-child relationships, or multi-level data visualization in .NET MAUI applications.
+description: Implement and customize Syncfusion® .NET MAUI TreeView (SfTreeView) for displaying hierarchical data structures. Use when working with TreeView, hierarchical data display, tree structures, organizational charts, nested data, expand/collapse nodes, file explorer UI, folder structures, parent-child relationships, or multi-level data visualization in .NET MAUI applications.
 metadata:
   author: "Syncfusion Inc"
   version: "34.1.29"
 ---
 
-# Implementing Syncfusion .NET MAUI TreeView
+# Implementing Syncfusion® .NET MAUI TreeView
 
 The Syncfusion .NET MAUI TreeView (SfTreeView) is a powerful data-oriented control for displaying hierarchical data structures such as organizational charts, file systems, nested connections, and multi-level data. It provides intuitive expand/collapse functionality, multiple selection modes, drag-and-drop support, and extensive customization options.
 
 ## When to Use This Skill
 
 Use this skill when implementing:
-
 - **Hierarchical Data Display**: Organizational structures, file explorers, category trees, nested menus
 - **Interactive Tree Navigation**: Expandable/collapsible nodes, multi-level browsing
 - **Data Binding Scenarios**: Bound mode with ItemsSource or unbound mode with manual nodes
@@ -50,9 +49,6 @@ Use this skill when implementing:
 - Registering Syncfusion handler in MauiProgram.cs
 - Creating a basic TreeView control
 - First working example
-- Running and testing the application
-
----
 
 ### Data Binding and Population
 
@@ -64,13 +60,8 @@ Use this skill when implementing:
 - Bound vs unbound modes comparison
 - Creating nodes without data source (unbound mode with TreeViewNode)
 - Data binding with ItemsSource (bound mode)
-- Defining hierarchical data models
 - Using HierarchyPropertyDescriptors for complex hierarchies
 - ChildPropertyName configuration
-- Self-relational data structures
-- ObservableCollection integration
-
----
 
 ### Selection
 
@@ -84,10 +75,6 @@ Use this skill when implementing:
 - SelectionChanging and SelectionChanged events
 - SelectionBackground and SelectionForeground customization
 - Keyboard navigation (WinUI, MacCatalyst)
-- Programmatic selection
-- Selection validation and cancellation
-
----
 
 ### Node Expansion and Collapse
 
@@ -98,96 +85,59 @@ Use this skill when implementing:
 **Covers:**
 - AutoExpandMode options (None, AllNodes, RootNodes, specific levels)
 - ExpandActionTarget (Expander, Node)
-- Programmatic expand/collapse methods
 - NodeExpanding and NodeCollapsing events
 - IsExpanded property for individual nodes
 - Expand/collapse animations
-- Event cancellation and validation
 
----
+### Data Operation
 
-### Templating and Customization
+📄 **Read:** [references/filtering.md](references/data-operation.md)
 
-📄 **Read:** [references/templating.md](references/templating.md)
-
-**When to read:** Customizing node appearance, creating custom expanders, designing tree item UI
+**When to read:** Filtering tree nodes, implementing search functionality, showing/hiding nodes based on criteria, Sorting tree nodes, custom sort logic, multi-level sorting
 
 **Covers:**
-- ItemTemplate for node content customization
-- ExpanderTemplate for custom expand/collapse icons
-- ItemTemplateContextType (Node vs Data binding context)
-- DataTemplate creation and binding
-- Mixing images, text, and custom controls
-- Template selectors for conditional templates
-- Advanced templating patterns
-
----
-
-### Drag and Drop
-
-📄 **Read:** [references/drag-and-drop.md](references/drag-and-drop.md)
-
-**When to read:** Enabling node reordering, implementing drag-drop functionality, customizing drag behavior
-
-**Covers:**
-- Enabling AllowDragging property
-- DragStarting, DragOver, and Drop events
-- Reordering nodes within the tree
-- Drag restrictions and validation
-- Visual feedback during drag operations
-- Custom drag templates
-- Handling drag between different levels
-
----
-
-### Filtering
-
-📄 **Read:** [references/filtering.md](references/filtering.md)
-
-**When to read:** Filtering tree nodes, implementing search functionality, showing/hiding nodes based on criteria
-
-**Covers:**
-- FilterLevel property (Root, All, Extended)
-- Filter predicates and expressions
-- Filtering hierarchical data
-- Clearing and updating filters
-- Dynamic filtering with ObservableCollection
-- Performance considerations
-
----
-
-### Sorting
-
-📄 **Read:** [references/sorting.md](references/sorting.md)
-
-**When to read:** Sorting tree nodes, custom sort logic, multi-level sorting
-
-**Covers:**
+- FilterMode (None, Contains, StartsWith, Equals, Custom)
+- Filtering API (FilterText, FilterPath, FilterPaths, AutoExpandOnFilter, FilteredItems)
 - SortComparer configuration
 - Sorting hierarchical data at each level
-- Custom IComparer implementations
-- Ascending/descending order
-- Sorting with data binding
-- Performance optimization for large trees
-
----
 
 ### Styling and Appearance
 
 📄 **Read:** [references/styling-appearance.md](references/styling-appearance.md)
 
-**When to read:** Customizing visual appearance, adjusting spacing and indentation, applying themes
+**When to read:** Customizing visual appearance, adjusting spacing and indentation, applying themes, Customizing node appearance, creating custom expanders, designing tree item UI
 
 **Covers:**
 - Item height customization (ItemHeight property)
 - Indentation settings for nested levels
 - Liquid glass effect styling
-- RTL (right-to-left) support
 - Background and foreground colors
 - Border and padding customization
 - Theme integration
+- ItemTemplate, ExpanderTemplate customization and Template selectors for conditional templates
+- ItemTemplateContextType (Node vs Data binding context)
 
----
+### Checkbox
+
+📄 **Read:** [references/styling-appearance.md](references/checkbox.md)
+
+**When to read:** Adding checkbox functionality to tree nodes, tracking checked items, customizing checkbox behavior and appearance
+
+**Covers:**
+- Checkbox enablement and state management
+- CheckBoxMode configuration:
+  - None
+  - Individual
+  - Recursive
+- TreeViewNode.IsChecked property
+- CheckedItems collection binding
+- GetCheckedNodes API
+- CheckBoxPosition and CheckBoxWidth customization
+- CheckActionTarget configuration
+- Parent-child recursive checkbox synchronization
+- Bound mode and unbound mode checkbox handling
+- Custom checkbox templates with SfCheckBox
+- Programmatic checkbox 
 
 ### MVVM Support
 
@@ -202,41 +152,6 @@ Use this skill when implementing:
 - Data-bound ItemsSource
 - Selection binding in MVVM
 - Event-to-command patterns
-- Best practices for MVVM architecture
-
----
-
-### Checkbox Support
-
-📄 **Read:** [references/checkbox-support.md](references/checkbox-support.md)
-
-**When to read:** Adding checkboxes to nodes, handling checked/unchecked states, recursive checkbox modes
-
-**Covers:**
-- Checkbox in bound mode with CheckedItems
-- Checkbox in unbound mode with IsChecked property
-- CheckBoxMode property (Recursive, Cascade, None)
-- Working with checked items collection
-- Programmatic checkbox state management
-- Best practices for checkbox implementation
-
----
-
-### Load on Demand
-
-📄 **Read:** [references/load-on-demand.md](references/load-on-demand.md)
-
-**When to read:** Implementing lazy loading of child nodes, handling large datasets, API-based hierarchies
-
-**Covers:**
-- Load on Demand implementation with LoadOnDemandCommand
-- ShowExpanderAnimation for loading feedback
-- PopulateChildNodes method
-- Avoiding duplicate loading
-- API-based lazy loading patterns
-- Performance optimization with lazy loading
-
----
 
 ### Scrolling and Navigation
 
@@ -253,8 +168,6 @@ Use this skill when implementing:
 - Keyboard navigation (arrow keys, Tab)
 - Events (Loaded, ItemTapped, ItemDoubleTapped, ItemRightTapped)
 
----
-
 ### Item Height Customization
 
 📄 **Read:** [references/item-height-customization.md](references/item-height-customization.md)
@@ -267,41 +180,22 @@ Use this skill when implementing:
 - NodeSizeMode property (Dynamic vs None)
 - GetActualNodeHeight method
 - Dynamic height calculation
-- Performance considerations
-
----
-
-### Empty View
-
-📄 **Read:** [references/empty-view.md](references/empty-view.md)
-
-**When to read:** Displaying empty states, customizing no-data UI, template-based empty views
-
-**Covers:**
-- Display string message when empty
-- Display custom views in empty state
-- EmptyViewTemplate for templated empty views
-- Trigger conditions for empty view
-- Binding in empty view templates
-- Search/filter empty state patterns
-
----
 
 ### Advanced Features
 
 📄 **Read:** [references/advanced-features.md](references/advanced-features.md)
 
-**When to read:** Implementing load on demand, performance optimization, advanced TreeView operations
+**When to read:** Implementing advanced TreeView operations, events, Right-to-left, Enabling node reordering, implementing drag-drop functionality, customizing drag behavior, mplementing lazy loading of child nodes, handling large datasets, API-based hierarchies, Adding checkboxes to nodes, handling checked/unchecked states, recursive checkbox modes, Displaying empty states, customizing no-data UI, template-based empty views
 
 **Covers:**
-- Load on demand for large datasets
-- Empty view customization (EmptyView property)
-- Scrolling configuration and optimization
 - Working with TreeViewNode programmatically
-- Checkbox support
+- Right-to-Left (RTL)
 - Events
-
----
+- Drag and Drop
+- Load on Demand
+- Checkbox, CheckBoxMode (Recursive, Cascade, None), Working with checked items collection
+- Display view when empty item state
+- EmptyViewTemplate for templated empty views
 
 ### Troubleshooting
 
@@ -315,9 +209,3 @@ Use this skill when implementing:
 - Data binding problems
 - Selection not working
 - Template rendering issues
-- Expand/collapse problems
-- Memory leaks and optimization
-- Best practices checklist
-
----
-

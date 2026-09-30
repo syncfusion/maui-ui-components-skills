@@ -238,7 +238,7 @@ namespace AccordionApp.ViewModels
 Set the ViewModel as the page's `BindingContext`.
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns:local="clr-namespace:AccordionApp.ViewModels">
     <ContentPage.BindingContext>
         <local:EmployeeViewModel />
@@ -264,7 +264,7 @@ public partial class MainPage : ContentPage
 
 Use `BindableLayout.ItemsSource` to bind the collection to the accordion.
 
-```xml
+```xaml
 <syncfusion:SfAccordion BindableLayout.ItemsSource="{Binding Employees}">
     <!-- ItemTemplate defined next -->
 </syncfusion:SfAccordion>
@@ -280,7 +280,7 @@ BindableLayout.SetItemsSource(accordion, viewModel.Employees);
 
 Use `BindableLayout.ItemTemplate` to define how each data item is rendered.
 
-```xml
+```xaml
 <syncfusion:SfAccordion BindableLayout.ItemsSource="{Binding Employees}">
     <BindableLayout.ItemTemplate>
         <DataTemplate>
@@ -338,7 +338,7 @@ Use `BindableLayout.ItemTemplate` to define how each data item is rendered.
 ## Complete Example
 
 **MainPage.xaml:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -449,12 +449,12 @@ For large datasets (100+ items), consider:
 
 ### 5. Handle Null Values
 Use null-conditional operators and fallback values:
-```xml
+```xaml
 <Label Text="{Binding Phone, TargetNullValue='N/A'}" />
 ```
 
 ### 6. Use StringFormat for Simple Formatting
-```xml
+```xaml
 <Label Text="{Binding Salary, StringFormat='${0:N2}'}" />
 ```
 

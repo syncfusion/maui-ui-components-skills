@@ -85,7 +85,7 @@ namespace MyTimePickerApp
 ### Import the Namespace
 
 **XAML:**
-```xml
+```xaml
 xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
 ```
 
@@ -97,7 +97,7 @@ using Syncfusion.Maui.Picker;
 ### Basic Implementation
 
 **XAML (MainPage.xaml):**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
@@ -132,7 +132,7 @@ namespace MyTimePickerApp
 Add and customize header text using the `PickerHeaderView`.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker">
     <picker:SfTimePicker.HeaderView>
         <picker:PickerHeaderView Text="Select Time" Height="40" />
@@ -163,7 +163,7 @@ this.Content = timePicker;
 Add validation buttons (OK and Cancel) using the `PickerFooterView`.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker">
     <picker:SfTimePicker.FooterView>
         <picker:PickerFooterView ShowOkButton="True" 
@@ -200,7 +200,7 @@ this.Content = timePicker;
 Customize the picker dimensions:
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker" 
                      HeightRequest="280" 
                      WidthRequest="300" />
@@ -222,7 +222,7 @@ this.Content = timePicker;
 Use the `SelectedTime` property to get or set the selected time value.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker" 
                      SelectedTime="09:30:00" />
 ```
@@ -262,7 +262,7 @@ private void OnGetTimeClicked(object sender, EventArgs e)
 Clear the selected time by setting `SelectedTime` to `null`:
 
 **XAML:**
-```xml
+```xaml
 <StackLayout>
     <picker:SfTimePicker x:Name="timePicker" 
                          SelectedTime="09:30:00" />
@@ -283,7 +283,7 @@ private void OnClearClicked(object sender, EventArgs e)
 ## Complete Example
 
 **MainPage.xaml:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

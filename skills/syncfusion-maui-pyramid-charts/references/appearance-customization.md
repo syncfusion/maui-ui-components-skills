@@ -3,6 +3,7 @@
 ## Table of Contents
 - [Overview](#overview)
 - [Custom Palette Brushes](#custom-palette-brushes)
+- [Point Color Path](#point-color-path)
 - [Applying Gradients](#applying-gradients)
 - [Pyramid Modes](#pyramid-modes)
 - [Segment Spacing](#segment-spacing)
@@ -126,6 +127,62 @@ CustomBrushes = new List<Brush>()
     new SolidColorBrush(Color.FromArgb("#D5F4E6"))   // Very Light Green
 };
 ```
+
+## Point Color Path
+
+Use `PointColorPath` to assign a different color to each pyramid segment by binding a color field from the data source. This is useful when the segment colors should come directly from the model rather than from the chart palette.
+
+### Model Example
+
+```csharp
+public class PointColorViewModel
+{
+    public ObservableCollection<StageModel> Data { get; set; }
+
+    public PointColorViewModel()
+    {
+        Data = new ObservableCollection<StageModel>
+        {
+            new() { Name = "Stage A", Value = 40, PointColor = Color.FromArgb("#cbb4e0") },
+            new() { Name = "Stage B", Value = 30, PointColor = Color.FromArgb("#ab80d8") },
+            new() { Name = "Stage C", Value = 20, PointColor = Color.FromArgb("#8238c2") },
+            new() { Name = "Stage D", Value = 10, PointColor = Color.FromArgb("#5f209d") }
+        };
+    }
+}
+
+public class StageModel
+{
+    public string? Name { get; set; }
+    public double Value { get; set; }
+    public Color? PointColor { get; set; }
+}
+```
+
+### XAML
+
+```xaml
+<chart:SfPyramidChart ItemsSource="{Binding Data}"
+                      XBindingPath="Name"
+                      YBindingPath="Value"
+                      PointColorPath="PointColor"/>
+```
+
+### C#
+
+```csharp
+SfPyramidChart chart = new SfPyramidChart
+{
+    ItemsSource = new PointColorViewModel().Data,
+    XBindingPath = "Name",
+    YBindingPath = "Value",
+    PointColorPath = "PointColor"
+};
+
+this.Content = chart;
+```
+
+> Color precedence is: `Fill` > `PointColorPath` > `PaletteBrushes`.
 
 ## Applying Gradients
 

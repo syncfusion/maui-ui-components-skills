@@ -15,7 +15,7 @@ Add custom header and footer content to the dropdown for enhanced user experienc
 
 Display content at the top of the dropdown:
 
-```xml
+```xaml
 <editors:SfAutocomplete ShowDropdownHeaderView="True"
                         DropdownHeaderViewHeight="50"
                         ItemsSource="{Binding SocialMedias}"
@@ -58,7 +58,7 @@ autocomplete.DropdownHeaderView = headerView;
 
 Display content at the bottom of the dropdown:
 
-```xml
+```xaml
 <editors:SfAutocomplete ShowDropdownFooterView="True"
                         DropdownFooterViewHeight="50"
                         ItemsSource="{Binding SocialMedias}"
@@ -88,7 +88,7 @@ Highlight matching characters in the dropdown to improve visibility.
 ### Highlighting Modes
 
 **FirstOccurrence** - Highlights first match only:
-```xml
+```xaml
 <editors:SfAutocomplete TextHighlightMode="FirstOccurrence"
                         HighlightedTextColor="Red"
                         HighlightedTextFontAttributes="Bold"
@@ -98,7 +98,7 @@ Highlight matching characters in the dropdown to improve visibility.
 ```
 
 **MultipleOccurrence** - Highlights all matches (use with Contains mode):
-```xml
+```xaml
 <editors:SfAutocomplete TextSearchMode="Contains"
                         TextHighlightMode="MultipleOccurrence"
                         HighlightedTextColor="Red"
@@ -126,7 +126,7 @@ Customize the message displayed when no items match the search.
 
 ### No Results Text
 
-```xml
+```xaml
 <editors:SfAutocomplete NoResultsFoundText="No matches found"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
@@ -148,7 +148,7 @@ autocomplete.NoResultsFoundText = string.Empty;
 
 Customize the appearance with a template:
 
-```xml
+```xaml
 <editors:SfAutocomplete ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
                         TextMemberPath="Name">
@@ -204,7 +204,7 @@ Enable automatic height adjustment based on content in multiple selection mode.
 
 ### Configuration
 
-```xml
+```xaml
 <editors:SfAutocomplete SelectionMode="Multiple"
                         MultiSelectionDisplayMode="Token"
                         TokensWrapMode="Wrap"
@@ -246,7 +246,7 @@ Apply modern, translucent glass-like visual effect (.NET 10+ only).
 
 **Step 1:** Wrap control in SfGlassEffectView:
 
-```xml
+```xaml
 <Grid BackgroundColor="Transparent">
     <Image Source="Wallpaper.png" Aspect="AspectFill"/>
     
@@ -302,7 +302,7 @@ glassView.Content = autocomplete;
 
 ### Searchable Dropdown with Header and Highlighting
 
-```xml
+```xaml
 <editors:SfAutocomplete ShowDropdownHeaderView="True"
                         DropdownHeaderViewHeight="40"
                         TextHighlightMode="MultipleOccurrence"
@@ -323,7 +323,7 @@ glassView.Content = autocomplete;
 
 ### Multi-Select with AutoSize and Footer
 
-```xml
+```xaml
 <editors:SfAutocomplete SelectionMode="Multiple"
                         MultiSelectionDisplayMode="Token"
                         TokensWrapMode="Wrap"

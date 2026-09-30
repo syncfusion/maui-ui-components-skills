@@ -16,7 +16,7 @@ The `ShowLabels` property renders labels at specified intervals along the slider
 
 ### Enabling Labels
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="2"
                   Maximum="10"
                   Value="6"
@@ -43,7 +43,7 @@ SfSlider slider = new SfSlider
 
 You can show labels without ticks:
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="50"
@@ -62,7 +62,7 @@ The `Interval` property determines the spacing between labels, ticks, and divide
 
 Explicitly set the interval value:
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Interval="25"
@@ -96,7 +96,7 @@ The slider renders labels at:
 
 If `Interval` is set to `0` and `ShowLabels`, `ShowTicks`, or `ShowDividers` is `True`, the interval is automatically calculated based on available space:
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="50"
@@ -144,7 +144,7 @@ The `NumberFormat` property formats label text using standard .NET numeric forma
 
 ### Basic Formatting
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="2"
                   Maximum="10"
                   Value="6"
@@ -169,7 +169,7 @@ SfSlider slider = new SfSlider
 
 ### Currency Format
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="1000"
                   Value="500"
@@ -186,7 +186,7 @@ slider.NumberFormat = "$#";
 
 ### Percentage Format
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="50"
@@ -206,26 +206,26 @@ slider.NumberFormat = "0'%'";
 ### Custom Unit Formats
 
 **Temperature:**
-```xml
+```xaml
 <sliders:SfSlider NumberFormat="0'°C'" />
 ```
 Result: 10°C, 15°C, 20°C, 25°C
 
 **Weight:**
-```xml
+```xaml
 <sliders:SfSlider NumberFormat="0'kg'" />
 ```
 Result: 0kg, 20kg, 40kg, 60kg
 
 **Distance:**
-```xml
+```xaml
 <sliders:SfSlider NumberFormat="0.0'km'" />
 ```
 Result: 0.0km, 5.5km, 11.0km
 
 ### Decimal Precision
 
-```xml
+```xaml
 <!-- No decimals -->
 <sliders:SfSlider NumberFormat="0" />
 
@@ -283,7 +283,7 @@ private void OnLabelCreated(object sender, SliderLabelCreatedEventArgs e)
 ### Custom Label Text
 
 **XAML:**
-```xml
+```xaml
 <sliders:SfSlider Minimum="2"
                   Maximum="10"
                   Value="6"
@@ -374,7 +374,7 @@ Customize label appearance using `SliderLabelStyle` in the `LabelCreated` event 
 
 ### LabelStyle Property
 
-```xml
+```xaml
 <sliders:SfSlider ShowLabels="True" Interval="20">
     <sliders:SfSlider.LabelStyle>
         <sliders:SliderLabelStyle TextColor="#FF6B6B"
@@ -426,7 +426,7 @@ slider.LabelStyle.Offset = new Point(0, 10);  // Move 10 pixels down
 
 ### Example 1: Price Slider with Currency
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="10">
     <Label Text="Select Price Range" FontSize="16" />
     
@@ -449,7 +449,7 @@ slider.LabelStyle.Offset = new Point(0, 10);  // Move 10 pixels down
 ### Example 2: Temperature with Custom Labels
 
 **XAML:**
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="50"
@@ -474,7 +474,7 @@ private void OnTemperatureLabelCreated(object sender, SliderLabelCreatedEventArg
 
 ### Example 3: Rating Slider
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="1"
                   Maximum="5"
                   Value="3"
@@ -528,7 +528,7 @@ private void OnRatingLabelCreated(object sender, SliderLabelCreatedEventArgs e)
 
 **Cause**: ShowLabels is False or Interval is not set  
 **Solution**:
-```xml
+```xaml
 <sliders:SfSlider ShowLabels="True" Interval="10" />
 ```
 
@@ -536,7 +536,7 @@ private void OnRatingLabelCreated(object sender, SliderLabelCreatedEventArgs e)
 
 **Cause**: NumberFormat syntax error  
 **Solution**: Use valid .NET numeric format strings. Quote literals:
-```xml
+```xaml
 NumberFormat="0'%'"  <!-- Correct -->
 NumberFormat="0%"    <!-- Wrong -->
 ```
@@ -545,7 +545,7 @@ NumberFormat="0%"    <!-- Wrong -->
 
 **Cause**: Event not wired up or ShowLabels is False  
 **Solution**:
-```xml
+```xaml
 <sliders:SfSlider ShowLabels="True" LabelCreated="OnLabelCreated" />
 ```
 

@@ -19,7 +19,7 @@ The `DisplayDate` property controls which date is currently displayed in the cal
 ### Set Display Date
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Month"
                      DisplayDate="2026-12-25" />
@@ -59,7 +59,7 @@ calendar.DisplayDate = calendar.DisplayDate.AddDays(7);
 
 ### Example: Navigation Buttons
 
-```xml
+```xaml
 <StackLayout>
     <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
         <Button Text="Previous Month" Clicked="OnPreviousMonth" />
@@ -110,7 +110,7 @@ calendar.View = CalendarView.Century;
 
 ### Example: View Picker
 
-```xml
+```xaml
 <StackLayout>
     <Picker x:Name="viewPicker" 
             Title="Select View"
@@ -172,7 +172,7 @@ Users can navigate through views automatically:
 - **Month View:** Tap header → Year view (then Decade, Century)
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Month"
                      AllowViewNavigation="True" />
@@ -185,7 +185,7 @@ This is the default behavior and provides intuitive drill-down navigation.
 Users cannot navigate views by tapping. They can only select dates/cells in the current view.
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Year"
                      AllowViewNavigation="False"
@@ -219,7 +219,7 @@ The `NavigateToAdjacentMonth` property enables navigation to the previous or nex
 ### Enable Adjacent Month Navigation
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Month"
                      NavigateToAdjacentMonth="True" />
@@ -352,7 +352,7 @@ calendar.AllowViewNavigation = false;
 
 ### Example 1: Custom Navigation Bar
 
-```xml
+```xaml
 <StackLayout>
     <Grid ColumnDefinitions="Auto,*,Auto" Margin="10">
         <Button Grid.Column="0" Text="◀" Clicked="OnPrevious" />

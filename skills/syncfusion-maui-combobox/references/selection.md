@@ -31,7 +31,7 @@ Single selection mode allows users to select one item from the dropdown list.
 The selected item can be changed interactively by selecting from the dropdown list or entering the value (in editable mode).
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="True"
                     ItemsSource="{Binding SocialMedias}"
@@ -57,7 +57,7 @@ The selected item can be changed programmatically using the `SelectedItem` or `S
 #### Using SelectedItem
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     MaxDropDownHeight="250"
                     IsEditable="True"
@@ -79,7 +79,7 @@ var selected = comboBox.SelectedItem as SocialMedia;
 #### Using SelectedIndex
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     MaxDropDownHeight="250"
                     IsEditable="True"
@@ -103,7 +103,7 @@ int selectedIndex = comboBox.SelectedIndex;
 Multiple selection mode allows users to select multiple items from the dropdown list by setting `SelectionMode` to `Multiple`.
 
 **Basic Setup:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     SelectedItems="{Binding SelectedItemsList}"
@@ -137,7 +137,7 @@ There are two ways to display multi-selection items using the `MultiSelectionDis
 When `MultiSelectionDisplayMode` is set to `Delimiter`, selected items are separated by a specified character. You can set the delimiter text using the `DelimiterText` property. The default delimiter is `","`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     SelectionMode="Multiple"
@@ -175,7 +175,7 @@ Token mode displays selected items as individual chips that can be removed indep
 When `TokensWrapMode` is set to `Wrap`, selected items wrap to the next line.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     SelectionMode="Multiple"
@@ -203,7 +203,7 @@ SfComboBox comboBox = new SfComboBox
 When `TokensWrapMode` is set to `None`, selected items are arranged in a horizontal scrollable orientation.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     SelectionMode="Multiple"
@@ -238,7 +238,7 @@ The `SelectionChanging` event is triggered when a user attempts to select an ite
 - `Cancel` - Set to `true` to prevent the selection change
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     WidthRequest="250"
                     HeightRequest="40"
@@ -284,7 +284,7 @@ The `SelectionChanged` event is triggered after an item is selected from the dro
 - `RemovedItems` - Items that were unselected
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     TextMemberPath="Name"
                     DisplayMemberPath="Name"
@@ -329,7 +329,7 @@ The `SelectedValue` property allows you to get or set the selected value based o
 In single selection mode, `SelectedValue` holds the value defined by `SelectedValuePath`, such as "ID".
 
 **XAML:**
-```xml
+```xaml
 <StackLayout>
     <Label Text="SelectedValue:" />
     <Label x:Name="selectedValue" />
@@ -367,7 +367,7 @@ private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 In multi-selection mode, `SelectedValue` is a collection of values derived from `SelectedItems` based on the `SelectedValuePath`.
 
 **XAML:**
-```xml
+```xaml
 <StackLayout>
     <Label Text="SelectedValue count:" />
     <Label x:Name="selectedValue" />
@@ -414,7 +414,7 @@ private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 The dropdown list can be opened or closed programmatically using the `IsDropDownOpen` property. The default value is `false`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="true"
                     ItemsSource="{Binding SocialMedias}"

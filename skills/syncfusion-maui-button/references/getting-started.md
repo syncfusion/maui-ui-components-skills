@@ -35,7 +35,7 @@ dotnet add package Syncfusion.Maui.Buttons
 ```
 
 **Verify installation** in your `.csproj` file:
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.Buttons" Version="*" />
 </ItemGroup>
@@ -84,7 +84,7 @@ public static class MauiProgram
 
 **Step 1:** Add the Syncfusion namespace to your XAML page:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
@@ -95,14 +95,14 @@ public static class MauiProgram
 
 **Step 2:** Add a basic SfButton:
 
-```xml
+```xaml
 <buttons:SfButton x:Name="myButton"
                   Text="Click Me" />
 ```
 
 **Complete example:**
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -196,7 +196,7 @@ public partial class MainPage : ContentPage
 Use the `ImageSource` and `ShowIcon` properties to add icons:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Text="Save"
                   TextColor="White"
                   Background="#4CAF50"
@@ -234,13 +234,13 @@ MyMauiApp/
 ```
 
 **Using platform-specific images:**
-```xml
+```xaml
 <buttons:SfButton ShowIcon="True"
                   ImageSource="save_icon.png" />  <!-- Automatically resolves -->
 ```
 
 **Using FontImageSource (icon fonts):**
-```xml
+```xaml
 <buttons:SfButton ShowIcon="True">
     <buttons:SfButton.ImageSource>
         <FontImageSource Glyph="&#xE74E;"
@@ -255,7 +255,7 @@ MyMauiApp/
 
 Create icon-only buttons by omitting the `Text` property:
 
-```xml
+```xaml
 <buttons:SfButton ShowIcon="True"
                   ImageSource="add_icon.png"
                   Background="#6200EE"
@@ -270,7 +270,7 @@ Create icon-only buttons by omitting the `Text` property:
 Use `BackgroundImageSource` to set a background image for the button:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Text="Nature"
                   TextColor="White"
                   FontAttributes="Bold"
@@ -306,13 +306,13 @@ var imageButton = new SfButton
 
 ### Example 1: Simple Text Button
 
-```xml
+```xaml
 <buttons:SfButton Text="Submit" />
 ```
 
 ### Example 2: Styled Button
 
-```xml
+```xaml
 <buttons:SfButton Text="Primary Action"
                   TextColor="White"
                   Background="#6200EE"
@@ -323,7 +323,7 @@ var imageButton = new SfButton
 
 ### Example 3: Button with Icon and Text
 
-```xml
+```xaml
 <buttons:SfButton Text="Delete"
                   TextColor="White"
                   Background="#F44336"
@@ -334,7 +334,7 @@ var imageButton = new SfButton
 
 ### Example 4: Complete Button with Event
 
-```xml
+```xaml
 <!-- XAML -->
 <buttons:SfButton x:Name="submitButton"
                   Text="Submit Form"

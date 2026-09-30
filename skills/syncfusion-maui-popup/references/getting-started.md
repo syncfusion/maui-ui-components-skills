@@ -109,7 +109,7 @@ namespace GettingStarted
 
 Add the Syncfusion.Maui.Popup namespace to your XAML page:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
@@ -120,7 +120,7 @@ Add the Syncfusion.Maui.Popup namespace to your XAML page:
 
 Place the `SfPopup` control in your page layout:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
@@ -185,7 +185,7 @@ private void ClickToShowPopup_Clicked(object sender, EventArgs e)
 ```
 
 XAML binding example:
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="popup" IsOpen="True" />
 ```
 
@@ -202,7 +202,7 @@ private void ClickToShowPopup_Clicked(object sender, EventArgs e)
 ### Complete Working Example
 
 **MainPage.xaml:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -437,7 +437,7 @@ dotnet build
 
 **Solution:**
 - Ensure the XML namespace is correctly defined:
-  ```xml
+  ```xaml
   xmlns:sfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
   ```
 - Clean and rebuild the project

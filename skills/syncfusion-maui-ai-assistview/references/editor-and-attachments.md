@@ -1,6 +1,6 @@
 # Editor and Attachments in SfAIAssistView
 
-Covers customizing the message input editor, editing previous requests, file attachments, quick action buttons, and the send (request) button.
+Covers customizing the message input editor, editing previous requests, file attachments, quick action buttons, the send (request) button, and image preview behavior.
 
 ## Table of Contents
 - [Editor Configuration](#editor-configuration)
@@ -25,7 +25,7 @@ sfAIAssistView.InputText = "Pre-filled message";
 
 Fully replaces the default editor layout with a custom `DataTemplate`.
 
-```xml
+```xaml
 <ContentPage.Resources>
     <DataTemplate x:Key="editorViewTemplate">
         <Grid>
@@ -61,6 +61,23 @@ sfAIAssistView.RequestEditor.FontSize = 14;
 
 Use `RequestEditorView` to access and customize the full editor view wrapper (visual elements and overall appearance).
 
+### AllowEditorExpansion
+
+Set `AllowEditorExpansion` to `true` to let the request editor expand for longer, structured prompts and code snippets.
+
+```xaml
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView"
+                           AllowEditorExpansion="True" />
+```
+
+```csharp
+sfAIAssistView.AllowEditorExpansion = true;
+```
+
+### Scenario: Expand editor for long prompts
+
+- When `AllowEditorExpansion` is `true`, the editor expands to provide additional input space for multi-line or long structured prompts.
+
 ---
 
 ## Edit Option (Editing Previous Requests)
@@ -81,6 +98,19 @@ When the Edit icon is tapped, the request text is placed back into the input edi
 
 `SfAIAssistView` supports file and image attachments shown as previews inside the editor before the message is sent.
 
+### ActionButtonType
+
+`ActionButtonType` controls the built-in action button mode. `ActionButtonType.AttachmentButton` opens the system file picker and adds selected files as attachments, while `ActionButtonType.ActionButton` keeps the standard user-provided action button workflow.
+
+```xaml
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView"
+                           ActionButtonType="AttachmentButton" />
+```
+
+```csharp
+sfAIAssistView.ActionButtonType = ActionButtonType.AttachmentButton;
+```
+
 ### AssistAttachment Properties
 
 | Property | Type | Description |
@@ -94,7 +124,7 @@ When the Edit icon is tapped, the request text is placed back into the input edi
 
 ### Binding Attachments
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            Attachments="{Binding Attachments}" />
 ```
@@ -147,7 +177,7 @@ public class AIAssistViewModel : INotifyPropertyChanged
 
 Limits the number of attachments. Default is `10`.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            Attachments="{Binding Attachments}"
                            MaxAttachmentCount="5" />
@@ -157,11 +187,40 @@ Limits the number of attachments. Default is `10`.
 sfAIAssistView.MaxAttachmentCount = 5;
 ```
 
+### AllowMultiplePick
+
+Allows selecting multiple files from the built-in file picker. Default is `true`.
+
+```xaml
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView"
+                           AllowMultiplePick="True" />
+```
+
+```csharp
+sfAIAssistView.AllowMultiplePick = true;
+```
+
+### Scenario: User selects multiple files
+
+- When `AllowMultiplePick` is `true`, the user can choose more than one file and all selected files are added as attachments.
+
+### AttachmentImagePreview
+
+When an attached image is tapped, the control opens a full-size image preview viewer for better inspection.
+
+```csharp
+// Image attachments use PreviewImageSource when available and open the built-in preview viewer on tap.
+```
+
+### Scenario: User taps image attachment
+
+- When an attachment is an image and has a valid preview source, tapping it opens the built-in fullscreen preview viewer.
+
 ### AttachmentItemTemplate
 
 Customizes the preview chip shown for each attachment in the editor.
 
-```xml
+```xaml
 <ContentPage.Resources>
     <DataTemplate x:Key="attachmentItemTemplate">
         <Grid Padding="6">
@@ -175,6 +234,11 @@ Customizes the preview chip shown for each attachment in the editor.
                            AttachmentItemTemplate="{StaticResource attachmentItemTemplate}" />
 ```
 
+### Implementation Notes
+
+- Image attachments use `PreviewImageSource` when the file path points to a supported image.
+- Tapping the image opens the built-in fullscreen preview viewer.
+
 ---
 
 ## Action Buttons
@@ -183,7 +247,7 @@ A quick action icon inside the editor that opens a popup of configurable actions
 
 ### Enable Action Buttons
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            ShowActionButtons="True" />
 ```
@@ -203,7 +267,7 @@ sfAIAssistView.ShowActionButtons = true;
 
 ### Configuring ActionButtons
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            ShowActionButtons="True"
                            AssistItems="{Binding AssistItems}">
@@ -246,7 +310,7 @@ sfAIAssistView.ActionButtons = new ObservableCollection<ActionButton>
 `ActionButtonIcon` sets the icon for the quick action button in the editor (the icon users tap to open the popup).  
 `ActionButtonPosition` controls placement: `ActionButtonPosition.Start` or `ActionButtonPosition.End`.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            ShowActionButtons="True"
                            ActionButtonIcon="dotmenu.png"
@@ -272,7 +336,7 @@ The send (request) button submits the current input text as a request.
 
 Sets a custom `ImageSource` for the send button icon.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            AssistItems="{Binding AssistItems}">
     <syncfusion:SfAIAssistView.RequestButtonIcon>
@@ -296,7 +360,7 @@ sfAIAssistView.RequestButtonIcon = new FontImageSource
 
 Fully replaces the send button with a custom `DataTemplate`.
 
-```xml
+```xaml
 <ContentPage.Resources>
     <DataTemplate x:Key="requestButtonTemplate">
         <Grid>

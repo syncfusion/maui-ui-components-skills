@@ -41,7 +41,7 @@ Fired when a user taps/clicks on a card.
 
 ### XAML:
 
-```xml
+```xaml
 <kanban:SfKanban x:Name="kanban"
                  ItemsSource="{Binding Cards}"
                  CardTapped="OnKanbanCardTapped">
@@ -210,7 +210,7 @@ Fired when a card drag operation completes (card dropped).
 
 ### XAML:
 
-```xml
+```xaml
 <kanban:SfKanban x:Name="kanban"
                  ItemsSource="{Binding Cards}"
                  DragEnd="OnKanbanDragEnd">

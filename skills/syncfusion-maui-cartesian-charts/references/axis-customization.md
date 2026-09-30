@@ -9,6 +9,9 @@
 - [Range Padding](#range-padding)
 - [Auto Scrolling Delta](#auto-scrolling-delta)
 - [Custom Axis Labels](#custom-axis-labels)
+- [Axis Label Tapped Event](#axis-label-tapped-event)
+- [Maximum Labels](#maximum-labels)
+- [Multi-Level Labels](#multi-level-labels)
 - [Best Practices](#best-practices)
 
 ## Overview
@@ -21,7 +24,7 @@ Grid lines are horizontal and vertical lines that help identify data point value
 
 ### Basic Grid Line Configuration
 
-```xml
+```xaml
 <chart:NumericalAxis ShowMajorGridLines="True"
                      ShowMinorGridLines="True"/>
 ```
@@ -36,7 +39,7 @@ NumericalAxis axis = new NumericalAxis()
 
 ### Major Grid Line Styling
 
-```xml
+```xaml
 <chart:NumericalAxis ShowMajorGridLines="True">
     <chart:NumericalAxis.MajorGridLineStyle>
         <chart:ChartLineStyle Stroke="Gray"
@@ -63,7 +66,7 @@ NumericalAxis axis = new NumericalAxis()
 
 ### Minor Grid Line Styling
 
-```xml
+```xaml
 <chart:NumericalAxis ShowMinorGridLines="True"
                      MinorTicksPerInterval="4">
     <chart:NumericalAxis.MinorGridLineStyle>
@@ -92,7 +95,7 @@ NumericalAxis axis = new NumericalAxis()
 
 ### Complete Grid Line Example
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis ShowMajorGridLines="True">
@@ -125,7 +128,7 @@ Tick lines are small lines on the axis that indicate data point values.
 
 ### Major Tick Lines
 
-```xml
+```xaml
 <chart:NumericalAxis ShowMajorTickLines="True"
                      MajorTickLineSize="8"/>
 ```
@@ -140,7 +143,7 @@ NumericalAxis axis = new NumericalAxis()
 
 ### Major Tick Line Styling
 
-```xml
+```xaml
 <chart:NumericalAxis ShowMajorTickLines="True"
                      MajorTickLineSize="8">
     <chart:NumericalAxis.MajorTickLineStyle>
@@ -166,7 +169,7 @@ NumericalAxis axis = new NumericalAxis()
 
 ### Minor Tick Lines
 
-```xml
+```xaml
 <chart:NumericalAxis ShowMinorTickLines="True"
                      MinorTicksPerInterval="4"
                      MinorTickLineSize="4">
@@ -198,7 +201,7 @@ The axis line is the main line of the axis.
 
 ### Basic Axis Line
 
-```xml
+```xaml
 <chart:NumericalAxis ShowAxisLine="True"/>
 ```
 
@@ -211,7 +214,7 @@ NumericalAxis axis = new NumericalAxis()
 
 ### Axis Line Styling
 
-```xml
+```xaml
 <chart:NumericalAxis ShowAxisLine="True">
     <chart:NumericalAxis.AxisLineStyle>
         <chart:ChartLineStyle Stroke="Blue"
@@ -236,7 +239,7 @@ NumericalAxis axis = new NumericalAxis()
 
 ### Complete Axis Line Example
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis ShowAxisLine="True">
@@ -262,7 +265,7 @@ PlotOffset adds padding between the axis and the series.
 
 ### Plot Offset Start
 
-```xml
+```xaml
 <chart:NumericalAxis PlotOffsetStart="20"/>
 ```
 
@@ -275,7 +278,7 @@ NumericalAxis axis = new NumericalAxis()
 
 ### Plot Offset End
 
-```xml
+```xaml
 <chart:NumericalAxis PlotOffsetEnd="20"/>
 ```
 
@@ -288,7 +291,7 @@ NumericalAxis axis = new NumericalAxis()
 
 ### Combined Plot Offsets
 
-```xml
+```xaml
 <chart:CategoryAxis PlotOffsetStart="30"
                     PlotOffsetEnd="30"/>
 ```
@@ -307,7 +310,7 @@ RangePadding adds space at the edges of the axis range.
 
 ### Numerical Axis Range Padding
 
-```xml
+```xaml
 <chart:NumericalAxis RangePadding="Auto"/>
 ```
 
@@ -331,7 +334,7 @@ NumericalAxis axis = new NumericalAxis()
 
 ### Category Axis Range Padding
 
-```xml
+```xaml
 <chart:CategoryAxis RangePadding="Auto"/>
 ```
 
@@ -352,7 +355,7 @@ CategoryAxis axis = new CategoryAxis()
 
 ### DateTime Axis Range Padding
 
-```xml
+```xaml
 <chart:DateTimeAxis RangePadding="Auto"/>
 ```
 
@@ -374,21 +377,21 @@ DateTimeAxis axis = new DateTimeAxis()
 ### Range Padding Examples
 
 **No Padding:**
-```xml
+```xaml
 <chart:NumericalAxis Minimum="0"
                      Maximum="100"
                      RangePadding="None"/>
 ```
 
 **Normal Padding:**
-```xml
+```xaml
 <chart:NumericalAxis Minimum="0"
                      Maximum="100"
                      RangePadding="Normal"/>
 ```
 
 **Additional Padding:**
-```xml
+```xaml
 <chart:NumericalAxis Minimum="0"
                      Maximum="100"
                      RangePadding="Additional"/>
@@ -400,7 +403,7 @@ AutoScrollingDelta enables automatic scrolling with a visible range window.
 
 ### Basic Auto Scrolling
 
-```xml
+```xaml
 <chart:DateTimeAxis AutoScrollingDelta="7"
                     AutoScrollingDeltaType="Days"
                     AutoScrollingMode="End"/>
@@ -420,7 +423,7 @@ DateTimeAxis axis = new DateTimeAxis()
 **End (Default):**
 Shows the most recent data:
 
-```xml
+```xaml
 <chart:DateTimeAxis AutoScrollingDelta="10"
                     AutoScrollingDeltaType="Days"
                     AutoScrollingMode="End"/>
@@ -429,7 +432,7 @@ Shows the most recent data:
 **Start:**
 Shows from the beginning:
 
-```xml
+```xaml
 <chart:DateTimeAxis AutoScrollingDelta="10"
                     AutoScrollingDeltaType="Days"
                     AutoScrollingMode="Start"/>
@@ -437,7 +440,7 @@ Shows from the beginning:
 
 ### Numerical Axis Auto Scrolling
 
-```xml
+```xaml
 <chart:NumericalAxis AutoScrollingDelta="50"
                      AutoScrollingMode="End"/>
 ```
@@ -452,7 +455,7 @@ NumericalAxis axis = new NumericalAxis()
 
 ### Complete Auto Scrolling Example
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:DateTimeAxis AutoScrollingDelta="30"
@@ -482,7 +485,7 @@ NumericalAxis axis = new NumericalAxis()
 
 ### Example: Custom Numerical Axis
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <local:CustomNumericalAxis/>
@@ -549,6 +552,118 @@ public class CustomNumericalAxis : NumericalAxis
 - Labels are rendered only if the label position presents within the visible range.
 - The labels should be created only if users call the base of `OnCreateLabels`.
 
+## Axis Label Tapped Event
+
+Use the `AxisLabelTapped` event on `SfCartesianChart` to respond when a user taps an axis label. The event arguments provide the axis, the tapped label object, and the tap location.
+
+```xaml
+<chart:SfCartesianChart AxisLabelTapped="OnAxisLabelTapped">
+    <chart:SfCartesianChart.XAxes>
+        <chart:CategoryAxis/>
+    </chart:SfCartesianChart.XAxes>
+
+    <chart:SfCartesianChart.YAxes>
+        <chart:NumericalAxis/>
+    </chart:SfCartesianChart.YAxes>
+
+    <chart:ColumnSeries ItemsSource="{Binding Data}"
+                       XBindingPath="Category"
+                       YBindingPath="Value"/>
+</chart:SfCartesianChart>
+```
+
+```csharp
+private void OnAxisLabelTapped(object sender, AxisLabelTappedEventArgs e)
+{
+    var axis = e.Axis;
+    var axisLabel = e.AxisLabel;
+    var tapPosition = e.Position;
+
+    string message = $"Label: {axisLabel.Content}\n" +
+                     $"Axis: {axis.GetType().Name}\n" +
+                     $"Tap Location: ({tapPosition.X:F0}, {tapPosition.Y:F0})";
+
+    DisplayAlertAsync("Axis Label Details", message, "OK");
+}
+```
+
+The event args expose the following useful properties:
+- `Axis` – the associated axis.
+- `AxisLabel` – the label object that was tapped.
+- `Position` – the tap coordinates in device-independent pixels.
+
+## Maximum Labels
+
+Use the `MaximumLabels` property on an axis to control how many labels are rendered per 100 pixels of axis length during automatic interval calculation. This can help reduce clutter when the chart contains many points or when labels would otherwise overlap.
+
+```xaml
+<chart:SfCartesianChart>
+    <chart:SfCartesianChart.YAxes>
+        <chart:NumericalAxis MaximumLabels="5"/>
+    </chart:SfCartesianChart.YAxes>
+</chart:SfCartesianChart>
+```
+
+```csharp
+NumericalAxis axis = new NumericalAxis
+{
+    MaximumLabels = 5
+};
+```
+
+> `MaximumLabels` applies only during automatic interval calculation and does not affect labels when the axis `Interval` is manually set.
+
+## Multi-Level Labels
+
+Use `MultiLevelLabels` on an axis to create hierarchical labels that group ranges into higher-level categories. Each `ChartMultiLevelLabel` can define a `Start`, `End`, `Text`, and `Level` for the label range.
+
+```xaml
+<chart:SfCartesianChart>
+    <chart:SfCartesianChart.YAxes>
+        <chart:NumericalAxis>
+            <chart:NumericalAxis.MultiLevelLabels>
+                <chart:ChartMultiLevelLabel Start="0" End="79" Text="Low" Level="1"/>
+                <chart:ChartMultiLevelLabel Start="80" End="149" Text="Medium" Level="1"/>
+                <chart:ChartMultiLevelLabel Start="150" End="220" Text="High" Level="1"/>
+                <chart:ChartMultiLevelLabel Start="0" End="39" Text="0-39" Level="2"/>
+                <chart:ChartMultiLevelLabel Start="40" End="79" Text="40-79" Level="2"/>
+            </chart:NumericalAxis.MultiLevelLabels>
+        </chart:NumericalAxis>
+    </chart:SfCartesianChart.YAxes>
+</chart:SfCartesianChart>
+```
+
+```csharp
+NumericalAxis axis = new NumericalAxis();
+
+axis.MultiLevelLabels.Add(new ChartMultiLevelLabel { Start = 0, End = 79, Text = "Low", Level = 1 });
+axis.MultiLevelLabels.Add(new ChartMultiLevelLabel { Start = 80, End = 149, Text = "Medium", Level = 1 });
+axis.MultiLevelLabels.Add(new ChartMultiLevelLabel { Start = 150, End = 220, Text = "High", Level = 1 });
+axis.MultiLevelLabels.Add(new ChartMultiLevelLabel { Start = 0, End = 39, Text = "0-39", Level = 2 });
+axis.MultiLevelLabels.Add(new ChartMultiLevelLabel { Start = 40, End = 79, Text = "40-79", Level = 2 });
+```
+
+You can also style multi-level labels with `MultiLevelLabelStyle`, including border type, border color, border width, and label text styling.
+
+```csharp
+ChartAxisLabelStyle labelStyle = new ChartAxisLabelStyle
+{
+    TextColor = Colors.Green,
+    FontAttributes = FontAttributes.Bold,
+    FontSize = 13
+};
+
+MultiLevelLabelStyle multiLevelLabelStyle = new MultiLevelLabelStyle
+{
+    BorderColor = Colors.DarkBlue,
+    BorderType = ChartMultiLevelBorderType.SquareBrace,
+    BorderWidth = 2,
+    LabelStyle = labelStyle
+};
+
+axis.MultiLevelLabelStyle = multiLevelLabelStyle;
+```
+
 ## Best Practices
 
 ### Grid Lines
@@ -588,7 +703,7 @@ public class CustomNumericalAxis : NumericalAxis
 ### Common Combinations
 
 **Clean Professional Look:**
-```xml
+```xaml
 <chart:NumericalAxis ShowMajorGridLines="True"
                      ShowAxisLine="True"
                      ShowMajorTickLines="True"
@@ -605,7 +720,7 @@ public class CustomNumericalAxis : NumericalAxis
 ```
 
 **Minimal Clean Look:**
-```xml
+```xaml
 <chart:NumericalAxis ShowMajorGridLines="False"
                      ShowAxisLine="True"
                      ShowMajorTickLines="False"

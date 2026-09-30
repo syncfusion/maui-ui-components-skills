@@ -42,6 +42,9 @@ Use `ChartTooltipBehavior` to customize tooltip appearance and behavior. Create 
 | `Duration` | int | Display duration in seconds |
 | `Margin` | Thickness | Margin around tooltip content |
 | `TextColor` | Color | Text color |
+| `Stroke` | Brush | Tooltip border color |
+| `StrokeWidth` | double | Tooltip border thickness |
+| `UseSeriesFillColor` | bool | Uses the associated segment fill color as the tooltip background |
 
 ### XAML
 ```xaml
@@ -73,6 +76,31 @@ chart.TooltipBehavior = new ChartTooltipBehavior()
 };
 
 this.Content = chart;
+```
+
+### Tooltip Border and Series Fill
+
+Use the `Stroke` and `StrokeWidth` properties of `ChartTooltipBehavior` to add a border around the funnel tooltip. Set `UseSeriesFillColor` to `true` to make the tooltip adopt the associated segment fill color as its background.
+
+**XAML:**
+```xaml
+<chart:SfFunnelChart EnableTooltip="True">
+    <chart:SfFunnelChart.TooltipBehavior>
+        <chart:ChartTooltipBehavior Stroke="DarkSlateGray"
+                                    StrokeWidth="1"
+                                    UseSeriesFillColor="True"/>
+    </chart:SfFunnelChart.TooltipBehavior>
+</chart:SfFunnelChart>
+```
+
+**C#:**
+```csharp
+chart.TooltipBehavior = new ChartTooltipBehavior()
+{
+    Stroke = Colors.DarkSlateGray,
+    StrokeWidth = 1,
+    UseSeriesFillColor = true
+};
 ```
 
 ## Tooltip Template

@@ -23,7 +23,7 @@ TreeView provides comprehensive MVVM support through bindable properties, comman
 
 ### Binding SelectedItem
 
-```xml
+```xaml
 <syncfusion:SfTreeView SelectedItem="{Binding SelectedPlace, Mode=TwoWay}"
                        ItemsSource="{Binding CountriesInfo}"
                        ChildPropertyName="States"/>
@@ -70,7 +70,7 @@ public class CountriesViewModel
 
 ### Binding SelectedItems
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        SelectionMode="Multiple"
                        SelectedItems="{Binding SelectedCountries}"
@@ -148,7 +148,7 @@ public class CommandViewModel
 
 ### ExpandCommand
 
-```xml
+```xaml
 <syncfusion:SfTreeView ExpandCommand="{Binding ExpandingCommand}"/>
 ```
 
@@ -176,7 +176,7 @@ private void OnNodeExpanded(TreeViewNode node)
 
 ### CollapseCommand
 
-```xml
+```xaml
 <syncfusion:SfTreeView CollapseCommand="{Binding CollapsingCommand}"/>
 ```
 
@@ -207,7 +207,7 @@ private void OnNodeCollapsed(TreeViewNode node)
 
 Use behaviors to convert events to commands:
 
-```xml
+```xaml
 <syncfusion:SfTreeView SelectionMode="Multiple"
                        SelectedItems="{Binding SelectedCountries}">
     <syncfusion:SfTreeView.Behaviors>

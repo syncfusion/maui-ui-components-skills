@@ -17,7 +17,7 @@ Looping allows seamless navigation from the last item back to the first item and
 ### Basic Looping
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  EnableLooping="True">
     <picker:SfPicker.Columns>
@@ -102,7 +102,7 @@ Control how items appear visually in the picker using different text display mod
 
 Standard picker appearance with uniform text.
 
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  TextDisplayMode="Default">
     <!-- Picker configuration -->
@@ -114,7 +114,7 @@ Standard picker appearance with uniform text.
 Gradually decreases visibility of unselected items from the selected item.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  TextDisplayMode="Fade">
     <picker:SfPicker.Columns>
@@ -140,7 +140,7 @@ this.Content = picker;
 Decreases font size of items further from the selected item.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  TextDisplayMode="Shrink">
     <picker:SfPicker.Columns>
@@ -166,7 +166,7 @@ this.Content = picker;
 Combines both opacity and size reduction for maximum visual hierarchy.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker"
                  TextDisplayMode="FadeAndShrink">
     <picker:SfPicker.Columns>
@@ -227,7 +227,7 @@ public class LanguageTemplateSelector : DataTemplateSelector
 ```
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <Grid.Resources>
         <!-- Template for Indian languages -->
@@ -348,7 +348,7 @@ Create a modern, translucent design with the liquid glass effect (requires .NET 
 ### Step 1: Wrap Picker in Glass Effect View
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
@@ -559,7 +559,7 @@ protected override void OnDisappearing()
 
 ## Complete Advanced Example
 
-```xml
+```xaml
 <ContentPage xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core">
     <Grid>
         <core:SfGlassEffectView EffectType="Regular" CornerRadius="20">

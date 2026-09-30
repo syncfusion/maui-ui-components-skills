@@ -160,7 +160,7 @@ The SfCalendar supports Right-to-Left (RTL) languages such as Arabic and Hebrew.
 ### Enable RTL
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar"
                      FlowDirection="RightToLeft" />
 ```
@@ -238,7 +238,7 @@ public enum CalendarIdentifier
 ### Set Calendar Identifier
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar"
                      CalendarIdentifier="Hijri" />
 ```
@@ -318,7 +318,7 @@ The SfCalendar supports a modern "liquid glass" visual effect that provides a fr
 ### Enable Liquid Glass Effect
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar"
                      EnableLiquidGlassEffect="True" />
 ```

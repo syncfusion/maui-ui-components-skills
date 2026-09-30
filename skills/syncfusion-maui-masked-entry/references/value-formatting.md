@@ -37,7 +37,7 @@ public enum MaskedEntryMaskFormat
 
 **Use this when:** You want raw, unformatted user input for storage or processing.
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     WidthRequest="200"
     MaskType="Simple"
@@ -71,7 +71,7 @@ var maskedEntry = new SfMaskedEntry
 
 **Use this when:** You need to preserve position information but not separators.
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     WidthRequest="200"
     MaskType="Simple"
@@ -105,7 +105,7 @@ var maskedEntry = new SfMaskedEntry
 
 **Use this when:** You want formatted output but omit unfilled positions.
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     WidthRequest="200"
     MaskType="Simple"
@@ -139,7 +139,7 @@ var maskedEntry = new SfMaskedEntry
 
 **Use this when:** You want the complete formatted string exactly as displayed.
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     WidthRequest="200"
     MaskType="Simple"

@@ -28,7 +28,7 @@ The popup supports two appearance modes for the footer layout.
 Displays a single accept button in the footer.
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
@@ -73,7 +73,7 @@ public partial class MainPage : ContentPage
 Displays both accept and decline buttons in the footer.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup" 
                  AppearanceMode="TwoButton" 
                  ShowFooter="True">
@@ -94,7 +94,7 @@ sfPopup.Show();
 Set a simple text header using the `HeaderTitle` property.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup" 
                  HeaderTitle="Alert Message">
 </sfPopup:SfPopup>
@@ -111,7 +111,7 @@ sfPopup.Show();
 Customize the header height using the `HeaderHeight` property.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup" 
                  HeaderHeight="100">
 </sfPopup:SfPopup>
@@ -128,7 +128,7 @@ sfPopup.Show();
 Create a fully custom header using the `HeaderTemplate` property.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup">
     <sfPopup:SfPopup.HeaderTemplate>
         <DataTemplate>
@@ -208,7 +208,7 @@ public partial class MainPage : ContentPage
 
 ### Header with Gradient Background
 
-```xml
+```xaml
 <sfPopup:SfPopup.HeaderTemplate>
     <DataTemplate>
         <Grid>
@@ -234,12 +234,44 @@ public partial class MainPage : ContentPage
 
 ## Footer Customization
 
+### ⚠️ Important: Enable Footer Display
+
+**The footer is NOT shown by default.** To display the footer and its buttons, you must explicitly set the `ShowFooter` property to `True`. Without this, buttons (Accept, Decline) will not be visible, even if `AppearanceMode` is set to `OneButton` or `TwoButton`.
+
+**XAML:**
+```xaml
+<sfPopup:SfPopup x:Name="sfPopup" 
+                 ShowFooter="True"
+                 AppearanceMode="TwoButton">
+</sfPopup:SfPopup>
+```
+
+**C#:**
+```csharp
+// REQUIRED: Enable footer to show buttons
+sfPopup.ShowFooter = true;
+sfPopup.AppearanceMode = PopupButtonAppearanceMode.TwoButton;
+sfPopup.Show();
+```
+
+**Without `ShowFooter="True"`:**
+- ❌ Buttons are hidden
+- ❌ User cannot accept/decline
+- ❌ Footer region is not displayed
+
+**With `ShowFooter="True"`:**
+- ✅ Buttons are visible
+- ✅ User can interact with buttons
+- ✅ Footer customization takes effect
+
+---
+
 ### Footer Height
 
 Customize the footer height using the `FooterHeight` property.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup" 
                  ShowFooter="True" 
                  FooterHeight="80">
@@ -258,7 +290,7 @@ sfPopup.Show();
 Customize the text for accept and decline buttons.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup" 
                  ShowFooter="True" 
                  AppearanceMode="TwoButton"
@@ -281,7 +313,7 @@ sfPopup.Show();
 Create a fully custom footer using the `FooterTemplate` property.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup" ShowFooter="True">
     <sfPopup:SfPopup.FooterTemplate>
         <DataTemplate>
@@ -370,7 +402,7 @@ public MainPage()
 
 ### Footer with Icon Buttons
 
-```xml
+```xaml
 <sfPopup:SfPopup.FooterTemplate>
     <DataTemplate>
         <FlexLayout Direction="Row" 
@@ -409,7 +441,7 @@ public MainPage()
 Use the `Message` property for simple text content.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup" 
                  HeaderTitle="Alert"
                  Message="This is a simple message">
@@ -428,7 +460,7 @@ sfPopup.Show();
 Create custom content using the `ContentTemplate` property.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup" ShowFooter="True">
     <sfPopup:SfPopup.ContentTemplate>
         <DataTemplate>
@@ -478,7 +510,7 @@ public MainPage()
 
 ### Content with Image and Text
 
-```xml
+```xaml
 <sfPopup:SfPopup.ContentTemplate>
     <DataTemplate>
         <StackLayout Padding="20" Spacing="15">
@@ -504,7 +536,7 @@ public MainPage()
 
 ### Content with Data Binding
 
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="popup">
     <sfPopup:SfPopup.ContentTemplate>
         <DataTemplate>
@@ -528,7 +560,7 @@ public MainPage()
 Hide the header region using the `ShowHeader` property.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup" 
                  ShowHeader="False"
                  ShowFooter="True">
@@ -547,7 +579,7 @@ sfPopup.Show();
 Show the footer region using the `ShowFooter` property.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup" 
                  ShowFooter="True">
 </sfPopup:SfPopup>
@@ -564,7 +596,7 @@ sfPopup.Show();
 Show a close button in the header using the `ShowCloseButton` property.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup" 
                  ShowCloseButton="True">
 </sfPopup:SfPopup>
@@ -578,7 +610,7 @@ sfPopup.Show();
 
 ### Minimal Popup (No Header or Footer)
 
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="minimalPopup"
                  ShowHeader="False"
                  ShowFooter="False">
@@ -609,7 +641,7 @@ sfPopup.Show();
 Remove or customize the overlay behind the popup.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="popup" 
                  ShowOverlayAlways="False"
                  IsOpen="True">
@@ -631,7 +663,7 @@ popup.Show();
 
 To block interaction without visible overlay, keep `ShowOverlayAlways="True"` and customize the overlay color to transparent in styles:
 
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="popup" 
                  ShowOverlayAlways="True">
     <!-- Overlay is present but can be styled as transparent -->
@@ -642,7 +674,7 @@ To block interaction without visible overlay, keep `ShowOverlayAlways="True"` an
 
 ### Alert Dialog
 
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="alertPopup"
                  HeaderTitle="Alert"
                  Message="This operation cannot be undone."
@@ -654,7 +686,7 @@ To block interaction without visible overlay, keep `ShowOverlayAlways="True"` an
 
 ### Confirmation Dialog
 
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="confirmPopup"
                  HeaderTitle="Confirm Delete"
                  Message="Are you sure you want to delete this item?"
@@ -667,7 +699,7 @@ To block interaction without visible overlay, keep `ShowOverlayAlways="True"` an
 
 ### Custom Login Form
 
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="loginPopup"
                  HeaderTitle="Login"
                  ShowFooter="True"
@@ -692,7 +724,7 @@ To block interaction without visible overlay, keep `ShowOverlayAlways="True"` an
 
 ### Progress Indicator Popup
 
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="progressPopup"
                  ShowHeader="False"
                  ShowFooter="False"
@@ -719,7 +751,7 @@ To block interaction without visible overlay, keep `ShowOverlayAlways="True"` an
 
 ### Rating Popup
 
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="ratingPopup"
                  HeaderTitle="Rate Our App"
                  ShowFooter="True"

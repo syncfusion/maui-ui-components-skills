@@ -41,7 +41,7 @@ dotnet add package Syncfusion.Maui.Core
 Add the Syncfusion.Maui.Core namespace:
 
 **XAML:**
-```xml
+```xaml
 xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
 ```
 
@@ -57,7 +57,7 @@ using Syncfusion.Maui.Core;
 Wrap the StepProgressBar step content inside `SfGlassEffectView` using a custom `StepTemplate`.
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <!-- Gradient background for glass effect to show through -->
     <Grid.Background>
@@ -319,7 +319,7 @@ public class ViewModel
 
 For a simplified approach, use the same glass effect for all steps, with step status determining the base color automatically through StepSettings:
 
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar.CompletedStepSettings>
     <stepProgressBar:StepSettings 
         Background="#34C759"
@@ -348,7 +348,7 @@ For the glass effect to be visible and effective:
 Place StepProgressBar over a gradient or image background:
 
 **Gradient Background:**
-```xml
+```xaml
 <Grid.Background>
     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
         <GradientStop Color="#667eea" Offset="0.0" />
@@ -358,7 +358,7 @@ Place StepProgressBar over a gradient or image background:
 ```
 
 **Image Background:**
-```xml
+```xaml
 <Grid>
     <Image Source="background.jpg" Aspect="AspectFill"/>
     <stepProgressBar:SfStepProgressBar .../>
@@ -369,7 +369,7 @@ Place StepProgressBar over a gradient or image background:
 
 Set the Border or inner content `Background` to `Transparent` to allow the glass effect to show:
 
-```xml
+```xaml
 <core:SfGlassEffectView Background="#007AFF">
     <Border Background="Transparent">  <!-- Critical: Transparent -->
         <!-- Content -->

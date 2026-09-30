@@ -220,12 +220,12 @@ To continue using Syncfusion components:
 3. Note the version number (e.g., 26.2.4)
 
 **Option 2: Project File (.csproj)**
-```xml
+```xaml
 <PackageReference Include="Syncfusion.Maui.Core" Version="26.2.4" />
 ```
 
 **Option 3: packages.config (if using)**
-```xml
+```xaml
 <package id="Syncfusion.Maui.Core" version="26.2.4" />
 ```
 
@@ -254,7 +254,7 @@ To continue using Syncfusion components:
 3. Generate license key for that unified version
 
 **Example Fix:**
-```xml
+```xaml
 <!-- Before (Mismatched) -->
 <PackageReference Include="Syncfusion.Maui.Core" Version="26.2.4" />
 <PackageReference Include="Syncfusion.Maui.DataGrid" Version="26.1.0" /> ❌

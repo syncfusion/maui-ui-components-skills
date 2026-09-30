@@ -49,7 +49,7 @@ dotnet add package Syncfusion.Maui.Inputs
 
 #### Option 4: Edit .csproj Directly
 
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.Inputs" Version="33.1.44" />
 </ItemGroup>

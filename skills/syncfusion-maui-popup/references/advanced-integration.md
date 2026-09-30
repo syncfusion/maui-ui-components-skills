@@ -24,7 +24,7 @@ This guide covers advanced integration scenarios for the .NET MAUI Popup, includ
 Display a Syncfusion ListView inside a popup's content template.
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sfListView="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
@@ -123,7 +123,7 @@ private void OpenButton_Clicked(object sender, EventArgs e)
 
 ### ListView with Search
 
-```xml
+```xaml
 <sfPopup:SfPopup.ContentTemplate>
     <DataTemplate>
         <StackLayout>
@@ -156,7 +156,7 @@ private void OnSearchTextChanged(object sender, TextChangedEventArgs e)
 Display a popup when a DataGrid cell is tapped.
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sfDatagrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
@@ -219,7 +219,7 @@ private void OnDataGridCellTapped(object sender, DataGridCellTappedEventArgs e)
 
 Display a full DataGrid within a popup for detailed data viewing.
 
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="dataGridPopup"
                  HeaderTitle="Order Details"
                  IsFullScreen="True"
@@ -340,7 +340,7 @@ public class PopupViewModel : INotifyPropertyChanged
 ```
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
@@ -373,7 +373,7 @@ public class PopupViewModel : INotifyPropertyChanged
 Create a reusable popup as a separate XAML file.
 
 **PopupPage.xaml:**
-```xml
+```xaml
 <sfPopup:SfPopup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                  x:Class="PopupIntegration.PopupPage"
@@ -447,7 +447,7 @@ The Syncfusion .NET MAUI Popup supports localization for button text and message
 Create `.resx` files for each language (e.g., `Resources.resx`, `Resources.es.resx`, `Resources.fr.resx`).
 
 **Resources.resx (English):**
-```xml
+```xaml
 <data name="AcceptButtonText" xml:space="preserve">
   <value>OK</value>
 </data>
@@ -457,7 +457,7 @@ Create `.resx` files for each language (e.g., `Resources.resx`, `Resources.es.re
 ```
 
 **Resources.es.resx (Spanish):**
-```xml
+```xaml
 <data name="AcceptButton" xml:space="preserve">
   <value>Aceptar</value>
 </data>
@@ -524,7 +524,7 @@ private void ChangeLanguage(string languageCode)
 Create a modern, translucent glass-like effect for the popup.
 
 **XAML with Glass Effect:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="glassPopup"
                  ShowHeader="False"
                  EnableLiquidGlassEffect="True" 
@@ -573,7 +573,7 @@ protected override void OnDisappearing()
 
 ### 3. Accessibility
 
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="accessiblePopup"
                  AutomationId="MainPopup"
                  SemanticProperties.Description="Alert dialog">

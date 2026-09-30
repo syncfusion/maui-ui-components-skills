@@ -28,7 +28,7 @@ Most APIs maintained with consistency updates.
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <listView:SfListView ItemsSource="{Binding Contacts}"
                      ItemHeight="60"
                      AllowGrouping="True"
@@ -36,7 +36,7 @@ Most APIs maintained with consistency updates.
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <listView:SfListView ItemsSource="{Binding Contacts}"
                      ItemSize="60"
                      AllowGroupExpandCollapse="True"
@@ -65,14 +65,14 @@ using Syncfusion.Maui.Buttons;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <buttons:SfSegmentedControl ItemsSource="{Binding Segments}"
                             DisplayMemberPath="Name"
                             SelectedIndex="0"/>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <buttons:SfSegmentedControl ItemsSource="{Binding Segments}"
                             DisplayMemberPath="Name"
                             SelectedIndex="0"/>
@@ -104,7 +104,7 @@ using Syncfusion.Maui.Accordion;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <accordion:SfAccordion ExpandMode="SingleOrNone">
     <accordion:AccordionItem HeaderBackgroundColor="LightBlue">
         <accordion:AccordionItem.Header>
@@ -118,7 +118,7 @@ using Syncfusion.Maui.Accordion;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <accordion:SfAccordion ExpandMode="SingleOrNone">
     <accordion:AccordionItem HeaderBackground="LightBlue">
         <accordion:AccordionItem.Header>
@@ -146,7 +146,7 @@ using Syncfusion.Maui.Expander;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <expander:SfExpander IsExpanded="True">
     <expander:SfExpander.Header>
         <Label Text="Tap to expand"/>
@@ -158,7 +158,7 @@ using Syncfusion.Maui.Expander;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <expander:SfExpander IsExpanded="True">
     <expander:SfExpander.Header>
         <Label Text="Tap to expand"/>
@@ -186,7 +186,7 @@ using Syncfusion.Maui.TabView;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <tabView:SfTabView>
     <tabView:SfTabItem Title="Home">
         <tabView:SfTabItem.Content>
@@ -197,7 +197,7 @@ using Syncfusion.Maui.TabView;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <tabView:SfTabView>
     <tabView:SfTabItem Header="Home">
         <tabView:SfTabItem.Content>
@@ -236,7 +236,7 @@ Templates remain largely compatible.
 ### Issue: HeaderBackgroundColor not found
 
 **Solution:** Use `HeaderBackground`:
-```xml
+```xaml
 <!-- Change -->
 <accordion:AccordionItem HeaderBackgroundColor="Blue"/>
 

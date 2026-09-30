@@ -15,7 +15,7 @@ The legend displays color indicators with labels, making it easier to interpret 
 
 **Basic Setup:**
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Value"
                    RangeColorValuePath="Value">
@@ -45,7 +45,7 @@ The legend displays color indicators with labels, making it easier to interpret 
 Controls whether the legend is visible.
 
 **XAML:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding PopulationDetails}"
                    PrimaryValuePath="Population"
                    RangeColorValuePath="Population">
@@ -112,7 +112,7 @@ treeMap.LeafItemBrushSettings = new TreeMapRangeBrushSettings
 
 ### Hide Legend
 
-```xml
+```xaml
 <treemap:TreeMapLegendSettings ShowLegend="False" />
 ```
 
@@ -128,7 +128,7 @@ Position the legend relative to the TreeMap using the `Placement` property.
 
 ### Top Placement
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Value"
                    RangeColorValuePath="Value">
@@ -154,14 +154,14 @@ Position the legend relative to the TreeMap using the `Placement` property.
 
 ### Bottom Placement (Default)
 
-```xml
+```xaml
 <treemap:TreeMapLegendSettings ShowLegend="True"
                                Placement="Bottom" />
 ```
 
 ### Left Placement
 
-```xml
+```xaml
 <treemap:TreeMapLegendSettings ShowLegend="True"
                                Placement="Left" />
 ```
@@ -170,7 +170,7 @@ Position the legend relative to the TreeMap using the `Placement` property.
 
 ### Right Placement
 
-```xml
+```xaml
 <treemap:TreeMapLegendSettings ShowLegend="True"
                                Placement="Right" />
 ```
@@ -201,7 +201,7 @@ Specifies the shape of legend icons.
 
 ### Circle Icons
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Value"
                    RangeColorValuePath="Value">
@@ -231,7 +231,7 @@ Specifies the shape of legend icons.
 
 ### Rectangle Icons (Default)
 
-```xml
+```xaml
 <treemap:TreeMapLegendSettings ShowLegend="True"
                                IconType="Rectangle"
                                IconSize="20, 12" />
@@ -241,7 +241,7 @@ Specifies the shape of legend icons.
 
 ### Diamond Icons
 
-```xml
+```xaml
 <treemap:TreeMapLegendSettings ShowLegend="True"
                                IconType="Diamond"
                                IconSize="16, 16" />
@@ -251,7 +251,7 @@ Specifies the shape of legend icons.
 
 ### Triangle Icons
 
-```xml
+```xaml
 <treemap:TreeMapLegendSettings ShowLegend="True"
                                IconType="Triangle"
                                IconSize="16, 16" />
@@ -275,12 +275,12 @@ treeMap.LegendSettings = new TreeMapLegendSettings
 Controls the width and height of legend icons.
 
 **Syntax:**
-```xml
+```xaml
 IconSize="width, height"
 ```
 
 **Examples:**
-```xml
+```xaml
 <!-- Small icons -->
 <treemap:TreeMapLegendSettings IconSize="12, 12" />
 
@@ -320,7 +320,7 @@ Customize legend label appearance.
 ### Basic Text Styling
 
 **XAML:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Value"
                    RangeColorValuePath="Value">
@@ -391,7 +391,7 @@ TextStyle = new TreeMapLabelStyle { FontSize = 16 }
 
 ### Text Color
 
-```xml
+```xaml
 <!-- Black text (light backgrounds) -->
 <treemap:TreeMapLabelStyle TextColor="Black" FontSize="12" />
 
@@ -404,7 +404,7 @@ TextStyle = new TreeMapLabelStyle { FontSize = 16 }
 
 ### Font Attributes
 
-```xml
+```xaml
 <!-- Bold -->
 <treemap:TreeMapLabelStyle FontAttributes="Bold" />
 
@@ -470,7 +470,7 @@ RangeBrushes = new List<TreeMapRangeBrush>
 
 ### Example 1: Sales Performance with Top Legend
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding SalesData}"
                    PrimaryValuePath="Revenue"
                    RangeColorValuePath="Revenue">
@@ -577,7 +577,7 @@ treeMap.LeafItemBrushSettings = new TreeMapRangeBrushSettings
 
 ### Example 3: Portfolio with Diamond Icons
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Portfolio}"
                    PrimaryValuePath="Value"
                    RangeColorValuePath="GrowthPercent">
@@ -627,7 +627,7 @@ treeMap.LeafItemBrushSettings = new TreeMapRangeBrushSettings
 3. Check that `LegendLabel` is defined for each `TreeMapRangeBrush`
 4. Confirm `ShowLegend="True"` in LegendSettings
 
-```xml
+```xaml
 <!-- All required elements -->
 <treemap:SfTreeMap RangeColorValuePath="Value">  <!-- Required -->
     <treemap:SfTreeMap.LegendSettings>
@@ -673,7 +673,7 @@ new TreeMapRangeBrush { From = 75, To = 100, Brush = ... }
 2. Typical sizes: 12x12 (small), 16x16 (medium), 20x20 (large)
 3. Match icon size to font size for balance
 
-```xml
+```xaml
 <!-- Balanced appearance -->
 <treemap:TreeMapLegendSettings IconSize="16, 16">
     <treemap:TreeMapLegendSettings.TextStyle>

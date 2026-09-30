@@ -91,7 +91,7 @@ dotnet build
 ```
 
 3. **Check .csproj file:**
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.MarkdownViewer" Version="x.x.x" />
 </ItemGroup>
@@ -137,7 +137,7 @@ else
 ```
 
 **3. XAML CDATA Issue**
-```xml
+```xaml
 <!-- ❌ Wrong - Missing CDATA -->
 <markdown:SfMarkdownViewer.Source>
     <x:String>
@@ -382,12 +382,12 @@ string fileName = "UserGuide.md";  // Match actual file name exactly
 **1. Check Network Permissions**
 
 **Android:** Add to `AndroidManifest.xml`:
-```xml
+```xaml
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
 **iOS:** Add to `Info.plist` (if loading non-HTTPS):
-```xml
+```xaml
 <key>NSAppTransportSecurity</key>
 <dict>
     <key>NSAllowsArbitraryLoads</key>

@@ -27,7 +27,7 @@ The `LeafItemSettings` property controls leaf item appearance through the `TreeM
 
 **Basic Setup:**
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Size">
     <treemap:SfTreeMap.LeafItemSettings>
@@ -53,7 +53,7 @@ public class Product
 ```
 
 **XAML:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Products}"
                    PrimaryValuePath="Sales">
     <treemap:SfTreeMap.LeafItemSettings>
@@ -74,7 +74,7 @@ treeMap.LeafItemSettings = new TreeMapLeafItemSettings
 
 ### Choosing Different Properties
 
-```xml
+```xaml
 <!-- Show category instead of name -->
 <treemap:TreeMapLeafItemSettings LabelPath="Category" />
 
@@ -89,7 +89,7 @@ treeMap.LeafItemSettings = new TreeMapLeafItemSettings
 Controls the gap between leaf item rectangles. Higher values create more white space.
 
 **XAML:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Size">
     <treemap:SfTreeMap.LeafItemSettings>
@@ -124,7 +124,7 @@ treeMap.LeafItemSettings = new TreeMapLeafItemSettings
 Adds colored borders around leaf items.
 
 **XAML:**
-```xml
+```xaml
 <treemap:TreeMapLeafItemSettings LabelPath="Name"
                                  Spacing="4"
                                  Stroke="Black"
@@ -143,7 +143,7 @@ treeMap.LeafItemSettings = new TreeMapLeafItemSettings
 ```
 
 **Using Hex Colors:**
-```xml
+```xaml
 <treemap:TreeMapLeafItemSettings Stroke="#424242" StrokeWidth="1" />
 ```
 
@@ -162,7 +162,7 @@ Controls border thickness in device-independent pixels.
 - `3+`: Very prominent border
 
 **Example - Bold Borders:**
-```xml
+```xaml
 <treemap:TreeMapLeafItemSettings LabelPath="Name"
                                  Stroke="DarkGray"
                                  StrokeWidth="2" />
@@ -170,7 +170,7 @@ Controls border thickness in device-independent pixels.
 
 ### Combining Spacing and Stroke
 
-```xml
+```xaml
 <!-- Clear separation with borders -->
 <treemap:TreeMapLeafItemSettings LabelPath="Name"
                                  Spacing="5"
@@ -195,7 +195,7 @@ Customize label text appearance through the `TextStyle` property.
 ### Basic Text Styling
 
 **XAML:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Size">
     <treemap:SfTreeMap.LeafItemSettings>
@@ -243,24 +243,24 @@ FontSize = 20
 ### Font Attributes
 
 **Bold:**
-```xml
+```xaml
 <treemap:TreeMapLabelStyle FontAttributes="Bold" />
 ```
 
 **Italic:**
-```xml
+```xaml
 <treemap:TreeMapLabelStyle FontAttributes="Italic" />
 ```
 
 **Bold and Italic:**
-```xml
+```xaml
 <treemap:TreeMapLabelStyle FontAttributes="Bold, Italic" />
 ```
 
 ### Custom Fonts
 
 **XAML:**
-```xml
+```xaml
 <treemap:TreeMapLabelStyle FontFamily="Roboto"
                            FontSize="14"
                            FontAttributes="Bold" />
@@ -316,7 +316,7 @@ Controls what happens when a label is too long to fit inside its rectangle.
 Truncates text and adds ellipsis when label exceeds rectangle width.
 
 **XAML:**
-```xml
+```xaml
 <treemap:TreeMapLeafItemSettings LabelPath="Name"
                                  OverflowMode="Trim">
     <treemap:TreeMapLeafItemSettings.LabelStyle>
@@ -334,7 +334,7 @@ Truncates text and adds ellipsis when label exceeds rectangle width.
 Wraps text to multiple lines when too long.
 
 **XAML:**
-```xml
+```xaml
 <treemap:TreeMapLeafItemSettings LabelPath="Name"
                                  OverflowMode="Wrap">
     <treemap:TreeMapLeafItemSettings.LabelStyle>
@@ -358,7 +358,7 @@ Wraps text to multiple lines when too long.
 Hides labels completely if they don't fit in the rectangle.
 
 **XAML:**
-```xml
+```xaml
 <treemap:TreeMapLeafItemSettings LabelPath="Name"
                                  OverflowMode="Hide">
     <treemap:TreeMapLeafItemSettings.LabelStyle>
@@ -384,13 +384,13 @@ Hides labels completely if they don't fit in the rectangle.
 Toggle all labels on or off.
 
 **Show Labels (Default):**
-```xml
+```xaml
 <treemap:TreeMapLeafItemSettings LabelPath="Name"
                                  ShowLabels="True" />
 ```
 
 **Hide All Labels:**
-```xml
+```xaml
 <treemap:TreeMapLeafItemSettings LabelPath="Name"
                                  ShowLabels="False" />
 ```
@@ -412,7 +412,7 @@ treeMap.LeafItemSettings = new TreeMapLeafItemSettings
 - Create minimalist visualizations
 
 **Example: Label-free TreeMap with Tooltips:**
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Size"
                    ShowToolTip="True">
@@ -429,7 +429,7 @@ Users hover over items to see labels in tooltips instead of seeing them permanen
 
 ### Example 1: Professional Style with Clear Borders
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding SalesData}"
                    PrimaryValuePath="Revenue">
     <treemap:SfTreeMap.LeafItemSettings>
@@ -478,7 +478,7 @@ treeMap.LeafItemSettings = new TreeMapLeafItemSettings
 
 ### Example 3: Multi-line Labels for Large Items
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding CountryData}"
                    PrimaryValuePath="Population">
     <treemap:SfTreeMap.LeafItemSettings>
@@ -525,7 +525,7 @@ public void SetupTreeMapWithDynamicColors()
 
 ### Example 5: Hide Small Item Labels Only
 
-```xml
+```xaml
 <!-- Use Hide mode so only larger rectangles show labels -->
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Size">
@@ -602,7 +602,7 @@ LabelPath = "ShortName"
 2. Ensure `Stroke` color contrasts with item background
 3. Check that `Spacing` > 0 (borders only visible with spacing)
 
-```xml
+```xaml
 <!-- Good: Clear borders -->
 <treemap:TreeMapLeafItemSettings Spacing="4"
                                  Stroke="White"
@@ -628,7 +628,7 @@ builder
 ```
 
 4. Reference registered font name in LabelStyle:
-```xml
+```xaml
 <treemap:TreeMapLabelStyle FontFamily="YourFontName" />
 ```
 

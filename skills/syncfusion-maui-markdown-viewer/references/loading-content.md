@@ -28,7 +28,7 @@ The simplest approach is to assign a Markdown-formatted string directly to the `
 
 ### XAML Implementation
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:markdown="clr-namespace:Syncfusion.Maui.MarkdownViewer;assembly=Syncfusion.Maui.MarkdownViewer"
@@ -131,7 +131,7 @@ This content can be updated dynamically.
 }
 ```
 
-```xml
+```xaml
 <!-- XAML with binding -->
 <markdown:SfMarkdownViewer Source="{Binding MarkdownContent}" />
 ```
@@ -276,7 +276,7 @@ Embed `.md` files in your project and load them as resources. This is ideal for 
 
 In `.csproj`, MAUI automatically treats files in `Resources/Raw/` as raw assets:
 
-```xml
+```xaml
 <ItemGroup>
     <MauiAsset Include="Resources\Raw\**" />
 </ItemGroup>
@@ -284,7 +284,7 @@ In `.csproj`, MAUI automatically treats files in `Resources/Raw/` as raw assets:
 
 Or explicitly define:
 
-```xml
+```xaml
 <ItemGroup>
     <MauiAsset Include="Resources\UserGuide.md" />
 </ItemGroup>
@@ -375,7 +375,7 @@ Load Markdown content from a remote web server or repository. Content is fetched
 
 ### Basic URL Loading
 
-```xml
+```xaml
 <!-- Direct URL in XAML -->
 <markdown:SfMarkdownViewer 
     Source="https://raw.githubusercontent.com/SyncfusionExamples/GettingStarted_DockLayout_MAUI/refs/heads/master/README.md" />

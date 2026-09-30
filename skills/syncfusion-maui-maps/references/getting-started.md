@@ -34,7 +34,7 @@ dotnet add package Syncfusion.Maui.Maps
 ### Step 2: Verify Installation
 
 Check your `.csproj` file contains:
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.Maps" Version="27.1.48" />
   <!-- Syncfusion.Maui.Core is automatically included as a dependency -->
@@ -598,14 +598,14 @@ ShapeDataField = "name"            // ✓ Matches GeoJSON
    ```
 
 2. ✅ Set linking behavior in .csproj:
-   ```xml
+   ```xaml
    <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
        <AndroidLinkMode>None</AndroidLinkMode>
    </PropertyGroup>
    ```
 
 3. ✅ Ensure `Platforms/Android/AndroidManifest.xml` has internet permission:
-   ```xml
+   ```xaml
    <?xml version="1.0" encoding="utf-8"?>
    <manifest xmlns:android="http://schemas.android.com/apk/res/android">
        <application android:allowBackup="true" />

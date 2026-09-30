@@ -89,7 +89,7 @@ namespace GettingStarted
 2. Initialize the SfPicker control
 
 **MainPage.xaml:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
@@ -126,7 +126,7 @@ namespace GettingStarted
 Set header text using the `PickerHeaderView` to provide context for the user.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.HeaderView>
         <picker:PickerHeaderView Text="Select a color" Height="40" />
@@ -182,7 +182,7 @@ public class ItemInfo
 ### Bind the Data Collection to Picker
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns:local="clr-namespace:GettingStarted">
     
     <picker:SfPicker x:Name="picker">
@@ -225,7 +225,7 @@ this.Content = picker;
 Add OK and Cancel buttons to the footer for user validation.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.FooterView>
         <picker:PickerFooterView ShowOkButton="True" Height="40" />
@@ -255,7 +255,7 @@ this.Content = picker;
 Set column header text to identify what each column represents.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.HeaderView>
         <picker:PickerHeaderView Text="Select a color" Height="40" />
@@ -307,7 +307,7 @@ this.Content = picker;
 Control the picker dimensions using `HeightRequest` and `WidthRequest`.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker" 
                  HeightRequest="280" 
                  WidthRequest="300">
@@ -330,7 +330,7 @@ this.Content = picker;
 Here's a complete working example that combines all the basic features:
 
 **MainPage.xaml:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"

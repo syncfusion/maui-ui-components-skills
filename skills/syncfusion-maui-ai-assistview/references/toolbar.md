@@ -22,7 +22,7 @@ The toolbar is visible by default (`ShowToolbar = true`). Use `ToolbarTitle` to 
 
 ### XAML
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView
     ShowToolbar="True"
     ToolbarTitle="AI AssistView"
@@ -67,7 +67,7 @@ Temporary Chat provides an ephemeral conversation surface for quick, non-persist
 
 ### XAML
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            EnableTemporaryChat="True"
                            TemporaryChatBannerText="This chat will not be saved" />
@@ -82,7 +82,7 @@ sfAIAssistView.TemporaryChatBannerText = "This chat will not be saved";
 
 ### Custom Banner Template
 
-```xml
+```xaml
 <ContentPage.Resources>
     <DataTemplate x:Key="temporaryBannerTemplate">
         <HorizontalStackLayout Spacing="8" Padding="12,8">
@@ -159,7 +159,7 @@ private void OnChatModeChanged(object sender, ChatModeChangedEventArgs e)
 
 ### XAML Event Wiring
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            EnableTemporaryChat="True"
                            ChatModeChanging="OnChatModeChanging"

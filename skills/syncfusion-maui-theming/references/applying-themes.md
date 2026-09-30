@@ -28,7 +28,7 @@ Syncfusion .NET MAUI supports four built-in themes:
 
 Add the Syncfusion themes namespace to your App.xaml:
 
-```xml
+```xaml
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncTheme="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core"
@@ -41,7 +41,7 @@ Add the Syncfusion themes namespace to your App.xaml:
 
 In `Application.Resources`, add the theme dictionary:
 
-```xml
+```xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
@@ -59,7 +59,7 @@ All Syncfusion controls in your application now automatically use the theme. No 
 
 ### Material Dark Theme
 
-```xml
+```xaml
 <Application xmlns:syncTheme="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core"
              x:Class="YourApp.App">
     <Application.Resources>
@@ -74,7 +74,7 @@ All Syncfusion controls in your application now automatically use the theme. No 
 
 ### Cupertino Light Theme
 
-```xml
+```xaml
 <Application xmlns:syncTheme="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core"
              x:Class="YourApp.App">
     <Application.Resources>
@@ -91,7 +91,7 @@ All Syncfusion controls in your application now automatically use the theme. No 
 
 Apply different themes based on platform:
 
-```xml
+```xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
@@ -136,7 +136,7 @@ When you add `SyncfusionThemeResourceDictionary`, you get:
 
 Before `SyncfusionThemeResourceDictionary`, you had to manually add:
 
-```xml
+```xaml
 <!-- DON'T DO THIS - Use SyncfusionThemeResourceDictionary instead -->
 <ResourceDictionary Source="Syncfusion.Maui.Charts.Themes.xaml"/>
 <ResourceDictionary Source="Syncfusion.Maui.DataGrid.Themes.xaml"/>
@@ -159,7 +159,7 @@ public enum SfVisuals
 ```
 
 **Usage in XAML:**
-```xml
+```xaml
 <syncTheme:SyncfusionThemeResourceDictionary VisualTheme="MaterialDark"/>
 ```
 
@@ -190,7 +190,7 @@ Console.WriteLine($"Button background: {buttonBgColor}");
 
 ### Missing Namespace
 ❌ **Incorrect:**
-```xml
+```xaml
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui">
     <!-- syncTheme namespace not declared -->
     <Application.Resources>
@@ -200,7 +200,7 @@ Console.WriteLine($"Button background: {buttonBgColor}");
 ```
 
 ✅ **Correct:**
-```xml
+```xaml
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:syncTheme="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core">
     <Application.Resources>
@@ -215,14 +215,14 @@ Console.WriteLine($"Button background: {buttonBgColor}");
 
 ### Missing ResourceDictionary Wrappers
 ❌ **Incorrect:**
-```xml
+```xaml
 <Application.Resources>
     <syncTheme:SyncfusionThemeResourceDictionary VisualTheme="MaterialDark"/>
 </Application.Resources>
 ```
 
 ✅ **Correct:**
-```xml
+```xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
@@ -234,12 +234,12 @@ Console.WriteLine($"Button background: {buttonBgColor}");
 
 ### Invalid Theme Name
 ❌ **Incorrect:**
-```xml
+```xaml
 <syncTheme:SyncfusionThemeResourceDictionary VisualTheme="Dark"/>
 ```
 
 ✅ **Correct:**
-```xml
+```xaml
 <syncTheme:SyncfusionThemeResourceDictionary VisualTheme="MaterialDark"/>
 ```
 

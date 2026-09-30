@@ -29,7 +29,7 @@ Creating a custom theme gives you complete control over the visual appearance of
 
 ### Step 1: Register Theme for Controls
 
-```xml
+```xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
@@ -52,7 +52,7 @@ Creating a custom theme gives you complete control over the visual appearance of
 
 ### Step 2: Define All Required Colors
 
-```xml
+```xaml
 <ResourceDictionary>
     <!-- Button colors -->
     <Color x:Key="SfButtonNormalBackground">#667EEA</Color>
@@ -76,7 +76,7 @@ Creating a custom theme gives you complete control over the visual appearance of
 
 ### Full Implementation
 
-```xml
+```xaml
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="YourApp.App">
@@ -167,7 +167,7 @@ Creating a custom theme gives you complete control over the visual appearance of
 
 ### Separate Dark Theme
 
-```xml
+```xaml
 <Application.Resources>
     <ResourceDictionary>
         <!-- Dark mode color palette -->
@@ -207,7 +207,7 @@ Creating a custom theme gives you complete control over the visual appearance of
 
 **Create:** `Themes/CustomLightTheme.xaml`
 
-```xml
+```xaml
 <?xml version="1.0" encoding="UTF-8" ?>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
@@ -234,7 +234,7 @@ Creating a custom theme gives you complete control over the visual appearance of
 
 **In App.xaml:**
 
-```xml
+```xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
@@ -259,7 +259,7 @@ Themes/
 
 **Merge all:**
 
-```xml
+```xaml
 <ResourceDictionary.MergedDictionaries>
     <ResourceDictionary Source="Themes/CustomLightTheme.xaml"/>
     <ResourceDictionary Source="Themes/ButtonTheme.xaml"/>
@@ -273,7 +273,7 @@ Themes/
 
 ### Implement Design Tokens
 
-```xml
+```xaml
 <ResourceDictionary>
     <!-- Spacing tokens -->
     <x:Double x:Key="SpacingXS">4</x:Double>
@@ -311,7 +311,7 @@ Themes/
 
 Combine built-in theme with custom overrides:
 
-```xml
+```xaml
 <ResourceDictionary.MergedDictionaries>
     <!-- Start with built-in theme -->
     <syncTheme:SyncfusionThemeResourceDictionary VisualTheme="MaterialLight"/>
@@ -354,7 +354,7 @@ For each control, you need to define keys for:
 
 Start with essential keys:
 
-```xml
+```xaml
 <!-- Minimum button theme -->
 <Color x:Key="SfButtonNormalBackground">#667EEA</Color>
 <Color x:Key="SfButtonNormalTextColor">White</Color>

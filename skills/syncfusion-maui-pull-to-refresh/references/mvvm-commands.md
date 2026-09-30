@@ -36,7 +36,7 @@ Bind the `IsRefreshing` property to a ViewModel property for two-way refresh sta
 
 ### XAML Binding
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.PullToRefresh;assembly=Syncfusion.Maui.PullToRefresh"
@@ -153,7 +153,7 @@ The `RefreshCommand` executes when the user completes a pull-to-refresh gesture 
 
 ### Basic Command Setup
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh RefreshCommand="{Binding RefreshCommand}">
     <syncfusion:SfPullToRefresh.PullableContent>
         <ListView ItemsSource="{Binding Items}"/>
@@ -260,7 +260,7 @@ Pass data to the RefreshCommand using `RefreshCommandParameter`.
 
 ### XAML with Parameter
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh RefreshCommand="{Binding RefreshCommand}"
                              RefreshCommandParameter="WeatherData">
     <syncfusion:SfPullToRefresh.PullableContent>
@@ -317,7 +317,7 @@ public class ViewModel : INotifyPropertyChanged
 
 ### Binding to ViewModel Property as Parameter
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh RefreshCommand="{Binding RefreshCommand}"
                              RefreshCommandParameter="{Binding SelectedCategory}">
     <!-- PullableContent -->
@@ -466,7 +466,7 @@ public class ViewModel : INotifyPropertyChanged
 
 ### Example 1: News Feed with MVVM
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.PullToRefresh;assembly=Syncfusion.Maui.PullToRefresh"
              xmlns:local="clr-namespace:MyApp">
     

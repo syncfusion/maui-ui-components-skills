@@ -49,7 +49,7 @@ public class ViewModel : INotifyPropertyChanged
 }
 ```
 
-```xml
+```xaml
 <!-- MainPage.xaml -->
 <syncfusion:SfAIAssistView
     AssistItems="{Binding AssistItems}"
@@ -67,7 +67,7 @@ sfAIAssistView.ShowHeader = true;
 
 Use `SuggestionTemplate` to fully customize the appearance of each suggestion chip in the header area.
 
-```xml
+```xaml
 <ContentPage.Resources>
     <DataTemplate x:Key="suggestionTemplate">
         <Border Padding="8,6" StrokeShape="RoundRectangle 20">
@@ -189,7 +189,7 @@ responseItem.Suggestion = itemSuggestion;
 
 Use `ResponseSuggestionTemplate` on `SfAIAssistView` to customize the appearance of individual suggestion chips in response items.
 
-```xml
+```xaml
 <ContentPage.Resources>
     <DataTemplate x:Key="responseSuggestionTemplate">
         <Border Padding="10,6" BackgroundColor="#EDE7F6" StrokeShape="RoundRectangle 16">
@@ -233,7 +233,7 @@ Footer suggestions appear above the input editor area. They let users quickly co
 
 Bind `FooterSuggestions` to an `IList<ISuggestion>`.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView
     AssistItems="{Binding AssistItems}"
     FooterSuggestions="{Binding FooterSuggestions}" />
@@ -263,7 +263,7 @@ sfAIAssistView.FooterSuggestions = viewModel.FooterSuggestions;
 
 Use `FooterSuggestionTemplate` to define a custom layout for each footer suggestion chip.
 
-```xml
+```xaml
 <ContentPage.Resources>
     <DataTemplate x:Key="footerSuggestionTemplate">
         <Border Padding="10,6" BackgroundColor="#F3F3F3" StrokeShape="RoundRectangle 14">
@@ -319,7 +319,7 @@ private void OnSuggestionItemSelected(object sender, SuggestionItemSelectedEvent
 
 ### Using the Command (MVVM)
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView
     AssistItems="{Binding AssistItems}"
     SuggestionItemSelectedCommand="{Binding SuggestionItemSelectedCommand}" />

@@ -13,7 +13,7 @@ Enable users to resize columns by dragging the column header borders.
 
 ### Enable Column Resizing
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AllowResizingColumns="True"
                        ItemsSource="{Binding Orders}" />
 ```
@@ -30,7 +30,7 @@ dataGrid.AllowResizingColumns = true;
 **Hide Column by Resizing:**
 Set `MinimumWidth="0"` to allow hiding via resize:
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="Notes"
                                MinimumWidth="0" />
 ```
@@ -81,7 +81,7 @@ private void DataGrid_ColumnResizing(object sender, DataGridColumnResizingEventA
 
 Change the indicator color:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AllowResizingColumns="True">
     <syncfusion:SfDataGrid.DefaultStyle>
         <syncfusion:DataGridStyle ColumnResizingIndicatorColor="DeepPink" />
@@ -93,13 +93,81 @@ Change the indicator color:
 dataGrid.DefaultStyle.ColumnResizingIndicatorColor = Colors.Blue;
 ```
 
+### Column Resize Modes
+
+Control when column width is applied during resize with the `ColumnResizeMode` property:
+
+**OnMoved Mode** - Real-time resize feedback:
+```xaml
+<syncfusion:SfDataGrid AllowResizingColumns="True"
+                       ColumnResizeMode="OnMoved"
+                       ItemsSource="{Binding Orders}" />
+```
+
+```csharp
+// Width updates as you drag (live feedback)
+dataGrid.ColumnResizeMode = DataGridColumnResizeMode.OnMoved;
+```
+
+**OnTouchUp Mode** - Apply after release (default):
+```xaml
+<syncfusion:SfDataGrid AllowResizingColumns="True"
+                       ColumnResizeMode="OnTouchUp"
+                       ItemsSource="{Binding Orders}" />
+```
+
+```csharp
+// Width updates only when you release the mouse/touch
+dataGrid.ColumnResizeMode = DataGridColumnResizeMode.OnTouchUp;
+```
+
+**Use Cases:**
+- `OnMoved` - Better visual feedback, slower for large grids
+- `OnTouchUp` - Better performance with many columns
+
+## Column Hovering
+
+Highlight columns when hovering to improve visual interaction.
+
+```xaml
+<syncfusion:SfDataGrid ItemsSource="{Binding Orders}"
+                       AllowColumnHoverHighlighting="True">
+    <syncfusion:SfDataGrid.DefaultStyle>
+        <syncfusion:DataGridStyle ColumnHoveredBackground="#F0F0F0" />
+    </syncfusion:SfDataGrid.DefaultStyle>
+</syncfusion:SfDataGrid>
+```
+
+```csharp
+dataGrid.AllowColumnHoverHighlighting = true;
+dataGrid.DefaultStyle.ColumnHoveredBackground = Color.FromArgb("#F0F0F0");
+```
+
+## Header Cell Hovering
+
+Highlight header cells when hovering for better interaction feedback.
+
+```xaml
+<syncfusion:SfDataGrid ItemsSource="{Binding Orders}"
+                       AllowHeaderCellHoverHighlighting="True">
+    <syncfusion:SfDataGrid.DefaultStyle>
+        <syncfusion:DataGridStyle HeaderCellHoveredBackground="#D0D0D0" />
+    </syncfusion:SfDataGrid.DefaultStyle>
+</syncfusion:SfDataGrid>
+```
+
+```csharp
+dataGrid.AllowHeaderCellHoverHighlighting = true;
+dataGrid.DefaultStyle.HeaderCellHoveredBackground = Color.FromArgb("#D0D0D0");
+```
+
 ## Column Drag and Drop
 
 Reorder columns by dragging column headers.
 
 ### Enable Column Drag-Drop
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AllowDraggingColumn="True"
                        ItemsSource="{Binding Orders}" />
 ```
@@ -207,7 +275,7 @@ private void DataGrid_QueryColumnDragging(object sender, DataGridQueryColumnDrag
 
 ### Customize Drag View Appearance
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AllowDraggingColumn="True">
     <syncfusion:SfDataGrid.DefaultStyle>
         <syncfusion:DataGridStyle ColumnDragViewTextColor="White"
@@ -229,7 +297,7 @@ Create multi-level column headers by grouping columns under stacked headers.
 
 ### Add Stacked Headers
 
-```xml
+```xaml
 <syncfusion:SfDataGrid ItemsSource="{Binding Orders}">
     <syncfusion:SfDataGrid.StackedHeaderRows>
         <!-- Level 1: Group all order columns -->
@@ -315,7 +383,7 @@ dataGrid.StackedHeaderRows[0].Columns[0].ColumnMappingNames = string.Join(",", c
 
 **Set Header Row Height:**
 
-```xml
+```xaml
 <syncfusion:SfDataGrid HeaderRowHeight="60" />
 ```
 
@@ -343,7 +411,7 @@ private void DataGrid_QueryRowHeight(object sender, DataGridQueryRowHeightEventA
 
 ### Customize Stacked Header Appearance
 
-```xml
+```xaml
 <syncfusion:SfDataGrid.DefaultStyle>
     <syncfusion:DataGridStyle StackedHeaderRowBackground="#0074E3"
                               StackedHeaderRowTextColor="White"
@@ -388,7 +456,7 @@ Add columns not bound to data source properties with custom values.
 
 ### Create Unbound Column
 
-```xml
+```xaml
 <syncfusion:SfDataGrid ItemsSource="{Binding Orders}">
     <syncfusion:SfDataGrid.Columns>
         <syncfusion:DataGridTextColumn MappingName="OrderID" />
@@ -424,7 +492,7 @@ private void DataGrid_QueryUnboundColumnValue(object? sender, DataGridUnboundCol
 
 **Unbound Column with Expression:**
 
-```xml
+```xaml
 <syncfusion:DataGridUnboundColumn MappingName="TotalPrice"
                                HeaderText="Total"
                                Expression="UnitPrice * Quantity" />
@@ -448,7 +516,7 @@ Freeze columns to keep them visible while scrolling horizontally.
 
 ### Freeze Columns from Left
 
-```xml
+```xaml
 <syncfusion:SfDataGrid FrozenColumnCount="2"
                        ItemsSource="{Binding Orders}" />
 ```
@@ -464,7 +532,7 @@ dataGrid.FrozenColumnCount = 2; // Freeze first 2 columns
 
 ### Freeze Rows from Top
 
-```xml
+```xaml
 <syncfusion:SfDataGrid FrozenRowCount="3"
                        ItemsSource="{Binding Orders}" />
 ```
@@ -475,7 +543,7 @@ dataGrid.FrozenRowCount = 3; // Freeze first 3 rows
 
 ### Customize Freeze Pane Line
 
-```xml
+```xaml
 <syncfusion:SfDataGrid FrozenColumnCount="1">
     <syncfusion:SfDataGrid.DefaultStyle>
         <syncfusion:DataGridStyle FreezePaneLineColor="Red"
@@ -493,7 +561,7 @@ dataGrid.DefaultStyle.FreezePaneLineStrokeThickness = 3;
 
 Freeze columns/rows from the right/bottom:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid FooterFrozenColumnCount="1"
                        FooterFrozenRowCount="2" />
 ```

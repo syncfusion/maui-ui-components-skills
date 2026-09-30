@@ -25,7 +25,7 @@ Control whether users can swipe to open/close the drawer.
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <navigationDrawer:SfNavigationDrawer.DrawerSettings>
         <navigationDrawer:DrawerSettings EnableSwipeGesture="True">
@@ -50,7 +50,7 @@ this.Content = navigationDrawer;
 
 ### Disable Swipe Gesture
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings EnableSwipeGesture="False">
 </navigationDrawer:DrawerSettings>
 ```
@@ -84,7 +84,7 @@ drawerSettings.TouchThreshold = 120;
 
 ### Increase TouchThreshold
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings TouchThreshold="200">
 </navigationDrawer:DrawerSettings>
 ```
@@ -363,7 +363,7 @@ drawerSettings.EnableSwipeGesture = false;  // Button-only control
 
 **Solution 3: Add Padding to ScrollView**
 
-```xml
+```xaml
 <ScrollView Margin="50,0,0,0">
     <!-- Keep content away from edge -->
 </ScrollView>
@@ -396,7 +396,7 @@ private void OnCarouselScrollEnded(object sender, EventArgs e)
 drawerSettings.TouchThreshold = 60;
 ```
 
-```xml
+```xaml
 <!-- Move button away from edge -->
 <Button Margin="70,0,0,0" Text="Action"/>
 ```

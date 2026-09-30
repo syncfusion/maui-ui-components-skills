@@ -164,7 +164,7 @@ Enable horizontal scrolling when content exceeds the TreeView width.
 ### Enable Horizontal Scrolling
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        EnableHorizontalScrolling="True"/>
 ```
@@ -178,7 +178,7 @@ treeView.EnableHorizontalScrolling = true;
 
 When items have long text or wide templates, horizontal scrolling provides full content access:
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        EnableHorizontalScrolling="True"
                        ItemsSource="{Binding LongNamedItems}">
@@ -199,7 +199,7 @@ Control the visibility of vertical and horizontal scrollbars.
 
 ### Vertical Scrollbar Visibility
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        VerticalScrollBarVisibility="Always"/>
 ```
@@ -211,7 +211,7 @@ Control the visibility of vertical and horizontal scrollbars.
 
 ### Horizontal Scrollbar Visibility
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        HorizontalScrollBarVisibility="Always"/>
 ```
@@ -225,7 +225,7 @@ treeView.HorizontalScrollBarVisibility = ScrollBarVisibility.Always;
 
 ### Complete Example
 
-```xml
+```xaml
 <syncfusion:SfTreeView x:Name="treeView"
                        VerticalScrollBarVisibility="Always"
                        HorizontalScrollBarVisibility="Always"
@@ -289,7 +289,7 @@ On desktop platforms (WinUI, macOS), additional keyboard shortcuts may be availa
    ```
 
 2. **Enable horizontal scrolling for long content**
-   ```xml
+   ```xaml
    <syncfusion:SfTreeView EnableHorizontalScrolling="True"/>
    ```
 

@@ -4,9 +4,12 @@
 - [Month View](#month-view)
   - [Overview](#overview)
   - [Month Appointment Display Mode](#month-appointment-display-mode)
+  - [Inline Appointments in Month View](#inline-appointments-in-month-view)
   - [Number of Weeks](#number-of-weeks)
+  - [Non Working Days](#non-working-days)
   - [View Header Customization](#view-header-customization)
   - [Cell Appearance](#cell-appearance)
+  - [Date Text Positioning](#date-text-positioning)
   - [Month Cell Template](#month-cell-template)
 - [Agenda View](#agenda-view)
   - [Overview](#agenda-view-overview)
@@ -77,6 +80,166 @@ this.Content = scheduler;
 - Shows only calendar grid
 - Useful for custom implementations
 
+### Inline Appointments in Month View
+
+Display appointments inline in Month view by setting `ShowAppointmentsInline` to `true`. Tapping a date cell expands a scrollable list of that day’s appointments beneath the tapped row.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Month">
+    <scheduler:SfScheduler.MonthView>
+        <scheduler:SchedulerMonthView ShowAppointmentsInline="True" />
+    </scheduler:SfScheduler.MonthView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Month;
+scheduler.MonthView.ShowAppointmentsInline = true;
+this.Content = scheduler;
+```
+
+#### Appointment time format in inline view
+
+Use `TimeTextFormat` in `MonthInlineViewStyle` to format the inline appointment time text. The default format is `hh:mm tt`.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Month">
+    <scheduler:SfScheduler.MonthView>
+        <scheduler:SchedulerMonthView ShowAppointmentsInline="True">
+            <scheduler:SchedulerMonthView.MonthInlineViewStyle>
+                <scheduler:MonthInlineViewStyle TimeTextFormat="HH:mm" />
+            </scheduler:SchedulerMonthView.MonthInlineViewStyle>
+        </scheduler:SchedulerMonthView>
+    </scheduler:SfScheduler.MonthView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Week;
+scheduler.MonthView.ShowAppointmentsInline = true;
+scheduler.MonthView.MonthInlineViewStyle = new MonthInlineViewStyle()
+{
+    TimeTextFormat = "HH:mm"
+};
+```
+
+#### Appointment height in inline view
+
+Use `ItemHeight` in `MonthInlineViewStyle` to set the height of each inline appointment item. The default value is `50`.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Month">
+    <scheduler:SfScheduler.MonthView>
+        <scheduler:SchedulerMonthView ShowAppointmentsInline="True">
+            <scheduler:SchedulerMonthView.MonthInlineViewStyle>
+                <scheduler:MonthInlineViewStyle ItemHeight="70" />
+            </scheduler:SchedulerMonthView.MonthInlineViewStyle>
+        </scheduler:SchedulerMonthView>
+    </scheduler:SfScheduler.MonthView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Week;
+scheduler.MonthView.ShowAppointmentsInline = true;
+scheduler.MonthView.MonthInlineViewStyle = new MonthInlineViewStyle()
+{
+    ItemHeight="70"
+};
+```
+
+#### Inline appointments appearance
+
+##### Customize inline appointments appearance using TextStyle
+
+Use `MonthInlineViewStyle` to customize the inline view background, text style, and item layout.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Month">
+    <scheduler:SfScheduler.MonthView>
+        <scheduler:SchedulerMonthView ShowAppointmentsInline="True">
+            <scheduler:SchedulerMonthView.MonthInlineViewStyle>
+                <scheduler:MonthInlineViewStyle Background="Yellow">
+                    <scheduler:MonthInlineViewStyle.TextStyle>
+                        <scheduler:SchedulerTextStyle TextColor="White" FontSize="14" />
+                    </scheduler:MonthInlineViewStyle.TextStyle>
+                </scheduler:MonthInlineViewStyle>
+            </scheduler:SchedulerMonthView.MonthInlineViewStyle>
+        </scheduler:SchedulerMonthView>
+    </scheduler:SfScheduler.MonthView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Week;
+scheduler.MonthView.ShowAppointmentsInline = true;
+scheduler.MonthView.MonthInlineViewStyle = new MonthInlineViewStyle()
+{
+    Background = Colors.Yellow,
+    TextStyle = new SchedulerTextStyle()
+    {
+        TextColor = Colors.White,
+        FontSize = 14,
+    }
+};
+```
+
+##### Customize inline appointments appearance using DateTemplate
+
+Use `MonthInlineViewItemTemplate` to provide a custom `DataTemplate` for each inline appointment item. The binding context is the `SchedulerAppointment` instance.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Month">
+    <scheduler:SfScheduler.MonthView>
+        <scheduler:SchedulerMonthView ShowAppointmentsInline="True">
+            <scheduler:SchedulerMonthView.MonthInlineViewItemTemplate>
+                <DataTemplate>
+                    <Grid BackgroundColor="MediumOrchid" Padding="8">
+                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="6">
+                            <Label Text="&#xE71D;"
+                                   FontFamily="MauiMaterialAssets"
+                                   TextColor="White"
+                                   VerticalOptions="Center" />
+                            <Label Text="{Binding Subject}"
+                                   TextColor="White"
+                                   VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+                    </Grid>
+                </DataTemplate>
+            </scheduler:SchedulerMonthView.MonthInlineViewItemTemplate>
+        </scheduler:SchedulerMonthView>
+    </scheduler:SfScheduler.MonthView>
+</scheduler:SfScheduler>
+```
+
+#### MonthInlineAppointmentTapped
+
+Use the `MonthInlineAppointmentTapped` event to respond when the user taps an appointment in the inline view. The event args provide the tapped appointment via `Appointment` and the selected date via `SelectedDate`.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler"
+                       View="Month"
+                       MonthInlineAppointmentTapped="Scheduler_MonthInlineAppointmentTapped" />
+```
+
+```csharp
+this.Scheduler.MonthInlineAppointmentTapped += Scheduler_MonthInlineAppointmentTapped;
+
+private void Scheduler_MonthInlineAppointmentTapped(object sender, MonthInlineAppointmentTappedEventArgs e)
+{
+    var appointment = e.Appointment;
+    var selectedDate = e.SelectedDate;
+}
+```
+
+**Notes:**
+- Inline appointments appear only when there is enough room; six-week layouts keep the inline view inactive.
+- Empty dates display a built-in "No Events" message.
+
 ### Number of Weeks
 
 Configure visible weeks in month view:
@@ -103,6 +266,92 @@ this.Content = scheduler;
 - If visible weeks < weeks in month: show specified weeks
 - If visible weeks ≥ weeks in month: show all weeks
 - Week starts on FirstDayOfWeek setting
+
+### Non Working Days
+
+Specify which days of the week are treated as non-working days in month view:
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Month">
+    <scheduler:SfScheduler.MonthView>
+        <scheduler:SchedulerMonthView NonWorkingDays="Saturday,Sunday" />
+    </scheduler:SfScheduler.MonthView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Month;
+scheduler.MonthView.NonWorkingDays = SchedulerMonthWeekDays.Saturday | SchedulerMonthWeekDays.Sunday;
+this.Content = scheduler;
+```
+
+**Default:** `SchedulerMonthWeekDays.None`
+
+**Supported Values:**
+- `None`
+- `Monday` to `Sunday`
+- Combined values such as `Saturday | Sunday`
+
+#### Show or Hide Non Working Days
+
+The `HideNonWorkingDays` property controls whether non-working-day cells are shown. Set it to `false` (default) to keep them visible with non-working styling, or `true` to hide them.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Month">
+    <scheduler:SfScheduler.MonthView>
+        <scheduler:SchedulerMonthView NonWorkingDays="Saturday,Sunday" HideNonWorkingDays="True" />
+    </scheduler:SfScheduler.MonthView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Month;
+scheduler.MonthView.NonWorkingDays = SchedulerMonthWeekDays.Saturday | SchedulerMonthWeekDays.Sunday;
+scheduler.MonthView.HideNonWorkingDays = true;
+this.Content = scheduler;
+```
+
+#### Customize Non Working Day Appearance
+
+Use `SchedulerMonthCellStyle` to visually distinguish non-working days through `MonthView.CellStyle`.
+
+**Relevant Properties:**
+- `NonWorkingDaysBackground`: Sets the background for non-working-day cells.
+- `NonWorkingDaysTextStyle`: Sets the text style for non-working-day dates.
+- `SchedulerMonthCellStyle`: Customizes month-cell visuals such as background, today date, leading/trailing dates, and non-working-day appearance.
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Month;
+scheduler.MonthView.NonWorkingDays = SchedulerMonthWeekDays.Saturday | SchedulerMonthWeekDays.Sunday;
+scheduler.MonthView.CellStyle = new SchedulerMonthCellStyle
+{
+    NonWorkingDaysBackground = Brush.LightPink,
+    NonWorkingDaysTextStyle = new SchedulerTextStyle
+    {
+        TextColor = Colors.DarkRed,
+        FontSize = 12
+    }
+};
+```
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Month">
+    <scheduler:SfScheduler.MonthView>
+        <scheduler:SchedulerMonthView NonWorkingDays="Saturday,Sunday">
+            <scheduler:SchedulerMonthView.CellStyle>
+                <scheduler:SchedulerMonthCellStyle NonWorkingDaysBackground="LightPink">
+                    <scheduler:SchedulerMonthCellStyle.NonWorkingDaysTextStyle>
+                        <scheduler:SchedulerTextStyle TextColor="DarkRed" FontSize="12" />
+                    </scheduler:SchedulerMonthCellStyle.NonWorkingDaysTextStyle>
+                </scheduler:SchedulerMonthCellStyle>
+            </scheduler:SchedulerMonthView.CellStyle>
+        </scheduler:SchedulerMonthView>
+    </scheduler:SfScheduler.MonthView>
+</scheduler:SfScheduler>
+```
 
 ### View Header Customization
 
@@ -260,6 +509,29 @@ this.Scheduler.MonthView.CellStyle = todayBackground;
 - `TodayTextStyle`: Today date text style
 - `LeadingMonthTextStyle`: Leading dates text style
 - `TrailingMonthTextStyle`: Trailing dates text style
+
+### Date Text Positioning
+
+Adjust the horizontal alignment of date numbers in month cells for better readability using `DateHorizontalAlignment`.
+
+**Available values:** `Left`, `Center`, `Right`, and `Justified`
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Month">
+    <scheduler:SfScheduler.MonthView>
+        <scheduler:SchedulerMonthView DateHorizontalAlignment="Left" />
+    </scheduler:SfScheduler.MonthView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Month;
+scheduler.MonthView.DateHorizontalAlignment = HorizontalAlignment.Left;
+this.Content = scheduler;
+```
+
+**Default:** `Center`
 
 ### Month Cell Template
 
@@ -433,6 +705,32 @@ this.Content = scheduler;
 - "dd MMM yyyy": 15 Jan 2024
 - "dddd, MMMM dd": Monday, January 15
 
+### Show or Hide Empty Days
+
+Use `HideEmptyDays` to hide dates in Agenda view that do not contain any appointments.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Agenda">
+    <scheduler:SfScheduler.AgendaView>
+        <scheduler:SchedulerAgendaView HideEmptyDays="True" />
+    </scheduler:SfScheduler.AgendaView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Agenda;
+scheduler.AgendaView.HideEmptyDays = true;
+this.Content = scheduler;
+```
+
+**Default:** False
+
+**Behavior:**
+- Hides empty days/weeks in mobile layouts
+- Keeps non-empty dates visible
+- Desktop UI continues to render with existing behavior
+
 ### Appearance Customization
 
 #### Agenda View Header Style
@@ -566,6 +864,12 @@ Full customization of agenda items:
 - Set NumberOfVisibleWeeks to desired value (1-6)
 - Ensure property is set before DisplayDate
 - Check month has requested weeks
+
+**Issue:** Non-working days are not appearing as expected
+**Solution:**
+- Verify `NonWorkingDays` is set to the correct day values
+- Check whether `HideNonWorkingDays` is enabled
+- Ensure the month view is using the intended `CellStyle` for non-working-day appearance
 
 ### Agenda View Issues
 

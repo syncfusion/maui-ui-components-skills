@@ -42,7 +42,7 @@ void OnCardTapped(object sender, CardTappedEventArgs e)
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardLayout Tapped="OnCardTapped" HeightRequest="400">
     <cards:SfCardView>
         <Label Text="Card 1" BackgroundColor="Cyan"/>
@@ -150,7 +150,7 @@ void OnVisibleIndexChanging(object sender, CardVisibleIndexChangingEventArgs e)
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardLayout VisibleIndexChanging="OnVisibleIndexChanging" HeightRequest="400">
     <cards:SfCardView>
         <Label Text="Card 0" BackgroundColor="Cyan"/>
@@ -260,7 +260,7 @@ void OnVisibleIndexChanged(object sender, CardVisibleIndexChangedEventArgs e)
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardLayout VisibleIndexChanged="OnVisibleIndexChanged" HeightRequest="400">
     <!-- Cards -->
 </cards:SfCardLayout>
@@ -385,7 +385,7 @@ void OnCardDismissing(object sender, CardDismissingEventArgs e)
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardView Dismissing="OnCardDismissing" 
                   SwipeToDismiss="True"
                   HeightRequest="200">
@@ -468,7 +468,7 @@ void OnCardDismissed(object sender, CardDismissedEventArgs e)
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardView Dismissed="OnCardDismissed" 
                   SwipeToDismiss="True"
                   HeightRequest="200">

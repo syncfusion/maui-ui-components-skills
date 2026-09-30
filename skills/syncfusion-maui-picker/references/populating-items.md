@@ -43,7 +43,7 @@ public class ItemInfo
 ### Bind to Picker
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns:local="clr-namespace:YourNamespace">
     
     <picker:SfPicker x:Name="picker">
@@ -138,7 +138,7 @@ picker.Columns.Add(cityColumn);
 ```
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.Columns>
         <picker:PickerColumn HeaderText="Select Country"
@@ -160,7 +160,7 @@ Customize the appearance of selected and unselected items.
 Style the currently selected item using `SelectedTextStyle`.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.SelectedTextStyle>
         <picker:PickerTextStyle FontSize="16" 
@@ -182,7 +182,7 @@ picker.SelectedTextStyle.TextColor = Colors.White;
 Style the non-selected items using `TextStyle`.
 
 **XAML:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.TextStyle>
         <picker:PickerTextStyle FontSize="16" 
@@ -229,7 +229,7 @@ Create custom visual layouts for picker items using `ItemTemplate`.
 ### Basic Custom Template
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <Grid.Resources>
         <DataTemplate x:Key="customView">
@@ -280,7 +280,7 @@ picker.ItemTemplate = customView;
 
 ### Advanced Custom Template with Images
 
-```xml
+```xaml
 <Grid.Resources>
     <DataTemplate x:Key="imageItemTemplate">
         <Grid Padding="5">
@@ -382,7 +382,7 @@ public class PickerViewModel : INotifyPropertyChanged
 
 ### View (XAML)
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
@@ -475,7 +475,7 @@ public class CountryPickerViewModel : INotifyPropertyChanged
 ```
 
 **View:**
-```xml
+```xaml
 <picker:SfPicker>
     <picker:SfPicker.Columns>
         <picker:PickerColumn HeaderText="Country" 

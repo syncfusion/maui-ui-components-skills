@@ -27,7 +27,7 @@ The scale is the backbone of a linear gauge - it defines the range of values tha
 Without any configuration, a linear gauge displays a scale from 0 to 100:
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge />
 ```
 
@@ -52,7 +52,7 @@ Customize the scale range to match your data:
 ### Basic Range Setting
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="-50" Maximum="50" />
 ```
 
@@ -68,17 +68,17 @@ SfLinearGauge gauge = new SfLinearGauge
 ### Common Range Scenarios
 
 **Temperature Scale (Celsius):**
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="-20" Maximum="50" />
 ```
 
 **Percentage Scale:**
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="0" Maximum="100" />
 ```
 
 **Speed Meter (MPH):**
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="0" Maximum="160" />
 ```
 
@@ -126,7 +126,7 @@ The Interval property controls the spacing between scale labels and major ticks.
 
 When Interval is not set, the gauge calculates it automatically:
 
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="0" Maximum="100" />
 <!-- Auto-generates interval of 10 -->
 ```
@@ -134,7 +134,7 @@ When Interval is not set, the gauge calculates it automatically:
 ### Custom Interval
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="0" Maximum="100" Interval="20" />
 <!-- Shows labels at: 0, 20, 40, 60, 80, 100 -->
 ```
@@ -171,7 +171,7 @@ gauge.Interval = 10;  // 10 labels
 ```
 
 **Temperature Scale Example:**
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="-20" Maximum="50" Interval="10" />
 <!-- Labels: -20, -10, 0, 10, 20, 30, 40, 50 -->
 ```
@@ -219,7 +219,7 @@ Customize the visual appearance of the scale track.
 Control scale track appearance with `LineStyle` property:
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge>
     <gauge:SfLinearGauge.LineStyle>
         <gauge:LinearLineStyle Thickness="10" 
@@ -242,19 +242,19 @@ gauge.LineStyle = new LinearLineStyle
 ### Scale Thickness
 
 **Thin Scale (Minimalist):**
-```xml
+```xaml
 <gauge:SfLinearGauge.LineStyle>
     <gauge:LinearLineStyle Thickness="2" Fill="#CCCCCC"/>
 </gauge:SfLinearGauge.LineStyle>
 ```
 
 **Medium Scale (Default):**
-```xml
+```xaml
 <gauge:LinearLineStyle Thickness="8" Fill="#E0E0E0"/>
 ```
 
 **Thick Scale (Prominent):**
-```xml
+```xaml
 <gauge:LinearLineStyle Thickness="20" Fill="#BDBDBD"/>
 ```
 
@@ -263,24 +263,24 @@ gauge.LineStyle = new LinearLineStyle
 Control the edge appearance of the scale track:
 
 **Both Curved (Rounded Ends):**
-```xml
+```xaml
 <gauge:LinearLineStyle Thickness="15" 
                        Fill="#90CAF9"
                        CornerStyle="BothCurve"/>
 ```
 
 **Both Flat (Square Ends):**
-```xml
+```xaml
 <gauge:LinearLineStyle CornerStyle="BothFlat"/>
 ```
 
 **Start Curve (Left/Top Rounded):**
-```xml
+```xaml
 <gauge:LinearLineStyle CornerStyle="StartCurve"/>
 ```
 
 **End Curve (Right/Bottom Rounded):**
-```xml
+```xaml
 <gauge:LinearLineStyle CornerStyle="EndCurve"/>
 ```
 
@@ -310,7 +310,7 @@ Linear gauges support horizontal and vertical orientations.
 ### Horizontal Orientation (Default)
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge Orientation="Horizontal" />
 ```
 
@@ -328,7 +328,7 @@ gauge.Orientation = GaugeOrientation.Horizontal;
 ### Vertical Orientation
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge Orientation="Vertical" />
 ```
 
@@ -345,7 +345,7 @@ gauge.Orientation = GaugeOrientation.Vertical;
 
 ### Orientation Comparison Example
 
-```xml
+```xaml
 <HorizontalStackLayout Spacing="50">
     
     <!-- Horizontal gauge -->
@@ -386,7 +386,7 @@ Reverse the direction of value progression with `IsInversed`.
 **Horizontal:** Left (min) → Right (max)  
 **Vertical:** Bottom (min) → Top (max)
 
-```xml
+```xaml
 <gauge:SfLinearGauge IsInversed="False" />
 ```
 
@@ -396,7 +396,7 @@ Reverse the direction of value progression with `IsInversed`.
 **Vertical:** Top (min) → Bottom (max)
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge IsInversed="True" />
 ```
 
@@ -408,7 +408,7 @@ gauge.IsInversed = true;
 ### Inverse Scale Use Cases
 
 **Countdown Timer:**
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="0" 
                     Maximum="60" 
                     IsInversed="True">
@@ -431,7 +431,7 @@ SfLinearGauge depthGauge = new SfLinearGauge
 ```
 
 **Right-to-Left Layout:**
-```xml
+```xaml
 <gauge:SfLinearGauge IsInversed="True" 
                     Minimum="0" 
                     Maximum="100"/>
@@ -446,7 +446,7 @@ Control the position of scale elements relative to the gauge container.
 
 Position labels and ticks relative to scale:
 
-```xml
+```xaml
 <gauge:SfLinearGauge LabelOffset="10" TickOffset="-5"/>
 ```
 
@@ -457,7 +457,7 @@ Position labels and ticks relative to scale:
 
 ### Pattern 1: Percentage Progress Bar
 
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="0" 
                     Maximum="100" 
                     Interval="25"
@@ -506,7 +506,7 @@ thermometer.BarPointers.Add(new BarPointer
 
 ### Pattern 3: Bidirectional Scale (Positive/Negative)
 
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="-100" 
                     Maximum="100" 
                     Interval="25">
@@ -531,7 +531,7 @@ thermometer.BarPointers.Add(new BarPointer
 
 ### Pattern 4: Minimalist Scale (No Decorations)
 
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="0" 
                     Maximum="10" 
                     ShowLabels="False"

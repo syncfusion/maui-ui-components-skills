@@ -1,11 +1,10 @@
 # Advanced Topics in SfAIAssistView
 
-Less-common but important features: text selection, stopping an in-progress AI response, and the response loader shimmer.
+Less-common but important features: text selection in conversation items and stopping in-progress AI responses.
 
 ## Table of Contents
 - [Text Selection](#text-selection)
 - [Stop Responding](#stop-responding)
-- [Response Loader](#response-loader)
 
 ---
 
@@ -15,7 +14,7 @@ Allows users to select specific phrases or the full text of any request or respo
 
 Text selection is **disabled by default**. Set `AllowTextSelection` to `true` to enable it.
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            AllowTextSelection="True" />
 ```
@@ -36,7 +35,7 @@ The button is **visible by default** (`EnableStopResponding = true`).
 
 ### Enable / Disable
 
-```xml
+```xaml
 <!-- Disable the stop button -->
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            EnableStopResponding="False" />
@@ -46,24 +45,34 @@ The button is **visible by default** (`EnableStopResponding = true`).
 sfAIAssistView.EnableStopResponding = false;
 ```
 
-### StopRespondingText
+### StopRespondingIcon
 
-Customize the label shown on the Stop Responding button.
+Customize the icon shown on the Stop Responding button.
 
-```xml
-<syncfusion:SfAIAssistView x:Name="sfAIAssistView"
-                           StopRespondingText="Cancel Response" />
+```xaml
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView">
+    <syncfusion:SfAIAssistView.StopRespondingIcon>
+        <FontImageSource Glyph="&#xe80f;"
+                         FontFamily="MauiMaterialAssets"
+                         Color="Black" />
+    </syncfusion:SfAIAssistView.StopRespondingIcon>
+</syncfusion:SfAIAssistView>
 ```
 
 ```csharp
-sfAIAssistView.StopRespondingText = "Cancel Response";
+sfAIAssistView.StopRespondingIcon = new FontImageSource
+{
+    Glyph = "\ue80f",
+    FontFamily = "MauiMaterialAssets",
+    Color = Colors.Black
+};
 ```
 
 ### StopRespondingTemplate
 
 Fully replace the Stop Responding UI with a custom `DataTemplate`.
 
-```xml
+```xaml
 <ContentPage.Resources>
     <DataTemplate x:Key="stopTemplate">
         <Grid>
@@ -95,7 +104,7 @@ Raised when the user taps the Stop Responding button. Use a `CancelResponse` fla
 
 #### Event
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            StopResponding="OnStopResponding" />
 ```
@@ -112,7 +121,7 @@ private void OnStopResponding(object sender, EventArgs e)
 
 #### Command (MVVM) with CancelResponse Pattern
 
-```xml
+```xaml
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            AssistItems="{Binding AssistItems}"
                            RequestCommand="{Binding RequestCommand}"
@@ -170,24 +179,4 @@ public class AIAssistViewModel : INotifyPropertyChanged
 }
 ```
 
-> **Pattern:** Set `cancelResponse = false` at the start of each request, then check it at each `await` boundary. When `StopRespondingCommand` fires, set `cancelResponse = true` — the next `if (cancelResponse) return` exits the pipeline cleanly.
-
----
-
-## Response Loader
-
-A shimmer placeholder is shown while the AI is generating a response, giving the user visual feedback that a response is pending.
-
-The loader is **enabled by default** (`ShowResponseLoader = true`). Set it to `false` to hide the shimmer.
-
-```xml
-<syncfusion:SfAIAssistView x:Name="sfAIAssistView"
-                           AssistItems="{Binding AssistItems}"
-                           ShowResponseLoader="False" />
-```
-
-```csharp
-sfAIAssistView.ShowResponseLoader = false;
-```
-
-> **When to disable:** Useful when you have a custom loading indicator in your own UI layer and want to avoid showing duplicate loading states.
+> **Customization:** Use `StopRespondingIcon`, `StopRespondingTemplate`, `StopResponding`, and `StopRespondingCommand` to tailor the stop action to your app.

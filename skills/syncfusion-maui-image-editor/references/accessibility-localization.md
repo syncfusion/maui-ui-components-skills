@@ -59,7 +59,7 @@ The ImageEditor supports comprehensive keyboard shortcuts for efficient operatio
 
 Keyboard shortcuts are automatically enabled. Handle the `ToolbarItemSelected` event to react to keyboard-triggered toolbar actions:
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           ToolbarItemSelected="OnToolbarItemSelected" />
@@ -88,7 +88,7 @@ The ImageEditor provides descriptive labels for screen readers, making the inter
 
 The control automatically provides semantic properties for accessibility. You can enhance this with custom automation properties:
 
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg"
                           AutomationId="MainImageEditor"
                           SemanticProperties.Description="Photo editing control with toolbar"
@@ -209,7 +209,7 @@ The ImageEditor supports right-to-left layouts for languages like Arabic, Hebrew
 ### Enable RTL Layout
 
 **XAML:**
-```xml
+```xaml
 <imageEditor:SfImageEditor Source="photo.jpg" 
                           FlowDirection="RightToLeft" />
 ```
@@ -289,7 +289,7 @@ public class LanguageManager
 
 ### Accessibility-Enhanced UI
 
-```xml
+```xaml
 <Grid RowDefinitions="*, Auto">
     <imageEditor:SfImageEditor x:Name="imageEditor"
                               Source="photo.jpg"
@@ -332,7 +332,7 @@ private void ApplyAccessibleTheme()
 
 ### Language Picker Integration
 
-```xml
+```xaml
 <Grid RowDefinitions="Auto, *">
     <Picker x:Name="languagePicker"
             Title="Select Language"

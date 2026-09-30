@@ -35,7 +35,7 @@ In Single selection mode, users can select only one date at a time. Selecting a 
 ### Enable Single Selection
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Month"
                      SelectionMode="Single" />
@@ -82,7 +82,7 @@ In Multiple selection mode, users can select multiple individual dates. Tapping 
 ### Enable Multiple Selection
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Month"
                      SelectionMode="Multiple" />
@@ -153,7 +153,7 @@ In Range selection mode, users can select a continuous range of dates. The selec
 ### Enable Range Selection
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Month"
                      SelectionMode="Range" />
@@ -239,7 +239,7 @@ public enum CalendarRangeSelectionDirection
 Only dates **after** the start date can be selected. Dates before the start date are disabled.
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Month"
                      SelectionMode="Range"
@@ -262,7 +262,7 @@ calendar.RangeSelectionDirection = CalendarRangeSelectionDirection.Forward;
 Only dates **before** the start date can be selected. Dates after the start date are disabled.
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Month"
                      SelectionMode="Range"
@@ -305,7 +305,7 @@ Enable swipe gestures for range selection using the `EnableSwipeSelection` prope
 ### Enable Swipe Gesture
 
 **XAML:**
-```xml
+```xaml
 <calendar:SfCalendar x:Name="calendar" 
                      View="Month"
                      SelectionMode="Range"

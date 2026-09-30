@@ -61,7 +61,7 @@ Icon font is automatically registered when calling `.ConfigureSyncfusionCore()`.
 
 ### Basic Label with Icon
 
-```xml
+```xaml
 <Label FontFamily="MaterialAssets"
        Text="&#xE70F;"
        FontSize="24"
@@ -72,7 +72,7 @@ Icon font is automatically registered when calling `.ConfigureSyncfusionCore()`.
 
 ### Button with Icon
 
-```xml
+```xaml
 <Button>
     <Button.ImageSource>
         <FontImageSource FontFamily="MaterialAssets"
@@ -146,7 +146,7 @@ Icons render consistently across platforms:
 
 ### Responsive Sizing
 
-```xml
+```xaml
 <Label FontFamily="MaterialAssets"
         Glyph="&#xe710">
     <Label.FontSize>
@@ -160,7 +160,7 @@ Icons render consistently across platforms:
 
 ### Theming Icons
 
-```xml
+```xaml
 <Label FontFamily="MaterialAssets"
         Glyph="&#xe710"
        TextColor="{AppThemeBinding Light=Black, Dark=White}"/>

@@ -218,7 +218,7 @@ using Syncfusion.Maui.DataGrid;
 
 ### Step 6: Update XAML Declarations
 
-```xml
+```xaml
 <!-- Old -->
 xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
 

@@ -35,7 +35,7 @@ dotnet add package Syncfusion.Maui.Core
 
 **Step 1: Wrap in SfGlassEffectView**
 
-```xml
+```xaml
 <ContentPage xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              xmlns:kanban="clr-namespace:Syncfusion.Maui.Kanban;assembly=Syncfusion.Maui.Kanban">
     
@@ -115,7 +115,7 @@ Integrate the kanban board with your application's theme system.
 ### Using Application Resources
 
 **App.xaml:**
-```xml
+```xaml
 <Application.Resources>
     <ResourceDictionary>
         <!-- Kanban Theme Colors -->
@@ -137,7 +137,7 @@ Integrate the kanban board with your application's theme system.
 ```
 
 **Usage:**
-```xml
+```xaml
 <kanban:SfKanban Background="{StaticResource KanbanBackgroundColor}">
     <kanban:SfKanban.CardTemplate>
         <DataTemplate>
@@ -178,7 +178,7 @@ public class ThemeService
 
 ### Responsive Theme Switching
 
-```xml
+```xaml
 <ContentPage>
     <StackLayout>
         <Switch x:Name="themeSwitch" 
@@ -203,7 +203,7 @@ private void OnThemeToggled(object sender, ToggledEventArgs e)
 
 ### Column Background Colors
 
-```xml
+```xaml
 <kanban:SfKanban.Columns>
     <kanban:KanbanColumn Title="To Do" 
                          Categories="Open"
@@ -219,7 +219,7 @@ private void OnThemeToggled(object sender, ToggledEventArgs e)
 
 ### Card Styling with Custom Template
 
-```xml
+```xaml
 <kanban:SfKanban.CardTemplate>
     <DataTemplate>
         <Border Background="White"
@@ -285,7 +285,7 @@ private void OnThemeToggled(object sender, ToggledEventArgs e)
 
 ### Custom Header Styling
 
-```xml
+```xaml
 <kanban:SfKanban.HeaderTemplate>
     <DataTemplate>
         <Border Background="#F5F5F5"
@@ -332,12 +332,12 @@ using Syncfusion.Maui.Kanban;
 ### XAML Namespace
 
 **Xamarin:**
-```xml
+```xaml
 xmlns:kanban="clr-namespace:Syncfusion.SfKanban.XForms;assembly=Syncfusion.SfKanban.XForms"
 ```
 
 **MAUI:**
-```xml
+```xaml
 xmlns:kanban="clr-namespace:Syncfusion.Maui.Kanban;assembly=Syncfusion.Maui.Kanban"
 ```
 
@@ -355,12 +355,12 @@ xmlns:kanban="clr-namespace:Syncfusion.Maui.Kanban;assembly=Syncfusion.Maui.Kanb
 Most properties remain the same, but verify specific implementations:
 
 **Xamarin:**
-```xml
+```xaml
 <kanban:SfKanban AutoGenerateColumns="False" />
 ```
 
 **MAUI (Same):**
-```xml
+```xaml
 <kanban:SfKanban AutoGenerateColumns="False" />
 ```
 

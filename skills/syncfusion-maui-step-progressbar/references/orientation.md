@@ -18,7 +18,7 @@ Horizontal is the **default** orientation. Steps are arranged from left to right
 ### Setting Horizontal Orientation
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     Orientation="Horizontal"
     ItemsSource="{Binding StepProgressItem}">
@@ -55,7 +55,7 @@ Cart    Address  Delivery  Pay   Confirm
 
 ### Horizontal with Custom Label Position
 
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     Orientation="Horizontal"
     LabelPosition="Top"
@@ -79,7 +79,7 @@ Steps are arranged from top to bottom with progress flowing vertically.
 ### Setting Vertical Orientation
 
 **XAML:**
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     Orientation="Vertical"
     ItemsSource="{Binding StepProgressItem}">
@@ -123,7 +123,7 @@ this.Content = stepProgressBar;
 
 ### Vertical with Custom Label Position
 
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     Orientation="Vertical"
     LabelPosition="Start"
@@ -137,7 +137,7 @@ Labels appear to the left of steps instead of right.
 
 ### Example 1: Horizontal Checkout Flow
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:stepProgressBar="clr-namespace:Syncfusion.Maui.ProgressBar;assembly=Syncfusion.Maui.ProgressBar"
@@ -173,7 +173,7 @@ Labels appear to the left of steps instead of right.
 
 ### Example 2: Vertical Registration Sidebar
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:stepProgressBar="clr-namespace:Syncfusion.Maui.ProgressBar;assembly=Syncfusion.Maui.ProgressBar"
@@ -304,7 +304,7 @@ For RTL languages (Arabic, Hebrew), horizontal orientation automatically reverse
 - Progress flows right → left
 - Set `FlowDirection="RightToLeft"` on the StepProgressBar
 
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     Orientation="Horizontal"
     FlowDirection="RightToLeft"

@@ -160,7 +160,7 @@ public partial class App : Application
 
 #### SfColorPicker.fr-FR.resx
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8"?>
 <root>
   <data name="Apply" xml:space="preserve">

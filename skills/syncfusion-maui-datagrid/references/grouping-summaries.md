@@ -24,7 +24,7 @@
 ## Grouping
 
 ### Enable UI Grouping
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding OrderInfoCollection}"
                        AllowGrouping="True">
@@ -37,7 +37,7 @@ dataGrid.AllowGrouping = true;
 
 ### GroupDropAreaText
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding OrderInfoCollection}"
                        GroupDropAreaText="Drag and drop the column here"
@@ -52,7 +52,7 @@ dataGrid.GroupDropAreaText = "Drag and drop the column here";
 
 ### GroupDropAreaHeight
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding OrderInfoCollection}"
                        GroupDropAreaHeight="100"
@@ -67,7 +67,7 @@ dataGrid.GroupDropAreaHeight = 100;
 
 ### Customize the GroupDropArea
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding OrderInfoCollection}"
                        AllowGrouping="True">
@@ -100,7 +100,7 @@ dataGrid.DefaultStyle = defaultStyle;
 
 ### Customize the GroupDropAreaItem
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding OrderInfoCollection}"
                        AllowGrouping="True">
@@ -134,7 +134,7 @@ dataGrid.DefaultStyle = defaultStyle;
 ```
 
 ### Programmatic Grouping
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding OrderInfoCollection}">
     <syncfusion:SfDataGrid.GroupColumnDescriptions>
@@ -173,7 +173,7 @@ dataGrid.GroupColumnDescriptions.RemoveAt(0);
 
 ### Multi Grouping
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding OrderInfoCollection}"
                        GroupingMode="Multiple">
@@ -208,7 +208,7 @@ dataGrid.GroupColumnDescriptions.Add(new GroupColumnDescription()
 
 ### Display Based Grouping using GroupMode
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn HeaderText="Order ID"
                                MappingName="OrderID"
                                GroupMode="Display"
@@ -241,7 +241,7 @@ dataGrid.CollapseGroup(group);
 
 ### AllowGroupExpandCollapse
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        AllowGroupExpandCollapse="True"
                        ItemsSource="{Binding OrderInfoCollection}">
@@ -254,7 +254,7 @@ dataGrid.AllowGroupExpandCollapse = true;
 
 ### Expand Groups Initially
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        AutoExpandGroups="True"
                        AllowGroupExpandCollapse="True"
@@ -325,7 +325,7 @@ private void dataGrid_GroupCollapsed(object sender, DataGridColumnGroupChangedEv
 
 #### Customize Indent Column Width
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding OrderInfoCollection}"
                        IndentColumnWidth="60">
@@ -338,7 +338,7 @@ dataGrid.IndentColumnWidth = 60;
 
 #### Customize Grouped Column Visibility
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding OrderInfoCollection}"
                        ShowColumnWhenGrouped="False">
@@ -351,7 +351,7 @@ dataGrid.ShowColumnWhenGrouped = false;
 
 #### Customize Group Icon
 
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding OrderInfoCollection}"
                        AllowGroupExpandCollapse="True">
@@ -379,7 +379,7 @@ dataGrid.GroupExpandCollapseTemplate = new DataTemplate(() =>
 
 #### Customize Indent Column Background Color
 
-```xml
+```xaml
 <ContentPage.Resources>
     <Style TargetType="syncfusion:DataGridIndentCell">
         <Setter Property="Background" Value="LightGray"/>
@@ -388,7 +388,7 @@ dataGrid.GroupExpandCollapseTemplate = new DataTemplate(() =>
 ```
 
 ### Custom Grouping
-```xml
+```xaml
   <ContentPage.Resources>
         <ResourceDictionary>
             <local:GroupConverter x:Key="groupConverter" />
@@ -437,13 +437,38 @@ public class GroupConverter : IValueConverter
 }
 ```
 
+### Group Row Height
+
+Configure the height of group caption rows (CaptionSummaryRow):
+
+```xaml
+<syncfusion:SfDataGrid x:Name="dataGrid"
+                       ItemsSource="{Binding Orders}"
+                       GroupRowHeight="50">
+    <syncfusion:SfDataGrid.GroupColumnDescriptions>
+        <syncfusion:GroupColumnDescription ColumnName="Country" />
+    </syncfusion:SfDataGrid.GroupColumnDescriptions>
+</syncfusion:SfDataGrid>
+```
+
+```csharp
+dataGrid.GroupColumnDescriptions.Add(new GroupColumnDescription()
+{
+    ColumnName = "Country"
+});
+
+dataGrid.GroupRowHeight = 50; // Default is typically 32
+```
+
+```
+
 ## Summaries
 
 ### Table Summary
 
 Display summaries at bottom of grid:
 
-```xml
+```xaml
 <sfGrid:SfDataGrid.TableSummaryRows>
         <sfGrid:DataGridTableSummaryRow Title="Total Salary :{TotalSalary} for {ProductCount} members"
                                         Position="Top"
@@ -506,7 +531,7 @@ dataGrid.TableSummaryRows.Add(new DataGridTableSummaryRow
 
 ### Custom Summary
 
-```xml
+```xaml
 <sfGrid:SfDataGrid.TableSummaryRows>
         <sfGrid:DataGridTableSummaryRow Title="Standard Deviation:{TableSummary}"
                                         ShowSummaryInRow="True">
@@ -583,7 +608,7 @@ dataGrid.GroupSummaryRows.Add(new DataGridSummaryRow
 
 Display summaries in group caption:
 
-```xml
+```xaml
 <sfGrid:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding OrderInfoCollection}"
                        ColumnWidthMode="Fill">

@@ -31,7 +31,7 @@ Display the popup at the center of the screen using either the `IsOpen` property
 ### Using IsOpen Property
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
@@ -86,7 +86,7 @@ private void ClickToShowPopup_Clicked(object sender, EventArgs e)
 ### Using StartX and StartY Properties
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
@@ -162,7 +162,7 @@ The `PopupRelativePosition` enum provides 8 positioning options:
 ### Basic Relative Positioning
 
 **XAML:**
-```xml
+```xaml
 <ContentPage.Content>       
     <StackLayout VerticalOptions="Start" 
                  HorizontalOptions="Center" 
@@ -285,7 +285,7 @@ Display the popup covering the entire screen.
 ### Using IsFullScreen Property
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup" 
                  IsFullScreen="True">
 </sfPopup:SfPopup>
@@ -312,7 +312,7 @@ private void ClickToShowPopup_Clicked(object sender, EventArgs e)
 
 ### Full-Screen Modal Dialog Example
 
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="fullScreenPopup"
                  IsFullScreen="True"
                  ShowCloseButton="True">
@@ -346,7 +346,7 @@ Position popups using data binding in MVVM pattern.
 ### Basic MVVM Example
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
@@ -469,7 +469,7 @@ Automatically close the popup after a specified time.
 ### Using AutoCloseDuration Property
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="toastPopup" 
                  IsOpen="True"
                  AutoCloseDuration="3000">
@@ -535,7 +535,7 @@ Control whether the popup considers the action bar when positioning.
 ### Using IgnoreActionBar Property
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="popup"
                  IgnoreActionBar="True"> 
 </sfPopup:SfPopup>
@@ -644,7 +644,7 @@ private void OnListViewItemTapped(object sender, ItemTappedEventArgs e)
 
 ### Switch-Controlled Popup
 
-```xml
+```xaml
 <StackLayout Padding="20">
     <Switch x:Name="popupSwitch" 
             IsToggled="False" 

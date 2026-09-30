@@ -11,7 +11,7 @@ The Segmented Control supports right-to-left rendering for languages like Arabic
 Set the `FlowDirection` property to `RightToLeft`.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl FlowDirection="RightToLeft">
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">
@@ -98,7 +98,7 @@ The Liquid Glass Effect creates a modern, translucent design with adaptive color
 
 #### Step 1: Wrap Control in SfGlassEffectView
 
-```xml
+```xaml
 <core:SfGlassEffectView EffectType="Clear">
     <buttons:SfSegmentedControl 
         EnableLiquidGlassEffect="True"
@@ -111,7 +111,7 @@ The Liquid Glass Effect creates a modern, translucent design with adaptive color
 #### Step 2: Set EnableLiquidGlassEffect Property
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <!-- Background image for glass effect -->
     <Image Source="wallpaper.jpg" Aspect="AspectFill"/>
@@ -194,7 +194,7 @@ The `SfGlassEffectView` supports multiple effect types:
 - **Adaptive:** Adapts based on background
 
 **Example:**
-```xml
+```xaml
 <core:SfGlassEffectView EffectType="Frosted">
     <buttons:SfSegmentedControl EnableLiquidGlassEffect="True">
         <!-- Items -->

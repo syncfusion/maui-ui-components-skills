@@ -22,7 +22,7 @@ Fired whenever the `Progress` property value changes, allowing you to respond to
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar x:Name="circularProgressBar" 
                                    ProgressChanged="CircularProgressBar_ProgressChanged"
                                    Progress="100" />
@@ -127,7 +127,7 @@ public class DynamicColorCircularPage : ContentPage
 
 ### Three-Tier Status Colors
 
-```xml
+```xaml
 <progressBar:SfCircularProgressBar x:Name="statusProgressBar"
                                    ProgressChanged="StatusProgressBar_ProgressChanged"
                                    Progress="65" />
@@ -165,7 +165,7 @@ private void StatusProgressBar_ProgressChanged(object sender, ProgressValueEvent
 
 ### Update Multiple Labels
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="20">
     <progressBar:SfCircularProgressBar x:Name="uploadProgressBar"
                                        ProgressChanged="UploadProgressBar_ProgressChanged"
@@ -220,7 +220,7 @@ Fired when the `Progress` value reaches the `Maximum` value, indicating task com
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Minimum="100" 
                                    Maximum="500" 
                                    ProgressCompleted="CircularProgressBar_ProgressCompleted" 
@@ -345,7 +345,7 @@ public class ProgressCompletedPage : ContentPage
 
 ### Example 1: File Upload with Status Updates
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="20">
     <progressBar:SfCircularProgressBar x:Name="fileUploadProgress"
                                        ProgressChanged="FileUploadProgress_ProgressChanged"

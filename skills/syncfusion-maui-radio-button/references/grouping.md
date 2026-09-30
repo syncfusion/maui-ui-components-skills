@@ -26,7 +26,7 @@ Radio buttons are designed for mutually exclusive selection—only one option ca
 
 #### XAML
 
-```xml
+```xaml
 <buttons:SfRadioGroup x:Name="paymentGroup">
     <buttons:SfRadioButton Text="Credit Card"/>
     <buttons:SfRadioButton Text="Debit Card" IsChecked="True"/>
@@ -71,7 +71,7 @@ Define `SfRadioGroupKey` instances as resources and assign them to radio buttons
 
 #### XAML
 
-```xml
+```xaml
 <ContentPage.Resources>
     <buttons:SfRadioGroupKey x:Key="carBrandKey"/>
     <buttons:SfRadioGroupKey x:Key="bikeBrandKey"/>
@@ -125,7 +125,7 @@ this.Content = layout;
 
 GroupKey works even when radio buttons are in completely different containers:
 
-```xml
+```xaml
 
     <ContentPage.Resources>
         <buttons:SfRadioGroupKey x:Key="sharedGroup"/>
@@ -185,7 +185,7 @@ if (targetButton != null)
 
 ### Using CheckedItem in Data Binding
 
-```xml
+```xaml
 <buttons:SfRadioGroup x:Name="sizeGroup">
     <buttons:SfRadioButton Text="Small"/>
     <buttons:SfRadioButton Text="Medium" IsChecked="True"/>
@@ -209,7 +209,7 @@ The `CheckedChangedEventArgs` provides:
 
 ### XAML Event Handling
 
-```xml
+```xaml
 <buttons:SfRadioGroup x:Name="subscriptionGroup" 
                       CheckedChanged="OnSubscriptionChanged">
     <buttons:SfRadioButton Text="Basic" Value="basic"/>
@@ -271,7 +271,7 @@ subscriptionGroup.CheckedChanged += (sender, e) =>
 
 ### Vertical Orientation (Default)
 
-```xml
+```xaml
 <buttons:SfRadioGroup Orientation="Vertical">
     <buttons:SfRadioButton Text="Option 1"/>
     <buttons:SfRadioButton Text="Option 2"/>
@@ -281,7 +281,7 @@ subscriptionGroup.CheckedChanged += (sender, e) =>
 
 ### Horizontal Orientation
 
-```xml
+```xaml
 <buttons:SfRadioGroup Orientation="Horizontal">
     <buttons:SfRadioButton Text="Yes"/>
     <buttons:SfRadioButton Text="No"/>
@@ -302,7 +302,7 @@ orientationGroup.Children.Add(new SfRadioButton { Text = "Maybe" });
 
 ### Responsive Layout Example
 
-```xml
+```xaml
 <buttons:SfRadioGroup Orientation="Horizontal" 
                       HorizontalOptions="Center"
                       Spacing="20">
@@ -320,7 +320,7 @@ The `SelectedValue` property provides a way to bind directly to the value of the
 
 ### Setting and Retrieving SelectedValue
 
-```xml
+```xaml
 <buttons:SfRadioGroup x:Name="paymentGroup" SelectedValue="DebitCard">
     <buttons:SfRadioButton Text="Net Banking" Value="NetBanking"/>
     <buttons:SfRadioButton Text="Debit Card" Value="DebitCard"/>
@@ -340,7 +340,7 @@ paymentGroup.SelectedValue = "CreditCard";
 
 This is particularly useful for MVVM patterns:
 
-```xml
+```xaml
 <buttons:SfRadioGroup SelectedValue="{Binding SelectedPaymentMethod}">
     <buttons:SfRadioButton Text="Net Banking" Value="NetBanking"/>
     <buttons:SfRadioButton Text="Debit Card" Value="DebitCard"/>
@@ -403,7 +403,7 @@ public class PaymentViewModel : INotifyPropertyChanged
 
 ### Multiple Groups in the Same View
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="20" Padding="20">
     
     <!-- Size Selection Group -->

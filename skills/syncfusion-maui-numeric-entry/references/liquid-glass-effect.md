@@ -26,7 +26,7 @@ Follow these steps to enable the Liquid Glass Effect for Numeric Entry:
 
 The Numeric Entry must be wrapped inside `SfGlassEffectView` to apply the glass effect.
 
-```xml
+```xaml
 <core:SfGlassEffectView>
     <editors:SfNumericEntry Value="1234.56"
                             CustomFormat="C2"
@@ -42,7 +42,7 @@ The Numeric Entry must be wrapped inside `SfGlassEffectView` to apply the glass 
 
 For the glass effect to work properly, the Numeric Entry's `Background` must be set to `Transparent`.
 
-```xml
+```xaml
 <editors:SfNumericEntry Background="Transparent" />
 ```
 
@@ -63,7 +63,7 @@ Customize the glass effect using `SfGlassEffectView` properties:
 
 ### XAML Implementation
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -165,7 +165,7 @@ The `EffectType` property controls the intensity of the glass blur effect.
 
 Standard glass effect with moderate blur.
 
-```xml
+```xaml
 <core:SfGlassEffectView EffectType="Regular">
     <editors:SfNumericEntry Background="Transparent" />
 </core:SfGlassEffectView>
@@ -177,7 +177,7 @@ Standard glass effect with moderate blur.
 
 Stronger blur effect, more opaque appearance.
 
-```xml
+```xaml
 <core:SfGlassEffectView EffectType="Thick">
     <editors:SfNumericEntry Background="Transparent" />
 </core:SfGlassEffectView>
@@ -189,7 +189,7 @@ Stronger blur effect, more opaque appearance.
 
 Lighter blur effect, more transparent appearance.
 
-```xml
+```xaml
 <core:SfGlassEffectView EffectType="Thin">
     <editors:SfNumericEntry Background="Transparent" />
 </core:SfGlassEffectView>
@@ -203,7 +203,7 @@ The `EnableShadowEffect` property adds depth with a shadow beneath the control.
 
 ### With Shadow (Recommended)
 
-```xml
+```xaml
 <core:SfGlassEffectView EnableShadowEffect="True">
     <editors:SfNumericEntry Background="Transparent" />
 </core:SfGlassEffectView>
@@ -213,7 +213,7 @@ The `EnableShadowEffect` property adds depth with a shadow beneath the control.
 
 ### Without Shadow
 
-```xml
+```xaml
 <core:SfGlassEffectView EnableShadowEffect="False">
     <editors:SfNumericEntry Background="Transparent" />
 </core:SfGlassEffectView>
@@ -225,7 +225,7 @@ The `EnableShadowEffect` property adds depth with a shadow beneath the control.
 
 Customize rounded corners with the `CornerRadius` property.
 
-```xml
+```xaml
 <!-- Sharp corners -->
 <core:SfGlassEffectView CornerRadius="0">
     <editors:SfNumericEntry Background="Transparent" />
@@ -253,7 +253,7 @@ Customize rounded corners with the `CornerRadius` property.
 
 ### Vertical Stack
 
-```xml
+```xaml
 <Grid>
     <Image Source="background.png" Aspect="AspectFill" />
     
@@ -300,7 +300,7 @@ Customize rounded corners with the `CornerRadius` property.
 
 ### Form Layout
 
-```xml
+```xaml
 <Grid>
     <Image Source="background.png" Aspect="AspectFill" />
     
@@ -391,7 +391,7 @@ Customize rounded corners with the `CornerRadius` property.
 
 Always set `Background="Transparent"` on the Numeric Entry:
 
-```xml
+```xaml
 <editors:SfNumericEntry Background="Transparent" />
 ```
 
@@ -399,7 +399,7 @@ Always set `Background="Transparent"` on the Numeric Entry:
 
 Maintain consistent `CornerRadius` across all glass controls in the same view:
 
-```xml
+```xaml
 <!-- All controls use CornerRadius="20" -->
 <core:SfGlassEffectView CornerRadius="20">...</core:SfGlassEffectView>
 <core:SfGlassEffectView CornerRadius="20">...</core:SfGlassEffectView>
@@ -410,7 +410,7 @@ Maintain consistent `CornerRadius` across all glass controls in the same view:
 
 Use `EnableShadowEffect="True"` to add visual depth:
 
-```xml
+```xaml
 <core:SfGlassEffectView EnableShadowEffect="True">
     ...
 </core:SfGlassEffectView>
@@ -420,7 +420,7 @@ Use `EnableShadowEffect="True"` to add visual depth:
 
 Set `HeightRequest` to accommodate the Numeric Entry:
 
-```xml
+```xaml
 <!-- Standard height -->
 <core:SfGlassEffectView HeightRequest="40">
     ...
@@ -436,7 +436,7 @@ Set `HeightRequest` to accommodate the Numeric Entry:
 
 Ensure text remains readable against the background:
 
-```xml
+```xaml
 <editors:SfNumericEntry Background="Transparent"
                         TextColor="White"  <!-- Adjust for background -->
                         PlaceholderColor="LightGray" />

@@ -41,7 +41,7 @@ Apply a single, uniform color to all leaf items regardless of their values.
 
 ### Basic Implementation
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding PopulationDetails}"
                    PrimaryValuePath="Population">
     <treemap:SfTreeMap.LeafItemSettings>
@@ -65,7 +65,7 @@ treeMap.LeafItemBrushSettings = new TreeMapUniformBrushSettings
 
 ### Using Hex Colors
 
-```xml
+```xaml
 <treemap:TreeMapUniformBrushSettings Brush="#FF6B35" />
 ```
 
@@ -106,7 +106,7 @@ Color items based on data value ranges. Each range gets a specific color, ideal 
 
 ### Basic Implementation
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding PopulationDetails}"
                    PrimaryValuePath="Population"
                    RangeColorValuePath="Population">
@@ -170,7 +170,7 @@ treeMap.LeafItemBrushSettings = new TreeMapRangeBrushSettings
 
 ### Important: RangeColorValuePath Required
 
-```xml
+```xaml
 <!-- MUST set RangeColorValuePath for RangeBrushSettings to work -->
 <treemap:SfTreeMap RangeColorValuePath="Population"
                    PrimaryValuePath="Population">
@@ -235,7 +235,7 @@ Apply a gradient from full saturation to desaturated (pale) based on data values
 
 ### Basic Implementation
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding PopulationDetails}"
                    PrimaryValuePath="Population">
     <treemap:SfTreeMap.LeafItemSettings>
@@ -301,7 +301,7 @@ Apply multiple distinct colors from a palette sequentially to leaf items. Each i
 
 ### Basic Implementation
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding PopulationDetails}"
                    PrimaryValuePath="Population">
     <treemap:SfTreeMap.LeafItemSettings>
@@ -402,7 +402,7 @@ Use UniformBrushSettings during design/prototyping.
 
 ### Range Brush Settings with Legend
 
-```xml
+```xaml
 <treemap:SfTreeMap DataSource="{Binding Data}"
                    PrimaryValuePath="Value"
                    RangeColorValuePath="Value">

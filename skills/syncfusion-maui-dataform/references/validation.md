@@ -181,7 +181,7 @@ Control when validation occurs using `ValidationMode` property.
 
 Validates when editor loses focus (user tabs away or taps another field).
 
-```xml
+```xaml
 <dataForm:SfDataForm x:Name="dataForm"
                      ValidationMode="LostFocus"
                      DataObject="{Binding User}"/>
@@ -199,7 +199,7 @@ dataForm.ValidationMode = DataFormValidationMode.LostFocus;
 
 Validates immediately on every character typed.
 
-```xml
+```xaml
 <dataForm:SfDataForm x:Name="dataForm"
                      ValidationMode="PropertyChanged"
                      DataObject="{Binding User}"/>
@@ -222,7 +222,7 @@ dataForm.ValidationMode = DataFormValidationMode.PropertyChanged;
 
 No automatic validation. You control when to validate by calling `Validate()`.
 
-```xml
+```xaml
 <dataForm:SfDataForm x:Name="dataForm"
                      ValidationMode="Manual"
                      DataObject="{Binding User}"/>
@@ -478,7 +478,7 @@ private void OnValidateProperty(object sender, DataFormValidatePropertyEventArgs
 
 ### Hide Error Label
 
-```xml
+```xaml
 <dataForm:SfDataForm x:Name="dataForm" AutoGenerateItems="False">
     <dataForm:SfDataForm.Items>
         <dataForm:DataFormTextItem FieldName="Name" 
@@ -499,7 +499,7 @@ if (e.DataFormItem?.FieldName == "Name")
 
 ### Hide Valid Message Label
 
-```xml
+```xaml
 <dataForm:DataFormTextItem FieldName="Password" 
                            ShowValidMessageLabel="False"/>
 ```
@@ -515,7 +515,7 @@ if (e.DataFormItem?.FieldName == "Password")
 
 ### Global Error Label Style
 
-```xml
+```xaml
 <dataForm:SfDataForm x:Name="dataForm">
     <dataForm:SfDataForm.ErrorLabelTextStyle>
         <dataForm:DataFormTextStyle FontSize="12" 
@@ -562,7 +562,7 @@ private void OnGenerateDataFormItem(object sender, GenerateDataFormItemEventArgs
 
 ### Global Valid Message Style
 
-```xml
+```xaml
 <dataForm:SfDataForm x:Name="dataForm">
     <dataForm:SfDataForm.ValidMessageLabelTextStyle>
         <dataForm:DataFormTextStyle FontSize="11" 

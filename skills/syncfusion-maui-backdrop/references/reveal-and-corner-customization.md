@@ -21,7 +21,7 @@ Controls how far the front layer moves down when the back layer is revealed.
 Use `Auto` when the back layer content is short (e.g., a short menu) and you don't want excess empty space. Use `Fill` when the back layer should occupy the full screen background.
 
 **XAML:**
-```xml
+```xaml
 <backdrop:SfBackdropPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -98,7 +98,7 @@ this.FrontLayer = new BackdropFrontLayer()
 
 `RevealedHeight` defines a minimum peeking height for the front layer when the back layer is fully revealed. This ensures the front layer is never completely hidden — a portion is always visible at the bottom.
 
-```xml
+```xaml
 <backdrop:BackdropFrontLayer RevealedHeight="60">
     <Grid BackgroundColor="WhiteSmoke" />
 </backdrop:BackdropFrontLayer>
@@ -128,7 +128,7 @@ Customize the top corners of the front layer using the `EdgeShape` property on `
 > Only the **top-left** and **top-right** corners are shaped. Bottom corners are always square.
 
 **XAML:**
-```xml
+```xaml
 <!-- Curve (default) -->
 <backdrop:BackdropFrontLayer EdgeShape="Curve">
     <Grid />
@@ -156,7 +156,7 @@ this.FrontLayer = new BackdropFrontLayer
 Set `LeftCornerRadius` and `RightCornerRadius` independently on `BackdropFrontLayer` for asymmetric designs.
 
 **XAML:**
-```xml
+```xaml
 <backdrop:SfBackdropPage.FrontLayer>
     <backdrop:BackdropFrontLayer
         LeftCornerRadius="30"
@@ -184,7 +184,7 @@ this.FrontLayer = new BackdropFrontLayer()
 
 Full page with auto reveal height, custom corner radius, and peeking front layer:
 
-```xml
+```xaml
 <backdrop:SfBackdropPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

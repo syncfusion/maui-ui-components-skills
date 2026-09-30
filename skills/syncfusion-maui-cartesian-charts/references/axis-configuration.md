@@ -39,7 +39,7 @@ NumericalAxis displays numerical values with linear intervals, suitable for cont
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:NumericalAxis/>
@@ -77,7 +77,7 @@ this.Content = chart;
 
 ### Interval Customization
 
-```xml
+```xaml
 <chart:NumericalAxis Interval="10"
                      Minimum="0"
                      Maximum="100"/>
@@ -94,7 +94,7 @@ NumericalAxis axis = new NumericalAxis()
 
 ### Range Configuration
 
-```xml
+```xaml
 <chart:NumericalAxis Maximum="2750"
                      Minimum="250"
                      Interval="250"/>
@@ -115,7 +115,7 @@ CategoryAxis is index-based, plotting values based on the data point collection 
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -153,7 +153,7 @@ this.Content = chart;
 
 ### Label Placement
 
-```xml
+```xaml
 <chart:CategoryAxis LabelPlacement="BetweenTicks"/>
 ```
 
@@ -174,7 +174,7 @@ DateTimeAxis plots datetime values along a timeline with appropriate intervals.
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:DateTimeAxis/>
@@ -212,7 +212,7 @@ this.Content = chart;
 
 ### Interval Types
 
-```xml
+```xaml
 <chart:DateTimeAxis IntervalType="Months"
                     Interval="1"/>
 ```
@@ -237,7 +237,7 @@ DateTimeAxis axis = new DateTimeAxis()
 
 ### Date Format
 
-```xml
+```xaml
 <chart:DateTimeAxis LabelFormat="MMM-yyyy"/>
 ```
 
@@ -250,7 +250,7 @@ DateTimeAxis axis = new DateTimeAxis()
 
 ### Range Configuration
 
-```xml
+```xaml
 <chart:DateTimeAxis Minimum="2024-01-01"
                     Maximum="2024-12-31"
                     IntervalType="Months"
@@ -273,7 +273,7 @@ DateTimeCategoryAxis combines features of both DateTime and Category axes, ideal
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:DateTimeCategoryAxis/>
@@ -311,7 +311,7 @@ this.Content = chart;
 
 ### Label Format
 
-```xml
+```xaml
 <chart:DateTimeCategoryAxis LabelFormat="dd-MMM"
                             Interval="1"/>
 ```
@@ -330,7 +330,7 @@ LogarithmicAxis uses logarithmic scale, useful for data with wide value ranges.
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:NumericalAxis/>
@@ -368,7 +368,7 @@ this.Content = chart;
 
 ### Logarithmic Base
 
-```xml
+```xaml
 <chart:LogarithmicAxis LogarithmicBase="10"/>
 ```
 
@@ -383,7 +383,7 @@ LogarithmicAxis axis = new LogarithmicAxis()
 
 ### Label Style
 
-```xml
+```xaml
 <chart:NumericalAxis>
     <chart:NumericalAxis.LabelStyle>
         <chart:ChartAxisLabelStyle TextColor="Blue"
@@ -412,7 +412,7 @@ NumericalAxis axis = new NumericalAxis()
 
 Format axis labels using standard format strings:
 
-```xml
+```xaml
 <chart:NumericalAxis>
     <chart:NumericalAxis.LabelStyle>
         <chart:ChartAxisLabelStyle LabelFormat="N2"/>
@@ -442,7 +442,7 @@ NumericalAxis axis = new NumericalAxis()
 
 ### Label Rotation
 
-```xml
+```xaml
 <chart:CategoryAxis LabelRotation="45"/>
 ```
 
@@ -455,7 +455,7 @@ CategoryAxis axis = new CategoryAxis()
 
 ### Edge Labels Visibility
 
-```xml
+```xaml
 <chart:NumericalAxis EdgeLabelsDrawingMode="Shift"/>
 ```
 
@@ -475,7 +475,7 @@ NumericalAxis axis = new NumericalAxis()
 
 ### Basic Title
 
-```xml
+```xaml
 <chart:NumericalAxis>
     <chart:NumericalAxis.Title>
         <chart:ChartAxisTitle Text="Sales (in thousands)"/>
@@ -497,7 +497,7 @@ NumericalAxis axis = new NumericalAxis()
 
 ### Title Customization
 
-```xml
+```xaml
 <chart:NumericalAxis>
     <chart:NumericalAxis.Title>
         <chart:ChartAxisTitle Text="Revenue"

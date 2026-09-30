@@ -31,7 +31,7 @@ Control where the toolbar appears relative to the content area using the `Toolba
 
 ### XAML Configuration
 
-```xml
+```xaml
 <!-- Position at top -->
 <rte:SfRichTextEditor ToolbarPosition="Top" ShowToolbar="True" />
 
@@ -105,7 +105,7 @@ The Rich Text Editor supports the following toolbar item types through the `Rich
 
 Enable the toolbar without specifying items to get all default options:
 
-```xml
+```xaml
 <rte:SfRichTextEditor ShowToolbar="True" />
 ```
 
@@ -115,7 +115,7 @@ This includes all toolbar items listed above.
 
 Populate the `ToolbarItems` collection to specify exactly which items appear:
 
-```xml
+```xaml
 <rte:SfRichTextEditor ShowToolbar="True">
     <rte:SfRichTextEditor.ToolbarItems>
         <rte:RichTextToolbarItem Type="Bold" />
@@ -154,7 +154,7 @@ richTextEditor.ToolbarItems.Add(new RichTextToolbarItem { Type = RichTextToolbar
 
 For simple text editing needs:
 
-```xml
+```xaml
 <rte:SfRichTextEditor.ToolbarItems>
     <rte:RichTextToolbarItem Type="Bold" />
     <rte:RichTextToolbarItem Type="Italic" />
@@ -166,7 +166,7 @@ For simple text editing needs:
 
 For typical document editing:
 
-```xml
+```xaml
 <rte:SfRichTextEditor.ToolbarItems>
     <!-- Character Formatting -->
     <rte:RichTextToolbarItem Type="Bold" />
@@ -195,7 +195,7 @@ For typical document editing:
 
 For advanced document editing with media:
 
-```xml
+```xaml
 <rte:SfRichTextEditor.ToolbarItems>
     <!-- History -->
     <rte:RichTextToolbarItem Type="Undo" />
@@ -241,7 +241,7 @@ For advanced document editing with media:
 
 Optimized for communication apps:
 
-```xml
+```xaml
 <rte:SfRichTextEditor.ToolbarItems>
     <rte:RichTextToolbarItem Type="Bold" />
     <rte:RichTextToolbarItem Type="Italic" />
@@ -263,7 +263,7 @@ Optimized for communication apps:
 
 Simplified for quick notes:
 
-```xml
+```xaml
 <rte:SfRichTextEditor.ToolbarItems>
     <rte:RichTextToolbarItem Type="Bold" />
     <rte:RichTextToolbarItem Type="Italic" />
@@ -296,7 +296,7 @@ The link quick tooltip provides three actions:
 
 ### Example Scenario
 
-```xml
+```xaml
 <rte:SfRichTextEditor ShowToolbar="True">
     <rte:SfRichTextEditor.ToolbarItems>
         <rte:RichTextToolbarItem Type="Hyperlink" />
@@ -330,7 +330,7 @@ The `RichTextEditorToolbarSettings` object provides these properties:
 
 ### Basic Customization Example (XAML)
 
-```xml
+```xaml
 <rte:SfRichTextEditor ShowToolbar="True">
     <rte:SfRichTextEditor.ToolbarSettings>
         <rte:RichTextEditorToolbarSettings 
@@ -345,7 +345,7 @@ The `RichTextEditorToolbarSettings` object provides these properties:
 
 ### Comprehensive Customization (XAML)
 
-```xml
+```xaml
 <rte:SfRichTextEditor ShowToolbar="True">
     <rte:SfRichTextEditor.ToolbarSettings>
         <rte:RichTextEditorToolbarSettings 
@@ -454,7 +454,7 @@ SfRichTextEditor richTextEditor = new SfRichTextEditor
 
 Group related items with separators for better usability:
 
-```xml
+```xaml
 <rte:RichTextToolbarItem Type="Bold" />
 <rte:RichTextToolbarItem Type="Italic" />
 <rte:RichTextToolbarItem Type="Underline" />

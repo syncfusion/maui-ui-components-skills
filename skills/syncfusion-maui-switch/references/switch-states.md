@@ -36,7 +36,7 @@ The On state represents an active or enabled condition. The switch thumb moves t
 ### Implementation
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSwitch IsOn="True" />
 ```
 
@@ -54,7 +54,7 @@ this.Content = sfSwitch;
 - Representing a "yes" or "true" value in forms
 
 ### Example: Feature Toggle
-```xml
+```xaml
 <VerticalStackLayout Spacing="10">
     <Label Text="Dark Mode"/>
     <buttons:SfSwitch x:Name="darkModeSwitch" 
@@ -80,7 +80,7 @@ The Off state is the default state, representing an inactive or disabled conditi
 ### Implementation
 
 **XAML:**
-```xml
+```xaml
 <!-- Explicit Off state -->
 <buttons:SfSwitch IsOn="False" />
 
@@ -104,7 +104,7 @@ this.Content = sfSwitch;
 - Initial state when you want user to explicitly enable something
 
 ### Example: Opt-in Setting
-```xml
+```xaml
 <VerticalStackLayout Spacing="10">
     <Label Text="Subscribe to Newsletter"/>
     <buttons:SfSwitch x:Name="newsletterSwitch" 
@@ -121,7 +121,7 @@ The Indeterminate state represents an unknown, loading, or work-in-progress cond
 **Critical:** You must set `AllowIndeterminateState="True"` to enable this feature.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSwitch IsOn="{x:Null}" 
                   AllowIndeterminateState="True" />
 ```
@@ -195,7 +195,7 @@ Disabled states make the switch non-interactive while still displaying its curre
 Shows an On state that cannot be changed by user interaction.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSwitch IsOn="True" 
                   IsEnabled="False" />
 ```
@@ -214,7 +214,7 @@ this.Content = sfSwitch;
 - Indicate a feature is active but cannot be toggled (e.g., enforced by admin policy)
 
 **Example:**
-```xml
+```xaml
 <VerticalStackLayout Spacing="10">
     <Label Text="Two-Factor Authentication (Required by Policy)"/>
     <buttons:SfSwitch IsOn="True" 
@@ -227,7 +227,7 @@ this.Content = sfSwitch;
 Shows an Off state that cannot be changed by user interaction.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSwitch IsOn="False" 
                   IsEnabled="False" />
 ```
@@ -246,7 +246,7 @@ this.Content = sfSwitch;
 - Indicate a feature cannot be enabled due to restrictions
 
 **Example:**
-```xml
+```xaml
 <VerticalStackLayout Spacing="10">
     <Label Text="Premium Feature (Upgrade Required)"/>
     <buttons:SfSwitch IsOn="False" 
@@ -259,7 +259,7 @@ this.Content = sfSwitch;
 Shows an Indeterminate state that cannot be changed by user interaction.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSwitch AllowIndeterminateState="True" 
                   IsOn="{x:Null}" 
                   IsEnabled="False"/>
@@ -361,7 +361,7 @@ sfSwitch.IsOn = null;  // While loading data
 ```
 
 ### 3. Provide Visual Feedback
-```xml
+```xaml
 <VerticalStackLayout>
     <buttons:SfSwitch x:Name="notifySwitch" StateChanged="OnNotifyChanged"/>
     <Label x:Name="statusLabel" Text="Status: Off"/>

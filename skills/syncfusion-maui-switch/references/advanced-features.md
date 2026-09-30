@@ -41,7 +41,7 @@ The SfSwitch control supports a glass morphism effect (also called acrylic or li
 ### Enabling Liquid Glass Effect
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <!-- Background image to showcase the glass effect -->
     <Image Source="wallpaper.jpg" Aspect="AspectFill" />
@@ -65,7 +65,7 @@ SfSwitch sfSwitch = new SfSwitch
 The glass effect is most visible and effective over colorful or image backgrounds.
 
 **Good Examples:**
-```xml
+```xaml
 <!-- Over gradient background -->
 <Grid>
     <BoxView>
@@ -92,7 +92,7 @@ The glass effect is most visible and effective over colorful or image background
 ```
 
 **Less Effective:**
-```xml
+```xaml
 <!-- Plain white background - glass effect won't be noticeable -->
 <Grid BackgroundColor="White">
     <buttons:SfSwitch EnableLiquidGlassEffect="True"/>
@@ -103,7 +103,7 @@ The glass effect is most visible and effective over colorful or image background
 
 Apply glass effect with custom styling:
 
-```xml
+```xaml
 <Grid>
     <Image Source="background.jpg" Aspect="AspectFill"/>
     
@@ -133,7 +133,7 @@ Apply glass effect with custom styling:
 
 #### 3. Complete Example
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons">
@@ -229,7 +229,7 @@ if (IsGlassEffectSupported())
 ### Design Recommendations
 
 #### Modern Card Design
-```xml
+```xaml
 <Frame Padding="20" 
        CornerRadius="20"
        HasShadow="True"
@@ -242,7 +242,7 @@ if (IsGlassEffectSupported())
 ```
 
 #### Hero Section
-```xml
+```xaml
 <Grid>
     <Image Source="hero_background.jpg" Aspect="AspectFill"/>
     <VerticalStackLayout Padding="50" VerticalOptions="Center">
@@ -273,7 +273,7 @@ The SfSwitch supports right-to-left layouts for languages like Arabic, Hebrew, P
 #### Method 1: FlowDirection Property
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSwitch FlowDirection="RightToLeft" />
 ```
 
@@ -293,7 +293,7 @@ RTL automatically activates when the device language is set to an RTL language (
 ### Complete RTL Example
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons">
@@ -436,7 +436,7 @@ CultureInfo.CurrentUICulture = new CultureInfo("ar-SA");
 ```
 
 #### 2. Apply RTL at Container Level
-```xml
+```xaml
 <!-- Apply to entire layout -->
 <StackLayout FlowDirection="RightToLeft">
     <buttons:SfSwitch />
@@ -445,7 +445,7 @@ CultureInfo.CurrentUICulture = new CultureInfo("ar-SA");
 ```
 
 #### 3. Handle Mixed Content
-```xml
+```xaml
 <!-- Some content LTR, some RTL -->
 <StackLayout>
     <Label Text="English Content" FlowDirection="LeftToRight"/>
@@ -462,7 +462,7 @@ Ensure On/Off states work correctly in RTL:
 
 #### 5. Consider Icons and Symbols
 If using CustomPath icons, ensure they're appropriate for RTL context:
-```xml
+```xaml
 <!-- Use symmetric or culturally appropriate icons -->
 <buttons:SwitchSettings 
     CustomPath="SymmetricIconPath"
@@ -525,7 +525,7 @@ public FlowDirection GetPlatformFlowDirection()
 
 ### Liquid Glass with RTL
 
-```xml
+```xaml
 <Grid FlowDirection="RightToLeft">
     <Image Source="arabic_background.jpg" Aspect="AspectFill"/>
     

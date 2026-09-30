@@ -34,7 +34,7 @@ The drawer slides in from the left side of the screen.
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <navigationDrawer:SfNavigationDrawer.DrawerSettings>
         <navigationDrawer:DrawerSettings Position="Left"
@@ -68,7 +68,7 @@ The drawer slides in from the right side of the screen.
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <navigationDrawer:SfNavigationDrawer.DrawerSettings>
         <navigationDrawer:DrawerSettings Position="Right"
@@ -100,7 +100,7 @@ The drawer slides in from the top edge of the screen.
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <navigationDrawer:SfNavigationDrawer.DrawerSettings>
         <navigationDrawer:DrawerSettings Position="Top"
@@ -134,7 +134,7 @@ The drawer slides in from the bottom edge of the screen.
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <navigationDrawer:SfNavigationDrawer.DrawerSettings>
         <navigationDrawer:DrawerSettings Position="Bottom"
@@ -166,7 +166,7 @@ navigationDrawer.DrawerSettings = drawerSettings;
 
 Controls the width of the drawer when positioned on Left or Right sides.
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings Position="Left" DrawerWidth="250"/>
 ```
 
@@ -198,7 +198,7 @@ navigationDrawer.DrawerSettings = new DrawerSettings
 
 Controls the height of the drawer when positioned on Top or Bottom edges.
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings Position="Top" DrawerHeight="300"/>
 ```
 

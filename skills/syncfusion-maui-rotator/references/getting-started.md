@@ -72,7 +72,7 @@ namespace YourApp
 Add the SfRotator namespace to your XAML or C# file:
 
 **XAML:**
-```xml
+```xaml
 xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Rotator;assembly=Syncfusion.Maui.Rotator"
 ```
 
@@ -85,7 +85,7 @@ using Syncfusion.Maui.Rotator;
 
 ### Minimal XAML Example
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -171,7 +171,7 @@ public partial class MainPage : ContentPage
 ### XAML with ViewModel Binding
 
 **MainPage.xaml:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

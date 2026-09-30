@@ -9,7 +9,7 @@ This section shows how to execute code when the carousel item changes.
 The `SelectionChanged` event is raised whenever the SelectedIndex changes, whether by user swipe or programmatic change.
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel x:Name="carousel"
                      ItemsSource="{Binding ImageCollection}"
                      ItemTemplate="{StaticResource itemTemplate}"

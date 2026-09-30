@@ -18,7 +18,7 @@ The `IndicatorColor` property controls the color of the animated indicator itsel
 ### Basic Color Customization
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       IndicatorColor="Red" />
@@ -37,7 +37,7 @@ SfBusyIndicator busyIndicator = new SfBusyIndicator
 ### Using Hex Colors
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       IndicatorColor="#512BD4" />
 ```
@@ -49,7 +49,7 @@ busyIndicator.IndicatorColor = Color.FromArgb("#512BD4");
 
 ### Brand Color Example
 
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       IndicatorColor="#FF6B35"
@@ -100,7 +100,7 @@ The `OverlayFill` property sets the background color behind the indicator, creat
 ### Solid Color Overlay
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       IndicatorColor="White"
@@ -127,7 +127,7 @@ SfBusyIndicator busyIndicator = new SfBusyIndicator
 A semi-transparent overlay allows users to see the underlying content while preventing interaction:
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       IndicatorColor="White"
                       Title="Processing..."
@@ -141,7 +141,7 @@ The `#88000000` color format:
 
 ### Common Overlay Colors
 
-```xml
+```xaml
 <!-- Light semi-transparent white -->
 <core:SfBusyIndicator OverlayFill="#88FFFFFF" IndicatorColor="Black" />
 
@@ -180,7 +180,7 @@ The `OverlayFill` property accepts `Brush` types, allowing for sophisticated gra
 ### Linear Gradient
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       IndicatorColor="White"
@@ -218,7 +218,7 @@ var busyIndicator = new SfBusyIndicator
 ### Radial Gradient
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       IndicatorColor="#e64c93"
@@ -246,7 +246,7 @@ busyIndicator.OverlayFill = new RadialGradientBrush
 
 ### Multi-Color Gradient
 
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True">
     <core:SfBusyIndicator.OverlayFill>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -269,7 +269,7 @@ The `DurationFactor` property controls the speed of the animation. It accepts va
 ### Basic Duration Control
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       DurationFactor="0.2" />
@@ -287,7 +287,7 @@ SfBusyIndicator busyIndicator = new SfBusyIndicator
 
 ### Duration Examples
 
-```xml
+```xaml
 <!-- Very fast (urgent operations) -->
 <core:SfBusyIndicator DurationFactor="0.1" />
 
@@ -333,7 +333,7 @@ The `SizeFactor` property controls the size of the indicator relative to its con
 ### Basic Size Control
 
 **XAML:**
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       Title="Loading..."
@@ -353,7 +353,7 @@ SfBusyIndicator busyIndicator = new SfBusyIndicator
 
 ### Size Examples
 
-```xml
+```xaml
 <!-- Very small (inline indicators) -->
 <core:SfBusyIndicator SizeFactor="0.2" />
 
@@ -389,7 +389,7 @@ public void AdaptSizeToScreen()
 
 ### Size by Context
 
-```xml
+```xaml
 <!-- Full-screen loading -->
 <core:SfBusyIndicator SizeFactor="0.8" />
 
@@ -407,7 +407,7 @@ public void AdaptSizeToScreen()
 
 ### Example 1: Branded Full-Screen Loader
 
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="Globe"
                       IndicatorColor="White"
@@ -429,7 +429,7 @@ public void AdaptSizeToScreen()
 
 ### Example 2: Minimal Inline Loader
 
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="{Binding IsLoading}"
                       AnimationType="SingleCircle"
                       IndicatorColor="Gray"
@@ -440,7 +440,7 @@ public void AdaptSizeToScreen()
 
 ### Example 3: iOS-Style Modal Loader
 
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="Cupertino"
                       IndicatorColor="#007AFF"
@@ -453,7 +453,7 @@ public void AdaptSizeToScreen()
 
 ### Example 4: Material Design Loader
 
-```xml
+```xaml
 <core:SfBusyIndicator IsRunning="True"
                       AnimationType="CircularMaterial"
                       IndicatorColor="#6200EE"
@@ -469,7 +469,7 @@ public void AdaptSizeToScreen()
 
 ### Pattern 1: Login Screen Overlay
 
-```xml
+```xaml
 <Grid>
     <!-- Login form -->
     <StackLayout VerticalOptions="Center" Padding="20">
@@ -492,7 +492,7 @@ public void AdaptSizeToScreen()
 
 ### Pattern 2: Page Refresh Indicator
 
-```xml
+```xaml
 <!-- Top of page loader -->
 <Grid>
     <Grid.RowDefinitions>
@@ -515,7 +515,7 @@ public void AdaptSizeToScreen()
 
 ### Pattern 3: Card Loading State
 
-```xml
+```xaml
 <Frame Padding="15" HasShadow="True">
     <Grid>
         <!-- Card content -->

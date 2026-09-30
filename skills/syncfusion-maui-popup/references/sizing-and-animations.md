@@ -26,7 +26,7 @@ Control the size and appearance animations of your popups to create polished, pr
 Set explicit dimensions using `HeightRequest` and `WidthRequest` properties.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup"
                  HeightRequest="300"
                  WidthRequest="400">
@@ -85,7 +85,7 @@ private void ConfigurePopupSize()
 
 Combine sizing with constraints:
 
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup"
                  MinimumHeightRequest="200"
                  MinimumWidthRequest="300"
@@ -121,7 +121,7 @@ The `AutoSizeMode` property controls how the popup automatically adjusts its dim
 Width is fixed, height adjusts to fit content.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup"
                  WidthRequest="350"
                  AutoSizeMode="Height">
@@ -149,7 +149,7 @@ sfPopup.Show();
 Height is fixed, width adjusts to fit content.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup"
                  HeightRequest="200"
                  AutoSizeMode="Width">
@@ -175,7 +175,7 @@ sfPopup.Show();
 Both width and height adjust to content.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup"
                  AutoSizeMode="Both">
     <sfPopup:SfPopup.ContentTemplate>
@@ -211,7 +211,7 @@ sfPopup.Show();
 
 ### Auto-Size with Constraints
 
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup"
                  AutoSizeMode="Both"
                  MinimumHeightRequest="150"
@@ -235,7 +235,7 @@ Display the popup covering the entire screen.
 ### Using IsFullScreen Property
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup" 
                  IsFullScreen="True">
 </sfPopup:SfPopup>
@@ -254,9 +254,33 @@ sfPopup.Show();
 sfPopup.Show(isFullScreen: true);
 ```
 
+### Important Note: Do NOT Manually Set Width and Height
+
+**❌ Incorrect Approach:**
+```csharp
+// Don't do this for full-screen popups!
+sfPopup.Width = DeviceDisplay.Current.MainDisplayInfo.Width;
+sfPopup.Height = DeviceDisplay.Current.MainDisplayInfo.Height;
+sfPopup.Show();
+```
+
+**✅ Correct Approach:**
+Use the `IsFullScreen` property or the `Show(bool)` method instead. This ensures proper layout handling across different device sizes and orientations:
+
+```csharp
+// Option 1: Set IsFullScreen property
+sfPopup.IsFullScreen = true;
+sfPopup.Show();
+
+// Option 2: Use Show(bool) method
+sfPopup.Show(isFullScreen: true);
+```
+
+The `IsFullScreen` property automatically handles all sizing and layout requirements for full-screen display.
+
 ### Full-Screen with Close Button
 
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="fullScreenPopup"
                  IsFullScreen="True"
                  ShowCloseButton="True"
@@ -322,7 +346,7 @@ The `AnimationMode` property controls the popup's entry and exit animations.
 ### Zoom Animation
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup"
                  AnimationMode="Zoom">
 </sfPopup:SfPopup>
@@ -337,7 +361,7 @@ sfPopup.Show();
 ### Fade Animation
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup"
                  AnimationMode="Fade">
 </sfPopup:SfPopup>
@@ -415,7 +439,7 @@ private void ShowContextPopup(Button targetButton)
 Control how long animations take using the `AnimationDuration` property (in milliseconds).
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup"
                  AnimationMode="Zoom"
                  AnimationDuration="500">
@@ -454,7 +478,7 @@ Control the animation curve using the `AnimationEasing` property.
 - `SinInOut`: smoothly accelerate the animation at the beginning and then smoothly decelerates the animation at the end.
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="sfPopup"
                  AnimationMode="Zoom"
                  AnimationDuration="400"
@@ -554,9 +578,15 @@ private void ShowNotification(bool isSuccess)
 
 4. **Full-Screen for Complex Forms:**
    ```csharp
-   // Large forms or content
+   // Large forms or content - use IsFullScreen property
    sfPopup.IsFullScreen = true;
+   sfPopup.Show();
+   
+   // Alternative: Use Show(bool) method
+   // sfPopup.Show(isFullScreen: true);
    ```
+   
+   ⚠️ **Always use `IsFullScreen` property or `Show(isFullScreen: true)` instead of manually setting `Width` and `Height` properties. Manual sizing does not properly handle device orientation changes and different screen sizes.**
 
 ### Animation Best Practices
 

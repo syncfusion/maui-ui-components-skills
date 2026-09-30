@@ -29,7 +29,7 @@ The `TransitionMode` property specifies how the refresh indicator animates durin
 
 The refresh indicator appears above the content, overlaying it during the pull gesture.
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh" 
                              TransitionMode="SlideOnTop"
                              Refreshing="OnRefreshing">
@@ -57,7 +57,7 @@ pullToRefresh.TransitionMode = PullToRefreshTransitionType.SlideOnTop;
 
 The refresh indicator pushes the content down as it appears, moving both simultaneously.
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh" 
                              TransitionMode="Push"
                              Refreshing="OnRefreshing">
@@ -99,7 +99,7 @@ Threshold properties control when and how far the refresh indicator appears duri
 
 The starting position of the progress indicator within the refresh view. This determines where the indicator begins to appear.
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh" 
                              RefreshViewThreshold="50">
     <!-- PullableContent -->
@@ -120,7 +120,7 @@ pullToRefresh.RefreshViewThreshold = 50d;
 
 The maximum pulling distance for the progress indicator. This defines how far users can pull down.
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh" 
                              PullingThreshold="200">
     <!-- PullableContent -->
@@ -140,7 +140,7 @@ pullToRefresh.PullingThreshold = 200d;
 
 ### Threshold Configuration Example
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh"
                              RefreshViewThreshold="30"
                              PullingThreshold="120"
@@ -165,7 +165,7 @@ Customize the appearance of the circular progress indicator that appears during 
 
 Sets the color of the progress indicator's arc.
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh" 
                              ProgressColor="Blue">
     <!-- PullableContent -->
@@ -180,7 +180,7 @@ pullToRefresh.ProgressColor = Colors.Blue;
 
 Sets the background color of the progress indicator.
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh" 
                              ProgressBackground="White">
     <!-- PullableContent -->
@@ -195,7 +195,7 @@ pullToRefresh.ProgressBackground = Colors.White;
 
 Sets the width of the progress indicator's arc stroke.
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh" 
                              ProgressThickness="5">
     <!-- PullableContent -->
@@ -214,7 +214,7 @@ pullToRefresh.ProgressThickness = 5d;
 
 ### Complete Progress Customization
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh"
                              ProgressColor="DarkBlue"
                              ProgressBackground="LightGray"
@@ -235,7 +235,7 @@ Control the size of the refresh indicator view container.
 
 Sets the width of the refresh view.
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh" 
                              RefreshViewWidth="50">
     <!-- PullableContent -->
@@ -250,7 +250,7 @@ pullToRefresh.RefreshViewWidth = 50d;
 
 Sets the height of the refresh view.
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh" 
                              RefreshViewHeight="50">
     <!-- PullableContent -->
@@ -263,7 +263,7 @@ pullToRefresh.RefreshViewHeight = 50d;
 
 ### Size Considerations
 
-```xml
+```xaml
 <!-- Small indicator -->
 <syncfusion:SfPullToRefresh RefreshViewWidth="30"
                              RefreshViewHeight="30"
@@ -291,7 +291,7 @@ The `IsRefreshing` property controls the refresh state and progress animation vi
 
 ### Manual Control
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh" 
                              IsRefreshing="False">
     <!-- PullableContent -->
@@ -329,7 +329,7 @@ private async void OnRefreshing(object sender, EventArgs e)
 
 ### Data Binding
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh IsRefreshing="{Binding IsRefreshing}">
     <!-- PullableContent -->
 </syncfusion:SfPullToRefresh>
@@ -402,7 +402,7 @@ pullToRefresh.EndRefreshing();
 
 **Example: Button-Triggered Refresh**
 
-```xml
+```xaml
 <StackLayout>
     <Button Text="Refresh Data" 
             Clicked="OnRefreshButtonClicked"/>
@@ -465,7 +465,7 @@ protected override void OnDisappearing()
 
 Without size or layout options, the control won't display properly:
 
-```xml
+```xaml
 <!-- This may not display correctly -->
 <syncfusion:SfPullToRefresh>
     <syncfusion:SfPullToRefresh.PullableContent>
@@ -476,7 +476,7 @@ Without size or layout options, the control won't display properly:
 
 ### Solution 1: Use LayoutOptions
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh HorizontalOptions="FillAndExpand"
                              VerticalOptions="FillAndExpand">
     <syncfusion:SfPullToRefresh.PullableContent>
@@ -487,7 +487,7 @@ Without size or layout options, the control won't display properly:
 
 ### Solution 2: Set Explicit Size
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh HeightRequest="500"
                              WidthRequest="400">
     <syncfusion:SfPullToRefresh.PullableContent>
@@ -498,7 +498,7 @@ Without size or layout options, the control won't display properly:
 
 ### Solution 3: Place in Grid
 
-```xml
+```xaml
 <Grid>
     <syncfusion:SfPullToRefresh>
         <syncfusion:SfPullToRefresh.PullableContent>
@@ -512,7 +512,7 @@ Without size or layout options, the control won't display properly:
 
 Here's a comprehensive example combining multiple customization options:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.PullToRefresh;assembly=Syncfusion.Maui.PullToRefresh"

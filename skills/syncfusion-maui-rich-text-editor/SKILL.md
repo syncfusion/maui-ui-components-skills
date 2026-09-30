@@ -1,6 +1,6 @@
 ---
 name: syncfusion-maui-rich-text-editor
-description: Implements Syncfusion .NET MAUI Rich Text Editor (SfRichTextEditor) for WYSIWYG text editing with formatting, images, tables, and hyperlinks. Use when building rich text editors, document editors, email composers, blog post editors, or messaging apps with formatting. Covers text styling, toolbar formatting, images, tables, hyperlinks, and HTML output.
+description: Implements Syncfusion .NET MAUI Rich Text Editor (SfRichTextEditor) for WYSIWYG text editing with formatting, images, tables, hyperlinks, and code blocks. Use when building rich text editors, document editors, email composers, blog post editors, or messaging apps with formatting. Covers text styling, toolbar formatting, images, tables, hyperlinks, code blocks, and HTML output.
 metadata:
   author: "Syncfusion Inc"
   version: "34.1.29"
@@ -19,7 +19,8 @@ Use this skill when you need to:
 - **Build blog editors, CMS interfaces, or forum post editors** with HTML output
 - **Add note-taking or document editing features** with formatting toolbar
 - **Enable feedback forms, review sections, or comment areas** with rich content support
-- **Implement text editors with images, tables, and hyperlinks** embedded in content
+- **Implement text editors with images, tables, hyperlinks, and code blocks** embedded in content
+- **Embed formatted code snippets** in technical documentation, blog posts, or developer-focused apps
 - **Customize toolbar items and appearance** for specific editing scenarios
 - **Handle formatted text programmatically** with methods for bold, italic, alignment, colors, etc.
 - **Manage user interactions** through events (text changes, hyperlink clicks, format changes)
@@ -32,6 +33,7 @@ Use this skill when you need to:
 - **Customizable Toolbar** - Rich, configurable toolbar with show/hide/custom items
 - **Images & Tables** - Seamless insertion and formatting of images and tables
 - **Hyperlink Support** - Insert, edit, and remove hyperlinks with click events
+- **Code Block Support** - Insert formatted code snippets that preserve structure and readability
 - **Programmatic Control** - Methods for applying formatting, managing content, and controlling editor state
 - **Events** - FormatChanged, TextChanged, HyperlinkClicked, Focused/Unfocused for reactive UI
 - **HTML Output** - Returns valid HTML markup for storage or transmission
@@ -105,6 +107,16 @@ Use this skill when you need to:
 - HyperlinkClicked event for handling link interactions
 - Extracting link URL and display text from events
 - Use cases and patterns for hyperlink management
+
+### Code Blocks
+📄 **Read:** [references/code-blocks.md](references/code-blocks.md)
+- Enabling code blocks using the CodeBlock toolbar item
+- Customizing code block languages with CodeBlockLanguages property
+- XAML and C# setup with RichTextToolbarItem and RichTextToolbarOptions.CodeBlock
+- Configuring language dropdown (replacing or appending custom languages)
+- Combining code blocks with other formatting tools using Separator items
+- Use cases for technical documentation, blogging, and developer-centric tools
+- Best practices for toolbar placement and HTML content round-tripping
 
 ### Events and Interactions
 📄 **Read:** [references/events-and-interactions.md](references/events-and-interactions.md)

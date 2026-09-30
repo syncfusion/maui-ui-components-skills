@@ -56,7 +56,7 @@ using Syncfusion.Maui.Calendar;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <calendar:SfCalendar SelectionMode="Range"
                      ViewMode="MonthView"
                      ShowLeadingAndTrailingDays="True">
@@ -67,7 +67,7 @@ using Syncfusion.Maui.Calendar;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <calendar:SfCalendar SelectionMode="Range"
                      View="Month"
                      ShowTrailingAndLeadingDates="True">
@@ -128,13 +128,13 @@ using Syncfusion.Maui.Scheduler;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <schedule:SfSchedule ScheduleView="WeekView"
                      DataSource="{Binding Appointments}"/>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <scheduler:SfScheduler View="Week"
                        AppointmentsSource="{Binding Appointments}"/>
 ```
@@ -182,7 +182,7 @@ Most properties maintained with minor naming updates for consistency.
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <picker:SfDatePicker Date="{Binding SelectedDate}"
                      MinimumDate="{Binding MinDate}"
                      MaximumDate="{Binding MaxDate}"
@@ -190,7 +190,7 @@ Most properties maintained with minor naming updates for consistency.
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <picker:SfDatePicker SelectedDate="{Binding SelectedDate}"
                      MinimumDate="{Binding MinDate}"
                      MaximumDate="{Binding MaxDate}"
@@ -216,14 +216,14 @@ using Syncfusion.Maui.Picker;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <picker:SfTimePicker Time="{Binding SelectedTime}"
                      Format="HH:mm"
                      ShowColumnHeader="True"/>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <picker:SfTimePicker SelectedTime="{Binding SelectedTime}"
                      Format="HH:mm"
                      ShowColumnHeader="True"/>
@@ -256,7 +256,7 @@ using Syncfusion.Maui.Sliders;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <chart:SfDateTimeRangeNavigator Minimum="{Binding StartDate}"
                                 Maximum="{Binding EndDate}"
                                 RangeStart="{Binding RangeStart}"
@@ -264,7 +264,7 @@ using Syncfusion.Maui.Sliders;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <sliders:SfDateTimeRangeSelector Minimum="{Binding StartDate}"
                                  Maximum="{Binding EndDate}"
                                  RangeStart="{Binding RangeStart}"
@@ -320,7 +320,7 @@ calendar.View = CalendarView.Year;
 ### Issue: Appointments not showing in Calendar
 
 **Solution:** MAUI SfCalendar doesn't support appointments. Use SfScheduler:
-```xml
+```xaml
 <!-- Change from SfCalendar to SfScheduler for appointments -->
 <scheduler:SfScheduler View="Month"
                        AppointmentsSource="{Binding Events}"/>

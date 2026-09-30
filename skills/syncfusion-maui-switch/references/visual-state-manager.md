@@ -54,7 +54,7 @@ The fundamental states that represent the switch's value.
 
 ### On State
 
-```xml
+```xaml
 <VisualState x:Name="On">
     <VisualState.Setters>
         <Setter Property="SwitchSettings">
@@ -72,7 +72,7 @@ The fundamental states that represent the switch's value.
 
 ### Off State
 
-```xml
+```xaml
 <VisualState x:Name="Off">
     <VisualState.Setters>
         <Setter Property="SwitchSettings">
@@ -90,7 +90,7 @@ The fundamental states that represent the switch's value.
 
 ### Indeterminate State
 
-```xml
+```xaml
 <VisualState x:Name="Indeterminate">
     <VisualState.Setters>
         <Setter Property="SwitchSettings">
@@ -114,7 +114,7 @@ Provide visual feedback when the user hovers over the switch with a mouse or poi
 
 ### OnHovered State
 
-```xml
+```xaml
 <VisualState x:Name="OnHovered">
     <VisualState.Setters>
         <Setter Property="SwitchSettings">
@@ -134,7 +134,7 @@ Provide visual feedback when the user hovers over the switch with a mouse or poi
 
 ### OffHovered State
 
-```xml
+```xaml
 <VisualState x:Name="OffHovered">
     <VisualState.Setters>
         <Setter Property="SwitchSettings">
@@ -152,7 +152,7 @@ Provide visual feedback when the user hovers over the switch with a mouse or poi
 
 ### IndeterminateHovered State
 
-```xml
+```xaml
 <VisualState x:Name="IndeterminateHovered">
     <VisualState.Setters>
         <Setter Property="SwitchSettings">
@@ -176,7 +176,7 @@ Provide visual feedback when the user actively presses or clicks the switch.
 
 ### OnPressed State
 
-```xml
+```xaml
 <VisualState x:Name="OnPressed">
     <VisualState.Setters>
         <Setter Property="SwitchSettings">
@@ -199,7 +199,7 @@ Provide visual feedback when the user actively presses or clicks the switch.
 
 ### OffPressed State
 
-```xml
+```xaml
 <VisualState x:Name="OffPressed">
     <VisualState.Setters>
         <Setter Property="SwitchSettings">
@@ -220,7 +220,7 @@ Provide visual feedback when the user actively presses or clicks the switch.
 
 ### IndeterminatePressed State
 
-```xml
+```xaml
 <VisualState x:Name="IndeterminatePressed">
     <VisualState.Setters>
         <Setter Property="SwitchSettings">
@@ -247,7 +247,7 @@ Show that the switch is non-interactive while maintaining state visibility.
 
 ### OnDisabled State
 
-```xml
+```xaml
 <VisualState x:Name="OnDisabled">
     <VisualState.Setters>
         <Setter Property="SwitchSettings">
@@ -265,7 +265,7 @@ Show that the switch is non-interactive while maintaining state visibility.
 
 ### OffDisabled State
 
-```xml
+```xaml
 <VisualState x:Name="OffDisabled">
     <VisualState.Setters>
         <Setter Property="SwitchSettings">
@@ -283,7 +283,7 @@ Show that the switch is non-interactive while maintaining state visibility.
 
 ### IndeterminateDisabled State
 
-```xml
+```xaml
 <VisualState x:Name="IndeterminateDisabled">
     <VisualState.Setters>
         <Setter Property="SwitchSettings">
@@ -303,7 +303,7 @@ Show that the switch is non-interactive while maintaining state visibility.
 
 ### Basic VSM Structure
 
-```xml
+```xaml
 <buttons:SfSwitch IsEnabled="True" IsOn="True">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -322,7 +322,7 @@ Show that the switch is non-interactive while maintaining state visibility.
 
 ### Minimal VSM Example
 
-```xml
+```xaml
 <buttons:SfSwitch IsOn="True">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -517,7 +517,7 @@ this.Content = sfSwitch;
 
 Here's a complete XAML example with all 12 visual states:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons">
@@ -718,7 +718,7 @@ Here's a complete XAML example with all 12 visual states:
 ## Best Practices
 
 ### 1. Provide Hover Feedback for Desktop Apps
-```xml
+```xaml
 <!-- Subtle color change on hover -->
 <VisualState x:Name="OnHovered">
     <VisualState.Setters>
@@ -732,7 +732,7 @@ Here's a complete XAML example with all 12 visual states:
 ```
 
 ### 2. Show Press Feedback
-```xml
+```xaml
 <!-- Increase thumb size when pressed -->
 <VisualState x:Name="OnPressed">
     <VisualState.Setters>
@@ -746,7 +746,7 @@ Here's a complete XAML example with all 12 visual states:
 ```
 
 ### 3. Make Disabled States Obvious
-```xml
+```xaml
 <!-- Use muted colors for disabled -->
 <VisualState x:Name="OnDisabled">
     <VisualState.Setters>
@@ -794,7 +794,7 @@ hoveredSettings.ThumbStroke = Colors.Darker;
 - Test with accessibility tools and screen readers
 
 ### 10. Document Your States
-```xml
+```xaml
 <!-- Good: Add comments explaining color choices -->
 <!-- On State: Brand primary color -->
 <VisualState x:Name="On">

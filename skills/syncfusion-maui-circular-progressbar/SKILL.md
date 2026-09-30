@@ -1,14 +1,14 @@
 ---
 name: syncfusion-maui-circular-progressbar
-description: Implements and customize Syncfusion .NET MAUI Circular ProgressBar (SfCircularProgressBar) components. Use when working with circular progress bars, circular progress indicators, radial progress, progress circles, or arc progress in .NET MAUI applications. Covers determinate/indeterminate progress states, animated progress indicators, segmented circular progress, and custom angles.
+description: Implement and customize Syncfusion® .NET MAUI Circular ProgressBar (SfCircularProgressBar) components. Use when working with circular progress bars, circular progress indicators, radial progress, progress circles, or arc progress in .NET MAUI applications. Covers determinate/indeterminate progress states, animated progress indicators, segmented circular progress, and custom angles.
 metadata:
   author: "Syncfusion Inc"
   version: "34.1.29"
 ---
 
-# Implementing Circular ProgressBars in .NET MAUI
+# Implementing .NET MAUI Circular ProgressBars
 
-The Syncfusion .NET MAUI Circular ProgressBar (SfCircularProgressBar) displays progress in a circular shape with rich customization options. It supports determinate and indeterminate states, smooth animations, segmented progress, gradient colors, custom angles, and center content. Perfect for task completion, loading indicators, dashboards, and progress tracking.
+The Syncfusion® .NET MAUI Circular ProgressBar (SfCircularProgressBar) displays progress in a circular shape with rich customization options. It supports determinate and indeterminate states, smooth animations, segmented progress, gradient colors, custom angles, and center content. Perfect for task completion, loading indicators, dashboards, and progress tracking.
 
 ## When to Use This Skill
 
@@ -43,7 +43,7 @@ The SfCircularProgressBar control provides:
 ### Getting Started
 📄 **Read:** [references/getting-started.md](references/getting-started.md)
 - Installation and NuGet package setup
-- Register Syncfusion handler in MauiProgram.cs
+- Register handler in MauiProgram.cs
 - Basic circular progress bar implementation (XAML & C#)
 - First working example
 

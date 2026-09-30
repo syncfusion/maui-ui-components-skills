@@ -36,7 +36,7 @@ public event EventHandler<PullingEventArgs> Pulling;
 
 ### Basic Pulling Event
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh" 
                              Pulling="OnPulling">
     <syncfusion:SfPullToRefresh.PullableContent>
@@ -160,7 +160,7 @@ public event EventHandler Refreshing;
 
 ### Basic Refreshing Event
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh" 
                              Refreshing="OnRefreshing">
     <syncfusion:SfPullToRefresh.PullableContent>
@@ -309,7 +309,7 @@ public event EventHandler Refreshed;
 
 ### Basic Refreshed Event
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh" 
                              Refreshing="OnRefreshing"
                              Refreshed="OnRefreshed">
@@ -422,7 +422,7 @@ private void OnRefreshed(object sender, EventArgs e)
 
 Here's a comprehensive example using all three events together:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.PullToRefresh;assembly=Syncfusion.Maui.PullToRefresh"

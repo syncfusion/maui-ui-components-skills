@@ -24,7 +24,7 @@ Override the default by setting `SuggestionDisplayMode` explicitly.
 Inline mode renders the predicted text directly in the editor, continuing from where the caret is. It feels like a natural extension of typing — ideal for desktop environments where the keyboard is primary.
 
 **XAML:**
-```xml
+```xaml
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -62,7 +62,7 @@ var editor = new SfSmartTextEditor
 Popup mode shows a small overlay near the caret. The user can tap/click the popup or press a key to accept. This is the preferred mode for touch-based devices where tapping a floating suggestion feels natural.
 
 **XAML:**
-```xml
+```xaml
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -109,7 +109,7 @@ var editor = new SfSmartTextEditor
 - **Cross-platform app?** Let the platform default handle it, or override per-platform using `OnPlatform`.
 
 **Using OnPlatform to override per target:**
-```xml
+```xaml
 <smarttexteditor:SfSmartTextEditor
     Placeholder="Type here...">
     <smarttexteditor:SfSmartTextEditor.SuggestionDisplayMode>

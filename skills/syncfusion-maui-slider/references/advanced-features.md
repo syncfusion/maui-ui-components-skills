@@ -15,7 +15,7 @@ The `StepSize` property enables discrete value selection, moving the thumb in sp
 
 ### Basic StepSize Configuration
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="10"
                   Value="5"
@@ -56,13 +56,13 @@ With StepSize set, the slider allows values at:
 ### Continuous vs Discrete
 
 **Continuous (StepSize = 0, default):**
-```xml
+```xaml
 <sliders:SfSlider Minimum="0" Maximum="100" Value="50" />
 ```
 The thumb can be positioned at any value between 0 and 100 (e.g., 43.7, 68.2).
 
 **Discrete (StepSize > 0):**
-```xml
+```xaml
 <sliders:SfSlider Minimum="0" Maximum="100" Value="50" StepSize="10" />
 ```
 The thumb snaps to: 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100.
@@ -70,19 +70,19 @@ The thumb snaps to: 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100.
 ### Use Cases
 
 **StepSize = 1:** Integer values only
-```xml
+```xaml
 <sliders:SfSlider Minimum="1" Maximum="10" StepSize="1" />
 ```
 For ratings, counts, age selection.
 
 **StepSize = 5:** Increments of 5
-```xml
+```xaml
 <sliders:SfSlider Minimum="0" Maximum="100" StepSize="5" />
 ```
 For percentage adjustments in 5% steps.
 
 **StepSize = 0.1:** Decimal precision
-```xml
+```xaml
 <sliders:SfSlider Minimum="0" Maximum="1" StepSize="0.1" />
 ```
 For opacity, normalized values.
@@ -91,7 +91,7 @@ For opacity, normalized values.
 
 StepSize and Interval are independent:
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="50"
@@ -106,7 +106,7 @@ StepSize and Interval are independent:
 
 ### Example: Rating Slider
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="10">
     <Label Text="Rate this product" FontSize="16" />
     
@@ -142,7 +142,7 @@ Deferred update controls when dependent components are updated while the thumb i
 
 ### EnableDeferredUpdate Property
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="50"
@@ -195,7 +195,7 @@ User releases: Immediate ValueChanged event
 
 ### Example: Search Filter
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="10">
     <Label Text="Price Range Filter" FontSize="16" />
     
@@ -257,7 +257,7 @@ The `IsEnabled` property controls whether the slider is interactive.
 
 ### Disabling the Slider
 
-```xml
+```xaml
 <sliders:SfSlider IsEnabled="False" />
 ```
 
@@ -279,7 +279,7 @@ private void OnCheckBoxChanged(object sender, CheckedChangedEventArgs e)
 }
 ```
 
-```xml
+```xaml
 <CheckBox CheckedChanged="OnCheckBoxChanged" Content="Enable Slider" />
 <sliders:SfSlider x:Name="slider" IsEnabled="False" />
 ```
@@ -302,7 +302,7 @@ The Liquid Glass Effect introduces a modern, translucent design with adaptive co
 
 ### Enabling Liquid Glass Effect
 
-```xml
+```xaml
 <Grid>
     <Image Source="Wallpaper.png" Aspect="AspectFill" />
     
@@ -374,7 +374,7 @@ See previous reference files for complete VSM examples:
 
 ### Quick VSM Pattern
 
-```xml
+```xaml
 <sliders:SfSlider>
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup>
@@ -421,7 +421,7 @@ See previous reference files for complete VSM examples:
 
 **Cause**: StepSize is 0 or not set  
 **Solution**: Set StepSize to desired increment:
-```xml
+```xaml
 <sliders:SfSlider StepSize="1" />
 ```
 
@@ -429,7 +429,7 @@ See previous reference files for complete VSM examples:
 
 **Cause**: EnableDeferredUpdate is False  
 **Solution**: Enable deferred update:
-```xml
+```xaml
 <sliders:SfSlider EnableDeferredUpdate="True" DeferredUpdateDelay="1000" />
 ```
 
@@ -437,7 +437,7 @@ See previous reference files for complete VSM examples:
 
 **Cause**: Platform not supported or effect not enabled  
 **Solution**: Verify platform requirements (.NET 10, iOS/macOS 26+):
-```xml
+```xaml
 <sliders:SfSlider EnableLiquidGlassEffect="True" />
 ```
 

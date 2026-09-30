@@ -15,7 +15,7 @@ The DatePicker control supports accessibility for screen readers and assistive t
 
 The DatePicker header text can be localized and is accessible to screen readers.
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.HeaderView>
         <picker:PickerHeaderView Text="Select Date" Height="40" />
@@ -34,7 +34,7 @@ The DatePicker column headers are accessible and can be customized with localize
 - **MonthHeaderText:** "Month"
 - **YearHeaderText:** "Year"
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.ColumnHeaderView>
         <picker:DatePickerColumnHeaderView DayHeaderText="Day"
@@ -54,7 +54,7 @@ The footer validation buttons (OK and Cancel) are accessible with localized text
 - **OkButtonText:** "OK"
 - **CancelButtonText:** "Cancel"
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.FooterView>
         <picker:PickerFooterView ShowOkButton="True"
@@ -80,7 +80,7 @@ The picker items are accessible and announced based on the date format.
 | MMMM | January | "January" |
 | yyyy | 2023 | "Two thousand twenty-three" |
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      Format="MMM_dd_yyyy">
 </picker:SfDatePicker>
@@ -106,7 +106,7 @@ The DatePicker supports full keyboard navigation for accessibility.
 
 ### Keyboard Navigation Example
 
-```xml
+```xaml
 <StackLayout>
     <Label Text="Use Tab to focus, Arrow keys to navigate, Enter to select"/>
     
@@ -264,7 +264,7 @@ public class CultureManager
 }
 ```
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="10">
     <Label Text="Select Language:" FontSize="18"/>
     
@@ -323,7 +323,7 @@ CultureInfo.CurrentUICulture = new CultureInfo("es-ES");
 
 Use the `Default` format to automatically use culture-specific date formats:
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      Format="Default">
 </picker:SfDatePicker>
@@ -375,7 +375,7 @@ namespace LocalizedDatePickerApp
 
 ### MainPage.xaml
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"

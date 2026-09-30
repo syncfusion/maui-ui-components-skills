@@ -30,7 +30,7 @@ This section explains the various UI customization options available in the Sync
 You can prompt the user with any information using the `Placeholder` property. This text is displayed only when no items are selected or the edit text is empty. The default value is `string.Empty`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -54,7 +54,7 @@ SfComboBox comboBox = new SfComboBox
 The placeholder text color can be changed using the `PlaceholderColor` property. The default value is `Colors.Gray`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -84,7 +84,7 @@ SfComboBox comboBox = new SfComboBox
 The clear button icon color can be changed using the `ClearButtonIconColor` property. The default value is `Colors.Black`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -108,7 +108,7 @@ SfComboBox comboBox = new SfComboBox
 You can customize the appearance of the clear button using the `ClearButtonPath` property.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     TextMemberPath="Name"
@@ -142,7 +142,7 @@ comboBox.ClearButtonPath = path;
 The dropdown icon color can be changed using the `DropDownIconColor` property. The default value is `Colors.Black`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -166,7 +166,7 @@ SfComboBox comboBox = new SfComboBox
 Customize the dropdown button size using `DropDownButtonSettings`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     Placeholder="Enter Social Media"
                     ItemsSource="{Binding SocialMedias}"
@@ -199,7 +199,7 @@ SfComboBox comboBox = new SfComboBox
 Set a custom view for the dropdown button.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox Placeholder="Enter Social Media"
                     ItemsSource="{Binding SocialMedias}"
                     TextMemberPath="Name"
@@ -227,7 +227,7 @@ Set a custom view for the dropdown button.
 The ComboBox border color can be changed using the `Stroke` property.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -253,7 +253,7 @@ SfComboBox comboBox = new SfComboBox
 The `ShowBorder` property controls the visibility of the border. The default value is `true`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ShowBorder="False"
                     ItemsSource="{Binding SocialMedias}" />
@@ -273,7 +273,7 @@ SfComboBox comboBox = new SfComboBox
 The background color of the selected item text can be modified using the `SelectionTextHighlightColor` property.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -299,7 +299,7 @@ SfComboBox comboBox = new SfComboBox
 The `CustomView` property allows providing a custom view instead of the default entry.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox">
     <editors:SfComboBox.CustomView>
         <Label x:Name="customLabel"  
@@ -332,7 +332,7 @@ SfComboBox comboBox = new SfComboBox
 The maximum height of the dropdown can be changed using the `MaxDropDownHeight` property. The default value is `400d`.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="true"
                     MaxDropDownHeight="150"
@@ -360,7 +360,7 @@ SfComboBox comboBox = new SfComboBox
 The `ItemTemplate` property allows you to decorate dropdown items using custom templates.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox Placeholder="Select an employee"
                     TextMemberPath="Name"
                     DisplayMemberPath="Name"
@@ -419,7 +419,7 @@ public class EmployeeTemplateSelector : DataTemplateSelector
 ### Dropdown Background
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -435,7 +435,7 @@ comboBox.DropDownBackground = Colors.YellowGreen;
 ### Selected Item Background
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     SelectedDropDownItemBackground="LightSeaGreen" />
 ```
@@ -448,7 +448,7 @@ comboBox.SelectedDropDownItemBackground = Colors.LightSeaGreen;
 ### Selected Item Text Style
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox">
     <editors:SfComboBox.SelectedDropDownItemTextStyle>
         <editors:DropDownTextStyle TextColor="Orange" 
@@ -471,7 +471,7 @@ comboBox.SelectedDropDownItemTextStyle = new DropDownTextStyle
 ### Dropdown Border
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     DropDownStroke="DarkOrange"
                     DropDownStrokeThickness="5" />
@@ -486,7 +486,7 @@ comboBox.DropDownStrokeThickness = 5;
 ### Dropdown Corner Radius
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     DropDownCornerRadius="25" />
 ```
@@ -499,7 +499,7 @@ comboBox.DropDownCornerRadius = 25;
 ### Dropdown Shadow Visibility
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsDropDownShadowVisible="False" />
 ```
@@ -512,7 +512,7 @@ comboBox.IsDropDownShadowVisible = false;
 ### Dropdown Width
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     DropdownWidth="500" />
 ```
@@ -527,7 +527,7 @@ comboBox.DropdownWidth = 500;
 ### Item Text Customization
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     DropDownItemFontAttributes="Italic"
                     DropDownItemFontFamily="OpenSansSemibold"
@@ -549,7 +549,7 @@ SfComboBox comboBox = new SfComboBox
 ### Item Height
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     DropDownItemHeight="25" />
 ```
@@ -562,7 +562,7 @@ comboBox.DropDownItemHeight = 25;
 ### Item Padding
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemPadding="10,20,0,0" />
 ```
@@ -583,7 +583,7 @@ The dropdown placement can be customized using the `DropDownPlacement` property.
 - `None` - Dropdown not shown
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     DropDownPlacement="Top" />
 ```
@@ -596,7 +596,7 @@ comboBox.DropDownPlacement = DropDownPlacement.Top;
 ### Show Suggestions on Focus
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ShowSuggestionsOnFocus="True" />
 ```
@@ -611,7 +611,7 @@ comboBox.ShowSuggestionsOnFocus = true;
 Style token items in multiple selection mode using the `TokenItemStyle` property.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox SelectionMode="Multiple" 
                     ItemsSource="{Binding SocialMedias}">
     <editors:SfComboBox.TokenItemStyle>
@@ -633,7 +633,7 @@ Style token items in multiple selection mode using the `TokenItemStyle` property
 Customize text alignment using `HorizontalTextAlignment` and `VerticalTextAlignment` properties.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     HorizontalTextAlignment="Center" 
                     VerticalTextAlignment="Start" />
@@ -655,7 +655,7 @@ SfComboBox comboBox = new SfComboBox
 ### Return Type
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ReturnType="Next" />
 ```
@@ -668,7 +668,7 @@ comboBox.ReturnType = ReturnType.Next;
 ### Cursor Position
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="True"
                     CursorPosition="4" />
@@ -695,7 +695,7 @@ If the ComboBox's AutomationId is set to "Employee ComboBox":
 Raised when the user finalizes text by pressing return key (editable mode only).
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="True"
                     Completed="comboBox_Completed" />
@@ -718,7 +718,7 @@ private async void comboBox_Completed(object sender, EventArgs e)
 Raised when the clear button is tapped.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ClearButtonClicked="comboBox_ClearButtonClicked" />
 ```

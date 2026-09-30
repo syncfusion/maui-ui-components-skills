@@ -22,7 +22,7 @@
 
 ### XAML
 
-```xml
+```xaml
 <shimmer:SfShimmer x:Name="shimmer"
                    Type="Article"
                    VerticalOptions="Fill">
@@ -54,28 +54,28 @@ this.Content = shimmer;
 ### CirclePersona (Default)
 Renders a circular avatar on the left with text lines on the right — ideal for contact or user lists.
 
-```xml
+```xaml
 <shimmer:SfShimmer Type="CirclePersona" RepeatCount="4" VerticalOptions="Fill" />
 ```
 
 ### Article
 Renders a wide heading block followed by several paragraph-width lines — suitable for news feeds or blog previews.
 
-```xml
+```xaml
 <shimmer:SfShimmer Type="Article" RepeatCount="2" VerticalOptions="Fill" />
 ```
 
 ### Shopping
 Renders a square image block above two short text lines — suitable for product grids and e-commerce.
 
-```xml
+```xaml
 <shimmer:SfShimmer Type="Shopping" RepeatCount="6" VerticalOptions="Fill" />
 ```
 
 ### Feed
 Renders a feed-card style block suitable for social timelines.
 
-```xml
+```xaml
 <shimmer:SfShimmer Type="Feed" RepeatCount="3" VerticalOptions="Fill" />
 ```
 

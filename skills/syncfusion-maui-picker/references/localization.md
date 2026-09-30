@@ -95,7 +95,7 @@ YourApp/
 
 ### Default Resource File (SfPicker.resx)
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8"?>
 <root>
     <data name="OkButtonText" xml:space="preserve">
@@ -112,7 +112,7 @@ YourApp/
 
 ### French Resource File (SfPicker.fr-FR.resx)
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8"?>
 <root>
     <data name="OkButtonText" xml:space="preserve">
@@ -129,7 +129,7 @@ YourApp/
 
 ### Spanish Resource File (SfPicker.es-ES.resx)
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8"?>
 <root>
     <data name="OkButtonText" xml:space="preserve">
@@ -151,7 +151,7 @@ YourApp/
 **Create Custom Resource File:**
 
 **AppResources.resx (English):**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8"?>
 <root>
     <data name="PickerHeaderText" xml:space="preserve">
@@ -164,7 +164,7 @@ YourApp/
 ```
 
 **AppResources.fr-FR.resx (French):**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8"?>
 <root>
     <data name="PickerHeaderText" xml:space="preserve">
@@ -204,7 +204,7 @@ namespace YourApp.Resources
 ```
 
 **XAML Usage:**
-```xml
+```xaml
 <picker:SfPicker x:Name="picker">
     <picker:SfPicker.HeaderView>
         <picker:PickerHeaderView Text="{x:Static local:AppResources.PickerHeaderText}" 
@@ -223,7 +223,7 @@ namespace YourApp.Resources
 ### Localizing Picker Items
 
 **Color Resources (AppResources.resx):**
-```xml
+```xaml
 <data name="Color_Red" xml:space="preserve">
     <value>Red</value>
 </data>
@@ -236,7 +236,7 @@ namespace YourApp.Resources
 ```
 
 **Color Resources (AppResources.fr-FR.resx):**
-```xml
+```xaml
 <data name="Color_Red" xml:space="preserve">
     <value>Rouge</value>
 </data>
@@ -314,7 +314,7 @@ public class SettingsViewModel
 ```
 
 **XAML:**
-```xml
+```xaml
 <VerticalStackLayout Spacing="10">
     <Button Text="English" 
             Command="{Binding ChangeCultureCommand}"
@@ -420,7 +420,7 @@ Common culture codes:
 ## Complete Localized Example
 
 **Picker with Full Localization:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"

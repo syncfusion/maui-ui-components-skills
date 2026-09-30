@@ -39,7 +39,7 @@ The SfButton supports five visual states:
 
 ### Basic XAML Implementation
 
-```xml
+```xaml
 <buttons:SfButton Text="Interactive Button"
                   HeightRequest="50"
                   WidthRequest="200">
@@ -149,7 +149,7 @@ To use the `Checked` state, enable the `IsCheckable` property:
 
 ### XAML Implementation
 
-```xml
+```xaml
 <buttons:SfButton Text="Toggle Button"
                   IsCheckable="True"
                   HeightRequest="50"
@@ -219,7 +219,7 @@ You can customize any button property in visual states:
 
 ### Changing Multiple Properties
 
-```xml
+```xaml
 <VisualState x:Name="Hovered">
     <VisualState.Setters>
         <Setter Property="Background" Value="#7C4DFF" />
@@ -234,7 +234,7 @@ You can customize any button property in visual states:
 
 ### Customizing Icon Appearance
 
-```xml
+```xaml
 <buttons:SfButton Text="Favorite"
                   ShowIcon="True"
                   ImageSource="star_outline.png"
@@ -262,7 +262,7 @@ You can customize any button property in visual states:
 
 ### Example 1: Material Design Button
 
-```xml
+```xaml
 <buttons:SfButton Text="PRIMARY ACTION"
                   CornerRadius="4"
                   HeightRequest="40"
@@ -301,7 +301,7 @@ You can customize any button property in visual states:
 
 ### Example 2: Outline Button with States
 
-```xml
+```xaml
 <buttons:SfButton Text="OUTLINE"
                   Background="Transparent"
                   StrokeThickness="2"
@@ -340,7 +340,7 @@ You can customize any button property in visual states:
 
 ### Example 3: Toggle Button for Favorites
 
-```xml
+```xaml
 <buttons:SfButton Text="Favorite"
                   ShowIcon="True"
                   ImageSource="star_outline.png"
@@ -370,7 +370,7 @@ You can customize any button property in visual states:
 
 ### Example 4: Success Button with States
 
-```xml
+```xaml
 <buttons:SfButton Text="Confirm"
                   CornerRadius="8"
                   HeightRequest="44"
@@ -406,7 +406,7 @@ You can customize any button property in visual states:
 
 ### Example 5: Complete Multi-State Button
 
-```xml
+```xaml
 <buttons:SfButton Text="Interactive"
                   ShowIcon="True"
                   ImageSource="icon.png"
@@ -462,7 +462,7 @@ You can customize any button property in visual states:
 
 ### 1. Always Define Normal State
 Provide a fallback appearance when no other state is active:
-```xml
+```xaml
 <VisualState x:Name="Normal">
     <VisualState.Setters>
         <Setter Property="Background" Value="#6200EE" />
@@ -484,7 +484,7 @@ Ensure sufficient color contrast in all states:
 
 ### 4. Use IsCheckable for Toggles
 Only enable `IsCheckable="True"` when button represents a toggle state:
-```xml
+```xaml
 <buttons:SfButton Text="Subscribe"
                   IsCheckable="True" />
 ```
@@ -504,7 +504,7 @@ Use your app's color scheme across all states for brand consistency.
 ## Common Patterns
 
 ### Success/Danger States
-```xml
+```xaml
 <!-- Success Button -->
 <VisualState x:Name="Normal">
     <VisualState.Setters>
@@ -521,7 +521,7 @@ Use your app's color scheme across all states for brand consistency.
 ```
 
 ### Subtle Hover Effects
-```xml
+```xaml
 <VisualState x:Name="Hovered">
     <VisualState.Setters>
         <Setter Property="Opacity" Value="0.8" />

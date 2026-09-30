@@ -1,4 +1,4 @@
-# Getting Started with Syncfusion .NET MAUI Parallax View
+# Getting Started with Syncfusion® .NET MAUI Parallax View
 
 This guide walks you through installing, configuring, and implementing the basic Syncfusion .NET MAUI Parallax View (SfParallaxView) control in your application.
 

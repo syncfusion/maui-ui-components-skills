@@ -38,7 +38,7 @@ public PickerMode Mode { get; set; }
 - `PickerMode.RelativeDialog` - Positioned popup
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker Mode="Dialog" />
 ```
 
@@ -60,7 +60,7 @@ The default mode displays the picker inline within the page layout. The picker i
 ### Example: Default Mode
 
 **XAML:**
-```xml
+```xaml
 <StackLayout Padding="20">
     <Label Text="Select Time" FontSize="18" FontAttributes="Bold" />
     
@@ -125,7 +125,7 @@ Dialog mode displays the picker in a centered popup with a semi-transparent back
 ### Basic Dialog Mode
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <Button Text="Select Time" 
             x:Name="openPickerButton"
@@ -158,7 +158,7 @@ private void OnOpenPickerClicked(object sender, EventArgs e)
 ### Complete Dialog Example
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
@@ -275,7 +275,7 @@ public enum PickerRelativePosition
 ### Basic RelativeDialog Example
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <Button Text="Pick Time" 
             x:Name="timeButton"
@@ -312,7 +312,7 @@ private void OnTimeButtonClicked(object sender, EventArgs e)
 
 Positions the picker above the reference view, horizontally centered.
 
-```xml
+```xaml
 <picker:SfTimePicker Mode="RelativeDialog"
                      RelativePosition="AlignTop"
                      RelativeView="{x:Reference button1}" />
@@ -322,7 +322,7 @@ Positions the picker above the reference view, horizontally centered.
 
 Positions the picker below the reference view, horizontally centered.
 
-```xml
+```xaml
 <picker:SfTimePicker Mode="RelativeDialog"
                      RelativePosition="AlignBottom"
                      RelativeView="{x:Reference button1}" />
@@ -332,7 +332,7 @@ Positions the picker below the reference view, horizontally centered.
 
 Positions the picker to the left of the reference view.
 
-```xml
+```xaml
 <picker:SfTimePicker Mode="RelativeDialog"
                      RelativePosition="AlignToLeftOf"
                      RelativeView="{x:Reference button1}" />
@@ -342,7 +342,7 @@ Positions the picker to the left of the reference view.
 
 Positions the picker to the right of the reference view.
 
-```xml
+```xaml
 <picker:SfTimePicker Mode="RelativeDialog"
                      RelativePosition="AlignToRightOf"
                      RelativeView="{x:Reference button1}" />
@@ -351,28 +351,28 @@ Positions the picker to the right of the reference view.
 ### Corner Alignments
 
 **AlignTopLeft:**
-```xml
+```xaml
 <picker:SfTimePicker Mode="RelativeDialog"
                      RelativePosition="AlignTopLeft"
                      RelativeView="{x:Reference button1}" />
 ```
 
 **AlignTopRight:**
-```xml
+```xaml
 <picker:SfTimePicker Mode="RelativeDialog"
                      RelativePosition="AlignTopRight"
                      RelativeView="{x:Reference button1}" />
 ```
 
 **AlignBottomLeft:**
-```xml
+```xaml
 <picker:SfTimePicker Mode="RelativeDialog"
                      RelativePosition="AlignBottomLeft"
                      RelativeView="{x:Reference button1}" />
 ```
 
 **AlignBottomRight:**
-```xml
+```xaml
 <picker:SfTimePicker Mode="RelativeDialog"
                      RelativePosition="AlignBottomRight"
                      RelativeView="{x:Reference button1}" />
@@ -388,7 +388,7 @@ public View RelativeView { get; set; }
 ```
 
 **XAML Binding:**
-```xml
+```xaml
 <Grid>
     <Entry x:Name="timeEntry" 
            Placeholder="Select Time"
@@ -416,7 +416,7 @@ If no `RelativeView` is specified, the picker positions relative to the picker c
 ### Complete RelativeView Example
 
 **XAML:**
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="20">
     
     <Label Text="Meeting Details" FontSize="20" FontAttributes="Bold" />
@@ -525,7 +525,7 @@ timePicker.IsOpen = !timePicker.IsOpen;
 ### Example: Toggle Picker
 
 **XAML:**
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="15">
     <Button Text="Toggle Picker" Clicked="OnToggleClicked" />
     
@@ -579,7 +579,7 @@ public double PopupHeight { get; set; }
 ### Example: Custom Size
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="customSizePicker"
                      Mode="Dialog"
                      PopupWidth="350"
@@ -702,7 +702,7 @@ private PickerRelativePosition DetermineOptimalPosition(Button button)
 
 Provide context for screen readers:
 
-```xml
+```xaml
 <Button Text="Select Time"
         AutomationProperties.Name="Open time picker"
         AutomationProperties.HelpText="Opens a dialog to select appointment time"

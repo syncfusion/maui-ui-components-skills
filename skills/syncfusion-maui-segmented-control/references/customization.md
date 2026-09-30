@@ -27,7 +27,7 @@ The Segmented Control offers extensive appearance customization options to match
 Customize the outer border color of the entire segmented control.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl Stroke="#E91E63" StrokeThickness="2">
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">
@@ -59,7 +59,7 @@ var segmentedControl = new SfSegmentedControl
 Control the width of the outer border.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl StrokeThickness="3">
     <!-- Items -->
 </buttons:SfSegmentedControl>
@@ -84,7 +84,7 @@ segmentedControl.StrokeThickness = 3;
 Apply corner radius to the first and last segments only (creates capsule-like ends).
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl CornerRadius="20">
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">
@@ -113,7 +113,7 @@ segmentedControl.CornerRadius = 20;
 Apply corner radius to all segments individually.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl SegmentCornerRadius="8">
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">
@@ -158,7 +158,7 @@ segmentedControl.CornerRadius = new CornerRadius(20, 20, 0, 0);
 Apply text styling to all segments.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl>
     <buttons:SfSegmentedControl.TextStyle>
         <buttons:SegmentTextStyle 
@@ -253,7 +253,7 @@ var segmentedControl = new SfSegmentedControl
 Set the background color for all unselected segments.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl SegmentBackground="#F5F5F5">
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">
@@ -341,7 +341,7 @@ Control the visibility of separators between segments.
 ### Hide Separators
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl ShowSeparator="False">
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">
@@ -363,7 +363,7 @@ segmentedControl.ShowSeparator = false;
 ### Show Separators (Default)
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl ShowSeparator="True">
     <!-- Items -->
 </buttons:SfSegmentedControl>
@@ -391,7 +391,7 @@ Use DataTemplates to create fully custom segment layouts beyond text and icons.
 ### Basic DataTemplate
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl>
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">
@@ -420,7 +420,7 @@ Use DataTemplates to create fully custom segment layouts beyond text and icons.
 ### Advanced DataTemplate with Icons
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSegmentedControl>
     <buttons:SfSegmentedControl.SegmentTemplate>
         <DataTemplate>
@@ -445,7 +445,7 @@ Use DataTemplates to create fully custom segment layouts beyond text and icons.
 Use the `IsSelected` property to apply different styles based on selection state.
 
 **XAML:**
-```xml
+```xaml
 <ContentPage.Resources>
     <local:SelectedColorConverter x:Key="SelectedColorConverter"/>
 </ContentPage.Resources>

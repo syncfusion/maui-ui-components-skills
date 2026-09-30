@@ -58,7 +58,7 @@ dotnet restore
 
 Check your `.csproj` file should contain:
 
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.Scheduler" Version="27.*.*" />
 </ItemGroup>
@@ -111,7 +111,7 @@ namespace MySchedulerApp
 
 In your XAML file (e.g., `MainPage.xaml`), add the Scheduler namespace:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:scheduler="clr-namespace:Syncfusion.Maui.Scheduler;assembly=Syncfusion.Maui.Scheduler"
@@ -124,7 +124,7 @@ In your XAML file (e.g., `MainPage.xaml`), add the Scheduler namespace:
 
 ### Step 2: Add the Scheduler Control
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:scheduler="clr-namespace:Syncfusion.Maui.Scheduler;assembly=Syncfusion.Maui.Scheduler"
@@ -167,7 +167,7 @@ The Scheduler provides nine different view modes. Set the view using the `View` 
 
 ### In XAML
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="Scheduler" View="Week" />
 ```
 
@@ -195,7 +195,7 @@ this.Content = scheduler;
 
 ### Example: Switching Views
 
-```xml
+```xaml
 <VerticalStackLayout Padding="10">
     <HorizontalStackLayout Spacing="5">
         <Button Text="Day" Clicked="OnDayViewClicked" />
@@ -288,7 +288,7 @@ public partial class MainPage : ContentPage
 ### Complete Example in XAML + Code-Behind
 
 **MainPage.xaml:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:scheduler="clr-namespace:Syncfusion.Maui.Scheduler;assembly=Syncfusion.Maui.Scheduler"
@@ -371,7 +371,7 @@ public class Meeting
 ### Step 2: Configure AppointmentMapping
 
 **In XAML:**
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="Scheduler" View="Week">
     <scheduler:SfScheduler.AppointmentMapping>
         <scheduler:SchedulerAppointmentMapping
@@ -496,7 +496,7 @@ public class SchedulerViewModel : INotifyPropertyChanged
 ```
 
 **MainPage.xaml:**
-```xml
+```xaml
 <ContentPage ...>
     <ContentPage.BindingContext>
         <local:SchedulerViewModel />
@@ -522,7 +522,7 @@ public class SchedulerViewModel : INotifyPropertyChanged
 
 ### Change First Day of Week
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="Scheduler" FirstDayOfWeek="Monday" />
 ```
 
@@ -532,7 +532,7 @@ Scheduler.FirstDayOfWeek = DayOfWeek.Monday;
 
 ### Customize Today Highlight
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="Scheduler" TodayHighlightBrush="Orange" />
 ```
 
@@ -542,7 +542,7 @@ Scheduler.TodayHighlightBrush = Brush.Orange;
 
 ### Customize Cell Borders
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="Scheduler" CellBorderBrush="LightGray" />
 ```
 
@@ -552,7 +552,7 @@ Scheduler.CellBorderBrush = Brush.LightGray;
 
 ### Show/Hide Navigation Arrows
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="Scheduler" ShowNavigationArrows="True" />
 ```
 
@@ -562,7 +562,7 @@ Scheduler.ShowNavigationArrows = true; // Shows Today button and arrow navigatio
 
 ### Show Week Numbers
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="Scheduler" ShowWeekNumber="True" />
 ```
 
@@ -572,7 +572,7 @@ Scheduler.ShowWeekNumber = true;
 
 ### Set Background Color
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="Scheduler" BackgroundColor="WhiteSmoke" />
 ```
 
@@ -702,7 +702,7 @@ namespace MySchedulerApp
 ```
 
 **MainPage.xaml:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:scheduler="clr-namespace:Syncfusion.Maui.Scheduler;assembly=Syncfusion.Maui.Scheduler"

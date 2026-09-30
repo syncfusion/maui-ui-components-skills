@@ -29,7 +29,7 @@ The drawer slides over the main content, creating an overlay effect. The main co
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <navigationDrawer:SfNavigationDrawer.DrawerSettings>
         <navigationDrawer:DrawerSettings Transition="SlideOnTop">
@@ -79,7 +79,7 @@ The drawer pushes the main content aside as it opens. Both the drawer and conten
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <navigationDrawer:SfNavigationDrawer.DrawerSettings>
         <navigationDrawer:DrawerSettings Transition="Push">
@@ -127,7 +127,7 @@ The drawer is hidden behind the main content. As the drawer opens, the main cont
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <navigationDrawer:SfNavigationDrawer.DrawerSettings>
         <navigationDrawer:DrawerSettings Transition="Reveal">
@@ -175,7 +175,7 @@ The `Duration` property controls the speed of the drawer animation, measured in 
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings Duration="200">
 </navigationDrawer:DrawerSettings>
 ```
@@ -256,7 +256,7 @@ The `AnimationEasing` property customizes the acceleration curve of the animatio
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings AnimationEasing="SpringIn">
 </navigationDrawer:DrawerSettings>
 ```

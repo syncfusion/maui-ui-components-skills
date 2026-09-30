@@ -65,7 +65,7 @@ namespace GettingStarted
 1. Import the `Syncfusion.Maui.Picker` namespace
 2. Initialize `SfDatePicker`
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
@@ -102,7 +102,7 @@ Add header text to the DatePicker using the `Text` property in `PickerHeaderView
 
 ### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.HeaderView>
         <picker:PickerHeaderView Text="Date Picker" Height="40" />
@@ -129,7 +129,7 @@ Customize validation buttons (OK and Cancel) using `OkButtonText` and `CancelBut
 
 ### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker">
     <picker:SfDatePicker.FooterView>
         <picker:PickerFooterView ShowOkButton="True" Height="40" />
@@ -156,7 +156,7 @@ Customize the height and width of the DatePicker using the `HeightRequest` and `
 
 ### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker" 
                      HeightRequest="280" 
                      WidthRequest="300">
@@ -181,7 +181,7 @@ Select a date using the `SelectedDate` property. The default value is the curren
 
 ### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker" 
                      SelectedDate="9/7/2023">
 </picker:SfDatePicker>
@@ -204,7 +204,7 @@ Clear the selected date by setting the `SelectedDate` property to `null`.
 
 ### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker" />
 ```
 
@@ -220,7 +220,7 @@ Here's a complete example combining all the basic features:
 
 ### XAML
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"

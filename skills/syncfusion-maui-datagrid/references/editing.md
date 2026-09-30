@@ -13,7 +13,7 @@
 
 To enable cell editing in the DataGrid, three properties must be configured:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AllowEditing="True"
                        NavigationMode="Cell"
                        SelectionMode="Single"
@@ -35,7 +35,7 @@ dataGrid.SelectionMode = SelectionMode.Single; // Or Multiple
 
 Control editing for specific columns:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AllowEditing="True">
     <syncfusion:SfDataGrid.Columns>
         <!-- Read-only column -->
@@ -57,7 +57,7 @@ Control editing for specific columns:
 
 Control how users enter edit mode:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid EditTapAction="OnTap" />  <!-- Single tap -->
 <syncfusion:SfDataGrid EditTapAction="OnDoubleTap" />  <!-- Default: Double tap -->
 ```
@@ -74,7 +74,7 @@ dataGrid.EditTapAction = TapAction.OnDoubleTap;
 
 Control what happens when grid loses focus:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid LostFocusBehavior="EndEditCurrentCell" />
 ```
 
@@ -292,6 +292,88 @@ dataGrid.CellValueChanged += (s, e) =>
         }
     }
 };
+```
+
+## Undo and Redo
+
+Enable undo and redo functionality for editing operations.
+
+### Enable Undo/Redo
+
+```xaml
+<syncfusion:SfDataGrid AllowEditing="True"
+                       NavigationMode="Cell"
+                       SelectionMode="Single"
+                       AllowUndoRedo="True"
+                       ItemsSource="{Binding Orders}" />
+```
+
+```csharp
+dataGrid.AllowEditing = true;
+dataGrid.NavigationMode = NavigationMode.Cell;
+dataGrid.SelectionMode = DataGridSelectionMode.Single;
+dataGrid.AllowUndoRedo = true;
+```
+
+**Keyboard Shortcuts:**
+- **Windows/Mac Catalyst:** `Ctrl + Z` (Undo), `Ctrl + Y` (Redo)
+- **iOS/Mac Catalyst:** `Cmd + Z` (Undo), `Cmd + Y` (Redo)
+
+**Note:** Undo/Redo is supported on desktop platforms. Mobile platform support may vary.
+
+### Set Maximum Undo/Redo Actions
+
+Limit the number of operations that can be undone/redone:
+
+```xaml
+<syncfusion:SfDataGrid AllowEditing="True"
+                       NavigationMode="Cell"
+                       SelectionMode="Single"
+                       AllowUndoRedo="True"
+                       MaxUndoRedoActions="20"
+                       ItemsSource="{Binding Orders}" />
+```
+
+```csharp
+dataGrid.AllowEditing = true;
+dataGrid.NavigationMode = NavigationMode.Cell;
+dataGrid.SelectionMode = DataGridSelectionMode.Single;
+dataGrid.AllowUndoRedo = true;
+dataGrid.MaxUndoRedoActions = 20;
+```
+
+### Undo Programmatically
+
+```csharp
+Button undoButton = new Button { Text = "Undo" };
+undoButton.Clicked += (s, e) =>
+{
+    dataGrid.UndoRedoController.Undo();
+};
+```
+
+### Redo Programmatically
+
+```csharp
+Button redoButton = new Button { Text = "Redo" };
+redoButton.Clicked += (s, e) =>
+{
+    dataGrid.UndoRedoController.Redo();
+};
+```
+
+### Check Undo/Redo Count
+
+```csharp
+// Get current action count
+int undoCount = dataGrid.UndoRedoController.UndoCount;
+int redoCount = dataGrid.UndoRedoController.RedoCount;
+```
+
+### Clear Undo/Redo Stack
+
+```csharp
+dataGrid.UndoRedoController.ClearHistory();
 ```
 
 ## Troubleshooting

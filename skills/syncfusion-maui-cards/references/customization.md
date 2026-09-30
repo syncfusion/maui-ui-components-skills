@@ -24,7 +24,7 @@ Sets the border color of the card view.
 **Default:** `Transparent`
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardView BorderColor="Blue" BorderWidth="2">
     <Label Text="Card with blue border"/>
 </cards:SfCardView>
@@ -48,7 +48,7 @@ Sets the thickness of the card's border.
 **Default:** `0`
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardView BorderColor="Gray" BorderWidth="3">
     <Label Text="Thick border card"/>
 </cards:SfCardView>
@@ -105,7 +105,7 @@ The `CornerRadius` property allows you to create rounded corners on cards.
 ### Uniform Corners
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardView CornerRadius="15">
     <Label Text="Rounded card"/>
 </cards:SfCardView>
@@ -123,7 +123,7 @@ var card = new SfCardView
 ### Individual Corner Customization
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardView>
     <cards:SfCardView.CornerRadius>
         <CornerRadius TopLeft="20" TopRight="20" BottomLeft="5" BottomRight="5"/>
@@ -153,7 +153,7 @@ var card = new SfCardView
 ### Solid Colors
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardView BackgroundColor="PeachPuff">
     <Label Text="Colored card"/>
 </cards:SfCardView>
@@ -171,7 +171,7 @@ var card = new SfCardView
 ### Gradient Backgrounds
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardView>
     <cards:SfCardView.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -227,7 +227,7 @@ Sets the color of the indicator.
 **Default:** `Transparent`
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardView IndicatorColor="Red" IndicatorThickness="5" IndicatorPosition="Left">
     <Label Text="Card with red indicator"/>
 </cards:SfCardView>
@@ -275,7 +275,7 @@ Sets the position of the indicator.
 **Default:** `Left`
 
 **XAML:**
-```xml
+```xaml
 <!-- Top indicator -->
 <cards:SfCardView IndicatorColor="Blue" IndicatorThickness="4" IndicatorPosition="Top">
     <Label Text="Top indicator"/>

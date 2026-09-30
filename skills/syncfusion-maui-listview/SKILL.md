@@ -1,6 +1,6 @@
 ---
 name: syncfusion-maui-listview
-description: Implements Syncfusion .NET MAUI ListView (SfListView). Use when displaying lists or collections of data in MAUI applications, implementing data grids, creating scrollable item lists, or adding sorting/filtering/grouping. Covers item selection, layout customization, swipe actions, pull-to-refresh, load more, and drag-drop items.
+description: Implements Syncfusion® .NET MAUI ListView (SfListView). Use when displaying lists or collections of data in MAUI applications, implementing data grids, creating scrollable item lists, or adding sorting/filtering/grouping. Covers item selection, layout customization, swipe actions, pull-to-refresh, load more, and drag-drop items.
 
 metadata:
   author: "Syncfusion Inc"

@@ -164,7 +164,7 @@ For complete control over card appearance, use the `CardTemplate` property.
 
 **XAML:**
 
-```xml
+```xaml
 <kanban:SfKanban ItemsSource="{Binding Cards}">
     <kanban:SfKanban.CardTemplate>
         <DataTemplate>
@@ -264,7 +264,7 @@ kanban.CardTemplate = new DataTemplate(() =>
 
 ### Advanced CardTemplate with Image
 
-```xml
+```xaml
 <kanban:SfKanban.CardTemplate>
     <DataTemplate>
         <Border Stroke="#E0E0E0"
@@ -451,7 +451,7 @@ public class KanbanCardTemplateSelector : DataTemplateSelector
 
 **XAML:**
 
-```xml
+```xaml
 <ContentPage xmlns:local="clr-namespace:MyApp">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -496,7 +496,7 @@ ImageURL = "YOUR_ONLINE_Image"
 
 ### Circular Image Example
 
-```xml
+```xaml
 <Image Source="{Binding ImageURL}"
        WidthRequest="50"
        HeightRequest="50"
@@ -529,7 +529,7 @@ card.IndicatorFill = GetIndicatorColor("High");
 
 ### Pattern 2: Dynamic Tag Display
 
-```xml
+```xaml
 <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Tags}">
     <BindableLayout.ItemTemplate>
         <DataTemplate>
@@ -549,7 +549,7 @@ card.IndicatorFill = GetIndicatorColor("High");
 
 ### Pattern 3: Card with Actions (Buttons)
 
-```xml
+```xaml
 <kanban:SfKanban.CardTemplate>
     <DataTemplate>
         <Border Padding="10">
@@ -614,7 +614,7 @@ System.Diagnostics.Debug.WriteLine($"Tags count: {card.Tags?.Count ?? 0}");
 3. Data is null
 
 **Solution:** Add fallback values in XAML:
-```xml
+```xaml
 <Label Text="{Binding Title, FallbackValue='No Title'}" />
 ```
 

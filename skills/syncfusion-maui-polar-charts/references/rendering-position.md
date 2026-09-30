@@ -46,7 +46,7 @@ chart.Series.Add(new PolarAreaSeries
 
 ### XAML Implementation
 
-```xml
+```xaml
 <chart:SfPolarChart StartAngle="Rotate0">
     <chart:SfPolarChart.PrimaryAxis>
         <chart:CategoryAxis/>
@@ -248,7 +248,7 @@ public class ChartViewModel : INotifyPropertyChanged
 ```
 
 **XAML:**
-```xml
+```xaml
 <StackLayout>
     <Button Text="Rotate Chart" Clicked="OnRotateClicked"/>
     

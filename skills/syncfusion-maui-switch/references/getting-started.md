@@ -93,7 +93,7 @@ namespace SwitchExample
 1. Open your `MainPage.xaml` file
 2. Add the Syncfusion namespace at the top:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
@@ -141,7 +141,7 @@ namespace SwitchExample
 You can set the initial state of the switch using the `IsOn` property:
 
 **XAML:**
-```xml
+```xaml
 <!-- Switch in On state -->
 <buttons:SfSwitch IsOn="True" />
 
@@ -160,7 +160,7 @@ SfSwitch offSwitch = new SfSwitch { IsOn = false };
 Use the `StateChanged` event to respond when the switch state changes.
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSwitch x:Name="sfSwitch" 
                   StateChanged="OnSwitchStateChanged"/>
 ```
@@ -220,7 +220,7 @@ private void OnSwitchStateChanged(object sender, SwitchStateChangedEventArgs e)
 Here's a complete working example that demonstrates basic switch usage with state handling:
 
 **MainPage.xaml:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

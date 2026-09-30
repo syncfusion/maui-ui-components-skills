@@ -17,7 +17,7 @@ All segment types support numeric display (0-9). Numbers are the most universall
 
 ### Basic Number Display
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="12345" />
 ```
 
@@ -30,7 +30,7 @@ digitalGauge.Text = "12345";
 
 #### Simple Numbers
 
-```xml
+```xaml
 <!-- Integer display -->
 <gauge:SfDigitalGauge Text="987654321" 
                       CharacterType="SevenSegment" />
@@ -42,7 +42,7 @@ digitalGauge.Text = "12345";
 
 #### Numbers with Separators
 
-```xml
+```xaml
 <!-- Time format -->
 <gauge:SfDigitalGauge Text="12:30:45" 
                       CharacterType="SevenSegment"
@@ -60,7 +60,7 @@ digitalGauge.Text = "12345";
 
 #### Decimal Numbers
 
-```xml
+```xaml
 <!-- Price display -->
 <gauge:SfDigitalGauge Text="99.99" 
                       CharacterType="SevenSegment"
@@ -80,7 +80,7 @@ digitalGauge.Text = "12345";
 - Classic digital display appearance
 - Best for clocks, counters, meters
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="12345" 
                       CharacterType="SevenSegment"
                       CharacterHeight="80"
@@ -168,7 +168,7 @@ Alphabetic characters require 14-segment or 16-segment displays for clear render
 
 #### With Sixteen-Segment (Recommended)
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="SYNCFUSION" 
                       CharacterType="SixteenSegment" />
 ```
@@ -181,7 +181,7 @@ digitalGauge.CharacterType = DigitalGaugeCharacterType.SixteenSegment;
 
 #### With Fourteen-Segment
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="HELLO WORLD" 
                       CharacterType="FourteenSegment"
                       CharacterHeight="80"
@@ -192,7 +192,7 @@ digitalGauge.CharacterType = DigitalGaugeCharacterType.SixteenSegment;
 
 Mixing letters and numbers is common for status displays, product codes, and labels.
 
-```xml
+```xaml
 <!-- Product code -->
 <gauge:SfDigitalGauge Text="ABC123XYZ" 
                       CharacterType="SixteenSegment"
@@ -217,7 +217,7 @@ Mixing letters and numbers is common for status displays, product codes, and lab
 
 #### Short Messages
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="15">
     
     <!-- Welcome message -->
@@ -293,7 +293,7 @@ public class InfoDisplay : ContentPage
 
 ### Complete Alphabet Display Example
 
-```xml
+```xaml
 <ContentPage xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges">
     
     <VerticalStackLayout Padding="20" Spacing="20">
@@ -338,7 +338,7 @@ Special characters (@, #, $, %, *, &, etc.) require the **EightCrossEightDotMatr
 
 ### Basic Special Character Display
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="@ # $ % *" 
                       CharacterType="EightCrossEightDotMatrix" />
 ```
@@ -353,7 +353,7 @@ digitalGauge.CharacterType = DigitalGaugeCharacterType.EightCrossEightDotMatrix;
 
 #### Currency Symbols
 
-```xml
+```xaml
 <!-- Price with dollar sign -->
 <gauge:SfDigitalGauge Text="$99.99" 
                       CharacterType="EightCrossEightDotMatrix"
@@ -370,7 +370,7 @@ digitalGauge.CharacterType = DigitalGaugeCharacterType.EightCrossEightDotMatrix;
 
 #### Email Addresses
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="user@email.com" 
                       CharacterType="EightCrossEightDotMatrix"
                       CharacterHeight="60"
@@ -380,7 +380,7 @@ digitalGauge.CharacterType = DigitalGaugeCharacterType.EightCrossEightDotMatrix;
 
 #### Mathematical Expressions
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="50% OFF" 
                       CharacterType="EightCrossEightDotMatrix"
                       CharacterHeight="80"
@@ -395,7 +395,7 @@ digitalGauge.CharacterType = DigitalGaugeCharacterType.EightCrossEightDotMatrix;
 
 #### Social Media Handles
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="@username" 
                       CharacterType="EightCrossEightDotMatrix"
                       CharacterHeight="70"
@@ -478,7 +478,7 @@ The `Text` property is the primary way to set display content.
 
 ### Setting Text in XAML
 
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="HELLO" />
 ```
 
@@ -587,7 +587,7 @@ public class SensorDisplay : ContentPage
 
 Since DigitalGauge displays single-line text, use multiple gauges for multi-line effects:
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="10">
     <gauge:SfDigitalGauge Text="LINE ONE" 
                           CharacterType="SixteenSegment"

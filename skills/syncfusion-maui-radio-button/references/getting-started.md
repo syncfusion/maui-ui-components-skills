@@ -98,7 +98,7 @@ namespace RadioButtonDemo
 In your XAML or C# file, import the Syncfusion Buttons namespace:
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
@@ -114,7 +114,7 @@ using Syncfusion.Maui.Buttons;
 
 #### XAML Implementation
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
@@ -165,7 +165,7 @@ namespace RadioButtonDemo
 The caption text is displayed next to the radio button and describes its purpose. Set it using the `Text` property:
 
 ### XAML
-```xml
+```xaml
 <buttons:SfRadioButton x:Name="radioButton" Text="Premium Subscription"/>
 ```
 
@@ -184,7 +184,7 @@ Radio buttons have two primary states: **Checked** and **Unchecked**. Control th
 ### Setting Initial State
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfRadioButton Text="Option 1" IsChecked="True"/>
 <buttons:SfRadioButton Text="Option 2" IsChecked="False"/>
 ```
@@ -214,7 +214,7 @@ To create mutually exclusive radio buttons (where only one can be selected at a 
 
 ### XAML Example
 
-```xml
+```xaml
 <ContentPage xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons">
     
     <VerticalStackLayout Padding="20" Spacing="10">
@@ -271,7 +271,7 @@ Here's a complete example demonstrating a basic form with radio buttons:
 
 ### MainPage.xaml
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

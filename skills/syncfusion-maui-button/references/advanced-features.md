@@ -17,7 +17,7 @@ The SfButton supports right-to-left (RTL) layout for languages like Arabic, Hebr
 
 **Method 1: Set FlowDirection on Button**
 
-```xml
+```xaml
 <buttons:SfButton Text="Add to cart"
                   FlowDirection="RightToLeft"
                   ShowIcon="True"
@@ -50,7 +50,7 @@ When RTL is enabled:
 
 ### Example: RTL Button with Icon
 
-```xml
+```xaml
 <buttons:SfButton Text="حفظ"
                   FlowDirection="RightToLeft"
                   ShowIcon="True"
@@ -66,7 +66,7 @@ When RTL is enabled:
 
 Use `ImageAlignment="Left"` or `ImageAlignment="Right"` to force icon position regardless of flow direction:
 
-```xml
+```xaml
 <!-- Icon always on left, even in RTL -->
 <buttons:SfButton Text="Button"
                   FlowDirection="RightToLeft"
@@ -111,7 +111,7 @@ The Liquid Glass Effect provides a modern, translucent design with adaptive colo
 **Step 2:** Set `Background` to `Transparent` for glass-like appearance
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <!-- Background image for glass effect -->
     <Image Source="scenic_background.jpg"
@@ -165,7 +165,7 @@ Content = grid;
 **1. Use with Background Images**
 The glass effect looks best when overlaying images or colorful backgrounds:
 
-```xml
+```xaml
 <Grid>
     <BoxView Color="#667eea" />
     <buttons:SfButton Text="Explore"
@@ -178,7 +178,7 @@ The glass effect looks best when overlaying images or colorful backgrounds:
 **2. Adjust Corner Radius for Modern Look**
 Higher corner radius enhances the glass aesthetic:
 
-```xml
+```xaml
 <buttons:SfButton EnableLiquidGlassEffect="True"
                   Background="Transparent"
                   CornerRadius="28"
@@ -186,7 +186,7 @@ Higher corner radius enhances the glass aesthetic:
 ```
 
 **3. Combine with Visual States**
-```xml
+```xaml
 <buttons:SfButton Text="Interactive Glass"
                   EnableLiquidGlassEffect="True"
                   Background="Transparent">
@@ -210,7 +210,7 @@ Higher corner radius enhances the glass aesthetic:
 **4. Text Color for Readability**
 Ensure text remains readable against the blurred background:
 
-```xml
+```xaml
 <buttons:SfButton EnableLiquidGlassEffect="True"
                   Background="Transparent"
                   TextColor="White"
@@ -247,7 +247,7 @@ Replace button content with custom views using the `Content` property. This allo
 ### Basic Custom Content
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton Background="#6200EE"
                   CornerRadius="8">
     <buttons:SfButton.Content>
@@ -304,7 +304,7 @@ var button = new SfButton
 
 ### Loading Button with Activity Indicator
 
-```xml
+```xaml
 <buttons:SfButton CornerRadius="8"
                   Background="#4CAF50"
                   WidthRequest="150"
@@ -405,7 +405,7 @@ loadingButton.IsLoading = false;
 
 ### Badge Button
 
-```xml
+```xaml
 <buttons:SfButton Background="#6200EE"
                   CornerRadius="8"
                   WidthRequest="120"
@@ -443,7 +443,7 @@ loadingButton.IsLoading = false;
 The `Clicked` event fires when the button is tapped:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfButton x:Name="myButton"
                   Text="Click Me"
                   Clicked="OnButtonClicked" />
@@ -549,7 +549,7 @@ private void OnToggleClicked(object sender, EventArgs e)
 
 ### Example 1: RTL Shopping Cart Button
 
-```xml
+```xaml
 <buttons:SfButton Text="أضف إلى السلة"
                   FlowDirection="RightToLeft"
                   ShowIcon="True"
@@ -565,7 +565,7 @@ private void OnToggleClicked(object sender, EventArgs e)
 
 ### Example 2: Glass Effect with Custom Content
 
-```xml
+```xaml
 <Grid>
     <Image Source="gradient_bg.jpg" Aspect="AspectFill" />
     
@@ -596,7 +596,7 @@ private void OnToggleClicked(object sender, EventArgs e)
 
 ### Example 3: Dynamic Loading Button
 
-```xml
+```xaml
 <buttons:SfButton x:Name="submitButton"
                   Background="#6200EE"
                   CornerRadius="8"

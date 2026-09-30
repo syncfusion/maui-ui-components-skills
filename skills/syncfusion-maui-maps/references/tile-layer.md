@@ -53,7 +53,7 @@ The OpenStreetMap is one of the tile/image providers which can be used free of c
 ### Basic OSM Implementation
 
 **XAML:**
-```xml
+```xaml
 <maps:SfMaps>
     <maps:SfMaps.Layer>
         <maps:MapTileLayer UrlTemplate="url" />
@@ -191,7 +191,7 @@ The center position by setting the MapTileLayer.Center property. It represents t
 ### Setting Map Center
 
 **XAML:**
-```xml
+```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
         <map:MapTileLayer UrlTemplate="url">
@@ -254,7 +254,7 @@ Here, you can replace the serverName as per your wish.
 - `MapTileLayer.CanCacheTiles` - Enables/disables tile caching
 
 **XAML:**
-```xml
+```xaml
 <map:SfMaps>
     <map:SfMaps.Layer>
         <map:MapTileLayer UrlTemplate="http://api.tomtom.com/map/1/tile/basic/main/{z}/{x}/{y}.png?key=subscription_key?name=tomtom"
@@ -284,7 +284,7 @@ The DeleteTilesFromCache method is used to clear the cached tile images from the
 - `MapTileLayer.DeleteTilesFromCache` - Method to clear tile cache
 
 **XAML:**
-```xml
+```xaml
 <maps:SfMaps>
     <maps:SfMaps.Layer>
         <maps:MapTileLayer x:Name="tileLayer" 
@@ -313,7 +313,7 @@ The CenterChanged event is triggered while zooming and panning the maps.
 - CenterChangedEventArgs - Event arguments containing viewport bounds
 
 **XAML:**
-```xml
+```xaml
     <maps:SfMaps>
     <maps:SfMaps.Layer>
         <maps:MapTileLayer CenterChanged="MapTileLayer_CenterChanged" 
@@ -433,7 +433,7 @@ Most tile providers have rate limits and usage policies:
 Display proper attribution for map data as required by most tile providers:
 
 **XAML:**
-```xml
+```xaml
 <Grid>
     <map:SfMaps>
         <map:SfMaps.Layer>

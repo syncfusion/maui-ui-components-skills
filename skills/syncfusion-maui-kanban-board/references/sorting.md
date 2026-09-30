@@ -34,7 +34,7 @@ The SfKanban control supports sorting cards within columns based on data propert
 ### Example: Sort by Priority
 
 **XAML:**
-```xml
+```xaml
 <kanban:SfKanban ItemsSource="{Binding Cards}"
                  SortingMappingPath="Priority"
                  SortingOrder="Ascending" />
@@ -148,7 +148,7 @@ public class CardDetails
 ```
 
 **Setup:**
-```xml
+```xaml
 <kanban:SfKanban ItemsSource="{Binding Cards}"
                  SortingMappingPath="Index"
                  SortingOrder="Ascending"

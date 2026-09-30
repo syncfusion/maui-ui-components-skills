@@ -35,7 +35,7 @@ The `HeaderIconPosition` property controls where the expand/collapse icon appear
 
 ### XAML
 
-```xml
+```xaml
 <syncfusion:SfExpander x:Name="expander" 
                        HeaderIconPosition="Start">
     <syncfusion:SfExpander.Header>
@@ -59,7 +59,7 @@ expander.HeaderIconPosition = Syncfusion.Maui.Expander.ExpanderIconPosition.Star
 
 ### Visual Comparison
 
-```xml
+```xaml
 <StackLayout Spacing="10">
     
     <!-- Icon at End (default) -->
@@ -101,7 +101,7 @@ The `HeaderBackground` property customizes the background color or brush of the 
 
 ### XAML - Solid Color
 
-```xml
+```xaml
 <syncfusion:SfExpander x:Name="expander" 
                        HeaderBackground="Pink">
     <syncfusion:SfExpander.Header>
@@ -125,7 +125,7 @@ expander.HeaderBackground = Colors.Pink;
 
 ### XAML - Hex Color
 
-```xml
+```xaml
 <syncfusion:SfExpander HeaderBackground="#6750A4">
     <!-- Header and Content -->
 </syncfusion:SfExpander>
@@ -133,7 +133,7 @@ expander.HeaderBackground = Colors.Pink;
 
 ### XAML - Gradient Background
 
-```xml
+```xaml
 <syncfusion:SfExpander>
     <syncfusion:SfExpander.HeaderBackground>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -176,7 +176,7 @@ The `HeaderIconColor` property changes the color of the expand/collapse icon.
 
 ### XAML
 
-```xml
+```xaml
 <syncfusion:SfExpander x:Name="expander"
                        HeaderIconColor="Brown">
     <syncfusion:SfExpander.Header>
@@ -200,7 +200,7 @@ expander.HeaderIconColor = Colors.Brown;
 
 ### Combined Styling
 
-```xml
+```xaml
 <syncfusion:SfExpander HeaderBackground="#6750A4"
                        HeaderIconColor="White"
                        HeaderIconPosition="Start">
@@ -233,7 +233,7 @@ Use Visual State Manager (VSM) to apply different styles based on the expander's
 
 ### Basic VSM Example
 
-```xml
+```xaml
 <syncfusion:SfExpander x:Name="expander1" IsExpanded="True">
     <syncfusion:SfExpander.Header>
         <Grid>
@@ -298,7 +298,7 @@ Use Visual State Manager (VSM) to apply different styles based on the expander's
 
 ### VSM with All States
 
-```xml
+```xaml
 <syncfusion:SfExpander>
     <syncfusion:SfExpander.Header>
         <Grid Padding="15">
@@ -410,7 +410,7 @@ VisualStateManager.SetVisualStateGroups(expander, new VisualStateGroupList { vis
 
 ### Example 1: Material Design Style
 
-```xml
+```xaml
 <syncfusion:SfExpander AnimationDuration="200" 
                        AnimationEasing="SinOut"
                        HeaderIconPosition="End">
@@ -453,7 +453,7 @@ VisualStateManager.SetVisualStateGroups(expander, new VisualStateGroupList { vis
 
 ### Example 2: Dark Theme
 
-```xml
+```xaml
 <syncfusion:SfExpander AnimationDuration="250" 
                        HeaderBackground="#1E1E1E"
                        HeaderIconColor="#E0E0E0">
@@ -477,7 +477,7 @@ VisualStateManager.SetVisualStateGroups(expander, new VisualStateGroupList { vis
 
 ### Example 3: Status Colors
 
-```xml
+```xaml
 <StackLayout Spacing="10">
     
     <!-- Success -->
@@ -536,7 +536,7 @@ VisualStateManager.SetVisualStateGroups(expander, new VisualStateGroupList { vis
 
 When customizing colors, maintain readable contrast between text and background:
 
-```xml
+```xaml
 <!-- ✅ Good contrast -->
 <syncfusion:SfExpander HeaderBackground="#6750A4">
     <syncfusion:SfExpander.Header>
@@ -556,7 +556,7 @@ When customizing colors, maintain readable contrast between text and background:
 
 Prefer Visual State Manager over manual event-based styling:
 
-```xml
+```xaml
 <!-- ✅ Recommended: VSM -->
 <syncfusion:SfExpander>
     <VisualStateManager.VisualStateGroups>
@@ -573,7 +573,7 @@ Prefer Visual State Manager over manual event-based styling:
 
 When using custom icons in headers, bind their TextColor to HeaderIconColor for consistent styling:
 
-```xml
+```xaml
 <Label Text="&#xe701;" 
        TextColor="{Binding Path=HeaderIconColor, Source={x:Reference expander}}"/>
 ```
@@ -590,7 +590,7 @@ Icon positioning and colors may appear differently across platforms. Test on:
 
 Define colors in App.xaml for consistent theming:
 
-```xml
+```xaml
 <!-- App.xaml -->
 <Application.Resources>
     <Color x:Key="ExpanderHeaderExpanded">#6750A4</Color>
@@ -602,7 +602,7 @@ Define colors in App.xaml for consistent theming:
 
 Then reference in expanders:
 
-```xml
+```xaml
 <syncfusion:SfExpander>
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroupList>

@@ -124,7 +124,7 @@ var settings = new MarkdownStyleSettings
 
 ### Method 2: XAML Resource Dictionary
 
-```xml
+```xaml
 <ContentPage.Resources>
     <ResourceDictionary>
         <x:String x:Key="CustomMarkdownStyle">
@@ -204,7 +204,7 @@ markdownViewer.Settings = new MarkdownStyleSettings
 
 ### XAML Approach
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:markdown="clr-namespace:Syncfusion.Maui.MarkdownViewer;assembly=Syncfusion.Maui.MarkdownViewer"

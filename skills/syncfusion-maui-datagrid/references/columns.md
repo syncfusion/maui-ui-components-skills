@@ -26,7 +26,7 @@ The DataGrid automatically creates columns based on the `AutoGenerateColumnsMode
 
 ###Usage:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid ItemsSource="{Binding Orders}"
                        AutoGenerateColumnsMode="Reset" />
 ```
@@ -51,7 +51,7 @@ Based on property types:
 
 Use the `AutoGeneratingColumn` event:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" />
 ```
 
@@ -85,7 +85,7 @@ private void DataGrid_AutoGeneratingColumn(object sender, DataGridAutoGenerating
 
 Control generation for complex properties:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AutoGenerateColumnsModeForCustomType="Both" />
 ```
 
@@ -99,7 +99,7 @@ Options:
 
 Set `AutoGenerateColumnsMode="None"` and define columns explicitly:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid ItemsSource="{Binding Orders}"
                        AutoGenerateColumnsMode="None">
     <syncfusion:SfDataGrid.Columns>
@@ -147,7 +147,7 @@ dataGrid.Columns.Add(new DataGridTextColumn
 
 Display text or string data:
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="CustomerName" 
                                HeaderText="Customer" />
 ```
@@ -156,7 +156,7 @@ Display text or string data:
 
 Display numeric data (int, float, double, decimal):
 
-```xml
+```xaml
 <syncfusion:DataGridNumericColumn MappingName="OrderID" 
                                   HeaderText="Order #" />
 <syncfusion:DataGridNumericColumn MappingName="Freight" 
@@ -168,7 +168,7 @@ Display numeric data (int, float, double, decimal):
 
 Display date/time values:
 
-```xml
+```xaml
 <syncfusion:DataGridDateColumn MappingName="OrderDate" 
                                Format="MM/dd/yyyy"
                                HeaderText="Order Date" />
@@ -184,14 +184,14 @@ Common formats:
 
 Display boolean values as checkboxes:
 
-```xml
+```xaml
 <syncfusion:DataGridCheckBoxColumn MappingName="IsActive" 
                                    HeaderText="Active" />
 ```
 
 **Note:** By default, checkboxes are read-only. Enable editing:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AllowEditing="True">
     <syncfusion:SfDataGrid.Columns>
         <syncfusion:DataGridCheckBoxColumn MappingName="IsActive" 
@@ -204,7 +204,7 @@ Display boolean values as checkboxes:
 
 Display images from ImageSource:
 
-```xml
+```xaml
 <syncfusion:DataGridImageColumn MappingName="ProductImage" 
                                 HeaderText="Photo"
                                 Width="80" />
@@ -219,7 +219,7 @@ public ImageSource ProductImage { get; set; }
 
 Display dropdown selection:
 
-```xml
+```xaml
 <syncfusion:DataGridComboBoxColumn MappingName="Country"
                                    HeaderText="Country"
                                    ItemsSource="{Binding Countries}" />
@@ -229,17 +229,78 @@ Display dropdown selection:
 
 Display picker for selection:
 
-```xml
+```xaml
 <syncfusion:DataGridPickerColumn MappingName="Status"
                                  HeaderText="Order Status"
                                  ItemsSource="{Binding StatusList}" />
 ```
 
-### 8. DataGridTemplateColumn
+### 8. DataGridTimePickerColumn
+
+Display time picker for time span values:
+
+```xaml
+<syncfusion:DataGridTimePickerColumn MappingName="ShippingTime"
+                                     HeaderText="Delivery Time"
+                                     Format="hh\:mm" />
+```
+
+**Usage with TimeSpan:**
+
+```csharp
+public class Order
+{
+    public TimeSpan ShippingTime { get; set; }
+}
+```
+
+### 9. DataGridPercentColumn
+
+Display and edit percentage values:
+
+```xaml
+<syncfusion:DataGridPercentColumn MappingName="DiscountRate"
+                                  HeaderText="Discount %"
+                                  PercentEditMode="DoubleMode" />
+```
+
+### 10. DataGridCurrencyColumn
+
+Display and edit currency values:
+
+```xaml
+<syncfusion:DataGridCurrencyColumn MappingName="Price"
+                                   HeaderText="Price ($)"
+                                   CurrencySymbol="€" />
+```
+
+### 11. DataGridCheckBoxSelectorColumn
+
+Select rows using checkboxes in a dedicated column:
+
+```xaml
+<syncfusion:SfDataGrid SelectionMode="Multiple">
+    <syncfusion:SfDataGrid.Columns>
+        <syncfusion:DataGridCheckBoxSelectorColumn MappingName="SelectorColumn" />
+        <syncfusion:DataGridTextColumn MappingName="OrderID"
+                                       HeaderText="Order ID" />
+        <syncfusion:DataGridTextColumn MappingName="Customer"
+                                       HeaderText="Customer" />
+    </syncfusion:SfDataGrid.Columns>
+</syncfusion:SfDataGrid>
+```
+
+**Features:**
+- Row selection via checkboxes
+- Header checkbox to select/deselect all
+- Works with `SelectionMode="Multiple"`
+- Checkbox state synchronized with row selection
+
+### 12. DataGridTemplateColumn
 
 Custom column with templates:
 
-```xml
+```xaml
 <syncfusion:DataGridTemplateColumn MappingName="ProductInfo" 
                                     HeaderText="Product">
     <syncfusion:DataGridTemplateColumn.CellTemplate>
@@ -263,17 +324,17 @@ Custom column with templates:
 
 Binds column to a property:
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="CustomerID" />
 ```
 
 For complex properties:
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="Customer.Name" />
 ```
 
 For dynamic properties:
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="[PropertyName]" />
 ```
 
@@ -281,7 +342,7 @@ For dynamic properties:
 
 Custom header text:
 
-```xml
+```xaml
 <syncfusion:DataGridNumericColumn MappingName="OrderID" 
                                   HeaderText="Order Number" />
 ```
@@ -292,7 +353,7 @@ If not set, uses `MappingName`.
 
 Set specific column width:
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="CustomerID" 
                                Width="150" />
 ```
@@ -301,7 +362,7 @@ Set specific column width:
 
 Constrain column width:
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="Comments" 
                                MinimumWidth="100"
                                MaximumWidth="300" />
@@ -311,7 +372,7 @@ Constrain column width:
 
 Apply formatting to data:
 
-```xml
+```xaml
 <!-- Currency -->
 <syncfusion:DataGridNumericColumn MappingName="Price" 
                                   Format="C" />
@@ -353,7 +414,7 @@ dataGrid.Columns.Add(new DataGridNumericColumn
 
 Align cell and header text:
 
-```xml
+```xaml
 <syncfusion:DataGridNumericColumn MappingName="OrderID"
                                   CellTextAlignment="End"
                                   HeaderTextAlignment="Center" />
@@ -369,7 +430,7 @@ Options: `Start`, `Center`, `End`
 
 Show/hide column:
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="InternalNotes" 
                                Visible="False" />
 ```
@@ -383,7 +444,7 @@ dataGrid.Columns["InternalNotes"].Visible = false;
 
 Control editing per column:
 
-```xml
+```xaml
 <syncfusion:DataGridNumericColumn MappingName="OrderID" 
                                   AllowEditing="False" />
 ```
@@ -392,7 +453,7 @@ Control editing per column:
 
 Control sorting/filtering per column:
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="Comments" 
                                AllowSorting="True"
                                AllowFiltering="False" />
@@ -402,7 +463,7 @@ Control sorting/filtering per column:
 
 Add padding to cells:
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="ProductName"
                                CellPadding="10,5,10,5"
                                HeaderPadding="10,8,10,8" />
@@ -412,7 +473,7 @@ Add padding to cells:
 
 Custom header design:
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="Status">
     <syncfusion:DataGridTextColumn.HeaderTemplate>
         <DataTemplate>
@@ -433,7 +494,7 @@ Custom header design:
 
 Custom cell design:
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="Priority">
     <syncfusion:DataGridTextColumn.CellTemplate>
         <DataTemplate>
@@ -453,7 +514,7 @@ Custom cell design:
 
 Set `SetCellBoundValue="True"` to use one template for multiple columns:
 
-```xml
+```xaml
 <ContentPage.Resources>
     <DataTemplate x:Key="cellTemplate">
         <Label Text="{Binding Path=Value}" 
@@ -478,7 +539,7 @@ When `SetCellBoundValue="True"`:
 
 Control text wrapping in cells:
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="Description"
                                LineBreakMode="WordWrap" />
 ```
@@ -491,7 +552,7 @@ Options: `NoWrap`, `WordWrap`, `CharacterWrap`, `HeadTruncation`, `TailTruncatio
 
 Control text wrapping in headers:
 
-```xml
+```xaml
 <syncfusion:DataGridTextColumn MappingName="LongHeaderName"
                                HeaderLineBreakMode="WordWrap" />
 ```
@@ -515,7 +576,7 @@ Control how column widths are calculated:
 
 Apply to all columns:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid ColumnWidthMode="Auto" />
 ```
 
@@ -523,7 +584,7 @@ Apply to all columns:
 
 Override for specific column:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid ColumnWidthMode="None">
     <syncfusion:SfDataGrid.Columns>
         <syncfusion:DataGridTextColumn MappingName="CustomerID"
@@ -538,7 +599,7 @@ Override for specific column:
 
 Set common width for all columns:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid DefaultColumnWidth="120" />
 ```
 
@@ -603,7 +664,7 @@ dataGrid.Columns.Clear();
 
 Allow users to show/hide columns:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid ShowColumnChooser="True" />
 ```
 

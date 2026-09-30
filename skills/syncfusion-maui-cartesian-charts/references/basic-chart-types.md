@@ -22,7 +22,7 @@ Line charts connect data points with straight lines, ideal for showing trends ov
 
 ### Basic Implementation
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -52,7 +52,7 @@ chart.Series.Add(series);
 
 Create dashed lines using the `StrokeDashArray` property:
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.Resources>
         <DoubleCollection x:Key="dashArray">
@@ -93,7 +93,7 @@ LineSeries series = new LineSeries()
 
 Enable markers to highlight individual data points:
 
-```xml
+```xaml
 <chart:LineSeries ItemsSource="{Binding Data}"
                  XBindingPath="Month"
                  YBindingPath="Sales"
@@ -136,7 +136,7 @@ Spline charts use smooth Bezier curves instead of straight lines, creating a mor
 
 ### Basic Spline
 
-```xml
+```xaml
 <chart:SplineSeries ItemsSource="{Binding Data}"
                    XBindingPath="Month"
                    YBindingPath="Sales"/>
@@ -155,7 +155,7 @@ SplineSeries series = new SplineSeries()
 
 The `Type` property controls the curve algorithm:
 
-```xml
+```xaml
 <chart:SplineSeries ItemsSource="{Binding Data}"
                    XBindingPath="Month"
                    YBindingPath="Sales"
@@ -184,7 +184,7 @@ Area charts fill the region between the line and the axis, emphasizing magnitude
 
 ### Basic Area
 
-```xml
+```xaml
 <chart:AreaSeries ItemsSource="{Binding Data}"
                  XBindingPath="Month"
                  YBindingPath="Sales"/>
@@ -203,7 +203,7 @@ AreaSeries series = new AreaSeries()
 
 Use opacity to show overlapping areas:
 
-```xml
+```xaml
 <chart:AreaSeries ItemsSource="{Binding Data1}"
                  XBindingPath="Month"
                  YBindingPath="Sales"
@@ -219,7 +219,7 @@ Use opacity to show overlapping areas:
 
 ### Area with Markers
 
-```xml
+```xaml
 <chart:AreaSeries ItemsSource="{Binding Data}"
                  XBindingPath="Month"
                  YBindingPath="Sales"
@@ -239,7 +239,7 @@ Use opacity to show overlapping areas:
 
 Combines spline curves with area filling:
 
-```xml
+```xaml
 <chart:SplineAreaSeries ItemsSource="{Binding Data}"
                        XBindingPath="Month"
                        YBindingPath="Sales"/>
@@ -260,7 +260,7 @@ Column charts use vertical bars to compare values across categories.
 
 ### Basic Column
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}"
                    XBindingPath="Category"
                    YBindingPath="Value"/>
@@ -279,7 +279,7 @@ ColumnSeries series = new ColumnSeries()
 
 Control bar spacing and width:
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}"
                    XBindingPath="Category"
                    YBindingPath="Value"
@@ -305,7 +305,7 @@ ColumnSeries series = new ColumnSeries()
 
 Place multiple series on top of each other:
 
-```xml
+```xaml
 <chart:SfCartesianChart EnableSideBySideSeriesPlacement="False">
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -340,7 +340,7 @@ Bar charts are horizontal columns, created by transposing the chart.
 
 ### Basic Bar
 
-```xml
+```xaml
 <chart:SfCartesianChart IsTransposed="True">
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -370,7 +370,7 @@ ColumnSeries series = new ColumnSeries()
 
 ### Bar with Spacing
 
-```xml
+```xaml
 <chart:SfCartesianChart IsTransposed="True">
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -394,7 +394,7 @@ Scatter charts display data points as individual markers, ideal for correlation 
 
 ### Basic Scatter
 
-```xml
+```xaml
 <chart:ScatterSeries ItemsSource="{Binding Data}"
                     XBindingPath="XValue"
                     YBindingPath="YValue"
@@ -415,7 +415,7 @@ ScatterSeries series = new ScatterSeries()
 
 ### Custom Point Shape
 
-```xml
+```xaml
 <chart:ScatterSeries ItemsSource="{Binding Data}"
                     XBindingPath="XValue"
                     YBindingPath="YValue"
@@ -446,7 +446,7 @@ Bubble charts add a third dimension (size) to scatter plots.
 
 ### Basic Bubble
 
-```xml
+```xaml
 <chart:BubbleSeries ItemsSource="{Binding Data}"
                    XBindingPath="XValue"
                    YBindingPath="YValue"
@@ -477,7 +477,7 @@ public class BubbleData
 
 Control minimum and maximum bubble sizes:
 
-```xml
+```xaml
 <chart:BubbleSeries ItemsSource="{Binding Data}"
                    XBindingPath="XValue"
                    YBindingPath="YValue"
@@ -502,7 +502,7 @@ BubbleSeries series = new BubbleSeries()
 
 Control visibility of zero-size bubbles:
 
-```xml
+```xaml
 <chart:BubbleSeries ItemsSource="{Binding Data}"
                    XBindingPath="XValue"
                    YBindingPath="YValue"
@@ -585,7 +585,7 @@ BubbleSeries series = new BubbleSeries()
 
 ### Multi-Series Comparison
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.Legend>
         <chart:ChartLegend/>
@@ -615,7 +615,7 @@ BubbleSeries series = new BubbleSeries()
 
 ### Mixed Chart Types
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>

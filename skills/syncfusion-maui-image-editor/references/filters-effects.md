@@ -82,7 +82,7 @@ imageEditor.ImageEffect(ImageEffect.Brightness, 0.5);
 
 ### Complete Example
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Brightness" Clicked="OnBrightnessClicked" />
@@ -122,7 +122,7 @@ imageEditor.ImageEffect(ImageEffect.Contrast, 0.7);
 
 ### Complete Example
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Contrast" Clicked="OnContrastClicked" />
@@ -162,7 +162,7 @@ imageEditor.ImageEffect(ImageEffect.Exposure, 0.6);
 
 ### Complete Example
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Exposure" Clicked="OnExposureClicked" />
@@ -206,7 +206,7 @@ imageEditor.ImageEffect(ImageEffect.Saturation, -1);
 
 ### Complete Example
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Saturation" Clicked="OnSaturationClicked" />
@@ -246,7 +246,7 @@ imageEditor.ImageEffect(ImageEffect.Hue, -0.5);
 
 ### Complete Example
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Hue" Clicked="OnHueClicked" />
@@ -290,7 +290,7 @@ imageEditor.ImageEffect(ImageEffect.Blur, 0.9);
 
 ### Complete Example
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Blur" Clicked="OnBlurClicked" />
@@ -331,7 +331,7 @@ imageEditor.ImageEffect(ImageEffect.Sharpen, 3.0);
 
 ### Complete Example
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Sharpen" Clicked="OnSharpenClicked" />
@@ -372,7 +372,7 @@ imageEditor.ImageEffect(ImageEffect.Opacity, 0.2);
 
 ### Complete Example
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Opacity" Clicked="OnOpacityClicked" />
@@ -421,7 +421,7 @@ private void ApplyMultipleEffects()
 
 Make effects permanent using `SaveEdits()`:
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Save Effects" Clicked="OnSaveEditsClicked" />
@@ -537,7 +537,7 @@ private void ApplySoftGlow()
 
 ### Effect with Slider Control
 
-```xml
+```xaml
 <Grid RowDefinitions="0.8*, 0.1*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     

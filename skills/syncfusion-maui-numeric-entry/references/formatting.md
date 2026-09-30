@@ -25,7 +25,7 @@ The `CustomFormat` property allows you to format values using standard .NET nume
 
 ### Currency Format (C)
 
-```xml
+```xaml
 <!-- Currency with 2 decimal places -->
 <editors:SfNumericEntry CustomFormat="C2"
                         WidthRequest="200"
@@ -49,7 +49,7 @@ var stockPrice = new SfNumericEntry
 
 ### Percentage Format (P)
 
-```xml
+```xaml
 <!-- Percentage with 2 decimal places -->
 <editors:SfNumericEntry CustomFormat="P2"
                         WidthRequest="200"
@@ -74,7 +74,7 @@ var productDiscount = new SfNumericEntry
 
 ### Decimal/Number Format (N)
 
-```xml
+```xaml
 <!-- Decimal with 2 decimal places -->
 <editors:SfNumericEntry CustomFormat="N2"
                         WidthRequest="200"
@@ -98,7 +98,7 @@ var hoursWorked = new SfNumericEntry
 
 ### Complete Example
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="15">
     
     <!-- Currency -->
@@ -142,7 +142,7 @@ Use the **0** format specifier to set the minimum number of integer digits. If t
 
 ### Currency with Minimum Integer Digits
 
-```xml
+```xaml
 <!-- Minimum 5 integer digits, 2 fractional -->
 <editors:SfNumericEntry CustomFormat="$00000.00"
                         WidthRequest="200"
@@ -161,7 +161,7 @@ var stockPrice = new SfNumericEntry
 
 ### Percentage with Minimum Integer Digits
 
-```xml
+```xaml
 <!-- Minimum 5 integer digits, 2 fractional, percentage -->
 <editors:SfNumericEntry CustomFormat="00000.00%"
                         WidthRequest="200"
@@ -180,7 +180,7 @@ var productDiscount = new SfNumericEntry
 
 ### Decimal with Minimum Integer Digits
 
-```xml
+```xaml
 <!-- Minimum 5 integer digits, 2 fractional -->
 <editors:SfNumericEntry CustomFormat="00000.00"
                         WidthRequest="200"
@@ -211,7 +211,7 @@ Use the **0** format specifier to set the minimum number of fractional (decimal)
 
 ### Currency with Fractional Digits
 
-```xml
+```xaml
 <!-- 3 integer digits, 3 fractional -->
 <editors:SfNumericEntry CustomFormat="$000.000"
                         WidthRequest="200"
@@ -230,7 +230,7 @@ var stockPrice = new SfNumericEntry
 
 ### Percentage with Fractional Digits
 
-```xml
+```xaml
 <editors:SfNumericEntry CustomFormat="00.000%"
                         WidthRequest="200"
                         Value="5.1234" />
@@ -248,7 +248,7 @@ var productDiscount = new SfNumericEntry
 
 ### Decimal with Fractional Digits
 
-```xml
+```xaml
 <editors:SfNumericEntry CustomFormat="00.000"
                         WidthRequest="200"
                         Value="8.2" />
@@ -283,7 +283,7 @@ Combine **0** (zero placeholder) and **#** (digit placeholder) to create flexibl
 
 ### Minimum and Maximum Fractional Digits
 
-```xml
+```xaml
 <!-- Minimum 2, maximum 4 fractional digits -->
 <editors:SfNumericEntry CustomFormat="#.00##"
                         WidthRequest="200" />
@@ -300,7 +300,7 @@ Combine **0** (zero placeholder) and **#** (digit placeholder) to create flexibl
 
 ### Currency with Flexible Decimals
 
-```xml
+```xaml
 <editors:SfNumericEntry CustomFormat="$00.00##"
                         WidthRequest="200"
                         Value="12.5678" />
@@ -327,7 +327,7 @@ var stockPrice = new SfNumericEntry
 
 ### Percentage with Flexible Decimals
 
-```xml
+```xaml
 <editors:SfNumericEntry CustomFormat="00.00##%"
                         WidthRequest="200"
                         Value="15.6789" />
@@ -345,7 +345,7 @@ var productDiscount = new SfNumericEntry
 
 ### Decimal with Flexible Decimals
 
-```xml
+```xaml
 <editors:SfNumericEntry CustomFormat="00.00##"
                         WidthRequest="200"
                         Value="42.789" />
@@ -363,7 +363,7 @@ var hoursWorked = new SfNumericEntry
 
 ### Advanced Custom Formats
 
-```xml
+```xaml
 <!-- Thousands separator with flexible decimals -->
 <editors:SfNumericEntry CustomFormat="#,##0.0#"
                         Value="1234567.89" />
@@ -486,7 +486,7 @@ When using percentage format, the `PercentDisplayMode` property controls how the
 
 The value is multiplied by 100 before adding the percent symbol.
 
-```xml
+```xaml
 <editors:SfNumericEntry CustomFormat="P"
                         Value="1000"
                         PercentDisplayMode="Compute"
@@ -511,7 +511,7 @@ var numericEntry = new SfNumericEntry
 
 The actual value is displayed with the percent symbol (no multiplication).
 
-```xml
+```xaml
 <editors:SfNumericEntry CustomFormat="P"
                         Value="1000"
                         PercentDisplayMode="Value"
@@ -534,7 +534,7 @@ var numericEntry = new SfNumericEntry
 
 ### Comparison Examples
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="15">
     
     <!-- Compute Mode -->
@@ -583,7 +583,7 @@ The `MaximumNumberDecimalDigits` property specifies the maximum number of digits
 
 ### Set Maximum Decimal Digits
 
-```xml
+```xaml
 <editors:SfNumericEntry Value="1000.23232"
                         MaximumNumberDecimalDigits="3"
                         WidthRequest="200" />
@@ -635,7 +635,7 @@ var measurement = new SfNumericEntry
 
 ## Complete Formatting Example
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

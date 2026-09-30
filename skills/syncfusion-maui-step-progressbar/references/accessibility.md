@@ -134,7 +134,7 @@ Maintain sufficient color contrast for users with visual impairments:
 - Text: Minimum 4.5:1 contrast ratio
 - UI Components: Minimum 3:1 contrast ratio
 
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar.CompletedStepSettings>
     <stepProgressBar:StepSettings 
         Background="#4CAF50"       <!-- Green background -->
@@ -152,7 +152,7 @@ Use tools like:
 
 Ensure tappable steps have clear focus indicators when using keyboard navigation:
 
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar.CompletedStepSettings>
     <stepProgressBar:StepSettings 
         Stroke="Blue">          <!-- Border color for focus -->
@@ -240,7 +240,7 @@ Don't rely solely on color to convey information. Use multiple indicators:
 
 Use appropriate font sizes:
 
-```xml
+```xaml
 <stepProgressBar:StepProgressBar.CompletedStepSettings>
     <stepProgressBar:StepSettings>
         <stepProgressBar:StepSettings.TextStyle>
@@ -263,7 +263,7 @@ Ensure steps are large enough to tap easily:
 
 **Minimum recommended:** 44x44 pixels (iOS HIG) / 48x48 dp (Android Material)
 
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     StepSize="48"  
     StepContentSize="32"><!-- Adequate touch target -->
@@ -318,7 +318,7 @@ public class AccessibleCheckoutViewModel
 }
 ```
 
-```xml
+```xaml
 <stepProgressBar:SfStepProgressBar 
     ItemsSource="{Binding CheckoutSteps}"
     ActiveStepIndex="2"

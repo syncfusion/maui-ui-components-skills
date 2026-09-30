@@ -13,7 +13,7 @@
 
 Display hint text when the control is empty:
 
-```xml
+```xaml
 <editors:SfAutocomplete Placeholder="Select a social media"
                         PlaceholderColor="Gray"
                         ItemsSource="{Binding SocialMedias}"
@@ -30,14 +30,14 @@ autocomplete.PlaceholderColor = Colors.Gray;
 Customize the clear button appearance:
 
 **Icon Color:**
-```xml
+```xaml
 <editors:SfAutocomplete ClearButtonIconColor="Red"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name" />
 ```
 
 **Custom Path:**
-```xml
+```xaml
 <editors:SfAutocomplete>
     <editors:SfAutocomplete.ClearButtonPath>
         <Path Data="M1.70711 0.292893C1.31658 -0.097631 0.683417 -0.097631 0.292893 0.292893C-0.097631 0.683417 -0.097631 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.097631 12.6834 -0.097631 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.097631 12.6834 -0.097631 12.2929 0.292893L7 5.58579L1.70711 0.292893Z" 
@@ -60,14 +60,14 @@ autocomplete.ClearButtonPath = path;
 ### Border and Stroke
 
 **Stroke (Border Color):**
-```xml
+```xaml
 <editors:SfAutocomplete Stroke="Red"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name" />
 ```
 
 **Show/Hide Border:**
-```xml
+```xaml
 <editors:SfAutocomplete ShowBorder="False" />
 ```
 
@@ -77,7 +77,7 @@ autocomplete.ShowBorder = false; // Default: true
 
 ### Selection Text Highlight
 
-```xml
+```xaml
 <editors:SfAutocomplete SelectionTextHighlightColor="Green"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name" />
@@ -88,21 +88,21 @@ autocomplete.ShowBorder = false; // Default: true
 ### Size and Placement
 
 **Max Height:**
-```xml
+```xaml
 <editors:SfAutocomplete MaxDropDownHeight="200"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name" />
 ```
 
 **Width:**
-```xml
+```xaml
 <editors:SfAutocomplete DropDownWidth="400"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name" />
 ```
 
 **Placement:**
-```xml
+```xaml
 <editors:SfAutocomplete DropDownPlacement="Top"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name" />
@@ -119,14 +119,14 @@ public enum AutocompleteDropDownPlacement
 ```
 
 **Item Height:**
-```xml
+```xaml
 <editors:SfAutocomplete DropDownItemHeight="80"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name" />
 ```
 
 **Item Padding:**
-```xml
+```xaml
 <editors:SfAutocomplete ItemPadding="10,20,0,0"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name" />
@@ -136,7 +136,7 @@ public enum AutocompleteDropDownPlacement
 
 Customize dropdown item appearance:
 
-```xml
+```xaml
 <editors:SfAutocomplete ItemsSource="{Binding Employees}"
                         DisplayMemberPath="Name"
                         TextMemberPath="Name">
@@ -165,7 +165,7 @@ Customize dropdown item appearance:
 ### Item Text Styling
 
 **Font Attributes:**
-```xml
+```xaml
 <editors:SfAutocomplete DropDownItemFontAttributes="Italic"
                         DropDownItemFontFamily="OpenSansSemibold"
                         DropDownItemFontSize="16"
@@ -175,17 +175,17 @@ Customize dropdown item appearance:
 ### Background and Borders
 
 **Dropdown Background:**
-```xml
+```xaml
 <editors:SfAutocomplete DropDownBackground="YellowGreen" />
 ```
 
 **Selected Item Background:**
-```xml
+```xaml
 <editors:SfAutocomplete SelectedDropDownItemBackground="LightSeaGreen" />
 ```
 
 **Selected Item Text Style:**
-```xml
+```xaml
 <editors:SfAutocomplete>
     <editors:SfAutocomplete.SelectedDropDownItemTextStyle>
         <editors:DropDownTextStyle TextColor="Orange" 
@@ -196,24 +196,24 @@ Customize dropdown item appearance:
 ```
 
 **Border:**
-```xml
+```xaml
 <editors:SfAutocomplete DropDownStroke="DarkOrange"
                         DropDownStrokeThickness="5" />
 ```
 
 **Shadow:**
-```xml
+```xaml
 <editors:SfAutocomplete IsDropDownShadowVisible="False" />
 ```
 
 **Corner Radius:**
-```xml
+```xaml
 <editors:SfAutocomplete DropDownCornerRadius="25" />
 ```
 
 ### Show Suggestions on Focus
 
-```xml
+```xaml
 <editors:SfAutocomplete ShowSuggestionsOnFocus="True" />
 ```
 
@@ -221,7 +221,7 @@ Customize dropdown item appearance:
 
 For multiple selection with token display:
 
-```xml
+```xaml
 <editors:SfAutocomplete SelectionMode="Multiple">
     <editors:SfAutocomplete.TokenItemStyle>
         <Style TargetType="core:SfChipGroup">
@@ -241,7 +241,7 @@ For multiple selection with token display:
 
 ### Text Alignment
 
-```xml
+```xaml
 <editors:SfAutocomplete HorizontalTextAlignment="Center" 
                         VerticalTextAlignment="Start"/>
 ```
@@ -255,7 +255,7 @@ autocomplete.VerticalTextAlignment = TextAlignment.Start;
 
 ### Cursor Position
 
-```xml
+```xaml
 <editors:SfAutocomplete CursorPosition="4" />
 ```
 
@@ -269,7 +269,7 @@ autocomplete.CursorPosition = 4;
 
 Specify keyboard return button type:
 
-```xml
+```xaml
 <editors:SfAutocomplete ReturnType="Next" />
 ```
 
@@ -289,7 +289,7 @@ public enum ReturnType
 
 Execute command when return key pressed:
 
-```xml
+```xaml
 <editors:SfAutocomplete ReturnCommand="{Binding AlertCommand}"
                         ReturnCommandParameter="Return key pressed"/>
 ```
@@ -312,7 +312,7 @@ public class ViewModel
 
 Fires when user presses return key:
 
-```xml
+```xaml
 <editors:SfAutocomplete Completed="OnCompleted" />
 ```
 
@@ -329,7 +329,7 @@ private async void OnCompleted(object sender, EventArgs e)
 
 Fires before dropdown opens (cancellable):
 
-```xml
+```xaml
 <editors:SfAutocomplete DropDownOpening="OnDropDownOpening" />
 ```
 
@@ -345,7 +345,7 @@ private void OnDropDownOpening(object sender, CancelEventArgs e)
 
 Fires after dropdown opens:
 
-```xml
+```xaml
 <editors:SfAutocomplete DropDownOpened="OnDropDownOpened" />
 ```
 
@@ -360,7 +360,7 @@ private void OnDropDownOpened(object sender, EventArgs e)
 
 Fires after dropdown closes:
 
-```xml
+```xaml
 <editors:SfAutocomplete DropDownClosed="OnDropDownClosed" />
 ```
 
@@ -375,7 +375,7 @@ private async void OnDropDownClosed(object sender, EventArgs e)
 
 Fires when text value changes:
 
-```xml
+```xaml
 <editors:SfAutocomplete ValueChanged="OnValueChanged" />
 ```
 
@@ -396,7 +396,7 @@ private async void OnValueChanged(object sender, AutocompleteValueChangedEventAr
 
 Fires when clear button is clicked:
 
-```xml
+```xaml
 <editors:SfAutocomplete ClearButtonClicked="OnClearButtonClicked" />
 ```
 
@@ -411,7 +411,7 @@ private async void OnClearButtonClicked(object sender, EventArgs e)
 
 ### Modern Styled Autocomplete
 
-```xml
+```xaml
 <editors:SfAutocomplete Placeholder="Search..."
                         PlaceholderColor="#6B7280"
                         Stroke="#E5E7EB"
@@ -430,7 +430,7 @@ private async void OnClearButtonClicked(object sender, EventArgs e)
 
 ### Dark Theme Autocomplete
 
-```xml
+```xaml
 <editors:SfAutocomplete Placeholder="Search..."
                         PlaceholderColor="#9CA3AF"
                         Stroke="#374151"
@@ -448,7 +448,7 @@ private async void OnClearButtonClicked(object sender, EventArgs e)
 
 ### Multi-Select with Custom Tokens
 
-```xml
+```xaml
 <editors:SfAutocomplete SelectionMode="Multiple"
                         MultiSelectionDisplayMode="Token"
                         TokensWrapMode="Wrap"

@@ -25,7 +25,7 @@ DataTemplateSelector allows you to choose different DataTemplates based on the d
 
 ### Step 1: Define Templates in Resources
 
-```xml
+```xaml
 <ContentPage.Resources>
     <ResourceDictionary>
         <!-- Default template for regular items -->
@@ -85,7 +85,7 @@ namespace YourApp
 
 ### Step 3: Apply DataTemplateSelector in XAML
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Rotator;assembly=Syncfusion.Maui.Rotator"
@@ -260,7 +260,7 @@ Display text captions below images when using SfRotatorItem collections.
 ### Basic Text Display
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator x:Name="rotator"
                       BackgroundColor="#ececec"
                       IsTextVisible="True"
@@ -323,7 +323,7 @@ public partial class MainPage : ContentPage
 ```
 
 **XAML Approach:**
-```xml
+```xaml
 <syncfusion:SfRotator BackgroundColor="#ececec"
                       IsTextVisible="True"
                       DotPlacement="Outside"
@@ -343,7 +343,7 @@ public partial class MainPage : ContentPage
 ### Background Color
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator BackgroundColor="#F5F5F5"
                       ItemsSource="{Binding ImageCollection}">
     <!-- Content -->
@@ -358,7 +358,7 @@ rotator.BackgroundColor = Color.FromArgb("#F5F5F5");
 ### Width and Height
 
 **XAML:**
-```xml
+```xaml
 <syncfusion:SfRotator WidthRequest="600"
                       HeightRequest="400"
                       ItemsSource="{Binding ImageCollection}">
@@ -374,7 +374,7 @@ rotator.HeightRequest = 400;
 
 ### Responsive Sizing
 
-```xml
+```xaml
 <Grid>
     <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}"
                           HorizontalOptions="FillAndExpand"
@@ -411,7 +411,7 @@ public class RotatorViewModel
 ### Complete Online Image Example
 
 **XAML:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -475,7 +475,7 @@ Create complex item templates with multiple UI elements.
 
 ### Product Card Layout
 
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding Products}"
                       HeightRequest="550">
     <syncfusion:SfRotator.ItemTemplate>
@@ -527,7 +527,7 @@ Create complex item templates with multiple UI elements.
 
 ### Testimonial Card Layout
 
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding Testimonials}"
                       NavigationStripMode="Dots"
                       EnableAutoPlay="True"
@@ -585,7 +585,7 @@ Create complex item templates with multiple UI elements.
 
 ### News Card with Overlay
 
-```xml
+```xaml
 <syncfusion:SfRotator ItemsSource="{Binding NewsArticles}"
                       HeightRequest="400">
     <syncfusion:SfRotator.ItemTemplate>

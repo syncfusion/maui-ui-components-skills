@@ -114,7 +114,7 @@ namespace MyListViewApp
 
 Open `MainPage.xaml` and add the ListView:
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -286,7 +286,7 @@ namespace MyListViewApp.ViewModels
 
 ### Method 1: XAML Binding
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
@@ -329,7 +329,7 @@ Without a template, ListView displays items using `ToString()`. Define an ItemTe
 
 ### Basic Item Template
 
-```xml
+```xaml
 <syncfusion:SfListView x:Name="listView"
                        ItemsSource="{Binding BookInfo}"
                        ItemSize="100">
@@ -356,7 +356,7 @@ Without a template, ListView displays items using `ToString()`. Define an ItemTe
 
 ### Advanced Item Template with Image
 
-```xml
+```xaml
 <syncfusion:SfListView.ItemTemplate>
     <DataTemplate>
         <Grid Padding="10" ColumnSpacing="10">
@@ -416,19 +416,19 @@ dotnet build -t:Run -f net8.0-maccatalyst
 
 ### Setting Item Height
 
-```xml
+```xaml
 <syncfusion:SfListView ItemSize="80" />
 ```
 
 ### Changing Background Color
 
-```xml
+```xaml
 <syncfusion:SfListView BackgroundColor="WhiteSmoke" />
 ```
 
 ### Adding Item Spacing
 
-```xml
+```xaml
 <syncfusion:SfListView.ItemTemplate>
     <DataTemplate>
         <Frame Margin="10,5" Padding="10" CornerRadius="8" HasShadow="True">

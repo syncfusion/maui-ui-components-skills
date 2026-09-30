@@ -233,7 +233,7 @@ builder.ConfigureSyncfusionAIServices();
 - `builder.Services.AddChatClient(chatClient)`
 
 **Before using:**
-- Any Syncfusion Smart Component (SfSmartTextEditor, SfAIAssistView)
+- Any Syncfusion Smart Component (SfSmartDataGrid)
 
 ## Environment-Specific Configuration
 

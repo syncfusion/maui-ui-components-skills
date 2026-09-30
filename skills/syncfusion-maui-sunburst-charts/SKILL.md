@@ -1,6 +1,6 @@
 ---
 name: syncfusion-maui-sunburst-charts
-description: Implements Syncfusion .NET MAUI Sunburst Chart (SfSunburstChart) for hierarchical data visualization using a radial, multi-level circular layout. Use this for sunburst charts, radial hierarchical charts, multi-level pie charts, or hierarchical data visualization with drill-down capabilities. Ideal for visualizing organizational structures, file systems, or nested categorical data.
+description: Implements Syncfusion® .NET MAUI Sunburst Chart (SfSunburstChart) for hierarchical data visualization using a radial, multi-level circular layout. Use this for sunburst charts, radial hierarchical charts, multi-level pie charts, or hierarchical data visualization with drill-down capabilities. Ideal for visualizing organizational structures, file systems, or nested categorical data.
 metadata:
   author: "Syncfusion Inc"
   version: "34.1.29"
@@ -8,11 +8,11 @@ metadata:
 
 # Implementing .NET MAUI Sunburst Charts
 
-Guide users to implement Syncfusion .NET MAUI Sunburst Chart (SfSunburstChart), a powerful hierarchical data visualization component that displays multi-level categorical data in a radial layout. Each ring represents a level in the hierarchy, with segments sized proportionally to their values. The component supports interactive drill-down, customizable appearance, data labels, tooltips, selection, and modern liquid glass effects.
+Guide users to implement Syncfusion® .NET MAUI Sunburst Chart (SfSunburstChart), a powerful hierarchical data visualization component that displays multi-level categorical data in a radial layout. Each ring represents a level in the hierarchy, with segments sized proportionally to their values. The component supports interactive drill-down, customizable appearance, data labels, tooltips, selection, and modern liquid glass effects.
 
 ## When to Use This Skill
 
-Use the Syncfusion .NET MAUI Sunburst Chart when you need to:
+Use the Syncfusion® .NET MAUI Sunburst Chart when you need to:
 
 - **Visualize hierarchical data** with 2-5 levels (organizational charts, file systems, product categories)
 - **Show proportional relationships** where segment size represents value or count

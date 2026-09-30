@@ -31,7 +31,7 @@ Enable drill-down functionality using the `EnableDrillDown` property.
 - **Default**: `False`
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableDrillDown="True"
                           ItemsSource="{Binding DataSource}"
                           ValueMemberPath="EmployeesCount">
@@ -78,7 +78,7 @@ Control the vertical and horizontal alignment of the drill-down toolbar within t
 ### Alignment Example
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableDrillDown="True"
                           ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Value">
@@ -115,7 +115,7 @@ this.Content = sunburst;
 ### Common Alignment Combinations
 
 **Top-Left:**
-```xml
+```xaml
 <sunburst:SunburstToolbarSettings 
     HorizontalAlignment="Start" 
     VerticalAlignment="Start"/>
@@ -123,7 +123,7 @@ this.Content = sunburst;
 Good for: Left-to-right reading patterns, matching typical app header positions.
 
 **Top-Right:**
-```xml
+```xaml
 <sunburst:SunburstToolbarSettings 
     HorizontalAlignment="End" 
     VerticalAlignment="Start"/>
@@ -131,7 +131,7 @@ Good for: Left-to-right reading patterns, matching typical app header positions.
 Good for: Control panels, settings-style interfaces, avoiding center overlap.
 
 **Bottom-Right:**
-```xml
+```xaml
 <sunburst:SunburstToolbarSettings 
     HorizontalAlignment="End" 
     VerticalAlignment="End"/>
@@ -139,7 +139,7 @@ Good for: Control panels, settings-style interfaces, avoiding center overlap.
 Good for: Floating action button style, modern UI patterns, mobile interfaces.
 
 **Bottom-Center:**
-```xml
+```xaml
 <sunburst:SunburstToolbarSettings 
     HorizontalAlignment="Center" 
     VerticalAlignment="End"/>
@@ -147,7 +147,7 @@ Good for: Floating action button style, modern UI patterns, mobile interfaces.
 Good for: Balanced appearance, tab-bar style navigation, desktop applications.
 
 **Center-Center (Default):**
-```xml
+```xaml
 <sunburst:SunburstToolbarSettings 
     HorizontalAlignment="Center" 
     VerticalAlignment="Center"/>
@@ -173,7 +173,7 @@ Fine-tune toolbar position using offset properties for pixel-perfect placement.
 ### Positioning Example
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableDrillDown="True"
                           ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Sales">
@@ -214,7 +214,7 @@ this.Content = sunburst;
 ### Offset Use Cases
 
 **Avoid Center Overlap:**
-```xml
+```xaml
 <sunburst:SunburstToolbarSettings 
     HorizontalAlignment="Center"
     VerticalAlignment="Center"
@@ -223,7 +223,7 @@ this.Content = sunburst;
 ```
 
 **Align with Container Padding:**
-```xml
+```xaml
 <sunburst:SunburstToolbarSettings 
     HorizontalAlignment="Start"
     VerticalAlignment="Start"
@@ -233,7 +233,7 @@ this.Content = sunburst;
 ```
 
 **Position Relative to Legend:**
-```xml
+```xaml
 <sunburst:SunburstToolbarSettings 
     HorizontalAlignment="End"
     VerticalAlignment="End"
@@ -259,7 +259,7 @@ Customize the appearance of the drill-down toolbar to match your application the
 ### Customization Example
 
 **XAML:**
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableDrillDown="True"
                           ItemsSource="{Binding DataSource}"
                           ValueMemberPath="Count">
@@ -301,28 +301,28 @@ this.Content = sunburst;
 ### Style Variations
 
 **Light Theme:**
-```xml
+```xaml
 <sunburst:SunburstToolbarSettings 
     IconBrush="Black" 
     Background="White"/>
 ```
 
 **Dark Theme:**
-```xml
+```xaml
 <sunburst:SunburstToolbarSettings 
     IconBrush="White" 
     Background="#1E1E1E"/>
 ```
 
 **Accent Color:**
-```xml
+```xaml
 <sunburst:SunburstToolbarSettings 
     IconBrush="White" 
     Background="{StaticResource PrimaryColor}"/>
 ```
 
 **Semi-Transparent:**
-```xml
+```xaml
 <sunburst:SunburstToolbarSettings 
     IconBrush="White" 
     Background="#CC000000"/>
@@ -382,7 +382,7 @@ Drill-down operations include smooth animated transitions:
 
 ### Example 1: Corporate Dashboard Style
 
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableDrillDown="True"
                           ItemsSource="{Binding EmployeeData}"
                           ValueMemberPath="Count"
@@ -417,7 +417,7 @@ Drill-down operations include smooth animated transitions:
 
 ### Example 2: Mobile-Friendly Bottom Toolbar
 
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableDrillDown="True"
                           ItemsSource="{Binding SalesData}"
                           ValueMemberPath="Revenue"
@@ -444,7 +444,7 @@ Drill-down operations include smooth animated transitions:
 
 ### Example 3: Minimal Floating Toolbar
 
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableDrillDown="True"
                           ItemsSource="{Binding FileSystemData}"
                           ValueMemberPath="Size"
@@ -473,7 +473,7 @@ Drill-down operations include smooth animated transitions:
 
 ### Example 4: Themed with Center Content
 
-```xml
+```xaml
 <sunburst:SfSunburstChart EnableDrillDown="True"
                           ItemsSource="{Binding BudgetData}"
                           ValueMemberPath="Amount"

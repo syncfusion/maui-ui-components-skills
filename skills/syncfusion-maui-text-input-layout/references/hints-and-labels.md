@@ -18,7 +18,7 @@ The hint label is a floating label that provides context for the input field. It
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Full Name">
     <Entry />
 </inputLayout:SfTextInputLayout>
@@ -44,7 +44,7 @@ var inputLayout = new SfTextInputLayout
 
 Control hint visibility with **ShowHint** property:
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name"
                                ShowHint="False">
     <Entry Placeholder="Enter your name" />
@@ -70,7 +70,7 @@ Keep the hint always at the top position, even when the input is unfocused and e
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Email"
                                IsHintAlwaysFloated="True"
                                ContainerType="Outlined">
@@ -101,7 +101,7 @@ var inputLayout = new SfTextInputLayout
 
 #### Filled
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Username"
                                IsHintAlwaysFloated="True"
                                ContainerType="Filled">
@@ -111,7 +111,7 @@ var inputLayout = new SfTextInputLayout
 
 #### Outlined
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Password"
                                IsHintAlwaysFloated="True"
                                ContainerType="Outlined">
@@ -121,7 +121,7 @@ var inputLayout = new SfTextInputLayout
 
 #### None
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Phone"
                                IsHintAlwaysFloated="True"
                                ContainerType="None">
@@ -137,7 +137,7 @@ Helper text provides additional guidance or context about the expected input.
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Email"
                                HelperText="We'll never share your email">
     <Entry Keyboard="Email" />
@@ -157,7 +157,7 @@ var inputLayout = new SfTextInputLayout
 
 ### Showing/Hiding Helper Text
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name"
                                HelperText="Enter your full name"
                                ShowHelperText="False">
@@ -179,7 +179,7 @@ var inputLayout = new SfTextInputLayout
 
 ### Use Cases for Helper Text
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="20" Padding="20">
     
     <!-- Format hint -->
@@ -217,7 +217,7 @@ Display error messages when validation fails.
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Email"
                                ErrorText="Invalid email format"
                                HasError="True"
@@ -280,7 +280,7 @@ When `HasError="True"`:
 
 ### Switching Between Helper and Error
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout x:Name="passwordInput"
                                Hint="Password"
                                HelperText="At least 8 characters"
@@ -308,7 +308,7 @@ Display a character count and enforce maximum length limits.
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Bio"
                                CharMaxLength="200"
                                ShowCharCount="True"
@@ -339,7 +339,7 @@ var inputLayout = new SfTextInputLayout
 
 ### Example with Password
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Password"
                                CharMaxLength="20"
                                ShowCharCount="True"
@@ -351,7 +351,7 @@ var inputLayout = new SfTextInputLayout
 
 ### Character Counter with Validation
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout x:Name="usernameInput"
                                Hint="Username"
                                CharMaxLength="15"
@@ -389,7 +389,7 @@ Control whether space is always reserved for assistive labels (helper text, erro
 
 By default, space is reserved below the input:
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name"
                                ReserveSpaceForAssistiveLabels="True">
     <Entry />
@@ -400,7 +400,7 @@ By default, space is reserved below the input:
 
 ### Removing Reserved Space
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name"
                                ReserveSpaceForAssistiveLabels="False"
                                ContainerType="Outlined">
@@ -440,7 +440,7 @@ Customize font properties for hint, helper, and error labels.
 
 ### Hint Label Style
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name"
                                ContainerType="Outlined">
     <inputLayout:SfTextInputLayout.HintLabelStyle>
@@ -469,7 +469,7 @@ var inputLayout = new SfTextInputLayout
 
 ### Helper Text Style
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Email"
                                HelperText="Enter your email">
     <inputLayout:SfTextInputLayout.HelperLabelStyle>
@@ -498,7 +498,7 @@ var inputLayout = new SfTextInputLayout
 
 ### Error Text Style
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Password"
                                ErrorText="Password too weak"
                                HasError="True">
@@ -531,7 +531,7 @@ var inputLayout = new SfTextInputLayout
 
 ### Styling All Labels
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Username"
                                HelperText="3-20 characters"
                                ErrorText="Username already taken"
@@ -623,7 +623,7 @@ builder.ConfigureFonts(fonts =>
 
 ### Login Form
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="20" Padding="30">
     
     <inputLayout:SfTextInputLayout Hint="Email"
@@ -644,7 +644,7 @@ builder.ConfigureFonts(fonts =>
 
 ### Registration Form with Validation
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="20" Padding="30">
     
     <inputLayout:SfTextInputLayout x:Name="usernameInput"

@@ -61,7 +61,7 @@ public static class MauiProgram
 
 Add the Syncfusion.Maui.Buttons namespace to your ContentPage:
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
@@ -72,7 +72,7 @@ Add the Syncfusion.Maui.Buttons namespace to your ContentPage:
 
 #### Step 2: Add the Control
 
-```xml
+```xaml
 <ContentPage xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons">
     <StackLayout Padding="20" VerticalOptions="Center">
         <buttons:SfSegmentedControl x:Name="segmentedControl">
@@ -192,7 +192,7 @@ public partial class MainPage : ContentPage
 Here's a complete minimal example that demonstrates a working segmented control:
 
 **MainPage.xaml:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

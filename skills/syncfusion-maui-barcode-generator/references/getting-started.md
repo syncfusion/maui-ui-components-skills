@@ -84,7 +84,7 @@ dotnet restore
 
 5. Verify installation by checking your .csproj file:
 
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.Barcode" Version="27.1.48" />
 </ItemGroup>

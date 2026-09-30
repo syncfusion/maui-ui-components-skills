@@ -47,7 +47,7 @@ All styling is applied through the `SmartSchedulerAssistStyle` class accessible 
 Customize the color of the placeholder text in the input field:
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SfSmartScheduler x:Name="smartScheduler">
     <smartScheduler:SfSmartScheduler.AssistViewSettings>
         <smartScheduler:SchedulerAssistViewSettings>
@@ -94,7 +94,7 @@ smartScheduler.AssistViewSettings.AssistStyle.PlaceholderColor = Color.FromArgb(
 Customize the color of the header text:
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SmartSchedulerAssistStyle AssistViewHeaderTextColor="#FFFFFF" />
 ```
 
@@ -111,7 +111,7 @@ smartScheduler.AssistViewSettings.AssistStyle = new SmartSchedulerAssistStyle
 Set the background color or gradient for the header:
 
 **Solid Color - XAML:**
-```xml
+```xaml
 <smartScheduler:SmartSchedulerAssistStyle AssistViewHeaderBackground="#6750A4" />
 ```
 
@@ -143,7 +143,7 @@ smartScheduler.AssistViewSettings.AssistStyle = new SmartSchedulerAssistStyle
 ### Combined Header Styling
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SfSmartScheduler x:Name="smartScheduler">
     <smartScheduler:SfSmartScheduler.AssistViewSettings>
         <smartScheduler:SchedulerAssistViewSettings>
@@ -175,7 +175,7 @@ smartScheduler.AssistViewSettings.AssistStyle = new SmartSchedulerAssistStyle
 Customize the header font size:
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SmartSchedulerAssistStyle AssistViewHeaderFontSize="24" />
 ```
 
@@ -198,7 +198,7 @@ smartScheduler.AssistViewSettings.AssistStyle = new SmartSchedulerAssistStyle
 Use custom or system fonts:
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SmartSchedulerAssistStyle AssistViewHeaderFontFamily="OpenSansSemibold" />
 ```
 
@@ -236,7 +236,7 @@ smartScheduler.AssistViewSettings.AssistStyle = new SmartSchedulerAssistStyle
 Apply bold or italic styling:
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SmartSchedulerAssistStyle AssistViewHeaderFontAttributes="Bold" />
 ```
 
@@ -272,7 +272,7 @@ smartScheduler.AssistViewSettings.AssistStyle = new SmartSchedulerAssistStyle
 Enable or disable automatic font scaling based on system accessibility settings:
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SmartSchedulerAssistStyle AssistViewHeaderFontAutoScalingEnabled="True" />
 ```
 
@@ -297,7 +297,7 @@ smartScheduler.AssistViewSettings.AssistStyle = new SmartSchedulerAssistStyle
 ### Example 1: Material Design Style
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SfSmartScheduler x:Name="smartScheduler">
     <smartScheduler:SfSmartScheduler.AssistViewSettings>
         <smartScheduler:SchedulerAssistViewSettings 
@@ -507,7 +507,7 @@ public partial class MainPage : ContentPage
 Define styles in XAML resources:
 
 **App.xaml:**
-```xml
+```xaml
 <Application.Resources>
     <ResourceDictionary>
         <!-- Light theme -->

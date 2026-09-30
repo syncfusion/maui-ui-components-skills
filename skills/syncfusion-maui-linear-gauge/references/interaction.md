@@ -39,7 +39,7 @@ Linear Gauge supports interactive pointers that users can drag or swipe to chang
 Enable interaction by setting the `IsInteractive` property to `true`.
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge>
     <gauge:SfLinearGauge.MarkerPointers>
         <gauge:LinearShapePointer Value="50" 
@@ -76,7 +76,7 @@ Users can click/touch and drag pointers to new values.
 
 **Example: Basic Draggable Slider**
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="20" Padding="20">
     
     <Label Text="Adjust Volume" FontSize="18" FontAttributes="Bold"/>
@@ -144,7 +144,7 @@ Three events track pointer value changes:
 Fired when user begins dragging/touching pointer.
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearShapePointer Value="50" 
                          IsInteractive="True"
                          ValueChangeStarted="OnValueChangeStarted"/>
@@ -172,7 +172,7 @@ private void OnValueChangeStarted(object sender, ValueChangedEventArgs e)
 Fired continuously as pointer value changes during drag.
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearShapePointer Value="50" 
                          IsInteractive="True"
                          ValueChanging="OnValueChanging"/>
@@ -213,7 +213,7 @@ private void OnValueChanging(object sender, ValueChangingEventArgs e)
 Fired when user releases pointer after drag.
 
 **XAML:**
-```xml
+```xaml
 <gauge:LinearShapePointer Value="50" 
                          IsInteractive="True"
                          ValueChangeCompleted="OnValueChangeCompleted"/>
@@ -321,7 +321,7 @@ pointer.ValueChangeCompleted += (s, e) =>
 
 ### Example 1: Volume Control
 
-```xml
+```xaml
 <VerticalStackLayout Padding="20" Spacing="15">
     
     <HorizontalStackLayout Spacing="10">
@@ -512,7 +512,7 @@ rangeGauge.MarkerPointers.Add(maxPointer);
 
 ### Example 5: With Visual Feedback
 
-```xml
+```xaml
 <gauge:LinearShapePointer x:Name="FeedbackPointer"
                          Value="50" 
                          IsInteractive="True"

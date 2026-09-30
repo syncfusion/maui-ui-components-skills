@@ -27,7 +27,7 @@ Add `Syncfusion.Maui.DataGrid.DataPager` package for paging support.
 
 ### Enable Paging
 
-```xml
+```xaml
 <ContentPage xmlns:datapager="clr-namespace:Syncfusion.Maui.DataGrid.DataPager;assembly=Syncfusion.Maui.DataGrid"
 >
     <Grid>
@@ -54,7 +54,7 @@ Add `Syncfusion.Maui.DataGrid.DataPager` package for paging support.
 
 ### Page Size
 
-```xml
+```xaml
 <datapager:SfDataPager PageSize="25" />
 ```
 
@@ -91,7 +91,7 @@ In normal Paging, the entire data collection is loaded initially into the `SfDat
 
 To load the current page item dynamically, hook into the `OnDemandLoading` event. In this event, use the `LoadDynamicItems` method to load data for the corresponding page. The event contains `StartIndex` (page start index) and `PageSize` (number of items to load).
 
-```xml
+```xaml
 <datapager:SfDataPager x:Name ="dataPager"
                        Grid.Row="1"
                        PageSize="15" 
@@ -136,7 +136,7 @@ private void dataPager_OnDemandLoading(object sender, OnDemandLoadingEventArgs e
 
 ### Numeric Button Shapes
 
-```xml
+```xaml
 <datapager:SfDataPager x:Name="dataPager"
                        ButtonShape="Rectangle"
                        PageSize="15"
@@ -150,7 +150,7 @@ dataPager.ButtonShape = DataPagerButtonShape.Rectangle;
 
 ### Generating Numeric Buttons
 
-```xml
+```xaml
 <datapager:SfDataPager x:Name="dataPager"
                        NumericButtonsGenerateMode="Auto"
                        PageSize="15"
@@ -166,7 +166,7 @@ dataPager.NumericButtonsGenerateMode = DataPagerNumericButtonsGenerateMode.Auto;
 
 ### Customizing Button Size and Font Size
 
-```xml
+```xaml
 <datapager:SfDataPager x:Name="dataPager"
                        PageSize="15"
                        ButtonSize="60"
@@ -196,7 +196,7 @@ dataPager.ButtonFontSize = 21;
 - `FirstLastPreviousNext` - Displays all navigation buttons without numeric buttons
 - `FirstLastPreviousNextNumeric` - Displays all buttons
 
-```xml
+```xaml
 <datapager:SfDataPager x:Name="dataPager"
                        PageSize="15"
                        DisplayMode="FirstLastNumeric"
@@ -210,7 +210,7 @@ dataPager.DisplayMode = DataPagerDisplayMode.FirstLastNumeric;
 
 ### Auto Ellipsis Mode
 
-```xml
+```xaml
 <datapager:SfDataPager x:Name="dataPager"
                        PageSize="15"
                        AutoEllipsisMode="After"
@@ -224,7 +224,7 @@ dataPager.AutoEllipsisMode = DataPagerEllipsisMode.After;
 
 ### Customize AutoEllipsisText
 
-```xml
+```xaml
 <datapager:SfDataPager x:Name="dataPager"
                        PageSize="15"
                        AutoEllipsisMode="After"
@@ -276,7 +276,7 @@ dataPager.MoveToPage(3, 500, true);
 
 ### Orientation
 
-```xml
+```xaml
 <datapager:SfDataPager x:Name="dataPager"
                        PageSize="15"
                        Orientation="Vertical"
@@ -292,7 +292,7 @@ dataPager.Orientation = DataPagerScrollOrientation.Vertical;
 
 #### PageChanging
 
-```xml
+```xaml
 <datapager:SfDataPager x:Name ="dataPager"
                        Grid.Row="1"
                        PageSize="15"
@@ -312,7 +312,7 @@ private void dataPager_PageChanging(object sender, Syncfusion.Maui.DataGrid.Data
 
 #### PageChanged
 
-```xml
+```xaml
 <datapager:SfDataPager x:Name ="dataPager"
                        Grid.Row="1"
                        PageSize="15"
@@ -343,7 +343,7 @@ private void dataPager_PageChanged(object sender, Syncfusion.Maui.DataGrid.DataP
 - `NumericButtonSelectionTextColor` - Text color of selected numeric button
 - `NumericButtonTextColor` - Text color of numeric buttons
 
-```xml
+```xaml
 <datapager:SfDataPager x:Name="dataPager"
                        PageSize="15"
                        Source="{Binding OrdersInfo}">
@@ -385,7 +385,7 @@ private async void ExecuteLoadMoreCommand()
 
 Enable pull-to-refresh gesture:
 
-```xml
+```xaml
 <syncfusion:SfDataGrid AllowPullToRefresh="True"
                        PullToRefreshCommand="{Binding RefreshCommand}" />
 ```
@@ -422,7 +422,7 @@ public void ItemsSourceRefresh()
 ## Data Virtualization
 
 DataGrid provides support to handle the large amount of data through built-in virtualization feature. With Data virtualization, the record entries will be created in the runtime only upon scrolling to the vertical end which increases the performance of grid loading time.
-```xml
+```xaml
 <syncfusion:SfDataGrid x:Name="dataGrid"
                        ItemsSource="{Binding EmployeeDetails}"
                        EnableDataVirtualization="True"/>
@@ -500,6 +500,68 @@ dataGrid.LoadMoreCommand = new Command(async () =>
     
     dataGrid.IsBusy = false;
 });
+```
+
+## Scroll to Row and Column
+
+Navigate to specific rows and columns programmatically with customizable scroll positions.
+
+### Scroll to Row Index
+
+```csharp
+// Scroll to row 15, make it visible
+dataGrid.ScrollToRowIndex(15, ScrollToPosition.MakeVisible, true);
+
+// Scroll to row 15, position at start of view
+dataGrid.ScrollToRowIndex(15, ScrollToPosition.Start, true);
+
+// Scroll to row 15, position at end of view
+dataGrid.ScrollToRowIndex(15, ScrollToPosition.End, true);
+
+// Scroll to row 15, position at center of view
+dataGrid.ScrollToRowIndex(15, ScrollToPosition.Center, true);
+```
+
+### Scroll to Column Index
+
+```csharp
+// Scroll to column 3
+dataGrid.ScrollToColumnIndex(3, ScrollToPosition.MakeVisible, true);
+
+// Scroll to specific column with start position
+dataGrid.ScrollToColumnIndex(2, ScrollToPosition.Start, true);
+```
+
+### Scroll to Row Using Data Object
+
+```csharp
+// Scroll to a specific order data object
+OrderInfo targetOrder = viewModel.Orders[10];
+
+// Scroll to row at start position with animation
+dataGrid.ScrollToRow(targetOrder, ScrollToPosition.Start, true);
+
+// Scroll to row centered in view
+dataGrid.ScrollToRow(targetOrder, ScrollToPosition.Center, true);
+
+// Scroll to make row visible without animation
+dataGrid.ScrollToRow(targetOrder, ScrollToPosition.MakeVisible, false);
+```
+
+### Scroll to Column Using DataGridColumn
+
+```csharp
+// Scroll to a specific column by reference
+DataGridColumn customerColumn = dataGrid.Columns["CustomerID"];
+
+// Scroll to column at start position with animation
+dataGrid.ScrollToColumn(customerColumn, ScrollToPosition.Start, true);
+
+// Scroll to column at center with animation
+dataGrid.ScrollToColumn(customerColumn, ScrollToPosition.Center, true);
+
+// Scroll without animation
+dataGrid.ScrollToColumn(customerColumn, ScrollToPosition.MakeVisible, false);
 ```
 
 ## Next Steps

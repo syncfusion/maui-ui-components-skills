@@ -18,6 +18,7 @@
 - [Time Ruler Customization](#time-ruler-customization)
 - [View Header Customization](#view-header-customization)
 - [Minimum Appointment Duration](#minimum-appointment-duration)
+- [Display Spanned Appointments in Time Slots](#display-spanned-appointments-in-time-slots)
 - [All-Day Appointment Templates](#all-day-appointment-templates)
 - [Troubleshooting](#troubleshooting)
 
@@ -576,6 +577,52 @@ this.Content = scheduler;
 - Applied when appointment duration is less than `MinimumAppointmentDuration`
 - Not applied to all-day appointments
 - If less than `TimeInterval`, `TimeInterval` value is used
+
+## Display Spanned Appointments in Time Slots
+
+Control how appointments spanning more than 24 hours are rendered in Day, Week, and WorkWeek views using the `AllowSpannedAppointmentsInTimeSlots` property.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Week">
+    <scheduler:SfScheduler.DaysView>
+        <scheduler:SchedulerDaysView AllowSpannedAppointmentsInTimeSlots="True" />
+    </scheduler:SfScheduler.DaysView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Week;
+scheduler.DaysView.AllowSpannedAppointmentsInTimeSlots = true;
+this.Content = scheduler;
+```
+
+**Default Value:** `false`
+
+**Behavior:**
+- `true`: renders appointments spanning more than 24 hours within the time-slot cells
+- `false`: renders them in the all-day panel
+
+## Customize All-Day Appointment Height
+
+Customize the height of all-day appointments displayed in the all-day panel of Day, Week, and WorkWeek views using the `AllDayAppointmentHeight` property.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Day">
+    <scheduler:SfScheduler.DaysView>
+        <scheduler:SchedulerDaysView AllDayAppointmentHeight="50" />
+    </scheduler:SfScheduler.DaysView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Day;
+scheduler.DaysView.AllDayAppointmentHeight = 50;
+this.Content = scheduler;
+```
+
+**Default Value:** 19
 
 ## All-Day Appointment Templates
 

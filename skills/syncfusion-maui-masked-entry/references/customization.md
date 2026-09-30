@@ -29,7 +29,7 @@ public enum ClearButtonVisibility
 
 **Example:**
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     ClearButtonVisibility="WhileEditing"
     Mask="(000) 000-0000" />
@@ -43,7 +43,7 @@ maskedEntry.ClearButtonVisibility = ClearButtonVisibility.WhileEditing;
 
 Customize the clear button icon color:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     ClearButtonVisibility="WhileEditing"
     ClearButtonColor="Red" />
@@ -57,7 +57,7 @@ maskedEntry.ClearButtonColor = Colors.Red;
 
 Use custom geometry for the clear button icon:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     MaskType="Simple"
     Mask="(000) 000-0000"
@@ -90,7 +90,7 @@ maskedEntry.ClearButtonPath = path;
 
 Set the text size (in device-independent units):
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     FontSize="18"
     Mask="(000) 000-0000" />
@@ -117,7 +117,7 @@ public enum FontAttributes
 
 **Example:**
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     FontAttributes="Bold"
     Mask="00/00/0000" />
@@ -134,7 +134,7 @@ maskedEntry.FontAttributes = FontAttributes.Bold | FontAttributes.Italic;
 
 Use custom fonts:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     FontFamily="Lobster-Regular"
     Mask="00/00/0000" />
@@ -155,7 +155,7 @@ builder.ConfigureFonts(fonts =>
 
 ### Complete Font Example
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     FontSize="20"
     FontAttributes="Bold"
@@ -169,7 +169,7 @@ builder.ConfigureFonts(fonts =>
 
 Color of the entered text:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     TextColor="Green"
     Mask="(000) 000-0000"
@@ -186,7 +186,7 @@ maskedEntry.TextColor = Colors.Green;
 
 Text shown when control is empty:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     Placeholder="Enter phone number"
     Mask="(000) 000-0000" />
@@ -202,7 +202,7 @@ maskedEntry.Placeholder = "Enter phone number";
 
 Color of the placeholder text:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     Placeholder="Enter phone number"
     PlaceholderColor="Gray"
@@ -217,7 +217,7 @@ maskedEntry.PlaceholderColor = Colors.Gray;
 
 ### Complete Text Styling Example
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     Placeholder="MM/DD/YYYY"
     PlaceholderColor="#9E9E9E"
@@ -233,7 +233,7 @@ maskedEntry.PlaceholderColor = Colors.Gray;
 
 Border color:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     Stroke="Blue"
     Mask="00/00/0000" />
@@ -262,7 +262,7 @@ maskedEntry.ValueChanged += (s, e) =>
 
 Show or hide the border:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     ShowBorder="False"
     Mask="00/00/0000" />
@@ -280,7 +280,7 @@ maskedEntry.ShowBorder = false;
 
 Background color (useful for Liquid Glass effect):
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     Background="Transparent"
     Mask="00/00/0000" />
@@ -294,7 +294,7 @@ maskedEntry.Background = Colors.Transparent;
 
 ### Size Properties
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     WidthRequest="300"
     HeightRequest="50"
@@ -326,7 +326,7 @@ maskedEntry.CursorPosition = 5;
 
 Automatically select all text when control gains focus:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     SelectAllOnFocus="True"
     Mask="00/00/0000"
@@ -347,7 +347,7 @@ maskedEntry.SelectAllOnFocus = true;
 
 Make control non-editable while keeping it focusable:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     IsReadOnly="True"
     Mask="00/00/0000"
@@ -387,7 +387,7 @@ public enum Keyboard
 
 **Example:**
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     Keyboard="Telephone"
     Mask="(000) 000-0000" />
@@ -430,7 +430,7 @@ public enum ReturnType
 
 **Example:**
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     ReturnType="Next"
     Mask="00/00/0000" />
@@ -445,7 +445,7 @@ lastEntry.ReturnType = ReturnType.Done;
 
 Execute a command when return key is pressed:
 
-```xml
+```xaml
 <ContentPage.BindingContext>
     <local:MyViewModel />
 </ContentPage.BindingContext>
@@ -483,7 +483,7 @@ public class MyViewModel
 
 Pass data to the ReturnCommand:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     ReturnCommand="{Binding NavigateCommand}"
     ReturnCommandParameter="{x:Reference emailEntry}"
@@ -509,7 +509,7 @@ public ICommand NavigateCommand => new Command<SfMaskedEntry>(nextEntry =>
 
 Assign unique identifiers for UI automation and testing:
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     AutomationId="PhoneEntry"
     Mask="(000) 000-0000" />
@@ -542,7 +542,7 @@ app.Tap("PhoneEntry Clear Button");
 
 ### Modern Styled Entry
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     WidthRequest="300"
     HeightRequest="50"
@@ -564,7 +564,7 @@ app.Tap("PhoneEntry Clear Button");
 
 ### Minimal Borderless Entry
 
-```xml
+```xaml
 <Frame 
     Padding="10"
     BackgroundColor="White"
@@ -633,7 +633,7 @@ public partial class StyledEntryPage : ContentPage
 
 ### Dark Theme Adaptation
 
-```xml
+```xaml
 <editors:SfMaskedEntry 
     Mask="00/00/0000"
     Placeholder="Date">
@@ -659,7 +659,7 @@ public partial class StyledEntryPage : ContentPage
 
 ### Material Design 3 Style
 
-```xml
+```xaml
 <Grid RowDefinitions="Auto,*" Padding="16">
     
     <!-- Floating Label -->

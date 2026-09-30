@@ -12,7 +12,7 @@ The `DayInterval` property sets the interval between day values. For example, an
 
 #### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      DayInterval="2">
 </picker:SfDatePicker>
@@ -33,7 +33,7 @@ this.Content = datePicker;
 
 #### Example: Weekly Selection (Every 7 Days)
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      DayInterval="7">
     <picker:SfDatePicker.HeaderView>
@@ -50,7 +50,7 @@ The `MonthInterval` property sets the interval between month values.
 
 #### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      MonthInterval="2">
 </picker:SfDatePicker>
@@ -71,7 +71,7 @@ this.Content = datePicker;
 
 #### Example: Quarterly Selection
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      MonthInterval="3"
                      Format="MMM_yyyy">
@@ -85,7 +85,7 @@ this.Content = datePicker;
 
 #### Example: Bi-Annual Selection
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      MonthInterval="6"
                      Format="MMM_yyyy">
@@ -105,7 +105,7 @@ The `YearInterval` property sets the interval between year values.
 
 #### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      YearInterval="2">
 </picker:SfDatePicker>
@@ -126,7 +126,7 @@ this.Content = datePicker;
 
 #### Example: Olympic Years (Every 4 Years)
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      YearInterval="4"
                      Format="yyyy"
@@ -146,7 +146,7 @@ You can combine day, month, and year intervals for specialized date pickers.
 
 #### Example: Bi-Weekly, Quarterly Selection
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      DayInterval="14"
                      MonthInterval="3"
@@ -174,7 +174,7 @@ The `EnableLooping` property allows seamless navigation in the date picker. When
 
 #### XAML
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      EnableLooping="True">
 </picker:SfDatePicker>
@@ -207,7 +207,7 @@ this.Content = datePicker;
 
 ### Example: Looping with Date Range
 
-```xml
+```xaml
 <picker:SfDatePicker x:Name="datePicker"
                      EnableLooping="True"
                      MinimumDate="2020/01/01"
@@ -224,7 +224,7 @@ When scrolling past December 2025, it loops back to January 2020.
 
 ### Example 1: Bi-Weekly Appointment Scheduler
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="15">
     <Label Text="Schedule Bi-Weekly Appointment" 
            FontSize="20" 
@@ -264,7 +264,7 @@ private void OnAppointmentSelected(object sender, DatePickerSelectionChangedEven
 
 ### Example 2: Quarterly Report Selection
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="15">
     <Label Text="Select Reporting Quarter" 
            FontSize="20" 
@@ -302,7 +302,7 @@ private void OnQuarterSelected(object sender, DatePickerSelectionChangedEventArg
 
 ### Example 3: Fiscal Year Selector (Every 2 Years)
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="15">
     <Label Text="Select Fiscal Year" 
            FontSize="20" 
@@ -341,7 +341,7 @@ private void OnFiscalYearSelected(object sender, DatePickerSelectionChangedEvent
 
 ### Example 4: Weekly Meeting Scheduler with Looping
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="15">
     <Label Text="Schedule Weekly Team Meeting" 
            FontSize="20" 

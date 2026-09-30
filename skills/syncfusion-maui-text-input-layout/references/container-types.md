@@ -27,7 +27,7 @@ The Filled container adds a background color to the input area with a stroke at 
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name"
                                HelperText="Enter your name"
                                ContainerType="Filled">
@@ -64,7 +64,7 @@ var inputLayout = new SfTextInputLayout
 
 Use **ContainerBackground** to change the fill color:
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name"
                                ContainerType="Filled"
                                ContainerBackground="#FFF2F2"
@@ -92,7 +92,7 @@ The Outlined container draws a rounded border around the entire input field, cre
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name"
                                HelperText="Enter your name"
                                ContainerType="Outlined">
@@ -123,7 +123,7 @@ var inputLayout = new SfTextInputLayout
 
 Use **OutlineCornerRadius** to adjust the roundness:
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name"
                                ContainerType="Outlined"
                                OutlineCornerRadius="8">
@@ -160,7 +160,7 @@ var inputLayout = new SfTextInputLayout
 
 You can combine Outlined with a background color:
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Username"
                                ContainerType="Outlined"
                                ContainerBackground="#F5F5F5"
@@ -178,7 +178,7 @@ The None container provides a minimal appearance with only a bottom line.
 
 #### XAML
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name"
                                HelperText="Enter your name"
                                ContainerType="None">
@@ -219,7 +219,7 @@ The **ContainerBackground** property sets the fill color for Filled and Outlined
 
 ### Filled Container Background
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Email"
                                ContainerType="Filled"
                                ContainerBackground="#E6EEF9"
@@ -241,7 +241,7 @@ var inputLayout = new SfTextInputLayout
 
 ### Outlined Container Background
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Phone"
                                ContainerType="Outlined"
                                ContainerBackground="#E6EEF9"
@@ -271,7 +271,7 @@ Use **InputViewPadding** to add space around the input view inside the container
 
 ### Basic Padding
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Name"
                                InputViewPadding="10"
                                ContainerType="Outlined">
@@ -281,7 +281,7 @@ Use **InputViewPadding** to add space around the input view inside the container
 
 ### Asymmetric Padding
 
-```xml
+```xaml
 <inputLayout:SfTextInputLayout Hint="Message"
                                InputViewPadding="0,5,0,5"
                                ContainerType="Outlined"
@@ -335,7 +335,7 @@ var inputLayout = new SfTextInputLayout
 
 ### Comparison Example
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="25" Padding="20">
     
     <!-- Filled -->

@@ -44,7 +44,7 @@ imageEditor.Save(ImageFileType.Jpeg, null, "photo", new Size(800, 600));
 
 ### Complete Save Example
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Save" Clicked="OnSaveClicked" />
@@ -76,20 +76,20 @@ Images are saved to `System.Environment.SpecialFolder.MyPictures`
 
 **Android:**
 Add to `AndroidManifest.xml`:
-```xml
+```xaml
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
 **macOS/iOS:**
 Add to `Entitlements.plist`:
-```xml
+```xaml
 <key>com.apple.security.files.user-selected.read-write</key>
 <true/>
 ```
 
 Add to `Info.plist`:
-```xml
+```xaml
 <key>NSPhotoLibraryUsageDescription</key>
 <string>Pick Photos</string>
 ```
@@ -100,7 +100,7 @@ Add to `Info.plist`:
 
 Triggered before saving the image. Allows customization and cancellation:
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           ImageSaving="OnImageSaving" />
@@ -174,7 +174,7 @@ private void OnImageSaving(object sender, ImageSavingEventArgs args)
 
 Triggered after the image has been saved:
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           ImageSaved="OnImageSaved" />
@@ -196,7 +196,7 @@ private void OnImageSaved(object sender, ImageSavedEventArgs args)
 
 Triggered when the save picker dialog opens:
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           SavePickerOpening="OnSavePickerOpening" />
@@ -241,7 +241,7 @@ Serialize annotations (shapes, text, pen) to JSON for later restoration.
 
 ### Serialize to Stream
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Serialize" Clicked="OnSerializeClicked" />
@@ -282,7 +282,7 @@ Reload saved annotations from serialized data:
 
 ### Deserialize from Stream
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Deserialize" Clicked="OnDeserializeClicked" />
@@ -310,7 +310,7 @@ private async void OnDeserializeClicked(object sender, EventArgs e)
 
 Triggered when annotations are successfully deserialized:
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           AnnotationsDeserialized="OnAnnotationsDeserialized" />
@@ -329,7 +329,7 @@ Reset the image to its original loaded state, discarding all edits.
 
 ### Reset Method
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Reset" Clicked="OnResetClicked" />
@@ -347,7 +347,7 @@ private void OnResetClicked(object sender, EventArgs e)
 
 Control reset functionality before it occurs:
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           BeginReset="OnBeginReset" />
@@ -510,7 +510,7 @@ private void OnImageSaving(object sender, ImageSavingEventArgs args)
 **Cause:** Missing platform permissions.
 
 **Solution:** Verify permissions are added:
-```xml
+```xaml
 <!-- Android -->
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 

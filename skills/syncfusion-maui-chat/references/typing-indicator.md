@@ -19,7 +19,7 @@ The typing indicator displays an animated indicator showing that another user is
 Set `ShowTypingIndicator="True"` and bind a `ChatTypingIndicator` instance to `TypingIndicator`:
 
 **XAML:**
-```xml
+```xaml
 <sfChat:SfChat Messages="{Binding Messages}"
                CurrentUser="{Binding CurrentUser}"
                TypingIndicator="{Binding TypingIndicator}"

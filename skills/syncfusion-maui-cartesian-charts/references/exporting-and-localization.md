@@ -53,7 +53,7 @@ chart.SaveAsImage("ChartReport.jpeg");
 
 Add to `AndroidManifest.xml`:
 
-```xml
+```xaml
 <manifest>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -62,7 +62,7 @@ Add to `AndroidManifest.xml`:
 
 For Android 10+ (API 29+), also add:
 
-```xml
+```xaml
 <application android:requestLegacyExternalStorage="true">
     ...
 </application>
@@ -88,7 +88,7 @@ if (Build.VERSION.SdkInt >= BuildVersionCodes.M)
 
 Add to `Info.plist`:
 
-```xml
+```xaml
 <dict>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>This app needs permission to save charts to your photo library</string>
@@ -174,7 +174,7 @@ public async Task AddChartToPdfAsync()
 
 ### Export with Button Click
 
-```xml
+```xaml
 <StackLayout>
     <chart:SfCartesianChart x:Name="chart">
         <chart:SfCartesianChart.XAxes>
@@ -352,7 +352,7 @@ public class LocalizedTooltipBehavior : ChartTooltipBehavior
 
 ### Switching Culture at Runtime
 
-```xml
+```xaml
 <ContentPage>
     <StackLayout>
         <Picker x:Name="culturePicker"
@@ -403,7 +403,7 @@ private void RefreshChart()
 
 ### Exportable and Localizable Chart
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"

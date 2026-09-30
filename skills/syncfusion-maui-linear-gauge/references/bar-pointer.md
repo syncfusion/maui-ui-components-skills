@@ -35,7 +35,7 @@ A bar pointer is a filled bar that extends from the scale minimum to a specific 
 Create a simple bar pointer by specifying its value.
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge>
     <gauge:SfLinearGauge.BarPointers>
         <gauge:BarPointer Value="50"/>
@@ -63,7 +63,7 @@ this.Content = gauge;
 Control bar thickness using the `PointerSize` property.
 
 **XAML:**
-```xml
+```xaml
 <gauge:BarPointer Value="60" PointerSize="15"/>
 ```
 
@@ -122,7 +122,7 @@ Customize bar endpoints with the `CornerStyle` property.
 **`EndCurve`** - Flat start, rounded end
 
 **XAML:**
-```xml
+```xaml
 <!-- Fully rounded -->
 <gauge:BarPointer Value="50" 
                   PointerSize="15"
@@ -155,7 +155,7 @@ gauge.BarPointers.Add(new BarPointer
 
 **Style Comparison:**
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="20">
     
     <!-- BothFlat (default) -->
@@ -208,7 +208,7 @@ Position the bar pointer relative to the scale using the `Position` property.
 **`Outside`** - Outside the scale track
 
 **XAML:**
-```xml
+```xaml
 <!-- Inside the scale -->
 <gauge:BarPointer Value="60" Position="Inside"/>
 
@@ -243,7 +243,7 @@ gauge.BarPointers.Add(new BarPointer
 Adjust distance from scale using the `Offset` property.
 
 **XAML:**
-```xml
+```xaml
 <gauge:BarPointer Value="50" 
                   Position="Outside" 
                   Offset="10"/>
@@ -293,7 +293,7 @@ gauge.BarPointers.Add(new BarPointer
 ### Solid Color Fill
 
 **XAML:**
-```xml
+```xaml
 <gauge:BarPointer Value="70" Fill="#2196F3"/>
 ```
 
@@ -350,7 +350,7 @@ gauge.BarPointers.Add(new BarPointer
 Apply smooth color transitions using `GradientStops`.
 
 **XAML:**
-```xml
+```xaml
 <gauge:BarPointer Value="70" 
                   Position="Outside" 
                   Offset="5"
@@ -422,7 +422,7 @@ var tempGradient = new ObservableCollection<GaugeGradientStop>
 Add custom content (text, images, icons) inside bar pointers using the `Child` property.
 
 **XAML:**
-```xml
+```xaml
 <gauge:SfLinearGauge ShowLabels="False" ShowTicks="False">
     <gauge:SfLinearGauge.LineStyle>
         <gauge:LinearLineStyle CornerStyle="BothCurve" Thickness="30"/>
@@ -537,7 +537,7 @@ barPointer.Child = valueLabel;
 
 ### Pattern 1: Classic Progress Bar
 
-```xml
+```xaml
 <gauge:SfLinearGauge ShowLabels="False" ShowTicks="False">
     <!-- Background -->
     <gauge:SfLinearGauge.LineStyle>

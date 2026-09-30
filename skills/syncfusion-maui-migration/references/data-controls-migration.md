@@ -81,7 +81,7 @@ using Syncfusion.Maui.DataGrid.DataPager;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <syncfusion:SfDataGrid ItemsSource="{Binding Orders}"
                        AutoGenerateColumns="False"
                        AllowSorting="True"
@@ -98,7 +98,7 @@ using Syncfusion.Maui.DataGrid.DataPager;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <syncfusion:SfDataGrid ItemsSource="{Binding Orders}"
                        AutoGenerateColumnsMode="None"
                        SortingMode="Single"
@@ -176,14 +176,14 @@ Most APIs are similar with minor naming adjustments for consistency.
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <dataForm:SfDataForm DataObject="{Binding ContactInfo}"
                      LayoutOptions="Default"
                      ValidationMode="PropertyChanged"/>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <dataForm:SfDataForm DataObject="{Binding ContactInfo}"
                      LayoutType="Default"
                      ValidationMode="PropertyChanged"/>
@@ -214,14 +214,14 @@ using Syncfusion.Maui.TreeView;
 
 ### Migration Example
 
-**Xamarin:**```xml
+**Xamarin:**```xaml
 <treeView:SfTreeView ItemsSource="{Binding Folders}"
                      ChildPropertyName="SubFolders"
                      AllowExpanding="True"/>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <treeView:SfTreeView ItemsSource="{Binding Folders}"
                      ChildPropertyName="SubFolders"
                      AllowExpanding="True"/>
@@ -246,14 +246,14 @@ Most properties maintained with updated Brush/Color handling.
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <treeMap:SfTreeMap WeightValuePath="Population"
                    ColorValuePath="GrowthRate"
                    LeafItemSettings="{Binding LeafSettings}"/>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <treeMap:SfTreeMap WeightValuePath="Population"
                    ColorValuePath="GrowthRate"
                    LeafItemSettings="{Binding LeafSettings}"/>

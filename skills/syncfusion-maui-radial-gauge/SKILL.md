@@ -1,16 +1,16 @@
 ---
 name: syncfusion-maui-radial-gauge
-description: Implements Syncfusion .NET MAUI Radial Gauge (SfRadialGauge) components. Use when working with radial gauges, circular gauges, speedometers, temperature monitors, meter gauges, or circular data visualization in .NET MAUI applications. This skill covers installation, axis configuration, ranges, pointer types (needle, shape, content, range), annotations, and animation.
+description: Implements Syncfusion® .NET MAUI Radial Gauge (SfRadialGauge) components. Use when working with radial gauges, circular gauges, speedometers, temperature monitors, meter gauges, or circular data visualization in .NET MAUI applications. This skill covers installation, axis configuration, ranges, pointer types (needle, shape, content, range), annotations, and animation.
 metadata:
   author: "Syncfusion Inc"
   version: "34.1.29"
 ---
 
-# Implementing Syncfusion .NET MAUI Radial Gauges
+# Implementing .NET MAUI Radial Gauges
 
 ## Overview
 
-The Syncfusion .NET MAUI Radial Gauge (SfRadialGauge) is a versatile data visualization control that displays numerical values on a circular scale. It's ideal for creating speedometers, temperature monitors, dashboards, progress indicators, compasses, and other circular metric displays.
+The Syncfusion® .NET MAUI Radial Gauge (SfRadialGauge) is a versatile data visualization control that displays numerical values on a circular scale. It's ideal for creating speedometers, temperature monitors, dashboards, progress indicators, compasses, and other circular metric displays.
 
 ## When to Use This Skill
 
@@ -54,7 +54,7 @@ The **SfRadialGauge** control provides:
 When the user needs to:
 - Install and set up the Radial Gauge package
 - Configure NuGet packages and dependencies
-- Register Syncfusion handlers in MauiProgram.cs
+- Register handlers in MauiProgram.cs
 - Create their first basic radial gauge
 - Understand the basic structure and components
 - Get a working example quickly

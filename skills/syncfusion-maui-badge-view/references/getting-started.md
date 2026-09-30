@@ -67,7 +67,7 @@ namespace YourApp
 Import the Syncfusion.Maui.Core namespace in your XAML or C# files.
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:badge="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
@@ -84,7 +84,7 @@ using Syncfusion.Maui.Core;
 ### Create a Simple Badge View
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="5" 
                    HorizontalOptions="Center" 
                    VerticalOptions="Center">
@@ -126,7 +126,7 @@ public MainPage()
 The `BadgeText` property displays text or numbers on the badge overlay.
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="20">
     <badge:SfBadgeView.Content>
         <Button Text="Messages" WidthRequest="100" HeightRequest="50"/>
@@ -159,7 +159,7 @@ The `Content` property defines what the badge overlays on. You can add any MAUI 
 
 ### Badge on Button
 
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="3">
     <badge:SfBadgeView.Content>
         <Button Text="Cart" 
@@ -172,7 +172,7 @@ The `Content` property defines what the badge overlays on. You can add any MAUI 
 
 ### Badge on Image
 
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="8">
     <badge:SfBadgeView.Content>
         <Image Source="notification_icon.png" 
@@ -184,7 +184,7 @@ The `Content` property defines what the badge overlays on. You can add any MAUI 
 
 ### Badge on Label
 
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="New">
     <badge:SfBadgeView.Content>
         <Label Text="Product Name"
@@ -222,7 +222,7 @@ badgeView.Content = frame;
 The `ScreenReaderText` property provides accessible descriptions for screen readers.
 
 **XAML:**
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="12" 
                    ScreenReaderText="You have 12 unread messages">
     <badge:SfBadgeView.Content>
@@ -250,7 +250,7 @@ var badgeView = new SfBadgeView
 
 Configure badge appearance using `BadgeSettings`:
 
-```xml
+```xaml
 <badge:SfBadgeView BadgeText="10">
     <badge:SfBadgeView.Content>
         <Button Text="Inbox"/>
@@ -273,7 +273,7 @@ Configure badge appearance using `BadgeSettings`:
 Here's a complete implementation showing a notification button with badge:
 
 **XAML:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

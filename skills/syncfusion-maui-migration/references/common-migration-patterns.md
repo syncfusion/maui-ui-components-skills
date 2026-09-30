@@ -121,12 +121,12 @@ using Syncfusion.Maui.Sliders;             // MAUI (note: plural)
 ### XAML Namespace Declarations
 
 **Xamarin:**
-```xml
+```xaml
 xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
 ```
 

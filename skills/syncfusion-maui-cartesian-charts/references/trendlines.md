@@ -16,7 +16,7 @@ Trendlines are visual representations of the linear relationship between data po
 
 Add trendlines to series using XAML or C#:
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
@@ -61,7 +61,7 @@ chart.Series.Add(series);
 
 Best for data that moves in a consistent direction (steadily up or down):
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}" 
                    XBindingPath="X" 
                    YBindingPath="Y">
@@ -86,7 +86,7 @@ series.Trendlines.Add(new LinearTrendline
 
 Shows data that changes quickly at first and then levels off:
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}" 
                    XBindingPath="X" 
                    YBindingPath="Y">
@@ -111,7 +111,7 @@ series.Trendlines.Add(new LogarithmicTrendline
 
 Shows data that grows or shrinks at an increasingly fast rate (requires positive values):
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}" 
                    XBindingPath="X" 
                    YBindingPath="Y">
@@ -136,7 +136,7 @@ series.Trendlines.Add(new ExponentialTrendline
 
 Models data that accelerates at different rates (use positive values):
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}" 
                    XBindingPath="X" 
                    YBindingPath="Y">
@@ -161,7 +161,7 @@ series.Trendlines.Add(new PowerTrendline
 
 Curved line that follows ups and downs in data (use `Order` property to control curve):
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}" 
                    XBindingPath="X" 
                    YBindingPath="Y">
@@ -188,7 +188,7 @@ series.Trendlines.Add(new PolynomialTrendline
 
 Smooths out small bumps by averaging nearby points (use `Period` property):
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}" 
                    XBindingPath="X" 
                    YBindingPath="Y">
@@ -219,7 +219,7 @@ Extend trendlines beyond existing data to predict future or past values.
 
 Extend trendline into the future:
 
-```xml
+```xaml
 <chart:LinearTrendline ForwardForecast="5" 
                       Stroke="Blue" 
                       StrokeWidth="2"
@@ -240,7 +240,7 @@ var trendline = new LinearTrendline
 
 Extend trendline into the past:
 
-```xml
+```xaml
 <chart:LinearTrendline BackwardForecast="3" 
                       Stroke="Blue" 
                       StrokeWidth="2"
@@ -259,7 +259,7 @@ var trendline = new LinearTrendline
 
 ### Combined Forecasting
 
-```xml
+```xaml
 <chart:LinearTrendline ForwardForecast="5" 
                       BackwardForecast="3" 
                       Stroke="Blue" 
@@ -270,7 +270,7 @@ var trendline = new LinearTrendline
 
 ### Basic Styling
 
-```xml
+```xaml
 <chart:LinearTrendline Stroke="Black" 
                       StrokeWidth="2" 
                       StrokeDashArray="5,6"
@@ -291,7 +291,7 @@ trendline.StrokeDashArray = new DoubleCollection { 5, 6 };
 
 Add markers to highlight points along the trendline:
 
-```xml
+```xaml
 <chart:LinearTrendline ShowMarkers="True">
     <chart:LinearTrendline.MarkerSettings>
         <chart:ChartMarkerSettings Width="8" 
@@ -321,7 +321,7 @@ trendline.MarkerSettings = new ChartMarkerSettings
 
 Enable interactive features:
 
-```xml
+```xaml
 <chart:LinearTrendline EnableTooltip="True" 
                       ShowTrackballLabel="True"
                       Stroke="Blue"
@@ -342,7 +342,7 @@ var trendline = new LinearTrendline
 
 Compare different trend models on same data:
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}" 
                    XBindingPath="X" 
                    YBindingPath="Y">
@@ -419,7 +419,7 @@ series.Trendlines.Add(new MovingAverageTrendline
 ### Common Patterns
 
 **Sales Trend Analysis:**
-```xml
+```xaml
 <chart:LinearTrendline ForwardForecast="3"
                       Stroke="Blue"
                       StrokeWidth="2"
@@ -427,7 +427,7 @@ series.Trendlines.Add(new MovingAverageTrendline
 ```
 
 **Smoothing Volatile Data:**
-```xml
+```xaml
 <chart:MovingAverageTrendline Period="7"
                              Stroke="Green"
                              StrokeWidth="2"

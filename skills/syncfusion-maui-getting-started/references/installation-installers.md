@@ -399,7 +399,7 @@ Navigate to installation folder and verify:
 
 Create a simple MAUI project and add:
 
-```xml
+```xaml
 <ContentPage xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons">
     <buttons:SfButton Text="Test Button" />
 </ContentPage>

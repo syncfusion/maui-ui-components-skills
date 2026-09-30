@@ -35,7 +35,7 @@ The .NET MAUI Scheduler provides powerful resource management capabilities, allo
 
 Create resources using the built-in `SchedulerResource` class with `Name`, `Id`, `Background`, and `Foreground` properties:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" View="TimelineWeek">
     <scheduler:SfScheduler.ResourceView>
         <scheduler:SchedulerResourceView Resources="{Binding Resources}"/>
@@ -75,7 +75,7 @@ scheduler.ResourceView.Resources = resources;
 ```
 
 **Resource display:**
-- **Day/Week/WorkWeek views**: Resources displayed **horizontally** on desktop, **adaptive header** on mobile
+- **Day/Week/WorkWeek/Month views**: Resources displayed **horizontally** on desktop, **adaptive header** on mobile
 - **Timeline views**: Resources displayed **vertically**
 
 ### Assigning Resources to Appointments
@@ -121,7 +121,7 @@ var appointment = new SchedulerAppointment()
 
 By default, `ResourceGroupType` is set to `Resource`, arranging dates under each resource:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" View="Day">
     <scheduler:SfScheduler.ResourceView>
         <scheduler:SchedulerResourceView ResourceGroupType="Resource"/>
@@ -139,7 +139,7 @@ scheduler.ResourceView.ResourceGroupType = SchedulerResourceGroupType.Resource;
 
 Set `ResourceGroupType` to `Date` to arrange resources under each date:
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" View="Day">
     <scheduler:SfScheduler.ResourceView>
         <scheduler:SchedulerResourceView ResourceGroupType="Date"/>
@@ -153,9 +153,14 @@ scheduler.ResourceView.ResourceGroupType = SchedulerResourceGroupType.Date;
 
 **Layout:** Date 1 (All resources) | Date 2 (All resources) | Date 3 (All resources)
 
+**Behavior:**
+- In the Day, Week, and WorkWeek views, grouping resources by date is supported using ResourceGroupType="Date".
+- In the Month view, grouping resources by date is not supported.
+- If ResourceGroupType is set to Date while the scheduler View is Month, the scheduler automatically renders resources using ResourceGroupType.Resource.
+
 #### Mobile: Adaptive Resource Header
 
-On mobile platforms, resources are grouped under an adaptive header/drawer for Day, Week, and WorkWeek views.
+On mobile platforms, resources are grouped under an adaptive header/drawer for Day, Week, WorkWeek, and Month views.
 
 ### Business Object Binding
 
@@ -177,7 +182,7 @@ public class Employee
 
 **Step 2: Configure mapping**
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" View="TimelineWeek">
     <scheduler:SfScheduler.ResourceView>
         <scheduler:SchedulerResourceView Resources="{Binding Employees}">
@@ -270,7 +275,7 @@ Control the number of resources displayed simultaneously using `VisibleResourceC
 
 **Day/Week/WorkWeek views:**
 
-```xml
+```xaml
 <scheduler:SfScheduler View="Day">
     <scheduler:SfScheduler.ResourceView>
         <scheduler:SchedulerResourceView VisibleResourceCount="6"/>
@@ -298,7 +303,7 @@ scheduler.ResourceView.VisibleResourceCount = 4;
 
 Customize resource header height in Day/Week/WorkWeek views:
 
-```xml
+```xaml
 <scheduler:SfScheduler View="Day">
     <scheduler:SfScheduler.ResourceView>
         <scheduler:SchedulerResourceView ResourceHeaderHeight="100"/>
@@ -314,7 +319,7 @@ scheduler.ResourceView.ResourceHeaderHeight = 100;
 
 Customize resource header width in Timeline views:
 
-```xml
+```xaml
 <scheduler:SfScheduler View="TimelineDay">
     <scheduler:SfScheduler.ResourceView>
         <scheduler:SchedulerResourceView ResourceHeaderWidth="250"/>
@@ -330,7 +335,7 @@ scheduler.ResourceView.ResourceHeaderWidth = 250;
 
 Set minimum row height for resources in Timeline views:
 
-```xml
+```xaml
 <scheduler:SfScheduler View="TimelineWeek">
     <scheduler:SfScheduler.ResourceView>
         <scheduler:SchedulerResourceView MinimumRowHeight="90"/>
@@ -353,7 +358,7 @@ scheduler.ResourceView.MinimumRowHeight = 100;
 
 Customize resource header text style:
 
-```xml
+```xaml
 <scheduler:SfScheduler.ResourceView>
     <scheduler:SchedulerResourceView>
         <scheduler:SchedulerResourceView.TextStyle>
@@ -380,7 +385,7 @@ scheduler.ResourceView.TextStyle = new SchedulerTextStyle
 
 Create custom resource header layouts using `HeaderTemplate`:
 
-```xml
+```xaml
 <scheduler:SfScheduler View="TimelineMonth">
     <scheduler:SfScheduler.ResourceView>
         <scheduler:SchedulerResourceView Resources="{Binding Employees}">
@@ -431,7 +436,7 @@ Create custom resource header layouts using `HeaderTemplate`:
 
 #### Hamburger Icon Color
 
-```xml
+```xaml
 <scheduler:SfScheduler View="Day">
     <scheduler:SfScheduler.ResourceView>
         <scheduler:SchedulerResourceView HamburgerIconColor="Red"/>
@@ -445,7 +450,7 @@ scheduler.ResourceView.HamburgerIconColor = Colors.Red;
 
 #### Drawer Resource Selection Color
 
-```xml
+```xaml
 <scheduler:SchedulerResourceView DrawerResourceSelectionColor="DodgerBlue"/>
 ```
 
@@ -455,7 +460,7 @@ scheduler.ResourceView.DrawerResourceSelectionColor = Colors.DodgerBlue;
 
 #### Drawer Background
 
-```xml
+```xaml
 <scheduler:SchedulerResourceView DrawerBackground="LightGoldenrodYellow"/>
 ```
 
@@ -467,7 +472,7 @@ scheduler.ResourceView.DrawerBackground = Colors.LightGoldenrodYellow;
 
 Customize the mobile adaptive header:
 
-```xml
+```xaml
 <scheduler:SfScheduler.ResourceView>
     <scheduler:SchedulerResourceView>
         <scheduler:SchedulerResourceView.AdaptiveHeaderTemplate>
@@ -514,7 +519,7 @@ private void OnTapped(object sender, TappedEventArgs e)
 
 Customize drawer resource item appearance:
 
-```xml
+```xaml
 <ContentPage.Resources>
     <DataTemplate x:Key="drawerResourceTemplate">
         <Grid Background="{Binding DataItem.BackgroundBrush}">
@@ -608,7 +613,7 @@ The scheduler supports multiple calendar systems:
 
 ### Setting Calendar Type
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler"  
                        View="TimelineMonth" 
                        CalendarType="Hijri">
@@ -672,7 +677,7 @@ scheduler.AppointmentsSource = appointments;
 
 ### Example 1: Employee Scheduling System
 
-```xml
+```xaml
 <scheduler:SfScheduler x:Name="scheduler" 
                        View="Week"
                        AppointmentsSource="{Binding Appointments}">
@@ -761,6 +766,13 @@ public class MeetingRoomScheduler : ContentPage
 
 **Problem:** Resource grouping not working on mobile  
 **Solution:** `ResourceGroupType` is for desktop only. Mobile uses adaptive header/drawer by default
+
+**Problem:** ResourceGroupType.Date not working in Month view
+**Solution:**
+- Grouping resources by date is supported only in the **Day**, **Week**, and **WorkWeek** views.
+- The **Month** view does not support `ResourceGroupType.Date`.
+- If `ResourceGroupType` is set to `Date` while `View="Month"`, the scheduler automatically renders resources using `ResourceGroupType.Resource`.
+- Use adaptive resource grouping in Month view to switch between resources on Android and iOS.
 
 **Problem:** Custom business objects not mapping  
 **Solution:** 

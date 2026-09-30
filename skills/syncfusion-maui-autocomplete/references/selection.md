@@ -33,7 +33,7 @@ In single selection mode (default), users can select one item from the dropdown.
 
 ### Basic Configuration
 
-```xml
+```xaml
 <editors:SfAutocomplete ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
                         TextMemberPath="Name" />
@@ -78,7 +78,7 @@ Enable multiple selection to allow users to select several items from the dropdo
 
 ### Basic Configuration
 
-```xml
+```xaml
 <editors:SfAutocomplete SelectionMode="Multiple"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
@@ -126,7 +126,7 @@ The `MultiSelectionDisplayMode` property controls how selected items are display
 
 Displays selected items as chips/tokens with close buttons:
 
-```xml
+```xaml
 <editors:SfAutocomplete SelectionMode="Multiple"
                         MultiSelectionDisplayMode="Token"
                         ItemsSource="{Binding SocialMedias}"
@@ -143,7 +143,7 @@ autocomplete.MultiSelectionDisplayMode = AutocompleteMultiSelectionDisplayMode.T
 The `TokensWrapMode` property controls token layout:
 
 **Wrap Mode** - Tokens wrap to next line:
-```xml
+```xaml
 <editors:SfAutocomplete SelectionMode="Multiple"
                         MultiSelectionDisplayMode="Token"
                         TokensWrapMode="Wrap"
@@ -153,7 +153,7 @@ The `TokensWrapMode` property controls token layout:
 ```
 
 **None Mode** - Tokens arranged horizontally with scrolling:
-```xml
+```xaml
 <editors:SfAutocomplete SelectionMode="Multiple"
                         MultiSelectionDisplayMode="Token"
                         TokensWrapMode="None"
@@ -174,7 +174,7 @@ autocomplete.TokensWrapMode = AutocompleteTokensWrapMode.None;
 
 Displays selected items separated by a delimiter character:
 
-```xml
+```xaml
 <editors:SfAutocomplete SelectionMode="Multiple"
                         MultiSelectionDisplayMode="Delimiter"
                         DelimiterText="/"
@@ -202,7 +202,7 @@ autocomplete.DelimiterText = "/"; // Default is ","
 
 Fires before selection changes, allowing you to cancel the selection:
 
-```xml
+```xaml
 <editors:SfAutocomplete SelectionChanging="OnSelectionChanging"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
@@ -240,7 +240,7 @@ private void OnSelectionChanging(object sender, SelectionChangingEventArgs e)
 
 Fires after selection changes:
 
-```xml
+```xaml
 <editors:SfAutocomplete SelectionChanged="OnSelectionChanged"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
@@ -284,7 +284,7 @@ The `SelectedValue` property provides access to a specific property of the selec
 
 ### Single Selection
 
-```xml
+```xaml
 <editors:SfAutocomplete ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
                         TextMemberPath="Name"
@@ -316,7 +316,7 @@ private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 
 For multiple selection, `SelectedValue` is an `IList<object>` collection:
 
-```xml
+```xaml
 <editors:SfAutocomplete SelectionMode="Multiple"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
@@ -375,7 +375,7 @@ The clear button "X" allows users to quickly clear entered text and selections.
 
 Control clear button visibility with `IsClearButtonVisible`:
 
-```xml
+```xaml
 <editors:SfAutocomplete IsClearButtonVisible="false"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
@@ -392,7 +392,7 @@ autocomplete.IsClearButtonVisible = false;
 
 Handle the clear button click:
 
-```xml
+```xaml
 <editors:SfAutocomplete ClearButtonClicked="OnClearButtonClicked"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
@@ -413,7 +413,7 @@ private void OnClearButtonClicked(object sender, EventArgs e)
 
 Control dropdown visibility programmatically:
 
-```xml
+```xaml
 <editors:SfAutocomplete IsDropDownOpen="True"
                         ItemsSource="{Binding SocialMedias}"
                         DisplayMemberPath="Name"
@@ -468,7 +468,7 @@ autocomplete.Clear();
 
 ### Single Selection with Events
 
-```xml
+```xaml
 <StackLayout Padding="20">
     <editors:SfAutocomplete x:Name="autocomplete"
                             SelectionMode="Single"
@@ -502,7 +502,7 @@ private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 
 ### Multiple Selection with Tokens
 
-```xml
+```xaml
 <StackLayout Padding="20">
     <editors:SfAutocomplete x:Name="multiAutocomplete"
                             SelectionMode="Multiple"

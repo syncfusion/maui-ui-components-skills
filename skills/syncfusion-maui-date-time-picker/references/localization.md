@@ -133,7 +133,7 @@ Common culture codes:
 
 **File**: `Resources/SfDateTimePicker.fr-FR.resx`
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8"?>
 <root>
   <data name="Day" xml:space="preserve">

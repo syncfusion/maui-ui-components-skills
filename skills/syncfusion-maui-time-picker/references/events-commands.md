@@ -40,7 +40,7 @@ public class TimePickerSelectionChangedEventArgs : EventArgs
 ### Basic SelectionChanged Example
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      SelectionChanged="OnTimePickerSelectionChanged"
                      Format="hh_mm_tt">
@@ -154,7 +154,7 @@ public event EventHandler Opened;
 ```
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      Mode="Dialog"
                      Opened="OnTimePickerPopUpOpened"
@@ -196,7 +196,7 @@ public class CancelEventArgs : EventArgs
 ```
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      Mode="Dialog"
                      Closing="OnTimePickerPopUpClosing"
@@ -229,7 +229,7 @@ public event EventHandler Closed;
 ```
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      Mode="Dialog"
                      Closed="OnTimePickerPopUpClosed"
@@ -255,7 +255,7 @@ private void OnTimePickerPopUpClosed(object sender, EventArgs e)
 
 ### Dialog Events Complete Example
 
-```xml
+```xaml
 <StackLayout Padding="20" Spacing="15">
     
     <Label x:Name="statusLabel" Text="Picker is closed" FontSize="16" />
@@ -339,7 +339,7 @@ public event EventHandler OkButtonClicked;
 ```
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      OkButtonClicked="OnTimePickerOkButtonClicked"
                      Format="hh_mm_tt">
@@ -380,7 +380,7 @@ public event EventHandler CancelButtonClicked;
 ```
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      CancelButtonClicked="OnTimePickerCancelButtonClicked"
                      Format="hh_mm_tt">
@@ -410,7 +410,7 @@ private void OnTimePickerCancelButtonClicked(object sender, EventArgs e)
 
 ### Footer Events Complete Example
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="appointmentPicker"
                      Mode="Dialog"
                      Format="hh_mm_tt"
@@ -481,7 +481,7 @@ public ICommand SelectionChangedCommand { get; set; }
 **Parameter:** `TimePickerSelectionChangedEventArgs`
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      SelectionChangedCommand="{Binding SelectionChangedCommand}"
                      Format="hh_mm_tt">
@@ -531,7 +531,7 @@ public ICommand AcceptCommand { get; set; }
 ```
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      AcceptCommand="{Binding AcceptCommand}">
     <picker:SfTimePicker.BindingContext>
@@ -576,7 +576,7 @@ public ICommand DeclineCommand { get; set; }
 ```
 
 **XAML:**
-```xml
+```xaml
 <picker:SfTimePicker x:Name="timePicker"
                      DeclineCommand="{Binding DeclineCommand}">
     <picker:SfTimePicker.BindingContext>
@@ -614,7 +614,7 @@ public class TimePickerViewModel : INotifyPropertyChanged
 ### Complete MVVM Example
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:picker="clr-namespace:Syncfusion.Maui.Picker;assembly=Syncfusion.Maui.Picker"
@@ -765,7 +765,7 @@ public bool IsSelectionImmediate { get; set; }
 
 ### Example: Immediate Selection
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="immediateP icker"
                      IsSelectionImmediate="True"
                      SelectionChanged="OnImmediateSelectionChanged"
@@ -783,7 +783,7 @@ private void OnImmediateSelectionChanged(object sender, TimePickerSelectionChang
 
 ### Example: Deferred Selection
 
-```xml
+```xaml
 <picker:SfTimePicker x:Name="deferredPicker"
                      IsSelectionImmediate="False"
                      SelectionChanged="OnDeferredSelectionChanged"
@@ -912,7 +912,7 @@ protected override void OnDisappearing()
 
 Prefer commands over events when using MVVM pattern:
 
-```xml
+```xaml
 <!-- Better for MVVM -->
 <picker:SfTimePicker SelectionChangedCommand="{Binding TimeChangedCommand}" />
 

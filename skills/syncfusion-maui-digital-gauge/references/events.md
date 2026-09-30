@@ -31,7 +31,7 @@ The event provides `DigitalGaugeTextChangedEventArgs` which contains:
 
 ### Basic Event Wiring
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges"
@@ -75,7 +75,7 @@ namespace MyApp
 
 ### Complete XAML Example
 
-```xml
+```xaml
 <ContentPage xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges">
     
     <VerticalStackLayout Padding="20" Spacing="20">

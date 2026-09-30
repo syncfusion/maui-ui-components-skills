@@ -35,7 +35,7 @@ All elements are customizable to match your app's design and branding.
 Control whether the assist button appears:
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SfSmartScheduler x:Name="smartScheduler" 
                                  EnableAssistButton="True" />
 ```
@@ -53,7 +53,7 @@ smartScheduler.EnableAssistButton = false; // Hide button
 Replace the default assist button with custom design:
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SfSmartScheduler x:Name="smartScheduler">
     <smartScheduler:SfSmartScheduler.AssistButtonTemplate>
         <DataTemplate>
@@ -105,7 +105,7 @@ smartScheduler.AssistButtonTemplate = new DataTemplate(() =>
 ### Custom Icon Button
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SfSmartScheduler.AssistButtonTemplate>
     <DataTemplate>
         <Border BackgroundColor="#6750A4" 
@@ -159,7 +159,7 @@ smartScheduler.AssistButtonTemplate = new DataTemplate(() =>
 Customize the height of the assist panel:
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SfSmartScheduler x:Name="smartScheduler">
     <smartScheduler:SfSmartScheduler.AssistViewSettings>
         <smartScheduler:SchedulerAssistViewSettings AssistViewHeight="420"/>
@@ -184,7 +184,7 @@ smartScheduler.AssistViewSettings.AssistViewHeight = 420;
 Customize the width of the assist panel:
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SfSmartScheduler x:Name="smartScheduler">
     <smartScheduler:SfSmartScheduler.AssistViewSettings>
         <smartScheduler:SchedulerAssistViewSettings AssistViewWidth="500"/>
@@ -237,7 +237,7 @@ else // Desktop
 Change the assist view header text:
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SchedulerAssistViewSettings AssistViewHeaderText="Smart Scheduler" />
 ```
 
@@ -257,7 +257,7 @@ smartScheduler.AssistViewSettings.AssistViewHeaderText = "AI Assistant";
 Fully customize header appearance:
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SfSmartScheduler.AssistViewSettings>
     <smartScheduler:SchedulerAssistViewSettings>
         <smartScheduler:SchedulerAssistViewSettings.AssistViewHeaderTemplate>
@@ -355,7 +355,7 @@ smartScheduler.AssistViewSettings.AssistViewHeaderTemplate = new DataTemplate(()
 Customize the placeholder text in the input field:
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SchedulerAssistViewSettings Placeholder="Enter your message..." />
 ```
 
@@ -375,7 +375,7 @@ smartScheduler.AssistViewSettings.Placeholder = "Ask me to schedule meetings..."
 Configure the AI's behavior and instructions:
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SchedulerAssistViewSettings 
     Prompt="You are a helpful scheduling assistant. Understand natural language and create appointments efficiently. Prioritize user preferences and suggest alternatives when conflicts arise." />
 ```
@@ -427,7 +427,7 @@ You are an academic scheduling assistant.
 Provide quick-action buttons for common tasks:
 
 **XAML with ViewModel:**
-```xml
+```xaml
 <ContentPage.BindingContext>
     <local:ViewModel/>
 </ContentPage.BindingContext>
@@ -550,7 +550,7 @@ public void UpdateSuggestedPromptsBasedOnTime()
 Control banner visibility:
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SchedulerAssistViewSettings ShowAssistViewBanner="True" />
 ```
 
@@ -566,7 +566,7 @@ smartScheduler.AssistViewSettings.ShowAssistViewBanner = true;
 Create a custom welcome banner:
 
 **XAML:**
-```xml
+```xaml
 <smartScheduler:SfSmartScheduler.AssistViewSettings>
     <smartScheduler:SchedulerAssistViewSettings ShowAssistViewBanner="True">
         <smartScheduler:SchedulerAssistViewSettings.AssistViewBannerTemplate>

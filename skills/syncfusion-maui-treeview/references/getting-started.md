@@ -105,7 +105,7 @@ Add the TreeView namespace to your XAML or C# file.
 
 **XAML:**
 
-```xml
+```xaml
 xmlns:syncfusion="clr-namespace:Syncfusion.Maui.TreeView;assembly=Syncfusion.Maui.TreeView"
 ```
 
@@ -119,7 +119,7 @@ using Syncfusion.Maui.TreeView;
 
 #### XAML Approach
 
-```xml
+```xaml
 <ContentPage   
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -170,7 +170,7 @@ To see the TreeView in action, let's add some sample data using the unbound mode
 
 ### XAML with Unbound Data
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.TreeView;assembly=Syncfusion.Maui.TreeView"

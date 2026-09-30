@@ -1,14 +1,14 @@
 ---
 name: syncfusion-maui-treemap
-description: Implements Syncfusion .NET MAUI TreeMap (SfTreeMap) for visualizing hierarchical data with rectangles sized and colored by values. Use when implementing hierarchical data visualization, heat maps, squarified layouts, multi-level data grouping, or brush settings for hierarchical displays. This skill covers installation, data binding, layout types, hierarchical levels with GroupPath, legend configuration, tooltips, and TreeMap customization.
+description: Implements Syncfusion® .NET MAUI TreeMap (SfTreeMap) for visualizing hierarchical data with rectangles sized and colored by values. Use when implementing hierarchical data visualization, heat maps, squarified layouts, multi-level data grouping, or brush settings for hierarchical displays. This skill covers installation, data binding, layout types, hierarchical levels with GroupPath, legend configuration, tooltips, and TreeMap customization.
 metadata:
   author: "Syncfusion Inc"
   version: "34.1.29"
 ---
 
-# Implementing Syncfusion .NET MAUI TreeMap
+# Implementing .NET MAUI TreeMap
 
-The Syncfusion .NET MAUI TreeMap (SfTreeMap) is a powerful data visualization control that represents hierarchical data using nested rectangles. Each rectangle's size and color are determined by underlying data values, making it ideal for visualizing large datasets with hierarchical structure, such as organizational charts, file systems, population data, sales distributions, and more.
+The Syncfusion® .NET MAUI TreeMap (SfTreeMap) is a powerful data visualization control that represents hierarchical data using nested rectangles. Each rectangle's size and color are determined by underlying data values, making it ideal for visualizing large datasets with hierarchical structure, such as organizational charts, file systems, population data, sales distributions, and more.
 
 ## When to Use This Skill
 
@@ -43,7 +43,7 @@ Common scenarios include population visualization, sales analytics, file storage
 
 ### Getting Started
 📄 **Read:** [references/getting-started.md](references/getting-started.md)
-- NuGet package installation (Syncfusion.Maui.TreeMap)
+- NuGet package installation (`Syncfusion.Maui.TreeMap`)
 - Handler registration (ConfigureSyncfusionCore in MauiProgram.cs)
 - Basic TreeMap implementation in XAML and C#
 - Data model and view model setup

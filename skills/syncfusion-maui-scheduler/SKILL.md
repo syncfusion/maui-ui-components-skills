@@ -75,6 +75,8 @@ When the user needs to:
 - Set up working hours and non-working hours
 - Create special time regions (blocking time intervals)
 - Customize time slot appearance
+- Customize the height of all-day appointments in the all-day panel of day views
+- Render appointments spanning more than 24 hours in the all-day panel or within timeslot cells in day views
 - Configure view headers
 - Handle time slot sizing and customization
 
@@ -89,6 +91,7 @@ When the user needs to:
 - Customize viewport height
 - Configure time rulers in timeline views
 - Create horizontal scheduling interfaces
+- Add special time regions in Timeline Month view
 - Handle scrolling and navigation in timeline views
 
 ### Month and Agenda Views
@@ -97,8 +100,11 @@ When the user needs to:
 When the user needs to:
 - Configure Month view with appointments
 - Customize month cells appearance
+- Display appointments inline in Month view
+- Align date text in Month view
 - Set up Agenda view for list-based appointment display
 - Customize agenda view date and time formats
+- Hide weeks that do not contain any appointments in Agenda view
 - Handle appointment grouping by weeks
 - Configure selected date display
 - Customize month view indicators
@@ -125,6 +131,8 @@ When the user needs to:
 - Implement resource-based scheduling (rooms, employees, equipment)
 - Add and configure multiple resources
 - Group appointments by resources
+- Group resources in Month view on Windows and macOS
+- Enable adaptive resource grouping in Month view on Android and iOS
 - Customize resource headers and appearance
 - Implement different calendar types (Gregorian, Hijri)
 - Switch between calendar systems
@@ -140,6 +148,7 @@ When the user needs to:
 - Customize header view and date formats
 - Handle view switching (between Day, Week, Month, etc.)
 - Configure navigation buttons
+- Enable or disable touch and swipe-based navigation
 - Implement custom navigation controls
 
 ### Advanced Features
@@ -153,6 +162,8 @@ When the user needs to:
 - Use scheduler events (Tapped, SelectionChanged, ViewChanged)
 - Implement liquid glass effect for visual enhancement
 - Handle appointment loading efficiently
+- Add context menu support for timeslot cells and appointments
+- Enable right-click interaction support with events and commands
 - Create event handlers for user interactions
 
 ### Localization

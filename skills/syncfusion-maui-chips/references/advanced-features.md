@@ -336,7 +336,7 @@ public class Person
 
 Add to `.csproj` for iOS:
 
-```xml
+```xaml
 <PropertyGroup Condition="'$(TargetFramework)' == 'net9.0-ios'">
     <MtouchLink>SdkOnly</MtouchLink>
     <PublishTrimmed>true</PublishTrimmed>

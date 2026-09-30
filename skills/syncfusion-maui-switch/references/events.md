@@ -39,7 +39,7 @@ The `SwitchStateChangedEventArgs` provides:
 ### Basic Implementation
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSwitch x:Name="sfSwitch" 
                   StateChanged="OnSwitchStateChanged"/>
 ```
@@ -76,7 +76,7 @@ private async void OnSwitchStateChanged(object sender, SwitchStateChangedEventAr
 ```
 
 #### 2. Update UI Elements
-```xml
+```xaml
 <VerticalStackLayout>
     <buttons:SfSwitch x:Name="notificationSwitch" 
                       StateChanged="OnNotificationChanged"/>
@@ -178,7 +178,7 @@ The `SwitchStateChangingEventArgs` provides:
 ### Basic Implementation
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSwitch x:Name="sfSwitch" 
                   StateChanging="OnSwitchStateChanging"/>
 ```
@@ -304,7 +304,7 @@ private async Task<bool> CheckServerPermissionAsync()
 Combining both events provides complete control over state changes:
 
 **XAML:**
-```xml
+```xaml
 <buttons:SfSwitch x:Name="sfSwitch"
                   StateChanging="OnSwitchStateChanging"
                   StateChanged="OnSwitchStateChanged"/>
@@ -340,7 +340,7 @@ private void OnSwitchStateChanged(object sender, SwitchStateChangedEventArgs e)
 
 ### Example 1: Settings Page with Validation
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons">
     <VerticalStackLayout Padding="20" Spacing="20">

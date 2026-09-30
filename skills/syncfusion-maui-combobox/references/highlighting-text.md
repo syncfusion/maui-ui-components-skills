@@ -20,7 +20,7 @@ The `TextHighlightMode` property controls how matching text is highlighted in th
 No text highlighting occurs.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -34,7 +34,7 @@ No text highlighting occurs.
 Highlights only the first occurrence of the matching text in each suggestion item.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -62,7 +62,7 @@ SfComboBox comboBox = new SfComboBox
 Highlights all occurrences of the matching text in each suggestion item.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -90,7 +90,7 @@ SfComboBox comboBox = new SfComboBox
 The `HighlightedTextColor` property sets the color used for highlighting matched text.
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -118,7 +118,7 @@ SfComboBox comboBox = new SfComboBox
 The `HighlightedTextFontAttributes` property sets the font style for highlighted text (Bold, Italic, or both).
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -152,7 +152,7 @@ SfComboBox comboBox = new SfComboBox
 ## Combined Highlighting Customization
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     ItemsSource="{Binding SocialMedias}"
                     DisplayMemberPath="Name"
@@ -218,7 +218,7 @@ comboBox.DropDownItemTextColor = Colors.Black; // Ensure good contrast
 Text highlighting works seamlessly with filtering. When `IsFilteringEnabled` is true:
 
 **XAML:**
-```xml
+```xaml
 <editors:SfComboBox x:Name="comboBox"
                     IsEditable="True"
                     IsFilteringEnabled="True"

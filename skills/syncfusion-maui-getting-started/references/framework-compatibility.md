@@ -169,7 +169,7 @@ dotnet add package Syncfusion.Maui.Core -v 27.2.2
 
 **Step 1: Update Project File**
 
-```xml
+```xaml
 <!-- Before -->
 <TargetFramework>net6.0</TargetFramework>
 
@@ -198,7 +198,7 @@ dotnet add package Syncfusion.Maui.Sliders -v 27.2.2
 
 **Step 1: Update Project File**
 
-```xml
+```xaml
 <!-- Change from -->
 <TargetFramework>net8.0</TargetFramework>
 

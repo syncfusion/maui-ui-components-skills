@@ -26,7 +26,7 @@ The ContentView is the **mandatory** main content area that remains visible at a
 
 ### Basic ContentView
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <navigationDrawer:SfNavigationDrawer.ContentView>
         <Grid BackgroundColor="White">
@@ -58,7 +58,7 @@ navigationDrawer.ContentView = new Grid
 
 ### ContentView with Navigation Bar
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer.ContentView>
     <Grid RowDefinitions="Auto,*" BackgroundColor="White">
         <!-- Header/Navigation Bar -->
@@ -95,7 +95,7 @@ The drawer header appears at the top of the drawer panel. Common uses include us
 
 ### Basic Header
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings.DrawerHeaderView>
     <Grid BackgroundColor="#6750A4">
         <Label Text="Navigation Menu"
@@ -109,7 +109,7 @@ The drawer header appears at the top of the drawer panel. Common uses include us
 
 ### Header with User Profile
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings.DrawerHeaderView>
     <Grid BackgroundColor="#6750A4" 
           RowDefinitions="120,40"
@@ -142,7 +142,7 @@ The drawer header appears at the top of the drawer panel. Common uses include us
 
 Control the header height with the `DrawerHeaderHeight` property:
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings DrawerHeaderHeight="160">
     <navigationDrawer:DrawerSettings.DrawerHeaderView>
         <!-- Header content -->
@@ -167,7 +167,7 @@ The main content area of the drawer, displayed between header and footer. This i
 
 ### Simple Text Content
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings.DrawerContentView>
     <Grid BackgroundColor="White">
         <Label Text="Drawer Content"
@@ -179,7 +179,7 @@ The main content area of the drawer, displayed between header and footer. This i
 
 ### Navigation Menu with VerticalStackLayout
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings.DrawerContentView>
     <ScrollView>
         <VerticalStackLayout Spacing="0">
@@ -210,7 +210,7 @@ The main content area of the drawer, displayed between header and footer. This i
 
 ### CollectionView with Data Binding
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings.DrawerContentView>
     <CollectionView x:Name="menuCollectionView"
                     SelectionMode="Single"
@@ -248,7 +248,7 @@ The footer appears at the bottom of the drawer panel. Common uses include app ve
 
 ### Basic Footer
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings.DrawerFooterView>
     <Grid BackgroundColor="#6750A4" Padding="10">
         <Label Text="Version 1.0.0"
@@ -262,7 +262,7 @@ The footer appears at the bottom of the drawer panel. Common uses include app ve
 
 ### Footer with Actions
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings.DrawerFooterView>
     <Grid BackgroundColor="#F5F5F5" 
           Padding="10"
@@ -284,7 +284,7 @@ The footer appears at the bottom of the drawer panel. Common uses include app ve
 
 Control the footer height with the `DrawerFooterHeight` property:
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings DrawerFooterHeight="100">
     <navigationDrawer:DrawerSettings.DrawerFooterView>
         <!-- Footer content -->
@@ -304,7 +304,7 @@ drawerSettings.DrawerFooterHeight = 100;
 
 Customize the drawer content's background color:
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings ContentBackground="LightGray">
     <navigationDrawer:DrawerSettings.DrawerContentView>
         <!-- Content -->
@@ -343,7 +343,7 @@ CollectionView is ideal for drawer menus with selectable items, data binding, an
 
 **XAML:**
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer x:Name="navigationDrawer">
     <navigationDrawer:SfNavigationDrawer.DrawerSettings>
         <navigationDrawer:DrawerSettings DrawerWidth="250"
@@ -479,7 +479,7 @@ private void OnMenuItemSelected(object sender, SelectionChangedEventArgs e)
 
 ### Method 3: ContentView with Frame for Page Navigation
 
-```xml
+```xaml
 <navigationDrawer:SfNavigationDrawer.ContentView>
     <Grid RowDefinitions="Auto,*">
         <HorizontalStackLayout BackgroundColor="#6750A4" Padding="10">
@@ -547,7 +547,7 @@ drawerSettings.DrawerFooterHeight = DrawerHeights.SimpleFooter;
 
 ### 3. Wrap Long Content in ScrollView
 
-```xml
+```xaml
 <!-- Good: Scrollable content -->
 <navigationDrawer:DrawerSettings.DrawerContentView>
     <ScrollView>
@@ -573,7 +573,7 @@ private void OnItemSelected(object sender, EventArgs e)
 
 ### 5. Provide Visual Feedback
 
-```xml
+```xaml
 <!-- Highlight selected item -->
 <CollectionView.ItemTemplate>
     <DataTemplate>
@@ -588,7 +588,7 @@ private void OnItemSelected(object sender, EventArgs e)
 
 ### Scenario 1: Email App Drawer
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings DrawerHeaderHeight="0"
                                  DrawerFooterHeight="60">
     <!-- No header -->
@@ -605,7 +605,7 @@ private void OnItemSelected(object sender, EventArgs e)
 
 ### Scenario 2: Settings Panel with Sections
 
-```xml
+```xaml
 <navigationDrawer:DrawerSettings.DrawerContentView>
     <ScrollView>
         <VerticalStackLayout Spacing="20" Padding="10">

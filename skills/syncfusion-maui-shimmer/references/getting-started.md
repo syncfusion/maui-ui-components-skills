@@ -68,7 +68,7 @@ Import the namespace and place the control in your page.
 
 ### XAML
 
-```xml
+```xaml
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -106,7 +106,7 @@ By default, `SfShimmer` renders the `CirclePersona` built-in type with `IsActive
 
 ### XAML
 
-```xml
+```xaml
 <shimmer:SfShimmer x:Name="shimmer"
                    Type="CirclePersona"
                    VerticalOptions="Fill"

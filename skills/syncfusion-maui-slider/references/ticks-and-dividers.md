@@ -23,7 +23,7 @@ The `ShowTicks` property enables major ticks. Default value is `False`.
 
 **Without Interval (Auto-calculated):**
 
-```xml
+```xaml
 <sliders:SfSlider ShowTicks="True" />
 ```
 
@@ -38,7 +38,7 @@ The ticks will be rendered at automatically calculated intervals.
 
 **With Interval:**
 
-```xml
+```xaml
 <sliders:SfSlider Interval="0.2"
                   ShowTicks="True" />
 ```
@@ -64,7 +64,7 @@ Major ticks will render at: 0.0, 2.0, 4.0, 6.0, 8.0, 10.0
 
 Combine ticks with labels for better clarity:
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="10"
                   Value="5"
@@ -83,7 +83,7 @@ The `MinorTicksPerInterval` property specifies how many minor ticks appear betwe
 
 **Without Interval (Auto-calculated):**
 
-```xml
+```xaml
 <sliders:SfSlider ShowTicks="True"
                   MinorTicksPerInterval="4" />
 ```
@@ -98,7 +98,7 @@ SfSlider slider = new SfSlider
 
 **With Interval:**
 
-```xml
+```xaml
 <sliders:SfSlider Interval="0.25"
                   ShowTicks="True"
                   MinorTicksPerInterval="1" />
@@ -141,7 +141,7 @@ Customize tick appearance using `MajorTickStyle` and `MinorTickStyle`.
 
 ### Major Tick Style
 
-```xml
+```xaml
 <sliders:SfSlider Interval="0.25" ShowTicks="True">
     <sliders:SfSlider.MajorTickStyle>
         <sliders:SliderTickStyle ActiveSize="10"
@@ -167,7 +167,7 @@ slider.MajorTickStyle.InactiveFill = new SolidColorBrush(Color.FromArgb("#88EE3F
 
 ### Minor Tick Style
 
-```xml
+```xaml
 <sliders:SfSlider Interval="0.25" ShowTicks="True" MinorTicksPerInterval="1">
     <sliders:SfSlider.MinorTickStyle>
         <sliders:SliderTickStyle ActiveSize="6"
@@ -203,7 +203,7 @@ Dividers are circular markers at interval points along the track. They provide a
 
 The `ShowDividers` property renders dividers at interval points. Default value is `False`.
 
-```xml
+```xaml
 <sliders:SfSlider Interval="0.25"
                   ShowDividers="True" />
 ```
@@ -231,7 +231,7 @@ Dividers will render at: 0.0, 2.0, 4.0, 6.0, 8.0, 10.0
 - **Dividers**: Circular markers
 - Can use both simultaneously or choose one
 
-```xml
+```xaml
 <!-- Both ticks and dividers -->
 <sliders:SfSlider Interval="2"
                   ShowTicks="True"
@@ -245,7 +245,7 @@ Control divider size using `ActiveRadius` and `InactiveRadius`.
 
 ### Setting Divider Radius
 
-```xml
+```xaml
 <sliders:SfSlider Interval="0.25" ShowDividers="True">
     <sliders:SfSlider.DividerStyle>
         <sliders:SliderDividerStyle ActiveRadius="3"
@@ -279,7 +279,7 @@ Customize divider colors using `ActiveFill` and `InactiveFill`.
 
 ### Setting Colors
 
-```xml
+```xaml
 <sliders:SfSlider Interval="0.25" ShowDividers="True">
     <sliders:SfSlider.DividerStyle>
         <sliders:SliderDividerStyle ActiveRadius="7"
@@ -300,13 +300,13 @@ slider.DividerStyle.InactiveFill = new SolidColorBrush(Color.FromArgb("#F7B1AE")
 ### Color Combinations
 
 **Example 1: High Contrast**
-```xml
+```xaml
 <sliders:SliderDividerStyle ActiveFill="#FF4081"
                             InactiveFill="#E0E0E0" />
 ```
 
 **Example 2: Monochrome with Transparency**
-```xml
+```xaml
 <sliders:SliderDividerStyle ActiveFill="#2196F3"
                             InactiveFill="#882196F3" />
 ```
@@ -325,7 +325,7 @@ Add borders to dividers using stroke properties.
 
 Control border width with `ActiveStrokeThickness` and `InactiveStrokeThickness`:
 
-```xml
+```xaml
 <sliders:SfSlider Interval="0.25" ShowDividers="True">
     <sliders:SfSlider.DividerStyle>
         <sliders:SliderDividerStyle ActiveRadius="7"
@@ -364,7 +364,7 @@ slider.DividerStyle.InactiveStroke = new SolidColorBrush(Color.FromArgb("#FFD700
 
 ### Creating Outlined Dividers
 
-```xml
+```xaml
 <sliders:SliderDividerStyle ActiveRadius="8"
                             InactiveRadius="8"
                             ActiveFill="Transparent"
@@ -383,7 +383,7 @@ Use Visual State Manager (VSM) to customize divider appearance in disabled state
 
 ### Complete Example
 
-```xml
+```xaml
 <ContentPage.Resources>
     <Style TargetType="sliders:SfSlider">
         <Setter Property="Interval" Value="0.25" />
@@ -522,7 +522,7 @@ Content = stackLayout;
 
 ### Example 1: Slider with Ticks and Labels
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="60"
@@ -547,7 +547,7 @@ Content = stackLayout;
 
 ### Example 2: Slider with Dividers
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="10"
                   Value="5"
@@ -569,7 +569,7 @@ Content = stackLayout;
 
 ### Example 3: Combined Ticks, Dividers, and Labels
 
-```xml
+```xaml
 <sliders:SfSlider Minimum="0"
                   Maximum="100"
                   Value="75"
@@ -628,7 +628,7 @@ Content = stackLayout;
 
 **Cause**: ShowTicks is False or Interval not set  
 **Solution**:
-```xml
+```xaml
 <sliders:SfSlider ShowTicks="True" Interval="10" />
 ```
 
@@ -636,7 +636,7 @@ Content = stackLayout;
 
 **Cause**: MinorTicksPerInterval is 0 or minor tick size too small  
 **Solution**:
-```xml
+```xaml
 <sliders:SfSlider ShowTicks="True" MinorTicksPerInterval="1">
     <sliders:SfSlider.MinorTickStyle>
         <sliders:SliderTickStyle ActiveSize="6" InactiveSize="6" />
@@ -648,7 +648,7 @@ Content = stackLayout;
 
 **Cause**: ShowDividers is False or radius is 0  
 **Solution**:
-```xml
+```xaml
 <sliders:SfSlider ShowDividers="True" Interval="10">
     <sliders:SfSlider.DividerStyle>
         <sliders:SliderDividerStyle ActiveRadius="5" InactiveRadius="5" />

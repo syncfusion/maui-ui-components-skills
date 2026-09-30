@@ -37,7 +37,7 @@ The `SfPopup` control uses the `PopupStyle` property to apply styles to all popu
 ### Basic PopupStyle Setup
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="myPopup">
     <sfPopup:SfPopup.PopupStyle>
         <sfPopup:PopupStyle 
@@ -76,7 +76,7 @@ Customize the popup header appearance using these PopupStyle properties:
 ### Example: Styled Header
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="styledHeaderPopup"
                  HeaderTitle="Custom Header"
                  ShowHeader="True">
@@ -122,7 +122,7 @@ public partial class MainPage : ContentPage
 ### Common Header Styles
 
 **Professional Blue Header:**
-```xml
+```xaml
 <sfPopup:PopupStyle 
     HeaderBackground="#2196F3"
     HeaderTextColor="White"
@@ -132,7 +132,7 @@ public partial class MainPage : ContentPage
 ```
 
 **Dark Mode Header:**
-```xml
+```xaml
 <sfPopup:PopupStyle 
     HeaderBackground="#1E1E1E"
     HeaderTextColor="#E0E0E0"
@@ -160,7 +160,7 @@ Customize footer appearance including button colors and corner radius:
 ### Example: Styled Footer with Custom Buttons
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="styledFooterPopup"
                  AppearanceMode="TwoButton"
                  ShowFooter="True"
@@ -210,7 +210,7 @@ public partial class MainPage : ContentPage
 ### Common Footer Button Styles
 
 **Primary/Secondary Button Pair:**
-```xml
+```xaml
 <sfPopup:PopupStyle 
     FooterBackground="White"
     AcceptButtonBackground="#2196F3"
@@ -221,7 +221,7 @@ public partial class MainPage : ContentPage
 ```
 
 **Danger Action Footer (Delete/Cancel):**
-```xml
+```xaml
 <sfPopup:PopupStyle 
     FooterBackground="#F5F5F5"
     AcceptButtonBackground="#DC3545"
@@ -251,7 +251,7 @@ Customize the appearance of popup message content:
 ### Example: Styled Message
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="styledMessagePopup"
                  Message="This is a custom styled message.">
     <sfPopup:SfPopup.PopupStyle>
@@ -295,7 +295,7 @@ public partial class MainPage : ContentPage
 ### Common Message Styles
 
 **Informational Message:**
-```xml
+```xaml
 <sfPopup:PopupStyle 
     MessageBackground="#E3F2FD"
     MessageTextColor="#1976D2"
@@ -304,7 +304,7 @@ public partial class MainPage : ContentPage
 ```
 
 **Warning Message:**
-```xml
+```xaml
 <sfPopup:PopupStyle 
     MessageBackground="#FFF3E0"
     MessageTextColor="#F57C00"
@@ -334,7 +334,7 @@ Customize the popup border appearance:
 ### Example: Stroke Customization
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="borderedPopup">
     <sfPopup:SfPopup.PopupStyle>
         <sfPopup:PopupStyle 
@@ -368,7 +368,7 @@ public partial class MainPage : ContentPage
 ### Different Corner Radius (Android 33+)
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:PopupStyle 
     Stroke="#2196F3"
     StrokeThickness="2"
@@ -385,7 +385,7 @@ popup.PopupStyle.CornerRadius = new CornerRadius(20, 5, 20, 5);
 ### Common Border Styles
 
 **Material Design Border:**
-```xml
+```xaml
 <sfPopup:PopupStyle 
     Stroke="#E0E0E0"
     StrokeThickness="1"
@@ -393,7 +393,7 @@ popup.PopupStyle.CornerRadius = new CornerRadius(20, 5, 20, 5);
 ```
 
 **Accent Border:**
-```xml
+```xaml
 <sfPopup:PopupStyle 
     Stroke="#FF6B6B"
     StrokeThickness="3"
@@ -409,7 +409,7 @@ Customize the background color of the entire popup view:
 ### PopupBackground Property
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="customBackgroundPopup">
     <sfPopup:SfPopup.PopupStyle>
         <sfPopup:PopupStyle PopupBackground="#C3B0D6" />
@@ -436,17 +436,17 @@ public partial class MainPage : ContentPage
 ### Common Background Colors
 
 **Light Theme:**
-```xml
+```xaml
 <sfPopup:PopupStyle PopupBackground="#FFFFFF" />
 ```
 
 **Dark Theme:**
-```xml
+```xaml
 <sfPopup:PopupStyle PopupBackground="#2C2C2C" />
 ```
 
 **Branded Background:**
-```xml
+```xaml
 <sfPopup:PopupStyle PopupBackground="#F0F4FF" />
 ```
 
@@ -459,7 +459,7 @@ Customize the background overlay that appears behind the popup:
 ### OverlayColor Property
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="customOverlayPopup">
     <sfPopup:SfPopup.PopupStyle>
         <sfPopup:PopupStyle OverlayColor="LightPink" />
@@ -488,7 +488,7 @@ public partial class MainPage : ContentPage
 Use RGBA hexadecimal values to adjust overlay transparency:
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="semiTransparentOverlay">
     <sfPopup:SfPopup.PopupStyle>
         <!-- 30 = ~19% opacity, FF0000 = red -->
@@ -505,17 +505,17 @@ popup.PopupStyle.OverlayColor = Color.FromArgb("#30FF0000");
 ### Common Overlay Colors
 
 **Dark Modal Overlay (50% opacity):**
-```xml
+```xaml
 <sfPopup:PopupStyle OverlayColor="#80000000" />
 ```
 
 **Light Overlay (30% opacity):**
-```xml
+```xaml
 <sfPopup:PopupStyle OverlayColor="#4DFFFFFF" />
 ```
 
 **Subtle Gray Overlay:**
-```xml
+```xaml
 <sfPopup:PopupStyle OverlayColor="#66212121" />
 ```
 
@@ -537,7 +537,7 @@ Apply blur effects to the background content behind the popup:
 ### Example: Blurred Background
 
 **XAML:**
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -611,7 +611,7 @@ namespace MyApp
 For fine-grained control, use `Custom` BlurIntensity with `BlurRadius`:
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="customBlurPopup" 
                  OverlayMode="Blur"
                  ShowCloseButton="True">
@@ -633,19 +633,19 @@ popup.PopupStyle.BlurRadius = 3;
 ### Blur Effect Examples
 
 **Subtle Blur:**
-```xml
+```xaml
 <sfPopup:PopupStyle 
     BlurIntensity="Light" />
 ```
 
 **Heavy Blur:**
-```xml
+```xaml
 <sfPopup:PopupStyle 
     BlurIntensity="ExtraDark" />
 ```
 
 **Custom Moderate Blur:**
-```xml
+```xaml
 <sfPopup:PopupStyle 
     BlurIntensity="Custom"
     BlurRadius="5" />
@@ -660,7 +660,7 @@ Change the close button icon to match your app's design:
 ### CloseButtonIcon Property
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="customCloseButtonPopup"
                  ShowCloseButton="True">
     <sfPopup:SfPopup.PopupStyle>
@@ -711,7 +711,7 @@ Add shadow effects to make the popup appear elevated:
 ### HasShadow Property
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="shadowPopup">
     <sfPopup:SfPopup.PopupStyle>
         <sfPopup:PopupStyle HasShadow="True" />
@@ -738,7 +738,7 @@ public partial class MainPage : ContentPage
 ### Combining Shadow with Other Styles
 
 **Material Design Elevation:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="elevatedPopup">
     <sfPopup:SfPopup.PopupStyle>
         <sfPopup:PopupStyle 
@@ -812,7 +812,7 @@ private void ShowPopup()
 ### Example 1: Professional Business Popup
 
 **XAML:**
-```xml
+```xaml
 <sfPopup:SfPopup x:Name="businessPopup"
                  HeaderTitle="Confirm Action"
                  Message="Are you sure you want to proceed?"
@@ -910,7 +910,7 @@ public void CreateDarkModePopup()
 ### Example 3: Minimal Modern Popup with Blur
 
 **XAML:**
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"

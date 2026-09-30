@@ -10,7 +10,7 @@ SfListView supports Right-to-Left (RTL) layout for languages like Arabic, Hebrew
 
 Set RTL layout for the entire ListView:
 
-```xml
+```xaml
 <syncfusion:SfListView FlowDirection="RightToLeft" 
                        ItemsSource="{Binding Products}" />
 ```
@@ -50,7 +50,7 @@ public class LocalizationService
 
 ### RTL ItemTemplate
 
-```xml
+```xaml
 <syncfusion:SfListView FlowDirection="{Binding CurrentFlowDirection}">
     <syncfusion:SfListView.ItemTemplate>
         <DataTemplate>
@@ -86,7 +86,7 @@ public class LocalizationService
 
 Swipe templates automatically mirror in RTL:
 
-```xml
+```xaml
 <syncfusion:SfListView AllowSwiping="True" 
                        FlowDirection="{Binding CurrentFlowDirection}">
     

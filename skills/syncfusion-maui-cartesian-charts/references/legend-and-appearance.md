@@ -23,7 +23,7 @@ The legend provides information about the data series in the chart. The `ChartLe
 
 Set the `Legend` property of `SfCartesianChart` to enable the legend.
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.Legend>
         <chart:ChartLegend/>
@@ -58,7 +58,7 @@ chart.Legend = new ChartLegend();
 
 Control legend visibility using the `IsVisible` property.
 
-```xml
+```xaml
 <chart:ChartLegend IsVisible="True"/>
 ```
 
@@ -73,7 +73,7 @@ ChartLegend legend = new ChartLegend()
 
 Clicking legend items toggles series visibility.
 
-```xml
+```xaml
 <chart:ChartLegend ToggleSeriesVisibility="True"/>
 ```
 
@@ -88,7 +88,7 @@ ChartLegend legend = new ChartLegend()
 
 The visibility of individual legend items for specific series can be controlled using the `IsVisibleOnLegend` property of the series. The default value for `IsVisibleOnLegend` is `true`.
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.Legend>
         <chart:ChartLegend/>
@@ -133,7 +133,7 @@ this.Content = chart;
 
 Customize legend labels using the `LabelStyle` property.
 
-```xml
+```xaml
 <chart:ChartLegend>
     <chart:ChartLegend.LabelStyle>
         <chart:ChartLegendLabelStyle TextColor="Black"
@@ -161,7 +161,7 @@ legend.LabelStyle = new ChartLegendLabelStyle()
 
 Customize legend icon type using the series `LegendIcon` property.
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}"
                    XBindingPath="Month"
                    YBindingPath="Value"
@@ -192,7 +192,7 @@ ColumnSeries series = new ColumnSeries()
 
 Position the legend using the `Placement` property.
 
-```xml
+```xaml
 <chart:ChartLegend Placement="Top"/>
 ```
 
@@ -213,7 +213,7 @@ ChartLegend legend = new ChartLegend()
 
 Create a floating legend using the `IsFloating` property with custom positioning.
 
-```xml
+```xaml
 <chart:ChartLegend IsFloating="True" 
                   OffsetX="10" 
                   OffsetY="10"/>
@@ -232,7 +232,7 @@ ChartLegend legend = new ChartLegend()
 
 To set the maximum size request for the legend view, override the `GetMaximumSizeCoefficient` protected method in `ChartLegend` class. The value should be between 0 and 1, representing the maximum size request, not the desired size for the legend items layout.
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.Legend>
         <local:LegendExt/>
@@ -273,7 +273,7 @@ Customize legend items with custom templates.
 
 ### ItemTemplate
 
-```xml
+```xaml
 <chart:ChartLegend>
     <chart:ChartLegend.ItemTemplate>
         <DataTemplate>
@@ -296,7 +296,7 @@ Customize legend items with custom templates.
 
 Control legend item arrangement using the `ItemsLayout` property.
 
-```xml
+```xaml
 <chart:ChartLegend>
     <chart:ChartLegend.ItemsLayout>
         <FlexLayout Wrap="Wrap" 
@@ -348,7 +348,7 @@ private void Legend_LegendItemCreated(object sender, LegendItemEventArgs e)
 
 Define a palette of colors for multiple series using the `PaletteBrushes` property at the chart level.
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.PaletteBrushes>
         <SolidColorBrush>#4CAF50</SolidColorBrush>
@@ -375,7 +375,7 @@ chart.PaletteBrushes = new List<Brush>
 
 You can also define `PaletteBrushes` at the series level for segment-based coloring.
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}"
                    XBindingPath="Category"
                    YBindingPath="Value">
@@ -391,7 +391,7 @@ You can also define `PaletteBrushes` at the series level for segment-based color
 
 Apply custom brushes to individual series using the `Fill` property.
 
-```xml
+```xaml
 <chart:AreaSeries ItemsSource="{Binding Data}"
                  XBindingPath="Month"
                  YBindingPath="Value"
@@ -411,7 +411,7 @@ Apply gradient brushes to series for visually rich charts.
 
 #### Linear Gradient
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}"
                    XBindingPath="Category"
                    YBindingPath="Value">
@@ -438,7 +438,7 @@ series.Fill = gradientBrush;
 
 #### Radial Gradient
 
-```xml
+```xaml
 <chart:ColumnSeries ItemsSource="{Binding Data}"
                    XBindingPath="Category"
                    YBindingPath="Value">
@@ -455,7 +455,7 @@ series.Fill = gradientBrush;
 
 ### Legend with Custom Styling
 
-```xml
+```xaml
 <chart:SfCartesianChart>
     <chart:SfCartesianChart.Legend>
         <chart:ChartLegend Placement="Bottom"

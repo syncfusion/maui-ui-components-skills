@@ -9,7 +9,7 @@ The SfCarousel control supports two distinct view modes that change how items ar
 Linear mode displays carousel items in a stacked horizontal layout without 3D perspective effects.
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel x:Name="carousel"  
                      ItemsSource="{Binding ImageCollection}"
                      ItemTemplate="{StaticResource itemTemplate}" 
@@ -50,7 +50,7 @@ carousel.SetBinding(SfCarousel.ItemsSourceProperty, "ImageCollection");
 Default mode creates a 3D perspective effect where items appear to rotate around a central axis.
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel x:Name="carousel"  
                      ItemsSource="{Binding ImageCollection}"
                      ItemTemplate="{StaticResource itemTemplate}" 
@@ -93,7 +93,7 @@ carousel.SetBinding(SfCarousel.ItemsSourceProperty, "ImageCollection");
 The Offset property specifies the spacing between unselected items in Default mode.
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel ViewMode="Default"
                      Offset="200"
                      ItemsSource="{Binding ImageCollection}"
@@ -131,7 +131,7 @@ carousel.Offset = 350;
 The RotationAngle property rotates all items by a specified angle in Default mode.
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel ViewMode="Default"
                      RotationAngle="45"
                      ItemsSource="{Binding ImageCollection}"
@@ -169,7 +169,7 @@ carousel.RotationAngle = 75;
 - **60-90°:** Strong perspective (may reduce readability)
 
 **Combining Offset and RotationAngle:**
-```xml
+```xaml
 <carousel:SfCarousel ViewMode="Default"
                      Offset="250"
                      RotationAngle="35"
@@ -186,7 +186,7 @@ carousel.RotationAngle = 75;
 Controls the space between items (works in both modes).
 
 **XAML:**
-```xml
+```xaml
 <carousel:SfCarousel ViewMode="Linear"
                      ItemSpacing="10"
                      ItemsSource="{Binding ImageCollection}"
@@ -211,7 +211,7 @@ var carousel = new SfCarousel
 
 Set the dimensions for all carousel items.
 
-```xml
+```xaml
 <carousel:SfCarousel ItemHeight="250"
                      ItemWidth="350"
                      ItemsSource="{Binding ImageCollection}"
@@ -248,7 +248,7 @@ carousel.ItemWidth = 500;
 
 ### Example 1: Simple Linear Gallery
 
-```xml
+```xaml
 <carousel:SfCarousel ViewMode="Linear"
                      ItemsSource="{Binding Products}"
                      ItemTemplate="{StaticResource productTemplate}"
@@ -262,7 +262,7 @@ carousel.ItemWidth = 500;
 
 ### Example 2: 3D Image Gallery
 
-```xml
+```xaml
 <carousel:SfCarousel ViewMode="Default"
                      ItemsSource="{Binding Photos}"
                      ItemTemplate="{StaticResource photoTemplate}"
@@ -277,7 +277,7 @@ carousel.ItemWidth = 500;
 
 ### Example 3: Compact Linear List
 
-```xml
+```xaml
 <carousel:SfCarousel ViewMode="Linear"
                      ItemsSource="{Binding Cards}"
                      ItemTemplate="{StaticResource cardTemplate}"
@@ -291,7 +291,7 @@ carousel.ItemWidth = 500;
 
 ### Example 4: Dramatic 3D Showcase
 
-```xml
+```xaml
 <carousel:SfCarousel ViewMode="Default"
                      ItemsSource="{Binding FeaturedItems}"
                      ItemTemplate="{StaticResource featureTemplate}"

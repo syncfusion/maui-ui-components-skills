@@ -19,7 +19,7 @@ Visual states are defined within the `VisualStateManager.VisualStateGroups` atta
 
 ### Basic Example
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="Toggle Me">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -45,7 +45,7 @@ Visual states are defined within the `VisualStateManager.VisualStateGroups` atta
 
 ### Complete XAML Example with Background
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="Premium Plan" Padding="10">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -214,7 +214,7 @@ group.Children.Add(CreateStyledRadioButton("Option 3"));
 
 ### Example 1: Success/Error States
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="10">
     
     <!-- Success State -->
@@ -266,7 +266,7 @@ group.Children.Add(CreateStyledRadioButton("Option 3"));
 
 ### Example 2: Card-Style Selection
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="Premium Plan - $19.99/month" 
                        Padding="15" 
                        Margin="5">
@@ -298,7 +298,7 @@ group.Children.Add(CreateStyledRadioButton("Option 3"));
 
 ### Example 3: Theme-Based States
 
-```xml
+```xaml
 <!-- Light Theme Radio Button -->
 <buttons:SfRadioButton Text="Light Theme" Padding="10">
     <VisualStateManager.VisualStateGroups>
@@ -346,7 +346,7 @@ group.Children.Add(CreateStyledRadioButton("Option 3"));
 
 ### Example 4: Opacity Changes
 
-```xml
+```xaml
 <buttons:SfRadioButton Text="Fade Effect">
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup x:Name="CommonStates">
@@ -373,7 +373,7 @@ group.Children.Add(CreateStyledRadioButton("Option 3"));
 
 You can apply consistent visual states to all radio buttons in a group:
 
-```xml
+```xaml
 <buttons:SfRadioGroup>
     
     <buttons:SfRadioButton Text="Option 1">
@@ -487,7 +487,7 @@ Apply the same visual state pattern across all radio buttons in a group for cons
 
 Ensure there's a noticeable difference between checked and unchecked states:
 
-```xml
+```xaml
 <!-- Good contrast -->
 <VisualState x:Name="Checked">
     <VisualState.Setters>
@@ -531,7 +531,7 @@ private void ApplyThemeAwareStates(SfRadioButton radioButton)
 
 Keep visual states simple and focused. Too many property changes can be distracting:
 
-```xml
+```xaml
 <!-- Good - focused changes -->
 <VisualState x:Name="Checked">
     <VisualState.Setters>

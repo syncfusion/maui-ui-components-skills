@@ -26,7 +26,7 @@ The `PullingViewTemplate` defines the view displayed while the user is actively 
 
 ### Basic PullingViewTemplate
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh">
     <syncfusion:SfPullToRefresh.PullingViewTemplate>
         <DataTemplate>
@@ -51,7 +51,7 @@ The `PullingViewTemplate` defines the view displayed while the user is actively 
 
 ### PullingViewTemplate with Icon
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh.PullingViewTemplate>
     <DataTemplate>
         <Grid WidthRequest="50" HeightRequest="50">
@@ -72,7 +72,7 @@ The `PullingViewTemplate` defines the view displayed while the user is actively 
 
 ### PullingViewTemplate with Custom View
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh.PullingViewTemplate>
     <DataTemplate>
         <StackLayout WidthRequest="60" 
@@ -100,7 +100,7 @@ The `RefreshingViewTemplate` defines the view displayed during the refresh opera
 
 ### Basic RefreshingViewTemplate
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh">
     <syncfusion:SfPullToRefresh.RefreshingViewTemplate>
         <DataTemplate>
@@ -130,7 +130,7 @@ The `RefreshingViewTemplate` defines the view displayed during the refresh opera
 
 ### RefreshingViewTemplate with Animation
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh.RefreshingViewTemplate>
     <DataTemplate>
         <Grid WidthRequest="50" HeightRequest="50">
@@ -153,7 +153,7 @@ You can use both templates together to create a complete custom refresh experien
 
 ### Combined Template Example
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh"
                              Pulling="OnPulling"
                              Refreshing="OnRefreshing">
@@ -213,7 +213,7 @@ dotnet add package Syncfusion.Maui.ProgressBar
 
 ### Complete Implementation with SfCircularProgressBar
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.PullToRefresh;assembly=Syncfusion.Maui.PullToRefresh"
@@ -466,7 +466,7 @@ private async Task AnimateProgressiveLoad()
 
 ### Rotation Animation
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh.RefreshingViewTemplate>
     <DataTemplate>
         <Image x:Name="refreshIcon"
@@ -509,7 +509,7 @@ private async Task RotateIconContinuously()
 
 ### Example 1: Weather App Style
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh x:Name="pullToRefresh"
                              Refreshing="OnRefreshing">
     <syncfusion:SfPullToRefresh.PullingViewTemplate>
@@ -553,7 +553,7 @@ private async Task RotateIconContinuously()
 
 ### Example 2: Social Media Style
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh.PullingViewTemplate>
     <DataTemplate>
         <Frame CornerRadius="25"
@@ -586,7 +586,7 @@ private async Task RotateIconContinuously()
 
 ### Example 3: Material Design Style
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh.PullingViewTemplate>
     <DataTemplate>
         <Frame CornerRadius="30"
@@ -616,7 +616,7 @@ private async Task RotateIconContinuously()
 
 Avoid complex nested views in templates:
 
-```xml
+```xaml
 <!-- Good: Simple and performant -->
 <DataTemplate>
     <Frame CornerRadius="25" BackgroundColor="White">
@@ -643,7 +643,7 @@ Avoid complex nested views in templates:
 
 Ensure template size matches RefreshViewWidth and RefreshViewHeight:
 
-```xml
+```xaml
 <syncfusion:SfPullToRefresh RefreshViewWidth="60"
                              RefreshViewHeight="60">
     <syncfusion:SfPullToRefresh.PullingViewTemplate>
@@ -666,7 +666,7 @@ Ensure template size matches RefreshViewWidth and RefreshViewHeight:
 
 Always indicate the current state:
 
-```xml
+```xaml
 <!-- Pulling: Shows progress -->
 <Label Text="{Binding Progress}%"/>
 
@@ -686,7 +686,7 @@ Templates may render differently across platforms. Test on:
 
 Ensure templates are accessible:
 
-```xml
+```xaml
 <Label Text="Pull to refresh"
        AutomationProperties.IsInAccessibleTree="True"
        AutomationProperties.HelpText="Pull down to refresh content"/>

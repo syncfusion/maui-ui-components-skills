@@ -15,13 +15,13 @@
 Use the `Text` property to pre-load content or bind the editor to a ViewModel field.
 
 **XAML (static):**
-```xml
+```xaml
 <smarttexteditor:SfSmartTextEditor
     Text="Thank you for contacting us." />
 ```
 
 **XAML (data binding):**
-```xml
+```xaml
 <smarttexteditor:SfSmartTextEditor
     Text="{Binding ReplyText}" />
 ```
@@ -43,7 +43,7 @@ var editor = new SfSmartTextEditor
 Customize the font and color of the editor's typed text using the `TextStyle` property with a `SmartTextEditorStyle` object.
 
 **XAML:**
-```xml
+```xaml
 <smarttexteditor:SfSmartTextEditor>
     <smarttexteditor:SfSmartTextEditor.TextStyle>
         <smarttexteditor:SmartTextEditorStyle
@@ -74,7 +74,7 @@ var editor = new SfSmartTextEditor
 Add guiding hint text for the empty state. Customize the placeholder color to ensure readability against your background.
 
 **XAML:**
-```xml
+```xaml
 <smarttexteditor:SfSmartTextEditor
     Placeholder="Type your message..."
     PlaceholderColor="#7E57C2" />
@@ -98,7 +98,7 @@ var editor = new SfSmartTextEditor
 The `SuggestionTextColor` property controls the color of the predicted text shown inline or in the popup. Use this to make suggestions visually distinct from typed text while staying on-brand.
 
 **XAML:**
-```xml
+```xaml
 <smarttexteditor:SfSmartTextEditor
     SuggestionTextColor="SkyBlue" />
 ```
@@ -120,7 +120,7 @@ var editor = new SfSmartTextEditor
 When `SuggestionDisplayMode` is `Popup`, use `SuggestionPopupBackground` to set the popup's background brush to match your app's design language.
 
 **XAML:**
-```xml
+```xaml
 <smarttexteditor:SfSmartTextEditor
     SuggestionDisplayMode="Popup"
     SuggestionPopupBackground="#0078D4" />
@@ -144,7 +144,7 @@ var editor = new SfSmartTextEditor
 `MaxLength` limits the total number of characters a user can type. The editor enforces this limit at input time — characters beyond the limit are not accepted.
 
 **XAML:**
-```xml
+```xaml
 <smarttexteditor:SfSmartTextEditor
     MaxLength="500" />
 ```
@@ -168,7 +168,7 @@ var editor = new SfSmartTextEditor
 
 Here is a fully customized editor example:
 
-```xml
+```xaml
 <smarttexteditor:SfSmartTextEditor
     Placeholder="Compose your reply..."
     PlaceholderColor="#9E9E9E"

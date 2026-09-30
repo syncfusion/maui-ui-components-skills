@@ -318,7 +318,7 @@ Some packages have additional dependencies:
 - View all dependencies and their versions
 
 **In .csproj file:**
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.DataGrid" Version="24.1.45" />
   <!-- Dependencies automatically managed by NuGet -->
@@ -386,12 +386,12 @@ Update-Package -ProjectName YourProjectName
 
 Lock to specific version in .csproj:
 
-```xml
+```xaml
 <PackageReference Include="Syncfusion.Maui.Core" Version="24.1.45" />
 ```
 
 Allow minor updates only:
-```xml
+```xaml
 <PackageReference Include="Syncfusion.Maui.Core" Version="24.1.*" />
 ```
 
@@ -410,7 +410,7 @@ Allow minor updates only:
 
 Open your `.csproj` file to verify package references:
 
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.Core" Version="24.1.45" />
   <PackageReference Include="Syncfusion.Maui.DataGrid" Version="24.1.45" />

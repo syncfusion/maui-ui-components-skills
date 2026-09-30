@@ -33,7 +33,7 @@ Keep Syncfusion .NET MAUI components up-to-date for bug fixes, new features, and
 
 ### In .csproj File
 
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.Core" Version="24.2.9" />
   <PackageReference Include="Syncfusion.Maui.DataGrid" Version="24.2.9" />
@@ -92,12 +92,12 @@ dotnet add package Syncfusion.Maui.Core
 ### Method 3: Edit .csproj Directly
 
 **Before:**
-```xml
+```xaml
 <PackageReference Include="Syncfusion.Maui.Core" Version="24.2.9" />
 ```
 
 **After:**
-```xml
+```xaml
 <PackageReference Include="Syncfusion.Maui.Core" Version="25.1.35" />
 ```
 
@@ -125,13 +125,13 @@ Update-Package Syncfusion.Maui.* -Version 25.1.35
 **CRITICAL:** All Syncfusion packages MUST use same version.
 
 **❌ INCORRECT:**
-```xml
+```xaml
 <PackageReference Include="Syncfusion.Maui.Core" Version="24.2.9" />
 <PackageReference Include="Syncfusion.Maui.DataGrid" Version="25.1.35" />
 ```
 
 **✅ CORRECT:**
-```xml
+```xaml
 <PackageReference Include="Syncfusion.Maui.Core" Version="25.1.35" />
 <PackageReference Include="Syncfusion.Maui.DataGrid" Version="25.1.35" />
 ```

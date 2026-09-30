@@ -30,7 +30,7 @@ The `SwipeToDismiss` property enables or disables the swiping feature, allowing 
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardView SwipeToDismiss="True">
     <Label Text="SfCardView" 
            Background="MediumPurple" 
@@ -111,7 +111,7 @@ The `IsDismissed` property allows you to get or set the dismissed state of the c
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardView x:Name="myCard" IsDismissed="False">
     <Label Text="SfCardView"/>
 </cards:SfCardView>
@@ -176,7 +176,7 @@ The `FadeOutOnSwiping` property enables a fade effect as the card is swiped, cre
 ### Basic Usage
 
 **XAML:**
-```xml
+```xaml
 <cards:SfCardView FadeOutOnSwiping="True" SwipeToDismiss="True">
     <Label Text="Swipe me - I fade out!" 
            Background="LightBlue"

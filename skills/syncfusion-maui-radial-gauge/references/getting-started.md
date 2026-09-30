@@ -59,7 +59,7 @@ dotnet add package Syncfusion.Maui.Gauges
 
 After installation, check that the package appears in your `.csproj` file:
 
-```xml
+```xaml
 <ItemGroup>
   <PackageReference Include="Syncfusion.Maui.Gauges" Version="*" />
 </ItemGroup>

@@ -57,7 +57,7 @@ No separate package required.
 
 **In App.xaml:**
 
-```xml
+```xaml
 <Application xmlns:syncTheme="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core"
              x:Class="MyApp.App">
     <Application.Resources>
@@ -77,7 +77,7 @@ No separate package required.
 
 ### Using SfButton
 
-```xml
+```xaml
 <core:SfGlassEffectView CornerRadius="20"
                                         EffectType="Clear"
                                         WidthRequest="100"
@@ -100,7 +100,7 @@ Make regular controls "glassy" using style properties.
 
 ### Glassy Button (Regular SfButton)
 
-```xml
+```xaml
 <syncfusion:SfButton Text="Click Me"
                      EnableGlassEffect="True"
                      CornerRadius="20"
@@ -114,7 +114,7 @@ Make regular controls "glassy" using style properties.
 
 **Glassy Profile Page:**
 
-```xml
+```xaml
 <ContentPage xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core">
     
     <Grid>

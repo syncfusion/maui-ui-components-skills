@@ -16,7 +16,7 @@ The simplest way to populate segments is using a string array or list.
 
 ### XAML Approach
 
-```xml
+```xaml
 <buttons:SfSegmentedControl>
     <buttons:SfSegmentedControl.ItemsSource>
         <x:Array Type="{x:Type x:String}">
@@ -186,7 +186,7 @@ public class MainViewModel : INotifyPropertyChanged
 
 ### XAML Binding
 
-```xml
+```xaml
 <ContentPage xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              x:Class="MyApp.MainPage">
     

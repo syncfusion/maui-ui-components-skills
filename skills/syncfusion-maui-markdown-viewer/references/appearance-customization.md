@@ -64,7 +64,7 @@ Headings are the primary navigation and structure elements in Markdown documents
 
 ### Basic Heading Styling
 
-```xml
+```xaml
 <markdown:SfMarkdownViewer Source="{Binding Content}">
     <markdown:SfMarkdownViewer.Settings>
         <markdown:MarkdownStyleSettings 
@@ -231,7 +231,7 @@ Tables benefit from clear visual separation between headers and data.
 
 ### Basic Table Styling
 
-```xml
+```xaml
 <markdown:SfMarkdownViewer Source="{Binding TableContent}">
     <markdown:SfMarkdownViewer.Settings>
         <markdown:MarkdownStyleSettings 
@@ -281,7 +281,7 @@ Here's a comprehensive example combining all styling options:
 
 ### XAML
 
-```xml
+```xaml
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:markdown="clr-namespace:Syncfusion.Maui.MarkdownViewer;assembly=Syncfusion.Maui.MarkdownViewer"

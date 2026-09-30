@@ -141,14 +141,14 @@ Photos app → Albums → Saved Photos
 
 Add to `AndroidManifest.xml`:
 
-```xml
+```xaml
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
 For Android 10+ (API 29+), also add:
 
-```xml
+```xaml
 <application android:requestLegacyExternalStorage="true">
     <!-- App configuration -->
 </application>
@@ -158,7 +158,7 @@ For Android 10+ (API 29+), also add:
 
 Add to `Info.plist`:
 
-```xml
+```xaml
 <dict>
     ...
     <key>NSPhotoLibraryUsageDescription</key>

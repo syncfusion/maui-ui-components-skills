@@ -24,7 +24,7 @@ using Syncfusion.Maui.ProgressBar;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <progressBar:SfLinearProgressBar Progress="75"
                                  AnimationDuration="1000"
                                  TrackColor="LightGray"
@@ -32,7 +32,7 @@ using Syncfusion.Maui.ProgressBar;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <progressBar:SfLinearProgressBar Progress="75"
                                  AnimationDuration="1000"
                                  TrackFill="LightGray"
@@ -58,14 +58,14 @@ using Syncfusion.Maui.ProgressBar;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="60"
                                    TrackColor="LightGray"
                                    ProgressColor="Green"/>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <progressBar:SfCircularProgressBar Progress="60"
                                    TrackFill="LightGray"
                                    ProgressFill="Green"/>
@@ -86,13 +86,13 @@ using Syncfusion.Maui.ProgressBar;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <progressBar:SfStepProgressBar ItemsSource="{Binding Steps}"
                                ActiveStepIndex="2"/>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <progressBar:SfStepProgressBar ItemsSource="{Binding Steps}"
                                ActiveStepIndex="2"/>
 ```
@@ -114,13 +114,13 @@ using Syncfusion.Maui.Shimmer;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <shimmer:SfShimmer IsActive="True"
                    Type="CirclePersona"/>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <shimmer:SfShimmer IsActive="True"
                    Type="CirclePersona"/>
 ```
@@ -148,13 +148,13 @@ using Syncfusion.Maui.Barcode;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <barcode:SfBarcode Value="1234567890"
                    BarcodeFormat="Code128"/>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <barcode:SfBarcodeGenerator Value="1234567890"
                             Symbology="Code128"/>
 ```

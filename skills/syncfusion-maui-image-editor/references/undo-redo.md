@@ -40,7 +40,7 @@ The `Undo` method reverts the most recent editing operation.
 
 ### Basic Usage
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Undo" Clicked="OnUndoClicked" />
@@ -80,7 +80,7 @@ The `Redo` method restores an operation that was previously undone.
 
 ### Basic Usage
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     <Button Grid.Row="1" Text="Redo" Clicked="OnRedoClicked" />
@@ -123,7 +123,7 @@ While not explicitly documented in the source, you would typically check history
 
 ### Typical Pattern (Conceptual)
 
-```xml
+```xaml
 <Grid RowDefinitions="0.9*, 0.1*">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     
@@ -184,7 +184,7 @@ While not explicitly documented, most editors have practical history limits to m
 
 ### Undo/Redo Toolbar
 
-```xml
+```xaml
 <Grid RowDefinitions="*, Auto, Auto">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     
@@ -333,7 +333,7 @@ private async void UndoWithConfirmation()
 
 ### History Indicator
 
-```xml
+```xaml
 <Grid RowDefinitions="*, Auto, Auto">
     <imageEditor:SfImageEditor x:Name="imageEditor" Source="photo.jpg" />
     

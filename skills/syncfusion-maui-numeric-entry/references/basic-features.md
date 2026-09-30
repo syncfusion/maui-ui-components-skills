@@ -25,7 +25,7 @@ The `Placeholder` property displays hint text when the control is empty or null.
 
 ### Basic Placeholder
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Placeholder="Enter input here..." />
 ```
@@ -40,7 +40,7 @@ var numericEntry = new SfNumericEntry
 
 ### Placeholder with Format Hint
 
-```xml
+```xaml
 <editors:SfNumericEntry Placeholder="$0.00" CustomFormat="C2" />
 <editors:SfNumericEntry Placeholder="Enter percentage" CustomFormat="P0" />
 <editors:SfNumericEntry Placeholder="0.00" CustomFormat="N2" />
@@ -64,7 +64,7 @@ The `ShowClearButton` property controls whether the clear button (X icon) is dis
 
 ### Enable Clear Button (Default)
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         ShowClearButton="True"
                         IsEditable="True"
@@ -83,7 +83,7 @@ var numericEntry = new SfNumericEntry
 
 ### Disable Clear Button
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         ShowClearButton="False"
                         Value="10" />
@@ -100,7 +100,7 @@ var numericEntry = new SfNumericEntry
 
 The `ClearButtonColor` property sets the color of the clear button icon.
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         ShowClearButton="True"
                         ClearButtonColor="Red" />
@@ -121,7 +121,7 @@ var numericEntry = new SfNumericEntry
 
 The `ClearButtonPath` property allows you to customize the clear button's appearance with a custom path geometry.
 
-```xml
+```xaml
 <editors:SfNumericEntry x:Name="numericEntry"
                         WidthRequest="200"
                         ShowClearButton="True"
@@ -168,7 +168,7 @@ The `ValueChanged` event is triggered when the `Value` property changes. The val
 
 ### ValueChanged Event Handler
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         ValueChanged="OnValueChanged" />
 ```
@@ -192,7 +192,7 @@ private void OnValueChanged(object sender, NumericEntryValueChangedEventArgs e)
 
 ### Example: Calculate Total
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="10">
     <editors:SfNumericEntry x:Name="quantityEntry"
                             Placeholder="Quantity"
@@ -228,7 +228,7 @@ The `ValueChangeMode` property determines **when** the value is updated and the 
 
 Value updates when focus is lost or Enter key is pressed.
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         ValueChangeMode="OnLostFocus"
                         ValueChanged="OnValueChanged" />
@@ -247,7 +247,7 @@ Value updates when focus is lost or Enter key is pressed.
 
 Value updates with **each keystroke**.
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         ValueChangeMode="OnKeyFocus"
                         ValueChanged="OnValueChanged" />
@@ -262,7 +262,7 @@ Value updates with **each keystroke**.
 
 ### Example: Real-Time Dollar Display
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="10" VerticalOptions="Center">
     <editors:SfNumericEntry x:Name="numericEntry"
                             WidthRequest="200"
@@ -293,7 +293,7 @@ private void OnRealtimeValueChanged(object sender, NumericEntryValueChangedEvent
 
 The `Completed` event is raised when the user presses the **return key** on the keyboard while the Numeric Entry has focus.
 
-```xml
+```xaml
 <editors:SfNumericEntry x:Name="numericEntry"
                         WidthRequest="200"
                         Value="153"
@@ -320,7 +320,7 @@ private async void OnCompleted(object sender, EventArgs e)
 
 The `ClearButtonClicked` event is raised when the user clicks the clear button.
 
-```xml
+```xaml
 <editors:SfNumericEntry x:Name="numericEntry"
                         WidthRequest="200"
                         Value="153"
@@ -351,7 +351,7 @@ The `Stroke` property sets the border color of the Numeric Entry.
 
 ### Set Border Color
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Stroke="Red" />
 ```
@@ -368,7 +368,7 @@ var numericEntry = new SfNumericEntry
 
 ### Dynamic Border Color (Focus Indicator)
 
-```xml
+```xaml
 <editors:SfNumericEntry x:Name="numericEntry"
                         WidthRequest="200"
                         Stroke="Gray"
@@ -394,14 +394,14 @@ The `ShowBorder` property controls whether the border is displayed.
 
 ### Show Border (Default)
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         ShowBorder="True" />
 ```
 
 ### Hide Border
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         HeightRequest="40"
                         ShowBorder="False" />
@@ -426,7 +426,7 @@ Control text alignment with `HorizontalTextAlignment` and `VerticalTextAlignment
 
 ### Horizontal Alignment
 
-```xml
+```xaml
 <!-- Left aligned (default) -->
 <editors:SfNumericEntry WidthRequest="200"
                         HorizontalTextAlignment="Start" />
@@ -450,7 +450,7 @@ numericEntry.HorizontalTextAlignment = TextAlignment.Center;
 
 ### Vertical Alignment
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         HeightRequest="60"
                         VerticalTextAlignment="Start" />
@@ -464,7 +464,7 @@ numericEntry.VerticalTextAlignment = TextAlignment.Start;
 
 ### Combined Alignment
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         HeightRequest="50"
                         HorizontalTextAlignment="Center"
@@ -477,7 +477,7 @@ The `SelectAllOnFocus` property automatically selects all text when the control 
 
 ### Enable Auto-Select (Default)
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Value="123456"
                         SelectAllOnFocus="True" />
@@ -487,7 +487,7 @@ The `SelectAllOnFocus` property automatically selects all text when the control 
 
 ### Disable Auto-Select
 
-```xml
+```xaml
 <editors:SfNumericEntry WidthRequest="200"
                         Value="123456"
                         SelectAllOnFocus="False" />
@@ -516,7 +516,7 @@ The `ReturnType` property specifies the return key button displayed on the keybo
 
 ### Available Return Types
 
-```xml
+```xaml
 <!-- Default return key -->
 <editors:SfNumericEntry ReturnType="Default" />
 
@@ -546,7 +546,7 @@ numericEntry.ReturnType = ReturnType.Next;
 
 ### Example: Multi-Field Form
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="10">
     <editors:SfNumericEntry x:Name="quantity"
                             Placeholder="Quantity"
@@ -587,7 +587,7 @@ The `ReturnCommand` and `ReturnCommandParameter` properties allow you to bind a 
 
 ### Command Binding
 
-```xml
+```xaml
 <ContentPage.BindingContext>
     <local:CommandDemoViewModel />
 </ContentPage.BindingContext>
@@ -643,7 +643,7 @@ The `AutomationId` property provides unique identifiers for UI automation testin
 
 ### Set Automation ID
 
-```xml
+```xaml
 <editors:SfNumericEntry x:Name="employeeNumericEntry"
                         AutomationId="EmployeeNumericEntry"
                         WidthRequest="200" />
@@ -683,7 +683,7 @@ app.Tap("EmployeeNumericEntry Clear Button");
 
 Here's a comprehensive example using multiple basic features:
 
-```xml
+```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"

@@ -42,7 +42,7 @@ Triggered after an image has been successfully loaded into the editor.
 - Applying default effects
 - Logging or analytics
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           ImageLoaded="OnImageLoaded" />
@@ -100,7 +100,7 @@ Triggered when the browse button is clicked in the toolbar.
 - Image validation before loading
 - Restricting image sources
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           BrowseImage="OnBrowseImage" />
@@ -143,7 +143,7 @@ Triggered when an annotation (shape, text, or custom view) is selected.
 - Tracking user interactions
 - Implementing custom selection UI
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           AnnotationSelected="OnAnnotationSelected" />
@@ -187,7 +187,7 @@ Triggered when an annotation is deselected.
 - Cleaning up resources
 - Updating UI state
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           AnnotationUnselected="OnAnnotationUnselected" />
@@ -229,7 +229,7 @@ Triggered after annotations are successfully loaded from serialization.
 - Analytics/logging
 - UI updates
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           AnnotationsDeserialized="OnAnnotationsDeserialized" />
@@ -258,7 +258,7 @@ Triggered before the image is saved. Allows customization and cancellation.
 - `FileType` - Change file format
 - `CompressionQuality` - Adjust JPEG quality (mobile)
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           ImageSaving="OnImageSaving" />
@@ -302,7 +302,7 @@ Triggered after the image has been successfully saved.
 **Event Arguments:**
 - `Location` - File path where image was saved
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           ImageSaved="OnImageSaved" />
@@ -339,7 +339,7 @@ Triggered when the save file picker dialog is about to open.
 - Custom save dialog
 - Restricting save options
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           SavePickerOpening="OnSavePickerOpening" />
@@ -371,7 +371,7 @@ Triggered when a toolbar item is selected.
 - Conditional behavior
 - Custom workflows
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           ToolbarItemSelected="OnToolbarItemSelected" />
@@ -445,7 +445,7 @@ Triggered before the image is reset to its original state.
 - Conditional reset
 - Analytics
 
-```xml
+```xaml
 <imageEditor:SfImageEditor x:Name="imageEditor"
                           Source="photo.jpg"
                           BeginReset="OnBeginReset" />
@@ -627,7 +627,7 @@ private void AutoSave()
 **Cause:** Event not subscribed or handler syntax incorrect.
 
 **Solution:**
-```xml
+```xaml
 <!-- Ensure correct event name -->
 <imageEditor:SfImageEditor ImageLoaded="OnImageLoaded" />
 ```

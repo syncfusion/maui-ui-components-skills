@@ -31,7 +31,7 @@ The `StrokeColor` property controls the color of signature strokes.
 
 ### XAML Example
 
-```xml
+```xaml
 <!-- Using named colors -->
 <signaturePad:SfSignaturePad StrokeColor="Blue" />
 
@@ -110,7 +110,7 @@ This creates a natural, handwritten appearance similar to pen-on-paper.
 
 ### XAML Example
 
-```xml
+```xaml
 <!-- Fine, precise signatures -->
 <signaturePad:SfSignaturePad MinimumStrokeThickness="0.5"
                               MaximumStrokeThickness="2" />
@@ -192,7 +192,7 @@ Control the background color or transparency of the SignaturePad.
 
 ### XAML Example
 
-```xml
+```xaml
 <!-- White background (default) -->
 <signaturePad:SfSignaturePad Background="White" />
 
@@ -319,7 +319,7 @@ var overlaySignature = new SfSignaturePad
 
 ### Example 1: Classic Black Signature
 
-```xml
+```xaml
 <signaturePad:SfSignaturePad x:Name="classicSignature"
                               StrokeColor="Black"
                               MinimumStrokeThickness="1"
@@ -377,7 +377,7 @@ public class ThemedSignaturePage : ContentPage
 
 ### Example 4: Multiple Signature Styles
 
-```xml
+```xaml
 <VerticalStackLayout Spacing="20" Padding="20">
     
     <!-- Fine Signature -->

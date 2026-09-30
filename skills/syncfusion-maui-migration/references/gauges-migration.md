@@ -37,7 +37,7 @@ using Syncfusion.Maui.Gauges;
 ### Initialization
 
 **Xamarin:**
-```xml
+```xaml
 <gauge:SfCircularGauge>
     <gauge:SfCircularGauge.Scales>
         <gauge:Scale StartValue="0" EndValue="100"/>
@@ -46,7 +46,7 @@ using Syncfusion.Maui.Gauges;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <gauge:SfRadialGauge>
     <gauge:SfRadialGauge.Axes>
         <gauge:RadialAxis Minimum="0" Maximum="100"/>
@@ -110,7 +110,7 @@ radialGauge.Axes.Add(radialAxis);
 | `Color` | `Fill` | Range color (Brush) |
 
 **Xamarin:**
-```xml
+```xaml
 <gauge:Scale.Ranges>
     <gauge:Range StartValue="0" 
                  EndValue="40" 
@@ -120,7 +120,7 @@ radialGauge.Axes.Add(radialAxis);
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <gauge:RadialAxis.Ranges>
     <gauge:RadialRange StartValue="0"
                        EndValue="40"
@@ -139,19 +139,19 @@ radialGauge.Axes.Add(radialAxis);
 | `Color` | `Fill` | Pointer color |
 
 **Xamarin:**
-```xml
+```xaml
 <gauge:NeedlePointer Value="60" Color="Blue" Thickness="5"/>
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <gauge:NeedlePointer Value="60" Fill="Blue" NeedleThickness="5"/>
 ```
 
 ### Annotation Migration
 
 **Xamarin:**
-```xml
+```xaml
 <gauge:GaugeAnnotation>
     <gauge:GaugeAnnotation.View>
         <Label Text="60°" TextColor="Black"/>
@@ -160,7 +160,7 @@ radialGauge.Axes.Add(radialAxis);
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <gauge:GaugeAnnotation DirectionUnit="Angle" 
                        DirectionValue="90"
                        PositionFactor="0.5">
@@ -184,7 +184,7 @@ using Syncfusion.Maui.Gauges;
 In MAUI, there's no separate `Scale` collection. Properties are set directly on `SfLinearGauge`.
 
 **Xamarin:**
-```xml
+```xaml
 <gauge:SfLinearGauge>
     <gauge:SfLinearGauge.Scales>
         <gauge:LinearScale MinimumValue="0" 
@@ -195,7 +195,7 @@ In MAUI, there's no separate `Scale` collection. Properties are set directly on 
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <gauge:SfLinearGauge Minimum="0" 
                      Maximum="100">
     <gauge:SfLinearGauge.LineStyle>
@@ -262,7 +262,7 @@ gauge.LineStyle = new LinearLineStyle
 | `Offset` | `Position` | Range position |
 
 **Xamarin:**
-```xml
+```xaml
 <gauge:LinearScale.Ranges>
     <gauge:LinearRange StartValue="0" 
                        EndValue="33" 
@@ -272,7 +272,7 @@ gauge.LineStyle = new LinearLineStyle
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <gauge:SfLinearGauge.Ranges>
     <gauge:LinearRange StartValue="0" 
                        EndValue="33" 
@@ -284,7 +284,7 @@ gauge.LineStyle = new LinearLineStyle
 ### Pointer Migration
 
 **Xamarin:**
-```xml
+```xaml
 <gauge:LinearScale.Pointers>
     <gauge:BarPointer Value="60" 
                       Color="Orange" 
@@ -293,7 +293,7 @@ gauge.LineStyle = new LinearLineStyle
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <gauge:SfLinearGauge.MarkerPointers>
     <gauge:LinearShapePointer Value="60" 
                               Fill="Orange"
@@ -322,7 +322,7 @@ using Syncfusion.Maui.Gauges;
 ### Migration Example
 
 **Xamarin:**
-```xml
+```xaml
 <gauge:SfDigitalGauge Value="12:34"
                       CharacterType="SegmentSeven"
                       DisabledSegmentColor="Gray"
@@ -330,7 +330,7 @@ using Syncfusion.Maui.Gauges;
 ```
 
 **.NET MAUI:**
-```xml
+```xaml
 <gauge:SfDigitalGauge Text="12:34"
                       CharacterType="SegmentSeven"
                       DisabledSegmentStroke="Gray"

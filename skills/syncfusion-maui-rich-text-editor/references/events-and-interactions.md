@@ -31,7 +31,7 @@ void FormatChanged(object sender, RichTextEditorFormatChangedEventArgs e)
 
 ### XAML Subscription
 
-```xml
+```xaml
 <rte:SfRichTextEditor x:Name="richTextEditor"
                       ShowToolbar="True"
                       FormatChanged="OnFormatChanged" />
@@ -118,7 +118,7 @@ void TextChanged(object sender, RichTextEditorTextChangedEventArgs e)
 
 ### XAML Subscription
 
-```xml
+```xaml
 <rte:SfRichTextEditor x:Name="richTextEditor"
                       ShowToolbar="True"
                       TextChanged="OnTextChanged" />
@@ -301,7 +301,7 @@ void HyperlinkClicked(object sender, RichTextEditorHyperlinkClickedEventArgs e)
 
 ### XAML Subscription
 
-```xml
+```xaml
 <rte:SfRichTextEditor x:Name="richTextEditor"
                       ShowToolbar="True"
                       HyperlinkClicked="OnHyperlinkClicked" />
@@ -392,7 +392,7 @@ These events fire when the editor gains or loses input focus.
 Fires when the editor receives focus.
 
 **XAML:**
-```xml
+```xaml
 <rte:SfRichTextEditor x:Name="richTextEditor"
                       Focused="OnEditorFocused" />
 ```
@@ -413,7 +413,7 @@ private void OnEditorFocused(object sender, EventArgs e)
 Fires when the editor loses focus.
 
 **XAML:**
-```xml
+```xaml
 <rte:SfRichTextEditor x:Name="richTextEditor"
                       Unfocused="OnEditorUnfocused" />
 ```
