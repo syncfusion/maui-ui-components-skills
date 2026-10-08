@@ -207,6 +207,7 @@ skills/
 - [Pull to Refresh](skills/syncfusion-maui-pull-to-refresh/SKILL.md)
 - [Segmented Control](skills/syncfusion-maui-segmented-control/SKILL.md)
 - [Popup](skills/syncfusion-maui-popup/SKILL.md)
+- [Grid Splitter](skills/syncfusion-maui-grid-splitter/SKILL.md)
 
 ### Buttons and Indicators
 

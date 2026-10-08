@@ -1,6 +1,6 @@
 ---
 name: syncfusion-maui-smart-scheduler
-description: Implements Syncfusion .NET MAUI AI-Powered Scheduler (SfSmartScheduler). Use when implementing natural language appointment scheduling, AI-powered scheduling, resource-aware booking, or conflict detection in MAUI apps. Covers AI scheduling, natural language CRUD operations, resource booking, and appointment summarization.
+description: Implements Syncfusion .NET MAUI AI-Powered Scheduler (SfSmartScheduler). Use when implementing natural language appointment scheduling, AI-powered scheduling, AI-powered control handling (date navigation, view switching), resource-aware booking, or conflict detection in MAUI apps. Covers AI scheduling, natural language CRUD operations, AI navigation, resource booking, and appointment summarization.
 metadata:
   author: "Syncfusion Inc"
   version: "34.1.29"
@@ -8,13 +8,14 @@ metadata:
 
 # .NET MAUI AI-Powered Scheduler (SfSmartScheduler)
 
-A comprehensive skill for implementing Syncfusion's AI-powered scheduler that combines traditional scheduling with AI-driven intent understanding, enabling users to create, update, delete, and explore appointments using natural language.
+A comprehensive skill for implementing Syncfusion's AI-powered scheduler that combines traditional scheduling with AI-driven intent understanding, enabling users to create, update, delete, and explore appointments using natural language, and to **navigate the calendar and switch views through AI prompts**.
 
 ## When to Use This Skill
 
 Use this skill when you need to:
 - Implement natural language appointment scheduling in MAUI apps
 - Enable users to create/update/delete appointments with plain language
+- Let users navigate the calendar and switch views via AI prompts (e.g. "go to next Monday", "switch to week view")
 - Build resource-aware booking systems (rooms, equipment, people)
 - Add AI-powered conflict detection to scheduling applications
 - Implement smart appointment summarization features
@@ -29,6 +30,7 @@ Use this skill when you need to:
 - Conflict detection and resolution is critical
 - Resource management and availability checking is required
 - Quick appointment summarization is valuable
+- Users should be able to navigate the calendar and switch views using natural language
 
 ## Component Overview
 
@@ -37,12 +39,15 @@ The **SfSmartScheduler** combines the Syncfusion Scheduler with AI-driven natura
 - "Book conference room A for Friday afternoon"
 - "Find free time slots for project review this week"
 - "Summarize my meetings for tomorrow"
+- "Switch to week view" (AI-powered view switching)
+- "Go to next Monday" (AI-powered date navigation)
 
-The component respects current view context, resource availability, detects conflicts, and provides intelligent suggestions—turning scheduling into a conversation rather than form-filling.
+The component respects current view context, resource availability, detects conflicts, supports AI-driven date navigation and view switching, and provides intelligent suggestions—turning scheduling into a conversation rather than form-filling.
 
 ### Key Features
 
 - **Natural-language CRUD:** Create, update, delete appointments using plain language—no structured forms required
+- **AI-powered control handling:** Navigate the calendar (`DisplayDate`) and switch views through AI prompts ("go to next Monday", "switch to week view", "show me month view")
 - **Resource-aware booking:** Book resources while respecting availability and current scheduler filters
 - **Conflict detection:** Identify overlapping appointments and propose resolutions
 - **Smart summarization:** Generate concise summaries of upcoming or selected appointments
@@ -80,6 +85,8 @@ The component respects current view context, resource availability, detects conf
 - Multi-operation commands
 - Supported phrases and patterns
 - Context-aware scheduling
+- AI-powered date navigation ("go to next Monday", "jump to December 1st")
+- AI-powered view switching ("switch to week view", "show me month view")
 - Examples: "Schedule team meeting tomorrow 2pm", "Move marketing review to Friday"
 
 ### Resource-Aware Features

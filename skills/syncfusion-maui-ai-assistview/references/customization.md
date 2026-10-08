@@ -171,7 +171,43 @@ To apply RTL to the entire page:
 
 ---
 
+## Disabling Image Previews
+
+By default, `SfAIAssistView` shows an in-place image preview when the user picks an image
+attachment. Set `AllowImagePreview` to `false` to suppress the preview and pass the image
+straight into the message stream.
+
+```xaml
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView"
+                           AllowImagePreview="False" />
+```
+
+```csharp
+sfAIAssistView.AllowImagePreview = false;
+```
+
+### Notes
+
+- `AllowImagePreview` is a public `BindableProperty` of type `bool` on `SfAIAssistView`,
+  default `true`.
+- The setting is consulted at image-pick time inside `SfAIAssistView` — toggling it at
+  runtime affects subsequent image selections.
+- When `false`, only the attachment chip is shown; the user is not shown the full image
+  before sending. This is the recommended setting for ephemeral/sensitive image flows.
+
+---
+
 ## Liquid Glass Effect
+
+Applies a modern translucent glass-like appearance with adaptive color tinting and light refraction.
+
+> **Platform support:** iOS 26+ and macOS 26+ only. Requires **.NET 10**.
+
+### Steps
+
+1. Wrap `SfAIAssistView` inside `SfGlassEffectView` from `Syncfusion.Maui.Core`.
+2. Set `SfAIAssistView.Background` to `Transparent`.
+3. Set `EnableLiquidGlassEffect` to `true`.
 
 Applies a modern translucent glass-like appearance with adaptive color tinting and light refraction.
 

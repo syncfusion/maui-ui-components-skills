@@ -7,12 +7,31 @@
 - [HyperlinkClicked Event](#hyperlinkclicked-event)
 - [Focused and Unfocused Events](#focused-and-unfocused-events)
 - [Event Subscription Patterns](#event-subscription-patterns)
+- [GetText() Public Method](#gettext-public-method)
 - [Real-World Scenarios](#real-world-scenarios)
 - [Best Practices](#best-practices)
 
 ## Overview
 
 The Rich Text Editor provides several events to track user interactions and content changes. These events enable reactive UI updates, auto-save functionality, validation, analytics, and custom workflows based on editor state.
+
+For plain-text reads, use the public `Task<string> GetText()` method (see [GetText() Public Method](#gettext-public-method)) instead of stripping HTML yourself. The legacy `Text` and `HtmlText` properties are internal and not part of the public surface; use `Value` (with the appropriate `TValue` setting) for HTML/Schema content, and `GetText()` for plain text.
+
+Because `Value` is typed as `object`, always cast it to `string` when reading the HTML content:
+
+```csharp
+string html = (string)richTextEditor.Value;
+```
+
+### Public Method: GetText()
+
+`SfRichTextEditor` exposes the public method `Task<string> GetText()` to extract the plain text content of the editor, stripping all HTML markup. Use it instead of stripping HTML yourself — the implementation handles nested tags, whitespace, and decoded entities reliably across the HTML `Value` content.
+
+```csharp
+string plainText = await richTextEditor.GetText();
+```
+
+Because `GetText()` is asynchronous, always `await` it from an event handler or `async` method. The example handlers in this document read plain text with `await richTextEditor.GetText()` (shown as `GetText()` in code blocks for brevity).
 
 ## FormatChanged Event
 
@@ -77,7 +96,7 @@ private void OnFormatChanged(object sender, RichTextEditorFormatChangedEventArgs
 {
     // Track which formats are used most
     string formatType = "format_type"; // Extract from event args
-    
+
     if (formatUsage.ContainsKey(formatType))
         formatUsage[formatType]++;
     else
@@ -133,7 +152,7 @@ private void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
 {
     string oldHtml = e.OldText;
     string newHtml = e.NewText;
-    
+
     // Handle text changes
     Debug.WriteLine($"Old: {oldHtml}");
     Debug.WriteLine($"New: {newHtml}");
@@ -149,7 +168,7 @@ private bool hasUnsavedChanges = false;
 public void SetupAutoSave()
 {
     richTextEditor.TextChanged += OnTextChangedForAutoSave;
-    
+
     // Auto-save every 30 seconds
     autoSaveTimer = new System.Timers.Timer(30000);
     autoSaveTimer.Elapsed += async (s, e) => await PerformAutoSave();
@@ -165,10 +184,10 @@ private async Task PerformAutoSave()
 {
     if (hasUnsavedChanges)
     {
-        string content = richTextEditor.HtmlText;
+        string content = (string)richTextEditor.Value;
         await SaveContentAsync(content);
         hasUnsavedChanges = false;
-        
+
         MainThread.BeginInvokeOnMainThread(() =>
         {
             DisplayAlert("Auto-Saved", "Your changes have been saved", "OK");
@@ -182,11 +201,11 @@ private async Task PerformAutoSave()
 ```csharp
 private Label characterCountLabel;
 
-private void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
+private async void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
 {
-    string plainText = richTextEditor.Text;
+    string plainText = await richTextEditor.GetText();
     int charCount = plainText?.Length ?? 0;
-    
+
     characterCountLabel.Text = $"Characters: {charCount}";
 }
 ```
@@ -196,19 +215,19 @@ private void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
 ```csharp
 private Label wordCountLabel;
 
-private void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
+private async void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
 {
-    string plainText = richTextEditor.Text;
-    
+    string plainText = await richTextEditor.GetText();
+
     if (string.IsNullOrWhiteSpace(plainText))
     {
         wordCountLabel.Text = "Words: 0";
         return;
     }
-    
-    int wordCount = plainText.Split(new[] { ' ', '\n', '\r', '\t' }, 
+
+    int wordCount = plainText.Split(new[] { ' ', '\n', '\r', '\t' },
         StringSplitOptions.RemoveEmptyEntries).Length;
-    
+
     wordCountLabel.Text = $"Words: {wordCount}";
 }
 ```
@@ -218,11 +237,11 @@ private void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
 ```csharp
 private const int MaxCharacters = 5000;
 
-private void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
+private async void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
 {
-    string plainText = richTextEditor.Text;
+    string plainText = await richTextEditor.GetText();
     int charCount = plainText?.Length ?? 0;
-    
+
     if (charCount > MaxCharacters)
     {
         warningLabel.Text = $"Warning: Character limit exceeded ({charCount}/{MaxCharacters})";
@@ -249,10 +268,10 @@ private void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
     {
         undoStack.Push(e.OldText);
     }
-    
+
     // Clear redo stack on new change
     redoStack.Clear();
-    
+
     UpdateUndoRedoButtons();
 }
 
@@ -270,7 +289,7 @@ private void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
 {
     string oldHtml = e.OldText;
     string newHtml = e.NewText;
-    
+
     // Log changes for audit trail
     LogContentChange(DateTime.Now, oldHtml, newHtml);
 }
@@ -316,7 +335,7 @@ private async void OnHyperlinkClicked(object sender, RichTextEditorHyperlinkClic
 {
     string url = e.URL;
     string displayText = e.DisplayText;
-    
+
     // Open link
     await Launcher.OpenAsync(url);
 }
@@ -329,7 +348,7 @@ private async void OnHyperlinkClicked(object sender, RichTextEditorHyperlinkClic
 {
     string url = e.URL;
     string displayText = e.DisplayText;
-    
+
     // Confirm before opening external links
     bool shouldOpen = await DisplayAlert(
         "Open Link",
@@ -337,7 +356,7 @@ private async void OnHyperlinkClicked(object sender, RichTextEditorHyperlinkClic
         "Yes",
         "No"
     );
-    
+
     if (shouldOpen)
     {
         try
@@ -359,10 +378,10 @@ private async void OnHyperlinkClicked(object sender, RichTextEditorHyperlinkClic
 {
     string url = e.URL;
     string displayText = e.DisplayText;
-    
+
     // Track link clicks for analytics
     await TrackLinkClick(url, displayText);
-    
+
     // Open link
     await Launcher.OpenAsync(url);
 }
@@ -435,7 +454,7 @@ private void OnEditorUnfocused(object sender, EventArgs e)
 private async void OnEditorUnfocused(object sender, EventArgs e)
 {
     // Save content when user leaves the editor
-    string content = richTextEditor.HtmlText;
+    string content = (string)richTextEditor.Value;
     await SaveContentAsync(content);
 }
 ```
@@ -488,13 +507,13 @@ private void OnEditorUnfocused(object sender, EventArgs e)
 public class EditorPage : ContentPage
 {
     private SfRichTextEditor richTextEditor;
-    
+
     public EditorPage()
     {
         InitializeComponent();
-        
+
         richTextEditor = new SfRichTextEditor();
-        
+
         // Subscribe to events
         richTextEditor.TextChanged += OnTextChanged;
         richTextEditor.FormatChanged += OnFormatChanged;
@@ -511,7 +530,7 @@ public class EditorPage : ContentPage
 protected override void OnDisappearing()
 {
     base.OnDisappearing();
-    
+
     // Unsubscribe to prevent memory leaks
     richTextEditor.TextChanged -= OnTextChanged;
     richTextEditor.FormatChanged -= OnFormatChanged;
@@ -530,7 +549,7 @@ private void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
 {
     // Ignore changes during loading
     if (isLoading) return;
-    
+
     // Process text changes
     HandleTextChange(e.NewText);
 }
@@ -538,9 +557,235 @@ private void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
 public async Task LoadContent(string html)
 {
     isLoading = true;
-    richTextEditor.HtmlText = html;
+    richTextEditor.Value = html;
     await Task.Delay(100); // Allow rendering
     isLoading = false;
+}
+```
+
+## GetText() Public Method
+
+### Overview
+
+`SfRichTextEditor` exposes `Task<string> GetText()` to extract the plain text content from the editor, stripping all HTML markup and decoding HTML entities. Because the public `Text` property is now internal, `GetText()` is the supported way to obtain a plain-text representation of the editor content (used for character/word counts, search indexing, text-to-speech, SMS export, copy-to-clipboard as plain text, and so on).
+
+### Method Signature
+
+```csharp
+public Task<string> GetText();
+```
+
+- **Returns**: A `Task<string>` that completes with the plain text extracted from the editor's `Value`.
+- **HTML/Schema**: Works on editors configured with `TValue="HTML"`. For editors configured with `TValue="Schema"`, the plain text is derived from the block nodes' visible text.
+- **Thread**: Must be awaited; calling it without `await` returns the `Task` and the body runs asynchronously.
+
+### Basic Usage
+
+```csharp
+public partial class MainPage : ContentPage
+{
+    private SfRichTextEditor richTextEditor;
+
+    public MainPage()
+    {
+        InitializeComponent();
+
+        richTextEditor = new SfRichTextEditor
+        {
+            TValue = RichTextEditorValueType.HTML,
+            Value = "<h1>Welcome</h1><p>This is <strong>bold</strong> text.</p>"
+        };
+        Content = richTextEditor;
+    }
+
+    private async void OnGetTextClicked(object sender, EventArgs e)
+    {
+        string plainText = await richTextEditor.GetText();
+        /* Result:
+        Welcome
+
+        This is bold text.
+        */
+
+        await DisplayAlert("Plain Text", plainText, "OK");
+    }
+}
+```
+
+### Use Cases
+
+**1. Search Indexing**
+
+```csharp
+public class SearchIndex
+{
+    private readonly Dictionary<string, string> _index = new();
+
+    public async Task IndexDocumentAsync(string documentId, SfRichTextEditor editor)
+    {
+        string plainText = await editor.GetText();
+        _index[documentId] = plainText.ToLowerInvariant();
+    }
+
+    public List<string> Search(string query)
+    {
+        query = query.ToLowerInvariant();
+        return _index
+            .Where(kvp => kvp.Value.Contains(query))
+            .Select(kvp => kvp.Key)
+            .ToList();
+    }
+}
+```
+
+**2. Text-to-Speech**
+
+```csharp
+public async Task ReadAloudAsync()
+{
+    string plainText = await richTextEditor.GetText();
+
+    try
+    {
+        await TextToSpeech.SpeakAsync(plainText);
+    }
+    catch (Exception ex)
+    {
+        await DisplayAlert("Error", $"Text-to-speech failed: {ex.Message}", "OK");
+    }
+}
+```
+
+**3. Copy as Plain Text to Clipboard**
+
+```csharp
+private async void OnCopyPlainTextClicked(object sender, EventArgs e)
+{
+    string plainText = await richTextEditor.GetText();
+    await Clipboard.SetTextAsync(plainText);
+    statusLabel.Text = "Plain text copied";
+}
+```
+
+**4. SMS / Short Message Export**
+
+```csharp
+public async Task SendAsSmsAsync()
+{
+    string plainText = await richTextEditor.GetText();
+
+    if (plainText.Length > 160)
+    {
+        plainText = plainText.Substring(0, 157) + "...";
+    }
+
+    try
+    {
+        var message = new SmsMessage { Body = plainText };
+        await Sms.ComposeAsync(message);
+    }
+    catch (FeatureNotSupportedException)
+    {
+        await DisplayAlert("Error", "SMS is not supported on this device", "OK");
+    }
+}
+```
+
+**5. Word/Character Count Dashboard**
+
+```csharp
+public class DocumentStatistics
+{
+    public int WordCount { get; set; }
+    public int CharacterCount { get; set; }
+    public int CharacterCountNoSpaces { get; set; }
+    public int ParagraphCount { get; set; }
+    public int SentenceCount { get; set; }
+}
+
+public async Task<DocumentStatistics> GetStatisticsAsync()
+{
+    string text = await richTextEditor.GetText();
+
+    return new DocumentStatistics
+    {
+        WordCount = text.Split(new[] { ' ', '\n', '\r', '\t' },
+            StringSplitOptions.RemoveEmptyEntries).Length,
+        CharacterCount = text.Length,
+        CharacterCountNoSpaces = text.Replace(" ", "").Replace("\n", "").Replace("\r", "").Length,
+        ParagraphCount = text.Split(new[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries).Length,
+        SentenceCount = text.Split(new[] { '.', '!', '?' },
+            StringSplitOptions.RemoveEmptyEntries).Length
+    };
+}
+```
+
+**6. Spell Check and Translation**
+
+```csharp
+public async Task<List<string>> GetMisspelledWordsAsync()
+{
+    string text = await richTextEditor.GetText();
+    string[] words = text.Split(new[] { ' ', '\n', '\r', '\t', '.', ',', '!', '?' },
+        StringSplitOptions.RemoveEmptyEntries);
+
+    var misspelled = new List<string>();
+    foreach (string word in words)
+    {
+        if (!SpellChecker.IsCorrect(word))
+        {
+            misspelled.Add(word);
+        }
+    }
+    return misspelled;
+}
+
+public async Task TranslateContentAsync(string targetLanguage)
+{
+    string plainText = await richTextEditor.GetText();
+    // string translated = await TranslationService.TranslateAsync(plainText, targetLanguage);
+}
+```
+
+### Important Notes
+
+- **Always await**: `GetText()` returns `Task<string>`. Callers must `await` it to obtain the plain-text result. Event handlers should be marked `async void` when consuming it from a sync event delegate.
+- **Editor must be initialized**: The editor must have rendered at least once before `GetText()` is called. Calling it before the editor loads may return an empty string.
+- **Use instead of HTML stripping**: The previous approach of reading `(string)editor.Value` and stripping tags with a `Regex` is no longer required — `GetText()` already returns the cleaned plain text.
+- **Schema mode**: When the editor is configured with `TValue="Schema"`, `GetText()` returns the concatenated visible text from all block nodes (text nodes, list items, heading text, code block contents, and alt-text from images).
+
+### Troubleshooting
+
+**`GetText()` returns an empty string when the editor has content**
+
+Make sure you `await` the call:
+
+```csharp
+// Wrong — discards the result
+richTextEditor.GetText();
+
+// Correct
+string text = await richTextEditor.GetText();
+```
+
+**`GetText()` is slow for large documents**
+
+Call it inside a debounced `TextChanged` handler so it runs only after the user pauses, rather than on every keystroke:
+
+```csharp
+private System.Timers.Timer debounceTimer = new(500) { AutoReset = false };
+private async void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
+{
+    debounceTimer.Stop();
+    debounceTimer.Elapsed += async (s, args) =>
+    {
+        await MainThread.InvokeOnMainThreadAsync(async () =>
+        {
+            string text = await richTextEditor.GetText();
+            UpdateCounts(text);
+        });
+    };
+    debounceTimer.Start();
 }
 ```
 
@@ -555,47 +800,47 @@ public class AutoSaveEditor
     private System.Timers.Timer debounceTimer;
     private bool hasUnsavedChanges = false;
     private Label statusLabel;
-    
+
     public AutoSaveEditor(SfRichTextEditor editor, Label statusLabel)
     {
         this.editor = editor;
         this.statusLabel = statusLabel;
-        
+
         // Setup debounce timer (2 seconds)
         debounceTimer = new System.Timers.Timer(2000);
         debounceTimer.AutoReset = false;
         debounceTimer.Elapsed += async (s, e) => await PerformSave();
-        
+
         // Subscribe to text changes
         editor.TextChanged += OnTextChanged;
     }
-    
+
     private void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
     {
         hasUnsavedChanges = true;
-        
+
         // Reset timer on each change
         debounceTimer.Stop();
         debounceTimer.Start();
-        
+
         MainThread.BeginInvokeOnMainThread(() =>
         {
             statusLabel.Text = "Unsaved changes...";
             statusLabel.TextColor = Colors.Orange;
         });
     }
-    
+
     private async Task PerformSave()
     {
         if (!hasUnsavedChanges) return;
-        
+
         try
         {
-            string content = editor.HtmlText;
+            string content = (string)editor.Value;
             await SaveToServer(content);
-            
+
             hasUnsavedChanges = false;
-            
+
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 statusLabel.Text = $"Saved at {DateTime.Now:HH:mm:ss}";
@@ -611,7 +856,7 @@ public class AutoSaveEditor
             });
         }
     }
-    
+
     private async Task SaveToServer(string content)
     {
         // Implement save logic
@@ -629,27 +874,27 @@ public class ContentStatistics
     private Label charCountLabel;
     private Label wordCountLabel;
     private Label readTimeLabel;
-    
-    public ContentStatistics(SfRichTextEditor editor, 
+
+    public ContentStatistics(SfRichTextEditor editor,
         Label charCount, Label wordCount, Label readTime)
     {
         this.editor = editor;
         this.charCountLabel = charCount;
         this.wordCountLabel = wordCount;
         this.readTimeLabel = readTime;
-        
+
         editor.TextChanged += OnTextChanged;
     }
-    
-    private void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
+
+    private async void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
     {
-        UpdateStatistics();
+        await UpdateStatistics();
     }
-    
-    private void UpdateStatistics()
+
+    private async Task UpdateStatistics()
     {
-        string plainText = editor.Text;
-        
+        string plainText = await editor.GetText();
+
         if (string.IsNullOrWhiteSpace(plainText))
         {
             charCountLabel.Text = "0 characters";
@@ -657,16 +902,16 @@ public class ContentStatistics
             readTimeLabel.Text = "0 min read";
             return;
         }
-        
+
         // Character count
         int charCount = plainText.Length;
         charCountLabel.Text = $"{charCount:N0} characters";
-        
+
         // Word count
-        int wordCount = plainText.Split(new[] { ' ', '\n', '\r', '\t' }, 
+        int wordCount = plainText.Split(new[] { ' ', '\n', '\r', '\t' },
             StringSplitOptions.RemoveEmptyEntries).Length;
         wordCountLabel.Text = $"{wordCount:N0} words";
-        
+
         // Estimated read time (200 words per minute)
         int readMinutes = (int)Math.Ceiling(wordCount / 200.0);
         readTimeLabel.Text = $"{readMinutes} min read";
@@ -682,24 +927,24 @@ public class CollaborativeEditor
     private SfRichTextEditor editor;
     private Label statusLabel;
     private string userId;
-    
+
     public CollaborativeEditor(SfRichTextEditor editor, Label statusLabel, string userId)
     {
         this.editor = editor;
         this.statusLabel = statusLabel;
         this.userId = userId;
-        
+
         editor.TextChanged += OnTextChanged;
         editor.Focused += OnFocused;
         editor.Unfocused += OnUnfocused;
     }
-    
+
     private async void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
     {
         // Broadcast changes to other users
         await BroadcastChange(userId, e.NewText);
     }
-    
+
     private async void OnFocused(object sender, EventArgs e)
     {
         // Notify others that this user is editing
@@ -707,7 +952,7 @@ public class CollaborativeEditor
         statusLabel.Text = "You are editing";
         statusLabel.TextColor = Colors.Green;
     }
-    
+
     private async void OnUnfocused(object sender, EventArgs e)
     {
         // Notify others that this user stopped editing
@@ -715,13 +960,13 @@ public class CollaborativeEditor
         statusLabel.Text = "Not editing";
         statusLabel.TextColor = Colors.Gray;
     }
-    
+
     private async Task BroadcastChange(string userId, string content)
     {
         // Send to collaboration server
         await Task.CompletedTask;
     }
-    
+
     private async Task NotifyEditing(string userId, bool isEditing)
     {
         // Notify collaboration server
@@ -749,7 +994,7 @@ private void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
 protected override void OnDisappearing()
 {
     base.OnDisappearing();
-    
+
     // Prevent memory leaks
     richTextEditor.TextChanged -= OnTextChanged;
     richTextEditor.FormatChanged -= OnFormatChanged;
@@ -789,10 +1034,10 @@ private void OnTextChanged(object sender, RichTextEditorTextChangedEventArgs e)
 {
     // Show saving indicator
     savingIndicator.IsVisible = true;
-    
+
     // Perform save
     SaveContent();
-    
+
     // Hide indicator
     savingIndicator.IsVisible = false;
 }
@@ -822,17 +1067,17 @@ public class EditorEventAggregator
     public event EventHandler<string> ContentSaved;
     public event EventHandler<int> CharacterCountChanged;
     public event EventHandler<string> FormatApplied;
-    
+
     public void OnContentSaved(string content)
     {
         ContentSaved?.Invoke(this, content);
     }
-    
+
     public void OnCharacterCountChanged(int count)
     {
         CharacterCountChanged?.Invoke(this, count);
     }
-    
+
     public void OnFormatApplied(string format)
     {
         FormatApplied?.Invoke(this, format);

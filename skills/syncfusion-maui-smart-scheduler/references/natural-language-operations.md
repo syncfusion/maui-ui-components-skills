@@ -7,6 +7,8 @@
 - [Updating Appointments](#updating-appointments)
 - [Deleting Appointments](#deleting-appointments)
 - [Querying Appointments](#querying-appointments)
+- [AI-Powered Date Navigation](#ai-powered-date-navigation)
+- [AI-Powered View Switching](#ai-powered-view-switching)
 - [Supported Patterns and Keywords](#supported-patterns-and-keywords)
 - [Context-Aware Scheduling](#context-aware-scheduling)
 - [Multi-Operation Commands](#multi-operation-commands)
@@ -450,6 +452,107 @@ Result: Deletes Friday appointments, moves one to Monday
 "Move morning meeting to 11am and extend it by 30 minutes"
 ```
 Result: Reschedules and adjusts duration in one operation
+
+---
+
+## AI-Powered Date Navigation
+
+The SmartScheduler can interpret natural-language navigation commands and move the scheduler's `DisplayDate` accordingly. The AI interprets phrases like "go to next Monday" or "jump to December 1st" and routes them through the `DateNavigation` action.
+
+**Pattern:** "Go to / Jump to / Show / Open [date or relative phrase]"
+
+**Examples:**
+
+```
+"Go to next Monday"
+```
+Result: The scheduler navigates to the next Monday after the current `DisplayDate`.
+
+```
+"Jump to December 1st"
+```
+Result: The scheduler navigates to December 1st of the current year.
+
+```
+"Show me next week"
+```
+Result: The scheduler moves `DisplayDate` forward by 7 days.
+
+```
+"Open the schedule for tomorrow"
+```
+Result: `DisplayDate` is set to tomorrow's date.
+
+```
+"Take me to the first Friday of January 2026"
+```
+Result: `DisplayDate` is set to the first Friday of January 2026.
+
+### Programmatic Handling
+
+Date-navigation actions are performed by the SmartScheduler automatically — the AI updates the scheduler's `DisplayDate` for you. If you need to react to the change (for example, to refresh a dependent UI), subscribe to the standard `ViewChanged` event or compare `DisplayDate` before and after the AI command:
+
+```csharp
+this.SmartScheduler.PropertyChanged += (sender, e) =>
+{
+    if (e.PropertyName == nameof(SfSmartScheduler.DisplayDate))
+    {
+        // The AI has navigated to a new date
+        var newDate = this.SmartScheduler.DisplayDate;
+    }
+};
+```
+
+## AI-Powered View Switching
+
+The SmartScheduler can interpret natural-language view-switching commands and change the scheduler's `View` property. The AI maps phrases like "switch to week view" to the correct `SchedulerView` enum value through the `ChangeView` action. The view is only changed if the target view is part of the scheduler's current `AllowedViews`.
+
+**Pattern:** "Switch to / Show / Open / Change to [view]"
+
+**Examples:**
+
+```
+"Switch to week view"
+```
+Result: `View` becomes `SchedulerView.Week`.
+
+```
+"Show me the month"
+```
+Result: `View` becomes `SchedulerView.Month`.
+
+```
+"Open the agenda"
+```
+Result: `View` becomes `SchedulerView.Agenda`.
+
+```
+"Take me to the timeline"
+```
+Result: `View` becomes `SchedulerView.TimelineWeek` (or another timeline view based on context).
+
+```
+"Switch to day"
+```
+Result: `View` becomes `SchedulerView.Day`.
+
+### Programmatic Handling
+
+View-switching actions are performed by the SmartScheduler automatically — the AI updates the scheduler's `View` for you. If you need to react to the change (for example, to refresh dependent UI), subscribe to the standard `ViewChanged` event or compare `View` before and after the AI command:
+
+```csharp
+this.SmartScheduler.ViewChanged += (sender, e) =>
+{
+    // The AI has switched to a new view
+    var currentView = e.NewView;
+};
+```
+
+### Behavior Notes
+
+- Date navigation and view switching are only triggered by the LLM when it returns the matching JSON action; phrases that the LLM interprets as a question or a scheduling request do not navigate.
+- View switching respects `AllowedViews`; the AI cannot switch to a view that the scheduler has explicitly disabled.
+- Use the standard `ViewChanged` and `DisplayDate` `PropertyChanged` events to react to AI-driven navigation and view-switching actions.
 
 ---
 

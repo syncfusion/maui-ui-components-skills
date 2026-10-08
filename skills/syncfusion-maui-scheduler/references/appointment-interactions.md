@@ -16,11 +16,15 @@
   - [Editor Modes](#editor-modes)
   - [Adding Appointments](#adding-appointments)
   - [Editing Appointments](#editing-appointments)
+  - [Programmatic Editor](#programmatic-editor)
   - [Editor Events](#editor-events)
+- [Restrict Overlapping Appointments](#restrict-overlapping-appointments)
 - [Appointment Tooltip](#appointment-tooltip)
   - [Enable Tooltip](#enable-tooltip)
   - [Tooltip Settings](#tooltip-settings)
   - [Custom Tooltip Template](#custom-tooltip-template)
+- [Quick Info Template](#quick-info-template)
+- [Floating Action Button](#floating-action-button)
 - [Cell Selection](#cell-selection)
   - [Selection Appearance](#selection-appearance)
   - [Custom Selection Template](#custom-selection-template)
@@ -423,6 +427,54 @@ When editing a recurring appointment, a dialog prompts:
 
 After selection, the editor opens with corresponding details.
 
+### Programmatic Editor
+
+The scheduler exposes a small set of public methods so that you can open the Add, Edit, Delete, and QuickInfo flows from your own UI (toolbar buttons, context menu items, etc.). These methods are honored only when the matching mode is enabled in `AppointmentEditorMode`.
+
+#### OpenAddPopup
+
+Opens the appointment editor in "Add" mode for the supplied start date.
+
+```csharp
+this.Scheduler.OpenAddPopup(DateTime.Today.AddHours(10));
+```
+
+**Parameters:** `DateTime startDate` — the start time of the new appointment.
+
+#### OpenEditPopup
+
+Opens the appointment editor in "Edit" mode for the supplied appointment.
+
+```csharp
+this.Scheduler.OpenEditPopup(myAppointment);
+```
+
+**Parameters:** `object appointment` — the appointment to edit (typically the business-object or `SchedulerAppointment` instance).
+
+#### DeleteAppointment
+
+Programmatically deletes an appointment. Honors recurring-appointment edit-mode prompts (series vs. occurrence) just like the in-app UI.
+
+```csharp
+this.Scheduler.DeleteAppointment(myAppointment);
+```
+
+**Parameters:** `object appointment` — the appointment to delete.
+
+#### OpenQuickInfoPopup
+
+Opens the quick info popup for the supplied appointment.
+
+```csharp
+this.Scheduler.OpenQuickInfoPopup(myAppointment);
+```
+
+**Parameters:** `object appointment` — the appointment whose quick info should be shown.
+
+**Notes:**
+- These methods do nothing when the corresponding `AppointmentEditorMode` flag is not set.
+- `OpenAddPopup` and `OpenEditPopup` respect recurring-appointment edit prompts (if applicable) and the `AppointmentEditorOpening` / `AppointmentEditorClosing` events.
+
 ### Editor Events
 
 #### AppointmentEditorOpening Event
@@ -483,6 +535,31 @@ private void Scheduler_RecurringAppointmentBeginningEdit(object? sender, Recurri
 - **User**: Show dialog to prompt user
 - **Occurrence**: Edit only selected occurrence
 - **Series**: Edit entire series
+
+## Restrict Overlapping Appointments
+
+By default, the scheduler allows appointments to overlap within the same time range (two appointments can share the same time slot in Day, Week, WorkWeek, and Timeline views). Set `AllowOverlap` to `false` to prevent overlapping appointments within the same time range and same resource.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler"
+                       View="Week"
+                       AllowOverlap="False" />
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Week;
+scheduler.AllowOverlap = false;
+this.Content = scheduler;
+```
+
+**Default:** `true` (overlapping allowed)
+
+**Behavior when `AllowOverlap = false`:**
+- New appointments are not allowed to be created (via the editor, drag-and-drop, or programmatic add) at a time range that overlaps with an existing appointment in the same resource.
+- All-day appointments, spanned appointments, and recurring appointments honor the same constraint.
+- When `AppointmentEditorMode` is set to `Add` and the user taps a time range that already has appointments, the editor still opens but the save action is blocked.
+- During drag-and-drop, the drop is rejected if the new time range would overlap an existing appointment in the same resource.
 
 ## Appointment Tooltip
 
@@ -580,6 +657,117 @@ Create custom tooltip layouts using `AppointmentToolTipTemplate`:
     </scheduler:SfScheduler.AppointmentToolTipTemplate>
 </scheduler:SfScheduler>
 ```
+
+## Quick Info Template
+
+The Quick Info popup is the small floating panel that appears when the user taps an appointment on a touch device. Replace the default popup body with your own `DataTemplate` by setting `QuickInfoTemplate` on the scheduler. When `QuickInfoTemplate` is `null`, the built-in quick info UI is used.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Week">
+    <scheduler:SfScheduler.QuickInfoTemplate>
+        <DataTemplate>
+            <Grid Padding="10" BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0"
+                       Text="{Binding SchedulerAppointment.Subject}"
+                       FontAttributes="Bold"
+                       FontSize="14"
+                       TextColor="Black" />
+
+                <Label Grid.Row="1"
+                       FontSize="12"
+                       TextColor="Gray">
+                    <Label.Text>
+                        <MultiBinding StringFormat="{}{0:hh:mm tt} - {1:hh:mm tt}">
+                            <Binding Path="SchedulerAppointment.StartTime" />
+                            <Binding Path="SchedulerAppointment.EndTime" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
+
+                <HorizontalStackLayout Grid.Row="2" Spacing="6">
+                    <Button Text="Edit"
+                            Command="{Binding EditAppointment}" />
+                    <Button Text="Delete"
+                            Command="{Binding DeleteAppointment}" />
+                    <Button Text="Close"
+                            Command="{Binding ClosePopup}" />
+                </HorizontalStackLayout>
+            </Grid>
+        </DataTemplate>
+    </scheduler:SfScheduler.QuickInfoTemplate>
+</scheduler:SfScheduler>
+```
+
+```csharp
+this.Scheduler.QuickInfoTemplate = new DataTemplate(() =>
+{
+    var grid = new Grid { Padding = 10, BackgroundColor = Colors.White };
+    // ... build the same UI as the XAML example
+    return grid;
+});
+```
+
+**BindingContext:** `QuickInfoPopupDetails` — provides:
+- `SchedulerAppointment` — the associated appointment.
+- `EditAppointment` — `ICommand` that opens the editor for the appointment.
+- `DeleteAppointment` — `ICommand` that deletes the appointment.
+- `ClosePopup` — `ICommand` that closes the quick info popup.
+
+**Default:** `null` (built-in quick info UI)
+
+## Floating Action Button
+
+Show a floating action button (FAB) at the bottom-right corner of the scheduler. Tapping the button opens the appointment editor for a new appointment on the scheduler's current `DisplayDate`. The button honors `AppointmentEditorMode` — if `Add` is not enabled in `AppointmentEditorMode`, tapping the button does nothing.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Week" ShowFloatingActionButton="True" />
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Week;
+scheduler.ShowFloatingActionButton = true;
+this.Content = scheduler;
+```
+
+**Default:** `false`
+
+### Customize the Floating Action Button Icon
+
+Provide a `DataTemplate` via `FloatingActionButtonTemplate` to render a custom icon (image, label, vector glyph, etc.). The template's content becomes the `Content` of the internal `SfButton`.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" 
+                       View="Week" 
+                       ShowFloatingActionButton="True">
+    <scheduler:SfScheduler.FloatingActionButtonTemplate>
+        <DataTemplate>
+            <Image Source="add_white.png"
+                   WidthRequest="20"
+                   HeightRequest="20"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+        </DataTemplate>
+    </scheduler:SfScheduler.FloatingActionButtonTemplate>
+</scheduler:SfScheduler>
+```
+
+```csharp
+this.Scheduler.FloatingActionButtonTemplate = new DataTemplate(() =>
+{
+    return new Image { Source = "add_white.png" };
+});
+```
+
+**Notes:**
+- The floating action button renders on every platform (Android, iOS, Windows, MacCatalyst) and in every view (Day, Week, WorkWeek, Month, Agenda, TimelineDay, TimelineWeek, TimelineWorkWeek, TimelineMonth, and the Month agenda inline layout).
+- The button is not shown when the host control is a `SfSmartScheduler` instance (the SmartScheduler already has its own AI command surface).
 
 ## Cell Selection
 

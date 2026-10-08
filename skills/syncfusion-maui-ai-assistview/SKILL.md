@@ -145,6 +145,12 @@ Use this skill when you need to:
 - Deterministic composition order and filtering
 - Prompt composing event inspection
 
+### Prompt Library
+📄 **Read:** [references/prompt-library.md](references/prompt-library.md)
+- Browse, search, and pick from a catalog of predefined prompts
+- `SfPromptLibrary.ItemsSource` and the `PromptItem` model
+- Handle selection via the `PromptSelected` event or `PromptSelectedCommand`
+
 ### Disclaimer Message
 📄 **Read:** [references/disclaimer-message.md](references/disclaimer-message.md)
 - Disclaimer text below the editor
@@ -194,6 +200,7 @@ Use this skill when you need to:
 - Empty state views
 - Localization (RESX)
 - Right-to-left (RTL) support
+- Disabling image previews via `AllowImagePreview` (default `true`)
 - Platform-specific effects (iOS liquid glass)
 
 ---

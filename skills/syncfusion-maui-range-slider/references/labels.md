@@ -15,6 +15,7 @@
   - [Label Offset](#label-offset)
 - [Events](#events)
   - [LabelCreated Event](#labelcreated-event)
+- [Custom Labels with LabelTemplate](#custom-labels-with-labeltemplate)
 - [Visual State Management](#visual-state-management)
   - [Disabled State](#disabled-state)
 - [Common Scenarios](#common-scenarios)
@@ -362,6 +363,113 @@ SfRangeSlider rangeSlider = new SfRangeSlider
 };
 rangeSlider.LabelCreated += OnLabelCreated;
 ```
+
+## Custom Labels with LabelTemplate
+
+The `LabelTemplate` property lets you define a custom view (using `DataTemplate`) to display each slider label. Use it when you need richer label content than plain text — for example, icons, shapes, formatted strings, or any MAUI view bound to label data.
+
+**Type:** `DataTemplate`
+
+**Available Binding Properties:**
+- `Text` - The label text (formatted by `NumberFormat`)
+- `Value` - The numeric value of the label
+- `Position` - The position of the label along the track (in slider value coordinates)
+
+**XAML Example:**
+```xaml
+<sliders:SfRangeSlider Minimum="0"
+                       Maximum="100"
+                       RangeStart="20"
+                       RangeEnd="80"
+                       Interval="20"
+                       ShowLabels="True"
+                       ShowTicks="True">
+    <sliders:SfRangeSlider.LabelTemplate>
+        <DataTemplate>
+            <Label Text="{Binding Text}"
+                   TextColor="Red"
+                   FontAttributes="Bold" />
+        </DataTemplate>
+    </sliders:SfRangeSlider.LabelTemplate>
+</sliders:SfRangeSlider>
+```
+
+**C# Example:**
+```c#
+SfRangeSlider rangeSlider = new SfRangeSlider
+{
+    Minimum = 0,
+    Maximum = 100,
+    RangeStart = 20,
+    RangeEnd = 80,
+    Interval = 20,
+    ShowTicks = true,
+    ShowLabels = true,
+    LabelTemplate = new DataTemplate(() =>
+    {
+        Label label = new Label
+        {
+            TextColor = Colors.Red,
+            FontAttributes = FontAttributes.Bold
+        };
+        label.SetBinding(Label.TextProperty, "Text");
+        return label;
+    })
+};
+this.Content = rangeSlider;
+```
+
+**When to use LabelTemplate vs LabelCreated Event:**
+
+| Approach | Best For |
+|----------|----------|
+| `LabelTemplate` | Declarative, design-time view customization, icons, shapes, complex layouts |
+| `LabelCreated Event` | Imperative text-only changes (e.g. simple prefix/suffix or unit conversion) |
+
+**Icon-Based Label Example:**
+```xaml
+<sliders:SfRangeSlider Minimum="0"
+                       Maximum="100"
+                       RangeStart="20"
+                       RangeEnd="80"
+                       Interval="20"
+                       ShowLabels="True"
+                       ShowTicks="True">
+    <sliders:SfRangeSlider.LabelTemplate>
+        <DataTemplate>
+            <HorizontalStackLayout Spacing="4">
+                <Image Source="star.png" WidthRequest="12" HeightRequest="12" />
+                <Label Text="{Binding Text}" FontSize="12" />
+            </HorizontalStackLayout>
+        </DataTemplate>
+    </sliders:SfRangeSlider.LabelTemplate>
+</sliders:SfRangeSlider>
+```
+
+**Shape and Color-Coded Label Example:**
+```xaml
+<sliders:SfRangeSlider.LabelTemplate>
+    <DataTemplate>
+        <HorizontalStackLayout Spacing="2">
+            <BoxView WidthRequest="6"
+                     HeightRequest="6"
+                     Color="Green"
+                     VerticalOptions="Center" />
+            <Label Text="{Binding Text}"
+                   TextColor="DarkGreen"
+                   FontSize="11" />
+        </HorizontalStackLayout>
+    </DataTemplate>
+</sliders:SfRangeSlider.LabelTemplate>
+```
+
+> **Note:** When `LabelTemplate` is set, properties on `LabelStyle` (such as `ActiveTextColor`, `InactiveTextColor`, `FontSize`, etc.) are ignored for the rendered label content. Use binding properties to vary appearance per label if needed (for example, by binding to `Value`).
+
+**Troubleshooting — LabelTemplate Not Rendering:**
+- Ensure `DataTemplate` is a direct child of the `LabelTemplate` property.
+- Use the correct binding context — the available properties are `Text`, `Value`, and `Position`.
+- Keep template visuals small (under 24x24) to avoid label crowding on the track.
+- If labels disappear, confirm `ShowLabels="True"` and that `Interval` is producing at least one label.
 
 ## Visual State Management
 

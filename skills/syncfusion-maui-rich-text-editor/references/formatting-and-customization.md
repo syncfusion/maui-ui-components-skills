@@ -9,7 +9,6 @@
 - [Text Styling](#text-styling)
 - [Paragraph Formatting](#paragraph-formatting)
 - [Indentation Control](#indentation-control)
-- [Default Text Styles](#default-text-styles)
 - [Combined Formatting Examples](#combined-formatting-examples)
 - [Best Practices](#best-practices)
 
@@ -63,7 +62,6 @@ richTextEditor.BorderThickness = 1;
 richTextEditor.EditorBackgroundColor = Color.FromRgb(30, 30, 30);
 richTextEditor.BorderColor = Color.FromRgb(60, 60, 60);
 richTextEditor.BorderThickness = 1;
-richTextEditor.DefaultTextColor = Colors.White;
 ```
 
 **Note-Style Editor:**
@@ -513,58 +511,6 @@ richTextEditor.IncreaseIndent();
 richTextEditor.DecreaseIndent();
 ```
 
-## Default Text Styles
-
-Set default styling for newly typed text.
-
-### Properties
-
-- **DefaultFontFamily** - Default font family
-- **DefaultFontSize** - Default font size
-- **DefaultTextColor** - Default text color
-
-### XAML Configuration
-
-```xaml
-<rte:SfRichTextEditor DefaultFontFamily="Arial"
-                      DefaultFontSize="14"
-                      DefaultTextColor="Black" />
-```
-
-### C# Configuration
-
-```csharp
-SfRichTextEditor richTextEditor = new SfRichTextEditor
-{
-    DefaultFontFamily = "Arial",
-    DefaultFontSize = 14,
-    DefaultTextColor = Colors.Black
-};
-```
-
-### Use Cases
-
-**Professional Document Editor:**
-```csharp
-richTextEditor.DefaultFontFamily = "Times New Roman";
-richTextEditor.DefaultFontSize = 12;
-richTextEditor.DefaultTextColor = Colors.Black;
-```
-
-**Modern UI Editor:**
-```csharp
-richTextEditor.DefaultFontFamily = "Segoe UI";
-richTextEditor.DefaultFontSize = 14;
-richTextEditor.DefaultTextColor = Color.FromRgb(33, 33, 33);
-```
-
-**Coding/Technical Editor:**
-```csharp
-richTextEditor.DefaultFontFamily = "Courier New";
-richTextEditor.DefaultFontSize = 13;
-richTextEditor.DefaultTextColor = Color.FromRgb(0, 0, 0);
-```
-
 ## Combined Formatting Examples
 
 ### Formatted Heading Creation
@@ -573,14 +519,14 @@ richTextEditor.DefaultTextColor = Color.FromRgb(0, 0, 0);
 public void CreateFormattedHeading(string text)
 {
     // Set text
-    richTextEditor.Text = text;
-    
+    richTextEditor.Value = text;
+
     // Select all
     // (Note: Selection API depends on implementation)
-    
+
     // Apply heading 1
     richTextEditor.ApplyParagraphFormat(RichTextEditorParagraphFormat.Heading1);
-    
+
     // Make bold
     richTextEditor.ToggleBold();
     
@@ -597,14 +543,14 @@ public void CreateFormattedHeading(string text)
 ```csharp
 public void CreateHighlightedNote(string note)
 {
-    richTextEditor.Text = note;
-    
+    richTextEditor.Value = note;
+
     // Apply bright background
     richTextEditor.ApplyHighlightColor(Colors.Yellow);
-    
+
     // Bold text
     richTextEditor.ToggleBold();
-    
+
     // Slightly larger font
     richTextEditor.ApplyFontSize(16);
 }
@@ -615,14 +561,14 @@ public void CreateHighlightedNote(string note)
 ```csharp
 public void FormatAsCode(string code)
 {
-    richTextEditor.Text = code;
-    
+    richTextEditor.Value = code;
+
     // Monospace font
     richTextEditor.ApplyFontFamily("Courier New");
-    
+
     // Slightly smaller
     richTextEditor.ApplyFontSize(12);
-    
+
     // Light gray background
     richTextEditor.ApplyHighlightColor(Color.FromRgb(240, 240, 240));
     
@@ -697,25 +643,14 @@ Check if editor has content before applying formatting:
 ```csharp
 public void SafeApplyFormatting()
 {
-    if (!string.IsNullOrEmpty(richTextEditor.Text))
+    if (!string.IsNullOrEmpty((string)richTextEditor.Value))
     {
         richTextEditor.ToggleBold();
     }
 }
 ```
 
-### 4. Use Default Styles
-
-Set appropriate defaults to reduce manual formatting:
-
-```csharp
-// Set good defaults for your use case
-richTextEditor.DefaultFontFamily = "Arial";
-richTextEditor.DefaultFontSize = 14;
-richTextEditor.DefaultTextColor = Colors.Black;
-```
-
-### 5. Test Color Accessibility
+### 4. Test Color Accessibility
 
 Ensure text colors have sufficient contrast:
 
@@ -728,7 +663,7 @@ richTextEditor.EditorBackgroundColor = Colors.White;
 // richTextEditor.ApplyTextColor(Colors.LightGray);  // Hard to read on white
 ```
 
-### 6. Provide Format Presets
+### 5. Provide Format Presets
 
 Offer common format combinations as presets:
 
@@ -751,26 +686,6 @@ public void ApplyPreset(string presetName)
             break;
     }
 }
-```
-
-### 7. Respect Platform Conventions
-
-Use platform-appropriate fonts and sizes:
-
-```csharp
-#if WINDOWS
-    richTextEditor.DefaultFontFamily = "Segoe UI";
-    richTextEditor.DefaultFontSize = 14;
-#elif MACCATALYST
-    richTextEditor.DefaultFontFamily = "San Francisco";
-    richTextEditor.DefaultFontSize = 13;
-#elif ANDROID
-    richTextEditor.DefaultFontFamily = "Roboto";
-    richTextEditor.DefaultFontSize = 14;
-#elif IOS
-    richTextEditor.DefaultFontFamily = "San Francisco";
-    richTextEditor.DefaultFontSize = 14;
-#endif
 ```
 
 ## Next Steps

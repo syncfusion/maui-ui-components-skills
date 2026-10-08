@@ -62,6 +62,7 @@ Use this skill when you need to:
 - Manually defining columns
 - Column types (Text, Numeric, Date, Checkbox, Image, ComboBox, Picker, Template, TimePicker, Percent, Currency, CheckBoxSelector)
 - Column properties (MappingName, HeaderText, Format, Width)
+- Numeric column decimal digits and maximum digits (NumberDecimalDigits)
 - Column sizing and width options
 - Column visibility and ordering
 - AutoGenerateColumnsMode options (None, Reset, ResetAll, RetainOld)
@@ -81,7 +82,8 @@ Use this skill when you need to:
 📄 **Read:** [references/editing.md](references/editing.md)
 - Enabling editing (AllowEditing, NavigationMode, SelectionMode)
 - Column-level editing control
-- Edit modes and triggers
+- Edit modes and triggers (EditTapAction, LostFocusBehavior)
+- Editor selection behavior (SelectAll, MoveLast)
 - Cell editing events (BeginEdit, EndEdit, CellValueChanged)
 - Programmatic editing
 - Enter key and Tab navigation during editing
@@ -103,6 +105,7 @@ Use this skill when you need to:
 - Programmatic sorting
 - Sort icons and UI customization
 - Filtering basics and filter types
+- FilterPopupStyle and FilteringPopupDisplayStyle (full-screen or popup)
 - Filter row implementation
 - Programmatic filtering
 - Custom filter predicates
@@ -134,26 +137,32 @@ Use this skill when you need to:
 - Row and cell selection
 - Selection events (SelectionChanging, SelectionChanged)
 - Programmatic selection
+- Programmatic navigation (MoveToNextCell, MoveToPreviousCell, MoveToNextRow, MoveToPreviousRow)
 - Current cell vs selected items
 - Keyboard navigation (Windows platform)
 
 ### Paging & Data Virtualization
 📄 **Read:** [references/paging-virtualization.md](references/paging-virtualization.md)
-- Paging setup and configuration
-- Page size and page count
-- Page navigation controls
-- Custom paging UI
+- Paging integration with the standalone `SfDataPager` (separate `Syncfusion.Maui.DataPager` package)
+- DataGrid + DataPager binding pattern (`Source` → `PagedSource` → `ItemsSource`)
+- Page size, page count, and programmatic page navigation
+- On-demand paging with `UseOnDemandPaging` and `OnDemandLoading`
 - Load More (incremental loading)
 - Pull to Refresh
 - Data virtualization for performance
 - Large dataset handling
 - Scroll to row and column
+- Scroll orientation (ScrollOrientation: Both, Vertical, Horizontal, Neither)
+- Shrink wrap rows and columns (ShrinkWrapRows, ShrinkWrapColumns)
+
+> **Note:** The `SfDataPager` control ships as a **separate NuGet package** (`Syncfusion.Maui.DataPager`) with its own dedicated skill (`syncfusion-maui-datapager`). For full pager configuration — button shape, size, display mode, ellipsis, orientation, `DataPagerStyle`, and `PageChanging`/`PageChanged` events — see the `syncfusion-maui-datapager` skill. This DataGrid skill covers the DataGrid↔DataPager integration and DataGrid-specific data-loading features (Load More, Pull to Refresh, virtualization, scroll).
 
 ### Row Operations
 📄 **Read:** [references/row-operations.md](references/row-operations.md)
 - Row height customization
 - Auto row height (QueryRowHeight event)
 - Row drag and drop (single and multi-row)
+- Row drag animation (AllowDraggingRowAnimation)
 - Row resizing (OnMoved vs OnTouchUp modes, AllowResizingRows)
 - Row swiping actions
 - Adding new rows programmatically
@@ -177,10 +186,19 @@ Use this skill when you need to:
 - Record Template View (custom row layouts)
 - Empty view customization
 - Context menu implementation (with separator support)
+- Dynamic context menu loading (ContextMenuOpening event)
 - Tooltips for cells (with delay customization, TooltipDelay)
 - Merged cells
 - Serialization (save/load grid state)
 - Conditional styling by data
+
+### Multi-Row Column Layout
+📄 **Read:** [references/multi-row-view.md](references/multi-row-view.md)
+- Display a record across multiple rows (MultiRowViewDefinition)
+- RowsCount and ColumnsCount layout configuration
+- Column positioning (Row, Column, RowSpan, ColumnSpan)
+- Card-like record layouts for many-field records
+- Multi-Row View limitations
 
 ### Styling & Customization
 📄 **Read:** [references/styling-customization.md](references/styling-customization.md)

@@ -164,6 +164,28 @@ Display numeric data (int, float, double, decimal):
                                   HeaderText="Cost" />
 ```
 
+**Key properties:**
+- `Format` — Formatting string (e.g., `C2` for currency, `N2` for number, `P2` for percent).
+- `NumberDecimalDigits` — Number of decimal digits displayed after the decimal point.
+- `Placeholder` — Placeholder shown when the numeric cell value is null.
+- `NullValue` — Value used when the numeric cell value is null.
+
+```xaml
+<syncfusion:DataGridNumericColumn MappingName="UnitPrice"
+                                  HeaderText="Unit Price"
+                                  NumberDecimalDigits="4" />
+```
+
+```csharp
+DataGridNumericColumn numericColumn = new DataGridNumericColumn
+{
+    MappingName = "UnitPrice",
+    HeaderText = "Unit Price",
+    NumberDecimalDigits = 4,
+};
+dataGrid.Columns.Add(numericColumn);
+```
+
 ### 3. DataGridDateColumn
 
 Display date/time values:

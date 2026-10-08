@@ -8,6 +8,7 @@ This guide covers tooltip configuration and customization for the .NET MAUI Slid
 - [Tooltip Number Format](#tooltip-number-format)
 - [Custom Tooltip with TooltipLabelCreated Event](#custom-tooltip-with-tooltiplabelcreated-event)
 - [Tooltip Styling](#tooltip-styling)
+- [Tooltip Position](#tooltip-position)
 - [Complete Examples](#complete-examples)
 
 ## Enable Tooltip
@@ -379,6 +380,104 @@ private void OnTooltipLabelCreated(object sender, SliderTooltipLabelCreatedEvent
 }
 ```
 
+## Tooltip Position
+
+The `Position` property of `SliderTooltip` controls where the tooltip is displayed relative to the track. Available positions adapt automatically to the slider's orientation:
+
+- **Horizontal slider**: `Top`, `Bottom`
+- **Vertical slider**: `Left`, `Right`
+
+**Type:** `SliderTooltipPosition` (enum)
+**Default:** Determined automatically based on orientation
+
+### Basic Position Setup
+
+**XAML:**
+```xaml
+<sliders:SfSlider>
+    <sliders:SfSlider.Tooltip>
+        <sliders:SliderTooltip Position="Bottom" />
+    </sliders:SfSlider.Tooltip>
+</sliders:SfSlider>
+```
+
+**C#:**
+```c#
+SfSlider slider = new SfSlider();
+slider.Tooltip = new SliderTooltip();
+slider.Tooltip.Position = SliderTooltipPosition.Bottom;
+this.Content = slider;
+```
+
+### Available Positions
+
+**For Horizontal Orientation:**
+
+**XAML:**
+```xaml
+<!-- Top: Tooltip above the track -->
+<sliders:SfSlider>
+    <sliders:SfSlider.Tooltip>
+        <sliders:SliderTooltip Position="Top" />
+    </sliders:SfSlider.Tooltip>
+</sliders:SfSlider>
+```
+
+```xaml
+<!-- Bottom: Tooltip below the track -->
+<sliders:SfSlider>
+    <sliders:SfSlider.Tooltip>
+        <sliders:SliderTooltip Position="Bottom" />
+    </sliders:SfSlider.Tooltip>
+</sliders:SfSlider>
+```
+
+**For Vertical Orientation:**
+
+**XAML:**
+```xaml
+<!-- Left: Tooltip to the left of the track -->
+<sliders:SfSlider Orientation="Vertical">
+    <sliders:SfSlider.Tooltip>
+        <sliders:SliderTooltip Position="Left" />
+    </sliders:SfSlider.Tooltip>
+</sliders:SfSlider>
+```
+
+```xaml
+<!-- Right: Tooltip to the right of the track -->
+<sliders:SfSlider Orientation="Vertical">
+    <sliders:SfSlider.Tooltip>
+        <sliders:SliderTooltip Position="Right" />
+    </sliders:SfSlider.Tooltip>
+</sliders:SfSlider>
+```
+
+### Position with Other Properties
+
+Combine `Position` with formatting and styling for a polished result:
+
+**XAML:**
+```xaml
+<sliders:SfSlider Minimum="0"
+                  Maximum="100"
+                  Value="40"
+                  NumberFormat="0.##">
+    <sliders:SfSlider.Tooltip>
+        <sliders:SliderTooltip Position="Bottom"
+                               ShowAlways="True"
+                               Fill="#1976D2"
+                               TextColor="White" />
+    </sliders:SfSlider.Tooltip>
+</sliders:SfSlider>
+```
+
+### When to Customize Tooltip Position
+
+- **Horizontal sliders** — Choose `Top` when space below is reserved for labels, or `Bottom` to keep the value closer to the thumb.
+- **Vertical sliders** — Choose `Right` for LTR layouts (matches reading direction) or `Left` for RTL layouts.
+- **Consistent placement** — Set explicitly to avoid default-based layout shifts between screens or orientations.
+
 ## Complete Examples
 
 ### Example 1: Always-Visible Tooltip with Currency
@@ -534,6 +633,18 @@ private void OnTimeTooltipCreated(object sender, SliderTooltipLabelCreatedEventA
 <sliders:SliderTooltip ShowAlways="False" />
 ```
 
+### Issue: Tooltip Position Not Applied
+
+**Cause**: Position value doesn't match the current orientation, or the tooltip is clipped by the parent layout.  
+**Solution**: Use horizontal positions (`Top`/`Bottom`) for a horizontal slider, and vertical positions (`Left`/`Right`) for a vertical slider. Ensure the parent layout has enough space for the tooltip:
+```xaml
+<sliders:SfSlider>
+    <sliders:SfSlider.Tooltip>
+        <sliders:SliderTooltip Position="Bottom" />
+    </sliders:SfSlider.Tooltip>
+</sliders:SfSlider>
+```
+
 ## Summary
 
 Key tooltip properties and features:
@@ -541,7 +652,8 @@ Key tooltip properties and features:
 - **Tooltip**: Assign a `SliderTooltip` instance to enable tooltip
 - **ShowAlways**: Control whether tooltip is always visible or only during interaction
 - **NumberFormat**: Format tooltip text (currency, percentage, decimals, units)
+- **Position**: Place the tooltip above/below (horizontal) or left/right (vertical) of the track
 - **TooltipLabelCreated**: Event for custom tooltip text and styling
 - **SliderTooltipLabelCreatedEventArgs**: Provides Text, TextColor, FontSize, FontFamily, FontAttributes
 
-Use `NumberFormat` for simple formatting, and `TooltipLabelCreated` for advanced customization.
+Use `NumberFormat` for simple formatting, `Position` to control placement, and `TooltipLabelCreated` for advanced customization.

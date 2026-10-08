@@ -328,10 +328,7 @@ All available `RichTextToolbarOptions` values:
                               Placeholder="Start typing..."
                               EditorBackgroundColor="White"
                               BorderColor="Gray"
-                              BorderThickness="1"
-                              DefaultFontFamily="Arial"
-                              DefaultFontSize="14"
-                              DefaultTextColor="Black">
+                              BorderThickness="1">
             <rte:SfRichTextEditor.ToolbarItems>
                 <rte:RichTextToolbarItem Type="Bold" />
                 <rte:RichTextToolbarItem Type="Italic" />
@@ -378,10 +375,7 @@ namespace MyApp
                 Placeholder = "Start typing...",
                 EditorBackgroundColor = Colors.White,
                 BorderColor = Colors.Gray,
-                BorderThickness = 1,
-                DefaultFontFamily = "Arial",
-                DefaultFontSize = 14,
-                DefaultTextColor = Colors.Black
+                BorderThickness = 1
             };
             
             // Configure toolbar items

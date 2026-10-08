@@ -9,6 +9,7 @@
 - [Filtering](#filtering)
   - [Filtering Events](#filtering-events)
   - [FilterPopupStyle](#filterpopupstyle)
+  - [Filtering Popup Display Style](#filtering-popup-display-style)
   - [Advanced Filter Type](#advanced-filter-type)
   - [Filtering Null Values](#filtering-null-values)
   - [Instant Filtering](#instant-filtering)
@@ -341,6 +342,28 @@ private void dataGrid_FilterItemsPopulated(object sender, DataGridFilterItemsPop
                        AllowFiltering="True"
                        FilterPopupStyle="{StaticResource filterViewStyle}"/>
 ```
+
+### Filtering Popup Display Style
+
+By default, the UI Filtering popup appears as a **popup menu on desktop platforms** and as a **full page on mobile platforms**. You can change this display style to force full-screen or popup behavior regardless of platform using the `IsFullScreen` property.
+
+**Supported values:**
+- `true` — Display the filter UI as a full-screen page.
+- `false` — Display the filter UI as a popup menu.
+
+```xaml
+<ContentPage.Resources>
+    <Style TargetType="datagrid:DataGridFilterView">
+        <Setter Property="IsFullScreen" Value="True"/>
+    </Style>
+</ContentPage.Resources>
+
+<syncfusion:SfDataGrid x:Name="dataGrid"
+                       ItemsSource="{Binding OrderInfoCollection}"
+                       AllowFiltering="True"/>
+```
+
+Set `IsFullScreen` to `true` on small mobile screens where a popup would be too cramped, or `false` on large tablets/desktops where a full-screen takeover is disruptive.
 
 ### Advanced Filter Type
 

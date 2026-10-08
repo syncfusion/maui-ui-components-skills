@@ -117,6 +117,25 @@ dataGrid.SelectionMode = DataGridSelectionMode.Multiple;
 - Drop at single target location
 - All selected rows move to drop position
 
+### Row Drag Animation
+
+When the `AllowDraggingRowAnimation` property is enabled, `SfDataGrid` displays a drag animation that visually moves the selected row during the drag operation — the row follows the pointer as it is dragged. Unlike the default drag behavior (which uses a drag indicator), the row itself is animated and moved, making it easier to identify the row being reordered. The default value is `false`.
+
+```xaml
+<syncfusion:SfDataGrid x:Name="dataGrid"
+                       ItemsSource="{Binding Orders}"
+                       AllowDraggingRow="True"
+                       AllowDraggingRowAnimation="True">
+</syncfusion:SfDataGrid>
+```
+
+```csharp
+dataGrid.AllowDraggingRow = true;
+dataGrid.AllowDraggingRowAnimation = true;
+```
+
+Use this for a smoother, more intuitive drag-and-drop experience. Combine with `RowDragDropTemplate` to customize the appearance of the animated row.
+
 ## Row Resizing
 
 Interactively resize rows by dragging row header borders.

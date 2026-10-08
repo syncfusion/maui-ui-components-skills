@@ -9,6 +9,7 @@ This guide covers customizing the built-in toolbar in the .NET MAUI ImageEditor 
 - [Customizing Toolbar Options](#customizing-toolbar-options)
 - [Getting Toolbar Items](#getting-toolbar-items)
 - [Customizing Toolbar Items](#customizing-toolbar-items)
+- [Customizing Toolbar Tooltips](#customizing-toolbar-tooltips)
 - [Adding Sub-Toolbars](#adding-sub-toolbars)
 - [Toolbar Events](#toolbar-events)
 - [Common Patterns](#common-patterns)
@@ -320,6 +321,55 @@ saveItem.View = customIcon;
 - Implementing specific design system
 - Adding visual indicators
 
+## Customizing Toolbar Tooltips
+
+You can customize the tooltip appearance by using the `ToolTipTemplate` property in the Image Editor. The `ToolTipTemplate` accepts a `DataTemplate` that allows you to fully control the visual representation of the tooltip shown for toolbar items.
+
+The binding context of the template provides access to the toolbar item's properties (such as `Name`), enabling you to display rich, context-aware tooltips.
+
+### XAML
+
+```xaml
+<imageEditor:SfImageEditor Source="image.png">
+  <imageEditor:SfImageEditor.ToolTipTemplate>
+    <DataTemplate>
+        <Grid RowDefinitions="Auto">
+            <HorizontalStackLayout Spacing="2">
+                <Label
+                    Text="Tooltip Name :"
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    TextColor="White" />
+                <Label
+                    Text="{Binding Name}"
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    TextColor="White" />
+            </HorizontalStackLayout>
+        </Grid>
+    </DataTemplate>
+</imageEditor:SfImageEditor.ToolTipTemplate>
+</imageEditor:SfImageEditor>
+```
+
+### C#
+
+```c#
+using Syncfusion.Maui.ImageEditor;
+
+SfImageEditor imageEditor = new SfImageEditor();
+imageEditor.Source = ImageSource.FromFile("image.png");
+this.Content = imageEditor;
+```
+
+**When to use:**
+- Brand tooltips to match your app's visual identity
+- Show additional context like shortcut keys or descriptions
+- Display localized tooltip text
+- Add icons or visual indicators to tooltips
+
+**Note:** The default tooltip styling is used when `ToolTipTemplate` is not set.
+
 ## Adding Sub-Toolbars
 
 Create sub-toolbars for organizing related actions:
@@ -572,6 +622,22 @@ if (item.SubToolbars != null && item.SubToolbars.Count > 0)
     var subToolbar = item.SubToolbars[0];
     // Configure sub-toolbar
 }
+```
+
+### Issue: Custom Tooltip Template Not Displaying
+
+**Cause:** `ToolTipTemplate` is not set or binding context is incorrect.
+
+**Solution:**
+```xaml
+<!-- Ensure ToolTipTemplate is set on the SfImageEditor -->
+<imageEditor:SfImageEditor Source="image.png">
+    <imageEditor:SfImageEditor.ToolTipTemplate>
+        <DataTemplate>
+            <Label Text="{Binding Name}" />
+        </DataTemplate>
+    </imageEditor:SfImageEditor.ToolTipTemplate>
+</imageEditor:SfImageEditor>
 ```
 
 ## Next Steps

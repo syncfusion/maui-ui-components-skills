@@ -16,6 +16,7 @@ Tooltips in the .NET MAUI Range Slider (`SfRangeSlider`) display the current val
 - [Tooltip Formatting](#tooltip-formatting)
   - [NumberFormat](#numberformat)
   - [TooltipLabelCreated Event](#tooltiplabelcreated-event)
+- [Tooltip Position](#tooltip-position)
 - [Common Scenarios](#common-scenarios)
 - [Best Practices](#best-practices)
 - [Related References](#related-references)
@@ -330,6 +331,105 @@ private void OnTooltipLabelCreated(object sender, SliderTooltipLabelCreatedEvent
 }
 ```
 
+## Tooltip Position
+
+The `Position` property of `SliderTooltip` controls where the tooltip is displayed relative to the track. Both start-thumb and end-thumb tooltips are affected by this single setting. Available positions adapt automatically to the range slider's orientation:
+
+- **Horizontal range slider**: `Top`, `Bottom`
+- **Vertical range slider**: `Left`, `Right`
+
+**Type:** `SliderTooltipPosition` (enum)
+**Default:** Determined automatically based on orientation
+
+### Basic Position Setup
+
+**XAML:**
+```xaml
+<sliders:SfRangeSlider>
+    <sliders:SfRangeSlider.Tooltip>
+        <sliders:SliderTooltip Position="Bottom" />
+    </sliders:SfRangeSlider.Tooltip>
+</sliders:SfRangeSlider>
+```
+
+**C#:**
+```c#
+SfRangeSlider rangeSlider = new SfRangeSlider();
+rangeSlider.Tooltip = new SliderTooltip();
+rangeSlider.Tooltip.Position = SliderTooltipPosition.Bottom;
+this.Content = rangeSlider;
+```
+
+### Available Positions
+
+**For Horizontal Orientation:**
+
+**XAML:**
+```xaml
+<!-- Top: Tooltips above the track -->
+<sliders:SfRangeSlider>
+    <sliders:SfRangeSlider.Tooltip>
+        <sliders:SliderTooltip Position="Top" />
+    </sliders:SfRangeSlider.Tooltip>
+</sliders:SfRangeSlider>
+```
+
+```xaml
+<!-- Bottom: Tooltips below the track -->
+<sliders:SfRangeSlider>
+    <sliders:SfRangeSlider.Tooltip>
+        <sliders:SliderTooltip Position="Bottom" />
+    </sliders:SfRangeSlider.Tooltip>
+</sliders:SfRangeSlider>
+```
+
+**For Vertical Orientation:**
+
+**XAML:**
+```xaml
+<!-- Left: Tooltips to the left of the track -->
+<sliders:SfRangeSlider Orientation="Vertical">
+    <sliders:SfRangeSlider.Tooltip>
+        <sliders:SliderTooltip Position="Left" />
+    </sliders:SfRangeSlider.Tooltip>
+</sliders:SfRangeSlider>
+```
+
+```xaml
+<!-- Right: Tooltips to the right of the track -->
+<sliders:SfRangeSlider Orientation="Vertical">
+    <sliders:SfRangeSlider.Tooltip>
+        <sliders:SliderTooltip Position="Right" />
+    </sliders:SfRangeSlider.Tooltip>
+</sliders:SfRangeSlider>
+```
+
+### Position with Other Properties
+
+Combine `Position` with formatting and styling for a polished result:
+
+**XAML:**
+```xaml
+<sliders:SfRangeSlider Minimum="0"
+                       Maximum="1000"
+                       RangeStart="200"
+                       RangeEnd="600"
+                       NumberFormat="C0">
+    <sliders:SfRangeSlider.Tooltip>
+        <sliders:SliderTooltip Position="Bottom"
+                               ShowAlways="True"
+                               Fill="#1976D2"
+                               TextColor="White" />
+    </sliders:SfRangeSlider.Tooltip>
+</sliders:SfRangeSlider>
+```
+
+### When to Customize Tooltip Position
+
+- **Horizontal range sliders** — Choose `Top` when space below is reserved for labels, or `Bottom` to keep the value closer to the thumbs.
+- **Vertical range sliders** — Choose `Right` for LTR layouts (matches reading direction) or `Left` for RTL layouts.
+- **Dual-thumb consistency** — The same `Position` applies to both start and end tooltips, ensuring a consistent visual layout for the range.
+
 ## Common Scenarios
 
 ### Currency Tooltip
@@ -415,42 +515,48 @@ private void OnTooltipLabelCreated(object sender, SliderTooltipLabelCreatedEvent
    - Keep `ShowAlways="False"` for cleaner UI when space is limited
    - Consider device type (more practical on tablets than phones)
 
-2. **Styling Guidelines**:
+2. **Position Selection**:
+   - Use horizontal positions (`Top`/`Bottom`) for horizontal range sliders
+   - Use vertical positions (`Left`/`Right`) for vertical range sliders
+   - The same `Position` applies to both start and end thumbs — pick a value that keeps both tooltips visible
+   - Ensure the parent layout has enough space in the chosen direction to avoid clipping
+
+3. **Styling Guidelines**:
    - Ensure sufficient contrast between tooltip background and text
    - Use semi-transparent fills for overlapping tooltips
    - Match tooltip style with overall app theme
 
-3. **Font Sizing**:
+4. **Font Sizing**:
    - Mobile: 12-14px
    - Tablet: 14-16px
    - Ensure readability without excessive size
 
-4. **Padding**:
+5. **Padding**:
    - Minimum 8-10px for comfortable reading
    - Increase padding for larger font sizes
    - Consider touch target accessibility
 
-5. **NumberFormat vs Event**:
+6. **NumberFormat vs Event**:
    - Use `NumberFormat` for simple formatting (currency, percentage)
    - Use `TooltipLabelCreated` event for complex logic or conditional formatting
    - Avoid heavy computation in event handler (affects performance)
 
-6. **Color Choices**:
+7. **Color Choices**:
    - High contrast for readability
    - Consistent with slider theme
    - Test in both light and dark modes
 
-7. **Performance**:
+8. **Performance**:
    - Minimize logic in `TooltipLabelCreated` event
    - Cache formatting resources if possible
    - Avoid creating objects in event handler
 
-8. **Accessibility**:
+9. **Accessibility**:
    - Ensure text color has sufficient contrast (WCAG AA minimum)
    - Use clear, readable fonts
    - Consider users with color blindness
 
-9. **User Experience**:
+10. **User Experience**:
    - Tooltips should enhance, not obstruct
    - Avoid tooltip overlap when possible
    - Clear value communication without clutter

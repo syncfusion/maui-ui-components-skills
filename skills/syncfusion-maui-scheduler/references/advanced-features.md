@@ -26,6 +26,8 @@
   - [Appointments in Different Time Zones](#appointments-in-different-time-zones)
   - [Scheduler Time Zone](#scheduler-time-zone)
   - [Client vs Scheduler Time Zone](#client-vs-scheduler-time-zone)
+- [ICS Import and Export](#ics-import-and-export)
+- [Week Number Support](#week-number-support)
 - [Complete Examples](#complete-examples)
 - [Troubleshooting](#troubleshooting)
 
@@ -962,6 +964,101 @@ scheduler.TimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Tokyo");
 - Scheduler time zone: Set to specific zone
 - Appointment time zone: Set or null
 - Result: Appointments displayed in scheduler's time zone
+
+## ICS Import and Export
+
+Export the scheduler's appointments to an iCalendar (`.ics`) file and import appointments from an existing `.ics` file. The ICS format is the standard interchange format supported by Google Calendar, Apple Calendar, Microsoft Outlook, and most calendar applications. SfScheduler follows RFC 5545 for both directions.
+
+### Export Appointments to ICS
+
+Use `ExportToICalendar` to export the scheduler's appointments to an `.ics` file. The method writes the `.ics` file to the platform-appropriate Downloads/Documents folder and returns a `Task<bool>` indicating whether the export was successful.
+
+```csharp
+using Syncfusion.Maui.Scheduler;
+
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Week;
+
+// Populate appointments as usual
+scheduler.AppointmentsSource = appointments;
+
+// Export the current appointment collection to calendarICS.ics in the platform's default location
+private async void OnExportClicked(object sender, EventArgs e)
+{
+    bool ok = await scheduler.ExportToICalendar();
+}
+
+// Export with a custom file name (extension is added automatically)
+private async void OnExportWithNameClicked(object sender, EventArgs e)
+{
+    bool ok = await scheduler.ExportToICalendar("TeamMeetings");
+}
+```
+
+**Notes:**
+- `ExportToICalendar(string fileName = "")` writes an RFC 5545‑compliant `.ics` file containing all appointments in the current `AppointmentsSource`.
+- Recurring appointments are expanded into individual `VEVENT` entries using their `RecurrenceRule`.
+- The exported file uses the scheduler's `TimeZone` for all `DTSTART`/`DTEND` values.
+- Output destinations per platform:
+  - **Windows** — `%USERPROFILE%\Downloads`
+  - **macOS** — `~/Documents` (Finder file sharing)
+  - **iOS** — app's Documents folder (visible via Files app when `UIFileSharingEnabled`)
+  - **Android** — public Downloads folder (requires `WRITE_EXTERNAL_STORAGE` on API < 29)
+
+### Import Appointments from ICS
+
+Use `ImportICalendar` to import appointments from an `.ics` file. The method opens the platform file picker filtered to `.ics` files and adds the imported appointments to the scheduler's `AppointmentsSource`.
+
+```csharp
+using Syncfusion.Maui.Scheduler;
+
+private async void OnImportClicked(object sender, EventArgs e)
+{
+    bool ok = await scheduler.ImportICalendar();
+}
+```
+
+**Notes:**
+- `ImportICalendar()` opens the platform file picker with the title "Import ICalendar" and file-type filter `.ics` (Windows), `text/calendar` (Android), `public.calendar-event` (iOS), or any file (MacCatalyst).
+- Imported appointments respect the existing `AppointmentMapping` so that custom business objects are populated correctly.
+- Recurring rules (`RRULE`) are preserved on imported appointments.
+- The method returns `true` if the import succeeded and `false` if the user cancelled or no file was selected.
+
+## Week Number Support
+
+Display ISO week numbers next to each row of dates in the Timeline Month view and alongside the date group headers in the Agenda view.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="TimelineMonth" ShowWeekNumber="True" />
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.TimelineMonth;
+scheduler.ShowWeekNumber = true;
+this.Content = scheduler;
+```
+
+**Default:** `false`
+
+**Supported views:**
+- TimelineMonth
+- Agenda (displayed on each week header)
+
+**Customize the week number appearance:**
+
+```csharp
+this.Scheduler.WeekNumberStyle = new SchedulerWeekNumberStyle
+{
+    Background = Brush.LightGray,
+    TextStyle = new SchedulerTextStyle
+    {
+        TextColor = Colors.DarkBlue,
+        FontSize = 12,
+        FontAttributes = FontAttributes.Bold
+    }
+};
+```
 
 ## Complete Examples
 

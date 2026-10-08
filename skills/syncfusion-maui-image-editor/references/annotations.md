@@ -11,6 +11,7 @@ This guide covers adding and managing annotations (shapes, text, freehand drawin
 - [Freehand Drawing (Pen)](#freehand-drawing-pen)
 - [Custom View Annotations](#custom-view-annotations)
 - [Managing Annotations](#managing-annotations)
+- [Customizing Annotation Thumb Size](#customizing-annotation-thumb-size)
 - [Annotation Events](#annotation-events)
 - [Common Patterns](#common-patterns)
 - [Troubleshooting](#troubleshooting)
@@ -367,6 +368,89 @@ imageEditor.ClearAnnotations();
 
 **Warning:** This action removes ALL annotations and cannot be undone unless using the Undo/Redo functionality.
 
+## Customizing Annotation Thumb Size
+
+Use the `AnnotationThumbSize` property to customize the size of the selection handles (thumbs) displayed for annotations, improving visibility and touch interaction. This is especially useful for improving the usability of text regions and other selectable annotations on touch devices.
+
+### Basic Usage
+
+Set the `AnnotationThumbSize` property to adjust the size of selection handles displayed for text regions:
+
+```c#
+using Syncfusion.Maui.ImageEditor;
+
+SfImageEditor imageEditor = new SfImageEditor();
+imageEditor.Source = ImageSource.FromFile("image.jpeg");
+imageEditor.AnnotationThumbSize = 18;
+this.Content = imageEditor;
+```
+
+**XAML Example:**
+
+```xaml
+<imageEditor:SfImageEditor x:Name="imageEditor"
+                           Source="image.jpeg"
+                           AnnotationThumbSize="18" />
+```
+
+### When to Customize Thumb Size
+
+- **Touch Optimization** - Larger thumbs improve touch accuracy on mobile devices
+- **Accessibility** - Increase thumb size for better visibility for users with visual impairments
+- **UI Consistency** - Match thumb size to your application's design system
+- **Precision Editing** - Larger thumbs make selection and resize operations easier
+
+### Recommended Values
+
+| Scenario | Recommended Size | Notes |
+|----------|------------------|-------|
+| Desktop / Mouse | 12-16 | Smaller thumbs for precise mouse interaction |
+| Mobile / Touch | 18-24 | Larger thumbs for accurate touch targeting |
+| Accessibility | 24-32 | Maximum size for improved visibility |
+| Default | 16 | Standard thumb size for general use |
+
+### Dynamic Thumb Size Adjustment
+
+Adjust thumb size dynamically based on device or user preferences:
+
+```c#
+private void AdjustThumbSizeForDevice()
+{
+    // Adjust based on device idiom
+    if (DeviceInfo.Current.Idiom == DeviceIdiom.Phone)
+    {
+        imageEditor.AnnotationThumbSize = 22; // Larger for touch
+    }
+    else
+    {
+        imageEditor.AnnotationThumbSize = 14; // Smaller for desktop
+    }
+}
+```
+
+### Combined with Other Settings
+
+Combine thumb size customization with other annotation properties:
+
+```c#
+imageEditor.AddText("Resize Me",
+    new ImageEditorTextSettings()
+    {
+        Id = 1,
+        AllowResize = true,
+        IsEditable = true,
+        TextStyle = new ImageEditorTextStyle()
+        {
+            FontSize = 18,
+            TextColor = Colors.White
+        },
+        Background = Brush.SolidColorBrush(Colors.Blue)
+    });
+
+// Increase thumb size for better touch interaction
+imageEditor.AnnotationThumbSize = 20;
+```
+
 ## Annotation Events
 
 ### AnnotationSelected Event
@@ -573,6 +657,22 @@ var points = new PointCollection
 
 imageEditor.AddShape(AnnotationShape.Polygon,
     new ImageEditorShapeSettings() { Points = points });
+```
+
+### Issue: Selection Handles Too Small for Touch
+
+**Cause:** Default thumb size is too small for accurate touch interaction.
+
+**Solution:**
+```c#
+// Increase thumb size for better touch targeting
+imageEditor.AnnotationThumbSize = 22;
+
+// Or adjust dynamically based on device
+if (DeviceInfo.Current.Idiom == DeviceIdiom.Phone)
+{
+    imageEditor.AnnotationThumbSize = 22;
+}
 ```
 
 ## Next Steps

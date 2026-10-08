@@ -4,6 +4,9 @@
 - [Month View](#month-view)
   - [Overview](#overview)
   - [Month Appointment Display Mode](#month-appointment-display-mode)
+  - [Adjust Appointment Height in Month View](#adjust-appointment-height-in-month-view)
+  - [Customize Day Text Format in Month View](#customize-day-text-format-in-month-view)
+  - [Month Agenda View](#month-agenda-view)
   - [Inline Appointments in Month View](#inline-appointments-in-month-view)
   - [Number of Weeks](#number-of-weeks)
   - [Non Working Days](#non-working-days)
@@ -13,9 +16,18 @@
   - [Month Cell Template](#month-cell-template)
 - [Agenda View](#agenda-view)
   - [Overview](#agenda-view-overview)
-  - [Agenda View Header](#agenda-view-header)
-  - [Date Format](#date-format)
-  - [Appearance Customization](#appearance-customization)
+  - [Agenda View Headers](#agenda-view-headers)
+    - [Month Header](#month-header)
+    - [Week Header](#week-header)
+    - [Day Header](#day-header)
+  - [Agenda View Layout Mode (Mobile or Desktop)](#agenda-view-layout-mode-mobile-or-desktop)
+  - [Show or Hide Empty Days](#show-or-hide-empty-days)
+  - [Empty Day (Week Header) Template](#empty-day-week-header-template)
+  - [Day Header Template](#day-header-template)
+  - [Month Header Template](#month-header-template)
+  - [Appointment Time Format](#appointment-time-format)
+  - [No Events Text Style](#no-events-text-style)
+  - [Agenda Item Template](#agenda-item-template)
 - [Troubleshooting](#troubleshooting)
 
 ## Month View
@@ -40,14 +52,14 @@ this.Content = scheduler;
 Control how appointments appear in month cells:
 
 **Options:**
-- `Indicator`: Show colored indicators
-- `Appointment`: Show full appointment rectangles
+- `Indicator`: Show colored indicators (dots)
+- `Text`: Show appointments as rectangles with subject text
 - `None`: Hide appointments
 
 ```xaml
 <scheduler:SfScheduler x:Name="Scheduler" View="Month">
     <scheduler:SfScheduler.MonthView>
-        <scheduler:SchedulerMonthView AppointmentDisplayMode="Appointment" />
+        <scheduler:SchedulerMonthView AppointmentDisplayMode="Text" />
     </scheduler:SfScheduler.MonthView>
 </scheduler:SfScheduler>
 ```
@@ -55,30 +67,136 @@ Control how appointments appear in month cells:
 ```csharp
 SfScheduler scheduler = new SfScheduler();
 scheduler.View = SchedulerView.Month;
-scheduler.MonthView.AppointmentDisplayMode = SchedulerMonthAppointmentDisplayMode.Appointment;
+scheduler.MonthView.AppointmentDisplayMode = SchedulerMonthAppointmentDisplayMode.Text;
 this.Content = scheduler;
 ```
 
-**Default:** Indicator
+**Default:** Text
 
 **Display Mode Details:**
 
+**Text Mode (default):**
+- Shows appointment rectangles with subject text
+- More detailed information
+- Better for sparse schedules
+- Supports `AppointmentTemplate` for custom rendering
+- Number of appointments rendered per day is bounded by `AppointmentIndicatorCount`
+
 **Indicator Mode:**
-- Shows small dots
-- Maximum 4 indicators per day
+- Shows small colored dots
+- Maximum `AppointmentIndicatorCount` dots per day (default `5`)
 - Space-efficient
 - Good for dense schedules
 
-**Appointment Mode:**
-- Shows appointment rectangles with text
-- More detailed information
-- Better for sparse schedules
-- Supports appointment templates
-
 **None Mode:**
 - Hides all appointments
-- Shows only calendar grid
+- Shows only the calendar grid
 - Useful for custom implementations
+
+### Adjust Appointment Height in Month View
+
+Use `AppointmentHeight` on `SchedulerMonthView` to control the rendered height (in pixels) of each appointment rendered as a text rectangle inside a Month cell. The default value of `-1` lets the scheduler compute the height automatically based on the available cell area.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Month">
+    <scheduler:SfScheduler.MonthView>
+        <scheduler:SchedulerMonthView AppointmentDisplayMode="Text" AppointmentHeight="36" />
+    </scheduler:SfScheduler.MonthView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Month;
+scheduler.MonthView.AppointmentDisplayMode = SchedulerMonthAppointmentDisplayMode.Text;
+scheduler.MonthView.AppointmentHeight = 36; // pixels
+this.Content = scheduler;
+```
+
+**Default:** `-1` (auto)
+
+**Notes:**
+- Only applies when `AppointmentDisplayMode` is `Text`.
+- Use a higher value for richer appointment rendering, or a smaller value to fit more appointments per cell.
+
+### Customize Day Text Format in Month View
+
+Use `DayStringFormat` on `SchedulerMonthView` to format the day number text that appears inside each Month cell. The default value is an empty string (the scheduler uses its built-in default day number format).
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Month">
+    <scheduler:SfScheduler.MonthView>
+        <scheduler:SchedulerMonthView DayStringFormat="d" />
+    </scheduler:SfScheduler.MonthView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Month;
+scheduler.MonthView.DayStringFormat = "d";
+this.Content = scheduler;
+```
+
+**Common formats:**
+- `"d"`: day number without leading zero (1, 2, … 31)
+- `"dd"`: day number with leading zero (01, 02, … 31)
+
+### Month Agenda View
+
+Display an agenda pane inline beneath the month grid so the user can see the appointments of a specific date while still seeing the full month.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Month">
+    <scheduler:SfScheduler.MonthView>
+        <scheduler:SchedulerMonthView ShowAgendaView="True" />
+    </scheduler:SfScheduler.MonthView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Month;
+scheduler.MonthView.ShowAgendaView = true;
+this.Content = scheduler;
+```
+
+**Customize agenda pane height:**
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Month">
+    <scheduler:SfScheduler.MonthView>
+        <scheduler:SchedulerMonthView ShowAgendaView="True" AgendaViewHeight="200" />
+    </scheduler:SfScheduler.MonthView>
+</scheduler:SfScheduler>
+```
+
+**Customize agenda pane style:**
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Month">
+    <scheduler:SfScheduler.MonthView>
+        <scheduler:SchedulerMonthView ShowAgendaView="True">
+            <scheduler:SchedulerMonthView.AgendaViewStyle>
+                <scheduler:MonthAgendaViewStyle Background="LightYellow" />
+            </scheduler:SchedulerMonthView.AgendaViewStyle>
+        </scheduler:SchedulerMonthView>
+    </scheduler:SfScheduler.MonthView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+this.Scheduler.MonthView.AgendaViewStyle = new MonthAgendaViewStyle
+{
+    Background = Colors.LightYellow
+};
+```
+
+**Behavior:**
+- The agenda pane shows the appointments of the currently tapped month date.
+- The pane uses the same agenda layout as the standalone Agenda view.
+- Configure `AgendaViewHeight` to set a fixed height or leave at `-1` for auto-height.
+- Configure `AgendaViewStyle` to change background, text style, and other visuals.
 
 ### Inline Appointments in Month View
 
@@ -117,7 +235,7 @@ Use `TimeTextFormat` in `MonthInlineViewStyle` to format the inline appointment 
 
 ```csharp
 SfScheduler scheduler = new SfScheduler();
-scheduler.View = SchedulerView.Week;
+scheduler.View = SchedulerView.Month;
 scheduler.MonthView.ShowAppointmentsInline = true;
 scheduler.MonthView.MonthInlineViewStyle = new MonthInlineViewStyle()
 {
@@ -143,11 +261,11 @@ Use `ItemHeight` in `MonthInlineViewStyle` to set the height of each inline appo
 
 ```csharp
 SfScheduler scheduler = new SfScheduler();
-scheduler.View = SchedulerView.Week;
+scheduler.View = SchedulerView.Month;
 scheduler.MonthView.ShowAppointmentsInline = true;
 scheduler.MonthView.MonthInlineViewStyle = new MonthInlineViewStyle()
 {
-    ItemHeight="70"
+    ItemHeight = 70
 };
 ```
 
@@ -175,7 +293,7 @@ Use `MonthInlineViewStyle` to customize the inline view background, text style, 
 
 ```csharp
 SfScheduler scheduler = new SfScheduler();
-scheduler.View = SchedulerView.Week;
+scheduler.View = SchedulerView.Month;
 scheduler.MonthView.ShowAppointmentsInline = true;
 scheduler.MonthView.MonthInlineViewStyle = new MonthInlineViewStyle()
 {
@@ -616,10 +734,13 @@ Fully customize month cell appearance:
 
 ### Agenda View Overview
 
-Agenda view displays appointments in a list format, grouped by date. It provides a chronological view of upcoming appointments.
+Agenda view displays appointments in a list format, grouped by date. It provides a chronological view of upcoming appointments. The agenda view is configured through `SchedulerAgendaView`, which is exposed as the `AgendaView` property on `SfScheduler`.
 
 ```xaml
 <scheduler:SfScheduler x:Name="Scheduler" View="Agenda">
+    <scheduler:SfScheduler.AgendaView>
+        <scheduler:SchedulerAgendaView />
+    </scheduler:SfScheduler.AgendaView>
 </scheduler:SfScheduler>
 ```
 
@@ -631,22 +752,100 @@ this.Content = scheduler;
 
 **Features:**
 - List-based appointment display
-- Date grouping headers
+- Date grouping headers (month, week, day)
 - Scrollable interface
 - Efficient for viewing many appointments
+- Configurable layout mode (mobile or desktop)
+- Customizable empty-day and date header templates
 
-### Agenda View Header
+### Agenda View Headers
 
-The header shows the currently selected date and allows navigation:
+The Agenda view has three configurable headers: **month**, **week**, and **day**. Each header is configured through its own settings class and exposes a `DataTemplate` for full custom UI.
 
-#### Date Picker
-
-Toggle date picker visibility:
+#### Month Header
 
 ```xaml
 <scheduler:SfScheduler x:Name="Scheduler" View="Agenda">
     <scheduler:SfScheduler.AgendaView>
-        <scheduler:SchedulerAgendaView ShowDatePicker="False" />
+        <scheduler:SchedulerAgendaView>
+            <scheduler:SchedulerAgendaView.MonthHeaderSettings>
+                <scheduler:SchedulerMonthHeaderSettings Background="LightBlue"
+                                                         DateFormat="MMMM yyyy"
+                                                         Height="40" />
+            </scheduler:SchedulerAgendaView.MonthHeaderSettings>
+        </scheduler:SchedulerAgendaView>
+    </scheduler:SfScheduler.AgendaView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+this.scheduler.View = SchedulerView.Agenda;
+this.scheduler.AgendaView.MonthHeaderSettings.Background = Brush.LightBlue;
+this.scheduler.AgendaView.MonthHeaderSettings.DateFormat = "MMMM yyyy";
+this.scheduler.AgendaView.MonthHeaderSettings.Height = 40;
+```
+
+#### Week Header
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Agenda">
+    <scheduler:SfScheduler.AgendaView>
+        <scheduler:SchedulerAgendaView>
+            <scheduler:SchedulerAgendaView.WeekHeaderSettings>
+                <scheduler:SchedulerWeekHeaderSettings Background="LightGreen"
+                                                       DateFormat="MMM dd"
+                                                       Height="40" />
+            </scheduler:SchedulerAgendaView.WeekHeaderSettings>
+        </scheduler:SchedulerAgendaView>
+    </scheduler:SfScheduler.AgendaView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+this.scheduler.View = SchedulerView.Agenda;
+this.scheduler.AgendaView.WeekHeaderSettings.Background = Brush.LightGreen;
+this.scheduler.AgendaView.WeekHeaderSettings.DateFormat = "MMM dd";
+this.scheduler.AgendaView.WeekHeaderSettings.Height = 40;
+```
+
+#### Day Header
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Agenda">
+    <scheduler:SfScheduler.AgendaView>
+        <scheduler:SchedulerAgendaView>
+            <scheduler:SchedulerAgendaView.DayHeaderSettings>
+                <scheduler:SchedulerDayHeaderSettings Background="LightYellow"
+                                                     DayFormat="dddd"
+                                                     DateFormat="MMM dd"
+                                                     Width="100" />
+            </scheduler:SchedulerAgendaView.DayHeaderSettings>
+        </scheduler:SchedulerAgendaView>
+    </scheduler:SfScheduler.AgendaView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+this.scheduler.View = SchedulerView.Agenda;
+this.scheduler.AgendaView.DayHeaderSettings.Background = Brush.LightYellow;
+this.scheduler.AgendaView.DayHeaderSettings.DayFormat = "dddd";
+this.scheduler.AgendaView.DayHeaderSettings.DateFormat = "MMM dd";
+this.scheduler.AgendaView.DayHeaderSettings.Width = 100;
+```
+
+### Agenda View Layout Mode (Mobile or Desktop)
+
+Use `AgendaViewLayoutMode` on `SchedulerAgendaView` to force the agenda view into a specific layout. The default value is `Auto`, which lets the scheduler choose the layout based on the available width and the platform.
+
+**Options:**
+- `Auto`: Layout is determined automatically based on the available width and the platform.
+- `Mobile`: Always use the mobile (single-column, week-grouped) layout.
+- `Desktop`: Always use the desktop (multi-column, day-grouped) layout.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Agenda">
+    <scheduler:SfScheduler.AgendaView>
+        <scheduler:SchedulerAgendaView LayoutMode="Desktop" />
     </scheduler:SfScheduler.AgendaView>
 </scheduler:SfScheduler>
 ```
@@ -654,60 +853,20 @@ Toggle date picker visibility:
 ```csharp
 SfScheduler scheduler = new SfScheduler();
 scheduler.View = SchedulerView.Agenda;
-scheduler.AgendaView.ShowDatePicker = false;
+scheduler.AgendaView.LayoutMode = AgendaViewLayoutMode.Desktop;
 this.Content = scheduler;
 ```
 
-**Default:** True
+**Default:** `Auto`
 
-#### Days Count
-
-Set number of days to display:
-
-```xaml
-<scheduler:SfScheduler x:Name="Scheduler" View="Agenda">
-    <scheduler:SfScheduler.AgendaView>
-        <scheduler:SchedulerAgendaView DaysCount="7" />
-    </scheduler:SfScheduler.AgendaView>
-</scheduler:SfScheduler>
-```
-
-```csharp
-SfScheduler scheduler = new SfScheduler();
-scheduler.View = SchedulerView.Agenda;
-scheduler.AgendaView.DaysCount = 7;
-this.Content = scheduler;
-```
-
-**Default:** 30
-
-### Date Format
-
-Customize header date format:
-
-```xaml
-<scheduler:SfScheduler x:Name="Scheduler" View="Agenda">
-    <scheduler:SfScheduler.AgendaView>
-        <scheduler:SchedulerAgendaView DateFormat="MMMM dd, yyyy" />
-    </scheduler:SfScheduler.AgendaView>
-</scheduler:SfScheduler>
-```
-
-```csharp
-SfScheduler scheduler = new SfScheduler();
-scheduler.View = SchedulerView.Agenda;
-scheduler.AgendaView.DateFormat = "MMMM dd, yyyy";
-this.Content = scheduler;
-```
-
-**Common Formats:**
-- "MMMM dd": January 15
-- "dd MMM yyyy": 15 Jan 2024
-- "dddd, MMMM dd": Monday, January 15
+**Use cases:**
+- Force a single-column mobile experience on tablets or desktop window resize.
+- Force a multi-column desktop experience on small phones (less common).
+- Lock the layout for consistent UX across device orientations.
 
 ### Show or Hide Empty Days
 
-Use `HideEmptyDays` to hide dates in Agenda view that do not contain any appointments.
+Use `HideEmptyDays` to hide dates in Agenda view that do not contain any appointments. Days without appointments are dropped from the visible list (mainly applies to mobile layout).
 
 ```xaml
 <scheduler:SfScheduler x:Name="Scheduler" View="Agenda">
@@ -727,70 +886,137 @@ this.Content = scheduler;
 **Default:** False
 
 **Behavior:**
-- Hides empty days/weeks in mobile layouts
+- Hides empty days/weeks in mobile layout
 - Keeps non-empty dates visible
-- Desktop UI continues to render with existing behavior
+- Desktop layout continues to render with its existing behavior
 
-### Appearance Customization
+### Empty Day (Week Header) Template
 
-#### Agenda View Header Style
+Replace the built-in empty-day placeholder in the Agenda view with a custom `DataTemplate` using `WeekHeaderTemplate`. The `BindingContext` is an `AgendaViewWeekHeaderDetails` instance that exposes the start and end dates of the week.
 
-```csharp
-this.Scheduler.View = SchedulerView.Agenda;
-var headerTextStyle = new SchedulerTextStyle()
-{
-    TextColor = Colors.White,
-    FontSize = 16,
-};
-this.Scheduler.AgendaView.HeaderTextStyle = headerTextStyle;
-this.Scheduler.AgendaView.HeaderBackground = Brush.DarkBlue;
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Agenda">
+    <scheduler:SfScheduler.AgendaView>
+        <scheduler:SchedulerAgendaView>
+            <scheduler:SchedulerAgendaView.WeekHeaderTemplate>
+                <DataTemplate>
+                    <Grid BackgroundColor="LightGray">
+                        <Label HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               FontSize="14"
+                               TextColor="Black">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding StartDate, StringFormat='{0:MMM dd}'}" />
+                                    <Span Text=" - " />
+                                    <Span Text="{Binding EndDate, StringFormat='{0:MMM dd, yyyy}'}" />
+                                </FormattedString>
+                            </Label>
+                        </Grid>
+                </DataTemplate>
+            </scheduler:SchedulerAgendaView.WeekHeaderTemplate>
+        </scheduler:SchedulerAgendaView>
+    </scheduler:SfScheduler.AgendaView>
+</scheduler:SfScheduler>
 ```
 
-#### Date Text Style
+**BindingContext:** `AgendaViewWeekHeaderDetails` with `StartDate` and `EndDate` properties.
+
+### Day Header Template
+
+Replace the built-in day header in the Agenda view with a custom `DataTemplate` using `DayHeaderTemplate`. The `BindingContext` is the `DateTime` value for the day being rendered.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Agenda">
+    <scheduler:SfScheduler.AgendaView>
+        <scheduler:SchedulerAgendaView>
+            <scheduler:SchedulerAgendaView.DayHeaderTemplate>
+                <DataTemplate>
+                    <Grid BackgroundColor="LightGreen">
+                        <VerticalStackLayout HorizontalOptions="Center"
+                                              VerticalOptions="Center">
+                            <Label FontSize="14"
+                                   TextColor="Gray"
+                                   HorizontalTextAlignment="Center"
+                                   Text="{Binding StringFormat='{0:ddd}'}" />
+                            <Label FontSize="20"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   HorizontalTextAlignment="Center"
+                                   Text="{Binding StringFormat='{0:dd}'}" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </DataTemplate>
+            </scheduler:SchedulerAgendaView.DayHeaderTemplate>
+        </scheduler:SchedulerAgendaView>
+    </scheduler:SfScheduler.AgendaView>
+</scheduler:SfScheduler>
+```
+
+**BindingContext:** `DateTime` for the rendered day.
+
+### Month Header Template
+
+Replace the built-in month header in the Agenda view with a custom `DataTemplate` using `MonthHeaderTemplate`. The `BindingContext` is an `AgendaMonthHeaderTemplate` instance that exposes the month date.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Agenda">
+    <scheduler:SfScheduler.AgendaView>
+        <scheduler:SchedulerAgendaView>
+            <scheduler:SchedulerAgendaView.MonthHeaderTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Label x:Name="label"
+                               HorizontalOptions="Start"
+                               Background="LightBlue"
+                               VerticalOptions="Start"
+                               TextColor="Black"
+                               FontSize="16"
+                               Text="{Binding StringFormat='{0:MMMM yyyy}'}" />
+                    </Grid>
+                </DataTemplate>
+            </scheduler:SchedulerAgendaView.MonthHeaderTemplate>
+        </scheduler:SchedulerAgendaView>
+    </scheduler:SfScheduler.AgendaView>
+</scheduler:SfScheduler>
+```
+
+### Appointment Time Format
+
+Use `AppointmentTimeFormat` to customize the format string used to render appointment start times inside the agenda view. The default value is `"hh:mm tt"`.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Agenda">
+    <scheduler:SfScheduler.AgendaView>
+        <scheduler:SchedulerAgendaView AppointmentTimeFormat="HH:mm" />
+    </scheduler:SfScheduler.AgendaView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Agenda;
+scheduler.AgendaView.AppointmentTimeFormat = "HH:mm";
+this.Content = scheduler;
+```
+
+**Default:** `"hh:mm tt"`
+
+### No Events Text Style
+
+Use `NoEventsTextStyle` to customize the appearance of the placeholder text shown when an agenda day has no appointments.
 
 ```csharp
 this.Scheduler.View = SchedulerView.Agenda;
-var dateTextStyle = new SchedulerTextStyle()
+this.Scheduler.AgendaView.NoEventsTextStyle = new SchedulerTextStyle
 {
-    TextColor = Colors.DarkBlue,
+    TextColor = Colors.Red,
     FontSize = 14,
-    FontAttributes = FontAttributes.Bold,
+    FontAttributes = FontAttributes.Italic
 };
-this.Scheduler.AgendaView.DateTextStyle = dateTextStyle;
 ```
 
-#### Appointment Text Style
-
-```csharp
-this.Scheduler.View = SchedulerView.Agenda;
-var appointmentTextStyle = new SchedulerTextStyle()
-{
-    TextColor = Colors.Black,
-    FontSize = 12,
-};
-this.Scheduler.AgendaView.AppointmentTextStyle = appointmentTextStyle;
-```
-
-#### Time Text Style
-
-```csharp
-this.Scheduler.View = SchedulerView.Agenda;
-var timeTextStyle = new SchedulerTextStyle()
-{
-    TextColor = Colors.Gray,
-    FontSize = 10,
-};
-this.Scheduler.AgendaView.TimeTextStyle = timeTextStyle;
-```
-
-#### Today Background
-
-```csharp
-this.Scheduler.View = SchedulerView.Agenda;
-this.Scheduler.AgendaView.TodayBackground = Brush.LightYellow;
-```
-
-#### Agenda Item Template
+### Agenda Item Template
 
 Full customization of agenda items:
 
@@ -875,23 +1101,24 @@ Full customization of agenda items:
 
 **Issue:** Agenda view empty
 **Solution:**
-- Check DaysCount property
-- Verify appointments exist in date range
-- Ensure DisplayDate is correct
+- Verify appointments exist in the displayed date range
+- Ensure `DisplayDate` is correct
 - Check appointment binding
-
-**Issue:** Date picker not working
-**Solution:**
-- Set ShowDatePicker to true
-- Verify touch input is enabled
-- Check z-index and overlapping elements
+- If you are hiding empty days, ensure appointments exist on the expected dates
 
 **Issue:** Custom template not rendering
 **Solution:**
-- Verify DataTemplate syntax
-- Check binding paths
-- Ensure BindingContext is correct
+- Verify `DataTemplate` syntax
+- Check binding paths against the `BindingContext` (`DateTime` for day header, `SchedulerAppointment` for appointment, `AgendaViewWeekHeaderDetails` for week header)
 - Test with simple template first
+
+**Issue:** Agenda always uses mobile layout on desktop
+**Solution:**
+- Set `AgendaView.LayoutMode` to `Desktop` or `Auto`
+
+**Issue:** Agenda always uses desktop layout on small phones
+**Solution:**
+- Set `AgendaView.LayoutMode` to `Mobile` or `Auto`
 
 ### Performance Optimization
 
@@ -911,15 +1138,17 @@ Full customization of agenda items:
 
 **Month View:**
 - Use Indicator mode for 10+ appointments per day
-- Use Appointment mode for sparse schedules
-- Set NumberOfVisibleWeeks based on screen size
+- Use Text mode (default) for sparse schedules
+- Set `NumberOfVisibleWeeks` based on screen size
+- Use `AppointmentHeight` to balance density vs. detail
 - Provide clear visual cues for today's date
 
 **Agenda View:**
-- Set DaysCount based on use case (7 for weekly, 30 for monthly)
-- Use consistent date formatting
-- Provide clear time display
-- Group related appointments visually
+- Use `LayoutMode="Auto"` for adaptive UX, or set `Mobile`/`Desktop` to lock the layout
+- Use consistent date formatting across month/week/day headers
+- Use `DayHeaderTemplate` and `WeekHeaderTemplate` for branded look
+- Use `HideEmptyDays` to keep the mobile agenda compact
+- Group related appointments visually via `AppointmentTemplate`
 
 **General:**
 - Test on different screen sizes

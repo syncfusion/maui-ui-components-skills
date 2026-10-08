@@ -2,6 +2,9 @@
 
 ## Table of Contents
 - [AssistItem Common Properties](#assistitem-common-properties)
+- [Streaming Response](#streaming-response)
+- [AI Profile (Default Response Profile)](#ai-profile-default-response-profile)
+- [Response Loader](#response-loader)
 - [Text Item](#text-item)
 - [Hyperlink Item](#hyperlink-item)
 - [Image Item](#image-item)
@@ -23,13 +26,15 @@ Every item in `SfAIAssistView` is an `AssistItem`. The following properties appl
 |---|---|---|
 | `Text` | `string` | The text content of the item |
 | `IsRequested` | `bool` | `true` = user request (right-aligned), `false` = AI response (left-aligned) |
-| `Profile` | `Profile` | User avatar and name. Set `Profile.Avatar` (ImageSource) and `Profile.Name` (string) |
+| `Profile` | `Profile` | Per-item user avatar and name. Set `Profile.Avatar` (ImageSource) and `Profile.Name` (string) |
 | `DateTime` | `DateTime` | Timestamp shown on the item |
 | `RequestItem` | `object` | Reference to the originating request item for a response |
 | `Suggestion` | `AssistItemSuggestion` | Per-item suggestion list displayed below the response |
 | `SuggestionHeaderText` | `string` | Label shown above the response suggestion list |
 | `ShowAssistItemFooter` | `bool` | Show/hide the footer toolbar (Copy, Retry, Like, Dislike) for this item |
 | `ErrorMessage` | `string` | Displays an error state instead of normal content |
+| `IsStreamingEnabled` | `bool` | Marks this item as a streaming response — append tokens to `Text` and clear this flag (or call your own completion hook) when finished |
+| `Sources` | `IList<Uri>` | List of source URIs shown as reference chips for this response item |
 
 ```csharp
 var item = new AssistItem
@@ -46,7 +51,70 @@ var item = new AssistItem
 };
 ```
 
-> Use `SfAIAssistView.CurrentUser` to set the profile for the person sending requests, so all request items share the same profile automatically.
+> Use `SfAIAssistView.CurrentUser` to set the profile for the person sending requests, so all request items share the same profile automatically. To set the default profile for the **AI** (response items), use `SfAIAssistView.AssistProfile` instead.
+
+---
+
+## Streaming Response
+
+For AI responses that arrive token-by-token, set `IsStreamingEnabled` to `true` on the response
+`AssistItem`.
+
+```csharp
+var response = new AssistItem
+{
+    Text = "<b>Characteristics of Ownership</b><ol><li>&nbsp;Ownership is about Taking Initiative.</li><li>&nbsp;It’s an understanding that Taking Action Is Your Responsibility, not someone else’s.</li><li>&nbsp;It is the fundamental principle that you, as an individual, are accountable for the delivery of an outcome, even though there may be others who have a role to play.</li></ol>",
+    IsStreamingEnabled = true
+};
+
+assistView.AssistItems.Add(response);
+
+```
+
+### Bindable properties (AssistItem)
+
+- `IsStreamingEnabled` (`bool`, default `false`) — `true` for streaming the response. 
+
+---
+
+## AI Profile (Default Response Profile)
+
+`SfAIAssistView.AssistProfile` sets the default `Profile` used for all response items
+(`IsRequested = false`) that don't provide their own. This is the counterpart of
+`CurrentUser`, which does the same for request items.
+
+```xaml
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView">
+    <syncfusion:SfAIAssistView.AssistProfile>
+        <syncfusion:Profile Name="AI Assistant"
+                            Avatar="ai_avatar.png" />
+    </syncfusion:SfAIAssistView.AssistProfile>
+</syncfusion:SfAIAssistView>
+```
+
+```csharp
+sfAIAssistView.AssistProfile = new Profile
+{
+    Name = "AI Assistant",
+    Avatar = "ai_avatar.png"
+};
+```
+
+---
+
+## Response Loader
+
+`ShowResponseLoader` controls whether the shimmer/loading placeholder is shown while the AI
+is generating a response. Set to `false` to suppress it.
+
+```xaml
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView"
+                           ShowResponseLoader="False" />
+```
+
+```csharp
+sfAIAssistView.ShowResponseLoader = false;
+```
 
 ---
 

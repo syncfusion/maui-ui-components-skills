@@ -2,54 +2,88 @@
 
 ## Table of Contents
 - [Paging](#paging)
-  - [Enable Paging](#enable-paging)
+  - [Enable Paging (DataGrid + DataPager integration)](#enable-paging-datagrid--datapager-integration)
   - [Page Size](#page-size)
   - [Page Navigation](#page-navigation)
   - [Page Count](#page-count)
   - [On-Demand Paging](#on-demand-paging)
-  - [Numeric Button Shapes](#numeric-button-shapes)
-  - [Generating Numeric Buttons](#generating-numeric-buttons)
-  - [Customizing Button Size and Font Size](#customizing-button-size-and-font-size)
-  - [Display Mode](#display-mode)
-  - [Auto Ellipsis Mode](#auto-ellipsis-mode)
-  - [Customize AutoEllipsisText](#customize-autoellipsistext)
-  - [Programmatically Switch Pages](#programmatically-switch-pages)
-  - [Orientation](#orientation)
-  - [Paging Events](#paging-events)
-  - [Paging Limitations](#paging-limitations)
+  - [Pager Configuration (button shape, size, display mode, ellipsis, orientation, style, events)](#pager-configuration-button-shape-size-display-mode-ellipsis-orientation-style-events)
+  - [Paging Events (DataGrid integration hook)](#paging-events-datagrid-integration-hook)
 - [Load More](#load-more)
 - [Pull to Refresh](#pull-to-refresh)
 - [Data Virtualization](#data-virtualization)
+- [Scroll Orientation](#scroll-orientation)
+- [Shrink Wrap Rows and Columns](#shrink-wrap-rows-and-columns)
 
 ## Paging
 
-Add `Syncfusion.Maui.DataGrid.DataPager` package for paging support.
+The DataGrid integrates with the standalone **Syncfusion .NET MAUI DataPager** (`SfDataPager`) control for paging support. The DataPager is now shipped as a **separate NuGet package** — `Syncfusion.Maui.DataPager` — and has its own dedicated skill with full configuration reference.
 
-### Enable Paging
+**Package:** `Syncfusion.Maui.DataPager`
+
+**Namespace (XAML):**
+```xaml
+xmlns:datapager="clr-namespace:Syncfusion.Maui.DataPager;assembly=Syncfusion.Maui.DataPager"
+```
+
+**C# using:**
+```csharp
+using Syncfusion.Maui.DataPager;
+```
+
+> **Migration note:** If you are upgrading from an older release where the pager lived inside `Syncfusion.Maui.DataGrid`, update the namespace from `clr-namespace:Syncfusion.Maui.DataGrid.DataPager;assembly=Syncfusion.Maui.DataGrid` to `clr-namespace:Syncfusion.Maui.DataPager;assembly=Syncfusion.Maui.DataPager`, and add the `Syncfusion.Maui.DataPager` package. The types (`SfDataPager`, `DataPagerStyle`, `PageChangingEventArgs`, `PageChangedEventArgs`, `OnDemandLoadingEventArgs`, `DataPagerButtonShape`, `DataPagerDisplayMode`, `DataPagerEllipsisMode`, `DataPagerScrollOrientation`, `DataPagerNumericButtonsGenerateMode`) moved to the `Syncfusion.Maui.DataPager` namespace.
+
+### Enable Paging (DataGrid + DataPager integration)
+
+The integration pattern is simple: bind the full collection to `SfDataPager.Source`, then bind `SfDataPager.PagedSource` to the DataGrid's `ItemsSource`.
 
 ```xaml
-<ContentPage xmlns:datapager="clr-namespace:Syncfusion.Maui.DataGrid.DataPager;assembly=Syncfusion.Maui.DataGrid"
->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             xmlns:datapager="clr-namespace:Syncfusion.Maui.DataPager;assembly=Syncfusion.Maui.DataPager"
+             x:Class="DataGridDemo.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:OrderInfoViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        
-        <datapager:SfDataPager x:Name ="dataPager"
-                           Grid.Row="1"
-                           PageSize="15" 
-                           NumericButtonCount="10"
-                           Source="{Binding OrdersInfo}">
-      </datapager:SfDataPager>      
-      <syncfusion:SfDataGrid x:Name="dataGrid"
-                         Grid.Row="0"
-                         SelectionMode="Single"
-                         ItemsSource="{Binding Source={x:Reference dataPager}, Path=PagedSource }"  
-                         >
-      </syncfusion:SfDataGrid>
+
+        <syncfusion:SfDataGrid x:Name="dataGrid"
+                               Grid.Row="0"
+                               SelectionMode="Single"
+                               ItemsSource="{Binding Source={x:Reference dataPager}, Path=PagedSource}">
+        </syncfusion:SfDataGrid>
+
+        <Border Grid.Row="1" Padding="5">
+            <datapager:SfDataPager x:Name="dataPager"
+                                   PageSize="15"
+                                   NumericButtonCount="10"
+                                   Source="{Binding OrdersInfo}">
+            </datapager:SfDataPager>
+        </Border>
     </Grid>
 </ContentPage>
+```
+
+**C# equivalent:**
+
+```csharp
+using Syncfusion.Maui.DataGrid;
+using Syncfusion.Maui.DataPager;
+
+SfDataPager dataPager = new SfDataPager();
+dataPager.PageSize = 15;
+dataPager.NumericButtonCount = 10;
+dataPager.Source = viewModel.OrdersInfo;
+
+SfDataGrid dataGrid = new SfDataGrid();
+dataGrid.ItemsSource = dataPager.PagedSource;
 ```
 
 ### Page Size
@@ -62,10 +96,11 @@ Add `Syncfusion.Maui.DataGrid.DataPager` package for paging support.
 dataPager.PageSize = 25;
 ```
 
+> **Note:** `PageSize` must not be 0 — setting it to 0 throws an `ArgumentException`.
+
 ### Page Navigation
 
 ```csharp
-
 // Next page
 dataPager.MoveToNextPage();
 
@@ -77,7 +112,15 @@ dataPager.MoveToFirstPage();
 
 // Last page
 dataPager.MoveToLastPage();
+
+// Specific page
+dataPager.MoveToPage(3);
+
+// Specific page with animation (page, durationMs, animate)
+dataPager.MoveToPage(3, 500, true);
 ```
+
+These methods handle boundary conditions gracefully — calling `MoveToNextPage()` on the last page (or `MoveToPreviousPage()` on the first page) keeps the pager on the current page without throwing exceptions.
 
 ### Page Count
 
@@ -87,14 +130,11 @@ int totalPages = dataPager.PageCount;
 
 ### On-Demand Paging
 
-In normal Paging, the entire data collection is loaded initially into the `SfDataPager`. However, the control also allows for dynamically loading the data for the current page by setting [SfDataPager.UseOnDemandPaging](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.DataGrid.DataPager.SfDataPager.html#Syncfusion_Maui_DataGrid_DataPager_SfDataPager_UseOnDemandPaging) to `true`.
-
-To load the current page item dynamically, hook into the `OnDemandLoading` event. In this event, use the `LoadDynamicItems` method to load data for the corresponding page. The event contains `StartIndex` (page start index) and `PageSize` (number of items to load).
+For large or remote data, set `UseOnDemandPaging` to `true` and load only the current page in the `OnDemandLoading` event using `LoadDynamicItems`.
 
 ```xaml
-<datapager:SfDataPager x:Name ="dataPager"
-                       Grid.Row="1"
-                       PageSize="15" 
+<datapager:SfDataPager x:Name="dataPager"
+                       PageSize="15"
                        NumericButtonCount="10"
                        PageCount="10"
                        OnDemandLoading="dataPager_OnDemandLoading"
@@ -122,7 +162,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-**Performance Tip:** To enhance performance and avoid caching previous page data, call `ResetCache()` in the `OnDemandLoading` event:
+**Performance Tip:** To reduce memory when working with very large datasets, call `ResetCache()` in the `OnDemandLoading` event to discard cached pages except the current one:
 
 ```csharp
 private void dataPager_OnDemandLoading(object sender, OnDemandLoadingEventArgs e)
@@ -132,237 +172,58 @@ private void dataPager_OnDemandLoading(object sender, OnDemandLoadingEventArgs e
 }
 ```
 
-> **Note:** In on-demand paging, do not assign a value to the `Source` property. Define an integer value for the `PageCount` property to generate the required numeric buttons.
+> **Note:** In on-demand paging, do not assign a value to the `Source` property. Set the `PageCount` property to the total number of pages to generate the required numeric buttons (e.g., 1000 items / 15 per page → `PageCount = 67`).
 
-### Numeric Button Shapes
+### Pager Configuration (button shape, size, display mode, ellipsis, orientation, style, events)
 
-```xaml
-<datapager:SfDataPager x:Name="dataPager"
-                       ButtonShape="Rectangle"
-                       PageSize="15"
-                       Source="{Binding OrdersInfo}">
-</datapager:SfDataPager>
-```
+All DataPager appearance and behavior configuration — `ButtonShape`, `NumericButtonsGenerateMode`, `ButtonSize`, `ButtonFontSize`, `DisplayMode`, `AutoEllipsisMode`, `AutoEllipsisText`, `Orientation`, `DataPagerStyle` / `DefaultStyle` (colors and button templates), and the `PageChanging` / `PageChanged` events — is documented in the dedicated DataPager skill.
 
-```csharp
-dataPager.ButtonShape = DataPagerButtonShape.Rectangle;
-```
+➡️ **For full DataPager configuration, see the `syncfusion-maui-datapager` skill:**
+- `getting-started.md` — install the `Syncfusion.Maui.DataPager` package, register the handler, model/viewmodel setup
+- `paging-modes.md` — normal vs on-demand paging, `LoadDynamicItems`, `ResetCache`, programmatic navigation
+- `customization.md` — `ButtonShape`, `NumericButtonsGenerateMode`, `ButtonSize`/`ButtonFontSize`, `DisplayMode`, `AutoEllipsisMode`/`AutoEllipsisText`, `Orientation`
+- `appearance.md` — `DataPagerStyle` colors and navigation button templates
+- `events.md` — `PageChanging` and `PageChanged` event handlers
 
-### Generating Numeric Buttons
+**Quick reference — most-used pager properties:**
 
-```xaml
-<datapager:SfDataPager x:Name="dataPager"
-                       NumericButtonsGenerateMode="Auto"
-                       PageSize="15"
-                       Source="{Binding OrdersInfo}">
-</datapager:SfDataPager>
-```
+| Property | Purpose |
+|---|---|
+| `Source` | Full data collection (normal paging) |
+| `PagedSource` | Bind to DataGrid `ItemsSource` |
+| `PageSize` | Items per page (must be > 0) |
+| `PageCount` | Total pages (on-demand paging, instead of `Source`) |
+| `NumericButtonCount` | Number of numeric buttons shown |
+| `UseOnDemandPaging` | Enable on-demand loading |
+| `DisplayMode` | Which buttons (First/Last/Prev/Next/Numeric) are visible |
+| `Orientation` | `Horizontal` (default) or `Vertical` |
+| `DefaultStyle` | `DataPagerStyle` for colors and button templates |
 
-```csharp
-dataPager.NumericButtonsGenerateMode = DataPagerNumericButtonsGenerateMode.Auto;
-```
+### Paging Events (DataGrid integration hook)
 
-> **Note:** The size of the `SfDataPager` is automatically adjusted based on available screen size if the view cannot accommodate the numeric buttons specified in the `NumericButtonCount` property.
-
-### Customizing Button Size and Font Size
-
-```xaml
-<datapager:SfDataPager x:Name="dataPager"
-                       PageSize="15"
-                       ButtonSize="60"
-                       ButtonFontSize="21"
-                       Source="{Binding OrdersInfo}">
-</datapager:SfDataPager>
-```
+When the pager's page changes, you typically refresh DataGrid-dependent UI (headers, summaries, selection state). Wire `PageChanged` for post-navigation reactions, or `PageChanging` for pre-navigation validation:
 
 ```csharp
-dataPager.ButtonSize = 60;
-dataPager.ButtonFontSize = 21;
-```
-
-### Display Mode
-
-**Available Display Modes:**
-- `None` - Do not display any page buttons
-- `First` - Displays only the first page button
-- `Last` - Displays only the last page button
-- `Previous` - Displays only the previous page button
-- `Next` - Displays only the next page button
-- `Numeric` - Displays only the numeric page buttons
-- `FirstLast` - Displays the first and last page buttons
-- `PreviousNext` - Displays the previous and next page buttons
-- `FirstLastNumeric` - Displays the first, last, and numeric page buttons
-- `PreviousNextNumeric` - Displays the previous, next, and numeric page buttons
-- `FirstLastPreviousNext` - Displays all navigation buttons without numeric buttons
-- `FirstLastPreviousNextNumeric` - Displays all buttons
-
-```xaml
-<datapager:SfDataPager x:Name="dataPager"
-                       PageSize="15"
-                       DisplayMode="FirstLastNumeric"
-                       Source="{Binding OrdersInfo}">
-</datapager:SfDataPager>
-```
-
-```csharp
-dataPager.DisplayMode = DataPagerDisplayMode.FirstLastNumeric;
-```
-
-### Auto Ellipsis Mode
-
-```xaml
-<datapager:SfDataPager x:Name="dataPager"
-                       PageSize="15"
-                       AutoEllipsisMode="After"
-                       Source="{Binding OrdersInfo}">
-</datapager:SfDataPager>
-```
-
-```csharp
-dataPager.AutoEllipsisMode = DataPagerEllipsisMode.After;
-```
-
-### Customize AutoEllipsisText
-
-```xaml
-<datapager:SfDataPager x:Name="dataPager"
-                       PageSize="15"
-                       AutoEllipsisMode="After"
-                       AutoEllipsisText="..."
-                       Source="{Binding OrdersInfo}">
-</datapager:SfDataPager>
-```
-
-```csharp
-dataPager.AutoEllipsisMode = DataPagerEllipsisMode.After;
-dataPager.AutoEllipsisText = "***";
-```
-
-### Programmatically Switch Pages
-
-#### Move to First Page
-
-```csharp
-dataPager.MoveToFirstPage();
-```
-
-#### Move to Last Page
-
-```csharp
-dataPager.MoveToLastPage();
-```
-
-#### Move to Next Page
-
-```csharp
-dataPager.MoveToNextPage();
-```
-
-#### Move to Previous Page
-
-```csharp
-dataPager.MoveToPreviousPage();
-```
-
-#### Move to Specific Page
-
-```csharp
-// Navigate to page 3
-dataPager.MoveToPage(3);
-
-// Navigate to page 3 with animation
-dataPager.MoveToPage(3, 500, true);
-```
-
-### Orientation
-
-```xaml
-<datapager:SfDataPager x:Name="dataPager"
-                       PageSize="15"
-                       Orientation="Vertical"
-                       Source="{Binding OrdersInfo}">
-</datapager:SfDataPager>
-```
-
-```csharp
-dataPager.Orientation = DataPagerScrollOrientation.Vertical;
-```
-
-### Paging Events
-
-#### PageChanging
-
-```xaml
-<datapager:SfDataPager x:Name ="dataPager"
-                       Grid.Row="1"
-                       PageSize="15"
-                       PageChanging="dataPager_PageChanging"
-                       Source="{Binding OrdersInfo}">
-</datapager:SfDataPager>
-```
-
-```csharp
-private void dataPager_PageChanging(object sender, Syncfusion.Maui.DataGrid.DataPager.PageChangingEventArgs e)
+// React after the page has changed
+dataPager.PageChanged += (s, e) =>
 {
-    var oldPageIndex = e.OldPageIndex;
-    var newPageIndex = e.NewPageIndex;
-    // Handle page changing logic
-}
-```
+    // e.OldPageIndex, e.NewPageIndex
+    UpdateGridHeader(e.NewPageIndex);
+};
 
-#### PageChanged
-
-```xaml
-<datapager:SfDataPager x:Name ="dataPager"
-                       Grid.Row="1"
-                       PageSize="15"
-                       PageChanged="dataPager_PageChanged"
-                       Source="{Binding OrdersInfo}">
-</datapager:SfDataPager>
-```
-
-```csharp
-private void dataPager_PageChanged(object sender, Syncfusion.Maui.DataGrid.DataPager.PageChangedEventArgs e)
+// Validate before the page changes
+dataPager.PageChanging += (s, e) =>
 {
-    var oldPageIndex = e.OldPageIndex;
-    var newPageIndex = e.NewPageIndex;
-    // Handle page changed logic
-}
+    // e.OldPageIndex, e.NewPageIndex
+    if (HasUnsavedChanges())
+    {
+        // optionally warn the user before navigation
+    }
+};
 ```
 
-#### Pager Style Customization
+> **Event signature note:** With the separate package, the event-args types live in `Syncfusion.Maui.DataPager`. Use `Syncfusion.Maui.DataPager.PageChangingEventArgs` and `Syncfusion.Maui.DataPager.PageChangedEventArgs` in your handler signatures.
 
-**Available Style Properties:**
-- `DataPagerBackgroundColor` - Background color of the SfDataPager
-- `NavigationButtonBackgroundColor` - Background color of navigation buttons
-- `NavigationButtonDisableBackgroundColor` - Background color when disabled
-- `NavigationButtonDisableIconColor` - Icon color when disabled
-- `NavigationButtonIconColor` - Icon color of navigation buttons
-- `NumericButtonBackgroundColor` - Background color for numeric buttons
-- `NumericButtonSelectionBackgroundColor` - Background color of selected numeric button
-- `NumericButtonSelectionTextColor` - Text color of selected numeric button
-- `NumericButtonTextColor` - Text color of numeric buttons
-
-```xaml
-<datapager:SfDataPager x:Name="dataPager"
-                       PageSize="15"
-                       Source="{Binding OrdersInfo}">
-    <datapager:SfDataPager.DefaultStyle>
-        <datapager:DataPagerStyle NumericButtonSelectionBackgroundColor="Pink"
-                                  NumericButtonBackgroundColor="Purple"
-                                  NavigationButtonBackgroundColor="LightBlue"
-                                  NavigationButtonIconColor="Teal">
-        </datapager:DataPagerStyle>
-    </datapager:SfDataPager.DefaultStyle>
-</datapager:SfDataPager>
-```
-
-```csharp
-dataPager.DefaultStyle.NumericButtonSelectionBackgroundColor = Colors.Red;
-dataPager.DefaultStyle.NumericButtonBackgroundColor = Colors.GreenYellow;
-dataPager.DefaultStyle.NavigationButtonBackgroundColor = Colors.Black;
-dataPager.DefaultStyle.NavigationButtonIconColor = Colors.White;
-```
 
 ## Load More
 
@@ -474,7 +335,7 @@ var firstPage = LoadPageFromServer(pageIndex: 0, pageSize: 50);
 viewModel.Orders = new ObservableCollection<OrderInfo>(firstPage);
 
 // Handle page changes
-dataPager.PageIndexChanged += (s, e) =>
+dataPager.PageChanged += (s, e) =>
 {
     var page = LoadPageFromServer(e.NewPageIndex, dataPager.PageSize);
     viewModel.Orders.Clear();
@@ -563,6 +424,48 @@ dataGrid.ScrollToColumn(customerColumn, ScrollToPosition.Center, true);
 // Scroll without animation
 dataGrid.ScrollToColumn(customerColumn, ScrollToPosition.MakeVisible, false);
 ```
+
+## Scroll Orientation
+
+The `ScrollOrientation` property controls the direction in which the grid can be scrolled. The default value is `Both`.
+
+**Supported values:**
+- `Both` (default) — Enables both vertical and horizontal scrolling.
+- `Vertical` — Enables vertical scrolling only.
+- `Horizontal` — Enables horizontal scrolling only.
+- `Neither` — Disables scrolling.
+
+```xaml
+<syncfusion:SfDataGrid x:Name="dataGrid"
+                       ItemsSource="{Binding Orders}"
+                       ScrollOrientation="Vertical">
+</syncfusion:SfDataGrid>
+```
+
+```csharp
+dataGrid.ScrollOrientation = ScrollOrientation.Vertical;
+```
+
+Use `Vertical` when you have many rows but want to prevent horizontal panning, or `Horizontal` to lock vertical scrolling. `Neither` is useful when the grid is embedded in an outer scroll container that should own all scrolling.
+
+## Shrink Wrap Rows and Columns
+
+When the height or width of the DataGrid is unbounded (infinite), the DataGrid sets its height or width to 300 by default. Enable `ShrinkWrapRows` to size the grid's height to the available rows, and `ShrinkWrapColumns` to size the grid's width to the available columns.
+
+```xaml
+<syncfusion:SfDataGrid x:Name="dataGrid"
+                       ItemsSource="{Binding Orders}"
+                       ShrinkWrapRows="True"
+                       ShrinkWrapColumns="True">
+</syncfusion:SfDataGrid>
+```
+
+```csharp
+dataGrid.ShrinkWrapRows = true;
+dataGrid.ShrinkWrapColumns = true;
+```
+
+> **Performance note:** Shrink wrapping is considerably more expensive than specifying a fixed height or width because the DataGrid must measure all rows or columns to determine its size. Use these properties only when the DataGrid contains a relatively small number of rows and columns.
 
 ## Next Steps
 

@@ -1,6 +1,6 @@
 ---
 name: syncfusion-maui-calendar
-description: Implements and customize Syncfusion .NET MAUI Calendar (SfCalendar) control. Use when implementing calendar functionality, date selection (single, multiple, range), or calendar views (month, year, decade, century). Covers date restrictions (min/max dates, EnablePastDates, SelectableDayPredicate), calendar customization, events (ViewChanged, SelectionChanged, Tapped), and header/footer customization.
+description: Implements and customize Syncfusion .NET MAUI Calendar (SfCalendar) control. Use when implementing calendar functionality, date selection (single, multiple, range), or calendar views (month, year, decade, century). Covers MinimumDisplayMode and MaximumDisplayMode to restrict the user-navigable view range, date restrictions (min/max dates, EnablePastDates, SelectableDayPredicate), calendar customization, events (ViewChanged, SelectionChanged, Tapped), and header/footer customization.
 metadata:
   author: "Syncfusion Inc"
   version: "34.1.29"
@@ -16,6 +16,7 @@ Use this skill when you need to:
 - Implement a calendar control in .NET MAUI applications
 - Enable date selection (single date, multiple dates, or date ranges)
 - Display calendar views (Month, Year, Decade, Century)
+- Restrict the navigable view range with `MinimumDisplayMode` and `MaximumDisplayMode`
 - Restrict date selection with min/max dates or custom validation
 - Customize calendar appearance (backgrounds, text styles)
 - Handle calendar events (selection changes, view changes, taps)
@@ -36,6 +37,7 @@ Use this skill when you need to:
 **Key Capabilities:**
 - 4 calendar views for flexible navigation
 - 3 selection modes (Single, Multiple, Range)
+- `MinimumDisplayMode` and `MaximumDisplayMode` to bound the user-navigable view range
 - Comprehensive date restriction options
 - Full customization (dates, today, trailing/leading)
 - Rich event system for user interactions
@@ -60,6 +62,7 @@ Use this skill when you need to:
 - Century view for decade selection
 - NumberOfVisibleWeeks property
 - Week number display (ShowWeekNumber)
+- `MinimumDisplayMode` and `MaximumDisplayMode` to bound the user-navigable view range
 - View navigation and switching
 
 ### Date Selection

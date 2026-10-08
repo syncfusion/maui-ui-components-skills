@@ -5,6 +5,7 @@ The toolbar appears at the top of `SfAIAssistView` and provides session-level co
 ## Table of Contents
 - [Show and Configure Toolbar](#show-and-configure-toolbar)
 - [New Chat Button](#new-chat-button)
+- [Toolbar Menu Options](#toolbar-menu-options)
 - [Temporary Chat Mode](#temporary-chat-mode)
 - [Chat Mode Events](#chat-mode-events)
 
@@ -97,6 +98,45 @@ sfAIAssistView.TemporaryChatBannerText = "This chat will not be saved";
 <syncfusion:SfAIAssistView x:Name="sfAIAssistView"
                            EnableTemporaryChat="True"
                            TemporaryChatBannerTemplate="{StaticResource temporaryBannerTemplate}" />
+```
+
+---
+
+## Toolbar Menu Options
+
+`ToolbarMenuOptions` lets you add custom entries to the New Chat overflow menu in the toolbar
+(alongside the built-in **Temporary Chat** entry). Each `ActionButton` provides a `Text` and a
+`Command` invoked when the entry is tapped.
+
+### XAML
+
+```xaml
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView">
+    <syncfusion:SfAIAssistView.ToolbarMenuOptions>
+        <syncfusion:ActionButton Text="Export Chat"
+                                 Command="{Binding ExportChatCommand}" />
+        <syncfusion:ActionButton Text="Clear History"
+                                 Command="{Binding ClearHistoryCommand}" />
+    </syncfusion:SfAIAssistView.ToolbarMenuOptions>
+</syncfusion:SfAIAssistView>
+```
+
+### C#
+
+```csharp
+sfAIAssistView.ToolbarMenuOptions = new ObservableCollection<ActionButton>
+{
+    new ActionButton
+    {
+        Text = "Export Chat",
+        Command = viewModel.ExportChatCommand
+    },
+    new ActionButton
+    {
+        Text = "Clear History",
+        Command = viewModel.ClearHistoryCommand
+    }
+};
 ```
 
 ---

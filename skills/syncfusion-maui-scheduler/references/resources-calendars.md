@@ -7,12 +7,15 @@
   - [Creating Resources](#creating-resources)
   - [Assigning Resources to Appointments](#assigning-resources-to-appointments)
   - [Multiple Resource Sharing](#multiple-resource-sharing)
+  - [Hierarchical Resource View](#hierarchical-resource-view)
   - [Resource Grouping](#resource-grouping)
   - [Business Object Binding](#business-object-binding)
 - [Resource View Configuration](#resource-view-configuration)
   - [Visible Resource Count](#visible-resource-count)
   - [Resource Header Dimensions](#resource-header-dimensions)
   - [Minimum Row Height](#minimum-row-height)
+  - [Adaptive Resource Row Height](#adaptive-resource-row-height)
+  - [Adaptive UI on Desktop (Mobile-Style Drawer)](#adaptive-ui-on-desktop-mobile-style-drawer)
 - [Resource Appearance Customization](#resource-appearance-customization)
   - [Text Style](#text-style)
   - [Header Template](#header-template)
@@ -114,6 +117,96 @@ var appointment = new SchedulerAppointment()
 ```
 
 **Use case:** Team meetings, shared equipment reservations, multi-attendee appointments.
+
+### Hierarchical Resource View
+
+Group resources into a parent/child (tree) hierarchy using the `GroupId` property on `SchedulerResource`. When `GroupId` is set, the scheduler automatically builds a tree of nodes and supports expanding/collapsing child rows. The hierarchical resource view is supported in **Timeline views** (TimelineDay, TimelineWeek, TimelineWorkWeek, TimelineMonth) on Windows and macOS.
+
+```csharp
+var resources = new ObservableCollection<SchedulerResource>()
+{
+    // Parent
+    new SchedulerResource { Id = "team-a", Name = "Team A" },
+    // Children of Team A
+    new SchedulerResource { Id = "1000", Name = "Sophia",    GroupId = "team-a" },
+    new SchedulerResource { Id = "1001", Name = "Zoey",      GroupId = "team-a" },
+    new SchedulerResource { Id = "1002", Name = "James",     GroupId = "team-a" },
+
+    // Parent
+    new SchedulerResource { Id = "team-b", Name = "Team B" },
+    // Children of Team B
+    new SchedulerResource { Id = "2000", Name = "Olivia",    GroupId = "team-b" },
+    new SchedulerResource { Id = "2001", Name = "Liam",      GroupId = "team-b" },
+};
+
+scheduler.View = SchedulerView.TimelineWeek;
+scheduler.ResourceView.Resources = resources;
+```
+
+**Collapse or expand a child node:**
+
+```csharp
+var teamA = resources.First(r => (string)r.Id == "team-a");
+teamA.IsNodeCollapsed = true; // Hide child rows of Team A
+```
+
+**Notes:**
+- `GroupId` of a child must match the `Id` of its parent.
+- `HasChildNodes` is a read-only property that returns `true` when a resource has at least one child.
+- Resources without a `GroupId` (and not referenced as a parent by any other resource) are treated as root nodes.
+- Each parent row reserves enough vertical space to render its own and all of its descendants.
+
+## Adaptive Resource Row Height
+
+In Timeline views, each resource row normally reserves enough vertical space to fit the tallest appointment that falls inside it. Use the `AutoRowHeight` and `MinimumRowHeight` properties on `SchedulerResourceView` to control that behaviour.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="TimelineWeek">
+    <scheduler:SfScheduler.ResourceView>
+        <scheduler:SchedulerResourceView AutoRowHeight="True" MinimumRowHeight="80" />
+    </scheduler:SfScheduler.ResourceView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.TimelineWeek;
+scheduler.ResourceView.AutoRowHeight = true;       // grow row to fit content
+scheduler.ResourceView.MinimumRowHeight = 80;      // never smaller than 80
+this.Content = scheduler;
+```
+
+**Behavior:**
+- `AutoRowHeight = true` (default): each resource row grows to fit the appointments in that row, subject to `MinimumRowHeight`.
+- `AutoRowHeight = false`: every resource row uses a fixed height computed from `MinimumRowHeight` (if set) or the default.
+- `MinimumRowHeight = -1` (default): use the scheduler's default row height calculation.
+- This setting is most useful when combined with the `Hierarchical Resource View` described above.
+
+## Adaptive UI on Desktop (Mobile-Style Drawer)
+
+By default, Windows and macOS use a horizontal resource layout. Set `EnableAdaptiveUI` to `true` to switch desktop platforms to the mobile-style navigation drawer UI (the same UI used on Android and iOS).
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Day">
+    <scheduler:SfScheduler.ResourceView>
+        <scheduler:SchedulerResourceView EnableAdaptiveUI="True" />
+    </scheduler:SfScheduler.ResourceView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Day;
+scheduler.ResourceView.EnableAdaptiveUI = true;
+this.Content = scheduler;
+```
+
+**Default:** `false`
+
+**Behavior:**
+- On Windows and macOS, the resource row is replaced by the adaptive header (hamburger menu + resource name).
+- The user opens the navigation drawer to switch between resources.
+- On Android and iOS, the adaptive UI is the default and this property has no visible effect.
 
 ### Resource Grouping
 

@@ -2,9 +2,13 @@
 
 ## Table of Contents
 - [Selection Modes](#selection-modes)
+- [Navigation Mode](#navigation-mode)
 - [Selection Events](#selection-events)
 - [Programmatic Selection](#programmatic-selection)
 - [Get Selected Items](#get-selected-items)
+- [Programmatic Navigation](#programmatic-navigation)
+- [Keyboard Navigation (Windows)](#keyboard-navigation-windows)
+- [Troubleshooting](#troubleshooting)
 
 ## Selection Modes
 
@@ -133,6 +137,40 @@ var selectedOrders = dataGrid.SelectedRows.Cast<OrderInfo>().ToList();
 // Get selected index
 int selectedIndex = dataGrid.SelectedIndex;
 ```
+
+## Programmatic Navigation
+
+The `SfDataGrid` supports navigating to adjacent cells of the current cell programmatically, without using keyboard input. These methods navigate relative to the current cell position:
+
+- `MoveToNextCell()` — Navigates the current cell to the next cell (requires `NavigationMode` = `Cell`).
+- `MoveToPreviousCell()` — Navigates the current cell to the previous cell (requires `NavigationMode` = `Cell`).
+- `MoveToNextRow()` — When `NavigationMode` is `Cell`, navigates the current cell to the next row. When `NavigationMode` is `Row`, navigates the current row to the next row.
+- `MoveToPreviousRow()` — When `NavigationMode` is `Cell`, navigates the current cell to the previous row. When `NavigationMode` is `Row`, navigates the current row to the previous row.
+
+```xaml
+<syncfusion:SfDataGrid x:Name="dataGrid"
+                       ItemsSource="{Binding Orders}"
+                       SelectionMode="Single"
+                       SelectionUnit="Cell"
+                       NavigationMode="Cell">
+</syncfusion:SfDataGrid>
+```
+
+```csharp
+// Navigate to the next cell from the current cell position
+this.dataGrid.MoveToNextCell();
+
+// Navigate to the previous cell
+this.dataGrid.MoveToPreviousCell();
+
+// Navigate to the next row
+this.dataGrid.MoveToNextRow();
+
+// Navigate to the previous row
+this.dataGrid.MoveToPreviousRow();
+```
+
+Use these methods to build custom navigation UI (e.g., on-screen arrow buttons for touch devices) or to drive navigation from accessibility tooling.
 
 ## Keyboard Navigation (Windows)
 

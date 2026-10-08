@@ -16,6 +16,7 @@
 - [Full Screen Scheduler](#full-screen-scheduler)
 - [Current Time Indicator](#current-time-indicator)
 - [Time Ruler Customization](#time-ruler-customization)
+- [Major and Minor Ticks in Timeslot Cells](#major-and-minor-ticks-in-timeslot-cells)
 - [View Header Customization](#view-header-customization)
 - [Minimum Appointment Duration](#minimum-appointment-duration)
 - [Display Spanned Appointments in Time Slots](#display-spanned-appointments-in-time-slots)
@@ -438,6 +439,67 @@ var timeRulerTextStyle = new SchedulerTextStyle()
 };
 this.Scheduler.DaysView.TimeRulerTextStyle = timeRulerTextStyle;
 ```
+
+## Major and Minor Ticks in Timeslot Cells
+
+In Day, Week, WorkWeek, and Timeline views, the time ruler supports two granularities of marks:
+
+- **Major ticks** correspond to the cell boundaries defined by `TimeInterval`. They use the existing `TimeFormat` and `TimeRulerTextStyle` properties and display the full time label (for example, `9:00 AM`).
+- **Minor ticks** subdivide a major interval. Use `MinorTickTimeFormat` and `MinorTickTextStyle` to control how many subdivisions are drawn and how they are labelled.
+
+### Minor Tick Time Format
+
+`MinorTickTimeFormat` defines the format applied to the time text rendered at each minor tick. The number of minor ticks drawn between two major ticks is derived from this format: the scheduler uses the position of the `mm` token in the format string to determine the sub‑interval (for example, `mm` produces a tick every minute, `hh:mm` produces a tick every hour and label every hour).
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Week">
+    <scheduler:SfScheduler.DaysView>
+        <scheduler:SchedulerDaysView MinorTickTimeFormat="mm" />
+    </scheduler:SfScheduler.DaysView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Week;
+scheduler.DaysView.MinorTickTimeFormat = "mm";
+this.Content = scheduler;
+```
+
+**Default:** `"mm"` (one minor tick per minute)
+
+### Minor Tick Text Style
+
+Customize the appearance of the minor tick labels with `MinorTickTextStyle`:
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="Week">
+    <scheduler:SfScheduler.DaysView>
+        <scheduler:SchedulerDaysView MinorTickTimeFormat="mm">
+            <scheduler:SchedulerDaysView.MinorTickTextStyle>
+                <scheduler:SchedulerTextStyle TextColor="Gray" FontSize="10" />
+            </scheduler:SchedulerDaysView.MinorTickTextStyle>
+        </scheduler:SchedulerDaysView>
+    </scheduler:SfScheduler.DaysView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.Week;
+scheduler.DaysView.MinorTickTimeFormat = "mm";
+scheduler.DaysView.MinorTickTextStyle = new SchedulerTextStyle()
+{
+    TextColor = Colors.Gray,
+    FontSize = 10,
+};
+this.Content = scheduler;
+```
+
+**Notes:**
+- The same `MinorTickTimeFormat` and `MinorTickTextStyle` properties are available on `SchedulerTimelineView`, so TimelineDay, TimelineWeek, and TimelineWorkWeek also support major/minor ticks out of the box. (TimelineMonth is **not** in the supported list — it uses a date-based ruler without minor ticks.)
+- When `MinorTickTimeFormat` is `null` or empty, only major ticks are drawn.
+- Minor tick labels are drawn as small text without a leading tick line, helping you keep the time ruler compact while preserving precision.
 
 ## View Header Customization
 

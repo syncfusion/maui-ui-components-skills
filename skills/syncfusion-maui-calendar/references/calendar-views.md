@@ -1,6 +1,6 @@
 # Calendar Views in .NET MAUI Calendar
 
-The SfCalendar provides four different view types for displaying and selecting dates. Each view serves a specific navigation and selection purpose.
+The SfCalendar provides four different view types for displaying and selecting dates. Each view serves a specific navigation and selection purpose. The navigable view range can be bounded by `MinimumDisplayMode` and `MaximumDisplayMode`.
 
 ## Table of Contents
 - [Month View](#month-view)
@@ -10,6 +10,7 @@ The SfCalendar provides four different view types for displaying and selecting d
 - [View Property](#view-property)
 - [Number of Visible Weeks](#number-of-visible-weeks)
 - [Week Numbers](#week-numbers)
+- [Minimum and Maximum Display Mode](#minimum-and-maximum-display-mode)
 - [Allow View Navigation](#allow-view-navigation)
 
 ## Month View
@@ -319,6 +320,87 @@ Users can select cells directly in Year, Decade, and Century views without navig
    
 3. **Century View with AllowViewNavigation=false:**
    - Select "2020-2029" → SelectionChanged returns `DateTime(2020, 1, 1)`
+
+## Minimum and Maximum Display Mode
+
+Bound the user-navigable view range using `MinimumDisplayMode` and `MaximumDisplayMode`. Together they form the inclusive range of `CalendarView` values the user can navigate into. Navigation past either bound is prevented (header taps, swipe gestures, and the navigation arrows in the header all respect these bounds).
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `MinimumDisplayMode` | `CalendarView` | `Month` | The lowest view the user is allowed to navigate into. |
+| `MaximumDisplayMode` | `CalendarView` | `Century` | The highest view the user is allowed to navigate into. |
+
+**Allowed `CalendarView` values (from lowest to highest):** `Month`, `Year`, `Decade`, `Century`.
+
+### Lock to Month View Only
+
+```xaml
+<calendar:SfCalendar x:Name="calendar"
+                     View="Month"
+                     MinimumDisplayMode="Month"
+                     MaximumDisplayMode="Month" />
+```
+
+```csharp
+SfCalendar calendar = new SfCalendar
+{
+    View = CalendarView.Month,
+    MinimumDisplayMode = CalendarView.Month,
+    MaximumDisplayMode = CalendarView.Month
+};
+```
+
+With both bounds set to `Month`, the user cannot drill up to Year, Decade, or Century; the header still shows the current month and the navigation arrows move between months.
+
+### Restrict to Day/Month Picker (No Long-Range Navigation)
+
+```xaml
+<calendar:SfCalendar x:Name="calendar"
+                     View="Month"
+                     MinimumDisplayMode="Month"
+                     MaximumDisplayMode="Year" />
+```
+
+```csharp
+SfCalendar calendar = new SfCalendar
+{
+    View = CalendarView.Month,
+    MinimumDisplayMode = CalendarView.Month,
+    MaximumDisplayMode = CalendarView.Year
+};
+```
+
+The user can drill from Month up to Year (to pick a different month) but cannot reach Decade or Century.
+
+### Restrict to Year/Month/Decade Picker
+
+```xaml
+<calendar:SfCalendar x:Name="calendar"
+                     View="Year"
+                     MinimumDisplayMode="Month"
+                     MaximumDisplayMode="Decade" />
+```
+
+```csharp
+SfCalendar calendar = new SfCalendar
+{
+    View = CalendarView.Year,
+    MinimumDisplayMode = CalendarView.Month,
+    MaximumDisplayMode = CalendarView.Decade
+};
+```
+
+The user can navigate from Year to Decade (and back down to Month) but cannot reach Century.
+
+### Notes
+
+- The constraints are inclusive on both ends. If `MinimumDisplayMode` is set to a value higher than `MaximumDisplayMode`, the calendar falls back to the wider default range and the user can navigate freely.
+- `MinimumDisplayMode` and `MaximumDisplayMode` are honored by:
+  - Header-tap navigation (for example, tapping the Month-view header to navigate up)
+  - The forward/backward navigation arrows in the header
+  - Swipe gestures for month/year navigation
+  - The view-switching portion of the `DateNavigation` API
+- Programmatic `View` assignment is restricted by these properties; if you set `View` to a value outside the range, the calendar will not display it.
 
 ## View Navigation Examples
 

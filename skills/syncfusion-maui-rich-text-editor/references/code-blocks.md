@@ -210,7 +210,7 @@ For full details on toolbar customization, see [Toolbar Configuration](toolbar.m
 
 - Place the `CodeBlock` toolbar item near other formatting controls for quick access.
 - Use `Separator` items to visually group the `CodeBlock` option from adjacent formatting tools.
-- Combine code block support with HTML output (`HtmlText` property) to persist formatted snippets for later rendering.
+- Combine code block support with HTML output (`Value` property with `TValue="HTML"`) to persist formatted snippets for later rendering.
 - For content workflows that round-trip code through HTML, validate the resulting markup preserves the code block structure.
 - When pairing code blocks with `TextChanged`, ensure downstream consumers handle multi-line preformatted content correctly.
 

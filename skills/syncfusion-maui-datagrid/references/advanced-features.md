@@ -411,6 +411,65 @@ dataGrid.DefaultStyle = style;
 - `ContextMenuSeparatorColor` - Background/fill color of the separator
 - `ContextMenuSeparatorStroke` - Border/line color of the separator
 
+### Dynamic Context Menu Loading
+
+`MenuItemCollection` supports static population only — the items you declare in XAML or add in code are shown as-is. To load menu items dynamically (show/hide or enable/disable items conditionally based on the row, column, or data), handle the `ContextMenuOpening` event and modify the `MenuItems` collection before the menu is displayed.
+
+The `ContextMenuOpening` event receives `ContextMenuOpeningEventArgs` with:
+- **Cancel** — Set to `true` to cancel the display of the context menu.
+- **Column** — The column for which the context menu is opening (null if not a column header).
+- **RowIndex** - The index of the row for which the context menu is opening.
+- **RowData** - The data value of the row for which the context menu is opening.
+- **RowType** - The type of row(Default, Header, GroupSummary) for which the context menu is opening.
+- **MenuItems** — Access to the collection of `MenuItem` objects that will be displayed; add, remove, or modify items here.
+
+```csharp
+dataGrid.ContextMenuOpening += DataGrid_ContextMenuOpening;
+
+private void DataGrid_ContextMenuOpening(object sender, ContextMenuOpeningEventArgs e)
+{
+    if (e.RowIndex % 2 == 0 && e.RowType == RowType.DefaultRow)
+    {
+        e.MenuItems[0]?.IsVisible = false;
+        if(e.MenuItems.Count > 3)
+            e.MenuItems[2].IsVisible = false;
+    }
+
+    if(e.RowType == RowType.HeaderRow)
+    {
+        if(e.Column.MappingName == "ShipCity")
+        {
+            e.MenuItems.Add(new MenuItem() { Text = "Locate" });
+        }
+
+        if (e.Column.MappingName == "Customer")
+        {
+            e.MenuItems.RemoveAt(3);
+        }
+    }
+    if (e.RowData is OrderInfo orderInfo)
+    {
+        if (orderInfo.ShipCountry == "Germany")
+        {
+            e.MenuItems = new ObservableCollection<MenuItem>()
+            {
+                new MenuItem() { Text = "Menu Item 1" },
+                new MenuItem() { Text = "Menu Item 2" },
+                new MenuItem() { Text = "Menu Item 3" }
+            };
+        }
+    }
+}
+```
+
+**Related context menu events:**
+- `ContextMenuOpened` — Fires after the menu is displayed (`ContextMenuOpenedEventArgs`: `Column`, `MenuItems`).
+- `ContextMenuItemClicked` — Fires when a menu item is clicked (`ContextMenuItemClickedEventArgs`: `MenuItem`).
+- `ContextMenuClosing` — Fires before the menu closes; set `Cancel` to keep it open (`ContextMenuClosingEventArgs`: `Cancel`, `Column`, `MenuItems`).
+- `ContextMenuClosed` — Fires after the menu has closed (`ContextMenuClosedEventArgs`: `Column`, `MenuItems`).
+
+> **Performance note:** `ContextMenuOpening` handlers execute frequently during user interactions. Minimize complex operations inside them — defer data-heavy work to background tasks or cache results.
+
 
 ## Tooltips
 

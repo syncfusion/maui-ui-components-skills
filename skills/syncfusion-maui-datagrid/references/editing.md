@@ -4,6 +4,9 @@
 - [Enable Editing](#enable-editing)
 - [Column-Level Editing](#column-level-editing)
 - [Edit Modes](#edit-modes)
+  - [Edit Tap Action](#edit-tap-action)
+  - [Lost Focus Behavior](#lost-focus-behavior)
+  - [Editor Selection Behavior](#editor-selection-behavior)
 - [Editing Events](#editing-events)
 - [Programmatic Editing](#programmatic-editing)
 - [Common Editing Patterns](#Common-Editing-Patterns)
@@ -91,6 +94,34 @@ dataGrid.LostFocusBehavior = DataGridLostFocusBehavior.EndEditCurrentCell;
 - `EndEditCurrentCell` - Commit changes when focus moves away
 
 **Note:** Applies only to `DataGridNumericColumn` and `DataGridTextColumn`.
+
+### Editor Selection Behavior
+
+The `EditorSelectionBehavior` property controls how the cursor is positioned and how text is selected when a cell enters edit mode, letting you customize the editing experience.
+
+**Supported values:**
+- `SelectAll` (default) — Selects the entire text within the editor, allowing quick replacement of existing values.
+- `MoveLast` — Places the cursor at the end of the existing text without selecting it, so users can append or edit text from the end.
+
+```xaml
+<syncfusion:SfDataGrid x:Name="dataGrid"
+                       AllowEditing="True"
+                       NavigationMode="Cell"
+                       SelectionMode="Multiple"
+                       EditorSelectionBehavior="MoveLast"
+                       ItemsSource="{Binding Orders}"/>
+```
+
+```csharp
+dataGrid.AllowEditing = true;
+dataGrid.SelectionMode = DataGridSelectionMode.Multiple;
+dataGrid.NavigationMode = DataGridNavigationMode.Cell;
+dataGrid.EditorSelectionBehavior = DataGridEditorSelectionBehavior.MoveLast;
+```
+
+**When to use each:**
+- `SelectAll` — when users typically replace the entire value (e.g., quantity fields, status codes).
+- `MoveLast` — when users typically append to or fine-tune existing text (e.g., names, descriptions).
 
 ## Editing Events
 

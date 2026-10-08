@@ -704,3 +704,5 @@ After setting up the basic DataGrid:
 3. **Add Sorting/Filtering** - Read [sorting-filtering.md](sorting-filtering.md) for data manipulation
 4. **Optimize Performance** - Read [paging-virtualization.md](paging-virtualization.md) for large datasets
 5. **Customize Appearance** - Read [styling-customization.md](styling-customization.md) for theming
+
+> **Paging:** To add pagination, install the separate `Syncfusion.Maui.DataPager` package and use the `SfDataPager` control. See the dedicated `syncfusion-maui-datapager` skill for full pager configuration, and [paging-virtualization.md](paging-virtualization.md) for the DataGrid↔DataPager integration pattern.

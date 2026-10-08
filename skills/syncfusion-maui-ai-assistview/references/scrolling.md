@@ -2,6 +2,13 @@
 
 `SfAIAssistView` provides an optional scroll-to-bottom button and an `AutoScrollBehavior` property that help users stay aligned with the latest request or response in a long conversation.
 
+## Table of Contents
+- [ShowScrollToBottomButton](#showscrolltobottombutton)
+- [CanAutoScrollToBottom](#canautoscrolltobottom)
+- [ScrollToBottomButtonTemplate](#scrolltobottombuttontemplate)
+- [AutoScrollBehavior](#autoscrollbehavior)
+- [Scrolled event](#scrolled-event)
+
 ---
 
 ## ShowScrollToBottomButton
@@ -16,6 +23,43 @@ The button is hidden by default. Set `ShowScrollToBottomButton` to `true` to ena
 
 ```csharp
 sfAIAssistView.ShowScrollToBottomButton = true;
+```
+
+---
+
+## CanAutoScrollToBottom
+
+Read-only state property that reports whether the conversation is currently scrolled to the
+bottom. Use it to drive UI cues (for example, to enable/disable the scroll-to-bottom button
+or to gate other auto-scroll logic).
+
+```xaml
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView"
+                           CanAutoScrollToBottom="True" />
+```
+
+```csharp
+// Reflects whether the view can scroll to the bottom
+bool atBottom = sfAIAssistView.CanAutoScrollToBottom;
+```
+
+---
+
+## Scrolled event
+
+Subscribe to the `Scrolled` event to be notified whenever the conversation scrolls. The
+event delivers a `ScrolledEventArgs` that includes the scroll position and the source.
+
+```xaml
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView"
+                           Scrolled="OnScrolled" />
+```
+
+```csharp
+sfAIAssistView.Scrolled += (sender, e) =>
+{
+    // e.ScrollY, e.ScrollX, and other properties on ScrolledEventArgs
+};
 ```
 
 ---

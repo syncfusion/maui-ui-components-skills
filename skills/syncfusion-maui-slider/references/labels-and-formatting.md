@@ -7,6 +7,7 @@ This guide covers label display, interval configuration, number formatting, and 
 - [Interval Configuration](#interval-configuration)
 - [Number Format](#number-format)
 - [Custom Labels with LabelCreated Event](#custom-labels-with-labelcreated-event)
+- [Custom Labels with LabelTemplate](#custom-labels-with-labeltemplate)
 - [Label Styling](#label-styling)
 - [Complete Examples](#complete-examples)
 
@@ -368,6 +369,107 @@ private void OnLabelCreated(object sender, SliderLabelCreatedEventArgs e)
 }
 ```
 
+## Custom Labels with LabelTemplate
+
+The `LabelTemplate` property lets you fully customize the visual representation of slider labels by providing a `DataTemplate`. Unlike `LabelCreated` (which is an event handler), `LabelTemplate` is a XAML-declared data template that you can bind to label properties such as `Text` and `Value`. This is the recommended approach for declarative label customization in MVVM scenarios.
+
+### Basic Usage
+
+**XAML:**
+```xaml
+<sliders:SfSlider Minimum="0"
+                  Maximum="100"
+                  Interval="20"
+                  ShowLabels="True"
+                  ShowTicks="True">
+    <sliders:SfSlider.LabelTemplate>
+        <DataTemplate>
+            <Label Text="{Binding Text}"
+                   TextColor="Red"
+                   FontAttributes="Bold" />
+        </DataTemplate>
+    </sliders:SfSlider.LabelTemplate>
+</sliders:SfSlider>
+```
+
+**C#:**
+```c#
+SfSlider slider = new SfSlider();
+slider.Minimum = 0;
+slider.Maximum = 100;
+slider.Interval = 20;
+slider.ShowTicks = true;
+slider.ShowLabels = true;
+this.Content = slider;
+```
+
+### Available Binding Properties
+
+The data context of the `DataTemplate` exposes the following properties for binding:
+
+- **Text** (string): The formatted label text (after `NumberFormat` is applied)
+- **Value** (double): The numeric value of the label
+- **Position** (double): The normalized position along the track (0.0–1.0)
+
+### When to Use LabelTemplate vs LabelCreated
+
+| Use Case | Recommended Approach |
+|----------|---------------------|
+| Pure XAML/MVVM scenarios | `LabelTemplate` |
+| Quick conditional logic based on value | `LabelCreated` event |
+| Complex non-text content (icons, shapes, images) | `LabelTemplate` |
+| Dynamic text generation with business rules | `LabelCreated` event |
+| Designer-friendly customization | `LabelTemplate` |
+
+### Icon-Based Labels
+
+Render icons or images next to label text using a horizontal stack layout:
+
+```xaml
+<sliders:SfSlider Minimum="0"
+                  Maximum="5"
+                  Interval="1"
+                  ShowLabels="True"
+                  ShowTicks="True">
+    <sliders:SfSlider.LabelTemplate>
+        <DataTemplate>
+            <HorizontalStackLayout Spacing="2">
+                <Label Text="★" TextColor="Gold" FontSize="12" />
+                <Label Text="{Binding Text}" TextColor="Red" FontAttributes="Bold" />
+            </HorizontalStackLayout>
+        </DataTemplate>
+    </sliders:SfSlider.LabelTemplate>
+</sliders:SfSlider>
+```
+
+### Shape and Color-Coded Labels
+
+Use shapes (Ellipse, BoxView) to visually categorize label ranges:
+
+```xaml
+<sliders:SfSlider Minimum="0"
+                  Maximum="100"
+                  Interval="25"
+                  ShowLabels="True"
+                  ShowTicks="True">
+    <sliders:SfSlider.LabelTemplate>
+        <DataTemplate>
+            <VerticalStackLayout Spacing="2" HorizontalOptions="Center">
+                <BoxView WidthRequest="8"
+                         HeightRequest="8"
+                         CornerRadius="4"
+                         Color="Red" />
+                <Label Text="{Binding Text}"
+                       TextColor="Red"
+                       FontAttributes="Bold"
+                       FontSize="12"
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+        </DataTemplate>
+    </sliders:SfSlider.LabelTemplate>
+</sliders:SfSlider>
+```
+
 ## Label Styling
 
 Customize label appearance using `SliderLabelStyle` in the `LabelCreated` event or directly via the `LabelStyle` property.
@@ -549,6 +651,20 @@ NumberFormat="0%"    <!-- Wrong -->
 <sliders:SfSlider ShowLabels="True" LabelCreated="OnLabelCreated" />
 ```
 
+### Issue: LabelTemplate Not Rendering Custom Content
+
+**Cause**: `LabelTemplate` is set but the data context properties (`Text`, `Value`) are not bound, or `ShowLabels` is False.  
+**Solution**: Ensure `ShowLabels="True"` and that the inner view binds to the data context properties:
+```xaml
+<sliders:SfSlider ShowLabels="True" Interval="20">
+    <sliders:SfSlider.LabelTemplate>
+        <DataTemplate>
+            <Label Text="{Binding Text}" TextColor="Red" />
+        </DataTemplate>
+    </sliders:SfSlider.LabelTemplate>
+</sliders:SfSlider>
+```
+
 ## Summary
 
 Key label configuration properties:
@@ -557,6 +673,7 @@ Key label configuration properties:
 - **Interval**: Spacing between labels (0 for auto)
 - **NumberFormat**: Format label text (currency, percentage, decimals, units)
 - **LabelCreated**: Event for custom label text and styling
+- **LabelTemplate**: DataTemplate for declarative label customization (icons, shapes, custom views)
 - **LabelStyle**: Global label appearance (color, font, size, offset)
 
-Use NumberFormat for simple formatting, and LabelCreated event for advanced customization.
+Use NumberFormat for simple formatting, `LabelTemplate` for declarative custom views, and `LabelCreated` event for advanced conditional customization.

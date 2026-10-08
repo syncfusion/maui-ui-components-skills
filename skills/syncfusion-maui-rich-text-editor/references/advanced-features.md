@@ -576,13 +576,13 @@ public class ResponsiveEditorPage : ContentPage
 public async Task TestAutoSize()
 {
     // Test with short content
-    richTextEditor.Text = "Short text";
+    richTextEditor.Value = "Short text";
     await Task.Delay(100);
-    
+
     // Test with long content
-    richTextEditor.Text = string.Join("\n", Enumerable.Repeat("Long paragraph", 50));
+    richTextEditor.Value = string.Join("\n", Enumerable.Repeat("Long paragraph", 50));
     await Task.Delay(100);
-    
+
     // Verify layout adjusts correctly
 }
 ```
@@ -688,8 +688,8 @@ public void SetContent(string content)
     {
         richTextEditor.EnableAutoSize = true;
     }
-    
-    richTextEditor.Text = content;
+
+    richTextEditor.Value = content;
 }
 ```
 

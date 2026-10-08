@@ -543,16 +543,14 @@ public void AddSocialMediaLinks()
 ```csharp
 public string CreateEmailSignature(string name, string email, string website)
 {
-    richTextEditor.HtmlText = $@"
-        <p><b>{name}</b><br/>
-        Software Engineer<br/>";
-    
-    richTextEditor.InsertHyperlink(email, $"mailto:{email}");
-    richTextEditor.HtmlText += "<br/>";
-    richTextEditor.InsertHyperlink(website, website);
-    richTextEditor.HtmlText += "</p>";
-    
-    return richTextEditor.HtmlText;
+    var signature = new System.Text.StringBuilder();
+    signature.AppendLine($"<p><b>{name}</b><br/>");
+    signature.AppendLine("Software Engineer<br/>");
+    signature.AppendLine($"<a href=\"mailto:{email}\">{email}</a><br/>");
+    signature.AppendLine($"<a href=\"{website}\">{website}</a></p>");
+
+    richTextEditor.Value = signature.ToString();
+    return (string)richTextEditor.Value;
 }
 ```
 
@@ -561,13 +559,11 @@ public string CreateEmailSignature(string name, string email, string website)
 ```csharp
 public void InsertFooterLinks()
 {
-    richTextEditor.HtmlText = "<p><small>";
-    richTextEditor.InsertHyperlink("Privacy Policy", "https://example.com/privacy");
-    richTextEditor.HtmlText += " | ";
-    richTextEditor.InsertHyperlink("Terms of Service", "https://example.com/terms");
-    richTextEditor.HtmlText += " | ";
-    richTextEditor.InsertHyperlink("Contact Us", "https://example.com/contact");
-    richTextEditor.HtmlText += "</small></p>";
+    richTextEditor.Value = "<p><small>" +
+        "<a href=\"https://example.com/privacy\">Privacy Policy</a> | " +
+        "<a href=\"https://example.com/terms\">Terms of Service</a> | " +
+        "<a href=\"https://example.com/contact\">Contact Us</a>" +
+        "</small></p>";
 }
 ```
 

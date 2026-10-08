@@ -248,3 +248,31 @@ public class AIAssistViewModel : INotifyPropertyChanged
 
 - Selecting a history item restores the selected `AssistConversationItem.AssistItems` by default.
 - Setting `ConversationItemTappedEventArgs.Handled` to `true` suppresses the default restore behavior.
+
+---
+
+## Conversation Empty View
+
+`ConversationEmptyView` is shown inside the history drawer when `ConversationItemsSource` is
+empty (or filtered down to nothing). Accepts a `string` or any `View`.
+
+```xaml
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView"
+                           ConversationItemsSource="{Binding Items}"
+                           ConversationEmptyView="No conversations yet" />
+```
+
+```csharp
+sfAIAssistView.ConversationEmptyView = "No conversations yet";
+```
+
+For full custom layout, set `ConversationEmptyView` to a `View` instance:
+
+```csharp
+sfAIAssistView.ConversationEmptyView = new Label
+{
+    Text = "Start a new chat to see it here",
+    HorizontalOptions = LayoutOptions.Center,
+    VerticalOptions = LayoutOptions.Center
+};
+```

@@ -465,6 +465,38 @@ this.Content = scheduler;
 - Not applied to all-day appointments
 - If greater than TimeInterval, TimeInterval is used
 
+## Major and Minor Ticks in Timeline Views
+
+The time ruler in TimelineDay, TimelineWeek, and TimelineWorkWeek supports two granularities of marks. Major ticks correspond to the boundaries defined by `TimeInterval` and are styled by the existing `TimeFormat` and `TimeRulerTextStyle`. Minor ticks subdivide each major interval and are configured using `MinorTickTimeFormat` and `MinorTickTextStyle` on `SchedulerTimelineView`.
+
+```xaml
+<scheduler:SfScheduler x:Name="Scheduler" View="TimelineWeek">
+    <scheduler:SfScheduler.TimelineView>
+        <scheduler:SchedulerTimelineView MinorTickTimeFormat="mm">
+            <scheduler:SchedulerTimelineView.MinorTickTextStyle>
+                <scheduler:SchedulerTextStyle TextColor="Gray" FontSize="10" />
+            </scheduler:SchedulerTimelineView.MinorTickTextStyle>
+        </scheduler:SchedulerTimelineView>
+    </scheduler:SfScheduler.TimelineView>
+</scheduler:SfScheduler>
+```
+
+```csharp
+SfScheduler scheduler = new SfScheduler();
+scheduler.View = SchedulerView.TimelineWeek;
+scheduler.TimelineView.MinorTickTimeFormat = "mm";
+scheduler.TimelineView.MinorTickTextStyle = new SchedulerTextStyle()
+{
+    TextColor = Colors.Gray,
+    FontSize = 10,
+};
+this.Content = scheduler;
+```
+
+**Default `MinorTickTimeFormat`:** `"mm"` (one minor tick per minute)
+
+**Note:** `TimelineMonth` is **not** in the supported list — it uses a date-based ruler without minor ticks.
+
 ## View Header Customization
 
 ### View Header Text Formatting

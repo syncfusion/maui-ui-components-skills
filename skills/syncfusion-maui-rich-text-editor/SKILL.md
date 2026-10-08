@@ -1,6 +1,6 @@
 ---
 name: syncfusion-maui-rich-text-editor
-description: Implements Syncfusion .NET MAUI Rich Text Editor (SfRichTextEditor) for WYSIWYG text editing with formatting, images, tables, hyperlinks, and code blocks. Use when building rich text editors, document editors, email composers, blog post editors, or messaging apps with formatting. Covers text styling, toolbar formatting, images, tables, hyperlinks, code blocks, and HTML output.
+description: Implements Syncfusion .NET MAUI Rich Text Editor (SfRichTextEditor) for WYSIWYG text editing with formatting, images, tables, hyperlinks, and code blocks. Use when building rich text editors, document editors, email composers, blog post editors, or messaging apps with formatting. Covers text styling, toolbar formatting, toolbar grouping with IsGrouped overlay menus, text transformation (UPPERCASE/lowercase), block-schema binding (TValue="Schema"), images, tables, hyperlinks, code blocks, HTML output, and the public GetText() method for plain-text extraction.
 metadata:
   author: "Syncfusion Inc"
   version: "34.1.29"
@@ -22,8 +22,12 @@ Use this skill when you need to:
 - **Implement text editors with images, tables, hyperlinks, and code blocks** embedded in content
 - **Embed formatted code snippets** in technical documentation, blog posts, or developer-focused apps
 - **Customize toolbar items and appearance** for specific editing scenarios
+- **Group toolbar items** into context-aware overlay menus for mobile-first editing experiences
+- **Apply text case transformations** (UPPERCASE, lowercase) to user selections or programmatically via the `Uppercase()` and `Lowercase()` methods
+- **Bind the editor to a typed block-schema model** (TValue="Schema") instead of HTML for structured document workflows
 - **Handle formatted text programmatically** with methods for bold, italic, alignment, colors, etc.
 - **Manage user interactions** through events (text changes, hyperlink clicks, format changes)
+- **Read plain text** from the editor programmatically using the `Task<string> GetText()` method for character/word counts, search indexing, copy-to-clipboard, text-to-speech, SMS export, translation, and spell check
 - **Apply advanced features** like auto-sizing or Liquid Glass Effect for modern UI
 
 ## Component Overview
@@ -39,6 +43,15 @@ Use this skill when you need to:
 - **HTML Output** - Returns valid HTML markup for storage or transmission
 - **AutoSize** - Dynamic height adjustment based on content
 - **Liquid Glass Effect** - Modern Cupertino-style visual effects (iOS/macOS)
+
+## Public API Contract
+
+- The `Value` property is the only public content surface. It is typed as `object`, so always cast it to the expected runtime type when reading:
+  - HTML mode (`TValue="HTML"`): cast to `string`
+  - Schema mode (`TValue="Schema"`): cast to `ObservableCollection<BlockNode>`
+- For plain-text reads, use the public method `Task<string> GetText()` on `SfRichTextEditor` instead of stripping HTML yourself. It always returns the awaited plain-text content for both HTML and Schema modes.
+- The legacy `Text` and `HtmlText` properties are internal and must not be used in application code.
+- The legacy `DefaultTextColor`, `DefaultFontSize`, and `DefaultFontFamily` properties are obsolete; use per-paragraph or inline formatting instead.
 
 ## Documentation and Navigation Guide
 
@@ -63,6 +76,27 @@ Use this skill when you need to:
 - Scroll button visibility and icon customization
 - Platform-specific toolbar behaviors
 
+### Toolbar Grouping
+📄 **Read:** [references/toolbar-grouping.md](references/toolbar-grouping.md)
+- Enabling the grouped (overlay) toolbar with the IsGrouped property
+- Mapping each ToolbarItems entry to a context-aware overlay group
+- Mobile-first UX for touch devices (Android, iOS)
+- Choosing a focused set of items for grouped layouts
+- Pairing IsGrouped with ToolbarPosition and ToolbarSettings
+- Platform conditionals to switch between grouped and inline toolbars
+- Troubleshooting empty or overly crowded overlay menus
+
+### Text Transformation
+📄 **Read:** [references/text-transformation.md](references/text-transformation.md)
+- Using the TextTransform toolbar item from RichTextToolbarOptions
+- Selection-based case-change actions (UPPERCASE, lowercase, etc.)
+- Adding TextTransform to a custom toolbar with Separator grouping
+- Programmatic Uppercase() and Lowercase() methods for transforming the current selection
+- Combining text transformation with bold, italic, underline, and other character formatting
+- Using TextTransform with the grouped (overlay) toolbar
+- Real-world use cases: messaging apps, comments, blog and CMS editors
+- Troubleshooting and best practices for discoverability
+
 ### Formatting and Customization
 📄 **Read:** [references/formatting-and-customization.md](references/formatting-and-customization.md)
 - Customizing editor appearance (background, border, word wrap)
@@ -77,14 +111,25 @@ Use this skill when you need to:
 
 ### Content Management
 📄 **Read:** [references/content-management.md](references/content-management.md)
-- Setting plain text with Text property
-- Setting HTML formatted text with HtmlText property
+- Setting plain text through the Value property with TValue="HTML"
+- Setting HTML formatted text through the Value property with TValue="HTML"
 - Getting selected HTML content (GetSelectedText method)
 - Configuring placeholder text and styling
 - Programmatic cursor control (MoveCursorToStart, MoveCursorToEnd)
 - Focus and unfocus methods
 - Undo and redo functionality
 - Content manipulation patterns and best practices
+
+### Schema Block
+📄 **Read:** [references/schema-block.md](references/schema-block.md)
+- Switching the content model with TValue="Schema" and RichTextEditorValueType.Schema
+- Binding an ObservableCollection<BlockNode> to the Value property
+- Supported node types: ParagraphNode, HeadingNode, TextNode, BulletListNode, OrderedListNode, ListItemNode, ImageNode, CodeBlockNode, and LinkMark
+- Two-way binding so editor edits update the bound collection
+- Composing block nodes for headings, lists, links, images, and code blocks
+- Loading and saving structured documents through the block schema
+- Pairing the schema model with the toolbar and other editor features
+- Troubleshooting empty editors, ignored edits, and migration from HTML
 
 ### Images and Tables
 📄 **Read:** [references/images-and-tables.md](references/images-and-tables.md)
@@ -128,6 +173,7 @@ Use this skill when you need to:
 - Using events for contextual UI updates
 - Combining events with programmatic formatting
 - Real-world event handling scenarios
+- Public `Task<string> GetText()` method for plain-text extraction (use it instead of stripping HTML from `Value`)
 
 ### Advanced Features
 📄 **Read:** [references/advanced-features.md](references/advanced-features.md)

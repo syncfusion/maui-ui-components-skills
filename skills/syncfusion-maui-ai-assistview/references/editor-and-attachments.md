@@ -8,6 +8,7 @@ Covers customizing the message input editor, editing previous requests, file att
 - [Attachments](#attachments)
 - [Action Buttons](#action-buttons)
 - [Request Button](#request-button)
+- [Stop Responding Button](#stop-responding-button)
 
 ---
 
@@ -204,6 +205,20 @@ sfAIAssistView.AllowMultiplePick = true;
 
 - When `AllowMultiplePick` is `true`, the user can choose more than one file and all selected files are added as attachments.
 
+### PreventDuplicateAttachments
+
+When `true`, the same file cannot be added to the attachments list more than once (compared
+by file name and size). Default is `true`.
+
+```xaml
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView"
+                           PreventDuplicateAttachments="False" />
+```
+
+```csharp
+sfAIAssistView.PreventDuplicateAttachments = false;
+```
+
 ### AttachmentImagePreview
 
 When an attached image is tapped, the control opens a full-size image preview viewer for better inspection.
@@ -264,6 +279,13 @@ sfAIAssistView.ShowActionButtons = true;
 | `Icon` | `ImageSource` | Icon shown in the popup |
 | `Command` | `ICommand` | Executed when the action is tapped |
 | `CommandParameter` | `object` | Parameter passed to the command |
+
+### ActionButtonPosition Values
+
+| Value | Description |
+|---|---|
+| `Start` | Action icon appears at the leading edge of the input view |
+| `End` | Action icon appears at the trailing edge of the input view |
 
 ### Configuring ActionButtons
 
@@ -391,6 +413,72 @@ sfAIAssistView.RequestButtonTemplate = new DataTemplate(() =>
         VerticalOptions = LayoutOptions.Center
     };
     grid.Children.Add(label);
+    return grid;
+});
+```
+
+---
+
+## Stop Responding Button
+
+The `SfAIAssistView` includes a built-in StopResponding button that allows users to cancel an ongoing AI response. This button is visible by default.
+
+### EnableStopResponding
+
+To hide the StopResponding button, set `EnableStopResponding` to `false`.
+
+```xaml
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView"
+                           EnableStopResponding="False" />
+```
+
+```csharp
+sfAIAssistView.EnableStopResponding = false;
+```
+
+### StopRespondingIcon
+
+Sets a custom `ImageSource` for the StopResponding button icon.
+
+```xaml
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView">
+    <syncfusion:SfAIAssistView.StopRespondingIcon>
+        <FontImageSource Glyph="&#xe70b;"
+                         FontFamily="MauiMaterialAssets" />
+    </syncfusion:SfAIAssistView.StopRespondingIcon>
+</syncfusion:SfAIAssistView>
+```
+
+```csharp
+sfAIAssistView.StopRespondingIcon = new FontImageSource
+{
+    Glyph = "\ue70b",
+    FontFamily = "MauiMaterialAssets"
+};
+```
+
+### StopRespondingTemplate
+
+Fully replaces the StopResponding button UI with a custom `DataTemplate`.
+
+```xaml
+<ContentPage.Resources>
+    <DataTemplate x:Key="stopRespondingTemplate">
+        <Grid>
+            <!-- custom stop responding UI -->
+        </Grid>
+    </DataTemplate>
+</ContentPage.Resources>
+
+<syncfusion:SfAIAssistView x:Name="sfAIAssistView"
+                           StopRespondingTemplate="{StaticResource stopRespondingTemplate}" />
+```
+
+```csharp
+sfAIAssistView.StopRespondingTemplate = new DataTemplate(() =>
+{
+    var grid = new Grid();
+    // add custom stop responding UI
     return grid;
 });
 ```
