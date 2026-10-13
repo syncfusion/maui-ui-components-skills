@@ -3,6 +3,7 @@
 ## Table of Contents
 - [Overview](#overview)
 - [Series Styling](#series-styling)
+- [Gradient Support for Line-Based Series](#gradient-support-for-line-based-series)
 - [Point Color Path](#point-color-path)
 - [Border and Corner Radius](#border-and-corner-radius)
 - [Plot Area Customization](#plot-area-customization)
@@ -59,6 +60,94 @@ AreaSeries series = new AreaSeries
     YBindingPath = "Value",
     Fill = new SolidColorBrush(Color.FromRgb(76, 175, 80)),
     Opacity = 0.6
+};
+```
+
+## Gradient Support for Line-Based Series
+
+The `Stroke` property of line-based series accepts a `Brush`, so you can apply a `LinearGradientBrush` or `RadialGradientBrush` to render the line stroke as a gradient. This is supported on line-based series such as `LineSeries`, `SplineSeries`, `StepLineSeries`, and `FastLineSeries`.
+
+### Linear Gradient Stroke
+
+```xml
+<chart:SfCartesianChart>
+    <chart:SfCartesianChart.XAxes>
+        <chart:CategoryAxis/>
+    </chart:SfCartesianChart.XAxes>
+
+    <chart:SfCartesianChart.YAxes>
+        <chart:NumericalAxis/>
+    </chart:SfCartesianChart.YAxes>
+
+    <chart:LineSeries ItemsSource="{Binding Data}"
+                     XBindingPath="Month"
+                     YBindingPath="Sales"
+                     StrokeWidth="3">
+        <chart:LineSeries.Fill>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                <GradientStop Color="#2196F3" Offset="0.0"/>
+                <GradientStop Color="#9C27B0" Offset="1.0"/>
+            </LinearGradientBrush>
+        </chart:LineSeries.Fill>
+    </chart:LineSeries>
+</chart:SfCartesianChart>
+```
+
+```csharp
+SfCartesianChart chart = new SfCartesianChart();
+
+LinearGradientBrush gradientBrush = new LinearGradientBrush
+{
+    StartPoint = new Point(0, 0),
+    EndPoint = new Point(1, 0)
+};
+gradientBrush.GradientStops.Add(new GradientStop(Color.FromArgb("#2196F3"), 0.0f));
+gradientBrush.GradientStops.Add(new GradientStop(Color.FromArgb("#9C27B0"), 1.0f));
+
+LineSeries series = new LineSeries
+{
+    ItemsSource = data,
+    XBindingPath = "Month",
+    YBindingPath = "Sales",
+    Fill = gradientBrush,
+    StrokeWidth = 3
+};
+
+chart.Series.Add(series);
+```
+
+### Radial Gradient Stroke
+
+```xml
+<chart:SplineSeries ItemsSource="{Binding Data}"
+                    XBindingPath="Month"
+                    YBindingPath="Sales"
+                    StrokeWidth="4">
+    <chart:SplineSeries.Fill>
+        <RadialGradientBrush Center="0.5,0.5" Radius="0.8">
+            <GradientStop Color="#4CAF50" Offset="0.0"/>
+            <GradientStop Color="#FF9800" Offset="1.0"/>
+        </RadialGradientBrush>
+    </chart:SplineSeries.Fill>
+</chart:SplineSeries>
+```
+
+```csharp
+RadialGradientBrush radialBrush = new RadialGradientBrush
+{
+    Center = new Point(0.5, 0.5),
+    Radius = 0.8
+};
+radialBrush.GradientStops.Add(new GradientStop(Color.FromArgb("#4CAF50"), 0.0f));
+radialBrush.GradientStops.Add(new GradientStop(Color.FromArgb("#FF9800"), 1.0f));
+
+SplineSeries series = new SplineSeries
+{
+    ItemsSource = data,
+    XBindingPath = "Month",
+    YBindingPath = "Sales",
+    Fill = radialBrush,
+    StrokeWidth = 4
 };
 ```
 

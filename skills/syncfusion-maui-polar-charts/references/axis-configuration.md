@@ -9,6 +9,7 @@
 - [DateTimeCategory Axis](#datetimecategory-axis)
 - [Axis Labels](#axis-labels)
 - [Axis Lines and Styling](#axis-lines-and-styling)
+- [Axis Range Styles](#axis-range-styles)
 - [Grid Lines](#grid-lines)
 - [Tick Lines](#tick-lines)
 - [Axis Title](#axis-title)
@@ -384,6 +385,72 @@ axis.AxisLineStyle = new ChartLineStyle
                               StrokeWidth="2"/>
     </chart:CategoryAxis.AxisLineStyle>
 </chart:CategoryAxis>
+```
+
+## Axis Range Styles
+
+The `RangeStyles` property of `ChartAxis` allows you to customize the appearance of axis elements within a specified range. Each `ChartAxisRangeStyle` defines a `Start` and `End` range, and the following axis elements can be customized within it:
+
+* `MajorGridLineStyle` - customizes the major grid line style for the range.
+* `MinorGridLineStyle` - customizes the minor grid line style for the range.
+* `MajorTickStyle` - customizes the major tick line style for the range.
+* `MinorTickStyle` - customizes the minor tick line style for the range.
+* `LabelStyle` - customizes the axis label style for the range.
+
+### Basic Range Style
+
+```xml
+<chart:SfPolarChart>
+    <chart:SfPolarChart.YAxes>
+        <chart:NumericalAxis>
+            <chart:NumericalAxis.RangeStyles>
+                <chart:ChartAxisRangeStyle Start="20" End="40">
+                    <chart:ChartAxisRangeStyle.MajorGridLineStyle>
+                        <chart:ChartLineStyle Stroke="Blue"
+                                              StrokeWidth="2"/>
+                    </chart:ChartAxisRangeStyle.MajorGridLineStyle>
+                </chart:ChartAxisRangeStyle>
+                <chart:ChartAxisRangeStyle Start="40" End="60">
+                    <chart:ChartAxisRangeStyle.MinorGridLineStyle>
+                        <chart:ChartLineStyle Stroke="Green"
+                                              StrokeWidth="1"
+                                              StrokeDashArray="4,2"/>
+                    </chart:ChartAxisRangeStyle.MinorGridLineStyle>
+                </chart:ChartAxisRangeStyle>
+            </chart:NumericalAxis.RangeStyles>
+        </chart:NumericalAxis>
+    </chart:SfPolarChart.YAxes>
+</chart:SfPolarChart>
+```
+
+```csharp
+NumericalAxis axis = new NumericalAxis();
+
+ChartAxisRangeStyle rangeStyle1 = new ChartAxisRangeStyle()
+{
+    Start = 20,
+    End = 40,
+    MajorGridLineStyle = new ChartLineStyle()
+    {
+        Stroke = new SolidColorBrush(Colors.Blue),
+        StrokeWidth = 2
+    }
+};
+
+ChartAxisRangeStyle rangeStyle2 = new ChartAxisRangeStyle()
+{
+    Start = 40,
+    End = 60,
+    MinorGridLineStyle = new ChartLineStyle()
+    {
+        Stroke = new SolidColorBrush(Colors.Green),
+        StrokeWidth = 1,
+        StrokeDashArray = new double[] { 4, 2 }
+    }
+};
+
+axis.RangeStyles.Add(rangeStyle1);
+axis.RangeStyles.Add(rangeStyle2);
 ```
 
 ### Hide Axis Line

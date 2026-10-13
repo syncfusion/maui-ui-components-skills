@@ -123,6 +123,15 @@ Use this skill when you need to:
 - Custom group labels and appearance
 - Improving chart readability with many small segments
 
+### Accessibility
+📄 **Read:** [references/accessibility.md](references/accessibility.md)
+- Screen reader announcements for titles, segments, and legend items
+- Enabling accessibility per platform (TalkBack, VoiceOver, Narrator)
+- Keyboard navigation (Windows Narrator, macOS VoiceOver)
+- Gesture navigation (Android TalkBack, iOS VoiceOver)
+- Series compatibility (RadialBarSeries not supported)
+- Providing meaningful labels for informative announcements
+
 ### Exporting Charts
 📄 **Read:** [references/exporting.md](references/exporting.md)
 - Exporting as PNG or JPEG images

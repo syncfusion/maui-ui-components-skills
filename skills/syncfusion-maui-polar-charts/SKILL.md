@@ -123,3 +123,15 @@ When the user needs to:
 - Implement export functionality
 - Generate chart images for reports
 
+### Accessibility
+📄 **Read:** [references/accessibility.md](references/accessibility.md)
+
+When the user needs to:
+- Expose chart title, legend items, and data points to screen readers
+- Understand announcement formats (Data Point = "XValue + YValue + Series Label")
+- Enable accessibility per platform (TalkBack, VoiceOver, Narrator)
+- Navigate chart elements via keyboard (Windows Narrator, macOS VoiceOver)
+- Navigate chart elements via gestures (Android TalkBack, iOS VoiceOver)
+- Understand series compatibility (PolarAreaSeries not supported)
+- Provide meaningful labels for informative announcements
+

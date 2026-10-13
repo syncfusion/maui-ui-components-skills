@@ -133,3 +133,15 @@ When the user needs to:
 - Integrate chart streams with PDF, Excel, or Word components
 - Handle ImageFileFormat options
 
+### Accessibility
+
+📄 **Read:** [references/accessibility.md](references/accessibility.md)
+
+When the user needs to:
+- Expose chart title, pyramid layers, and legend items to screen readers
+- Understand announcement formats (Pyramid Layer = "Label + Value")
+- Enable accessibility per platform (TalkBack, VoiceOver, Narrator)
+- Navigate chart elements via keyboard (Windows Narrator, macOS VoiceOver)
+- Navigate chart elements via gestures (Android TalkBack, iOS VoiceOver)
+- Provide meaningful labels for informative announcements
+

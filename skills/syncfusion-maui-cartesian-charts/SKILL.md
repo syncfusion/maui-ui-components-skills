@@ -193,3 +193,14 @@ The **SfCartesianChart** control provides:
 - Culture-specific formatting
 - Resource files
 
+### Accessibility
+
+📄 **Read:** [references/accessibility.md](references/accessibility.md)
+- Chart elements and screen reader announcement formats
+- Enabling accessibility on Android, iOS, macOS, and Windows
+- Series compatibility for accessibility navigation
+- Keyboard navigation (Windows Narrator, macOS VoiceOver)
+- Gesture navigation (Android TalkBack, iOS VoiceOver)
+- Providing meaningful labels for informative announcements
+- Complete accessible chart example
+

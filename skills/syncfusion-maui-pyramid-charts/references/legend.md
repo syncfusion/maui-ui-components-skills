@@ -8,6 +8,7 @@
 - [Legend Icon](#legend-icon)
 - [Placement](#placement)
 - [Floating Legend](#floating-legend)
+- [Legend Title](#legend-Title)
 - [Toggle Series Visibility](#toggle-series-visibility)
 - [Maximum Size Request](#maximum-size-request)
 - [Items Layout](#items-layout)
@@ -313,6 +314,72 @@ chart.Legend = new ChartLegend()
     OffsetX = -170,
     OffsetY = 30  
 };
+```
+
+## Legend Title
+
+The legend title can be displayed above the legend items using the `Title` property in the `ChartLegend` class. The `Title` property accepts either a `string` or a custom `View`.
+
+### Legend Title as String
+
+Assign a string value to the `Title` property to display a simple text header above the legend items.
+
+```xml
+<chart:ChartLegend Title="Products" Placement="Right"/>
+```
+
+```csharp
+ChartLegend legend = new ChartLegend()
+{
+    Title = "Products",
+};
+```
+
+### Legend Title as Custom View
+
+A custom `View` can be assigned to the `Title` property to display customized content, such as a layout containing a `CheckBox` and label, as the legend header.
+
+```xml
+<chart:SfPyramidChart.Legend>
+    <chart:ChartLegend Placement="Right">
+        <chart:ChartLegend.Title>
+            <HorizontalStackLayout Spacing="2">
+                <CheckBox VerticalOptions="Center"/>
+                <Label Text="Products"
+                        FontSize="14"
+                        FontAttributes="Bold"
+                        VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+        </chart:ChartLegend.Title>
+    </chart:ChartLegend>
+</chart:SfPyramidChart.Legend>
+```
+
+```csharp
+
+HorizontalStackLayout titleView = new HorizontalStackLayout
+{
+    Spacing = 2,
+    Children =
+    {
+        new CheckBox { VerticalOptions = LayoutOptions.Center },
+        new Label
+        {
+            Text = "Products",
+            FontSize = 14,
+            FontAttributes = FontAttributes.Bold,
+            VerticalOptions = LayoutOptions.Center
+        }
+    }
+};
+
+ChartLegend legend = new ChartLegend()
+{
+    Title = titleView,
+    Placement = LegendPlacement.Right
+};
+chart.Legend = legend;
+
 ```
 
 ### Positioning Logic

@@ -89,3 +89,11 @@ Use this skill when you need to:
 - Export format options
 - Sharing and saving charts
 
+### Accessibility
+📄 **Read:** [references/accessibility.md](references/accessibility.md)
+- Screen reader announcements for title, funnel layers, and legend items
+- Enabling accessibility per platform (TalkBack, VoiceOver, Narrator)
+- Keyboard navigation (Windows Narrator, macOS VoiceOver)
+- Gesture navigation (Android TalkBack, iOS VoiceOver)
+- Providing meaningful labels for informative announcements
+

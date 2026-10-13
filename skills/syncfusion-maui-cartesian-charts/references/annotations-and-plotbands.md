@@ -9,6 +9,7 @@
   - [Shape Annotations](#shape-annotations)
   - [View Annotation](#view-annotation)
   - [Multiple Axes Support](#multiple-axes-support)
+  - [Annotation Z-Index](#annotation-z-index)
 - [PlotBands](#plotbands)
   - [Numerical PlotBand](#numerical-plotband)
   - [DateTime PlotBand](#datetime-plotband)
@@ -340,6 +341,53 @@ Specify which axis to use for positioning:
                                 Text="On Secondary Axis"/>
     </chart:SfCartesianChart.Annotations>
 </chart:SfCartesianChart>
+```
+
+### Annotation Z-Index
+
+The `ZIndex` property of `ChartAnnotation` controls the rendering order of annotations in the chart area. The annotation with a higher `ZIndex` value is rendered on top of annotations with lower values. The default value is `0`.
+
+```xml
+<chart:SfCartesianChart>
+    <chart:SfCartesianChart.Annotations>
+        <chart:RectangleAnnotation X1="1" Y1="20" X2="3" Y2="40"
+                                  Fill="#20FF5722"
+                                  Text="ZIndex 0"
+                                  ZIndex="0"/>
+
+        <chart:EllipseAnnotation X1="2" X2="4" Y1="10" Y2="15"
+                                Fill="#404CAF50"
+                                Text="ZIndex 1"
+                                ZIndex="1"/>
+    </chart:SfCartesianChart.Annotations>
+</chart:SfCartesianChart>
+```
+
+```csharp
+var rectangle = new RectangleAnnotation()
+{
+    X1 = 1,
+    Y1 = 20,
+    X2 = 3,
+    Y2 = 40,
+    Fill = new SolidColorBrush(Color.FromArgb("#20FF5722")),
+    Text = "ZIndex 0",
+    ZIndex = 0
+};
+
+var ellipse = new EllipseAnnotation()
+{
+    X1 = 2,
+    Y1 = 10,
+    X2 = 4,
+    Y2 = 15,
+    Fill = new SolidColorBrush(Color.FromArgb("#404CAF50")),
+    Text = "ZIndex 1",
+    ZIndex = 1
+};
+
+chart.Annotations.Add(rectangle);
+chart.Annotations.Add(ellipse);
 ```
 
 ## PlotBands
