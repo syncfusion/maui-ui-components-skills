@@ -2,7 +2,7 @@
 
 Skills for Syncfusion .NET MAUI components, designed for use with AI coding assistants.
 
-This repository contains 76 AI-ready skill guides for working with Syncfusion .NET MAUI controls. Each skill includes a `SKILL.md` file that AI coding assistants can read automatically, plus a `references/` subfolder with detailed documentation covering setup, usage patterns, customization, and troubleshooting.
+This repository contains 77 AI-ready skill guides for working with Syncfusion .NET MAUI controls. Each skill includes a `SKILL.md` file that AI coding assistants can read automatically, plus a `references/` subfolder with detailed documentation covering setup, usage patterns, customization, and troubleshooting.
 
 ## Quick Start
 
@@ -49,7 +49,7 @@ No configuration required. Skills are loaded automatically from the workspace.
 ## Prerequisites
 
 - An AI coding assistant that supports skills/context files (e.g., GitHub Copilot, Cursor, or similar tools)
-- [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
+- [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
 - A Syncfusion license key ([free community license available](https://www.syncfusion.com/products/communitylicense))
 
 ## How These Skills Work
@@ -114,7 +114,7 @@ skills/
     syncfusion-maui-accordion/
     syncfusion-maui-ai-assistview/
     syncfusion-maui-autocomplete/
-    ... (one folder per control, 76 total)
+    ... (one folder per control, 77 total)
 ```
 
 ## Skill Index
